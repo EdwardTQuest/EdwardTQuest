@@ -1,0 +1,47 @@
+# Run log — The Golden Sayings of Epictetus
+
+Read first, write last.
+
+- 2026-09-25 14:25 · **new** · created hc-02b-epictetus: The Golden Sayings of Epictetus — Epictetus
+- 2026-09-25 14:25 · **new** · copied source /home/user/athanasius-pipeline/prep-ebooklets/books/HC-02b/HC-02b-epictetus-edited-text.txt -> 0-source/HC-02b-epictetus-edited-text.txt
+- 2026-09-25 14:25 · **edit** · manuscript.md written: 10,250 words, 2 chapters, 0 notes; 0 errors, 1 warnings; unknown words 65; see 2-text/edit-report.md
+- 2026-09-25 14:27 · **edit** · manuscript.md written: 10,250 words, 2 chapters, 0 notes; 0 errors, 1 warnings; unknown words 65; see 2-text/edit-report.md
+- 2026-09-25 14:27 · **edit** · manuscript.md written: 10,395 words, 2 chapters, 0 notes; 0 errors, 0 warnings; unknown words 67; see 2-text/edit-report.md
+- 2026-09-25 14:28 · **typeset** · deluxe: 44 pages, spine 0.11 in (cream), inside margin 0.75 in, 0 plates; page samples [1, 2, 3, 4, 5, 6]… in 3-typeset/pages/
+- 2026-09-25 14:30 · **typeset** · deluxe: 46 pages, spine 0.115 in (cream), inside margin 0.75 in, 0 plates; page samples [1, 2, 3, 4, 5, 6]… in 3-typeset/pages/
+- 2026-09-25 14:30 · **typeset** · everyman: 44 pages, spine 0.11 in (cream), inside margin 0.6 in, 0 plates; page samples [1, 2, 3, 4, 5, 6]… in 3-typeset/pages/
+- 2026-09-25 14:30 · **typeset** · scholar: 54 pages, spine 0.135 in (cream), inside margin 0.85 in, 0 plates; page samples [1, 2, 3, 4, 5, 6]… in 3-typeset/pages/
+- 2026-09-25 14:30 · **epub** · hc-02b-epictetus.epub built (1.22 MB), 1 problems; see 4-epub/epub-check.md
+- 2026-09-25 14:31 · **typeset** · deluxe: 46 pages, spine 0.115 in (cream), inside margin 0.75 in, 0 plates; page samples [1, 2, 3, 4, 5, 6]… in 3-typeset/pages/
+- 2026-09-25 14:32 · **epub** · hc-02b-epictetus.epub built (1.22 MB), 0 problems; see 4-epub/epub-check.md
+- 2026-09-25 14:37 · **art** · shortlist of 12 written; top: Dance under the Trees at the Edge of the Lake — Jean-Baptiste-Camille Corot
+- 2026-09-25 14:37 · **art** · cover: Dance under the Trees at the Edge of the Lake — Jean-Baptiste-Camille Corot (matched 'garden'; landscape words ×3; romantic painter); 10 plates chosen
+- 2026-09-25 14:39 · **cover** · deluxe: spread 11.297 × 8.180 in, spine 0.115 in for 46 pages, wrap 0.591 in (hardcover (case laminate))
+- 2026-09-25 14:39 · **cover** · everyman: spread 8.860 × 6.623 in, spine 0.11 in for 44 pages, wrap 0.125 in (paperback, matte)
+- 2026-09-25 14:39 · **cover** · scholar: spread 10.383 × 7.250 in, spine 0.135 in for 54 pages, wrap 0.125 in (paperback, glossy)
+- 2026-09-25 14:39 · **cover** · fronts {'deluxe': 'plate', 'everyman': 'plate', 'scholar': 'plate'}; epub + site covers; 10 plates prepared (print grayscale, epub colour). Look at 1-plan/cover-contact.jpg.
+- 2026-09-25 14:39 · **cover** · deluxe: spread 11.297 × 8.180 in, spine 0.115 in for 46 pages, wrap 0.591 in (hardcover (case laminate))
+- 2026-09-25 14:39 · **cover** · everyman: spread 8.860 × 6.623 in, spine 0.11 in for 44 pages, wrap 0.125 in (paperback, matte)
+- 2026-09-25 14:39 · **cover** · scholar: spread 10.383 × 7.250 in, spine 0.135 in for 54 pages, wrap 0.125 in (paperback, glossy)
+- 2026-09-25 14:39 · **cover** · fronts {'deluxe': 'full', 'everyman': 'full', 'scholar': 'full'}; epub + site covers; 10 plates prepared (print grayscale, epub colour). Look at 1-plan/cover-contact.jpg.
+- 2026-09-25 14:39 · **cover** · deluxe: spread 11.297 × 8.180 in, spine 0.115 in for 46 pages, wrap 0.591 in (hardcover (case laminate))
+- 2026-09-25 14:39 · **cover** · everyman: spread 8.860 × 6.623 in, spine 0.11 in for 44 pages, wrap 0.125 in (paperback, matte)
+- 2026-09-25 14:39 · **cover** · scholar: spread 10.383 × 7.250 in, spine 0.135 in for 54 pages, wrap 0.125 in (paperback, glossy)
+- 2026-09-25 14:39 · **cover** · fronts {'deluxe': 'plate', 'everyman': 'plate', 'scholar': 'plate'}; epub + site covers; 10 plates prepared (print grayscale, epub colour). Look at 1-plan/cover-contact.jpg.
+- 2026-09-25 14:40 · **typeset** · deluxe: 48 pages, spine 0.12 in (cream), inside margin 0.75 in, 10 plates; page samples [1, 2, 3, 4, 5, 6]… in 3-typeset/pages/
+- 2026-09-25 14:40 · **typeset** · everyman: 46 pages, spine 0.115 in (cream), inside margin 0.6 in, 10 plates; page samples [1, 2, 3, 4, 5, 6]… in 3-typeset/pages/
+- 2026-09-25 14:40 · **typeset** · scholar: 56 pages, spine 0.14 in (cream), inside margin 0.85 in, 10 plates; page samples [1, 2, 3, 4, 5, 6]… in 3-typeset/pages/
+- 2026-09-25 14:43 · **typeset** · deluxe: 48 pages, spine 0.12 in (cream), inside margin 0.75 in, 10 plates; page samples [1, 2, 3, 4, 5, 6]… in 3-typeset/pages/
+- 2026-09-25 14:43 · **typeset** · everyman: 46 pages, spine 0.115 in (cream), inside margin 0.6 in, 10 plates; page samples [1, 2, 3, 4, 5, 6]… in 3-typeset/pages/
+- 2026-09-25 14:43 · **typeset** · scholar: 56 pages, spine 0.14 in (cream), inside margin 0.85 in, 10 plates; page samples [1, 2, 3, 4, 5, 6]… in 3-typeset/pages/
+- 2026-09-25 14:43 · **epub** · hc-02b-epictetus.epub built (1.44 MB), 0 problems; see 4-epub/epub-check.md
+- 2026-09-25 14:43 · **cover** · deluxe: spread 11.300 × 8.180 in, spine 0.12 in for 48 pages, wrap 0.591 in (hardcover (case laminate))
+- 2026-09-25 14:43 · **cover** · everyman: spread 8.863 × 6.623 in, spine 0.115 in for 46 pages, wrap 0.125 in (paperback, matte)
+- 2026-09-25 14:43 · **cover** · scholar: spread 10.390 × 7.250 in, spine 0.14 in for 56 pages, wrap 0.125 in (paperback, glossy)
+- 2026-09-25 14:43 · **cover** · fronts {'deluxe': 'full', 'everyman': 'full', 'scholar': 'full'}; epub + site covers; 10 plates prepared (print grayscale, epub colour). Look at 1-plan/cover-contact.jpg.
+- 2026-09-25 14:43 · **proof** · PROOF.md written; findings: structure and sequence 12, dictionary sweep 102, apparatus 0, cross-edition consistency 0, mechanical 0, render and look 4
+- 2026-09-25 14:44 · **cover** · deluxe: spread 11.300 × 8.180 in, spine 0.12 in for 48 pages, wrap 0.591 in (hardcover (case laminate))
+- 2026-09-25 14:44 · **cover** · everyman: spread 8.863 × 6.623 in, spine 0.115 in for 46 pages, wrap 0.125 in (paperback, matte)
+- 2026-09-25 14:44 · **cover** · scholar: spread 10.390 × 7.250 in, spine 0.14 in for 56 pages, wrap 0.125 in (paperback, glossy)
+- 2026-09-25 14:44 · **cover** · fronts {'deluxe': 'plate', 'everyman': 'plate', 'scholar': 'plate'}; epub + site covers; 10 plates prepared (print grayscale, epub colour). Look at 1-plan/cover-contact.jpg.
+- 2026-09-25 14:44 · **plan** · wrote 1-plan/plan.md (skim of 2-text/manuscript.md); overseer fills it, then `ath plan hc-02b-epictetus --sync`

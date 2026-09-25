@@ -1,0 +1,23 @@
+__pycache__/
+*.pyc
+.DS_Store
+._*
+# per-book bulk: sources, downloads, page images, witnesses, PDFs and EPUBs stay out of git;
+# the records (book.yaml, NOTES.md, changes.csv, CHANGES.md, run-log.md, reports, manuscript.md) stay in
+books/*/0-source/
+books/*/1-plan/art/
+books/*/1-plan/plates/
+books/*/1-plan/cover-*.jpg
+books/*/1-plan/cover-*.pdf
+books/*/2-text/witnesses/
+books/*/3-typeset/*.pdf
+books/*/3-typeset/pages/
+books/*/3-typeset/*.png
+books/*/3-typeset/body.typ
+books/*/3-typeset/meta.json
+books/*/4-epub/*.epub
+books/*/4-epub/plates/
+books/*/4-epub/*.png
+books/*/4-epub/*.xhtml
+books/*/4-epub/meta.json
+books/*/5-proof/pages-*.jpg

@@ -1,0 +1,7 @@
+rule,count,cap,category,example
+hyphen joins,1,106,O,"nd conversations the “Dis- — courses and Encheiridion,” from  →  nd conversations the “Discourses and Encheiridion,” from whi"
+curly quotes,0,2130,I,
+ellipses,8,213,I,"g care of us as He ought... . If you choose, you are free; i  →  g care of us as He ought. . . . If you choose, you are free;"
+dashes,103,532,I,"ot sing the hymn to God:— Great is God, for that He hath giv  →  ot sing the hymn to God:—Great is God, for that He hath give"
+caps openings,3,106,C,"} ## Introductory Note  EPICTETUS was a Greek, born at Hiera  →  } ## Introductory Note  Epictetus was a Greek, born at Hiera"
+spacing and ligatures,11,532,N,"as it is, be not deceived :—it is not thine own; it is but f  →  as it is, be not deceived:—it is not thine own; it is but fi"

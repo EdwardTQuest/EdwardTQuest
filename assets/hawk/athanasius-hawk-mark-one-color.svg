@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 536" role="img" aria-labelledby="title desc">
+  <title id="title">Athanasius hawk publisher's mark — one color</title>
+  <desc id="desc">A one-color geometric hawk and papyrus mark designed for small-format printing, embossing, and foil stamping.</desc>
+  <g transform="scale(2)">
+    <path d="M92 106 166 96 182 142 170 194 134 220 100 208 82 166 82 122Z" fill="#000"/>
+    <path d="M100 126 172 118 166 134 98 142ZM100 150 172 142 164 158 98 166ZM102 174 166 166 156 182 104 190Z" fill="#fff"/>
+    <path d="M150 26 172 54 168 92 98 106 60 90 26 62 60 42 104 26Z" fill="#000"/>
+    <path d="M84 44 156 34" stroke="#fff" stroke-width="6" fill="none"/>
+    <path d="M92 92 74 108 88 112M126 92 138 104 154 100" stroke="#fff" stroke-width="5.5" fill="none"/>
+    <path d="M87 67Q112 43 140 64 113 89 87 67Z" fill="#fff"/>
+    <circle cx="113" cy="66" r="14" fill="#000"/>
+    <circle cx="113" cy="66" r="5" fill="#fff"/>
+    <path d="M96 196 112 196 118 224 104 232 92 224Z" fill="#000"/>
+    <path d="M92 224 84 244M104 232 104 250M118 224 128 242" stroke="#000" stroke-width="5" stroke-linecap="round" fill="none"/>
+    <rect x="52" y="228" width="122" height="19" fill="#fff" stroke="#000" stroke-width="2"/>
+    <path d="M70 234H156M70 240H140" stroke="#000" stroke-width="1.5"/>
+    <circle cx="52" cy="237.5" r="11.5" fill="#000"/><circle cx="52" cy="237.5" r="5" fill="#fff"/>
+    <circle cx="174" cy="237.5" r="11.5" fill="#000"/><circle cx="174" cy="237.5" r="5" fill="#fff"/>
+  </g>
+</svg>

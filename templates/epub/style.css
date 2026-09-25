@@ -1,0 +1,40 @@
+/* Athanasius EPUB house style — restrained, reader-controlled, no fixed fonts imposed. */
+@font-face { font-family: "EB Garamond"; font-style: normal; font-weight: 400; src: url(../fonts/EBGaramond-Regular.ttf); }
+@font-face { font-family: "EB Garamond"; font-style: italic; font-weight: 400; src: url(../fonts/EBGaramond-Italic.ttf); }
+@font-face { font-family: "EB Garamond"; font-style: normal; font-weight: 600; src: url(../fonts/EBGaramond-SemiBold.ttf); }
+html { font-size: 100%; }
+body { font-family: "EB Garamond", Georgia, serif; line-height: 1.45; margin: 0 5%; text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
+p { margin: 0; text-indent: 1.2em; orphans: 2; widows: 2; }
+h1 + p, h2 + p, h3 + p, hr + p, .verse + p, blockquote + p, figure + p, .line-block + p, .epigraph + p { text-indent: 0; }
+h1, h2, h3 { font-weight: normal; text-align: center; page-break-after: avoid; break-after: avoid; }
+h1 { font-size: 1.5em; letter-spacing: 0.08em; font-variant: small-caps; margin: 3em 0 1.2em; }
+h2 { font-size: 1.35em; font-variant: small-caps; margin: 2.6em 0 1.2em; }
+h2 .label { display: block; font-size: 0.72em; letter-spacing: 0.16em; margin-bottom: 0.5em; }
+h3 { font-size: 1.05em; font-variant: small-caps; letter-spacing: 0.05em; margin: 1.8em 0 0.8em; }
+section.level1, section.level2 { page-break-before: always; break-before: page; }
+hr { border: 0; text-align: center; margin: 1.6em auto; height: 1.2em; }
+hr::after { content: "❧"; display: block; font-size: 1.1em; color: #444; }
+blockquote { margin: 1em 1.6em; font-size: 0.95em; }
+blockquote p { text-indent: 0; }
+.line-block, .verse { margin: 1em 0 1em 1.6em; text-align: left; }
+.line-block { white-space: pre-wrap; }
+.line-block .line-block { margin-left: 1.6em; }
+.epigraph { margin: 0 12% 2em; font-style: italic; text-align: left; }
+.epigraph p { text-indent: 0; }
+.smallcaps, span.smallcaps { font-variant: small-caps; }
+figure { margin: 2em 0; text-align: center; page-break-inside: avoid; break-inside: avoid; }
+figure img { max-width: 100%; max-height: 90vh; }
+figcaption { font-size: 0.85em; font-style: italic; margin-top: 0.5em; text-align: center; }
+.footnotes { font-size: 0.9em; margin-top: 2em; border-top: 1px solid #999; padding-top: 0.6em; }
+.footnotes p { text-indent: 0; }
+a { color: inherit; text-decoration: none; }
+sup { font-size: 0.7em; line-height: 0; }
+.titlepage { text-align: center; margin-top: 20%; }
+.titlepage .title { font-variant: small-caps; font-size: 1.8em; letter-spacing: 0.06em; }
+.titlepage .subtitle { font-style: italic; font-size: 1.1em; margin-top: 0.6em; }
+.titlepage .author { font-variant: small-caps; letter-spacing: 0.12em; margin-top: 2.5em; }
+.titlepage .imprint { font-variant: small-caps; letter-spacing: 0.24em; margin-top: 4em; }
+.publication { font-size: 0.85em; text-align: left; margin-top: 30%; }
+.publication p { text-indent: 0; margin-bottom: 0.7em; }
+.publication img { display: block; margin: 1.5em auto 0; width: 55%; }
+.colophon { font-style: italic; font-size: 0.9em; text-align: center; margin-top: 30%; }

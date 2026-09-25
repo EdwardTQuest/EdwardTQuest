@@ -1,0 +1,70 @@
+#!/usr/bin/env python3
+"""ath — the Athanasius 2.0 command line. One book at a time.
+
+  ath preflight                         check tools, fonts, assets, wordlists
+  ath new <slug> --title T --author A   [--gutenberg N | --archive ID | --scan F | --text F]
+  ath plan <slug>                       skim the source, write 1-plan/plan.md for the overseer to fill
+  ath art <slug> [--shortlist N] [--pick] [--fetch] [--commons]   cover + plates
+  ath cover <slug>                      front, back (blurb), spreads for every edition with a PDF
+  ath ocr <slug>                        witnesses -> consensus -> 2-text/consensus.md + report
+  ath edit <slug>                       house style by expected-count table -> 2-text/manuscript.md
+  ath typeset <slug> [--edition E|all]  Typst -> 3-typeset/<edition>.pdf (+ page PNGs)
+  ath epub <slug>                       pandoc -> 4-epub/<slug>.epub + epub-check.md
+  ath proof <slug>                      the lens battery -> 5-proof/PROOF.md
+  ath tracker <slug>                    render CHANGES.md from changes.csv
+  ath signature [--samples]             the green-pen signature block (all editions)
+  ath status <slug>                     what is done, what is next
+  ath all <slug>                        edit -> typeset -> epub -> cover -> proof
+"""
+import os, sys
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
+
+from ath.book import Fail
+
+
+def main(argv):
+    if not argv or argv[0] in ('-h', '--help', 'help'):
+        print(__doc__); return 0
+    cmd, rest = argv[0], argv[1:]
+    try:
+        if cmd == 'preflight':
+            from ath import preflight; return preflight.main(rest)
+        if cmd == 'new':
+            from ath import cli_new; return cli_new.main(rest)
+        if cmd == 'plan':
+            from ath import plan; return plan.main(rest)
+        if cmd == 'art':
+            from ath import art; return art.main(rest)
+        if cmd == 'cover':
+            from ath import cover; return cover.main(rest)
+        if cmd == 'ocr':
+            from ath import ocr; return ocr.main(rest)
+        if cmd == 'edit':
+            from ath import edit; return edit.main(rest)
+        if cmd == 'typeset':
+            from ath import typeset; return typeset.main(rest)
+        if cmd == 'epub':
+            from ath import epub; return epub.main(rest)
+        if cmd == 'proof':
+            from ath import proof; return proof.main(rest)
+        if cmd == 'tracker':
+            from ath import tracker; return tracker.main(rest)
+        if cmd == 'signature':
+            from ath import signature; return signature.main(rest)
+        if cmd == 'status':
+            from ath import status; return status.main(rest)
+        if cmd == 'all':
+            from ath import edit, typeset, epub, cover, proof
+            for m in (edit, typeset, epub, cover, proof):
+                rc = m.main(rest)
+                if rc:
+                    return rc
+            return 0
+        print(f'unknown command: {cmd}\n'); print(__doc__); return 1
+    except Fail as e:
+        print(e.code if hasattr(e, 'code') else e, file=sys.stderr)
+        return 2
+
+
+if __name__ == '__main__':
+    sys.exit(main(sys.argv[1:]))

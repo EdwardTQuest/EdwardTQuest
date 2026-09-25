@@ -1,0 +1,295 @@
+slug: hc-02b-epictetus
+title: The Golden Sayings of Epictetus
+subtitle: With the Hymn of Cleanthes
+author: Epictetus
+author_sort: Epictetus
+translator: Hastings Crossley
+language: en
+series: The Athanasius Library
+year_first: 1909
+edition_credit: The Harvard Classics, volume II (P. F. Collier & Son, 1909)
+pd_basis: published before 1 January 1931; public domain in the United States
+source:
+  kind: text
+  gutenberg: null
+  archive: []
+  files:
+  - 0-source/HC-02b-epictetus-edited-text.txt
+  note: ''
+plan:
+  summary: Sayings of the Stoic slave-philosopher, arranged by Hastings Crossley.
+  audience: ''
+  structure: ''
+  art_subjects:
+  - roman
+  - garden
+  - cypress
+  - ruins
+  - stoic
+  - harbor
+  - evening
+  movement: landscape
+  art_avoid:
+  - battle
+art:
+  cover:
+    id: ax-v-collection-art-object-page-176397-html
+    title: Dance under the Trees at the Edge of the Lake
+    artist: Jean-Baptiste-Camille Corot
+    year: '1867'
+    era: Impressionist era (1860-1912)
+    section: Seascape & Marine
+    source: National Gallery of Art (NGA)
+    page_url: https://www.nga.gov/collection/art-object-page.176397.html
+    image_url: https://api.nga.gov/iiif/d9d65cb2-eb39-4653-ba03-d162884a76fa/full/full/0/default.jpg
+    thumb_url: https://api.nga.gov/iiif/d9d65cb2-eb39-4653-ba03-d162884a76fa/full/!200,200/0/default.jpg
+    rights: Open Access / CC0
+    width: '17875'
+    height: '12268'
+    orientation: Landscape
+    why: matched 'garden'; landscape words ×3; romantic painter
+    file: 1-plan/art/cover-source.jpg
+  plates:
+  - id: ax-etmuseum-org-art-collection-search-11234
+    title: Spring Blossoms, Montclair, New Jersey
+    artist: George Inness
+    year: '1891'
+    era: Impressionist era (1860-1912)
+    section: Landscape & Nature
+    source: The Metropolitan Museum of Art (Met)
+    page_url: http://www.metmuseum.org/art/collection/search/11234
+    image_url: https://images.metmuseum.org/CRDImages/ad/original/DT98.jpg
+    thumb_url: https://images.metmuseum.org/CRDImages/ad/web-large/DT98.jpg
+    rights: Open Access / CC0
+    width: '114.9'
+    height: '73.7'
+    orientation: Landscape
+    why: matched 'garden'; landscape words ×2; romantic painter
+    file: 1-plan/art/plate-01-source.jpg
+    print: 1-plan/plates/print/01.jpg
+    epub: 1-plan/plates/epub/01.jpg
+  - id: ax-etmuseum-org-art-collection-search-12802
+    title: Summer Flowers
+    artist: Jerome B. Thompson
+    year: '1859'
+    era: Romantic (1780-1860)
+    section: Landscape & Nature
+    source: The Metropolitan Museum of Art (Met)
+    page_url: http://www.metmuseum.org/art/collection/search/12802
+    image_url: https://images.metmuseum.org/CRDImages/ad/original/ap1984.252.1.jpg
+    thumb_url: https://images.metmuseum.org/CRDImages/ad/web-large/ap1984.252.1.jpg
+    rights: Open Access / CC0
+    width: '59.7'
+    height: '91.4'
+    orientation: Portrait
+    why: matched 'garden'; landscape words ×2; portrait format
+    file: 1-plan/art/plate-02-source.jpg
+    print: 1-plan/plates/print/02.jpg
+    epub: 1-plan/plates/epub/02.jpg
+  - id: ax-ov-collection-art-object-page-51144-html
+    title: Landscape
+    artist: Imitator of Vincent van Gogh
+    year: '1926'
+    era: Modern (1912-1950)
+    section: Landscape & Nature
+    source: National Gallery of Art (NGA)
+    page_url: https://www.nga.gov/collection/art-object-page.51144.html
+    image_url: https://api.nga.gov/iiif/212836fc-eb1f-4775-922a-9f62925a82cd/full/full/0/default.jpg
+    thumb_url: https://api.nga.gov/iiif/212836fc-eb1f-4775-922a-9f62925a82cd/full/!200,200/0/default.jpg
+    rights: Open Access / CC0
+    width: '5872'
+    height: '7124'
+    orientation: Portrait
+    why: matched 'garden'; landscape words ×2; portrait format
+    file: 1-plan/art/plate-03-source.jpg
+    print: 1-plan/plates/print/03.jpg
+    epub: 1-plan/plates/epub/03.jpg
+  - id: ax-ov-collection-art-object-page-46571-html
+    title: The Loge
+    artist: Mary Cassatt
+    year: '1879'
+    era: Impressionist era (1860-1912)
+    section: Still Life & Floral
+    source: National Gallery of Art (NGA)
+    page_url: https://www.nga.gov/collection/art-object-page.46571.html
+    image_url: https://api.nga.gov/iiif/51d16240-71d8-4332-8d8e-b5f1b211a06a/full/full/0/default.jpg
+    thumb_url: https://api.nga.gov/iiif/51d16240-71d8-4332-8d8e-b5f1b211a06a/full/!200,200/0/default.jpg
+    rights: Open Access / CC0
+    width: '16785'
+    height: '21201'
+    orientation: Portrait
+    why: matched 'garden'; landscape words ×1; impressionist painter; portrait format
+    file: 1-plan/art/plate-04-source.jpg
+    print: 1-plan/plates/print/04.jpg
+    epub: 1-plan/plates/epub/04.jpg
+  - id: ax-etmuseum-org-art-collection-search-10465
+    title: Carmencita
+    artist: William Merritt Chase
+    year: '1890'
+    era: Impressionist era (1860-1912)
+    section: Still Life & Floral
+    source: The Metropolitan Museum of Art (Met)
+    page_url: http://www.metmuseum.org/art/collection/search/10465
+    image_url: https://images.metmuseum.org/CRDImages/ad/original/DT226889.jpg
+    thumb_url: https://images.metmuseum.org/CRDImages/ad/web-large/DT226889.jpg
+    rights: Open Access / CC0
+    width: '103.8'
+    height: '177.5'
+    orientation: Portrait
+    why: matched 'garden'; landscape words ×1; impressionist painter; portrait format
+    file: 1-plan/art/plate-05-source.jpg
+    print: 1-plan/plates/print/05.jpg
+    epub: 1-plan/plates/epub/05.jpg
+  - id: ax-ov-collection-art-object-page-42928-html
+    title: The Artist's Garden
+    artist: Ralph Albert Blakelock
+    year: '1884'
+    era: Impressionist era (1860-1912)
+    section: Still Life & Floral
+    source: National Gallery of Art (NGA)
+    page_url: https://www.nga.gov/collection/art-object-page.42928.html
+    image_url: https://api.nga.gov/iiif/337092d8-1346-4470-a92a-43ef385cf982/full/full/0/default.jpg
+    thumb_url: https://api.nga.gov/iiif/337092d8-1346-4470-a92a-43ef385cf982/full/!200,200/0/default.jpg
+    rights: Open Access / CC0
+    width: '16058'
+    height: '10599'
+    orientation: Landscape
+    why: matched 'garden'; landscape words ×2
+    file: 1-plan/art/plate-06-source.jpg
+    print: 1-plan/plates/print/06.jpg
+    epub: 1-plan/plates/epub/06.jpg
+  - id: ax-ov-collection-art-object-page-61371-html
+    title: Flower Beds in Holland
+    artist: Vincent van Gogh
+    year: '1883'
+    era: Impressionist era (1860-1912)
+    section: Still Life & Floral
+    source: National Gallery of Art (NGA)
+    page_url: https://www.nga.gov/collection/art-object-page.61371.html
+    image_url: https://api.nga.gov/iiif/de9ed4a3-3aed-4e56-b4c0-8c64a6ca4cc5/full/full/0/default.jpg
+    thumb_url: https://api.nga.gov/iiif/de9ed4a3-3aed-4e56-b4c0-8c64a6ca4cc5/full/!200,200/0/default.jpg
+    rights: Open Access / CC0
+    width: '35365'
+    height: '25890'
+    orientation: Landscape
+    why: matched 'garden'; landscape words ×2
+    file: 1-plan/art/plate-07-source.jpg
+    print: 1-plan/plates/print/07.jpg
+    epub: 1-plan/plates/epub/07.jpg
+  - id: ax-ov-collection-art-object-page-39771-html
+    title: Yellow Warbler
+    artist: Joseph Bartholomew Kidd, after John James Audubon
+    year: '1831'
+    era: Romantic (1780-1860)
+    section: Animals & Natural History
+    source: National Gallery of Art (NGA)
+    page_url: https://www.nga.gov/collection/art-object-page.39771.html
+    image_url: https://api.nga.gov/iiif/57e7f269-8bf1-4a10-be6f-89ba956374ce/full/full/0/default.jpg
+    thumb_url: https://api.nga.gov/iiif/57e7f269-8bf1-4a10-be6f-89ba956374ce/full/!200,200/0/default.jpg
+    rights: Open Access / CC0
+    width: '15413'
+    height: '24924'
+    orientation: Portrait
+    why: matched 'garden'; landscape words ×1; portrait format
+    file: 1-plan/art/plate-08-source.jpg
+    print: 1-plan/plates/print/08.jpg
+    epub: 1-plan/plates/epub/08.jpg
+  - id: ax-v-collection-art-object-page-214903-html
+    title: Peonies in a Vase
+    artist: Charles Ethan Porter
+    year: '1885'
+    era: Impressionist era (1860-1912)
+    section: Still Life & Floral
+    source: National Gallery of Art (NGA)
+    page_url: https://www.nga.gov/collection/art-object-page.214903.html
+    image_url: https://api.nga.gov/iiif/216ca5a4-e3f0-4458-9e73-5b901a9ac19e/full/full/0/default.jpg
+    thumb_url: https://api.nga.gov/iiif/216ca5a4-e3f0-4458-9e73-5b901a9ac19e/full/!200,200/0/default.jpg
+    rights: Open Access / CC0
+    width: '17731'
+    height: '20133'
+    orientation: Portrait
+    why: matched 'garden'; landscape words ×1; portrait format
+    file: 1-plan/art/plate-09-source.jpg
+    print: 1-plan/plates/print/09.jpg
+    epub: 1-plan/plates/epub/09.jpg
+  - id: ax-v-collection-art-object-page-103172-html
+    title: Poppies, Isles of Shoals
+    artist: Childe Hassam
+    year: '1891'
+    era: Impressionist era (1860-1912)
+    section: Classical Antiquity & Myth
+    source: National Gallery of Art (NGA)
+    page_url: https://www.nga.gov/collection/art-object-page.103172.html
+    image_url: https://api.nga.gov/iiif/eae1e446-f067-4f1e-8eb4-b212b3ea0f35/full/full/0/default.jpg
+    thumb_url: https://api.nga.gov/iiif/eae1e446-f067-4f1e-8eb4-b212b3ea0f35/full/!200,200/0/default.jpg
+    rights: Open Access / CC0
+    width: '15675'
+    height: '12910'
+    orientation: Landscape
+    why: matched 'garden'; landscape words ×2; impressionist painter
+    file: 1-plan/art/plate-10-source.jpg
+    print: 1-plan/plates/print/10.jpg
+    epub: 1-plan/plates/epub/10.jpg
+  plates_wanted: 10
+  plate_mode: grayscale
+blurb: Epictetus was born a slave and became the teacher of emperors. He left nothing in writing;
+  his pupil Arrian took down the lectures, and from them Hastings Crossley drew these sayings
+  for the Harvard Classics. They are bracing rather than consoling. What is in our power,
+  and what is not; the part we are given to play; the God within, who sees the shut door.
+  Few books say so much in so few pages, and none says it more plainly. This edition follows
+  the 1909 setting, with the Hymn of Cleanthes.
+editions:
+- deluxe
+- everyman
+- scholar
+typeset:
+  chapters_open_recto: true
+  opening_smallcaps: true
+  signature_font: La Belle Aurore
+status:
+  edit:
+    state: done
+    when: 2026-09-25 14:27
+    words: 10395
+    chapters: 2
+    unknown: 67
+    errors: 0
+  typeset:
+    deluxe:
+      pages: 48
+      spine_in: 0.12
+      inside_margin: 0.75
+      plates: 10
+      pdf: 3-typeset/deluxe.pdf
+    everyman:
+      pages: 46
+      spine_in: 0.115
+      inside_margin: 0.6
+      plates: 10
+      pdf: 3-typeset/everyman.pdf
+    scholar:
+      pages: 56
+      spine_in: 0.14
+      inside_margin: 0.85
+      plates: 10
+      pdf: 3-typeset/scholar.pdf
+  epub:
+    state: done
+    when: 2026-09-25 14:43
+    problems: 0
+    size_mb: 1.44
+    cover: true
+  cover:
+    state: done
+    when: 2026-09-25 14:44
+    layout:
+      deluxe: plate
+      everyman: plate
+      scholar: plate
+    plates: 10
+  proof:
+    state: done
+    when: 2026-09-25 14:43
+    findings: 12
+checks:
+  expected_sections: null
