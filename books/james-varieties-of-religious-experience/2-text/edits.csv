@@ -1,0 +1,7 @@
+rule,count,cap,category,example
+hyphen joins,0,1895,O,
+curly quotes,0,37917,I,
+ellipses,155,3791,I,into the morbid category.... And it is worthy of remark that  →  into the morbid category. . . . And it is worthy of remark t
+dashes,587,9479,I,elf staggering up to Rev. ——’s Holiness tent—and as it was f  →  elf staggering up to Rev.——’s Holiness tent—and as it was fu
+caps openings,1,1895,C,"an I can well express.  HARVARD UNIVERSITY, March, 1902.  ::  →  an I can well express.  Harvard University, March, 1902.  ::"
+spacing and ligatures,90,9479,N,"iaries. His being shrinks . . . he becomes less and less, a   →  iaries. His being shrinks. . . he becomes less and less, a m"

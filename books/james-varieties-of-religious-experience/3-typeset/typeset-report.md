@@ -1,0 +1,261 @@
+# Typeset report — The Varieties of Religious Experience
+
+What the page-layout lens found in each PDF (widows, orphans, runts, hyphen stacks, loose lines, stranded headings, thin chapter ends). A finding is a place to look; the typeset gate decides whether it is tolerable where it is. Look at 3-typeset/pages/ first, then read this.
+
+## deluxe — 600 pages, measure 3.54 in, line box 13.7 pt
+
+counts: runt 66, loose line 10, widow 8, orphan 3
+
+- p.10 runt: world.
+- p.15 runt: influence.
+- p.27 runt: divine.”
+- p.28 runt: exposed.
+- p.44 runt: on:—
+- p.50 runt: overcome.
+- p.51 loose line: mean gap 0.56 em: “Where men are enlightened with the true light, th
+- p.52 runt: them.”¹²
+- p.52 runt: decrees.
+- p.57 widow: our eyes.¹⁵
+- p.73 widow: to me. I do not know how to better describe my sensations
+- p.79 runt: original.²⁵
+- p.84 widow: me, singing and reading the Psalms with me. . . . And then
+- p.95 runt: worship.”
+- p.99 runt: good.
+- p.101 runt: prophets.
+- p.108 runt: science.
+- p.113 loose line: mean gap 0.58 em: The “misery‐habit,” the “martyr‐habit,” engendered
+- p.118 runt: without.
+- p.130 runt: silence.‘”⁵⁶
+- p.139 widow: reality.⁶²
+- p.147 loose line: mean gap 0.57 em: At our last meeting, we considered the healthy‐min
+- p.156 runt: situation.
+- p.159 runt: results.
+- p.159 runt: reached?⁶⁹
+- p.162 loose line: mean gap 0.60 em: For naturalism, fed on recent cosmological specula
+- p.163 loose line: mean gap 0.56 em: grew systematically pensive and thought of ultimat
+- p.166 orphan: which he did out of habit, he could find no pleasure there.
+- p.166 runt: tion.
+- p.167 runt: Euclid.”⁷³
+- p.171 runt: general.
+- p.173 runt: solution.
+- p.174 runt: response.
+- p.179 orphan: for fear I should misplace them. Oh, how gingerly did I then
+- p.183 runt: bearing.”
+- p.187 widow: is the literally right reaction on the situation.⁸²
+- p.190 loose line: mean gap 0.57 em: to be a certain discordancy or heterogeneity in th
+- p.195 runt: surpassed.
+- p.207 runt: secret.
+- p.212 runt: soul.
+- p.218 runt: process.
+- p.237 runt: surrender.
+- p.258 runt: life?
+- p.266 runt: substance.
+- p.296 runt: tion:—
+- p.298 widow: respect seemed more remarkable than in any other.”¹⁴⁴
+- p.301 runt: brothers.
+- p.301 runt: abundant.
+- p.324 runt: against.”¹⁷¹
+- p.332 loose line: mean gap 0.58 em: ing theatres. Sometimes he wished to go to a popis
+- p.336 runt: rather;
+- p.337 runt: nothing.
+- p.351 loose line: mean gap 0.71 em: Since Hindu fakirs, Buddhist monks, and Mohammedan
+- p.383 runt: puerility.
+- p.384 runt: fruit.
+- p.398 runt: riddle.
+- p.402 runt: peoples?
+- p.403 runt: suffers.
+- p.411 runt: brickbats.
+- p.414 orphan: Lacking the heart or ear, we cannot interpret the musician
+- p.416 runt: group.
+- p.422 runt: revelation.
+- p.432 runt: ically.
+- p.433 runt: learns—
+- p.433 runt: Soul.”²³⁹
+- p.434 widow: illumined.”²⁴⁰
+- p.434 runt: affords.²⁴¹
+- p.440 loose line: mean gap 0.56 em: The first thing to be aimed at in orison is the mi
+- p.445 runt: it.”²⁵⁰
+- p.452 runt: sings:—
+- p.457 runt: parts:—
+- p.465 runt: divine?
+- p.484 widow: himself and with the facts, but who remains religious still.
+- p.507 runt: suffice.
+- p.508 runt: interests.)
+- p.512 runt: —
+- p.517 runt: doing.”³²²
+- p.521 runt: suggest.
+- p.523 runt: beliefs:—
+- p.524 runt: —
+- … 7 more
+
+## everyman — 630 pages, measure 2.9 in, line box 12.5 pt
+
+counts: runt 82, loose line 48, orphan 7, widow 7
+
+- p.13 runt: differs.
+- p.13 loose line: mean gap 0.55 em: Such a result is of course absolutely alien to my
+- p.19 runt: mined.(2)
+- p.28 runt: out?
+- p.29 loose line: mean gap 0.59 em: by the attempts, of which I already made mention,
+- p.40 orphan: tance with his own being. Character is always known.
+- p.59 widow: everlasting possession spread before our eyes.¹⁵
+- p.63 runt: facts.
+- p.73 runt: that.”
+- p.85 runt: account.
+- p.86 runt: teen:—
+- p.86 runt: fault.”—
+- p.89 loose line: mean gap 0.58 em: our inarticulate feelings of reality have already 
+- p.95 loose line: mean gap 0.62 em: In many persons, happiness is congenital and ir-
+- p.101 loose line: mean gap 0.86 em: “His favorite occupation,” writes his disciple,
+- p.102 runt: good.
+- p.103 runt: latter.
+- p.110 runt: case.
+- p.110 runt: tial?
+- p.113 runt: nings.
+- p.113 loose line: mean gap 0.63 em: evolutionism of which I have recently spoken; and,
+- p.114 loose line: mean gap 0.59 em: of people who repeat to themselves, “Youth, health
+- p.119 orphan: not what term you may use, be it Kindly Light, Prov-
+- p.125 runt: edge.
+- p.130 loose line: mean gap 0.56 em: Under these circumstances the way to success, as
+- p.132 runt: nation.⁵¹
+- p.132 runt: methods.
+- p.134 runt: beings?
+- p.137 loose line: mean gap 0.55 em: promoted, and strengthened. Its current can be
+- p.139 loose line: mean gap 0.62 em: When we reach the subject of mysticism, you will
+- p.145 runt: attention.
+- p.154 runt: tance:—
+- p.156 loose line: mean gap 0.58 em: If we admit that evil is an essential part of our
+- p.171 runt: surface.
+- p.181 runt: effects.
+- p.190 runt: bearing.”
+- p.190 runt: this:—
+- p.190 runt: insane.”⁸¹
+- p.196 loose line: mean gap 0.63 em: salvationism, the two types are violently contrast
+- p.203 runt: distress.
+- p.214 runt: secret.
+- p.214 runt: again.
+- p.233 runt: maturity.
+- p.235 runt: misery.
+- p.238 loose line: mean gap 0.55 em: faith may in some cases be intellectual in its ori
+- p.245 runt: unaided!
+- p.257 loose line: mean gap 0.57 em: This subject was an Oxford graduate, the son of a
+- p.261 loose line: mean gap 0.57 em: 1842. In a letter to a clerical friend, written a 
+- p.266 runt: wrote:—
+- p.280 widow: received had never touched them at all?¹²¹
+- p.287 runt: thing.
+- p.287 runt: forever.¹²⁷
+- p.287 runt: excellence.
+- p.288 loose line: mean gap 0.55 em: avoid ambiguity, should, I think, be called the st
+- p.290 loose line: mean gap 0.61 em: “After this my sense of divine things gradually
+- p.292 loose line: mean gap 0.58 em: feature at revivals since, in Edwards’s, Wesley’s,
+- p.292 loose line: mean gap 0.59 em: concerning them. Edwards, in his Thoughts on the
+- p.299 runt: rightly.
+- p.303 loose line: mean gap 0.57 em: and inhibitions holding us back. “Yes! yes!” say t
+- p.307 runt: victims.¹⁴⁰
+- p.314 runt: control.
+- p.315 runt: now!
+- p.317 loose line: mean gap 0.57 em: advantages of human neighborhood insignificant,
+- p.328 loose line: mean gap 0.56 em: recorded which are only explicable by the frenzy o
+- p.329 orphan: exist, think, and act, and am worth what I am worth,
+- p.338 loose line: mean gap 0.64 em: In the autobiography of Thomas Elwood, an early
+- p.341 runt: —
+- p.345 loose line: mean gap 0.66 em: Where to seek the easy and the pleasant seems
+- p.349 runt: —
+- p.350 runt: feeling.
+- p.352 loose line: mean gap 0.59 em: Father Vianney’s asceticism taken in its totality 
+- p.354 runt: you.
+- p.355 widow: “When you stop at one thing, you cease to open
+- p.362 runt: odd.
+- p.382 runt: relished.
+- p.388 loose line: mean gap 0.61 em: I drew this distinction, you may remember, in my
+- p.393 runt: follows.
+- p.393 loose line: mean gap 0.62 em: Our survey of the phenomena of saintliness has
+- p.397 orphan: pher exclaims: “to be loved by a noble, elevated,
+- p.397 runt: example.
+- … 64 more
+
+## scholar — 768 pages, measure 3.0 in, line box 13.7 pt
+
+counts: loose line 74, runt 81, widow 10, orphan 8
+
+- p.13 loose line: mean gap 0.57 em: tutions, but rather religious feelings and religio
+- p.15 loose line: mean gap 0.59 em: natural antecedents. What is nowadays called the
+- p.17 runt: differs.
+- p.30 loose line: mean gap 0.58 em: No! their immediate spiritual instincts are too
+- p.31 runt: below.
+- p.41 loose line: mean gap 0.59 em: The mass of collateral phenomena, morbid or
+- p.46 loose line: mean gap 0.56 em: As there thus seems to be no one elementary
+- p.51 runt: mance.
+- p.54 widow: must range to it, or be pulverized by the recoil.”⁷
+- p.55 runt: farther.
+- p.66 runt: way.”¹¹
+- p.69 runt: intense.
+- p.71 runt: nation.
+- p.75 loose line: mean gap 0.63 em: peculiarity of religious happiness out. The more
+- p.81 runt: good.
+- p.83 runt: being.
+- p.84 loose line: mean gap 0.61 em: This absolute determinability of our mind by
+- p.86 widow: phenomena of nature actually wear a human face.²⁰
+- p.94 runt: —
+- p.95 runt: called.
+- p.105 runt: —
+- p.106 runt: plans.”
+- p.107 loose line: mean gap 0.61 em: is the convincingness of what it brings to birth.
+- p.108 loose line: mean gap 0.58 em: ought ultimately to find for themselves articulate
+- p.108 runt: result.
+- p.112 runt: joy.
+- p.117 runt: day.
+- p.117 loose line: mean gap 0.64 em: In many persons, happiness is congenital and
+- p.123 loose line: mean gap 0.60 em: “His favorite occupation,” writes his disciple,
+- p.131 runt: needs.
+- p.133 loose line: mean gap 0.56 em: for the most part their nominal connection with
+- p.135 runt: case.
+- p.135 runt: dential?
+- p.137 runt: science.
+- p.138 loose line: mean gap 0.59 em: spoken; and, finally, Hinduism has contributed a
+- p.146 runt: view:—
+- p.156 runt: being.”
+- p.184 loose line: mean gap 0.58 em: over his mind of good. Knowledge of evil is an
+- p.185 loose line: mean gap 0.56 em: from the sin, not groaning and writhing over its
+- p.189 runt: delay.
+- p.196 loose line: mean gap 0.61 em: again and again,—at intervals. But with this the
+- p.197 runt: wanting.
+- p.197 loose line: mean gap 0.57 em: “I will say nothing,” writes Goethe in 1824,
+- p.211 runt: asylum.
+- p.220 runt: roots.
+- p.221 loose line: mean gap 0.60 em: To prove this point, Tolstoy quotes the Buddha,
+- p.223 runt: before.
+- p.241 runt: best.”⁸⁶
+- p.242 runt: mistakes.
+- p.242 loose line: mean gap 0.56 em: geneous personality may be, we find the extreme
+- p.243 runt: directly.
+- p.244 loose line: mean gap 0.57 em: personality, with melancholy in the form of self‐
+- p.245 orphan: myself than in that which I disapproved in myself.
+- p.251 runt: ness.
+- p.251 loose line: mean gap 0.57 em: sort of mental material, and need not necessarily
+- p.259 loose line: mean gap 0.62 em: “There is no doubt in my mind that pure
+- p.260 widow: doubt that the perfect health aimed at by Christian
+- p.269 loose line: mean gap 0.61 em: Before entering upon a minuter study of the
+- p.278 runt: centre.
+- p.279 runt: sudden.
+- p.283 runt: them.
+- p.301 runt: ference.”
+- p.301 runt: words:—
+- p.312 orphan: years, making what money I wanted by journalism,
+- p.319 runt: truth.
+- p.329 loose line: mean gap 0.57 em: The important fact which this “field” formula
+- p.329 loose line: mean gap 0.57 em: alters into its successor. Our whole past store of
+- p.332 loose line: mean gap 0.60 em: The most important consequence of having a
+- p.332 loose line: mean gap 0.55 em: emotional or intellectual, to this whole sphere of
+- p.335 loose line: mean gap 0.58 em: of Alline, Bradley, Brainerd, and the graduate of
+- p.353 runt: —
+- p.357 loose line: mean gap 0.60 em: mon. Here is another from Starbuck’s collection,
+- p.358 loose line: mean gap 0.56 em: Leuba quotes the case of a Mr. Peek, where the
+- p.369 runt: deep.
+- p.379 loose line: mean gap 0.65 em: Such rapid abolition of ancient impulses and
+- p.380 orphan: world’s selfish little interests; and a conviction, not
+- p.381 runt: control.
+- p.386 loose line: mean gap 0.66 em: dant in religious literature. I could easily weary
+- p.391 runt: endure.
+- p.392 orphan: sweetness, far beyond all that I had ever felt before.
+- … 93 more
