@@ -106,7 +106,16 @@ def single(site):
         return re.sub(r'url\((fonts/[^)]+\.woff2)\)', font, text)
 
     html = re.sub(r'<link rel="stylesheet" href="([^"]+)">', lambda m: '<style>\n%s</style>' % css(m.group(1)), html)
-    html = re.sub(r'<script src="([^"]+)"></script>', lambda m: '<script>\n%s</script>' % read(m.group(1)).replace('</script', '<\\/script'), html)
+    def js(rel):
+        text = read(rel)
+        if rel == 'site.js':  # a house logo travels inside the single file too
+            def logo(m):
+                path = os.path.join(base, m.group(2))
+                mime = {'svg': 'image/svg+xml', 'png': 'image/png', 'jpg': 'image/jpeg', 'jpeg': 'image/jpeg', 'webp': 'image/webp'}[path.rsplit('.', 1)[-1].lower()]
+                return "logo: 'data:%s;base64,%s'" % (mime, base64.b64encode(open(path, 'rb').read()).decode())
+            text = re.sub(r"^(\s*)logo:\s*'([^']+)'", lambda m: m.group(1) + logo(m), text, flags=re.M)
+        return text.replace('</script', '<\\/script')
+    html = re.sub(r'<script src="([^"]+)"></script>', lambda m: '<script>\n%s</script>' % js(m.group(1)), html)
     html = re.sub(r'<link rel="icon" href="([^"]+\.svg)" type="image/svg\+xml">',
                   lambda m: '<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,%s">' % base64.b64encode(read(m.group(1)).encode()).decode(), html)
     os.makedirs(os.path.join(ROOT, 'dist'), exist_ok=True)

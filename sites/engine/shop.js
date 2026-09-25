@@ -32,7 +32,10 @@
   const haystack = new Map(books.map(b => [b.id, fold([b.title, b.subtitle, b.author, b.description, shelfName[b.shelf]].join(' '))]));
   function fold(s) { return String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase(); }
 
-  const money = new Intl.NumberFormat(SITE.locale, { style: 'currency', currency: SITE.currency, minimumFractionDigits: SITE.currency === 'KES' || SITE.currency === 'PHP' ? 0 : 2, maximumFractionDigits: 2 });
+  // Shillings and pesos drop ".00" on whole amounts; any other amount always shows two places.
+  const cents = new Intl.NumberFormat(SITE.locale, { style: 'currency', currency: SITE.currency, minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const whole = new Intl.NumberFormat(SITE.locale, { style: 'currency', currency: SITE.currency, maximumFractionDigits: 0 });
+  const money = { format: n => ((SITE.currency === 'KES' || SITE.currency === 'PHP') && Number.isInteger(n) ? whole : cents).format(n) };
   const priceOf = (b, f) => (b.price && typeof b.price[f] === 'number' ? b.price[f] : null);
   // The format switch only means something once titles carry prices; until then it stays out of the way.
   const anyPriced = CAT.books.some(b => FORMATS.some(f => priceOf(b, f) != null));
@@ -47,7 +50,9 @@
     shelf: 'all',
     q: '',
     format: FORMATS.includes(load('format', 'print')) ? load('format', 'print') : 'print',
-    basket: (load('basket', []) || []).filter(l => byId.has(l.id) && FORMATS.includes(l.format)),
+    // Whatever an older page left in storage, keep only well-formed lines.
+    basket: [].concat(load('basket', []) || []).filter(l => l && byId.has(l.id) && FORMATS.includes(l.format))
+      .map(l => ({ id: l.id, format: l.format, qty: l.format === 'print' ? Math.max(1, Math.min(99, parseInt(l.qty, 10) || 1)) : 1 })),
   };
 
   // ---------- shell ----------
@@ -255,7 +260,8 @@
 
   function addToBag(b, format, n) {
     const line = state.basket.find(l => l.id === b.id && l.format === format);
-    if (line) line.qty = format === 'print' ? line.qty + n : 1;
+    if (line && format !== 'print') { toast(`${SITE.words.inBasket} — ${b.title} · ${SITE.formats[format]}`); return; }
+    if (line) line.qty = Math.min(99, line.qty + n);
     else state.basket.push({ id: b.id, format, qty: format === 'print' ? n : 1 });
     save('basket', state.basket);
     renderBagCount();
@@ -263,8 +269,9 @@
   }
 
   let toastTimer;
+  const toastEl = $('#toast');
   function toast(msg) {
-    const t = $('#toast'), host = document.querySelector('dialog[open]') || document.body;
+    const t = toastEl, host = document.querySelector('dialog[open]') || document.body;
     if (t.parentNode !== host) host.appendChild(t);
     t.textContent = msg; t.classList.add('on');
     clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('on'), 2600);
@@ -273,11 +280,14 @@
   // ---------- routing ----------
   let lastList = '#/', focusCatalogue = false;
   function route() {
-    const h = location.hash || '#/';
+    let h = location.hash || '#/';
+    if (h === '#catalogue') { history.replaceState(null, '', '#/'); h = '#/'; requestAnimationFrame(scrollToCatalogue); }
     const m = h.match(/^#\/book\/([\w-]+)/);
     if (m) { openBook(m[1]); return; }
+    const fromBook = $('#dlg-book').open;
     closeBook();
-    if (h === '#catalogue') return;
+    if ($('#dlg-bag').open) $('#dlg-bag').close();
+    if (fromBook && h === lastList) return;
     const s = h.match(/^#\/shelf\/([\w-]+)/);
     const next = s && shelves.some(x => x.slug === s[1]) ? s[1] : 'all';
     const changed = next !== state.shelf || state.q;
@@ -299,7 +309,21 @@
 
   // ---------- events ----------
   document.addEventListener('click', e => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
     const t = e.target;
+    if (t.closest('a[href="#catalogue"]')) {
+      e.preventDefault(); scrollToCatalogue(); $('#catalogue').focus({ preventScroll: true }); return;
+    }
+    // A chip or the brand for the page already showing: clear a search; the brand also goes to the top.
+    const nav = t.closest('#shelves .chip, .bar .brand');
+    if (nav) {
+      if ((location.hash || '#/') === nav.getAttribute('href')) {
+        e.preventDefault();
+        if (state.q) { state.q = ''; $('#q').value = ''; renderCatalogue(); }
+      }
+      if (nav.matches('.brand')) window.scrollTo({ top: 0, behavior: reduce() ? 'auto' : 'smooth' });
+      return;
+    }
     const fmtBtn = t.closest('.fmt button');
     if (fmtBtn) {
       state.format = fmtBtn.dataset.fmt; save('format', state.format);

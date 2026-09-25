@@ -20,7 +20,7 @@ window.SITE = {
   kinds: { booklet: 'Booklet', set: 'Set', bible: 'Bible', dvd: 'DVD', other: '' },
   words: {
     browse: 'Browse', titles: 'titles', all: 'All', none: 'Nothing found', noneHint: 'Try an author, or one word from the title.',
-    unpriced: 'Price to follow', toPrice: '{n} to be priced at checkout', add: 'Add to cart', added: 'Added', basket: 'Cart', total: 'Subtotal',
+    unpriced: 'Price to follow', toPrice: '{n} to be priced at checkout', add: 'Add to cart', added: 'Added', inBasket: 'Already in your cart', basket: 'Cart', total: 'Subtotal',
     checkout: 'Checkout', checkoutNote: 'Preview only — M-Pesa and card checkout not connected yet.', empty: 'Your cart is empty.',
     remove: 'Remove', removed: 'Removed', books: 'Books', more: 'More in', isbn: 'ISBN', pages: 'Pages', kind: 'Format',
   },

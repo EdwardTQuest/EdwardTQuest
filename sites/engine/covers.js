@@ -56,7 +56,9 @@
     let d = '';
     for (let i = 0; i < n; i++) {
       const a = (i / n) * Math.PI * 2 + r() * 0.05;
-      const r0 = 9 + r() * 4, r1 = 40 + r() * (i % 4 === 0 ? 170 : 70);
+      const r0 = 9 + r() * 4;
+      let r1 = 40 + r() * (i % 4 === 0 ? 170 : 70);
+      if (!hero && Math.sin(a) > 0) r1 = Math.min(r1, (H * 0.5 - cy) / Math.sin(a));
       d += `M${f(cx + r0 * Math.cos(a))} ${f(cy + r0 * Math.sin(a))}L${f(cx + r1 * Math.cos(a))} ${f(cy + r1 * Math.sin(a))}`;
     }
     out += `<path d="${d}" stroke="var(--cv-ac)" stroke-width="0.5" opacity="0.45"/>`;
