@@ -7,7 +7,7 @@ it compares with pipeline 1.
 
 The short version: **the mechanical stages hold at scale and cost nothing per book; the
 judgement layer works but only when a person or a model actually looks; and looking is what
-found every defect that mattered.** Six of the eight defects below were invisible to every
+found every defect that mattered.** Ten of the thirteen defects below were invisible to every
 programmatic check and visible in the first page sample I opened.
 
 {{SUMMARY_TABLE}}
@@ -92,6 +92,11 @@ calling a stage done.
 | 6 | The blank page before the colophon carried a running head. | Everyman sheet, page 91. | template |
 | 7 | The stray-mark lens reported every italic and every note call as a stray mark (80 findings in one book), and the apparatus lens counted 0 note definitions against 13 calls. | Reading PROOF.md as an overseer would. | proof lenses |
 | 8 | The EPUB check called 187 words "lost" that were note numbers and small-caps markup. | Spinoza's epub-check.md. | epub check |
+| 9 | The part-page rule (a recto of its own for "Talks to Teachers") never fired: the `show` rule sat inside an `if` block and applied to nothing; the part title came out as a line of plain text at the foot of a page. | The *Talks to Teachers* contact sheet. | template |
+| 10 | The first fix for defect 3 (a blank page made inside the heading's show rule) did not converge on long books: *Varieties* took twenty minutes an edition and *The Antichrist* carried folio 1 on every page. Replaced by engine page breaks and markers. | Typst's own warning, then the Antichrist sheet. | template |
+| 11 | The title page hyphenated the title ("PSY-CHOLOGY"). | Same sheet. | template |
+| 12 | Part pages carried a folio; the blank verso after one carried a running head. | Same sheet, after fix 9. | template |
+| 13 | An essay's title note ("[1] An Address to the Philosophical Clubs…") sat two hundred paragraphs after its call and was never bound; the first attempt to fix it dropped the note. | James's chapter titles with a bare `[1]`. | importer |
 
 Also found and fixed in the same pass: the dictionary sweep flagged "pp.", "Cf.", "5th", a bare
 "B", Latin in italics and roman numerals as likely errors; the structure battery called every
