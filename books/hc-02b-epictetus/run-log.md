@@ -47,3 +47,12 @@ Read first, write last.
 - 2026-09-25 14:44 · **plan** · wrote 1-plan/plan.md (skim of 2-text/manuscript.md); overseer fills it, then `ath plan hc-02b-epictetus --sync`
 - 2026-09-25 14:46 · **epub** · hc-02b-epictetus.epub built (1.65 MB), 0 problems; see 4-epub/epub-check.md
 - 2026-09-25 14:46 · **proof** · PROOF.md written; findings: structure and sequence 12, dictionary sweep 102, apparatus 0, cross-edition consistency 0, mechanical 0, render and look 4
+- 2026-09-25 14:49 · **typeset** · deluxe: 60 pages, spine 0.15 in (cream), inside margin 0.75 in, 10 plates; page samples [1, 2, 3, 4, 5, 6]… in 3-typeset/pages/
+- 2026-09-25 14:49 · **typeset** · everyman: 58 pages, spine 0.145 in (cream), inside margin 0.6 in, 10 plates; page samples [1, 2, 3, 4, 5, 6]… in 3-typeset/pages/
+- 2026-09-25 14:49 · **typeset** · scholar: 70 pages, spine 0.175 in (cream), inside margin 0.85 in, 10 plates; page samples [1, 2, 3, 4, 5, 6]… in 3-typeset/pages/
+- 2026-09-25 14:49 · **epub** · hc-02b-epictetus.epub built (3.55 MB), 0 problems; see 4-epub/epub-check.md
+- 2026-09-25 14:49 · **cover** · deluxe: spread 11.330 × 8.180 in, spine 0.15 in for 60 pages, wrap 0.591 in (hardcover (case laminate))
+- 2026-09-25 14:49 · **cover** · everyman: spread 8.893 × 6.623 in, spine 0.145 in for 58 pages, wrap 0.125 in (paperback, matte)
+- 2026-09-25 14:49 · **cover** · scholar: spread 10.423 × 7.250 in, spine 0.175 in for 70 pages, wrap 0.125 in (paperback, glossy)
+- 2026-09-25 14:49 · **cover** · fronts {'deluxe': 'plate', 'everyman': 'plate', 'scholar': 'plate'}; epub + site covers; 10 plates prepared (print grayscale, epub colour). Look at 1-plan/cover-contact.jpg.
+- 2026-09-25 14:49 · **proof** · PROOF.md written; findings: structure and sequence 12, dictionary sweep 102, apparatus 0, cross-edition consistency 0, mechanical 0, render and look 4

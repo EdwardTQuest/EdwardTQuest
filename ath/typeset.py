@@ -26,22 +26,28 @@ def kdp_inside(pages):
     return None
 
 
-def plates_for(b, nchap):
-    """Spread the chosen plates across the chapters: plate k goes before chapter round(k * n/(m+1))."""
+def plates_for(b, md, has_parts):
+    """Spread the chosen plates over the chapters; when a book has fewer chapters than plates,
+    over chapters and sections together (a plate leaf before a section is fine). Returns
+    (plates, on_sections)."""
     plates = [p for p in b.get('art.plates', []) if p.get('print')]
-    if not plates or nchap == 0:
-        return []
+    chapters, sections = M.plate_anchors(md, has_parts)
+    if not plates or not (chapters or sections):
+        return [], False
+    on_sections = len(chapters) < len(plates) and bool(sections)
+    n = len(chapters) + (len(sections) if on_sections else 0)
     m = len(plates)
-    out = []
-    used = set()
+    out, used = [], set()
     for k, p in enumerate(plates, 1):
-        ch = max(1, min(nchap, round(k * nchap / (m + 1)) if m < nchap else k))
-        while ch in used and ch < nchap:
-            ch += 1
-        used.add(ch)
+        a = max(1, min(n, round(k * n / (m + 1)) if m < n else k))
+        while a in used and a < n:
+            a += 1
+        if a in used:
+            break
+        used.add(a)
         cap = f'{p.get("title","")}' + (f' — {p.get("artist")}' if p.get('artist') else '') + (f', {p.get("year")}' if p.get('year') else '')
-        out.append({'before_chapter': ch, 'path': '/' + os.path.relpath(b.path(p['print']), ROOT), 'caption': cap.replace('[', '\\[').replace(']', '\\]')})
-    return out
+        out.append({'before_anchor': a, 'path': '/' + os.path.relpath(b.path(p['print']), ROOT), 'caption': cap.replace('[', '\\[').replace(']', '\\]')})
+    return out, on_sections
 
 
 def publication_lines(b, edition):
@@ -63,8 +69,8 @@ def publication_lines(b, edition):
     return [esc(l) if not l.startswith('#') else l for l in L]
 
 
-def build_body(b, has_parts, plates, opening_sc):
-    meta = {'has_parts': has_parts, 'opening_smallcaps': opening_sc, 'plates': plates}
+def build_body(b, has_parts, plates, opening_sc, on_sections=False):
+    meta = {'has_parts': has_parts, 'opening_smallcaps': opening_sc, 'plates': plates, 'plates_on_sections': on_sections}
     mf = b.path('3-typeset', 'meta.json')
     json.dump(meta, open(mf, 'w'))
     out = b.path('3-typeset', 'body.typ')
@@ -119,10 +125,9 @@ def typeset(b, edition):
     if errs:
         raise Fail('manuscript.md does not validate: ' + '; '.join(errs[:5]))
     has_parts = stats.get('h1', 0) > 0 and stats.get('h2', 0) > 0
-    nchap = stats.get('h2', 0) if has_parts else (stats.get('h1', 0) or stats.get('h2', 0))
-    plates = plates_for(b, nchap)
+    plates, on_sections = plates_for(b, md, has_parts)
     b.stage('3-typeset')
-    build_body(b, has_parts, plates, b.get('typeset.opening_smallcaps', True))
+    build_body(b, has_parts, plates, b.get('typeset.opening_smallcaps', True), on_sections)
     sig = b.path('3-typeset', f'signature-{edition}.png')
     signature.render(edition, b.get('typeset.signature_font', 'La Belle Aurore'), sig)
     main_path = b.path('3-typeset', f'main-{edition}.typ')
@@ -143,13 +148,10 @@ def typeset(b, edition):
             inside = need
             continue
         break
-    if err.strip():
-        warn_lines = [l for l in err.split('\n') if l.strip()][:8]
-        b.write('3-typeset', ) if False else None
     spine = round(pages * PAPER['cream'], 3)
     sample = render_pages(b, edition, pdf, pages)
     st = b.meta.setdefault('status', {}).setdefault('typeset', {})
-    st[edition] = {'pages': pages, 'spine_in': spine, 'inside_margin': inside or tpl_inside, 'plates': len(plates), 'pdf': f'3-typeset/{edition}.pdf'}
+    st[edition] = {'pages': pages, 'spine_in': spine, 'inside_margin': inside or tpl_inside, 'plates': len(plates), 'plates_on_sections': on_sections, 'pdf': f'3-typeset/{edition}.pdf'}
     b.save()
     b.log('typeset', f'{edition}: {pages} pages, spine {spine} in (cream), inside margin {inside or tpl_inside} in, {len(plates)} plates; page samples {sample[:6]}… in 3-typeset/pages/')
     return pages

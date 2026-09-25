@@ -6,7 +6,8 @@
 --   * a plate (figure with caption) before chapter N when meta.plates lists it
 local has_parts = false
 local plates = {}
-local chapter_count = 0
+local on_sections = false
+local anchor_count = 0
 local LABELS = { Chapter=1, Book=1, Part=1, Canto=1, Letter=1, Essay=1, Section=1, Act=1, Scene=1, Volume=1 }
 
 local function split_label(s)
@@ -17,17 +18,26 @@ local function split_label(s)
   return nil, s
 end
 
+local function plate_block(p)
+  local img = pandoc.Image(pandoc.Inlines(pandoc.Str(p.caption)), p.path, p.caption)
+  return pandoc.Figure({ pandoc.Plain({ img }) }, { long = { pandoc.Plain({ pandoc.Str(p.caption) }) } }, pandoc.Attr('', { 'plate' }))
+end
+
 local function header(h, division)
   local is_chapter = (has_parts and h.level == 2) or ((not has_parts) and h.level <= 2)
-  if not is_chapter then return { h } end
+  if not is_chapter then
+    if not division and on_sections and h.level == 3 then
+      anchor_count = anchor_count + 1
+      local p = plates[anchor_count]
+      if p then return { plate_block(p), h } end
+    end
+    return { h }
+  end
   local out = {}
   if not division then
-    chapter_count = chapter_count + 1
-    local p = plates[chapter_count]
-    if p then
-      local img = pandoc.Image(pandoc.Inlines(pandoc.Str(p.caption)), p.path, p.caption)
-      table.insert(out, pandoc.Figure({ pandoc.Plain({ img }) }, { long = { pandoc.Plain({ pandoc.Str(p.caption) }) } }, pandoc.Attr('', { 'plate' })))
-    end
+    anchor_count = anchor_count + 1
+    local p = plates[anchor_count]
+    if p then table.insert(out, plate_block(p)) end
   end
   local s = pandoc.utils.stringify(h.content)
   local lab, rest = nil, s
@@ -65,9 +75,10 @@ end
 function Pandoc(doc)
   local m = doc.meta
   if m.has_parts ~= nil then has_parts = (m.has_parts == true) or (pandoc.utils.stringify(m.has_parts) == 'true') end
+  if m.plates_on_sections ~= nil then on_sections = (m.plates_on_sections == true) or (pandoc.utils.stringify(m.plates_on_sections) == 'true') end
   if m.plates then
     for _, p in ipairs(m.plates) do
-      plates[tonumber(pandoc.utils.stringify(p.before_chapter))] = { path = pandoc.utils.stringify(p.path), caption = pandoc.utils.stringify(p.caption) }
+      plates[tonumber(pandoc.utils.stringify(p.before_anchor))] = { path = pandoc.utils.stringify(p.path), caption = pandoc.utils.stringify(p.caption) }
     end
   end
   return pandoc.Pandoc(walk(doc.blocks, false), doc.meta)

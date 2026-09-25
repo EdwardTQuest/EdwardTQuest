@@ -218,3 +218,25 @@ def split_label(t):
     if re.fullmatch(r'(Chapter|Book|Part|Canto|Letter|Essay|Section|Act|Scene|Volume)\s+[IVXLC0-9A-Za-z-]+|[IVXLC]{1,7}|[0-9]{1,3}', t):
         return t, ''
     return '', t
+
+
+def plate_anchors(md, has_parts):
+    """Where plates may go: chapter headings outside front/back divisions; if there are fewer
+    chapters than a book wants plates, sections (###) join the list. Returns (anchors, on_sections)
+    where anchors is a list of (kind, title) in document order."""
+    chapters, sections = [], []
+    depth = 0
+    for l in split_front_matter(md)[1].split('\n'):
+        if l.startswith(':::'):
+            depth += 1 if re.match(r':::\s*(\{|[a-z])', l) else -1
+            continue
+        m = HEAD.match(l)
+        if not m or depth > 0:
+            continue
+        lv = len(m.group(1))
+        chap_lv = 2 if has_parts else (1, 2)
+        if (lv == chap_lv) if isinstance(chap_lv, int) else (lv in chap_lv):
+            chapters.append(('chapter', m.group(2)))
+        elif lv == (3 if has_parts else 3):
+            sections.append(('section', m.group(2)))
+    return chapters, sections

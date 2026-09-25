@@ -12,7 +12,8 @@
 local has_parts = false
 local opening_sc = true
 local plates = {}
-local chapter_count = 0
+local on_sections = false
+local anchor_count = 0
 local main_started = false
 
 local function raw(s) return pandoc.RawBlock('typst', s) end
@@ -64,8 +65,8 @@ local function header_blocks(h, division)
       main_started = true
     end
     if not division then
-      chapter_count = chapter_count + 1
-      local p = plates[chapter_count]
+      anchor_count = anchor_count + 1
+      local p = plates[anchor_count]
       if p then table.insert(out, raw('#plate("' .. esc(p.path) .. '", [' .. p.caption .. '])')) end
     end
     local lab, title = nil, h.content
@@ -86,6 +87,11 @@ local function header_blocks(h, division)
   if has_parts and lvl == 1 then
     table.insert(out, h)
     return out, false
+  end
+  if not division and on_sections and lvl == 3 then
+    anchor_count = anchor_count + 1
+    local p = plates[anchor_count]
+    if p then table.insert(out, raw('#plate("' .. esc(p.path) .. '", [' .. p.caption .. '])')) end
   end
   table.insert(out, pandoc.Header(chapter_level() + (lvl - 2), h.content))
   return out, false
@@ -144,9 +150,10 @@ function Pandoc(doc)
   local m = doc.meta
   if m.has_parts ~= nil then has_parts = (m.has_parts == true) or (pandoc.utils.stringify(m.has_parts) == 'true') end
   if m.opening_smallcaps ~= nil then opening_sc = not (pandoc.utils.stringify(m.opening_smallcaps) == 'false') end
+  if m.plates_on_sections ~= nil then on_sections = (m.plates_on_sections == true) or (pandoc.utils.stringify(m.plates_on_sections) == 'true') end
   if m.plates then
     for _, p in ipairs(m.plates) do
-      plates[tonumber(pandoc.utils.stringify(p.before_chapter))] = { path = pandoc.utils.stringify(p.path), caption = pandoc.utils.stringify(p.caption) }
+      plates[tonumber(pandoc.utils.stringify(p.before_anchor))] = { path = pandoc.utils.stringify(p.path), caption = pandoc.utils.stringify(p.caption) }
     end
   end
   return pandoc.Pandoc(walk(doc.blocks, false), doc.meta)

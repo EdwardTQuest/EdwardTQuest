@@ -132,20 +132,31 @@ def main(argv):
         raise Fail('manuscript.md does not validate: ' + '; '.join(errs[:5]))
     has_parts = stats.get('h1', 0) > 0 and stats.get('h2', 0) > 0
     nchap = stats.get('h2', 0) if has_parts else (stats.get('h1', 0) or stats.get('h2', 0))
-    # plates in colour, copied beside the build so pandoc can embed them
+    # plates in colour, copied beside the build so pandoc can embed them; same anchors as print
     plates = []
     pl_dir = os.path.join(out_dir, 'plates'); os.makedirs(pl_dir, exist_ok=True)
     chosen = [p for p in b.get('art.plates', []) if p.get('epub') or p.get('print')]
+    chapters, sections = M.plate_anchors(md, has_parts)
+    on_sections = len(chapters) < len(chosen) and bool(sections)
+    n = len(chapters) + (len(sections) if on_sections else 0)
     m = len(chosen)
+    used = set()
     for k, p in enumerate(chosen, 1):
+        if not n:
+            break
         src = b.path(p.get('epub') or p['print'])
         dst = os.path.join(pl_dir, f'plate-{k:02d}.jpg'); shutil.copy2(src, dst)
-        ch = max(1, min(nchap, round(k * nchap / (m + 1)) if m < nchap else k))
+        a = max(1, min(n, round(k * n / (m + 1)) if m < n else k))
+        while a in used and a < n:
+            a += 1
+        if a in used:
+            break
+        used.add(a)
         cap = f'{p.get("title","")}' + (f' — {p.get("artist")}' if p.get('artist') else '') + (f', {p.get("year")}' if p.get('year') else '')
-        plates.append({'before_chapter': ch, 'path': dst, 'caption': cap})
+        plates.append({'before_anchor': a, 'path': dst, 'caption': cap})
     sig = os.path.join(out_dir, 'signature.png')
     signature.render('ebook', b.get('typeset.signature_font', 'La Belle Aurore'), sig, dpi=300)
-    meta = {'has_parts': has_parts, 'plates': plates, 'lang': b.meta.get('language', 'en'),
+    meta = {'has_parts': has_parts, 'plates': plates, 'plates_on_sections': on_sections, 'lang': b.meta.get('language', 'en'),
             'publisher': 'Athanasius', 'rights': f'Public domain text; editorial arrangement © {b.meta.get("year", 2026)} Athanasius',
             'identifier': f'urn:athanasius:{b.slug}', 'belongs-to-collection': b.meta.get('series', 'The Athanasius Library')}
     mf = os.path.join(out_dir, 'meta.json'); json.dump(meta, open(mf, 'w'))

@@ -113,18 +113,18 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 ## Lens 8 · cross-edition consistency — 0 (clean)
 *Scope:* the words of manuscript.md against the text of each PDF and of the EPUB
 
-- deluxe: manuscript words absent from the PDF text: 3 (e.g. ['nothing', 'un', 'impeded']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
-- everyman: manuscript words absent from the PDF text: 1 (e.g. ['morrow']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
+- deluxe: manuscript words absent from the PDF text: 4 (e.g. ['nothing', 'un', 'impeded', 'accomplish']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
+- everyman: manuscript words absent from the PDF text: 2 (e.g. ['morrow', 'administer']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
 - scholar: manuscript words absent from the PDF text: 38 (e.g. ['according', 'philosophers', 'nothing', 'authority', 'importance', 'happiness', 'himself', 'understanding', 'possible', 'possessions']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
-- epub: 5 spine items, 12 manifest items, 3.0 MB unpacked
-- epub: manuscript words 10,736; EPUB words 11,194; manuscript words not found in EPUB: 0
+- epub: 5 spine items, 21 manifest items, 4.9 MB unpacked
+- epub: manuscript words 10,736; EPUB words 11,258; manuscript words not found in EPUB: 0
 
 ## Lens 9 · mechanical — 0 (clean)
 *Scope:* PDF page size, page count, embedded fonts; EPUB structure (see lens 8)
 
-- deluxe: 48 pages (even), page size 360 x 504 pts = trim, fonts 3, unembedded none, within KDP 24–828
-- everyman: 46 pages (even), page size 306 x 459 pts = trim, fonts 3, unembedded none, within KDP 24–828
-- scholar: 56 pages (even), page size 360 x 504 pts = trim, fonts 3, unembedded none, within KDP 24–828
+- deluxe: 60 pages (even), page size 360 x 504 pts = trim, fonts 3, unembedded none, within KDP 24–828
+- everyman: 58 pages (even), page size 306 x 459 pts = trim, fonts 3, unembedded none, within KDP 24–828
+- scholar: 70 pages (even), page size 360 x 504 pts = trim, fonts 3, unembedded none, within KDP 24–828
 
 ## Lens 10 · render and look — 4 (needs eyes)
 *Scope:* sampled pages of every edition; the covers

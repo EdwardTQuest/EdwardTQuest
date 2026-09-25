@@ -256,32 +256,35 @@ status:
     errors: 0
   typeset:
     deluxe:
-      pages: 48
-      spine_in: 0.12
+      pages: 60
+      spine_in: 0.15
       inside_margin: 0.75
       plates: 10
+      plates_on_sections: true
       pdf: 3-typeset/deluxe.pdf
     everyman:
-      pages: 46
-      spine_in: 0.115
+      pages: 58
+      spine_in: 0.145
       inside_margin: 0.6
       plates: 10
+      plates_on_sections: true
       pdf: 3-typeset/everyman.pdf
     scholar:
-      pages: 56
-      spine_in: 0.14
+      pages: 70
+      spine_in: 0.175
       inside_margin: 0.85
       plates: 10
+      plates_on_sections: true
       pdf: 3-typeset/scholar.pdf
   epub:
     state: done
-    when: 2026-09-25 14:46
+    when: 2026-09-25 14:49
     problems: 0
-    size_mb: 1.65
+    size_mb: 3.55
     cover: true
   cover:
     state: done
-    when: 2026-09-25 14:44
+    when: 2026-09-25 14:49
     layout:
       deluxe: plate
       everyman: plate
@@ -289,7 +292,7 @@ status:
     plates: 10
   proof:
     state: done
-    when: 2026-09-25 14:46
+    when: 2026-09-25 14:49
     findings: 12
 checks:
   expected_sections: null
