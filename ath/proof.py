@@ -84,7 +84,12 @@ def main(argv):
     seq = E.sequence_proof(md, b.get('checks.expected_sections'))
     bat = E.structure_battery(md)
     body = M.split_front_matter(md)[1]
-    stray = [(m.start(), body[max(0, m.start() - 30):m.end() + 30].replace('\n', ' ')) for m in re.finditer(r'(?<!\*)\*(?!\s?\*)(?![^*\n]*\*)|(?<![\[\w])_(?![\w])|\^|(?<!\[)\^|\[(?!\^)', body)]
+    # marks that should not survive in a manuscript: an unpaired * or _, a caret, a [n] call the importer
+    # could not bind, a bracket that is not a note call or a small-caps span. Paired italics, note
+    # calls, small-caps spans, plates and section breaks are stripped first so they never count.
+    plain = re.sub(r'\*\*[^*\n]+\*\*|\*[^*\n]+\*', '', body)
+    plain = re.sub(r'\[\^[^\]]+\](?::)?|\[[^\]\n]{1,80}\]\{\.smallcaps\}|!\[[^\]]*\]\([^)]*\)\{\.plate\}|^\* \* \*$', '', plain, flags=re.M)
+    stray = [(m.start(), plain[max(0, m.start() - 30):m.end() + 30].replace('\n', ' ')) for m in re.finditer(r'[*_^]|\[', plain)]
     n3 = len(bat) + len([s for s in seq if 'GAP' in s or 'REPEAT' in s or 'MISMATCH' in s]) + len(stray) + len(errs)
     lenses.append((3, 'structure and sequence', f'every heading and paragraph of manuscript.md ({stats.get("words",0):,} words, {stats.get("chapters")} chapters)', n3,
                    [f'- {s}' for s in seq] + [f'- {k}: {v}' for k, v in bat[:40]] + [f'- stray mark: …{c}…' for _, c in stray[:30]] + [f'- ERROR {e}' for e in errs], 'clean' if n3 == 0 else 'findings'))
@@ -122,7 +127,7 @@ def main(argv):
         a7 += [f'- EPUB nav: {len(nav)} entries vs {len(chap_titles)} chapter headings; missing from nav: {missing[:8] or "none"}; extra in nav: {extra[:8] or "none"}']
     else:
         a7.append('- no EPUB yet')
-    notes_called = len(set(M.NOTE_REF.findall(body))); notes_defined = len(set(M.NOTE_DEF.findall(body)))
+    notes_called = len(set(M.NOTE_REF.findall(body))); notes_defined = len(set(re.findall(r'^\[\^([^\]]+)\]:\s', body, flags=re.M)))
     a7.append(f'- notes: {notes_called} called, {notes_defined} defined' + ('' if notes_called == notes_defined else ' — MISMATCH'))
     for e in b.get('editions', EDITIONS):
         p = b.path('3-typeset', f'{e}.pdf')

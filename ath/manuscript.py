@@ -587,7 +587,7 @@ def import_text(text, title='', author='', kind='text'):
                         and ((re.match(r'^[_(]?[A-Z][a-z]+[,.]? *(\d|[A-Z])', nxt) or (len(nxt.split()) <= 14 and re.search(r'(?<!\d)(1[5-9]\d\d|20\d\d)(?!\d)', nxt)))
                              or ((not nxt or heading_text(nxt)) and re.search(r'(?<![A-Z])[A-Z]\.\s', one))):
                     out.append(f'[{title_case(one)}]{{.smallcaps}}'); rep['signature lines'] += 1; continue   # H. L. MENCKEN.
-                out.append(f'## {title_case(one)}'); rep['chapters'] += 1; seen_heading = True; continue
+                out.append(f'## {title_case(one.rstrip(". "))}'); rep['chapters'] += 1; seen_heading = True; continue
             if DIVISION_WORDS.match(re.sub(r'\s+', ' ', one).replace('\u2019', "'")) or (len(lines) == 1 and re.fullmatch(r'(The )?(First|Second|Third|Fourth|Fifth) (Dialogue|Part|Book|Meditation)\.?', one, re.I)):
                 out.append(f'## {title_case(one.rstrip("."))}'); rep['chapters'] += 1; seen_heading = True; continue
         if looks_verse(raw):

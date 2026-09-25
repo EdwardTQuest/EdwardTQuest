@@ -37,10 +37,19 @@
   #body
 ]
 
-// a chapter that must open recto: the verso left blank carries neither running head nor folio
+// a chapter that must open recto: the verso left blank carries neither running head nor folio.
+// The break is emitted by the filter BEFORE the heading (#chapter-break()), never inside the
+// heading's show rule: a blank page made inside the show rule becomes the heading's own location,
+// and every running head, folio and contents entry that asks "where is this chapter?" gets the
+// blank page. (Found on the philosophy batch: Scholar contents said "vi" for chapter I.)
+#let edstate = state("edition", none)
 #let to-recto() = {
   pagebreak(weak: true)
   context { if calc.even(here().page()) { page(header: none, footer: none)[] } }
+}
+#let chapter-break() = context {
+  let e = edstate.get()
+  if e != none and e.recto { to-recto() } else { pagebreak(weak: true) }
 }
 
 // a plate: full page, the picture sized to the text block, caption in small italic
@@ -85,6 +94,7 @@
   let chap-level = if has-parts { 2 } else { 1 }
   let opening-sc = meta.at("opening_smallcaps", default: true)
 
+  edstate.update(ed)
   set document(title: title, author: author)
   set page(width: ed.trim.at(0), height: ed.trim.at(1),
            margin: (inside: ed.inside, outside: ed.outside, top: ed.top, bottom: ed.bottom))
@@ -128,14 +138,14 @@
 
   // headings
   show heading.where(level: chap-level): it => {
-    if ed.recto { to-recto() } else { pagebreak(weak: true) }
+    pagebreak(weak: true)                 // the filter's #chapter-break() already made the page
     context { if pending-reset.get() { counter(page).update(1); [#metadata("main") <mainstart>] } }
     pending-reset.update(false)
     context { opener-block(chlabel.get(), it.body, ed) }
   }
   if has-parts {
     show heading.where(level: 1): it => {
-      to-recto()
+      pagebreak(weak: true)
       v(2.2in)
       align(center)[#text(size: 1.15em, tracking: 0.18em)[#smallcaps(all: true)[#lower(it.body)]]]
       pagebreak()
@@ -201,6 +211,7 @@
     #v(0.5em) #image("/assets/ornaments/orn_swirl_double_rule.png", width: 1.1in) #v(0.6em)
     #set text(size: 0.92em)
     #show outline.entry: it => {
+      set text(hyphenate: false)
       let loc = it.element.location()
       let ms = query(<mainstart>)
       let f = if ms.len() > 0 and loc.page() >= ms.first().location().page() {
@@ -209,7 +220,8 @@
       if it.level == 1 and has-parts [
         #block(width: 100%, above: 1.1em, below: 0.3em)[#text(tracking: 0.1em)[#smallcaps(all: true)[#lower(it.element.body)]]]
       ] else [
-        #block(width: 100%, above: 0.65em)[#link(loc)[#it.element.body #box(width: 1fr, repeat[.#h(0.35em)]) #f]]
+        #block(width: 100%, above: 0.65em)[#link(loc)[#grid(columns: (1fr, auto), column-gutter: 0.5em, align: (left + bottom, right + bottom),
+          [#it.element.body #box(width: 1fr, repeat[.#h(0.35em)])], [#f])]]
       ]
     }
     #outline(title: none, depth: chap-level)
@@ -219,8 +231,10 @@
   set page(header: hdr, footer: ftr)
   set par(justify: true)
   body
-  // ---------------------------------------------------------------- colophon
-  pagebreak(to: "even", weak: true)
+  // ---------------------------------------------------------------- colophon (on a verso; a blank
+  // recto before it carries neither running head nor folio)
+  pagebreak(weak: true)
+  context { if calc.odd(here().page()) { page(header: none, footer: none)[] } }
   page(header: none, footer: none)[
     #v(1fr)
     #align(center)[

@@ -73,6 +73,30 @@ is an estimate; take the exact figure from the IngramSpark cover template and pa
 `ath cover --spine X`. The inside margin is raised automatically to the house minimum for the
 page count (0.60 to 1.00 in). A book over 800 pages is flagged; split it into volumes.
 
+## What `ath edit` does to a Gutenberg text before the rules run
+
+The importer (`ath/manuscript.py`, `prepare_gutenberg` and `import_text`) is where most of the
+structure judgement is automated, and it was tuned against twenty-two philosophy texts of every
+typographic habit Gutenberg has. It: strips the licence, transcriber's notes, page markers, `#…#`
+and `=…=` emphasis markup; binds notes in four forms (`[Footnote N: …]`, `[N] text` paragraphs,
+FOOTNOTES blocks, `(N)` calls with `N text` endnotes) to their calls and keeps the unbound ones
+visible under *Notes Without a Call in the Source*; drops the title page, a contents list of any
+shape (page-numbered, dot-leadered, synopsis entries, analytical tables), a half-title, publisher's
+blurbs and advertisements, "THE END", and an index (page numbers of another setting); keeps a
+dedication, an epigraph with its attribution, and prose before the first heading as front matter;
+infers part / chapter / section from how labels repeat, from a numeral-with-title set on its own
+line against one set on one line, and from plain headings that divide restarting sequences; and
+wraps prefaces, translator's and editor's notes and *signed* introductions in `::: {.front}` so
+they take roman folios. An unsigned Introduction is the author's and stays a chapter. What it
+cannot know (a Part I label the edition never printed, a table set as columns of text) it leaves
+for the overseer, who fixes the source and re-runs. Retention across the twenty-two texts is
+99.7% of the source words net of the indexes dropped; the rest is what the list above names.
+
+`ath batch <list.yaml>` runs new → plan → edit (→ typeset → epub → proof) over a list and writes
+`books/_batch-report.md`: one row per book with the numbers the gates need. It carries; it does
+not judge. `ath preflight` ends with a smoke test that runs the importer, every edit rule and
+every check on a built-in sample, so a rule that cannot run on a sample never runs on a book.
+
 ## Where the model comes in, and where it does not
 
 The commands are deterministic and cheap. A Sonnet-class model can run the whole pipeline by

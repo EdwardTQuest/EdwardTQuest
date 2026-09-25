@@ -69,6 +69,7 @@ local function header_blocks(h, division)
       local p = plates[anchor_count]
       if p then table.insert(out, raw('#plate("' .. esc(p.path) .. '", [' .. p.caption .. '])')) end
     end
+    table.insert(out, raw('#chapter-break()'))      -- recto (or a plain break) BEFORE the heading, so the heading's location is the opener page
     local lab, title = nil, h.content
     if not division then lab, title = split_label(h.content) end
     if lab then
@@ -85,6 +86,7 @@ local function header_blocks(h, division)
     return out, true
   end
   if has_parts and lvl == 1 then
+    table.insert(out, raw('#chapter-break()'))
     table.insert(out, h)
     return out, false
   end

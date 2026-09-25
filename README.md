@@ -14,6 +14,7 @@ ath epub <slug>            # 4  EPUB 3 (pandoc) + check
 ath cover <slug>           #    fronts, backs, spreads sized from the page counts, e-book and site covers
 ath proof <slug>           # 5  the lens battery → 5-proof/PROOF.md ; ath tracker → CHANGES.md
 ath gate <slug> <gate> pass|fail --note "…"   the recorded judgement between stages (GATES.md)
+ath batch <list.yaml> [--through edit|typeset|epub|proof] [--only slug,…]   many books, one table: books/_batch-report.md
 ```
 
 Start with `ath preflight`. Read `PIPELINE.md` for the stages and their contracts, `GATES.md` for

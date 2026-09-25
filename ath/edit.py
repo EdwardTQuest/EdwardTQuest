@@ -403,7 +403,7 @@ def main(argv):
     elif srcname.endswith('.md'):
         body, imp = src, {'note': 'markdown body'}
     else:
-        body, imp = M.import_text(src, kind=('gutenberg' if kind == 'gutenberg' else 'text'))
+        body, imp = M.import_text(src, title=b.meta.get('title', ''), author=b.meta.get('author', ''), kind=('gutenberg' if kind == 'gutenberg' else 'text'))
     body, n_title = drop_title_block(body, b.meta.get('title', ''), b.meta.get('author', ''))
     body, n_demote = demote_numbered_points(body)
     body, n_div = divisions(body)
