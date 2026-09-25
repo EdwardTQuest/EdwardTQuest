@@ -1,0 +1,7 @@
+rule,count,cap,category,example
+hyphen joins,0,1428,O,
+curly quotes,757,28577,I,:: {.front} ## Translator's Note  In the writing of this Eng  →  :: {.front} ## Translator’s Note  In the writing of this Eng
+ellipses,13,2857,I,inous rays to pierce it;... the cornea must correspond exact  →  inous rays to pierce it;. . . the cornea must correspond exa
+dashes,293,7144,I,"l things among themselves--in short, to think matter. Such w  →  l things among themselves—in short, to think matter. Such wi"
+caps openings,0,1428,C,
+spacing and ligatures,25,7144,N,"e of the numbers 9, 8, 7, ..., etc.—in short, of the whole i  →  e of the numbers 9, 8, 7,..., etc.—in short, of the whole in"
