@@ -64,7 +64,7 @@ def build_body(b, has_parts, plates, opening_sc, on_sections=False):
     mf = b.path('3-typeset', 'meta.json')
     json.dump(meta, open(mf, 'w'))
     out = b.path('3-typeset', 'body.typ')
-    run(['pandoc', b.manuscript, '-f', 'markdown+smart', '-t', 'typst', '--wrap=none',
+    run(['pandoc', b.manuscript, '-f', 'markdown+smart-implicit_header_references-shortcut_reference_links', '-t', 'typst', '--wrap=none',
          '--lua-filter', os.path.join(TEMPLATES, 'typst', 'filter.lua'), '--metadata-file', mf, '-o', out], quiet=True)
     # an #include'd file has its own scope: it must import the house names (chlabel, verse, plate, ...)
     body = open(out, encoding='utf8').read()

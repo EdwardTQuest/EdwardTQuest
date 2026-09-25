@@ -168,7 +168,7 @@ def main(argv):
     fm_html = os.path.join(out_dir, 'front.xhtml')
     open(fm_html, 'w', encoding='utf8').write(front_matter_html(b, 'signature.png'))
     epub = os.path.join(out_dir, f'{b.slug}.epub')
-    cmd = ['pandoc', b.manuscript, '-f', 'markdown+smart', '-t', 'epub3', '-o', epub,
+    cmd = ['pandoc', b.manuscript, '-f', 'markdown+smart-implicit_header_references-shortcut_reference_links', '-t', 'epub3', '-o', epub,
            '--css', os.path.join(TEMPLATES, 'epub', 'style.css'), '--lua-filter', os.path.join(TEMPLATES, 'epub', 'filter.lua'),
            '--metadata-file', mf, '--toc', '--toc-depth', '2', '--split-level', '2', '--epub-title-page=false',
            '--include-before-body', fm_html, '--resource-path', out_dir]
