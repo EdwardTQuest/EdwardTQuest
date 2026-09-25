@@ -34,6 +34,7 @@ def dictionary():
     return _WORDS
 
 
+ABBREV = ['pp', 'p', 'cf', 'ib', 'ibid', 'op', 'cit', 'viz', 'etc', 'vol', 'vols', 'ch', 'chap', 'chaps', 'ed', 'eds', 'tr', 'trans', 'no', 'nos', 'l', 'll', 'fol', 'fols', 'sc', 'sq', 'sqq', 'seq', 'loc', 'ff', 'esp', 'fig', 'figs', 'pl', 'pt', 'bk', 'sec', 'sect', 'art', 'par', 'q', 'qu', 'ss', 'v', 'vv', 'n', 'nn', 'fr', 'st', 'mss', 'ms', 'lib', 'cap', 'ep', 'epp', 'dist', 'qq', 'ad', 'a', 'c', 'd', 'e', 'i', 'b', 'f', 'm', 'r', 't', 'w', 'h', 'k']
 SHORT_OK = {'a', 'i', 'o', 'an', 'as', 'at', 'be', 'by', 'do', 'go', 'he', 'if', 'in', 'is', 'it', 'me', 'my', 'no', 'of', 'on', 'or', 'so', 'to', 'up', 'us', 'we', 'am', 'ah', 'oh', 'lo', 'ye', 'ox', 'ad', 'id', 'ex', 're', 'st', 'mr', 'dr', 'ms', 'ii', 'iv', 'vi', 'ix', 'xi', 'xx', 'xl', 'lx', 'cc', 'ab', 'ye', 'em', 'en'}
 
 
@@ -116,7 +117,7 @@ def hyphen_joins(text):
             n += 1; return hyph
         flags.append(m.group(0))
         return m.group(0)
-    text = re.sub(r'\b([A-Za-z]{2,})-(?:\s*[—–-]\s*|\s+)([a-z]{2,})\b', rep, text)
+    text = re.sub(r'\b([A-Za-z]{2,})-(?:\s+[—–]\s+|\s+)(?!-)([a-z]{2,})\b', rep, text)
     return text, n, flags
 
 
@@ -248,6 +249,10 @@ def dictionary_sweep(md):
     fm, body = M.split_front_matter(md)
     body = re.sub(r'^#.*$', '', body, flags=re.M)
     body_t = re.sub(r'\b[A-Z]\.(?![A-Za-z])', ' ', body)          # A.D., B.C., C. Musonius: initials are not words
+    body_t = re.sub(r'(?<![A-Za-z])(' + '|'.join(ABBREV) + r')\.', ' ', body_t, flags=re.I)   # pp. cf. ibid. vol.: abbreviations are not words
+    body_t = re.sub(r'\b[A-Z]\b(?![’\'])', ' ', body_t)             # "Mr. A and B": a bare capital is a name
+    body_t = re.sub(r'(?<=\d)[A-Za-z]+', ' ', body_t)                 # 5th, 1st, 20s
+    italic = set(t for span in re.findall(r'\*([^*\n]{1,300})\*', body_t) for t in re.findall(r"[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ’'-]*[A-Za-zÀ-ÿ]|[A-Za-zÀ-ÿ]", span))
     tokens = re.findall(r"[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ’'-]*[A-Za-zÀ-ÿ]|[A-Za-zÀ-ÿ]", body_t)
     counts = collections.Counter(tokens)
     # one pass: every capitalised word that appears after a lowercase word or a comma (mid-sentence)
@@ -270,7 +275,7 @@ def dictionary_sweep(md):
 ARCHAIC = re.compile(r"^(?:[a-z]+(?:est|eth|st|dst|'st)|thou|thee|thy|thine|ye|hath|doth|wilt|shalt|art|wert|wast|ere|oft|whence|whither|thither|hither|nay|yea|betwixt|amongst|whilst|unto|saith|spake|hast|dost|didst|canst|wouldst|shouldst|couldst|mayst|wherewith|wherein|whereof|thereof|therein|hereof|forsooth|methinks|to-day|to-morrow|to-night)$", re.I)
 
 
-def suspicion(word, count):
+def suspicion(word, count, italic=False):
     """How likely an unknown token is an OCR/transcription error rather than a legitimate rarity.
     High: digits inside letters, mixed case inside a word, 1–2 letter tokens, impossible clusters,
     a real word with one letter swapped (ts/is, Tf/If, rn/m). Low: archaic inflections, hyphenated
@@ -307,6 +312,8 @@ def suspicion(word, count):
         sc -= 2
     if count >= 3:
         sc -= 1
+    if italic:
+        sc -= 3                                        # a foreign phrase set in italics: not an error
     return sc
 
 
@@ -329,6 +336,7 @@ def sequence_proof(md, expected=None):
             if v is not None:
                 seqs[(lvl, (m.group(1) or '#').lower())].append((v, ln))
     report = []
+    chapter_level = 2 if any(k[0] == 2 for k in seqs) else min((k[0] for k in seqs), default=2)
     for key, items in seqs.items():
         nums = [v for v, _ in items]
         gaps = [nums[i - 1] + 1 for i in range(1, len(nums)) if nums[i] != nums[i - 1] + 1]
@@ -336,7 +344,7 @@ def sequence_proof(md, expected=None):
         line = f'level {key[0]} "{key[1]}": {len(nums)} numbered, first {nums[0]}, last {nums[-1]}'
         if gaps: line += f'; GAPS after {gaps[:10]}'
         if dups: line += f'; REPEATS {dups[:10]}'
-        if expected and key[0] == 3 or (expected and len(seqs) == 1):
+        if expected and (key[0] == chapter_level or len(seqs) == 1):
             line += f'; expected {expected}: ' + ('OK' if nums[-1] == expected and len(nums) == expected else 'MISMATCH')
         report.append(line)
     return report
@@ -442,7 +450,7 @@ def main(argv):
     report += ['', f'## Validation: {len(errs)} errors, {len(warns)} warnings', ''] + [f'- ERROR {e}' for e in errs] + [f'- warn {w}' for w in warns[:60]]
     report += ['', f'## Stats: {stats}', '', '## Sequence proof', ''] + [f'- {s}' for s in (seq or ['no numbered headings'])]
     unk_sorted = sorted(unknown.items(), key=lambda kv: -kv[1])
-    scored = sorted(((suspicion(w, c), w, c) for w, c in unknown.items()), key=lambda t: (-t[0], -t[2]))
+    scored = sorted(((suspicion(w, c, w in italic), w, c) for w, c in unknown.items()), key=lambda t: (-t[0], -t[2]))
     suspicious = [(w, c, sc) for sc, w, c in scored if sc >= 3]
     report += ['', f'## Dictionary sweep: {sum(unknown.values())} unknown tokens of {total:,} ({100*sum(unknown.values())/max(1,total):.2f}%), {len(unknown)} distinct; {len(names)} names accepted', '',
                f'### Suspicious first — {len(suspicious)} likely errors (fix in the source, re-run)', '']

@@ -571,7 +571,8 @@ def import_text(text, title='', author='', kind='text'):
                 rest = m.group(4) or ''
                 mg = re.match(r'^((?:\s*,\s*(?:and\s+|AND\s+)?|\s*(?:and|AND)\s+)[IVXLC0-9]+\.?(?=[\s,]|$))+', rest)
                 if mg:
-                    label += ' ' + re.sub(r'\s*,\s*', ', ', re.sub(r'\s*(and|AND)\s+', ' and ', mg.group(0))).replace('  ', ' ').strip(' .')
+                    glued = re.sub(r'\s*,\s*', ', ', re.sub(r'\s*(and|AND)\s+', ' and ', mg.group(0))).replace('  ', ' ').strip(' .')
+                    label += glued if glued.startswith(',') else ' ' + glued
                     rest = rest[mg.end():]
                 rest = title_case(rest.strip(' .:—-')) if rest else ''
                 lvl = '#' if word in PART_WORDS else '###' if word in SECTION_WORDS else '##'
@@ -612,9 +613,59 @@ def import_text(text, title='', author='', kind='text'):
     out, n_merged, merged_at = merge_split_titles(out)
     rep['split titles merged'] = n_merged
     out, levels = infer_levels(out, merged_at)
+    out, n_front = front_divisions(out)
+    rep['front divisions'] = n_front
     rep['levels'] = levels
     body = '\n\n'.join(out) + '\n'
     return body, dict(rep)
+
+
+FRONT_ALWAYS = re.compile(r"^(preface|author'?s preface|advertisement|author'?s advertisement|prefatory note|dedication|to the reader|epistle dedicatory|translators?'?s?'? (note|preface|introduction)|editor'?s (note|preface|introduction)|publisher'?s (note|preface)|note)\.?$", re.I)
+FRONT_IF_SIGNED = re.compile(r"^(introduction|introductory|introductory (note|essay)|biographical (note|sketch)|memoir|life of [^.]+|prefatory (note|essay)|note)\.?$", re.I)
+
+
+def front_divisions(blocks):
+    """The prefaces, notes and signed introductions that stand before the first chapter are front
+    matter (roman folios, no chapter number): wrap each in ::: {.front}. An unsigned Introduction
+    is the author's first chapter and stays. Divisions already inside a ::: div are left alone."""
+    heads = [(i, HEAD.match(b)) for i, b in enumerate(blocks) if '\n' not in b and HEAD.match(b)]
+    depth = 0
+    in_div = set()
+    for i, b in enumerate(blocks):
+        if b.startswith(':::'):
+            depth += 1 if re.match(r':::\s*(\{|[a-z])', b) else -1
+        elif depth > 0:
+            in_div.add(i)
+    first_chapter = None
+    for i, m in heads:
+        if i in in_div:
+            continue
+        t = m.group(2).strip()
+        tn = re.sub(r'\s+', ' ', t).replace('\u2019', "'")
+        if not (FRONT_ALWAYS.match(tn) or FRONT_IF_SIGNED.match(tn) or len(m.group(1)) > 2):
+            first_chapter = i; break
+    if first_chapter is None:
+        return blocks, 0
+    spans = []
+    tops = [(i, m) for i, m in heads if i < first_chapter and i not in in_div and len(m.group(1)) <= 2]
+    for n, (i, m) in enumerate(tops):
+        end = tops[n + 1][0] if n + 1 < len(tops) else first_chapter
+        tn = re.sub(r'\s+', ' ', m.group(2).strip()).replace('\u2019', "'")
+        signed = any(re.match(r'^\[[^\]]{3,60}\]\{\.smallcaps\}$', blocks[k].strip()) for k in range(i + 1, end))
+        if FRONT_ALWAYS.match(tn) or (FRONT_IF_SIGNED.match(tn) and signed):
+            spans.append((i, end))
+    if not spans:
+        return blocks, 0
+    out, k = [], 0
+    for s, e in spans:
+        out.extend(blocks[k:s])
+        out.append('::: {.front}')
+        out.append(re.sub(r'^#{1,3} ', '## ', blocks[s]))
+        out.extend(re.sub(r'^# ', '## ', b) if HEAD.match(b) and '\n' not in b else b for b in blocks[s + 1:e])
+        out.append(':::')
+        k = e
+    out.extend(blocks[k:])
+    return out, len(spans)
 
 
 def merge_split_titles(blocks):

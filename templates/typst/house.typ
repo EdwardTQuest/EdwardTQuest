@@ -37,6 +37,12 @@
   #body
 ]
 
+// a chapter that must open recto: the verso left blank carries neither running head nor folio
+#let to-recto() = {
+  pagebreak(weak: true)
+  context { if calc.even(here().page()) { page(header: none, footer: none)[] } }
+}
+
 // a plate: full page, the picture sized to the text block, caption in small italic
 #let plate(path, caption) = {
   pagebreak(weak: true)
@@ -85,7 +91,8 @@
   set text(font: "EB Garamond", size: ed.size, lang: "en", hyphenate: true, number-type: "old-style",
            costs: (hyphenation: 120%, runt: 160%, widow: 280%, orphan: 280%))
   set par(justify: true, leading: ed.leading, first-line-indent: 1.15em, spacing: ed.leading)
-  show emph: set text(style: "italic")
+  // (no `show emph: set text(style: "italic")` here: emph toggles the style itself, and a set rule
+  //  on top of it toggled it straight back to roman — every italic in the book was lost)
   show quote.where(block: true): it => block(above: 1.0em, below: 1.0em, inset: (left: 1.6em, right: 1.2em))[
     #set text(size: 0.94em)
     #set par(first-line-indent: 0em)
@@ -121,14 +128,14 @@
 
   // headings
   show heading.where(level: chap-level): it => {
-    if ed.recto { pagebreak(to: "odd", weak: true) } else { pagebreak(weak: true) }
+    if ed.recto { to-recto() } else { pagebreak(weak: true) }
     context { if pending-reset.get() { counter(page).update(1); [#metadata("main") <mainstart>] } }
     pending-reset.update(false)
     context { opener-block(chlabel.get(), it.body, ed) }
   }
   if has-parts {
     show heading.where(level: 1): it => {
-      pagebreak(to: "odd", weak: true)
+      to-recto()
       v(2.2in)
       align(center)[#text(size: 1.15em, tracking: 0.18em)[#smallcaps(all: true)[#lower(it.body)]]]
       pagebreak()
