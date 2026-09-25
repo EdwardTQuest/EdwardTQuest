@@ -1,0 +1,198 @@
+- slug: mill-on-liberty
+  title: On Liberty
+  author: John Stuart Mill
+  gutenberg: 34901
+  file: /tmp/gb/texts/mill-on-liberty.txt
+  year: 1859
+  translator: ''
+  expected_sections: 5
+  edition_credit: the Project Gutenberg transcription of the 1869 fourth edition (Longmans)
+- slug: mill-utilitarianism
+  title: Utilitarianism
+  author: John Stuart Mill
+  gutenberg: 11224
+  file: /tmp/gb/texts/mill-utilitarianism.txt
+  year: 1863
+  translator: ''
+  expected_sections: 5
+  edition_credit: the Project Gutenberg transcription of the 1879 seventh edition
+- slug: mill-subjection-of-women
+  title: The Subjection of Women
+  author: John Stuart Mill
+  gutenberg: 27083
+  file: /tmp/gb/texts/mill-subjection-of-women.txt
+  year: 1869
+  translator: ''
+  expected_sections: 4
+  edition_credit: the Project Gutenberg transcription
+- slug: mill-representative-government
+  title: Considerations on Representative Government
+  author: John Stuart Mill
+  gutenberg: 5669
+  file: /tmp/gb/texts/mill-representative-government.txt
+  year: 1861
+  translator: ''
+  expected_sections: null
+  edition_credit: the Project Gutenberg transcription
+- slug: mill-autobiography
+  title: Autobiography
+  author: John Stuart Mill
+  gutenberg: 10378
+  file: /tmp/gb/texts/mill-autobiography.txt
+  year: 1873
+  translator: ''
+  expected_sections: 7
+  edition_credit: the Project Gutenberg transcription
+- slug: spinoza-ethics
+  title: Ethics
+  author: Benedict de Spinoza
+  gutenberg: 3800
+  file: /tmp/gb/texts/spinoza-ethics.txt
+  year: 1677
+  translator: R. H. M. Elwes
+  expected_sections: null
+  edition_credit: 'the Elwes translation of 1883 (Project Gutenberg #3800)'
+- slug: kant-critique-of-practical-reason
+  title: The Critique of Practical Reason
+  author: Immanuel Kant
+  gutenberg: 5683
+  file: /tmp/gb/texts/kant-critique-of-practical-reason.txt
+  year: 1788
+  translator: Thomas Kingsmill Abbott
+  expected_sections: null
+  edition_credit: 'the Abbott translation of 1889 (Project Gutenberg #5683)'
+- slug: kant-perpetual-peace
+  title: Perpetual Peace
+  author: Immanuel Kant
+  gutenberg: 50922
+  file: /tmp/gb/texts/kant-perpetual-peace.txt
+  year: 1795
+  translator: M. Campbell Smith
+  expected_sections: null
+  edition_credit: 'the Campbell Smith translation of 1903 (Project Gutenberg #50922)'
+- slug: hume-principles-of-morals
+  title: An Enquiry Concerning the Principles of Morals
+  author: David Hume
+  gutenberg: 4320
+  file: /tmp/gb/texts/hume-principles-of-morals.txt
+  year: 1751
+  translator: ''
+  expected_sections: null
+  edition_credit: the Project Gutenberg transcription of the 1777 edition
+- slug: nietzsche-human-all-too-human
+  title: Human, All Too Human
+  author: Friedrich Nietzsche
+  gutenberg: 38145
+  file: /tmp/gb/texts/nietzsche-human-all-too-human.txt
+  year: 1878
+  translator: Helen Zimmern
+  expected_sections: null
+  edition_credit: 'the Zimmern translation of 1909 (Project Gutenberg #38145)'
+- slug: nietzsche-antichrist
+  title: The Antichrist
+  author: Friedrich Nietzsche
+  gutenberg: 19322
+  file: /tmp/gb/texts/nietzsche-antichrist.txt
+  year: 1895
+  translator: H. L. Mencken
+  expected_sections: 62
+  edition_credit: 'the Mencken translation of 1920 (Project Gutenberg #19322)'
+- slug: james-varieties-of-religious-experience
+  title: The Varieties of Religious Experience
+  author: William James
+  gutenberg: 621
+  file: /tmp/gb/texts/james-varieties-of-religious-experience.txt
+  year: 1902
+  translator: ''
+  expected_sections: 20
+  edition_credit: the Project Gutenberg transcription of the 1902 Longmans edition
+- slug: james-will-to-believe
+  title: The Will to Believe
+  author: William James
+  gutenberg: 26659
+  file: /tmp/gb/texts/james-will-to-believe.txt
+  year: 1897
+  translator: ''
+  expected_sections: null
+  edition_credit: the Project Gutenberg transcription of the 1897 Longmans edition
+- slug: james-talks-to-teachers
+  title: Talks to Teachers on Psychology
+  author: William James
+  gutenberg: 16287
+  file: /tmp/gb/texts/james-talks-to-teachers.txt
+  year: 1899
+  translator: ''
+  expected_sections: null
+  edition_credit: the Project Gutenberg transcription
+- slug: james-meaning-of-truth
+  title: The Meaning of Truth
+  author: William James
+  gutenberg: 5117
+  file: /tmp/gb/texts/james-meaning-of-truth.txt
+  year: 1909
+  translator: ''
+  expected_sections: null
+  edition_credit: the Project Gutenberg transcription
+- slug: james-essays-in-radical-empiricism
+  title: Essays in Radical Empiricism
+  author: William James
+  gutenberg: 32547
+  file: /tmp/gb/texts/james-essays-in-radical-empiricism.txt
+  year: 1912
+  translator: ''
+  expected_sections: 12
+  edition_credit: the Project Gutenberg transcription
+- slug: bergson-creative-evolution
+  title: Creative Evolution
+  author: Henri Bergson
+  gutenberg: 26163
+  file: /tmp/gb/texts/bergson-creative-evolution.txt
+  year: 1907
+  translator: Arthur Mitchell
+  expected_sections: 4
+  edition_credit: 'the Mitchell translation of 1911 (Project Gutenberg #26163)'
+- slug: bergson-laughter
+  title: Laughter
+  author: Henri Bergson
+  gutenberg: 4352
+  file: /tmp/gb/texts/bergson-laughter.txt
+  year: 1900
+  translator: Cloudesley Brereton and Fred Rothwell
+  expected_sections: 3
+  edition_credit: 'the Brereton–Rothwell translation of 1911 (Project Gutenberg #4352)'
+- slug: newman-grammar-of-assent
+  title: An Essay in Aid of a Grammar of Assent
+  author: John Henry Newman
+  gutenberg: 34022
+  file: /tmp/gb/texts/newman-grammar-of-assent.txt
+  year: 1870
+  translator: ''
+  expected_sections: null
+  edition_credit: the Project Gutenberg transcription of the 1870 edition
+- slug: berkeley-three-dialogues
+  title: Three Dialogues between Hylas and Philonous
+  author: George Berkeley
+  gutenberg: 4724
+  file: /tmp/gb/texts/berkeley-three-dialogues.txt
+  year: 1713
+  translator: ''
+  expected_sections: 3
+  edition_credit: the Project Gutenberg transcription
+- slug: descartes-principles-of-philosophy
+  title: Selections from the Principles of Philosophy
+  author: René Descartes
+  gutenberg: 4391
+  file: /tmp/gb/texts/descartes-principles-of-philosophy.txt
+  year: 1644
+  translator: John Veitch
+  expected_sections: null
+  edition_credit: 'the Veitch translation (Project Gutenberg #4391)'
+- slug: marx-eighteenth-brumaire
+  title: The Eighteenth Brumaire of Louis Bonaparte
+  author: Karl Marx
+  gutenberg: 1346
+  file: /tmp/gb/texts/marx-eighteenth-brumaire.txt
+  year: 1852
+  translator: Daniel De Leon
+  expected_sections: 7
+  edition_credit: 'the De Leon translation of 1897 (Project Gutenberg #1346)'

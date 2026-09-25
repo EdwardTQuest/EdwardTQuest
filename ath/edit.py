@@ -126,8 +126,11 @@ def caps_openings(text):
     A word that appears Capitalised elsewhere in the text keeps its capital (a name)."""
     n = 0
     out = []
+    mid_caps = set(re.findall(r"(?<![.!?] )(?<!\n)\b([A-Z][a-z’'-]+)\b", text))
+    anywhere = set(re.findall(r"\b([A-Z][a-z’'-]+)\b", text))
+    lowers = set(re.findall(r"\b([a-z][a-z’'-]+)\b", text))
     for para in text.split('\n\n'):
-        if para.startswith(('#', '|', '>', ':::', '![', '* * *', '[^')) or not para.strip():
+        if para.startswith(('#', '|', '>', ':::', '![', '* * *', '[^', '[')) or not para.strip():
             out.append(para); continue
         m = re.match(r'^([A-Z][A-Z’\'-]+(?:[.,;:!?]?\s+[A-Z][A-Z’\'-]+)*)(?=[\s.,;:!?—]|$)', para)
         if not m:
@@ -140,7 +143,7 @@ def caps_openings(text):
         for i, w in enumerate(words):
             core, tail = re.match(r'^([A-Z’\'-]+)(.*)$', w).groups()
             cap = core.capitalize()
-            if i == 0 or re.search(r'(?<![.!?] )(?<!\n)\b' + re.escape(cap) + r'\b', text):
+            if i == 0 or cap in mid_caps or (cap in anywhere and core.lower() not in lowers):
                 fixed.append(cap + tail)
             else:
                 fixed.append(core.lower() + tail)
@@ -247,12 +250,13 @@ def dictionary_sweep(md):
     body_t = re.sub(r'\b[A-Z]\.(?![A-Za-z])', ' ', body)          # A.D., B.C., C. Musonius: initials are not words
     tokens = re.findall(r"[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ’'-]*[A-Za-zÀ-ÿ]|[A-Za-zÀ-ÿ]", body_t)
     counts = collections.Counter(tokens)
+    # one pass: every capitalised word that appears after a lowercase word or a comma (mid-sentence)
+    mid = set(re.findall(r"(?<=[a-z,;] )([A-Z][A-Za-zÀ-ÿ’'-]*[A-Za-zÀ-ÿ])", body_t))
     unknown, names = {}, {}
     for w, c in counts.items():
         if known(w):
             continue
-        # a capitalised word that also appears capitalised mid-sentence is a name
-        if w[0].isupper() and re.search(r'(?<=[a-z,;] )' + re.escape(w) + r'\b', body):
+        if w[0].isupper() and w in mid:
             names[w] = c
         else:
             unknown[w] = c
