@@ -340,19 +340,33 @@ def sequence_proof(md, expected=None):
             return t
         return int(s) if s.isdigit() else None
     seqs = collections.defaultdict(list)
+    parent = {1: 0, 2: 0, 3: 0}                  # numbering restarts under a new parent heading (sections per chapter)
     for lvl, lab, ttl, ln in M.chapter_titles(md):
+        for deeper in range(lvl + 1, 4):
+            parent[deeper] += 1
         m = re.match(r'^(?:(\w+)\s+)?([IVXLC]+|[0-9]+)$', lab)
         if m:
             v = val(m.group(2))
             if v is not None:
-                seqs[(lvl, (m.group(1) or '#').lower())].append((v, ln))
+                seqs[(lvl, (m.group(1) or '#').lower(), parent[lvl])].append((v, ln))
     report = []
     chapter_level = 2 if any(k[0] == 2 for k in seqs) else min((k[0] for k in seqs), default=2)
+    # many short runs of the same kind (sections restarting per chapter) are summarised, not listed
+    runs = collections.Counter((k[0], k[1]) for k in seqs)
+    summarised = set()
     for key, items in seqs.items():
+        if runs[(key[0], key[1])] > 6:
+            if (key[0], key[1]) not in summarised:
+                summarised.add((key[0], key[1]))
+                bad = [k for k in seqs if (k[0], k[1]) == (key[0], key[1]) and (
+                    any(seqs[k][i][0] != seqs[k][i - 1][0] + 1 for i in range(1, len(seqs[k]))) or seqs[k][0][0] not in (1,))]
+                report.append(f'level {key[0]} "{key[1]}": {runs[(key[0], key[1])]} runs (numbering restarts under each parent heading); '
+                              + ('every run 1..n without gap' if not bad else f'{len(bad)} runs with a gap, repeat or odd start: ' + ', '.join(f'run {k[2]} first {seqs[k][0][0]} last {seqs[k][-1][0]}' for k in bad[:6])))
+            continue
         nums = [v for v, _ in items]
         gaps = [nums[i - 1] + 1 for i in range(1, len(nums)) if nums[i] != nums[i - 1] + 1]
         dups = [v for v, c in collections.Counter(nums).items() if c > 1]
-        line = f'level {key[0]} "{key[1]}": {len(nums)} numbered, first {nums[0]}, last {nums[-1]}'
+        line = f'level {key[0]} "{key[1]}"' + (f' (run {key[2]})' if key[2] else '') + f': {len(nums)} numbered, first {nums[0]}, last {nums[-1]}'
         if gaps: line += f'; GAPS after {gaps[:10]}'
         if dups: line += f'; REPEATS {dups[:10]}'
         if expected and (key[0] == chapter_level or len(seqs) == 1):

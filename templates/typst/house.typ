@@ -42,15 +42,20 @@
 // heading's show rule: a blank page made inside the show rule becomes the heading's own location,
 // and every running head, folio and contents entry that asks "where is this chapter?" gets the
 // blank page. (Found on the philosophy batch: Scholar contents said "vi" for chapter I.)
+// How it works now, deterministically: the filter emits #chapter-break() where a chapter's text
+// ends; that is a marker <chend>. The heading's show rule does pagebreak(to: "odd") (an engine
+// operation, no introspection) and leaves a marker <opener> on the opener page. The header and
+// footer then know a page is blank when the last <chend> lies on an earlier page and the next
+// <opener> is on the very next page; such a page gets neither running head nor folio.
 #let edstate = state("edition", none)
-#let to-recto() = {
-  pagebreak(weak: true)
-  context { if calc.even(here().page()) { page(header: none, footer: none)[] } }
+#let chapter-break() = [#metadata("chend") <chend>]
+#let opener-mark() = [#metadata("opener") <opener>]
+#let page-is-blank(here-page) = {
+  let end-pages = query(<chend>).map(m => m.location().page())
+  let opens = query(<opener>).map(m => m.location().page()).filter(p => p > here-page)
+  end-pages.any(p => p < here-page) and not end-pages.any(p => p == here-page) and opens.len() > 0 and calc.min(..opens) == here-page + 1
 }
-#let chapter-break() = context {
-  let e = edstate.get()
-  if e != none and e.recto { to-recto() } else { pagebreak(weak: true) }
-}
+#let page-is-opener(here-page) = query(<opener>).any(m => m.location().page() == here-page)
 
 // a plate: full page, the picture sized to the text block, caption in small italic
 #let plate(path, caption) = {
@@ -117,8 +122,7 @@
   let hdr = context {
     let pg = counter(page).get().first()
     let here-page = here().page()
-    let on-opener = query(heading.where(level: chap-level)).any(h => h.location().page() == here-page)
-    if on-opener { return }
+    if page-is-opener(here-page) or page-is-blank(here-page) { return }
     let hs = query(selector(heading.where(level: chap-level)).before(here()))
     let chap = if hs.len() > 0 { hs.last().body } else { [] }
     let f = folio(pg, mainstate.get())
@@ -132,20 +136,21 @@
   let ftr = context {
     let pg = counter(page).get().first()
     let here-page = here().page()
-    let on-opener = query(heading.where(level: chap-level)).any(h => h.location().page() == here-page)
-    if on-opener [ #align(center)[#text(size: 0.8em)[#folio(pg, mainstate.get())]] ]
+    if page-is-opener(here-page) [ #align(center)[#text(size: 0.8em)[#folio(pg, mainstate.get())]] ]
   }
 
   // headings
   show heading.where(level: chap-level): it => {
-    pagebreak(weak: true)                 // the filter's #chapter-break() already made the page
+    if ed.recto { pagebreak(to: "odd", weak: true) } else { pagebreak(weak: true) }
+    opener-mark()
     context { if pending-reset.get() { counter(page).update(1); [#metadata("main") <mainstart>] } }
     pending-reset.update(false)
     context { opener-block(chlabel.get(), it.body, ed) }
   }
   if has-parts {
     show heading.where(level: 1): it => {
-      pagebreak(weak: true)
+      pagebreak(to: "odd", weak: true)
+      opener-mark()
       v(2.2in)
       align(center)[#text(size: 1.15em, tracking: 0.18em)[#smallcaps(all: true)[#lower(it.body)]]]
       pagebreak()
@@ -233,8 +238,9 @@
   body
   // ---------------------------------------------------------------- colophon (on a verso; a blank
   // recto before it carries neither running head nor folio)
-  pagebreak(weak: true)
-  context { if calc.odd(here().page()) { page(header: none, footer: none)[] } }
+  chapter-break()
+  pagebreak(to: "even", weak: true)
+  opener-mark()
   page(header: none, footer: none)[
     #v(1fr)
     #align(center)[
