@@ -24,6 +24,10 @@
   }
   const f = n => Math.round(n * 10) / 10;
 
+  // Each motif takes `hero`: on a cover (hero false) it keeps clear of the type, which sits in the
+  // lower half; in a hero it may fill the frame. The number of r() calls never depends on `hero`,
+  // so a title draws the same picture in both places.
+
   // Topographic rings around a summit: the Scepter UK motif.
   function contour(r, W, H) {
     const cx = W * (0.55 + r() * 0.3), cy = H * (0.1 + r() * 0.16);
@@ -44,7 +48,7 @@
   }
 
   // An eight-ray star with its light: the Sinag-Tala motif.
-  function rays(r, W, H) {
+  function rays(r, W, H, hero) {
     const cx = W * (0.25 + r() * 0.5), cy = H * (0.14 + r() * 0.16);
     let out = '';
     for (let i = 1; i <= 5; i++) out += `<circle cx="${f(cx)}" cy="${f(cy)}" r="${f(i * (18 + r() * 4))}" fill="none" stroke="var(--cv-ac)" stroke-width="0.5" opacity="${f(0.42 - i * 0.06)}"/>`;
@@ -57,18 +61,18 @@
     }
     out += `<path d="${d}" stroke="var(--cv-ac)" stroke-width="0.5" opacity="0.45"/>`;
     out += `<path transform="translate(${f(cx)} ${f(cy)}) scale(1.35)" d="${star8(9, 3.4)}" fill="var(--cv-ac)"/>`;
-    for (let i = 0; i < 26; i++) out += `<circle cx="${f(r() * W)}" cy="${f(r() * H * 0.62)}" r="${f(0.35 + r() * 0.8)}" fill="var(--cv-fg)" opacity="${f(0.2 + r() * 0.5)}"/>`;
+    for (let i = 0; i < 26; i++) out += `<circle cx="${f(r() * W)}" cy="${f(r() * H * (hero ? 0.62 : 0.42))}" r="${f(0.35 + r() * 0.8)}" fill="var(--cv-fg)" opacity="${f(0.2 + r() * 0.5)}"/>`;
     return out;
   }
 
-  // Ridgelines rising to twin peaks: the Scepter Kenya motif. The range stands on a horizon
-  // above the title, so the type always sits on the plain cover colour.
-  function strata(r, W, H) {
-    const px = W * (0.48 + r() * 0.28), top = H * (0.14 + r() * 0.07), ground = H * 0.6;
+  // Ridgelines rising to twin peaks: the Scepter Kenya motif. On a cover the range stands on a
+  // horizon above the title, so the type always sits on the plain cover colour.
+  function strata(r, W, H, hero) {
+    const px = W * (0.48 + r() * 0.28), top = H * (hero ? 0.14 + r() * 0.07 : 0.1 + r() * 0.05), ground = H * (hero ? 0.6 : 0.47);
     let out = '';
     const layers = 4;
     for (let L = 0; L < layers; L++) {
-      const y0 = top + L * (H * 0.06), pts = [`0 ${f(ground)}`];
+      const y0 = top + L * (H * (hero ? 0.06 : 0.05)), pts = [`0 ${f(ground)}`];
       const spread = W * (0.42 + L * 0.2);
       for (let k = 0; k <= 24; k++) {
         const x = (k / 24) * W;
@@ -88,17 +92,17 @@
     return out;
   }
 
-  // The Southern Cross over a low horizon: the Scepter Australia motif.
-  function southern(r, W, H) {
+  // The Southern Cross over a horizon: the Scepter Australia motif.
+  function southern(r, W, H, hero) {
     let out = '';
-    for (let i = 0; i < 60; i++) out += `<circle cx="${f(r() * W)}" cy="${f(r() * H * 0.7)}" r="${f(0.3 + r() * 0.7)}" fill="var(--cv-fg)" opacity="${f(0.15 + r() * 0.45)}"/>`;
+    for (let i = 0; i < 60; i++) out += `<circle cx="${f(r() * W)}" cy="${f(r() * H * (hero ? 0.7 : 0.44))}" r="${f(0.3 + r() * 0.7)}" fill="var(--cv-fg)" opacity="${f(0.15 + r() * 0.45)}"/>`;
     const cx = W * (0.5 + r() * 0.28), cy = H * (0.22 + r() * 0.08), s = 1.05 + r() * 0.35, rot = -18 + r() * 36;
     // Gacrux, Acrux, Becrux (Mimosa), Delta Crucis, Epsilon Crucis — relative positions.
     const cross = [[0, -34, 6], [4, 36, 7], [-24, 4, 6], [22, -6, 4.8], [9, 14, 3]];
     let st = '';
     cross.forEach(([x, y, k]) => { st += `<path transform="translate(${x} ${y})" d="${star4(k, k * 0.24)}"/>`; });
     out += `<g transform="translate(${f(cx)} ${f(cy)}) rotate(${f(rot)}) scale(${f(s)})" fill="var(--cv-ac)">${st}</g>`;
-    const hy = H * (0.62 + r() * 0.06);
+    const hy = H * (hero ? 0.62 + r() * 0.06 : 0.5 + r() * 0.04);
     out += `<path d="M0 ${f(hy)} Q ${f(W * 0.5)} ${f(hy - 10 - r() * 8)} ${W} ${f(hy + 4)} L${W} ${H} L0 ${H}Z" fill="var(--cv-ac)" opacity="0.14"/>`;
     out += `<path d="M0 ${f(hy)} Q ${f(W * 0.5)} ${f(hy - 10)} ${W} ${f(hy + 4)}" fill="none" stroke="var(--cv-ac)" stroke-width="0.8" opacity="0.6"/>`;
     return out;
@@ -132,13 +136,15 @@
   function titleSize(t) {
     const n = t.length, longest = Math.max(...t.split(/\s+/).map(w => w.length));
     if (n <= 10 && longest <= 8) return 'xl';
-    if (n <= 22 && longest <= 11) return 'l';
-    if (n <= 40 && longest <= 13) return 'm';
-    if (n <= 64) return 's';
+    if (n <= 22 && longest <= 9) return 'l';
+    if (n <= 40 && longest <= 11) return 'm';
+    if (n <= 64 && longest <= 14) return 's';
     return 'xs';
   }
 
   const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  // Escaped title text with its fine typography: no break after "St." or inside a year range.
+  const typo = s => esc(s).replace(/\b(St|Fr|Vol|No)\. /g, '$1.\u00a0').replace(/\((\d{4})-(\d{4})\)/g, '($1\u2011$2)');
 
   // Returns the cover's HTML. The cover sizes its type to its own width (container units).
   function cover(book, site, shelfIndex) {
@@ -150,15 +156,15 @@
     return `<div class="cover cv-${book.kind || 'book'}" style="--cv-bg:${pal.bg};--cv-fg:${pal.fg};--cv-ac:${pal.ac}">` +
       `<svg class="cv-art" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${art}</svg>` +
       `<div class="cv-text"><span class="cv-author">${esc(book.authorShort || book.author || '')}</span>` +
-      `<span class="cv-title cv-${titleSize(book.title)}">${esc(book.title)}</span></div>` +
+      `<span class="cv-title cv-${titleSize(book.title)}">${typo(book.title)}</span></div>` +
       `<span class="cv-mark">${MARKS[site.mark]}</span>${kind}</div>`;
   }
 
   // A large motif for the hero, drawn in the site's own accent over its deep colour.
   function heroArt(site, seed) {
     const r = rng(hash(seed || site.key));
-    return `<svg viewBox="0 0 200 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${MOTIFS[site.motif](r, 200, 300)}</svg>`;
+    return `<svg viewBox="0 0 200 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${MOTIFS[site.motif](r, 200, 300, true)}</svg>`;
   }
 
-  window.Covers = { cover, heroArt, MARKS, hash, esc };
+  window.Covers = { cover, heroArt, MARKS, hash, esc, typo };
 })();

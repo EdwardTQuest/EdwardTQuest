@@ -5,7 +5,7 @@
   'use strict';
 
   const SITE = window.SITE, CAT = window.CATALOG;
-  const { cover, heroArt, MARKS, esc } = window.Covers;
+  const { cover, heroArt, MARKS, esc, typo } = window.Covers;
   const FORMATS = ['print', 'ebook', 'audio'];
   const $ = (s, el) => (el || document).querySelector(s);
   const $$ = (s, el) => Array.from((el || document).querySelectorAll(s));
@@ -34,6 +34,8 @@
 
   const money = new Intl.NumberFormat(SITE.locale, { style: 'currency', currency: SITE.currency, minimumFractionDigits: SITE.currency === 'KES' || SITE.currency === 'PHP' ? 0 : 2, maximumFractionDigits: 2 });
   const priceOf = (b, f) => (b.price && typeof b.price[f] === 'number' ? b.price[f] : null);
+  // The format switch only means something once titles carry prices; until then it stays out of the way.
+  const anyPriced = CAT.books.some(b => FORMATS.some(f => priceOf(b, f) != null));
   const show = n => (n == null ? '' : money.format(n));
 
   // ---------- storage (this browser only; everything still works without it) ----------
@@ -55,11 +57,11 @@
 
   document.body.innerHTML = `
   <a class="skip" href="#catalogue">Skip to books</a>
-  <header class="bar">
+  <header class="bar${anyPriced ? ' has-fmt' : ''}">
     <a class="brand" href="#/" aria-label="${esc(SITE.name)} — home">${brand}</a>
     <label class="search">${ICON.search}<span class="sr-only">Search books</span>
       <input type="search" id="q" placeholder="Search" autocomplete="off" spellcheck="false"></label>
-    <div class="fmt" role="group" aria-label="Show prices for">
+    <div class="fmt" role="group" aria-label="Show prices for"${anyPriced ? '' : ' hidden'}>
       ${FORMATS.map(f => `<button type="button" data-fmt="${f}" aria-pressed="${f === state.format}">${ICON[f]}<span>${esc(SITE.formats[f])}</span></button>`).join('')}
     </div>
     <button type="button" class="bag-btn" id="bag-open" aria-label="Basket">${ICON.bag}<span class="bag-count" id="bag-count" hidden>0</span></button>
@@ -92,8 +94,8 @@
   <div class="toast" id="toast" role="status" aria-live="polite"></div>`;
 
   function ascent() {
-    const feat = CAT.books.filter(b => b.featured).slice(0, 7);
-    const pick = feat.length >= 4 ? feat : feat.concat(books.filter(b => !b.featured)).slice(0, 6);
+    const feat = CAT.books.filter(b => b.featured);
+    const pick = feat.concat(books.filter(b => !b.featured)).slice(0, 5);
     return pick.map((b, i) => `<a class="step" href="#/book/${b.id}" tabindex="-1" style="--i:${i};--n:${pick.length}">${cover(b, SITE, shelfIndex[b.shelf] || 0)}</a>`).join('');
   }
 
@@ -145,6 +147,7 @@
   let current = null, chosen = 'print', qty = 1, openedInApp = false;
 
   function renderBook(b) {
+    const unpriced = FORMATS.every(f => priceOf(b, f) == null);
     const more = books.filter(x => x.shelf === b.shelf && x.id !== b.id).slice(0, 6);
     const meta = [
       b.isbn && [SITE.words.isbn, esc(b.isbn)],
@@ -157,17 +160,18 @@
         <div class="bk-cover">${cover(b, SITE, shelfIndex[b.shelf] || 0)}</div>
         <div class="bk-info">
           <a class="eyebrow" href="#/shelf/${b.shelf}" data-shelf>${esc(shelfName[b.shelf] || '')}</a>
-          <h2 id="bk-title" class="bk-title" tabindex="-1">${esc(b.title)}</h2>
-          ${b.subtitle ? `<p class="bk-sub">${esc(b.subtitle)}</p>` : ''}
+          <h2 id="bk-title" class="bk-title" tabindex="-1">${typo(b.title)}</h2>
+          ${b.subtitle ? `<p class="bk-sub">${typo(b.subtitle)}</p>` : ''}
           ${b.author ? `<p class="bk-author">${esc(b.author)}</p>` : ""}
           ${b.description ? `<p class="bk-desc">${esc(b.description)}</p>` : ''}
           <fieldset class="formats"><legend class="sr-only">Format</legend>
             ${FORMATS.map(f => {
               const p = priceOf(b, f);
               return `<label class="fopt"><input type="radio" name="fmt" value="${f}" ${f === chosen ? 'checked' : ''}>
-                <span class="fopt-in">${ICON[f]}<span class="fopt-name">${esc(SITE.formats[f])}</span><span class="fopt-price">${p == null ? esc(SITE.words.unpriced) : show(p)}</span></span></label>`;
+                <span class="fopt-in">${ICON[f]}<span class="fopt-name">${esc(SITE.formats[f])}</span>${unpriced ? '' : `<span class="fopt-price">${p == null ? '—' : show(p)}</span>`}</span></label>`;
             }).join('')}
           </fieldset>
+          ${unpriced ? `<p class="bk-pending">${esc(SITE.words.unpriced)}</p>` : ''}
           <div class="bk-actions">
             <div class="qty" ${chosen === 'print' ? '' : 'hidden'}>
               <button type="button" data-qty="-1" aria-label="One fewer">${ICON.minus}</button>
@@ -231,13 +235,13 @@
           <div class="line-ctl">
             ${l.format === 'print' ? `<div class="qty qty-s"><button type="button" data-line="${i}" data-d="-1" aria-label="One fewer">${ICON.minus}</button><output>${l.qty}</output><button type="button" data-line="${i}" data-d="1" aria-label="One more">${ICON.plus}</button></div>` : ''}
             <button type="button" class="link" data-remove="${i}">${esc(SITE.words.remove)}</button></div></div>
-        <p class="line-price">${p == null ? '<span class="muted">—</span>' : show(p * l.qty)}</p></li>`;
+        <p class="line-price">${p == null ? `<span class="line-pending">${esc(SITE.words.unpriced)}</span>` : show(p * l.qty)}</p></li>`;
     }).join('');
     $('#dlg-bag').innerHTML = `
       <header class="bag-head"><h2 id="bag-title">${esc(SITE.words.basket)}</h2><button type="button" class="x" data-close aria-label="Close">${ICON.close}</button></header>
       ${state.basket.length ? `<ul class="lines">${lines}</ul>
-      <footer class="bag-foot"><p class="total"><span>${esc(SITE.words.total)}</span><strong>${bagUnpriced() === state.basket.length ? '—' : show(bagTotal())}</strong></p>
-        ${bagUnpriced() ? `<p class="bag-pending">${esc(SITE.words.toPrice.replace('{n}', bagUnpriced()))}</p>` : ''}
+      <footer class="bag-foot"><p class="total"><span>${esc(SITE.words.total)}</span>${bagUnpriced() === state.basket.length ? `<span class="line-pending">${esc(SITE.words.unpriced)}</span>` : `<strong>${show(bagTotal())}</strong>`}</p>
+        ${bagUnpriced() && bagUnpriced() < state.basket.length ? `<p class="bag-pending">${esc(SITE.words.toPrice.replace('{n}', bagUnpriced()))}</p>` : ''}
         <button type="button" class="btn btn-primary btn-wide" id="checkout">${esc(SITE.words.checkout)}</button>
         <p class="bag-note" id="bag-note" hidden>${esc(SITE.words.checkoutNote)}</p></footer>`
       : `<div class="bag-empty">${ICON.bag}<p>${esc(SITE.words.empty)}</p></div>`}`;
@@ -254,7 +258,8 @@
 
   let toastTimer;
   function toast(msg) {
-    const t = $('#toast');
+    const t = $('#toast'), host = document.querySelector('dialog[open]') || document.body;
+    if (t.parentNode !== host) host.appendChild(t);
     t.textContent = msg; t.classList.add('on');
     clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('on'), 2600);
   }

@@ -1,6 +1,5 @@
 /* Scepter Australia. Night sky and the Southern Cross over red earth; wattle gold; a tall italic serif. */
 :root {
-  --bar-h: 68px;
   --paper: #F7F2EA; --paper-2: #EEE6D8; --ink: #191D26; --ink-2: #5E6470; --line: #DED4C4;
   --deep: #0C1A29; --deep-ink: #F4EEE4; --deep-ink-2: #A9B3BF;
   --accent: #E5A83C; --accent-ink: #0C1A29; --accent-strong: #B2462D; --focus: #B2462D;
@@ -18,3 +17,6 @@
 .hero-title { font-style: italic; }
 .fopt-in, .qty { border-radius: 18px; }
 .search input { border-radius: 999px; }
+@media (min-width: 1021px) {
+  .hero-art { width: min(700px, 60vw); top: -22%; right: 26vw; -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 38%, #000 70%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 38%, #000 70%, transparent 100%); }
+}

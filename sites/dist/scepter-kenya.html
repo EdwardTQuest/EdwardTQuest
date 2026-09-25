@@ -63,6 +63,7 @@
 <style>
 /* The shared shop. Each house sets its tokens in theme.css; nothing here names a colour. */
 
+:root { --bar-h: 68px; --shelves-h: 65px; }
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
@@ -79,7 +80,7 @@ h1, h2, h3, p { margin: 0; }
 .muted { color: var(--ink-2); font-weight: 400; }
 
 /* ---------- bar ---------- */
-.bar { position: sticky; top: 0; z-index: 20; display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto; align-items: center; gap: 20px; height: var(--bar-h); padding: 0 max(20px, calc((100vw - 1360px) / 2)); background: color-mix(in srgb, var(--paper) 96%, transparent); -webkit-backdrop-filter: saturate(1.4) blur(14px); backdrop-filter: saturate(1.4) blur(14px); border-bottom: 1px solid var(--line); }
+.bar { position: sticky; top: 0; z-index: 20; display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto; align-items: center; gap: 20px; height: var(--bar-h); padding: 0 max(20px, calc((100vw - 1360px) / 2)); background: var(--paper); border-bottom: 1px solid var(--line); }
 .brand { display: flex; align-items: center; gap: 10px; min-width: 0; color: var(--ink); }
 .brand-mark { width: 22px; flex: none; color: var(--brand-mark, var(--accent-strong)); }
 .brand-word { font-family: var(--display); font-size: var(--word-size, 1.35rem); font-weight: var(--word-weight, 400); letter-spacing: var(--word-track, 0.02em); text-transform: var(--word-case, none); line-height: 1; white-space: nowrap; }
@@ -91,6 +92,7 @@ h1, h2, h3, p { margin: 0; }
 .search input:focus { border-color: var(--ink-2); background: var(--paper); }
 .search input::placeholder { color: var(--ink-2); }
 .search input::-webkit-search-cancel-button { filter: grayscale(1); }
+.fmt[hidden] { display: none; }
 .fmt { display: flex; padding: 3px; border-radius: 999px; background: var(--paper-2); border: 1px solid var(--line); }
 .fmt button { display: flex; align-items: center; gap: 6px; height: 34px; padding: 0 13px; border-radius: 999px; font: 600 13px var(--ui); color: var(--ink-2); transition: background .2s, color .2s; }
 .fmt button svg { width: 17px; }
@@ -127,9 +129,9 @@ h1, h2, h3, p { margin: 0; }
 
 /* The ascent: flagship titles climbing to the upper right. */
 .ascent { position: relative; display: flex; align-items: flex-end; justify-content: flex-end; height: 100%; min-height: 420px; padding-right: 8px; }
-.step { position: relative; flex: 0 0 auto; width: clamp(96px, 10.5vw, 150px); margin-left: -2.4vw; margin-bottom: calc(var(--i) * clamp(22px, 3.4vw, 46px)); transform-origin: bottom center; transition: transform .35s cubic-bezier(.2, .7, .2, 1); z-index: calc(var(--i) + 1); }
+.step { position: relative; flex: 0 0 auto; width: clamp(92px, 9.6vw, 144px); margin-left: clamp(10px, 1.1vw, 16px); margin-bottom: calc(var(--i) * clamp(28px, 4.4vw, 62px)); transform-origin: bottom center; transition: transform .35s cubic-bezier(.2, .7, .2, 1); z-index: calc(var(--i) + 1); }
 .step:first-child { margin-left: 0; }
-.step::after { content: ""; position: absolute; left: -10%; right: -10%; bottom: -10px; height: 1px; background: var(--hero-ledge, color-mix(in srgb, var(--deep-ink) 30%, transparent)); }
+.step::after { content: ""; position: absolute; left: 0; right: 0; bottom: -10px; height: 1px; background: var(--hero-ledge, color-mix(in srgb, var(--deep-ink) 30%, transparent)); }
 .step .cover:not(.cv-set) { box-shadow: 0 30px 50px -22px rgba(0, 0, 0, .7), 0 2px 6px rgba(0, 0, 0, .3); }
 .step:hover { transform: translateY(-10px); }
 .ready .step { animation: rise .9s cubic-bezier(.2, .7, .2, 1) both; animation-delay: calc(120ms + var(--i) * 90ms); }
@@ -139,14 +141,14 @@ h1, h2, h3, p { margin: 0; }
 .shelves { position: sticky; top: var(--bar-h); z-index: 15; background: color-mix(in srgb, var(--paper) 94%, transparent); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
 .shelves-in { display: flex; gap: 8px; max-width: 1360px; margin: 0 auto; padding: 12px 20px; overflow-x: auto; scrollbar-width: none; scroll-padding: 0 20px; }
 .shelves-in::-webkit-scrollbar { display: none; }
-.chip { flex: none; display: inline-flex; align-items: center; gap: 8px; height: 38px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line); font: 600 14px var(--ui); white-space: nowrap; transition: background .2s, color .2s, border-color .2s; }
+.chip { flex: none; display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line); font: 600 14px var(--ui); white-space: nowrap; transition: background .2s, color .2s, border-color .2s; }
 .chip span { font-weight: 500; font-size: 12px; color: var(--ink-2); }
 .chip:hover { border-color: var(--ink-2); }
 .chip[aria-current="true"] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
 .chip[aria-current="true"] span { color: color-mix(in srgb, var(--paper) 70%, transparent); }
 
 /* ---------- catalogue ---------- */
-.catalogue { max-width: 1360px; margin: 0 auto; padding: 8px 20px 96px; scroll-margin-top: calc(var(--bar-h) + 64px); outline: none; }
+.catalogue { max-width: 1360px; margin: 0 auto; padding: 8px 20px 96px; scroll-margin-top: calc(var(--bar-h) + var(--shelves-h) - 1px); outline: none; }
 .shelf { padding-top: 52px; }
 .shelf-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 26px; }
 .shelf-head h2 { font-family: var(--display); font-weight: var(--h2-weight, 400); font-size: clamp(1.7rem, 3.2vw, 2.4rem); line-height: 1.05; letter-spacing: var(--h2-track, -0.01em); }
@@ -154,13 +156,14 @@ h1, h2, h3, p { margin: 0; }
 .shelf-head::after { content: ""; flex: 1; height: 1px; align-self: center; background: linear-gradient(90deg, var(--line), transparent); }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(164px, 1fr)); gap: 40px 28px; }
 .card { display: flex; flex-direction: column; gap: 14px; }
+.card-body { flex: 1; display: flex; flex-direction: column; }
 .card-cover { transition: transform .35s cubic-bezier(.2, .7, .2, 1); }
 .card-cover .cover { transition: box-shadow .35s; }
 .card:hover .card-cover { transform: translateY(-6px); }
 .card:hover .cover:not(.cv-set) { box-shadow: inset 3px 0 0 rgba(0, 0, 0, .16), 0 26px 40px -20px rgba(0, 0, 0, .55), 0 2px 5px rgba(0, 0, 0, .18); }
 .card-title { font: 600 15px/1.3 var(--ui); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-.card-author { margin-top: 3px; font: 400 14px/1.35 var(--ui); color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.card-price { margin-top: 6px; font: 600 15px var(--ui); color: var(--price, var(--ink)); }
+.card-author { margin-top: 3px; font: 400 14px/1.35 var(--ui); color: var(--ink-2); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.card-price { margin-top: auto; padding-top: 8px; font: 600 15px var(--ui); color: var(--price, var(--ink)); }
 .empty { color: var(--ink-2); font: 400 16px var(--ui); }
 
 /* ---------- covers ---------- */
@@ -174,6 +177,7 @@ h1, h2, h3, p { margin: 0; }
 .cv-mark { position: absolute; left: 10cqw; bottom: 6.5cqw; width: 6.4cqw; color: var(--cv-ac); }
 .cv-mark svg { width: 100%; height: auto; --paper: var(--cv-bg); }
 .cv-kind { position: absolute; right: 8cqw; bottom: 7.5cqw; font: 700 3.5cqw/1 var(--ui); letter-spacing: 0.16em; text-transform: uppercase; color: var(--cv-ac); }
+@container (max-width: 150px) { .cv-author, .cv-kind { display: none; } }
 .cv-booklet::before { content: ""; position: absolute; inset: 4.5cqw; border: 1px solid var(--cv-ac); opacity: .45; pointer-events: none; }
 .cv-bible::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 2.2cqw; background: var(--cv-ac); opacity: .8; }
 .cv-set { box-shadow: inset 3px 0 0 rgba(0, 0, 0, .16), 4px -4px 0 0 color-mix(in srgb, var(--cv-bg) 72%, #000), 8px -8px 0 0 color-mix(in srgb, var(--cv-bg) 52%, #000), 0 12px 26px -16px rgba(0, 0, 0, .55); }
@@ -209,6 +213,7 @@ h1, h2, h3, p { margin: 0; }
 .fopt input:checked + .fopt-in svg { color: var(--accent-strong); }
 .fopt input:checked + .fopt-in .fopt-price { color: var(--ink); font-weight: 600; }
 .fopt input:focus-visible + .fopt-in { outline: 2px solid var(--focus); outline-offset: 2px; }
+.bk-pending { margin-top: 10px; font: 500 13px var(--ui); color: var(--ink-2); }
 .bk-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; width: 100%; max-width: 34rem; }
 .bk-actions .btn { flex: 1; min-width: 200px; }
 .qty { display: flex; align-items: center; height: 50px; border: 1px solid var(--line); border-radius: var(--radius); }
@@ -244,6 +249,7 @@ h1, h2, h3, p { margin: 0; }
 .link { font: 500 13px var(--ui); color: var(--ink-2); text-decoration: underline; text-underline-offset: 3px; }
 .link:hover { color: var(--ink); }
 .line-price { font: 600 15px var(--ui); font-variant-numeric: tabular-nums; }
+.line-pending { font: 500 13px var(--ui); color: var(--ink-2); white-space: nowrap; }
 .bag-foot { padding: 20px 24px max(24px, env(safe-area-inset-bottom)); border-top: 1px solid var(--line); background: var(--paper-2); }
 .total { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; font: 500 15px var(--ui); }
 .total strong { font: 400 1.8rem var(--display); }
@@ -251,7 +257,7 @@ h1, h2, h3, p { margin: 0; }
 .bag-empty { flex: 1; display: grid; place-content: center; justify-items: center; gap: 14px; color: var(--ink-2); font: 400 16px var(--ui); }
 .bag-empty svg { width: 44px; opacity: .5; }
 
-.toast { position: fixed; left: 50%; bottom: max(24px, env(safe-area-inset-bottom)); z-index: 60; max-width: calc(100vw - 32px); padding: 13px 20px; border-radius: 999px; background: var(--deep); color: var(--deep-ink); font: 500 14px var(--ui); box-shadow: 0 14px 40px -12px rgba(0, 0, 0, .5); transform: translate(-50%, 30px); opacity: 0; pointer-events: none; transition: transform .35s cubic-bezier(.2, .7, .2, 1), opacity .3s; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.toast { position: fixed; left: 50%; bottom: max(24px, env(safe-area-inset-bottom)); z-index: 60; width: max-content; max-width: calc(100vw - 32px); padding: 13px 20px; border-radius: 22px; text-align: center; background: var(--deep); color: var(--deep-ink); font: 500 14px var(--ui); box-shadow: 0 14px 40px -12px rgba(0, 0, 0, .5); transform: translate(-50%, 30px); opacity: 0; pointer-events: none; transition: transform .35s cubic-bezier(.2, .7, .2, 1), opacity .3s; }
 .toast.on { transform: translate(-50%, 0); opacity: 1; }
 
 /* ---------- footer ---------- */
@@ -267,29 +273,44 @@ h1, h2, h3, p { margin: 0; }
 .foot-note { max-width: 1360px; margin: 0 auto; padding: 18px 20px 30px; border-top: 1px solid color-mix(in srgb, var(--deep-ink) 14%, transparent); font: 400 12px var(--ui); color: var(--deep-ink-2); letter-spacing: 0.02em; }
 
 /* ---------- small screens ---------- */
+@media (max-width: 1180px) {
+  .shelves-in { gap: 6px; }
+  .chip { padding: 0 11px; gap: 6px; }
+}
 @media (max-width: 1020px) {
   .fmt button span { display: none; }
   .fmt button { padding: 0 10px; }
   .hero-inner { grid-template-columns: 1fr; align-items: start; gap: 12px; min-height: 0; }
   .ascent { min-height: 0; justify-content: flex-start; padding: 26px 0 0; }
-  .step { width: clamp(78px, 17vw, 130px); margin-left: -3vw; margin-bottom: calc(var(--i) * clamp(12px, 2.6vw, 30px)); }
+  .step { width: clamp(64px, 15vw, 128px); margin-left: 2vw; margin-bottom: calc(var(--i) * clamp(14px, 3vw, 34px)); }
+  .step:first-child { margin-left: 0; }
   .hero-art { width: 130vw; right: -45vw; top: -10%; }
   .bk { grid-template-columns: minmax(160px, 240px) minmax(0, 1fr); gap: 32px; padding: 44px 32px 28px; }
   .bk-more { padding: 22px 32px 32px; }
 }
 @media (max-width: 720px) {
-  :root { --bar-h: 116px; }
-  .bar { grid-template-columns: minmax(0, 1fr) auto auto; grid-template-areas: "brand fmt bag" "search search search"; gap: 8px 10px; height: auto; min-height: var(--bar-h); padding: 10px 16px 12px; }
+  :root:root { --bar-h: 64px; --shelves-h: 61px; }
+  :root:root:has(.bar.has-fmt) { --bar-h: 119px; }
+  .bar { grid-template-columns: auto minmax(0, 1fr) auto; grid-template-areas: "brand search bag"; gap: 10px; padding: 0 12px 0 16px; }
+  .bar.has-fmt { grid-template-columns: minmax(0, 1fr) auto auto; grid-template-areas: "brand fmt bag" "search search search"; gap: 8px 10px; padding: 10px 16px 12px; }
   .brand { grid-area: brand; }
-  .brand-word small { display: none; }
+  .brand-word { font-size: calc(var(--word-size, 1.35rem) * .92); }
+  .brand-word small { display: block; margin: 4px 0 0; font-size: .5rem; letter-spacing: .2em; vertical-align: 0; }
   .fmt { grid-area: fmt; }
+  .fmt button { height: 40px; min-width: 40px; justify-content: center; }
   .bag-btn { grid-area: bag; }
   .search { grid-area: search; width: 100%; }
+  .search input { padding-left: 38px; }
+  .search svg { left: 12px; }
   .search input { height: 44px; font-size: 16px; }
   .hero-inner { padding: 44px 16px 40px; }
   .hero-title { margin: 14px 0 18px; }
   .btn-hero { margin-top: 26px; }
-  .ascent .step:nth-child(n+6) { display: none; }
+  .ascent { padding-top: 30px; }
+  .step { width: calc((100% - 8vw) / 5); }
+  .qty-s { height: 40px; }
+  .qty-s button { width: 40px; }
+  .line-ctl .link { padding: 12px 6px; margin: -12px -6px; }
   .shelves-in { padding: 10px 16px; }
   .catalogue { padding: 0 16px 72px; }
   .shelf { padding-top: 38px; }
@@ -299,8 +320,9 @@ h1, h2, h3, p { margin: 0; }
   .card-title { font-size: 14px; }
   .card-author { font-size: 13px; }
   .dlg-book { width: 100vw; max-width: 100vw; height: 100dvh; max-height: 100dvh; border-radius: 0; }
-  .bk { grid-template-columns: 1fr; gap: 26px; padding: 64px 20px 24px; }
-  .bk-cover { width: min(62%, 240px); justify-self: center; }
+  .dlg-book .x { position: sticky; top: 12px; float: right; margin: 12px 12px -54px 0; }
+  .bk { grid-template-columns: 1fr; gap: 22px; padding: 56px 20px 24px; }
+  .bk-cover { width: min(44%, 180px); justify-self: center; }
   .bk-cover .cover { transform: none; }
   .bk-title { font-size: 2rem; }
   .formats { gap: 8px; }
@@ -326,7 +348,6 @@ h1, h2, h3, p { margin: 0; }
 <style>
 /* Scepter Kenya — Nairobi. Highland forest, ochre sun, red earth; a confident grotesque. */
 :root {
-  --bar-h: 68px;
   --paper: #F5EFE3; --paper-2: #ECE3D1; --ink: #16251E; --ink-2: #5A645C; --line: #DBCFBA;
   --deep: #0E2E23; --deep-ink: #F6EFE2; --deep-ink-2: #B4C0B5;
   --accent: #E3A437; --accent-ink: #10271E; --accent-strong: #B04F2A; --focus: #B04F2A;
@@ -341,6 +362,7 @@ h1, h2, h3, p { margin: 0; }
   --hero-glow: radial-gradient(900px 560px at 76% 4%, rgba(227, 164, 55, .22), transparent 60%), linear-gradient(180deg, #0B271D 0%, #123829 100%);
   --hero-art-opacity: .6;
 }
+.hero-art { -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 38%), linear-gradient(180deg, #000 40%, transparent 62%); -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, transparent 0, #000 38%), linear-gradient(180deg, #000 40%, transparent 62%); mask-composite: intersect; }
 </style>
 </head>
 <body>
@@ -411,6 +433,10 @@ window.CATALOG = {"generated":"2026-09-25","shelves":[{"slug":"escriva","name":"
   }
   const f = n => Math.round(n * 10) / 10;
 
+  // Each motif takes `hero`: on a cover (hero false) it keeps clear of the type, which sits in the
+  // lower half; in a hero it may fill the frame. The number of r() calls never depends on `hero`,
+  // so a title draws the same picture in both places.
+
   // Topographic rings around a summit: the Scepter UK motif.
   function contour(r, W, H) {
     const cx = W * (0.55 + r() * 0.3), cy = H * (0.1 + r() * 0.16);
@@ -431,7 +457,7 @@ window.CATALOG = {"generated":"2026-09-25","shelves":[{"slug":"escriva","name":"
   }
 
   // An eight-ray star with its light: the Sinag-Tala motif.
-  function rays(r, W, H) {
+  function rays(r, W, H, hero) {
     const cx = W * (0.25 + r() * 0.5), cy = H * (0.14 + r() * 0.16);
     let out = '';
     for (let i = 1; i <= 5; i++) out += `<circle cx="${f(cx)}" cy="${f(cy)}" r="${f(i * (18 + r() * 4))}" fill="none" stroke="var(--cv-ac)" stroke-width="0.5" opacity="${f(0.42 - i * 0.06)}"/>`;
@@ -444,18 +470,18 @@ window.CATALOG = {"generated":"2026-09-25","shelves":[{"slug":"escriva","name":"
     }
     out += `<path d="${d}" stroke="var(--cv-ac)" stroke-width="0.5" opacity="0.45"/>`;
     out += `<path transform="translate(${f(cx)} ${f(cy)}) scale(1.35)" d="${star8(9, 3.4)}" fill="var(--cv-ac)"/>`;
-    for (let i = 0; i < 26; i++) out += `<circle cx="${f(r() * W)}" cy="${f(r() * H * 0.62)}" r="${f(0.35 + r() * 0.8)}" fill="var(--cv-fg)" opacity="${f(0.2 + r() * 0.5)}"/>`;
+    for (let i = 0; i < 26; i++) out += `<circle cx="${f(r() * W)}" cy="${f(r() * H * (hero ? 0.62 : 0.42))}" r="${f(0.35 + r() * 0.8)}" fill="var(--cv-fg)" opacity="${f(0.2 + r() * 0.5)}"/>`;
     return out;
   }
 
-  // Ridgelines rising to twin peaks: the Scepter Kenya motif. The range stands on a horizon
-  // above the title, so the type always sits on the plain cover colour.
-  function strata(r, W, H) {
-    const px = W * (0.48 + r() * 0.28), top = H * (0.14 + r() * 0.07), ground = H * 0.6;
+  // Ridgelines rising to twin peaks: the Scepter Kenya motif. On a cover the range stands on a
+  // horizon above the title, so the type always sits on the plain cover colour.
+  function strata(r, W, H, hero) {
+    const px = W * (0.48 + r() * 0.28), top = H * (hero ? 0.14 + r() * 0.07 : 0.1 + r() * 0.05), ground = H * (hero ? 0.6 : 0.47);
     let out = '';
     const layers = 4;
     for (let L = 0; L < layers; L++) {
-      const y0 = top + L * (H * 0.06), pts = [`0 ${f(ground)}`];
+      const y0 = top + L * (H * (hero ? 0.06 : 0.05)), pts = [`0 ${f(ground)}`];
       const spread = W * (0.42 + L * 0.2);
       for (let k = 0; k <= 24; k++) {
         const x = (k / 24) * W;
@@ -475,17 +501,17 @@ window.CATALOG = {"generated":"2026-09-25","shelves":[{"slug":"escriva","name":"
     return out;
   }
 
-  // The Southern Cross over a low horizon: the Scepter Australia motif.
-  function southern(r, W, H) {
+  // The Southern Cross over a horizon: the Scepter Australia motif.
+  function southern(r, W, H, hero) {
     let out = '';
-    for (let i = 0; i < 60; i++) out += `<circle cx="${f(r() * W)}" cy="${f(r() * H * 0.7)}" r="${f(0.3 + r() * 0.7)}" fill="var(--cv-fg)" opacity="${f(0.15 + r() * 0.45)}"/>`;
+    for (let i = 0; i < 60; i++) out += `<circle cx="${f(r() * W)}" cy="${f(r() * H * (hero ? 0.7 : 0.44))}" r="${f(0.3 + r() * 0.7)}" fill="var(--cv-fg)" opacity="${f(0.15 + r() * 0.45)}"/>`;
     const cx = W * (0.5 + r() * 0.28), cy = H * (0.22 + r() * 0.08), s = 1.05 + r() * 0.35, rot = -18 + r() * 36;
     // Gacrux, Acrux, Becrux (Mimosa), Delta Crucis, Epsilon Crucis — relative positions.
     const cross = [[0, -34, 6], [4, 36, 7], [-24, 4, 6], [22, -6, 4.8], [9, 14, 3]];
     let st = '';
     cross.forEach(([x, y, k]) => { st += `<path transform="translate(${x} ${y})" d="${star4(k, k * 0.24)}"/>`; });
     out += `<g transform="translate(${f(cx)} ${f(cy)}) rotate(${f(rot)}) scale(${f(s)})" fill="var(--cv-ac)">${st}</g>`;
-    const hy = H * (0.62 + r() * 0.06);
+    const hy = H * (hero ? 0.62 + r() * 0.06 : 0.5 + r() * 0.04);
     out += `<path d="M0 ${f(hy)} Q ${f(W * 0.5)} ${f(hy - 10 - r() * 8)} ${W} ${f(hy + 4)} L${W} ${H} L0 ${H}Z" fill="var(--cv-ac)" opacity="0.14"/>`;
     out += `<path d="M0 ${f(hy)} Q ${f(W * 0.5)} ${f(hy - 10)} ${W} ${f(hy + 4)}" fill="none" stroke="var(--cv-ac)" stroke-width="0.8" opacity="0.6"/>`;
     return out;
@@ -519,13 +545,15 @@ window.CATALOG = {"generated":"2026-09-25","shelves":[{"slug":"escriva","name":"
   function titleSize(t) {
     const n = t.length, longest = Math.max(...t.split(/\s+/).map(w => w.length));
     if (n <= 10 && longest <= 8) return 'xl';
-    if (n <= 22 && longest <= 11) return 'l';
-    if (n <= 40 && longest <= 13) return 'm';
-    if (n <= 64) return 's';
+    if (n <= 22 && longest <= 9) return 'l';
+    if (n <= 40 && longest <= 11) return 'm';
+    if (n <= 64 && longest <= 14) return 's';
     return 'xs';
   }
 
   const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  // Escaped title text with its fine typography: no break after "St." or inside a year range.
+  const typo = s => esc(s).replace(/\b(St|Fr|Vol|No)\. /g, '$1.\u00a0').replace(/\((\d{4})-(\d{4})\)/g, '($1\u2011$2)');
 
   // Returns the cover's HTML. The cover sizes its type to its own width (container units).
   function cover(book, site, shelfIndex) {
@@ -537,17 +565,17 @@ window.CATALOG = {"generated":"2026-09-25","shelves":[{"slug":"escriva","name":"
     return `<div class="cover cv-${book.kind || 'book'}" style="--cv-bg:${pal.bg};--cv-fg:${pal.fg};--cv-ac:${pal.ac}">` +
       `<svg class="cv-art" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${art}</svg>` +
       `<div class="cv-text"><span class="cv-author">${esc(book.authorShort || book.author || '')}</span>` +
-      `<span class="cv-title cv-${titleSize(book.title)}">${esc(book.title)}</span></div>` +
+      `<span class="cv-title cv-${titleSize(book.title)}">${typo(book.title)}</span></div>` +
       `<span class="cv-mark">${MARKS[site.mark]}</span>${kind}</div>`;
   }
 
   // A large motif for the hero, drawn in the site's own accent over its deep colour.
   function heroArt(site, seed) {
     const r = rng(hash(seed || site.key));
-    return `<svg viewBox="0 0 200 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${MOTIFS[site.motif](r, 200, 300)}</svg>`;
+    return `<svg viewBox="0 0 200 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${MOTIFS[site.motif](r, 200, 300, true)}</svg>`;
   }
 
-  window.Covers = { cover, heroArt, MARKS, hash, esc };
+  window.Covers = { cover, heroArt, MARKS, hash, esc, typo };
 })();
 </script>
 <script>
@@ -558,7 +586,7 @@ window.CATALOG = {"generated":"2026-09-25","shelves":[{"slug":"escriva","name":"
   'use strict';
 
   const SITE = window.SITE, CAT = window.CATALOG;
-  const { cover, heroArt, MARKS, esc } = window.Covers;
+  const { cover, heroArt, MARKS, esc, typo } = window.Covers;
   const FORMATS = ['print', 'ebook', 'audio'];
   const $ = (s, el) => (el || document).querySelector(s);
   const $$ = (s, el) => Array.from((el || document).querySelectorAll(s));
@@ -587,6 +615,8 @@ window.CATALOG = {"generated":"2026-09-25","shelves":[{"slug":"escriva","name":"
 
   const money = new Intl.NumberFormat(SITE.locale, { style: 'currency', currency: SITE.currency, minimumFractionDigits: SITE.currency === 'KES' || SITE.currency === 'PHP' ? 0 : 2, maximumFractionDigits: 2 });
   const priceOf = (b, f) => (b.price && typeof b.price[f] === 'number' ? b.price[f] : null);
+  // The format switch only means something once titles carry prices; until then it stays out of the way.
+  const anyPriced = CAT.books.some(b => FORMATS.some(f => priceOf(b, f) != null));
   const show = n => (n == null ? '' : money.format(n));
 
   // ---------- storage (this browser only; everything still works without it) ----------
@@ -608,11 +638,11 @@ window.CATALOG = {"generated":"2026-09-25","shelves":[{"slug":"escriva","name":"
 
   document.body.innerHTML = `
   <a class="skip" href="#catalogue">Skip to books</a>
-  <header class="bar">
+  <header class="bar${anyPriced ? ' has-fmt' : ''}">
     <a class="brand" href="#/" aria-label="${esc(SITE.name)} — home">${brand}</a>
     <label class="search">${ICON.search}<span class="sr-only">Search books</span>
       <input type="search" id="q" placeholder="Search" autocomplete="off" spellcheck="false"></label>
-    <div class="fmt" role="group" aria-label="Show prices for">
+    <div class="fmt" role="group" aria-label="Show prices for"${anyPriced ? '' : ' hidden'}>
       ${FORMATS.map(f => `<button type="button" data-fmt="${f}" aria-pressed="${f === state.format}">${ICON[f]}<span>${esc(SITE.formats[f])}</span></button>`).join('')}
     </div>
     <button type="button" class="bag-btn" id="bag-open" aria-label="Basket">${ICON.bag}<span class="bag-count" id="bag-count" hidden>0</span></button>
@@ -645,8 +675,8 @@ window.CATALOG = {"generated":"2026-09-25","shelves":[{"slug":"escriva","name":"
   <div class="toast" id="toast" role="status" aria-live="polite"></div>`;
 
   function ascent() {
-    const feat = CAT.books.filter(b => b.featured).slice(0, 7);
-    const pick = feat.length >= 4 ? feat : feat.concat(books.filter(b => !b.featured)).slice(0, 6);
+    const feat = CAT.books.filter(b => b.featured);
+    const pick = feat.concat(books.filter(b => !b.featured)).slice(0, 5);
     return pick.map((b, i) => `<a class="step" href="#/book/${b.id}" tabindex="-1" style="--i:${i};--n:${pick.length}">${cover(b, SITE, shelfIndex[b.shelf] || 0)}</a>`).join('');
   }
 
@@ -698,6 +728,7 @@ window.CATALOG = {"generated":"2026-09-25","shelves":[{"slug":"escriva","name":"
   let current = null, chosen = 'print', qty = 1, openedInApp = false;
 
   function renderBook(b) {
+    const unpriced = FORMATS.every(f => priceOf(b, f) == null);
     const more = books.filter(x => x.shelf === b.shelf && x.id !== b.id).slice(0, 6);
     const meta = [
       b.isbn && [SITE.words.isbn, esc(b.isbn)],
@@ -710,17 +741,18 @@ window.CATALOG = {"generated":"2026-09-25","shelves":[{"slug":"escriva","name":"
         <div class="bk-cover">${cover(b, SITE, shelfIndex[b.shelf] || 0)}</div>
         <div class="bk-info">
           <a class="eyebrow" href="#/shelf/${b.shelf}" data-shelf>${esc(shelfName[b.shelf] || '')}</a>
-          <h2 id="bk-title" class="bk-title" tabindex="-1">${esc(b.title)}</h2>
-          ${b.subtitle ? `<p class="bk-sub">${esc(b.subtitle)}</p>` : ''}
+          <h2 id="bk-title" class="bk-title" tabindex="-1">${typo(b.title)}</h2>
+          ${b.subtitle ? `<p class="bk-sub">${typo(b.subtitle)}</p>` : ''}
           ${b.author ? `<p class="bk-author">${esc(b.author)}</p>` : ""}
           ${b.description ? `<p class="bk-desc">${esc(b.description)}</p>` : ''}
           <fieldset class="formats"><legend class="sr-only">Format</legend>
             ${FORMATS.map(f => {
               const p = priceOf(b, f);
               return `<label class="fopt"><input type="radio" name="fmt" value="${f}" ${f === chosen ? 'checked' : ''}>
-                <span class="fopt-in">${ICON[f]}<span class="fopt-name">${esc(SITE.formats[f])}</span><span class="fopt-price">${p == null ? esc(SITE.words.unpriced) : show(p)}</span></span></label>`;
+                <span class="fopt-in">${ICON[f]}<span class="fopt-name">${esc(SITE.formats[f])}</span>${unpriced ? '' : `<span class="fopt-price">${p == null ? '—' : show(p)}</span>`}</span></label>`;
             }).join('')}
           </fieldset>
+          ${unpriced ? `<p class="bk-pending">${esc(SITE.words.unpriced)}</p>` : ''}
           <div class="bk-actions">
             <div class="qty" ${chosen === 'print' ? '' : 'hidden'}>
               <button type="button" data-qty="-1" aria-label="One fewer">${ICON.minus}</button>
@@ -784,13 +816,13 @@ window.CATALOG = {"generated":"2026-09-25","shelves":[{"slug":"escriva","name":"
           <div class="line-ctl">
             ${l.format === 'print' ? `<div class="qty qty-s"><button type="button" data-line="${i}" data-d="-1" aria-label="One fewer">${ICON.minus}</button><output>${l.qty}</output><button type="button" data-line="${i}" data-d="1" aria-label="One more">${ICON.plus}</button></div>` : ''}
             <button type="button" class="link" data-remove="${i}">${esc(SITE.words.remove)}</button></div></div>
-        <p class="line-price">${p == null ? '<span class="muted">—</span>' : show(p * l.qty)}</p></li>`;
+        <p class="line-price">${p == null ? `<span class="line-pending">${esc(SITE.words.unpriced)}</span>` : show(p * l.qty)}</p></li>`;
     }).join('');
     $('#dlg-bag').innerHTML = `
       <header class="bag-head"><h2 id="bag-title">${esc(SITE.words.basket)}</h2><button type="button" class="x" data-close aria-label="Close">${ICON.close}</button></header>
       ${state.basket.length ? `<ul class="lines">${lines}</ul>
-      <footer class="bag-foot"><p class="total"><span>${esc(SITE.words.total)}</span><strong>${bagUnpriced() === state.basket.length ? '—' : show(bagTotal())}</strong></p>
-        ${bagUnpriced() ? `<p class="bag-pending">${esc(SITE.words.toPrice.replace('{n}', bagUnpriced()))}</p>` : ''}
+      <footer class="bag-foot"><p class="total"><span>${esc(SITE.words.total)}</span>${bagUnpriced() === state.basket.length ? `<span class="line-pending">${esc(SITE.words.unpriced)}</span>` : `<strong>${show(bagTotal())}</strong>`}</p>
+        ${bagUnpriced() && bagUnpriced() < state.basket.length ? `<p class="bag-pending">${esc(SITE.words.toPrice.replace('{n}', bagUnpriced()))}</p>` : ''}
         <button type="button" class="btn btn-primary btn-wide" id="checkout">${esc(SITE.words.checkout)}</button>
         <p class="bag-note" id="bag-note" hidden>${esc(SITE.words.checkoutNote)}</p></footer>`
       : `<div class="bag-empty">${ICON.bag}<p>${esc(SITE.words.empty)}</p></div>`}`;
@@ -807,7 +839,8 @@ window.CATALOG = {"generated":"2026-09-25","shelves":[{"slug":"escriva","name":"
 
   let toastTimer;
   function toast(msg) {
-    const t = $('#toast');
+    const t = $('#toast'), host = document.querySelector('dialog[open]') || document.body;
+    if (t.parentNode !== host) host.appendChild(t);
     t.textContent = msg; t.classList.add('on');
     clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('on'), 2600);
   }

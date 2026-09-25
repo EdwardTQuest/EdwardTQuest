@@ -117,7 +117,7 @@ def single(site):
 HOUSES = [
     dict(key='scepter-uk', name='Scepter', place='London', motif='contour', mark='orb', bg='#101A2F', ink='#F4EEDF', ac='#C9A45C',
          glow='radial-gradient(700px 420px at 80% 0%, rgba(201,164,92,.18), transparent 60%)', display="'Libre Caslon Display', Georgia, serif", weight=400, style='normal', track='-0.015em'),
-    dict(key='sinag-tala', name='Sinag-Tala', place='Makati · Philippines', motif='rays', mark='star', bg='#151941', ink='#FBF4E2', ac='#F3B33A',
+    dict(key='sinag-tala', name='Sinag-Tala', html='Sinag-<em style="font-style:italic;color:var(--ac)">Tala</em>', place='Makati · Philippines', motif='rays', mark='star', bg='#151941', ink='#FBF4E2', ac='#F3B33A',
          glow='radial-gradient(700px 420px at 30% 0%, rgba(243,179,58,.2), transparent 60%)', display="'Fraunces', Georgia, serif", weight=500, style='normal', track='-0.035em'),
     dict(key='scepter-kenya', name='Scepter Kenya', place='Nairobi', motif='strata', mark='peaks', bg='#0E2E23', ink='#F6EFE2', ac='#E3A437',
          glow='radial-gradient(700px 420px at 76% 0%, rgba(227,164,55,.22), transparent 60%)', display="'Bricolage Grotesque', system-ui, sans-serif", weight=700, style='normal', track='-0.045em'),

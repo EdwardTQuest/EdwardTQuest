@@ -19,7 +19,8 @@
   .house::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--glow); }
   .art { position: absolute; z-index: -1; right: -8%; top: -30%; width: 70%; aspect-ratio: 2 / 3; opacity: .55; --cv-ac: var(--ac); --cv-fg: var(--ink); transition: transform 1.2s cubic-bezier(.2, .7, .2, 1); }
   .art svg { width: 100%; height: 100%; }
-  .art { -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 45%); mask-image: linear-gradient(90deg, transparent 0, #000 45%); }
+  .art { -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 45%), linear-gradient(180deg, #000 45%, transparent 72%); -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, transparent 0, #000 45%), linear-gradient(180deg, #000 45%, transparent 72%); mask-composite: intersect; }
+  .house[data-motif="strata"] .art { top: -12%; }
   .house:hover .art { transform: translateY(-3%) scale(1.03); }
   .mark { width: 26px; color: var(--ac); margin-bottom: auto; }
   .place { font: 600 11px/1 'Instrument Sans', system-ui, sans-serif; letter-spacing: .24em; text-transform: uppercase; color: var(--ac); }
@@ -28,7 +29,7 @@
   .meta svg { width: 18px; transition: transform .3s; }
   .house:hover .meta svg { transform: translateX(4px); }
   .house:focus-visible { outline: 2px solid var(--ac); outline-offset: -6px; }
-  @media (max-width: 760px) { main { grid-template-columns: 1fr; } .house { min-height: 58vw; } }
+  @media (max-width: 760px) { main { grid-template-columns: 1fr; } .house { min-height: 58vw; } header { flex-direction: column; align-items: flex-start; gap: 6px; } header span { white-space: nowrap; } }
   @media (prefers-reduced-motion: reduce) { .art, .meta svg { transition: none; } }
 </style>
 </head>
@@ -40,11 +41,11 @@
   const HOUSES = /*HOUSES*/[];
   const arrow = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   document.getElementById('houses').innerHTML = HOUSES.map(h => `
-    <a class="house" href="${h.key}/index.html" style="--bg:${h.bg};--ink:${h.ink};--ac:${h.ac};--glow:${h.glow};--display:${h.display};--w:${h.weight};--st:${h.style};--tr:${h.track}">
+    <a class="house" data-motif="${h.motif}" href="${h.key}/index.html" style="--bg:${h.bg};--ink:${h.ink};--ac:${h.ac};--glow:${h.glow};--display:${h.display};--w:${h.weight};--st:${h.style};--tr:${h.track}">
       <div class="art">${Covers.heroArt({ key: h.key, motif: h.motif }, h.key + '-hub')}</div>
       <span class="mark">${Covers.MARKS[h.mark]}</span>
       <span class="place">${h.place}</span>
-      <span class="name">${h.name}</span>
+      <span class="name">${h.html || h.name}</span>
       <span class="meta">${h.count} titles ${arrow}</span>
     </a>`).join('');
 </script>
