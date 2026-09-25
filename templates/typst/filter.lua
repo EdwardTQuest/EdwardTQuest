@@ -115,11 +115,13 @@ local function mark_chapter_end(out)
   end
 end
 
+local seen_heading = false
 local function walk(blocks, division)
   local out = {}
   local after_chapter = false
   for _, b in ipairs(blocks) do
     if b.t == 'Header' then
+      if not division then seen_heading = true end        -- a chapter, not a dedication or preface
       local is_opener = ((has_parts and b.level <= 2) or ((not has_parts) and b.level <= 2))
       if is_opener then mark_chapter_end(out) end
       local hb, is_ch = header_blocks(b, division)
@@ -132,7 +134,8 @@ local function walk(blocks, division)
         for _, x in ipairs(walk(b.content, true)) do table.insert(out, x) end
       elseif cls == 'epigraph' then
         local inner = pandoc.write(pandoc.Pandoc(walk(b.content, division)), 'typst')
-        table.insert(out, raw('#epigraph[\n' .. inner .. ']'))
+        local own = (not seen_heading) and 'true' or 'false'     -- before the first chapter: a page of its own
+        table.insert(out, raw('#epigraph(own-page: ' .. own .. ')[\n' .. inner .. ']'))
       elseif cls == 'verse' then
         for _, x in ipairs(walk(b.content, division)) do table.insert(out, x) end
       else

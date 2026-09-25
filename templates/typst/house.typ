@@ -31,11 +31,26 @@
   #body
 ]
 
-#let epigraph(body) = block(above: 0.4em, below: 1.6em, inset: (left: 12%, right: 12%))[
-  #set par(justify: false, first-line-indent: 0em)
-  #set text(style: "italic", size: 0.94em)
-  #body
-]
+// an epigraph: at the head of the book, a recto of its own (no running head, no folio, the verso
+// after it blank); inside a chapter, an indented italic block
+#let epigraph(own-page: false, body) = if own-page {
+  pagebreak(to: "odd", weak: true)
+  page(header: none, footer: none)[
+    #v(30%)
+    #block(inset: (left: 10%, right: 10%), breakable: false)[
+      #set par(justify: false, first-line-indent: 0em)
+      #set text(style: "italic", size: 0.94em)
+      #body
+    ]
+    #metadata("chend") <chend>
+  ]
+} else {
+  block(above: 0.4em, below: 1.6em, inset: (left: 12%, right: 12%), breakable: false)[
+    #set par(justify: false, first-line-indent: 0em)
+    #set text(style: "italic", size: 0.94em)
+    #body
+  ]
+}
 
 // a chapter that must open recto: the verso left blank carries neither running head nor folio.
 // The break is emitted by the filter BEFORE the heading (#chapter-break()), never inside the
