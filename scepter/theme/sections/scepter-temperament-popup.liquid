@@ -30,7 +30,7 @@
         "kicker": {{ s.kicker | json }}, "title": {{ s.heading | json }}, "lead": {{ s.intro | json }}, "cta": {{ s.cta | json }},
         "meta": {{ s.meta | json }}, "attribution": {{ s.attribution | json }}, "attributionUrl": {{ s.attribution_url | json }},
         "booksTitle": {{ s.books_title | json }}, "booksLead": {{ s.books_lead | json }}, "forYou": {{ s.for_you_label | json }},
-        "launcher": {{ s.launcher_label | json }}
+        "launcher": {{ s.launcher_label | json }}, "consent": {{ s.consent_text | json }}
       },
       "books": [
         {%- if s.book_all != blank -%}{"for": ["all"], "product": {% render 'scepter-product-json', product: s.book_all %}},{%- endif -%}
@@ -314,6 +314,19 @@
       "id": "customer_tag",
       "label": "Customer tag",
       "default": "temperament-test"
+    },
+    {
+      "type": "text",
+      "id": "consent_text",
+      "label": "Marketing checkbox text",
+      "default": "Also send me occasional emails from Scepter. Unsubscribe anytime."
+    },
+    {
+      "type": "checkbox",
+      "id": "consent_checked",
+      "label": "Marketing checkbox ticked by default",
+      "default": false,
+      "info": "Leave off: a pre-ticked box is not valid consent under GDPR or Canada's anti-spam law."
     },
     {
       "type": "header",

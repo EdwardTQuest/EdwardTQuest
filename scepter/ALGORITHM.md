@@ -116,8 +116,9 @@ young. Month 1 is kept gentle; summer is a little lighter.
    taken, the next free month is used. Rules ship for struggling (Jacques Philippe, month 1),
    priests (month 1), leaders (Havard, month 2), work that feels empty (*Sanctifying Ordinary
    Work*, month 3) and non-Catholics (*The Faith Explained*, month 4).
-2. **Month 1** leans twice as hard on the reader's strongest need, stays gentle, and is always a
-   proven favourite.
+2. **Month 1** leans twice as hard on the reader's strongest need and stays gentle. Unless a rule
+   placed it, month 1 is always a bestseller, a proven favourite, even when a backlist book scores
+   higher.
 3. **Then every other month**, in order: the best-scoring eligible book, bestsellers preferred.
    A backlist book still wins if the best bestseller is under 80% as good. Each pick is also
    penalised for resembling what is already chosen (maximal marginal relevance), so the year
@@ -144,8 +145,9 @@ admin's "why" line, or a rule's note, is shown beside it. Each book is tagged **
 each quiz, e.g. *The Peacemaker* / *The Road to Still Waters* / *The Peace That Passes
 Understanding*). It gives one practice for the first week, drawn from the strongest need.
 
-A reader who has already read a book can **swap** it. The next-best book for that month comes in,
-from the same shelf, under the same rules, and it never offers the swapped-out book again.
+A reader who has already read a book can **swap** it, month 1 included. The next-best book for
+that month comes in, from the month's own shelf (bestseller or backlist), under the same rules. No
+book the reader has swapped out comes back, in any month.
 
 ## A worked example
 

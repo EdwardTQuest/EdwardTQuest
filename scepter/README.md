@@ -139,7 +139,8 @@ section settings.
   depth, or exit intent (all adjustable). It never shows on a page with a quiz, never twice in a
   session, and stays away 14 days after a dismissal. Any link to `#free-ebook` opens it; so does
   `?sp=ebook` in a URL (useful in ads and emails). The reader can download at once, and gets the
-  book by email too.
+  book by email too when Klaviyo or a webhook is connected. Without one, the thank-you says only
+  "ready to download".
 - **Temperament test.** A floating button ("What's your temperament?"), plus any link to
   `#temperament-test`. Pick a book for everyone (*From Temperament to Character*), one per
   temperament, and a collection for the rest (*alexandre-havard*). The result shows the reader's
@@ -178,17 +179,23 @@ Each section sends a new lead to any of:
 - **Shopify customers**, via the newsletter form, tagged (`scepter-quiz`, `quiz-mission`,
   `persona-peacemaker`, `interest-peace`, `temperament-choleric` …) for segments in Shopify Email.
 
-**Privacy.** Religion and gender shape the plan but are *not* sent to the email platform unless
-you tick "Send religion and gender" in the quiz section. The marketing checkbox is separate from
-receiving the plan itself. Under-18s are asked to confirm a parent's permission. Plan links carry
-only book handles, never names or emails.
+**Privacy and consent.**
+- Religion and gender shape the plan, but they are *not* sent to the email platform unless you tick
+  "Send religion and gender" in the quiz section. Neither are the answers that imply them: priest,
+  religious, clergy and the order.
+- The marketing checkbox is separate from receiving the plan, the e-book or the result. It starts
+  unticked, because a pre-ticked box is not valid consent under GDPR or Canada's anti-spam law.
+  Only a ticked box subscribes the reader to your list or Shopify's newsletter.
+- Under-18s are asked to confirm a parent's permission.
+- Plan links carry only book handles, never names or emails.
+- The plan email itself contains the plan and its title, since that is what the reader asked for.
 
 ## For developers
 
 ```sh
 cd scepter
 npm install              # liquidjs and theme-check, for the tests and lint
-npm test                 # 35 tests: engine, quiz logic, and the Liquid → JSON → engine contract
+npm test                 # 38 tests: engine, quiz logic, and the Liquid → JSON → engine contract
 npm run check:theme      # Shopify theme-check on theme/ (0 offenses)
 npm run screenshots      # walks every quiz and pop-up at phone and desktop sizes (Playwright)
 ```
@@ -214,7 +221,14 @@ its public storefront endpoints: `/products.json`, `/products/<handle>.js`, `/ca
 `/contact`.
 
 **What was verified, and how:**
-- 35 automated tests pass (`npm test`).
+- 38 automated tests pass (`npm test`).
+- An independent review found 12 defects, all fixed and re-checked in Chromium:
+  - the temperament pop-up failed to load when the e-book pop-up sat above it;
+  - the result email subscribed people without asking;
+  - double taps skipped questions;
+  - swapped-out books came back;
+  - the Treasures answer colours and focus rings had weak contrast;
+  - other smaller ones.
 - theme-check reports 0 offenses.
 - The Liquid is rendered with liquidjs and mock store objects, and its output is fed through the
   engine.

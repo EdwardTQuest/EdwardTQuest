@@ -11,7 +11,10 @@
  */
 (function (root, factory) {
   if (typeof module === 'object' && module.exports) module.exports = factory();
-  else if (!root.ScepterTemperament) root.ScepterTemperament = factory(); // safe to include twice on one page
+  else if (!root.ScepterTemperament) {
+    root.ScepterTemperament = factory(); // safe to include twice on one page
+    if (root.ScepterPopups && root.ScepterPopups.autoMount) root.ScepterPopups.autoMount(); // loaded after the pop-ups
+  }
 })(typeof self !== 'undefined' ? self : this, function () {
   'use strict';
 

@@ -556,3 +556,25 @@
 .sp-books { grid-template-columns: repeat(auto-fit, minmax(118px, 1fr)); }
 .sp .sp-cover__author { max-width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 @media (max-width: 560px) { .sp-books { grid-template-columns: 1fr; } }
+
+/* Review fixes (accessibility). A selected answer must differ in lightness, not only in hue:
+   in the treasure quiz it is cream with burgundy ink (burgundy on dark green is ~1.2:1), and in
+   every variant it carries a check mark, so selection never rests on colour alone. */
+.sp-v-treasures { --sp-sel-bg: var(--sp-cream); --sp-sel-ink: var(--sp-burgundy); }
+.sp-v-treasures .sp-opt.is-selected, .sp-v-treasures .sp-dot.is-selected, .sp-v-treasures .sp-chip.is-selected { border-color: var(--sp-cream); box-shadow: 0 0 0 2px var(--sp-burgundy-hover), 0 10px 24px -14px rgba(0,0,0,.5); }
+.sp .sp-opt { position: relative; }
+.sp .sp-opt.is-selected { padding-right: 44px; }
+.sp .sp-opt.is-selected::after {
+  content: ""; position: absolute; top: 50%; right: 16px; width: 18px; height: 18px; margin-top: -9px; border-radius: 50%;
+  background: currentColor; -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1.4 14.2-4.2-4.2 1.4-1.4 2.8 2.8 5.8-5.8 1.4 1.4z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1.4 14.2-4.2-4.2 1.4-1.4 2.8 2.8 5.8-5.8 1.4 1.4z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.sp .sp-options--cards .sp-opt.is-selected::after { top: 22px; margin-top: 0; }
+.sp .sp-options--count .sp-opt.is-selected, .sp .sp-options--years .sp-opt.is-selected, .sp .sp-options--row .sp-opt.is-selected { padding-right: 18px; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.sp .sp-options--count .sp-opt.is-selected::after, .sp .sp-options--years .sp-opt.is-selected::after, .sp .sp-options--row .sp-opt.is-selected::after { display: none; }
+.sp .sp-dot.is-selected .sp-dot__n, .sp .sp-chip.is-selected { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+/* Focus on cream cards inside the dark variants: a burgundy ring, not the pale sage one. */
+.sp .sp-plan__item, .sp .sp-first, .sp .sp-book, .sp .sp-bars-panel, .sp .sp-ebook__form, .sp .sp-ebook__done { --sp-focus: 0 0 0 3px rgba(111, 29, 44, .6); }
+.sp .sp-cart-error { flex-basis: 100%; font-size: .85rem; color: #9b1c2c; font-weight: 600; }
+.sp .sp-first .sp-link { color: var(--sp-muted); }
+.sp .sp-first .sp-link:hover { color: var(--sp-burgundy); }

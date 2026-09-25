@@ -969,7 +969,9 @@
     var top = runners[0] || null;
     var wantBack = slot.wantTier === 'backlist';
     var inTier = runners.filter(function (r) { return wantBack ? !r.it.isBestseller : r.it.isBestseller; })[0];
-    var best = inTier && top && inTier.total >= FLOOR[wantBack ? 'backlist' : 'bestseller'] * top.total ? inTier : top;
+    // Month 1 is always a proven favourite (an admin rule may still place anything there).
+    var strict = slot.index === 0 && !wantBack;
+    var best = inTier && top && (strict || inTier.total >= FLOOR[wantBack ? 'backlist' : 'bestseller'] * top.total) ? inTier : top;
     return { best: best, runners: runners };
   }
 
@@ -993,6 +995,8 @@
    *   opts      { start: Date, seed: string, variant, bestsellerShare, rules: [{condition, products:[handles], match, month, note}],
    *               featured: [handles], maxPerAuthor, months }
    */
+  function openTo(items, p) { return items.filter(function (it) { return audienceFactor(it, p) > 0.3; }); }
+
   function buildPlan(profile, catalog, opts) {
     opts = opts || {};
     var s = catalog.settings || DEFAULTS;
@@ -1008,7 +1012,9 @@
     if (profile.top[0]) firstNeeds[profile.top[0]] = (firstNeeds[profile.top[0]] || 0) * 2;
     var ctx = { featured: featured, firstNeeds: firstNeeds, maxPerAuthor: num(opts.maxPerAuthor, s.maxPerAuthor) };
     var placed = new Array(n), meta = new Array(n);
-    var items = catalog.items;
+    // Books whose named audience the reader is not in (a book for married couples, for priests…)
+    // are never candidates, in any month or swap: "Good for" without "Everyone" is a gate.
+    var items = openTo(catalog.items, profile);
 
     // 1. Starter rules from the admin, in order. One rule is built in and survives an empty
     //    rule list: someone who feels pretty poor about God, religion or the world starts with
@@ -1021,7 +1027,7 @@
       var test = CONDITIONS[rule.condition];
       if (!test || !test(profile)) return;
       var pool = [];
-      toArray(rule.products).forEach(function (h) { if (catalog.byHandle[h]) pool.push(catalog.byHandle[h]); });
+      toArray(rule.products).forEach(function (h) { var it = catalog.byHandle[h]; if (it && audienceFactor(it, profile) > 0.3) pool.push(it); });
       if (!pool.length && rule.match) pool = items.filter(function (it) { return matchesText(it, rule.match); });
       var index = clamp(num(rule.month, 1), 1, n) - 1;
       var probe = { index: index, seasons: slots[index].seasons, targetDepth: slots[index].targetDepth, wantTier: 'bestseller' };
@@ -1085,7 +1091,7 @@
     opts = opts || {};
     var s = catalog.settings || DEFAULTS;
     var slots = makeSlots(plan.start, plan.months.length, profile, num(opts.bestsellerShare, s.bestsellerShare));
-    slots[index].wantTier = plan.months[index].tier;
+    slots[index].wantTier = index === 0 ? 'bestseller' : (plan.months[index].slotTier || plan.months[index].tier);
     var placed = plan.months.map(function (m) { return catalog.byHandle[m.item.handle] || null; });
     var exclude = {};
     toArray(opts.exclude).forEach(function (h) { exclude[h] = 1; });
@@ -1094,7 +1100,7 @@
     var firstNeeds = Object.assign({}, profile.needs);
     if (profile.top[0]) firstNeeds[profile.top[0]] = (firstNeeds[profile.top[0]] || 0) * 2;
     var ctx = { featured: {}, firstNeeds: firstNeeds, maxPerAuthor: num(opts.maxPerAuthor, s.maxPerAuthor) };
-    var r = pickFor(slots[index], catalog.items, profile, ctx, placed, rng('swap' + index + Object.keys(exclude).join()), exclude);
+    var r = pickFor(slots[index], openTo(catalog.items, profile), profile, ctx, placed, rng('swap' + index + Object.keys(exclude).join()), exclude);
     if (!r.best) return plan;
     var next = Object.assign({}, plan, { months: plan.months.slice() });
     next.months[index] = describeMonth(slots[index], r.best.it, profile, { source: 'swap' },
@@ -1179,6 +1185,7 @@
         variantId: it.variantId, author: it.author, authorKey: it.authorKey
       },
       tier: it.isBestseller ? 'bestseller' : 'backlist',
+      slotTier: slot.wantTier || (it.isBestseller ? 'bestseller' : 'backlist'),
       trending: it.trending,
       themes: contrib.slice(0, 3).map(function (x) { return x.k; }),
       reasons: reasons, because: because, blurb: blurb, why: blurb || because, tags: tags,

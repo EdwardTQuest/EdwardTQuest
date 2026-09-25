@@ -383,13 +383,18 @@
       if (i <= 0) { state.started = false; state.step = null; save(); render('back'); return; }
       go(list[i - 1], 'back');
     }
+    var advancing = null;
     function answer(patch, advance) {
       var prevVisible = steps().join();
+      var from = state.step;
       state.answers = sanitize(Object.assign({}, state.answers, patch));
       save();
-      emit('quiz:answer', { variant: variant, step: state.step });
-      if (advance) setTimeout(next, reduceMotion ? 0 : 220);
-      else if (prevVisible !== steps().join()) render('none');
+      emit('quiz:answer', { variant: variant, step: from });
+      if (advance) {
+        if (advancing === from) return; // a double tap: the first one already moves us on
+        advancing = from;
+        setTimeout(function () { advancing = null; if (state.step === from) next(); }, reduceMotion ? 0 : 220);
+      } else if (prevVisible !== steps().join()) render('none');
     }
 
     function render(dir) {
@@ -457,9 +462,11 @@
         var list = h('div', { class: 'sp-options sp-options--' + (q.layout || 'list') + ' sp-options--n' + opts.length, role: 'group', 'aria-label': c.title || id });
         opts.forEach(function (o, i) {
           var over = c.options && c.options[o[0]];
-          list.appendChild(optionButton(o[0], over ? over[0] : o[1], over ? over[1] : o[2], a[id] === o[0], function (v) {
+          var btn = optionButton(o[0], over ? over[0] : o[1], over ? over[1] : o[2], a[id] === o[0], function (v) {
+            markSelected(list, btn);
             var p = {}; p[id] = v; answer(p, true);
-          }, { 'data-key': String(i + 1) }));
+          }, { 'data-key': String(i + 1) });
+          list.appendChild(btn);
         });
         sec.appendChild(list);
       }
@@ -470,7 +477,7 @@
         for (var i = 1; i <= pts; i++) {
           (function (v) {
             row.appendChild(h('button', { type: 'button', class: 'sp-dot' + (Number(a[id]) === v ? ' is-selected' : ''), 'aria-pressed': Number(a[id]) === v ? 'true' : 'false',
-              'aria-label': String(v) + (labels[v - 1] ? ': ' + labels[v - 1] : ''), onclick: function () { var p = {}; p[id] = v; answer(p, true); } }, [
+              'aria-label': String(v) + (labels[v - 1] ? ': ' + labels[v - 1] : ''), onclick: function (ev) { markSelected(row, ev.currentTarget); var p = {}; p[id] = v; answer(p, true); } }, [
               h('span', { class: 'sp-dot__n', text: String(v) }),
               labels[v - 1] ? h('span', { class: 'sp-dot__label', text: labels[v - 1] }) : null
             ]));
@@ -560,7 +567,7 @@
       var email = h('input', { class: 'sp-input', type: 'email', name: 'email', autocomplete: 'email', inputmode: 'email', placeholder: 'Email address', 'aria-label': 'Email address', required: true, value: a.email || '' });
       var lcfg = cfg.lead || {};
       var consentText = lcfg.consentText || 'Also send me occasional emails from Scepter: new books, reading ideas, offers. Unsubscribe anytime.';
-      var consent = h('input', { type: 'checkbox', class: 'sp-check__box', checked: lcfg.consentChecked !== false });
+      var consent = h('input', { type: 'checkbox', class: 'sp-check__box', checked: lcfg.consentChecked === true });
       var minor = a.age === 'u18' ? h('input', { type: 'checkbox', class: 'sp-check__box' }) : null;
       var submit = h('button', { type: 'submit', class: 'sp-btn sp-btn--primary sp-btn--lg sp-btn--block' }, [ec.button, h('span', { class: 'sp-btn__arrow', 'aria-hidden': 'true', text: '→' })]);
       var form = h('form', { class: 'sp-form', novalidate: true, onsubmit: function (ev) {
@@ -628,17 +635,22 @@
       var months = plan.months.map(function (m) {
         return { month: m.label, title: m.item.title, author: m.item.author || '', url: absolute(m.item.url), image: m.item.image || '', why: m.because, hidden_gem: m.tier === 'backlist' };
       });
+      // A vocation (priest, religious, clergy, an order) reveals religion and sex, so it is sent only
+      // when the admin allows sensitive answers, like religion and gender themselves.
+      var vocation = ['priest', 'religious', 'clergy'].indexOf(a.state) >= 0;
+      var hideVocation = vocation && !lc.sensitive;
       var props = {
         quiz_variant: variant, formation_archetype: arche[0], formation_plan_url: url,
         formation_first_book: months[0] ? months[0].title : '', formation_first_book_url: months[0] ? months[0].url : '',
-        quiz_age: a.age, quiz_state: a.state, quiz_work: a.work, quiz_desire: a.desire, quiz_faith: a.faith,
-        quiz_married_years: a.marriedYears, quiz_kids: a.kids, quiz_order: a.order,
-        quiz_priest: a.state === 'priest' ? [a.priestType, a.priestRole].filter(Boolean).join(', ') : undefined,
+        quiz_age: a.age, quiz_state: hideVocation ? undefined : a.state, quiz_work: a.work, quiz_desire: a.desire, quiz_faith: a.faith,
+        quiz_married_years: a.marriedYears, quiz_kids: a.kids, quiz_order: hideVocation ? undefined : a.order,
+        quiz_priest: a.state === 'priest' && !hideVocation ? [a.priestType, a.priestRole].filter(Boolean).join(', ') : undefined,
         religion: a.religion, gender: a.gender
       };
       var lead = {
         email: a.email, firstName: a.firstName, source: 'Scepter quiz: ' + copy.name,
-        tags: [lc.tag || 'scepter-quiz', 'quiz-' + variant, 'persona-' + plan.archetype, a.desire && 'desire-' + a.desire, a.state && 'state-' + a.state, a.age && 'age-' + a.age],
+        tags: [lc.tag || 'scepter-quiz', 'quiz-' + variant, !hideVocation && 'persona-' + plan.archetype, a.desire && 'desire-' + a.desire,
+          a.state && !hideVocation && 'state-' + a.state, a.age && 'age-' + a.age],
         properties: props,
         eventName: lc.eventName || 'Completed Formation Quiz',
         eventProperties: Object.assign({}, props, { archetype_text: arche[1], practice: plan.practice.text, plan: months })
@@ -695,7 +707,8 @@
             first.blurb ? h('p', { class: 'sp-blurb', text: first.blurb }) : null,
             h('div', { class: 'sp-first__actions' }, [
               cartButton([first], 'Add to cart' + (first.item.price ? ' · ' + money(first.item.price, cfg.currency) : ''), 'sp-btn--primary'),
-              h('a', { class: 'sp-btn sp-btn--ghost', href: first.item.url }, 'See the book')
+              h('a', { class: 'sp-btn sp-btn--ghost', href: first.item.url }, 'See the book'),
+              h('button', { type: 'button', class: 'sp-link', onclick: function () { swap(0); } }, 'Read it already? Swap')
             ])
           ])
         ]));
@@ -765,10 +778,18 @@
         runtime.profile = E.profileFromAnswers(state.answers);
       });
     }
-    function swap(i) { ensureCatalog().then(function () { doSwap(i); }); }
+    var swapping = false, lastSwap = {};
+    function swap(i) {
+      // One swap per intent: a double-click (or a click on the freshly redrawn link) is ignored.
+      if (swapping || Date.now() - (lastSwap[i] || 0) < 700) return;
+      swapping = true;
+      lastSwap[i] = Date.now();
+      ensureCatalog().then(function () { doSwap(i); }).then(function () { swapping = false; }, function () { swapping = false; });
+    }
     function doSwap(i) {
       var r = state.result, E2 = window.ScepterEngine;
-      var gone = (r.swapped[i] = (r.swapped[i] || []).concat([r.plan.months[i].item.handle]));
+      r.swapped[i] = (r.swapped[i] || []).concat([r.plan.months[i].item.handle]);
+      var gone = Object.keys(r.swapped).reduce(function (all, k) { return all.concat(r.swapped[k]); }, []);
       var nextPlan = E2.swapMonth(r.plan, i, runtime.profile, runtime.catalog, { exclude: gone, bestsellerShare: cfg.settings && cfg.settings.bestsellerShare });
       if (nextPlan === r.plan) return;
       r.plan = nextPlan; save();
@@ -804,7 +825,12 @@
             var link = h('a', { class: 'sp-link sp-link--cart', href: rootUrl + 'cart', text: 'View cart' });
             if (!btn.nextElementSibling || !btn.nextElementSibling.classList.contains('sp-link--cart')) btn.after(link);
           })
-          .catch(function () { btn.disabled = false; btn.innerHTML = was; btn.title = 'Could not add to cart. Please try again.'; });
+          .catch(function () {
+            btn.disabled = false; btn.innerHTML = was;
+            var note = btn.parentNode.querySelector('.sp-cart-error') || h('p', { class: 'sp-cart-error', role: 'status' });
+            note.textContent = months.length > 1 ? 'Couldn’t add them all: one may be sold out. Try the books one by one.' : 'Couldn’t add it: it may be sold out.';
+            btn.after(note);
+          });
       } }, label);
     }
 
@@ -826,6 +852,15 @@
     var runtime = { catalog: null, profile: null, restored: !!(state.result && state.result.plan) };
     render('none');
     return { el: el, state: function () { return state; }, reset: function () { state = { answers: {}, step: null, started: false }; save(); render(); } };
+  }
+
+  // Show the tap before the quiz moves on: mark the chosen button in its group at once.
+  function markSelected(group, chosen) {
+    Array.prototype.forEach.call(group.children, function (b) {
+      var on = b === chosen;
+      b.classList.toggle('is-selected', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
   }
 
   function capitalize(s) { return s ? s.charAt(0).toUpperCase() + s.slice(1) : s; }

@@ -135,10 +135,10 @@
     return true;
   }
 
-  function wireTriggers(id, cfg, openFn) {
+  function wireTriggers(id, cfg, openFn, listeners) {
     var t = cfg.triggers || {};
     var hash = t.hash || (id === 'ebook' ? 'free-ebook' : 'temperament-test');
-    document.addEventListener('click', function (ev) {
+    listen(listeners, document, 'click', function (ev) {
       var a = ev.target && ev.target.closest && ev.target.closest('a[href$="#' + hash + '"], [data-sp-open="' + id + '"]');
       if (!a) return;
       ev.preventDefault();
@@ -169,14 +169,36 @@
     if (t.exitIntent && window.matchMedia && window.matchMedia('(pointer: fine)').matches) document.addEventListener('mouseout', onOut);
   }
 
-  // In the theme editor, selecting the section opens its pop-up so it can be edited live.
-  function wireEditor(sectionId, modal, openFn) {
+  // In the theme editor, selecting the section opens its pop-up so it can be edited live. A setting
+  // change re-renders the section (unload, then load): the old pop-up and its listeners go, and the
+  // new one reopens if its section is still the selected one.
+  var selectedSection = null;
+  if (typeof document !== 'undefined') {
+    document.addEventListener('shopify:section:select', function (e) { selectedSection = e.detail && e.detail.sectionId; });
+    document.addEventListener('shopify:section:deselect', function (e) { if (e.detail && e.detail.sectionId === selectedSection) selectedSection = null; });
+  }
+  function wireEditor(sectionId, modal, openFn, listeners) {
     if (!sectionId) return;
-    document.addEventListener('shopify:section:select', function (e) { if (e.detail && e.detail.sectionId === sectionId) openFn('editor'); });
-    document.addEventListener('shopify:section:deselect', function (e) { if (e.detail && e.detail.sectionId === sectionId) modal.hide('editor'); });
-    document.addEventListener('shopify:section:unload', function (e) { if (e.detail && e.detail.sectionId === sectionId) modal.destroy(); });
+    listen(listeners, document, 'shopify:section:select', function (e) { if (e.detail && e.detail.sectionId === sectionId) openFn('editor'); });
+    listen(listeners, document, 'shopify:section:deselect', function (e) { if (e.detail && e.detail.sectionId === sectionId) modal.hide('editor'); });
+    listen(listeners, document, 'shopify:section:unload', function (e) {
+      if (!e.detail || e.detail.sectionId !== sectionId) return;
+      listeners.forEach(function (undo) { undo(); });
+      modal.destroy();
+    });
+    if (designMode() && selectedSection === sectionId) setTimeout(function () { openFn('editor'); }, 0);
+  }
+  // Every listener a pop-up adds is recorded as a function that removes it.
+  function listen(listeners, target, type, fn, opts) {
+    target.addEventListener(type, fn, opts);
+    listeners.push(function () { target.removeEventListener(type, fn, opts); });
   }
 
+  // Only Klaviyo (with a key) or a webhook can send an email; a Shopify customer record cannot.
+  function canEmail(cfg) {
+    var lc = cfg.lead || {};
+    return !!((lc.klaviyo && lc.klaviyo.publicKey) || lc.webhook);
+  }
   function leadConfig(cfg) {
     var lc = cfg.lead || {};
     return { klaviyo: lc.klaviyo, webhook: lc.webhook, shopify: lc.shopify, rootUrl: cfg.rootUrl || '/', sensitive: !!lc.sensitive };
@@ -205,6 +227,7 @@
       kicker: 'A gift for you', title: 'Choose a free e-book', sub: 'Tell us what you’re hoping for, and we’ll send you a book to match.',
       legend: 'What are you hoping for most?', button: 'Send me my free e-book', doneTitle: 'It’s yours{name}.',
       doneText: 'Your e-book is ready to download. We’ve emailed you a copy too.', doneTextEmailOnly: 'Check your inbox: your e-book is on its way.',
+      doneTextNoEmail: 'Your e-book is ready to download.',
       download: 'Download the e-book', consent: 'Also send me occasional emails from Scepter. Unsubscribe anytime.', fine: 'We’ll never share your email.'
     }, cfg.copy);
     var given = (cfg.interests || []).filter(function (x) { return x && x.key; });
@@ -224,7 +247,7 @@
       var err = h('p', { class: 'sp-error', role: 'alert' });
       var name = h('input', { class: 'sp-input', type: 'text', name: 'first_name', autocomplete: 'given-name', placeholder: 'First name', 'aria-label': 'First name', required: true });
       var email = h('input', { class: 'sp-input', type: 'email', name: 'email', autocomplete: 'email', inputmode: 'email', placeholder: 'Email address', 'aria-label': 'Email address', required: true });
-      var consent = h('input', { type: 'checkbox', class: 'sp-check__box', checked: (cfg.lead || {}).consentChecked !== false });
+      var consent = h('input', { type: 'checkbox', class: 'sp-check__box', checked: (cfg.lead || {}).consentChecked === true });
       var buttons = interests.map(function (it) {
         return h('button', { type: 'button', class: 'sp-interest', 'data-interest': it.key, 'aria-pressed': 'false', onclick: function () { pick(it.key); } }, [
           h('span', { class: 'sp-interest__icon', html: ICONS[it.key] || ICONS.enlightenment }),
@@ -281,13 +304,15 @@
     }
 
     function renderDone(it, first) {
-      var emailOnly = cfg.deliver === 'email' || !it.url;
+      // "By email only" needs something that can email; otherwise the download is still offered.
+      var emailOnly = (cfg.deliver === 'email' && canEmail(cfg)) || !it.url;
+      var text = emailOnly ? copy.doneTextEmailOnly : canEmail(cfg) ? copy.doneText : copy.doneTextNoEmail;
       modal.content.innerHTML = '';
       modal.content.appendChild(h('div', { class: 'sp-ebook__done' }, [
         cover({ title: it.title || it.label, author: it.author, image: it.image }),
         h('p', { class: 'sp-kicker', text: it.label }),
         h('h2', { class: 'sp-ebook__title', text: copy.doneTitle.replace('{name}', first ? ', ' + first : '') }),
-        h('p', { class: 'sp-lead', text: emailOnly ? copy.doneTextEmailOnly : copy.doneText }),
+        h('p', { class: 'sp-lead', text: text }),
         emailOnly ? null : h('a', { class: 'sp-btn sp-btn--primary sp-btn--lg', href: it.url, target: '_blank', rel: 'noopener', download: '', onclick: function () { emit('ebook:download', { interest: it.key }); } }, copy.download),
         h('button', { type: 'button', class: 'sp-btn sp-btn--quiet', onclick: function () { modal.hide('done'); } }, 'Back to the store')
       ]));
@@ -306,8 +331,9 @@
       emit('popup:open', { popup: 'ebook', source: src });
     }
     renderForm();
-    wireTriggers('ebook', cfg, open);
-    wireEditor(cfg.sectionId, modal, open);
+    var listeners = [];
+    wireTriggers('ebook', cfg, open, listeners);
+    wireEditor(cfg.sectionId, modal, open, listeners);
     return { open: open, close: function () { modal.hide('api'); }, modal: modal };
   }
 
@@ -326,7 +352,8 @@
       attribution: 'Based on the four classical temperaments as Alexandre Havard presents them in From Temperament to Character.',
       attributionUrl: '', resultKicker: 'Your temperament', booksTitle: 'Go deeper with Alexandre Havard',
       booksLead: 'Temperament is where we start; character is what we build. These books show how.',
-      launcher: 'What’s your temperament?', emailTitle: 'Email me my result', progress: '{n} of {total}'
+      launcher: 'What’s your temperament?', emailTitle: 'Email me my result', progress: '{n} of {total}',
+      consent: 'Also send me occasional emails from Scepter. Unsubscribe anytime.'
     }, cfg.copy);
     var given = (cfg.questions || []).filter(Boolean);
     var questions = T.normaliseQuestions(given.length ? given : null);
@@ -337,7 +364,7 @@
       return b.product ? Object.assign({}, b.product, { for: b.for || [] }) : b;
     }).filter(function (b) { return b && b.handle; });
     var modal = createModal({ id: 'temperament', label: copy.title, theme: 'dark', narrow: true, className: 'sp-modal--temperament', style: cfg.style });
-    var picks = [], index = 0, stage = 'intro', outcome = null;
+    var picks = [], index = 0, stage = 'intro', outcome = null, advancing = null;
 
     function topbar(n, total) {
       return h('div', { class: 'sp-topbar' }, [
@@ -385,10 +412,15 @@
         q.answers.forEach(function (a, i) {
           list.appendChild(h('button', { type: 'button', class: 'sp-opt' + (picks[index] === i ? ' is-selected' : ''), 'aria-pressed': picks[index] === i ? 'true' : 'false',
             onclick: function (ev) {
+              var at = index;
+              if (advancing === at) return; // a second tap on the same question
+              advancing = at;
               picks[index] = i;
               Array.prototype.forEach.call(list.children, function (b) { b.classList.remove('is-selected'); b.setAttribute('aria-pressed', 'false'); });
               ev.currentTarget.classList.add('is-selected'); ev.currentTarget.setAttribute('aria-pressed', 'true');
               setTimeout(function () {
+                advancing = null;
+                if (index !== at || stage !== 'q') return;
                 if (index < questions.length - 1) { index++; render(); }
                 else finish();
               }, 200);
@@ -439,7 +471,7 @@
         h('p', { text: d.virtueText })
       ]));
       wrap.appendChild(renderBooks());
-      if (cfg.askEmail !== 'off' && L && ((cfg.lead || {}).klaviyo || (cfg.lead || {}).webhook || (cfg.lead || {}).shopify)) wrap.appendChild(emailForm());
+      if (cfg.askEmail !== 'off' && L && canEmail(cfg)) wrap.appendChild(emailForm());
       wrap.appendChild(h('div', { class: 'sp-results__actions' }, [
         h('button', { type: 'button', class: 'sp-btn sp-btn--quiet', onclick: function () { picks = []; index = 0; stage = 'intro'; render(); } }, 'Retake the test')
       ]));
@@ -502,27 +534,38 @@
           try { document.dispatchEvent(new CustomEvent('cart:refresh', { bubbles: true })); } catch (e) { /* theme-specific */ }
           if (!btn.parentNode.querySelector('.sp-link--cart')) btn.after(h('a', { class: 'sp-link sp-link--cart', href: root + 'cart', text: 'View cart' }));
         })
-        .catch(function () { btn.disabled = false; btn.textContent = 'Add to cart'; });
+        .catch(function () {
+          btn.disabled = false; btn.textContent = 'Add to cart';
+          var note = btn.parentNode.querySelector('.sp-cart-error') || h('p', { class: 'sp-cart-error', role: 'status' });
+          note.textContent = 'Couldn’t add it: it may be sold out.';
+          btn.after(note);
+        });
     }
 
     function emailForm() {
       var err = h('p', { class: 'sp-error', role: 'alert' });
       var email = h('input', { class: 'sp-input', type: 'email', name: 'email', autocomplete: 'email', placeholder: 'Email address', 'aria-label': 'Email address' });
+      var consent = h('input', { type: 'checkbox', class: 'sp-check__box', checked: (cfg.lead || {}).consentChecked === true });
+      var send = h('button', { type: 'submit', class: 'sp-btn sp-btn--primary' }, 'Send');
       var form = h('form', { class: 'sp-form sp-temp__email', novalidate: true, onsubmit: function (ev) {
         ev.preventDefault();
         if (!L.validEmail(email.value)) { err.textContent = 'Please enter a valid email address.'; return; }
         var d = results[outcome.dominant], s = outcome.secondary ? results[outcome.secondary] : null;
+        send.disabled = true;
         L.submit(leadConfig(cfg), {
-          email: email.value.trim(), source: 'Scepter temperament test', marketing: true,
+          email: email.value.trim(), source: 'Scepter temperament test', marketing: consent.checked,
           tags: [(cfg.lead || {}).tag || 'temperament-test', 'temperament-' + outcome.dominant],
           properties: { temperament: d.name, temperament_secondary: s ? s.name : '', temperament_virtue: d.virtue },
           eventName: (cfg.lead || {}).eventName || 'Completed Temperament Test',
           eventProperties: { temperament: d.name, secondary: s ? s.name : '', virtue: d.virtue, percent: outcome.percent }
+        }).then(function (r) {
+          if (r.ok) form.replaceWith(h('p', { class: 'sp-sent', role: 'status', text: 'Sent. Look for your result in your inbox.' }));
+          else { send.disabled = false; err.textContent = 'We couldn’t send it just now. Please try again in a moment.'; }
         });
-        form.replaceWith(h('p', { class: 'sp-sent', role: 'status', text: 'Sent. Look for your result in your inbox.' }));
       } }, [
         h('p', { class: 'sp-legend', text: copy.emailTitle }),
-        h('div', { class: 'sp-form__inline' }, [email, h('button', { type: 'submit', class: 'sp-btn sp-btn--primary' }, 'Send')]),
+        h('div', { class: 'sp-form__inline' }, [email, send]),
+        h('label', { class: 'sp-check' }, [consent, h('span', { text: copy.consent })]),
         err
       ]);
       return form;
@@ -541,31 +584,43 @@
     }
 
     var t = cfg.triggers || {};
+    var launcher = null;
     if (t.launcher !== false && !designMode()) {
-      var launcher = h('button', { type: 'button', class: 'sp-launcher sp-launcher--' + (t.launcherPosition || 'left'), onclick: function () { open('launcher'); } },
+      launcher = h('button', { type: 'button', class: 'sp-launcher sp-launcher--' + (t.launcherPosition || 'left'), onclick: function () { open('launcher'); } },
         [h('span', { class: 'sp-launcher__dot', 'aria-hidden': 'true' }), copy.launcher]);
       if (!excluded(cfg, window.location.pathname)) document.body.appendChild(launcher);
     }
     render();
-    wireTriggers('temperament', cfg, open);
-    wireEditor(cfg.sectionId, modal, open);
+    var listeners = [];
+    wireTriggers('temperament', cfg, open, listeners);
+    wireEditor(cfg.sectionId, modal, open, listeners);
+    if (launcher) listeners.push(function () { launcher.remove(); });
     return { open: open, close: function () { modal.hide('api'); }, modal: modal };
   }
 
+  // Sections load their scripts in page order, so this file can run before scepter-temperament.js
+  // (e.g. the e-book pop-up sits above the test in the footer). A pop-up is only mounted once its
+  // scripts are all there; mounting is retried when scepter-temperament.js arrives, on
+  // DOMContentLoaded (after every deferred script) and on load.
   function autoMount() {
     Array.prototype.forEach.call(document.querySelectorAll('[data-sp-popup]'), function (el) {
       if (el.__spMounted) return;
-      el.__spMounted = true;
       var kind = el.getAttribute('data-sp-popup');
-      if (kind === 'ebook') el.__sp = mountEbook(el);
-      if (kind === 'temperament') el.__sp = mountTemperament(el);
+      if (!window.ScepterLead || (kind === 'temperament' && !window.ScepterTemperament)) return;
+      el.__spMounted = true;
+      try {
+        if (kind === 'ebook') el.__sp = mountEbook(el);
+        if (kind === 'temperament') el.__sp = mountTemperament(el);
+      } catch (e) { if (window.console) console.error('[scepter-popups]', e); }
     });
   }
   if (typeof document !== 'undefined') {
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', autoMount);
     else autoMount();
+    document.addEventListener('DOMContentLoaded', autoMount);
+    window.addEventListener('load', autoMount);
     document.addEventListener('shopify:section:load', autoMount);
   }
 
-  return { mountEbook: mountEbook, mountTemperament: mountTemperament, _canAutoOpen: canAutoOpen };
+  return { mountEbook: mountEbook, mountTemperament: mountTemperament, autoMount: autoMount, _canAutoOpen: canAutoOpen };
 });

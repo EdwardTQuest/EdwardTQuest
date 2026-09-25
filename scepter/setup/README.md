@@ -54,8 +54,9 @@ In Klaviyo, the quiz and pop-ups create three metrics the first time someone com
 3. Keep "Skip recently emailed profiles" off for the plan and e-book emails. Readers asked for
    them.
 
-Marketing consent: the reader is added to your list only if they tick the box. The event (and so
-the flow) happens either way. Klaviyo sends flow emails only to profiles that can receive email,
+Marketing consent: the box starts unticked, and the reader is added to your list (and to Shopify's
+newsletter) only if they tick it. The event, and so the flow, happens either way, because the reader
+asked for the plan, the e-book or the result. Klaviyo sends flow emails only to profiles that can receive email,
 unless the message is marked transactional, which the plan and e-book emails reasonably are (ask
 Klaviyo to enable transactional flows).
 

@@ -279,3 +279,43 @@ test('the starter spreadsheet: every label maps to an engine key (nothing is sil
   }
   assert.ok(rows.length >= 25);
 });
+
+test('named audiences are a gate: no married-only or priest-only book reaches a single lay reader, even after many swaps', () => {
+  const closed = ['love-marriage-money', 'why-priests-answers-guided-by-the-teaching-of-benedict-xvi', 'successful-fathers', 'compass-a-handbook-on-parent-leadership', 'lifeline-the-religious-upbringing-of-your-children'];
+  for (let seed = 0; seed < 40; seed++) {
+    const profile = E.profileFromAnswers({ ...base, state: 'single', kids: 0, gender: seed % 2 ? 'm' : 'f', desire: ['grow', 'learn', 'discover'][seed % 3] });
+    let p = E.buildPlan(profile, catalog, { start: OCT, seed: 's' + seed, rules: store.rules });
+    const gone = [];
+    for (let k = 0; k < 6; k++) {
+      const i = (seed + k * 5) % 12;
+      gone.push(p.months[i].item.handle);
+      p = E.swapMonth(p, i, profile, catalog, { exclude: gone });
+    }
+    const hs = handles(p);
+    for (const h of closed) assert.ok(!hs.includes(h), `seed ${seed}: ${h} reached a single reader`);
+  }
+});
+
+test('swaps across the year never bring back a book the reader already swapped out', () => {
+  const profile = E.profileFromAnswers(base);
+  let p = E.buildPlan(profile, catalog, { start: OCT, seed: 'x', rules: store.rules });
+  const gone = [];
+  for (const i of [1, 2, 3, 4, 5, 6, 7]) {
+    gone.push(p.months[i].item.handle);
+    p = E.swapMonth(p, i, profile, catalog, { exclude: gone });
+    for (const h of gone) assert.ok(!handles(p).includes(h), `${h} came back after swapping month ${i + 1}`);
+  }
+});
+
+test('month 1 stays a proven favourite, and swapping it (repeatedly) keeps it one', () => {
+  const answers = { faith: 'dry', state: 'married', marriedYears: '6-15', kids: 2, workFeel: 'content', feel: { god: 3, religion: 3, world: 3 }, home: 4, workService: 4 };
+  const profile = E.profileFromAnswers({ ...base, ...answers });
+  let p = E.buildPlan(profile, catalog, { start: OCT, seed: 't', rules: store.rules, bestsellerShare: 0.55 });
+  assert.equal(p.months[0].tier, 'bestseller');
+  const gone = [];
+  for (let k = 0; k < 4; k++) {
+    gone.push(p.months[0].item.handle);
+    p = E.swapMonth(p, 0, profile, catalog, { exclude: gone, bestsellerShare: 0.55 });
+    assert.equal(p.months[0].tier, 'bestseller', `swap ${k + 1}: ${p.months[0].item.title}`);
+  }
+});
