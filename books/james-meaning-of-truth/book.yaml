@@ -36,4 +36,65 @@ typeset:
   chapters_open_recto: true
   opening_smallcaps: true
   signature_font: La Belle Aurore
-status: {}
+status:
+  edit:
+    state: done
+    when: 2026-09-25 22:45
+    words: 57234
+    chapters: 15
+    unknown: 676
+    suspicious: 17
+    errors: 0
+    battery: 1
+  typeset:
+    deluxe:
+      pages: 206
+      spine_in: 0.75
+      inside_margin: 0.75
+      plates: 0
+      plates_on_sections: false
+      layout:
+        loose line: 14
+        runt: 33
+        orphan: 2
+        widow: 1
+      pdf: 3-typeset/deluxe.pdf
+    everyman:
+      pages: 200
+      spine_in: 0.5204
+      inside_margin: 0.7
+      plates: 0
+      plates_on_sections: false
+      layout:
+        loose line: 17
+        runt: 27
+      pdf: 3-typeset/everyman.pdf
+    scholar:
+      pages: 252
+      spine_in: 0.6557
+      inside_margin: 0.85
+      plates: 0
+      plates_on_sections: false
+      layout:
+        runt: 31
+        loose line: 26
+      pdf: 3-typeset/scholar.pdf
+  epub:
+    state: problems
+    when: 2026-09-25 22:46
+    problems: 1
+    size_mb: 1.35
+    cover: false
+  proof:
+    state: done
+    when: 2026-09-25 22:46
+    findings: 167
+forced:
+- command: typeset
+  gates:
+  - text
+  when: 2026-09-25 22:45
+- command: epub
+  gates:
+  - text
+  when: 2026-09-25 22:46

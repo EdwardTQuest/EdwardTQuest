@@ -1,0 +1,41 @@
+slug: james-essays-in-radical-empiricism
+title: Essays in Radical Empiricism
+subtitle: ''
+author: William James
+author_sort: William James
+translator: ''
+language: en
+series: The Athanasius Library
+year_first: 1912
+edition_credit: the Project Gutenberg transcription
+pd_basis: published before 1 January 1931; public domain in the United States
+source:
+  kind: gutenberg
+  gutenberg: 32547
+  archive: []
+  files:
+  - 0-source/pg32547.txt
+  note: ''
+plan:
+  summary: ''
+  audience: ''
+  structure: ''
+  art_subjects: []
+  movement: landscape
+art:
+  cover: null
+  plates: []
+  plates_wanted: 10
+  plate_mode: grayscale
+blurb: ''
+editions:
+- deluxe
+- everyman
+- scholar
+typeset:
+  chapters_open_recto: true
+  opening_smallcaps: true
+  signature_font: La Belle Aurore
+status: {}
+checks:
+  expected_sections: 12
