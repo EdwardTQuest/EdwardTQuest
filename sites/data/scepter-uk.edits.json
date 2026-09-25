@@ -14,7 +14,7 @@
   },
   {
    "slug": "more",
-   "name": "Classics & more"
+   "name": "Classics & More"
   }
  ],
  "christ-on-earth": {
@@ -53,8 +53,9 @@
  },
  "collection-of-foundational-letters-introduction": {
   "id": "foundational-letters-introduction",
-  "title": "The Collection of Foundational Letters",
-  "subtitle": "Introduction"
+  "title": "The Collection of Foundational Letters: Introduction",
+  "subtitle": "",
+  "description": "The genre, pre-history and writing of St Josemaría's thirty-eight Letters on Opus Dei."
  },
  "collection-of-foundational-letters-letter-3-res-omnes-9-janu": {
   "id": "letter-3-res-omnes",
@@ -64,6 +65,15 @@
  "collection-of-foundational-letters-letter-4-vos-autem-16-jul": {
   "id": "letter-4-vos-autem",
   "title": "Letter 4: Vos autem",
-  "subtitle": "The Collection of Foundational Letters · 16 July 1933"
+  "subtitle": "The Collection of Foundational Letters · 16 July 1933",
+  "description": "St Josemaría's 1933 Letter on the path to follow in apostolic work and on evangelising dialogue."
+ },
+ "way-critical-historical-edition": {
+  "author": "St Josemaría Escrivá",
+  "subtitle": "Edited by Pedro Rodríguez",
+  "description": "All 999 points, each with Pedro Rodríguez's account of its drafting and sources."
+ },
+ "putting-down-roots": {
+  "description": "The life of Fr Joseph Muzquiz, who began the work of Opus Dei in the United States."
  }
 }

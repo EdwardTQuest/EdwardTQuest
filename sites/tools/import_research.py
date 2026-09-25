@@ -19,6 +19,9 @@ def slug(s):
 
 
 def main(site, path, shelf_order=None):
+    dst = os.path.join(HERE, 'data', f'{site}.json')
+    if os.path.exists(dst) and json.load(open(dst)).get('assembled_by_hand'):
+        sys.exit(f'{site}: data/{site}.json was assembled by hand (assembled_by_hand); edit it directly, do not re-import.')
     r = json.load(open(path))
     books = [b for b in r['books'] if b.get('verdict') != 'reject']
     by_title = {b['title']: b for b in books}
@@ -78,7 +81,6 @@ def main(site, path, shelf_order=None):
     edits_path = os.path.join(HERE, 'data', f'{site}.edits.json')
     if os.path.exists(edits_path):
         apply_edits(data, json.load(open(edits_path)))
-    dst = os.path.join(HERE, 'data', f'{site}.json')
     with open(dst, 'w') as f:
         json.dump(data, f, indent=1, ensure_ascii=False)
         f.write('\n')

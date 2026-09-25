@@ -36,7 +36,7 @@ came from.
 | Scepter UK | 23 | 17 | 6 | – | 10 | 7 |
 | Sinag-Tala | 35 | 29 | 6 | – | 1 | 3 |
 | Scepter Kenya | 22 | 4 | – | 18 | – | – |
-| Scepter Australia | 45 | 9 | 36 | – | 13 | 8 |
+| Scepter Australia | 44 | 9 | 35 | – | 14 | 8 |
 
 **Scepter UK.**
 - Scepter (U.K.)'s own ISBN prefix is 0-906138 / 978-0-906138, confirmed on Furrow, Friends of
@@ -72,6 +72,7 @@ came from.
 - Dropped as other publishers' books: Searching for and Maintaining Peace (Alba House), the Daily
   Roman Missal (Midwest Theological Forum) and Moments Divine (TAN).
 - Also dropped: five placeholder entries with no author, subject or Scepter evidence.
+- Held back at review: My Russian Way (one distributor tag, no author, no description).
 
 ## Prices
 

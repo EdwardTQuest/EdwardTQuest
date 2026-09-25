@@ -26,7 +26,6 @@ window.SITE = {
   },
   footer: [
     ['Scepter Publishers Kenya', 'Nairobi'],
-    ['Every title', 'Book · eBook · Audiobook'],
     ['Online', '<a href="https://scepterpublishersafrica.co.ke/">scepterpublishersafrica.co.ke</a>'],
   ],
   note: 'Concept preview for Scepter Publishers Kenya · catalogue compiled September 2026',

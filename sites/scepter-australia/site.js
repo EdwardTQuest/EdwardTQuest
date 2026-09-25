@@ -25,9 +25,7 @@ window.SITE = {
     remove: 'Remove', removed: 'Removed', books: 'Books', more: 'More in', isbn: 'ISBN', pages: 'Pages', kind: 'Format',
   },
   footer: [
-    ['Scepter Australia', 'Sydney · Melbourne · Brisbane · Perth'],
-    ['Every title', 'Book · eBook · Audiobook'],
-    ['Delivery', 'Australia-wide'],
+    ['Scepter Australia', 'Australia'],
   ],
-  note: 'Concept preview for a Scepter Australia · catalogue of Scepter titles carried in Australia, compiled September 2026',
+  note: 'Concept preview for Scepter Australia · catalogue compiled September 2026',
 };

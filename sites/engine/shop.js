@@ -27,8 +27,8 @@
   const shelfIndex = Object.fromEntries(CAT.shelves.map((s, i) => [s.slug, i]));
   const shelfName = Object.fromEntries(CAT.shelves.map(s => [s.slug, s.name]));
   const byId = new Map(CAT.books.map(b => [b.id, b]));
-  const sortKey = t => t.toLowerCase().replace(/^(the|a|an)\s+/, '').replace(/[^a-z0-9 ]/g, '');
-  const books = CAT.books.slice().sort((a, b) => sortKey(a.title).localeCompare(sortKey(b.title)));
+  // Each house's own order: its lead titles first on every shelf.
+  const books = CAT.books.slice();
   const haystack = new Map(books.map(b => [b.id, fold([b.title, b.subtitle, b.author, b.description, shelfName[b.shelf]].join(' '))]));
   function fold(s) { return String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase(); }
 
@@ -157,7 +157,6 @@
     const meta = [
       b.isbn && [SITE.words.isbn, esc(b.isbn)],
       b.pages && [SITE.words.pages, String(b.pages)],
-      b.kind && b.kind !== 'book' && [SITE.words.kind, esc(SITE.kinds[b.kind] || b.kind)],
     ].filter(Boolean);
     $('#dlg-book').innerHTML = `
       <button type="button" class="x" data-close aria-label="Close">${ICON.close}</button>

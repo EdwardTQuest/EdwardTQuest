@@ -27,7 +27,6 @@ window.SITE = {
   },
   footer: [
     ['Scepter (U.K.) Ltd', 'London'],
-    ['Every title', 'Book · eBook · Audiobook'],
     ['Online', '<a href="http://www.scepter.uk/">scepter.uk</a>'],
   ],
   note: 'Concept preview for Scepter (U.K.) Ltd · catalogue compiled September 2026',

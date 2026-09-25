@@ -39,13 +39,18 @@
  },
  "scepter-daily-bible": {
   "subtitle": "RSV Catholic Edition",
-  "kind": "bible"
+  "kind": "bible",
+  "description": "The Revised Standard Version, Catholic Edition, for daily reading."
  },
  "scepter-catholic-bible-large-print": {
-  "kind": "bible"
+  "kind": "bible",
+  "title": "Scepter Catholic Bible",
+  "subtitle": "Large Print",
+  "description": "The Catholic Bible in large type, with prayers and devotions of the Church."
  },
  "navarre-bible": {
-  "kind": "bible"
+  "kind": "bible",
+  "description": "The New Testament in English (RSVCE) and Latin (New Vulgate), with the Navarre commentary."
  },
  "collected-letters": {
   "title": "The Collected Letters, Volume 1",
@@ -56,16 +61,47 @@
   "subtitle": ""
  },
  "collected-letters-3": {
-  "title": "The Collected Letters: Letter 29",
-  "subtitle": "On the Work of St. Gabriel in Opus Dei"
+  "title": "The Collected Letters, Volume 3",
+  "subtitle": "Letter 29: On the Work of St. Gabriel in Opus Dei"
  },
  "mary-of-nazareth": {
-  "author": "Federico Suárez"
+  "author": "Federico Suárez",
+  "description": "Federico Suárez's meditations on the life of the Virgin Mary as the Gospels present it."
  },
  "joseph-of-nazareth": {
-  "author": "Federico Suárez"
+  "author": "Federico Suárez",
+  "description": "Federico Suárez's meditations on the life and vocation of Saint Joseph."
  },
  "my-russian-way": {
-  "description": ""
+  "description": "",
+  "status": "doubtful",
+  "evidence": "Held back at review: a single Veritatis tag hit, no author and no description found."
+ },
+ "christ-is-passing-by": {
+  "subtitle": "Homilies"
+ },
+ "forge": {
+  "subtitle": ""
+ },
+ "friends-of-god": {
+  "subtitle": "Homilies",
+  "description": "Homilies by St. Josemaría Escrivá on the virtues of ordinary Christian life."
+ },
+ "time-for-god": {
+  "subtitle": ""
+ },
+ "opus-dei-a-history-1928-2016-volume-one": {
+  "title": "Opus Dei: A History (1928-2016)",
+  "subtitle": "Volume One",
+  "description": "The history of Opus Dei from its founding in 1928."
+ },
+ "putting-down-roots": {
+  "description": "Biography of Fr. Joseph Muzquiz, one of Opus Dei's first three priests, who began its work in the United States."
+ },
+ "holy-rosary": {
+  "description": "St. Josemaría Escrivá's short commentaries on the fifteen mysteries of the Rosary, first published in 1934."
+ },
+ "fire-light": {
+  "description": "Jacques Philippe on opening the heart to what God wants to give."
  }
 }

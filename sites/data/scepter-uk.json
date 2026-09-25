@@ -17,7 +17,7 @@
   },
   {
    "slug": "more",
-   "name": "Classics & more"
+   "name": "Classics & More"
   }
  ],
  "books": [
@@ -178,11 +178,11 @@
   {
    "id": "way-critical-historical-edition",
    "title": "The Way: Critical-Historical Edition",
-   "subtitle": "",
-   "author": "St Josemaría Escrivá (ed. Pedro Rodríguez)",
+   "subtitle": "Edited by Pedro Rodríguez",
+   "author": "St Josemaría Escrivá",
    "shelf": "escriva",
    "kind": "book",
-   "description": "A 1,173-page hardback critical-historical edition of St Josemaría Escrivá's The Way, edited by Pedro Rodríguez.",
+   "description": "All 999 points, each with Pedro Rodríguez's account of its drafting and sources.",
    "isbn": "9780906138731",
    "pages": 1173,
    "featured": false,
@@ -195,12 +195,12 @@
   },
   {
    "id": "foundational-letters-introduction",
-   "title": "The Collection of Foundational Letters",
-   "subtitle": "Introduction",
+   "title": "The Collection of Foundational Letters: Introduction",
+   "subtitle": "",
    "author": "José Luis Illanes",
    "shelf": "escriva",
    "kind": "book",
-   "description": "Introduction by José Luis Illanes to St Josemaría's thirty-eight Letters on Opus Dei, covering their genre, pre-history and writing.",
+   "description": "The genre, pre-history and writing of St Josemaría's thirty-eight Letters on Opus Dei.",
    "isbn": "",
    "pages": 0,
    "featured": false,
@@ -236,7 +236,7 @@
    "author": "St Josemaría Escrivá",
    "shelf": "escriva",
    "kind": "book",
-   "description": "St Josemaría's 1933 Letter on the path to follow in apostolic work and on evangelizing dialogue.",
+   "description": "St Josemaría's 1933 Letter on the path to follow in apostolic work and on evangelising dialogue.",
    "isbn": "",
    "pages": 70,
    "featured": false,
@@ -367,7 +367,7 @@
    "author": "John F. Coverdale",
    "shelf": "lives",
    "kind": "book",
-   "description": "John F. Coverdale's account of Fr Joseph Muzquiz and the beginnings of Opus Dei in the United States.",
+   "description": "The life of Fr Joseph Muzquiz, who began the work of Opus Dei in the United States.",
    "isbn": "9781594170812",
    "pages": 152,
    "featured": false,

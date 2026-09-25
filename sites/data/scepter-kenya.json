@@ -22,86 +22,6 @@
  ],
  "books": [
   {
-   "id": "way-of-the-cross",
-   "title": "Way of the Cross",
-   "subtitle": "",
-   "author": "St Josemaría Escrivá",
-   "shelf": "escriva",
-   "kind": "book",
-   "description": "St Josemaría Escrivá's meditations on the fourteen Stations, each followed by short points for prayer.",
-   "isbn": "",
-   "pages": 0,
-   "featured": true,
-   "status": "confirmed",
-   "evidence": "Product page on Scepter Kenya's own shop, 'Way of The Cross – Scepter Publishers Africa'; KSh 320 shown there (format not stated).",
-   "sources": [
-    "https://scepterpublishersafrica.co.ke/product/way-of-the-cross/"
-   ],
-   "prices_seen": [
-    {
-     "format": "other",
-     "amount": 320,
-     "currency": "KES",
-     "source": "scepterpublishersafrica.co.ke",
-     "url": "https://scepterpublishersafrica.co.ke/product/way-of-the-cross/"
-    }
-   ]
-  },
-  {
-   "id": "reasons-for-making-a-retreat",
-   "title": "Reasons for Making a Retreat",
-   "subtitle": "",
-   "author": "David Chandler",
-   "shelf": "prayer",
-   "kind": "book",
-   "description": "Argues that a spiritual retreat, set apart for reflection, brings peace, clarity and renewed joy.",
-   "isbn": "",
-   "pages": 0,
-   "featured": false,
-   "status": "confirmed",
-   "evidence": "Product page on Scepter Kenya's own shop, 'Reasons For Making A Retreat – Scepter Publishers Kenya', naming David Chandler.",
-   "sources": [
-    "https://scepterpublishersafrica.co.ke/product/reasons-for-making-a-retreat/"
-   ],
-   "prices_seen": []
-  },
-  {
-   "id": "navarre-bible",
-   "title": "The Navarre Bible",
-   "subtitle": "",
-   "author": "Faculty of Theology, University of Navarre",
-   "shelf": "prayer",
-   "kind": "bible",
-   "description": "Scripture with extensive Catholic commentary drawing on Church documents and the Fathers, in multiple volumes.",
-   "isbn": "",
-   "pages": 0,
-   "featured": true,
-   "status": "confirmed",
-   "evidence": "Category page on Scepter Kenya's own shop: /product-category/bibles/the-navarre-bible/. Individual volumes not seen.",
-   "sources": [
-    "https://scepterpublishersafrica.co.ke/product-category/bibles/the-navarre-bible/"
-   ],
-   "prices_seen": []
-  },
-  {
-   "id": "in-conversation-with-god",
-   "title": "In Conversation with God",
-   "subtitle": "",
-   "author": "Francis Fernández",
-   "shelf": "prayer",
-   "kind": "set",
-   "description": "Multi-volume series of daily meditations for prayer, arranged through the liturgical year.",
-   "isbn": "",
-   "pages": 0,
-   "featured": true,
-   "status": "confirmed",
-   "evidence": "Store category 'In Conversation With God' listed on scepterpublishersafrica.com (search summary).",
-   "sources": [
-    "https://scepterpublishersafrica.com/"
-   ],
-   "prices_seen": []
-  },
-  {
    "id": "way",
    "title": "The Way",
    "subtitle": "",
@@ -164,7 +84,7 @@
   {
    "id": "christ-is-passing-by",
    "title": "Christ Is Passing By",
-   "subtitle": "",
+   "subtitle": "Homilies",
    "author": "St Josemaría Escrivá",
    "shelf": "escriva",
    "kind": "book",
@@ -184,7 +104,7 @@
   {
    "id": "friends-of-god",
    "title": "Friends of God",
-   "subtitle": "",
+   "subtitle": "Homilies",
    "author": "St Josemaría Escrivá",
    "shelf": "escriva",
    "kind": "book",
@@ -218,6 +138,125 @@
     "https://scepterpublishersafrica.co.ke/",
     "https://www.amazon.co.uk/Holy-Rosary-Josemaria-Escriva/dp/1889334928",
     "https://www.amazon.co.uk/Holy-Rosary-Josemaria-Escriva/dp/1889334448"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "way-of-the-cross",
+   "title": "The Way of the Cross",
+   "subtitle": "",
+   "author": "St Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "St Josemaría Escrivá's meditations on the fourteen Stations, each followed by short points for prayer.",
+   "isbn": "",
+   "pages": 0,
+   "featured": true,
+   "status": "confirmed",
+   "evidence": "Product page on Scepter Kenya's own shop, 'Way of The Cross – Scepter Publishers Africa'; KSh 320 shown there (format not stated).",
+   "sources": [
+    "https://scepterpublishersafrica.co.ke/product/way-of-the-cross/"
+   ],
+   "prices_seen": [
+    {
+     "format": "other",
+     "amount": 320,
+     "currency": "KES",
+     "source": "scepterpublishersafrica.co.ke",
+     "url": "https://scepterpublishersafrica.co.ke/product/way-of-the-cross/"
+    }
+   ]
+  },
+  {
+   "id": "in-conversation-with-god",
+   "title": "In Conversation with God",
+   "subtitle": "",
+   "author": "Francis Fernández",
+   "shelf": "prayer",
+   "kind": "set",
+   "description": "Multi-volume series of daily meditations for prayer, arranged through the liturgical year.",
+   "isbn": "",
+   "pages": 0,
+   "featured": true,
+   "status": "confirmed",
+   "evidence": "Store category 'In Conversation With God' listed on scepterpublishersafrica.com (search summary).",
+   "sources": [
+    "https://scepterpublishersafrica.com/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "navarre-bible",
+   "title": "The Navarre Bible",
+   "subtitle": "",
+   "author": "Faculty of Theology, University of Navarre",
+   "shelf": "prayer",
+   "kind": "bible",
+   "description": "Scripture with extensive Catholic commentary drawing on Church documents and the Fathers, in multiple volumes.",
+   "isbn": "",
+   "pages": 0,
+   "featured": true,
+   "status": "confirmed",
+   "evidence": "Category page on Scepter Kenya's own shop: /product-category/bibles/the-navarre-bible/. Individual volumes not seen.",
+   "sources": [
+    "https://scepterpublishersafrica.co.ke/product-category/bibles/the-navarre-bible/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "time-for-god",
+   "title": "Time for God",
+   "subtitle": "",
+   "author": "Jacques Philippe",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Jacques Philippe's short, practical guide to mental prayer.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "range",
+   "evidence": "Scepter Kenya's own site says it carries this author/series (search summary of scepterpublishersafrica.co.ke / .com: 'They feature authors like Fr. Jacques Philippe, St. Josemaría Escrivá, and Fulton J Sheen, and their titles include The Navarre Bible, St Josemaria Escriva and Opus Dei works, and In Conversation With God'). This particular title was not seen on its site: range to confirm with Scepter Kenya.",
+   "sources": [
+    "https://scepterpublishersafrica.co.ke/",
+    "https://veritatis.com.au/product/time-for-god-2nd-edition/",
+    "https://freedompublishingbooks.com.au/index.php?cPath=1460_1397&view=all"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "thirsting-for-prayer",
+   "title": "Thirsting for Prayer",
+   "subtitle": "",
+   "author": "Jacques Philippe",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Jacques Philippe on the practice of personal prayer and how to persevere in it.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "range",
+   "evidence": "Scepter Kenya's own site says it carries this author/series (search summary of scepterpublishersafrica.co.ke / .com: 'They feature authors like Fr. Jacques Philippe, St. Josemaría Escrivá, and Fulton J Sheen, and their titles include The Navarre Bible, St Josemaria Escriva and Opus Dei works, and In Conversation With God'). This particular title was not seen on its site: range to confirm with Scepter Kenya.",
+   "sources": [
+    "https://scepterpublishersafrica.co.ke/",
+    "https://veritatis.com.au/product/thirsting-for-prayer/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "reasons-for-making-a-retreat",
+   "title": "Reasons for Making a Retreat",
+   "subtitle": "",
+   "author": "David Chandler",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Argues that a spiritual retreat, set apart for reflection, brings peace, clarity and renewed joy.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Product page on Scepter Kenya's own shop, 'Reasons For Making A Retreat – Scepter Publishers Kenya', naming David Chandler.",
+   "sources": [
+    "https://scepterpublishersafrica.co.ke/product/reasons-for-making-a-retreat/"
    ],
    "prices_seen": []
   },
@@ -268,7 +307,7 @@
    "author": "Jacques Philippe",
    "shelf": "spiritual-life",
    "kind": "book",
-   "description": "Jacques Philippe on learning to receive the gift of God in the spiritual life.",
+   "description": "Jacques Philippe on opening the heart to what God wants to give.",
    "isbn": "",
    "pages": 0,
    "featured": false,
@@ -303,11 +342,11 @@
   {
    "id": "way-of-trust-and-love",
    "title": "The Way of Trust and Love",
-   "subtitle": "A Retreat Guided by St. Thérèse of Lisieux",
+   "subtitle": "A Retreat Guided by St Thérèse of Lisieux",
    "author": "Jacques Philippe",
    "shelf": "spiritual-life",
    "kind": "book",
-   "description": "Jacques Philippe draws on St. Thérèse of Lisieux's little way of spiritual childhood and confidence in God.",
+   "description": "Jacques Philippe draws on St Thérèse of Lisieux's little way of spiritual childhood and confidence in God.",
    "isbn": "",
    "pages": 0,
    "featured": false,
@@ -378,41 +417,20 @@
    "prices_seen": []
   },
   {
-   "id": "time-for-god",
-   "title": "Time for God",
+   "id": "river-and-the-source",
+   "title": "The River and the Source",
    "subtitle": "",
-   "author": "Jacques Philippe",
-   "shelf": "prayer",
+   "author": "Margaret A. Ogola",
+   "shelf": "family",
    "kind": "book",
-   "description": "Jacques Philippe's short, practical guide to mental prayer.",
+   "description": "Four generations of Kenyan women, from a Luo village to modern Nairobi.",
    "isbn": "",
    "pages": 0,
-   "featured": false,
+   "featured": true,
    "status": "range",
-   "evidence": "Scepter Kenya's own site says it carries this author/series (search summary of scepterpublishersafrica.co.ke / .com: 'They feature authors like Fr. Jacques Philippe, St. Josemaría Escrivá, and Fulton J Sheen, and their titles include The Navarre Bible, St Josemaria Escriva and Opus Dei works, and In Conversation With God'). This particular title was not seen on its site: range to confirm with Scepter Kenya.",
+   "evidence": "Published by Scepter Publishers (scepterpublishers.org/products/the-river-and-the-source); search summary gives the two prizes. A Kenyan author on the Scepter list; not seen on Scepter Kenya's own pages: range to confirm. Description from the reviewer's knowledge of the novel, after the search budget was spent.",
    "sources": [
-    "https://scepterpublishersafrica.co.ke/",
-    "https://veritatis.com.au/product/time-for-god-2nd-edition/",
-    "https://freedompublishingbooks.com.au/index.php?cPath=1460_1397&view=all"
-   ],
-   "prices_seen": []
-  },
-  {
-   "id": "thirsting-for-prayer",
-   "title": "Thirsting for Prayer",
-   "subtitle": "",
-   "author": "Jacques Philippe",
-   "shelf": "prayer",
-   "kind": "book",
-   "description": "Jacques Philippe on the practice of personal prayer and how to persevere in it.",
-   "isbn": "",
-   "pages": 0,
-   "featured": false,
-   "status": "range",
-   "evidence": "Scepter Kenya's own site says it carries this author/series (search summary of scepterpublishersafrica.co.ke / .com: 'They feature authors like Fr. Jacques Philippe, St. Josemaría Escrivá, and Fulton J Sheen, and their titles include The Navarre Bible, St Josemaria Escriva and Opus Dei works, and In Conversation With God'). This particular title was not seen on its site: range to confirm with Scepter Kenya.",
-   "sources": [
-    "https://scepterpublishersafrica.co.ke/",
-    "https://veritatis.com.au/product/thirsting-for-prayer/"
+    "https://scepterpublishers.org/products/the-river-and-the-source"
    ],
    "prices_seen": []
   },
@@ -434,25 +452,8 @@
     "https://veritatis.com.au/product/three-to-get-married/"
    ],
    "prices_seen": []
-  },
-  {
-   "id": "river-and-the-source",
-   "title": "The River and the Source",
-   "subtitle": "",
-   "author": "Margaret A. Ogola",
-   "shelf": "family",
-   "kind": "book",
-   "description": "Margaret A. Ogola's first novel; winner of the Jomo Kenyatta Literature Prize and the Commonwealth Writers Prize for Best First Book, Africa.",
-   "isbn": "",
-   "pages": 0,
-   "featured": true,
-   "status": "range",
-   "evidence": "Published by Scepter Publishers (scepterpublishers.org/products/the-river-and-the-source); search summary gives the two prizes. A Kenyan author on the Scepter list; not seen on Scepter Kenya's own pages: range to confirm.",
-   "sources": [
-    "https://scepterpublishers.org/products/the-river-and-the-source"
-   ],
-   "prices_seen": []
   }
  ],
- "dropped": []
+ "dropped": [],
+ "assembled_by_hand": true
 }

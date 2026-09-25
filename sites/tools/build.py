@@ -121,7 +121,7 @@ HOUSES = [
          glow='radial-gradient(700px 420px at 30% 0%, rgba(243,179,58,.2), transparent 60%)', display="'Fraunces', Georgia, serif", weight=500, style='normal', track='-0.035em'),
     dict(key='scepter-kenya', name='Scepter Kenya', place='Nairobi', motif='strata', mark='peaks', bg='#0E2E23', ink='#F6EFE2', ac='#E3A437',
          glow='radial-gradient(700px 420px at 76% 0%, rgba(227,164,55,.22), transparent 60%)', display="'Bricolage Grotesque', system-ui, sans-serif", weight=700, style='normal', track='-0.045em'),
-    dict(key='scepter-australia', name='Scepter Australia', place='Australia', motif='southern', mark='cross', bg='#0C1A29', ink='#F4EEE4', ac='#E5A83C',
+    dict(key='scepter-australia', name='Scepter', place='Australia', motif='southern', mark='cross', bg='#0C1A29', ink='#F4EEE4', ac='#E5A83C',
          glow='radial-gradient(800px 500px at 70% 110%, rgba(178,70,45,.45), transparent 60%)', display="'Instrument Serif', Georgia, serif", weight=400, style='italic', track='-0.02em'),
 ]
 
