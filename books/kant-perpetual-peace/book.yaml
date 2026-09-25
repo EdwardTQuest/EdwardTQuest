@@ -1,0 +1,39 @@
+slug: kant-perpetual-peace
+title: Perpetual Peace
+subtitle: ''
+author: Immanuel Kant
+author_sort: Immanuel Kant
+translator: M. Campbell Smith
+language: en
+series: The Athanasius Library
+year_first: 1795
+edition_credit: 'the Campbell Smith translation of 1903 (Project Gutenberg #50922)'
+pd_basis: published before 1 January 1931; public domain in the United States
+source:
+  kind: gutenberg
+  gutenberg: 50922
+  archive: []
+  files:
+  - 0-source/pg50922.txt
+  note: ''
+plan:
+  summary: ''
+  audience: ''
+  structure: ''
+  art_subjects: []
+  movement: landscape
+art:
+  cover: null
+  plates: []
+  plates_wanted: 10
+  plate_mode: grayscale
+blurb: ''
+editions:
+- deluxe
+- everyman
+- scholar
+typeset:
+  chapters_open_recto: true
+  opening_smallcaps: true
+  signature_font: La Belle Aurore
+status: {}

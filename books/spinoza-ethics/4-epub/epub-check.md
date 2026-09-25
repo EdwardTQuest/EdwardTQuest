@@ -1,0 +1,19 @@
+# EPUB check — Ethics
+
+File: `4-epub/spinoza-ethics.epub` (1.37 MB)
+
+- no cover image yet (run `ath cover` and rebuild)
+- 25 spine items, 30 manifest items, 3.1 MB unpacked
+- manuscript words 89,312; EPUB words 90,989; manuscript words not found in EPUB: 102
+
+- PROBLEM text loss: 102 manuscript words are absent from the EPUB, e.g. ['ii', 'iii', 'iv', 'vi', 'vii', 'viii', 'ix', 'xi', 'xii', 'xiii', 'xiv', 'xv']
+
+Not checked here (do on a reader): rendering of small caps, footnote pop-ups, plate scaling. Run `epubcheck` too if installed.
+
+## Questions for the epub gate (GATES.md)
+
+1. Opened in a reader: does the cover show on the shelf, and does the first page look like the title page?
+2. Navigation: every chapter listed with its label and title, each link landing on its opener?
+3. Small-caps openings, verse lines, section ornaments, footnote pop-ups: do they render, or fall back cleanly?
+4. Plates: 0 figures in colour with captions — whole pictures, not cropped by the reader?
+5. Would you be content to see this file on athanasius.online tonight?

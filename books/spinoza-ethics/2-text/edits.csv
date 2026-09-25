@@ -1,0 +1,7 @@
+rule,count,cap,category,example
+hyphen joins,0,909,O,
+curly quotes,342,18197,I," universe (for simplicity's sake, I will suppose them existi  →   universe (for simplicity’s sake, I will suppose them existi"
+ellipses,0,1819,I,
+dashes,733,4549,I," I. By that which is self--caused, I mean that of which the   →   I. By that which is self—caused, I mean that of which the e"
+caps openings,6,909,C,ssarily follow. Q.E.D.  APPENDIX:  In the foregoing I have e  →  ssarily follow. Q.E.D.  Appendix:  In the foregoing I have e
+spacing and ligatures,6,4549,N,"ve that other in return.  (Cf. III. xv. Coroll., and III. xv  →  ve that other in return. (Cf. III. xv. Coroll., and III. xvi"

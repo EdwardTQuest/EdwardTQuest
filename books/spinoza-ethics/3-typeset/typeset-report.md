@@ -1,0 +1,261 @@
+# Typeset report — Ethics
+
+What the page-layout lens found in each PDF (widows, orphans, runts, hyphen stacks, loose lines, stranded headings, thin chapter ends). A finding is a place to look; the typeset gate decides whether it is tolerable where it is. Look at 3-typeset/pages/ first, then read this.
+
+## deluxe — 328 pages, measure 3.64 in, line box 13.7 pt
+
+counts: runt 60, loose line 92, orphan 4, widow 1
+
+- p.11 runt: else.
+- p.14 loose line: mean gap 0.58 em: prop. iv. two or more distinct things are dis-
+- p.14 loose line: mean gap 0.57 em: tinguished one from the other, either by the
+- p.15 loose line: mean gap 0.63 em: prop. vii. existence belongs to the nature of
+- p.15 loose line: mean gap 0.58 em: Proof.—Substance cannot be produced by anything ex
+- p.15 runt: nature.
+- p.16 runt: infinite.
+- p.19 loose line: mean gap 0.57 em: prop. x. each particular attribute of the one
+- p.23 loose line: mean gap 0.80 em: prop. xii. no attribute of substance can be
+- p.23 loose line: mean gap 0.65 em: conceived from which it would follow that
+- p.24 loose line: mean gap 0.86 em: prop. xiv. besides god no substance can be
+- p.24 loose line: mean gap 0.55 em: Proof.—As God is a being absolutely infinite, of w
+- p.28 runt: divided.
+- p.29 loose line: mean gap 0.55 em: prop. xvi. from the necessity of the divine na-
+- p.35 loose line: mean gap 0.67 em: prop. xxi. all things which follow from the
+- p.35 loose line: mean gap 0.57 em: are eternal and infinite through the said at-
+- p.36 runt: exist.
+- p.37 runt: infinite.
+- p.38 loose line: mean gap 0.59 em: of the existence of things, but also of their
+- p.41 loose line: mean gap 0.62 em: prop. xxix. nothing in the universe is contin-
+- p.42 loose line: mean gap 0.60 em: prop. xxx. intellect, in function (actu) finite,
+- p.42 loose line: mean gap 0.58 em: or in function infinite, must comprehend the
+- p.45 runt: impossible.
+- p.49 loose line: mean gap 0.58 em: prop. xxxiv. god’s power is identical with his
+- p.64 runt: terms.
+- p.70 runt: attribute.
+- p.71 loose line: mean gap 0.57 em: substance thinking and substance extended are one 
+- p.74 loose line: mean gap 0.68 em: tain to the essence of man—in other words,
+- p.80 runt: substance.
+- p.80 loose line: mean gap 0.62 em: Proof.—Bodies are individual things (II., Def. i.)
+- p.89 loose line: mean gap 0.67 em: prop. xviii. if the human body has once been
+- p.92 runt: body.
+- p.95 runt: Q.E.D.
+- p.95 loose line: mean gap 0.75 em: prop. xxv. the idea of each modification of
+- p.95 runt: Q.E.D.
+- p.95 loose line: mean gap 0.60 em: prop. xxvi. the human mind does not perceive
+- p.96 loose line: mean gap 0.70 em: Proof.—When the human mind regards external bodies
+- p.96 loose line: mean gap 0.64 em: prop. xxvii. the idea of each modification of
+- p.99 loose line: mean gap 0.74 em: prop. xxxii. all ideas, in so far as they are
+- p.101 loose line: mean gap 0.86 em: prop. xxxvii. that which is common to all
+- p.113 loose line: mean gap 0.67 em: prop. xlvii. the human mind has an adequate
+- p.116 runt: Q.E.D.
+- p.120 runt: individuals.
+- p.122 orphan: clearly understand, how far astray from a true estimate of v
+- p.123 runt: angles.
+- p.140 loose line: mean gap 0.58 em: prop. viii. the endeavour, whereby a thing en-
+- p.141 loose line: mean gap 0.74 em: prop. xi. whatsoever increases or diminishes,
+- p.144 runt: Q.E.D.
+- p.145 loose line: mean gap 0.73 em: prop. xv. anything can, accidentally, be the
+- p.148 loose line: mean gap 0.61 em: or painfully by the image of a thing past or
+- p.150 runt: Q.E.D.
+- p.154 runt: disdain.
+- p.156 loose line: mean gap 0.59 em: soever we conceive men⁶ to regard with plea-
+- p.156 loose line: mean gap 0.64 em: sure, and contrariwise we shall shrink from
+- p.156 loose line: mean gap 0.60 em: doing that which we conceive men to shrink
+- p.156 loose line: mean gap 0.57 em: Proof.—From the fact of imagining, that men love o
+- p.159 runt: thereof.
+- p.161 loose line: mean gap 0.56 em: we conceive a loved object to be affected to-
+- p.168 runt: hatred.
+- p.168 loose line: mean gap 0.57 em: prop. xlii. he who has conferred a benefit on
+- p.168 loose line: mean gap 0.61 em: anyone from motives of love or honour will
+- p.169 loose line: mean gap 0.82 em: prop. xliv. hatred which is completely van-
+- p.169 loose line: mean gap 0.61 em: quished by love passes into love: and love is
+- p.170 loose line: mean gap 0.60 em: thing we hate is destroyed, or suffers other
+- p.172 loose line: mean gap 0.75 em: prop. xlix. love or hatred towards a thing,
+- p.173 loose line: mean gap 0.65 em: prop. li. different men may be differently af-
+- p.176 runt: nature.
+- p.179 runt: equal.
+- p.182 loose line: mean gap 0.66 em: prop. lvii. any emotion of a given individual
+- p.184 loose line: mean gap 0.59 em: prop. lviii. besides pleasure and desire, which
+- p.184 loose line: mean gap 0.63 em: to the mind as active, there are none which
+- p.187 runt: itself.
+- p.188 runt: perfection.
+- p.188 runt: tion.
+- p.189 runt: else.
+- p.189 runt: another.
+- p.190 loose line: mean gap 0.64 em: Explanation—This definition explains sufficiently 
+- p.192 runt: removed.
+- p.193 runt: another.
+- p.194 runt: fortune.
+- … 77 more
+
+## everyman — 332 pages, measure 3.0 in, line box 12.5 pt
+
+counts: runt 71, loose line 142, orphan 2
+
+- p.11 runt: other.
+- p.12 loose line: mean gap 0.58 em: two or more substances having the same
+- p.15 orphan: triangle: it does not imply any fixed number of triangles.
+- p.18 runt: exists.
+- p.19 runt: existence.
+- p.21 loose line: mean gap 0.67 em: prop. xii. no attribute of substance can
+- p.22 runt: absurd.
+- p.22 runt: divisible.
+- p.25 runt: God.
+- p.26 runt: divided.
+- p.28 runt: intellect.
+- p.29 runt: Q.E.D.
+- p.32 loose line: mean gap 0.56 em: For example, a man is the cause of another man’s
+- p.33 loose line: mean gap 0.59 em: prop. xix. god, and all the attributes of
+- p.33 loose line: mean gap 0.80 em: prop. xx. the existence of god and his
+- p.34 loose line: mean gap 0.64 em: prop. xxi. all things which follow from
+- p.34 loose line: mean gap 0.60 em: the absolute nature of any attribute of
+- p.34 loose line: mean gap 0.58 em: in other words, are eternal and infinite
+- p.36 runt: infinite.
+- p.36 runt: nature.
+- p.37 loose line: mean gap 0.59 em: prop. xxv. god is the efficient cause not
+- p.37 runt: Q.E.D.
+- p.37 loose line: mean gap 0.60 em: Note.—This proposition follows more clearly from
+- p.37 runt: corollary.
+- p.40 runt: Q.E.D.
+- p.41 loose line: mean gap 0.83 em: prop. xxx. intellect, in function (actu)
+- p.42 loose line: mean gap 1.07 em: prop. xxxi. the intellect in function,
+- p.42 loose line: mean gap 0.61 em: Proof.—By the intellect we do not (obviously) mean
+- p.42 loose line: mean gap 0.63 em: Note.—I do not here, by speaking of intellect in
+- p.42 loose line: mean gap 0.60 em: prop. xxxii. will cannot be called a free
+- p.43 loose line: mean gap 0.65 em: prop. xxxiii. things could not have been
+- p.44 runt: possible.
+- p.46 runt: conceived.
+- p.61 runt: conceived.
+- p.62 runt: existing.
+- p.64 runt: showing.
+- p.65 loose line: mean gap 0.63 em: prop. iii. in god there is necessarily the
+- p.65 loose line: mean gap 0.55 em: idea not only of his essence, but also of
+- p.71 loose line: mean gap 0.61 em: prop. x. the being of substance does not
+- p.72 runt: himself.
+- p.73 loose line: mean gap 0.58 em: prop. xi. the first element, which consti
+- p.75 runt: mind.
+- p.79 loose line: mean gap 0.61 em: Axiom II.—When a body in motion impinges on
+- p.84 loose line: mean gap 0.60 em: ceiving a great number of things, and is
+- p.84 loose line: mean gap 0.69 em: actual being of the human mind, is not
+- p.84 loose line: mean gap 0.56 em: Proof.—The idea constituting the actual being of t
+- p.88 loose line: mean gap 0.56 em: time, when the mind afterwards imagines
+- p.89 loose line: mean gap 0.68 em: save through the ideas of the modifica
+- p.91 loose line: mean gap 0.57 em: prop. xxi. this idea of the mind is united
+- p.91 loose line: mean gap 0.62 em: prop. xxii. the human mind perceives not
+- p.91 loose line: mean gap 0.63 em: only the modifications of the body, but
+- p.94 loose line: mean gap 0.63 em: prop. xxv. the idea of each modification
+- p.94 loose line: mean gap 0.62 em: prop. xxvi. the human mind does not per
+- p.96 loose line: mean gap 0.66 em: prop. xxix. the idea of the idea of each
+- p.96 loose line: mean gap 0.56 em: Corollary.—Hence it follows that the human mind,
+- p.97 loose line: mean gap 0.55 em: prop. xxx. we can only have a very inade
+- p.99 loose line: mean gap 0.64 em: prop. xxxiii. there is nothing positive in
+- p.99 loose line: mean gap 0.57 em: prop. xxxiv. every idea, which in us is ab
+- p.101 loose line: mean gap 0.66 em: mon to all, and which are equally in a
+- p.103 loose line: mean gap 0.81 em: prop. xl. whatsoever ideas in the mind
+- p.107 loose line: mean gap 0.66 em: prop. xlii. knowledge of the second and
+- p.107 loose line: mean gap 0.63 em: third kinds, not knowledge of the first
+- p.107 loose line: mean gap 0.61 em: kind, teaches us to distinguish the true
+- p.107 loose line: mean gap 0.57 em: cannot doubt of the truth of the thing
+- p.111 loose line: mean gap 0.56 em: every particular thing actually existing,
+- p.112 loose line: mean gap 0.56 em: prop. xlvi. the knowledge of the eternal
+- p.112 loose line: mean gap 0.65 em: and infinite essence of god which every
+- p.113 loose line: mean gap 0.84 em: knowledge of the eternal and infinite
+- p.114 loose line: mean gap 0.57 em: Proof.—The mind is a fixed and definite mode of
+- p.115 loose line: mean gap 0.75 em: or affirmation and negation, save that
+- p.115 loose line: mean gap 0.62 em: which an idea, inasmuch as it is an idea,
+- p.116 runt: Q.E.D.
+- p.116 runt: same.
+- p.119 runt: possible.
+- p.123 runt: freedom.
+- p.123 runt: angles.
+- p.129 runt: passive.
+- p.130 loose line: mean gap 0.69 em: prop. ii. body cannot determine mind to
+- p.136 loose line: mean gap 0.57 em: prop. iii. the activities of the mind arise
+- p.136 loose line: mean gap 0.76 em: solely from adequate ideas; the passive
+- … 135 more
+
+## scholar — 404 pages, measure 3.15 in, line box 13.7 pt
+
+counts: widow 2, runt 65, loose line 153, orphan 2
+
+- p.6 widow: p ar t v
+- p.11 runt: object.
+- p.13 loose line: mean gap 0.60 em: prop. iii. things which have nothing in
+- p.15 loose line: mean gap 0.72 em: prop. vi. one substance cannot be pro
+- p.16 runt: Q.E.D.
+- p.20 runt: Q.E.D.
+- p.21 loose line: mean gap 0.70 em: prop. xi. god, or substance, consisting
+- p.21 runt: exists.
+- p.22 runt: existence.
+- p.27 loose line: mean gap 0.64 em: Corollary II.—It follows: 2. That extension and
+- p.27 loose line: mean gap 0.67 em: prop. xv. whatsoever is, is in god, and
+- p.29 loose line: mean gap 0.59 em: The second argument is also drawn from God’s
+- p.33 loose line: mean gap 0.59 em: nature must follow an infinite number
+- p.33 loose line: mean gap 0.59 em: of things in infinite ways—that is, all
+- p.34 runt: intellect.
+- p.40 loose line: mean gap 0.67 em: prop. xx. the existence of god and his
+- p.42 runt: exist.
+- p.45 loose line: mean gap 0.64 em: tioned to act in a particular manner is necessaril
+- p.48 loose line: mean gap 0.58 em: Note.—Before going any further, I wish here to
+- p.49 loose line: mean gap 0.64 em: prop. xxx. intellect, in function (actu)
+- p.49 loose line: mean gap 0.59 em: prehend the attributes of god and the
+- p.50 loose line: mean gap 0.87 em: prop. xxxi. the intellect in function,
+- p.52 loose line: mean gap 0.83 em: or in any order different from that
+- p.58 loose line: mean gap 0.58 em: Proof.—Whatsoever exists expresses God’s nature or
+- p.58 loose line: mean gap 0.55 em: Coroll.); that is, (by Prop. xxxiv.), whatsoever e
+- p.65 loose line: mean gap 0.63 em: After men persuaded themselves, that everything
+- p.76 runt: existing.
+- p.76 loose line: mean gap 0.58 em: DEFINITION VII. By particular things, I mean
+- p.77 runt: ways.
+- p.80 loose line: mean gap 0.67 em: idea not only of his essence, but also
+- p.84 loose line: mean gap 0.63 em: prop. vii. the order and connection of
+- p.86 runt: continue.
+- p.88 loose line: mean gap 0.77 em: words, substance does not constitute
+- p.93 loose line: mean gap 0.65 em: tuting the human mind is the body, in
+- p.93 loose line: mean gap 0.62 em: Note.—We thus comprehend, not only that the
+- p.96 runt: infinity.
+- p.96 loose line: mean gap 0.56 em: Proof.—Bodies are individual things (II., Def. i.)
+- p.99 loose line: mean gap 0.60 em: Lemma V. If the parts composing an individual
+- p.99 loose line: mean gap 0.56 em: Proof.—This proposition is self—evident, for the
+- p.99 loose line: mean gap 0.55 em: be affected in many different ways, and preserve i
+- p.102 loose line: mean gap 0.55 em: actual being of the human mind, is not
+- p.103 loose line: mean gap 0.59 em: bodies, must involve the nature of the
+- p.103 loose line: mean gap 0.56 em: Corollary II.—It follows, secondly, that the ideas
+- p.104 runt: present.
+- p.104 loose line: mean gap 0.58 em: from that which they followed before such change;
+- p.106 loose line: mean gap 0.59 em: prop. xviii. if the human body has once
+- p.110 loose line: mean gap 0.66 em: Note.—This proposition is comprehended much
+- p.112 loose line: mean gap 0.86 em: prop. xxiv. the human mind does not
+- p.112 loose line: mean gap 0.63 em: involve an adequate knowledge of the
+- p.114 loose line: mean gap 0.86 em: prop. xxvi. the human mind does not
+- p.114 loose line: mean gap 0.58 em: perceive any external body as actually
+- p.115 runt: Q.E.D.
+- p.115 loose line: mean gap 0.69 em: prop. xxviii. the ideas of the modifica
+- p.116 loose line: mean gap 0.63 em: involve an adequate knowledge of the
+- p.118 loose line: mean gap 0.74 em: equate knowledge of the duration of
+- p.119 loose line: mean gap 0.58 em: are contingent and perishable. For we can have no
+- p.119 loose line: mean gap 0.68 em: ideas, which causes them to be called
+- p.120 loose line: mean gap 0.82 em: tion of knowledge, which inadequate,
+- p.120 runt: Q.E.D.
+- p.121 loose line: mean gap 0.91 em: prop. xxxvi. inadequate and confused
+- p.122 loose line: mean gap 0.72 em: in a part and in the whole, does not
+- p.122 runt: Q.E.D.
+- p.122 loose line: mean gap 0.78 em: prop. xxxviii. those things, which are
+- p.122 loose line: mean gap 0.63 em: common to all, and which are equally
+- p.123 runt: all.
+- p.124 loose line: mean gap 0.65 em: prop. xl. whatsoever ideas in the mind
+- p.128 widow: mere suggestions of experience.⁴
+- p.129 runt: second.
+- p.129 loose line: mean gap 0.64 em: Proof.—This proposition is self—evident. He, who
+- p.130 loose line: mean gap 0.60 em: and cannot doubt of the truth of the
+- p.132 runt: Q.E.D.
+- p.135 runt: eternity.
+- p.136 loose line: mean gap 0.59 em: prop. xlvii. the human mind has an ade
+- p.136 runt: Q.E.D.
+- p.139 loose line: mean gap 0.56 em: or affirmation and negation, save that
+- p.140 runt: same.
+- p.165 loose line: mean gap 0.56 em: solely from adequate ideas; the passive
+- p.167 loose line: mean gap 0.60 em: prop. v. things are naturally contrary,
+- p.168 loose line: mean gap 1.10 em: prop. vii. the endeavour, wherewith
+- p.168 loose line: mean gap 0.55 em: everything endeavours to persist in its
+- … 142 more
