@@ -106,7 +106,9 @@ def check(b, path):
     md_text = M.split_front_matter(open(b.manuscript, encoding='utf8').read())[1]
     md_text = re.sub(r'^:::.*$', '', md_text, flags=re.M)
     md_text = re.sub(r'!\[[^\]]*\]\([^)]*\)\{[^}]*\}', '', md_text)
-    norm = lambda s: re.findall(r'[A-Za-zÀ-ÿ0-9]+', s.lower())
+    md_text = re.sub(r'\[\^[^\]]+\]:?', ' ', md_text)                      # note calls: pandoc renumbers them
+    md_text = re.sub(r'\[([^\]]+)\]\{\.smallcaps\}', r'\1', md_text)   # small-caps spans: the words, not the markup
+    norm = lambda s: [w for w in re.findall(r'[A-Za-zÀ-ÿ0-9]+', s.lower()) if not w.isdigit()]
     a, bb = norm(md_text), norm(epub_text(path))
     # the epub has a title page etc.; compare the manuscript's words as a subsequence check on counts
     from collections import Counter

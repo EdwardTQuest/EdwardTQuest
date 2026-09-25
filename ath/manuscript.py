@@ -269,10 +269,10 @@ def prepare_gutenberg(text, title='', author=''):
     blocks = re.split(r'\n[ \t]*\n+', text)
     kept = []
     for blk in blocks:
-        if re.fullmatch(r'\s*FOOTNOTES?:?\s*', blk, flags=re.I):
+        if re.fullmatch(r'\s*(FOOT)?NOTES?:?\s*', blk, flags=re.I):
             c['footnotes headings dropped'] += 1; continue
-        m = re.match(r'\s*\[([A-Za-z0-9]{1,4})\]\s+(.*)$', blk, flags=re.S)
-        if m and not re.match(r'\s*\[[A-Za-z0-9]{1,4}\]\s+\[', blk):
+        m = re.match(r'\s*\[([A-Za-z0-9]{1,4})\]\s*(.*)$', blk, flags=re.S)
+        if m and m.group(2) and not re.match(r'\s*\[[A-Za-z0-9]{1,4}\]\s*\[', blk):
             num, body = m.group(1), re.sub(r'\s+', ' ', m.group(2)).strip()
             # the nearest preceding unbound call [num]
             for bi in range(len(kept) - 1, max(-1, len(kept) - 40), -1):
@@ -601,7 +601,7 @@ def import_text(text, title='', author='', kind='text'):
             out.append('> ' + ' '.join(l.strip() for l in lines)); rep['quotes'] += 1; continue
         para = ' '.join(l.strip() for l in lines)
         para = re.sub(r'\s+', ' ', para)
-        m_sp = re.match(r'^([A-Z][A-Z]{2,14})\.\s+(?=[A-Z“"])', para)
+        m_sp = re.match(r'^(?![IVXLC]+\.)([A-Z][A-Z]{2,14})\.\s+(?=[A-Z“"])', para)
         if m_sp and m_sp.group(1) not in ('CHAPTER', 'BOOK', 'PART', 'SECTION'):
             para = f'[{m_sp.group(1).capitalize()}.]{{.smallcaps}} ' + para[m_sp.end():]; rep['speaker labels'] += 1
         # PG _italic_ -> *italic*

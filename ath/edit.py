@@ -38,7 +38,12 @@ ABBREV = ['pp', 'p', 'cf', 'ib', 'ibid', 'op', 'cit', 'viz', 'etc', 'vol', 'vols
 SHORT_OK = {'a', 'i', 'o', 'an', 'as', 'at', 'be', 'by', 'do', 'go', 'he', 'if', 'in', 'is', 'it', 'me', 'my', 'no', 'of', 'on', 'or', 'so', 'to', 'up', 'us', 'we', 'am', 'ah', 'oh', 'lo', 'ye', 'ox', 'ad', 'id', 'ex', 're', 'st', 'mr', 'dr', 'ms', 'ii', 'iv', 'vi', 'ix', 'xi', 'xx', 'xl', 'lx', 'cc', 'ab', 'ye', 'em', 'en'}
 
 
+ROMAN_NUM = re.compile(r'^(?=[ivxlcdm])m{0,4}(cm|cd|d?c{0,3})(xc|xl|l?x{0,3})(ix|iv|v?i{0,3})$', re.I)
+
+
 def known(word):
+    if ROMAN_NUM.match(word.strip("’'.")):
+        return True
     d = dictionary()
     w = word.lower().strip("’'")
     if len(w) <= 2:
@@ -363,7 +368,12 @@ def structure_battery(md):
             m = re.search(r'\b(\w+) \1\b', p, re.I)
             findings.append(('doubled word', m.group(0) + ' … ' + p[max(0, m.start() - 30):m.end() + 30]))
         if p.count('“') != p.count('”'):
-            findings.append(('unbalanced double quotes', p[:70]))
+            nxt = paras[i + 1] if i + 1 < len(paras) else ''
+            prv = paras[i - 1] if i else ''
+            continued = (p.count('“') > p.count('”') and nxt.lstrip('| >').startswith('“')) or \
+                        (p.count('”') > p.count('“') and prv.count('“') > prv.count('”'))
+            if not continued and not (p.startswith('|') and (nxt.startswith('|') or prv.startswith('|'))):
+                findings.append(('unbalanced double quotes', p[:70]))
         if re.search(r'[a-z],[A-Za-z]', p):
             findings.append(('missing space after comma', re.search(r'.{0,25}[a-z],[A-Za-z].{0,25}', p).group(0)))
         if re.search(r'\b(the|a|an|of|to|and|in|is|was)\s*$', p) and i + 1 < len(paras) and not paras[i + 1].startswith('#'):
