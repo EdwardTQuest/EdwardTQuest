@@ -14,7 +14,7 @@
 #let chlabel = state("chlabel", none)      // "Chapter I", set by the filter before each chapter heading
 #let mainstate = state("main", false)      // false in the front matter (roman folios), true in the text
 #let pending-reset = state("reset", false) // the first chapter after mainmatter() restarts the folio at 1
-#let mainmatter() = { pending-reset.update(true); mainstate.update(true) }
+#let mainmatter() = { pending-reset.update(true) }      // mainstate flips at the opener itself, not on a blank verso before it
 #let folio(pg, main) = if main { str(pg) } else { numbering("i", pg) }
 
 #let orn(name, w) = align(center)[#image("/assets/ornaments/" + name, width: w)]
@@ -50,12 +50,14 @@
 #let edstate = state("edition", none)
 #let chapter-break() = [#metadata("chend") <chend>]
 #let opener-mark() = [#metadata("opener") <opener>]
+#let part-mark() = [#metadata("part") <partpage>]
 #let page-is-blank(here-page) = {
   let end-pages = query(<chend>).map(m => m.location().page())
-  let opens = query(<opener>).map(m => m.location().page()).filter(p => p > here-page)
+  let opens = (query(<opener>) + query(<partpage>)).map(m => m.location().page()).filter(p => p > here-page)
   end-pages.any(p => p < here-page) and not end-pages.any(p => p == here-page) and opens.len() > 0 and calc.min(..opens) == here-page + 1
 }
 #let page-is-opener(here-page) = query(<opener>).any(m => m.location().page() == here-page)
+#let page-is-part(here-page) = query(<partpage>).any(m => m.location().page() == here-page)
 
 // a plate: full page, the picture sized to the text block, caption in small italic
 #let plate(path, caption) = {
@@ -122,11 +124,11 @@
   let hdr = context {
     let pg = counter(page).get().first()
     let here-page = here().page()
-    if page-is-opener(here-page) or page-is-blank(here-page) { return }
+    if page-is-opener(here-page) or page-is-part(here-page) or page-is-blank(here-page) { return }
     let hs = query(selector(heading.where(level: chap-level)).before(here()))
     let chap = if hs.len() > 0 { hs.last().body } else { [] }
     let f = folio(pg, mainstate.get())
-    set text(size: 0.8em, tracking: 0.08em)
+    set text(size: 0.8em, tracking: 0.08em, hyphenate: false)
     if calc.even(pg) [
       #f#h(1.6em)#smallcaps(all: true)[#lower(title)]
     ] else [
@@ -143,18 +145,16 @@
   show heading.where(level: chap-level): it => {
     if ed.recto { pagebreak(to: "odd", weak: true) } else { pagebreak(weak: true) }
     opener-mark()
-    context { if pending-reset.get() { counter(page).update(1); [#metadata("main") <mainstart>] } }
+    context { if pending-reset.get() { counter(page).update(1); mainstate.update(true); [#metadata("main") <mainstart>] } }
     pending-reset.update(false)
     context { opener-block(chlabel.get(), it.body, ed) }
   }
-  if has-parts {
-    show heading.where(level: 1): it => {
+  show heading.where(level: 1): it => if not has-parts { it } else {
       pagebreak(to: "odd", weak: true)
-      opener-mark()
+      part-mark()
       v(2.2in)
       align(center)[#text(size: 1.15em, tracking: 0.18em)[#smallcaps(all: true)[#lower(it.body)]]]
       pagebreak()
-    }
   }
   show heading.where(level: chap-level + 1): it => block(above: 1.5em, below: 0.8em, width: 100%)[
     #align(center)[#text(size: 1.0em, tracking: 0.06em)[#smallcaps(all: true)[#lower(it.body)]]]
@@ -168,7 +168,7 @@
   // half title
   page(header: none, footer: none)[
     #v(1.6in)
-    #align(center)[#text(size: 1.25em, tracking: 0.12em)[#smallcaps(all: true)[#lower(title)]]]
+    #align(center)[#text(size: 1.25em, tracking: 0.12em, hyphenate: false)[#smallcaps(all: true)[#lower(title)]]]
   ]
   // series page (verso of half title)
   page(header: none, footer: none)[
@@ -184,7 +184,7 @@
   page(header: none, footer: none)[
     #v(1.05in)
     #align(center)[
-      #text(size: 1.9em, tracking: 0.06em)[#smallcaps(all: true)[#lower(title)]]
+      #text(size: 1.9em, tracking: 0.06em, hyphenate: false)[#smallcaps(all: true)[#lower(title)]]
       #if subtitle != "" [ #v(0.5em) #text(size: 1.05em, font: "Cormorant Garamond", style: "italic")[#subtitle] ]
       #v(0.75in)
       #text(size: 1.05em, tracking: 0.14em)[#smallcaps(all: true)[#lower(author)]]
@@ -230,6 +230,7 @@
       ]
     }
     #outline(title: none, depth: chap-level)
+    #chapter-break()
   ]
   // any front-matter divisions the filter emitted are inside `body` and use the same style as chapters.
   // ---------------------------------------------------------------- the text
@@ -240,8 +241,8 @@
   // recto before it carries neither running head nor folio)
   chapter-break()
   pagebreak(to: "even", weak: true)
-  opener-mark()
   page(header: none, footer: none)[
+    #part-mark()
     #v(1fr)
     #align(center)[
       #image("/assets/ornaments/orn_bot_leaf_rule.png", width: 1.5in)

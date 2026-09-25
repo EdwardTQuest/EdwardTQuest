@@ -69,7 +69,6 @@ local function header_blocks(h, division)
       local p = plates[anchor_count]
       if p then table.insert(out, raw('#plate("' .. esc(p.path) .. '", [' .. p.caption .. '])')) end
     end
-    table.insert(out, raw('#chapter-break()'))      -- recto (or a plain break) BEFORE the heading, so the heading's location is the opener page
     local lab, title = nil, h.content
     if not division then lab, title = split_label(h.content) end
     if lab then
@@ -86,7 +85,6 @@ local function header_blocks(h, division)
     return out, true
   end
   if has_parts and lvl == 1 then
-    table.insert(out, raw('#chapter-break()'))
     table.insert(out, h)
     return out, false
   end
@@ -99,17 +97,38 @@ local function header_blocks(h, division)
   return out, false
 end
 
+-- the end-of-chapter marker (<chend>, see house.typ) rides on the last line of the chapter's text,
+-- so it always lies on a page that has text: a blank verso before the next opener has none
+local function mark_chapter_end(out)
+  local last = out[#out]
+  if last == nil or last.t == 'Header' then return end          -- nothing before, or a part page: no text to mark
+  if last.t == 'Para' or last.t == 'Plain' then
+    table.insert(last.content, pandoc.RawInline('typst', '#chapter-break()'))
+  elseif last.t == 'BlockQuote' and #last.content > 0 and (last.content[#last.content].t == 'Para' or last.content[#last.content].t == 'Plain') then
+    table.insert(last.content[#last.content].content, pandoc.RawInline('typst', '#chapter-break()'))
+  elseif last.t == 'LineBlock' and #last.content > 0 then
+    table.insert(last.content[#last.content], pandoc.RawInline('typst', '#chapter-break()'))
+  elseif last.t == 'RawBlock' then
+    return                                                        -- an epigraph or a plate call: leave it
+  else
+    table.insert(out, raw('#chapter-break()'))
+  end
+end
+
 local function walk(blocks, division)
   local out = {}
   local after_chapter = false
   for _, b in ipairs(blocks) do
     if b.t == 'Header' then
+      local is_opener = ((has_parts and b.level <= 2) or ((not has_parts) and b.level <= 2))
+      if is_opener then mark_chapter_end(out) end
       local hb, is_ch = header_blocks(b, division)
       for _, x in ipairs(hb) do table.insert(out, x) end
       after_chapter = is_ch
     elseif b.t == 'Div' then
       local cls = b.classes[1]
       if cls == 'front' or cls == 'back' or cls == 'dedication' then
+        mark_chapter_end(out)
         for _, x in ipairs(walk(b.content, true)) do table.insert(out, x) end
       elseif cls == 'epigraph' then
         local inner = pandoc.write(pandoc.Pandoc(walk(b.content, division)), 'typst')
