@@ -129,8 +129,8 @@ local function walk(blocks, division)
       after_chapter = is_ch
     elseif b.t == 'Div' then
       local cls = b.classes[1]
+      if cls ~= 'verse' then mark_chapter_end(out) end        -- the text before a division or an epigraph ends here
       if cls == 'front' or cls == 'back' or cls == 'dedication' then
-        mark_chapter_end(out)
         for _, x in ipairs(walk(b.content, true)) do table.insert(out, x) end
       elseif cls == 'epigraph' then
         local inner = pandoc.write(pandoc.Pandoc(walk(b.content, division)), 'typst')
