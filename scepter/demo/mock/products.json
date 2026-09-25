@@ -1,0 +1,1150 @@
+{
+ "products": [
+  {
+   "id": 7000000000,
+   "title": "Searching for and Maintaining Peace: A Small Treatise on Peace of Heart",
+   "handle": "searching-for-and-maintaining-peace",
+   "body_html": "<p>A small treatise on peace of heart: why anxiety robs us of peace, and how trust in God restores the interior peace from which every good thing flows.</p>",
+   "vendor": "Scepter Publishers",
+   "product_type": "Book",
+   "tags": [
+    "Fr. Jacques Philippe",
+    "Peace"
+   ],
+   "variants": [
+    {
+     "id": 7000000001,
+     "title": "Default Title",
+     "price": "12.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000000101,
+   "title": "Interior Freedom",
+   "handle": "interior-freedom",
+   "body_html": "<p>True freedom is interior. Fr. Jacques Philippe shows how to accept, to consent and to trust, even amid circumstances we cannot change, and so find peace and purpose in every season.</p>",
+   "vendor": "Scepter Publishers",
+   "product_type": "Book",
+   "tags": [
+    "Fr. Jacques Philippe",
+    "Lent"
+   ],
+   "variants": [
+    {
+     "id": 7000000102,
+     "title": "Default Title",
+     "price": "14.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000000202,
+   "title": "Time for God",
+   "handle": "copy-of-time-for-god",
+   "body_html": "<p>An international bestseller on mental prayer: facing God in solitude and silence to enter into intimate, loving communion with Him. Clear, practical, encouraging.</p>",
+   "vendor": "Scepter Publishers",
+   "product_type": "Book",
+   "tags": [
+    "Fr. Jacques Philippe",
+    "Prayer"
+   ],
+   "variants": [
+    {
+     "id": 7000000203,
+     "title": "Default Title",
+     "price": "13.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000000303,
+   "title": "Called to Life",
+   "handle": "called-to-life",
+   "body_html": "<p>God calls each of us, through the events of daily life, to a unique vocation and a fuller life. Learning to hear that call and answer it.</p>",
+   "vendor": "Scepter Publishers",
+   "product_type": "Book",
+   "tags": [
+    "Fr. Jacques Philippe"
+   ],
+   "variants": [
+    {
+     "id": 7000000304,
+     "title": "Default Title",
+     "price": "13.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000000404,
+   "title": "In the School of the Holy Spirit",
+   "handle": "in-the-school-of-the-holy-spirit",
+   "body_html": "<p>How to recognize and follow the inspirations of the Holy Spirit in the decisions of everyday life.</p>",
+   "vendor": "Scepter Publishers",
+   "product_type": "Book",
+   "tags": [
+    "Fr. Jacques Philippe"
+   ],
+   "variants": [
+    {
+     "id": 7000000405,
+     "title": "Default Title",
+     "price": "12.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000000505,
+   "title": "Thirsting for Prayer",
+   "handle": "thirsting-for-prayer",
+   "body_html": "<p>Reflections that revisit the path to intimacy with God in prayer, profound and practical.</p>",
+   "vendor": "Scepter Publishers",
+   "product_type": "Book",
+   "tags": [
+    "Fr. Jacques Philippe",
+    "Prayer"
+   ],
+   "variants": [
+    {
+     "id": 7000000506,
+     "title": "Default Title",
+     "price": "14.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000000606,
+   "title": "Fire & Light",
+   "handle": "fire-light",
+   "body_html": "<p>Essays on prayer, freedom, the Holy Eucharist, and our struggle for contentment amid the stresses of everyday life.</p>",
+   "vendor": "Scepter Publishers",
+   "product_type": "Book",
+   "tags": [
+    "Fr. Jacques Philippe"
+   ],
+   "variants": [
+    {
+     "id": 7000000607,
+     "title": "Default Title",
+     "price": "14.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000000707,
+   "title": "The Eight Doors of the Kingdom: Meditations on the Beatitudes",
+   "handle": "the-eight-doors-of-the-kingdom",
+   "body_html": "<p>Meditations on the Beatitudes as the doors into the Kingdom: poverty of spirit, meekness, mercy and peace.</p>",
+   "vendor": "Scepter Publishers",
+   "product_type": "Book",
+   "tags": [
+    "Fr. Jacques Philippe"
+   ],
+   "variants": [
+    {
+     "id": 7000000708,
+     "title": "Default Title",
+     "price": "16.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000000808,
+   "title": "Jacques Philippe's Spiritual Reading Starter Pack",
+   "handle": "jacques-philippe-starter-pack",
+   "body_html": "<p>Five of Fr. Jacques Philippe's most loved books together.</p>",
+   "vendor": "Scepter Publishers",
+   "product_type": "Book",
+   "tags": [
+    "Fr. Jacques Philippe"
+   ],
+   "variants": [
+    {
+     "id": 7000000809,
+     "title": "Default Title",
+     "price": "49.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000000909,
+   "title": "Fr. Jacques' Nine Days Retreat Series",
+   "handle": "jacques-philippe-nine-days-at-home-retreat-series",
+   "body_html": "<p>A nine-day retreat at home with Fr. Jacques Philippe.</p>",
+   "vendor": "Scepter Publishers",
+   "product_type": "Book",
+   "tags": [
+    "Fr. Jacques Philippe"
+   ],
+   "variants": [
+    {
+     "id": 7000000910,
+     "title": "Default Title",
+     "price": "39.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000001010,
+   "title": "La oracion, camino de amor (Thirsting for Prayer)",
+   "handle": "la-oracion-camino-de-amor",
+   "body_html": "<p>Edición en español.</p>",
+   "vendor": "Scepter Publishers",
+   "product_type": "Book",
+   "tags": [
+    "Fr. Jacques Philippe"
+   ],
+   "variants": [
+    {
+     "id": 7000001011,
+     "title": "Default Title",
+     "price": "14.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000001111,
+   "title": "From Temperament to Character: On Becoming a Virtuous Leader",
+   "handle": "from-temperament-to-character",
+   "body_html": "<p>How to build on your natural temperament to grow in the virtues of the heart and the will, and become a virtuous leader.</p>",
+   "vendor": "Alexandre Havard",
+   "product_type": "Book",
+   "tags": [
+    "Alexandre Havard",
+    "Leadership"
+   ],
+   "variants": [
+    {
+     "id": 7000001112,
+     "title": "Default Title",
+     "price": "16.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000001212,
+   "title": "Discovering a Mission: My Way to Virtuous Leadership",
+   "handle": "discovering-a-mission-alexandre-havard",
+   "body_html": "<p>Alexandre Havard's own story of discovering a mission, and the path of magnanimity and humility that made it possible.</p>",
+   "vendor": "Alexandre Havard",
+   "product_type": "Book",
+   "tags": [
+    "Alexandre Havard",
+    "Leadership"
+   ],
+   "variants": [
+    {
+     "id": 7000001213,
+     "title": "Default Title",
+     "price": "17.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000001313,
+   "title": "Virtuous Leadership: An Agenda for Personal Excellence",
+   "handle": "copy-of-virtuous-leadership-an-agenda-for-personal-excellence",
+   "body_html": "<p>Leadership is character. Magnanimity and humility, with prudence, courage, self-control and justice, lived in business and in life.</p>",
+   "vendor": "Alexandre Havard",
+   "product_type": "Book",
+   "tags": [
+    "Alexandre Havard",
+    "Leadership"
+   ],
+   "variants": [
+    {
+     "id": 7000001314,
+     "title": "Default Title",
+     "price": "16.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000001414,
+   "title": "Created for Greatness: The Power of Magnanimity",
+   "handle": "created-for-greatness-the-power-of-magnanimity",
+   "body_html": "<p>Magnanimity is the virtue of striving for great things. How to cultivate it in yourself and in others.</p>",
+   "vendor": "Alexandre Havard",
+   "product_type": "Book",
+   "tags": [
+    "Alexandre Havard",
+    "Leadership"
+   ],
+   "variants": [
+    {
+     "id": 7000001415,
+     "title": "Default Title",
+     "price": "15.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000001515,
+   "title": "The Way, Furrow, The Forge",
+   "handle": "the-way-furrow-the-forge",
+   "body_html": "<p>St. Josemaría's three beloved collections combined in one volume: 3,054 short points for personal reflection and mental prayer.</p>",
+   "vendor": "St. Josemaría Escrivá",
+   "product_type": "Book",
+   "tags": [
+    "St. Josemaría Escrivá"
+   ],
+   "variants": [
+    {
+     "id": 7000001516,
+     "title": "Default Title",
+     "price": "34.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000001616,
+   "title": "Large Print - The Way, Furrow, The Forge",
+   "handle": "large-print-the-way-furrow-the-forge",
+   "body_html": "<p>The three collections in one large-print volume with an expanded index.</p>",
+   "vendor": "St. Josemaría Escrivá",
+   "product_type": "Book",
+   "tags": [
+    "St. Josemaría Escrivá",
+    "Large Print"
+   ],
+   "variants": [
+    {
+     "id": 7000001617,
+     "title": "Default Title",
+     "price": "44.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000001717,
+   "title": "The Way (Mini Edition)",
+   "handle": "the-way-mini-edition",
+   "body_html": "<p>An all-time spiritual classic that has sold more than five million copies: short points for meditation and prayer in the middle of ordinary life.</p>",
+   "vendor": "St. Josemaría Escrivá",
+   "product_type": "Book",
+   "tags": [
+    "St. Josemaría Escrivá"
+   ],
+   "variants": [
+    {
+     "id": 7000001718,
+     "title": "Default Title",
+     "price": "9.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000001818,
+   "title": "Furrow (Mini Edition)",
+   "handle": "furrow-josemaria-escriva",
+   "body_html": "<p>One thousand points, compact, alive and incisive, for prayer and the Christian life.</p>",
+   "vendor": "St. Josemaría Escrivá",
+   "product_type": "Book",
+   "tags": [
+    "St. Josemaría Escrivá"
+   ],
+   "variants": [
+    {
+     "id": 7000001819,
+     "title": "Default Title",
+     "price": "9.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000001919,
+   "title": "The Forge (Mini Edition)",
+   "handle": "the-forge-mini-edition",
+   "body_html": "<p>1,055 points written to enkindle a desire for holiness and apostolate.</p>",
+   "vendor": "St. Josemaría Escrivá",
+   "product_type": "Book",
+   "tags": [
+    "St. Josemaría Escrivá"
+   ],
+   "variants": [
+    {
+     "id": 7000001920,
+     "title": "Default Title",
+     "price": "9.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000002020,
+   "title": "The Way of the Cross",
+   "handle": "the-way-of-the-cross",
+   "body_html": "<p>Meditations on the fourteen Stations of the Cross.</p>",
+   "vendor": "St. Josemaría Escrivá",
+   "product_type": "Book",
+   "tags": [
+    "St. Josemaría Escrivá",
+    "Lent"
+   ],
+   "variants": [
+    {
+     "id": 7000002021,
+     "title": "Default Title",
+     "price": "14.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000002121,
+   "title": "The Collected Letters: Volume 1",
+   "handle": "the-collected-letters-volume-1",
+   "body_html": "<p>The first volume of the letters St. Josemaría wrote to the faithful of Opus Dei, on the spirit and history of the Work.</p>",
+   "vendor": "St. Josemaría Escrivá",
+   "product_type": "Book",
+   "tags": [
+    "St. Josemaría Escrivá"
+   ],
+   "variants": [
+    {
+     "id": 7000002122,
+     "title": "Default Title",
+     "price": "29.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000002222,
+   "title": "Friends of God",
+   "handle": "friends-of-god",
+   "body_html": "<p>Homilies on work, prayer and the call to holiness in the middle of the world.</p>",
+   "vendor": "St. Josemaría Escrivá",
+   "product_type": "Book",
+   "tags": [
+    "St. Josemaría Escrivá"
+   ],
+   "variants": [
+    {
+     "id": 7000002223,
+     "title": "Default Title",
+     "price": "19.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000002323,
+   "title": "Christ Is Passing By",
+   "handle": "christ-is-passing-by",
+   "body_html": "<p>Homilies through the liturgical year, including In Joseph's Workshop, on the sanctification of ordinary work.</p>",
+   "vendor": "St. Josemaría Escrivá",
+   "product_type": "Book",
+   "tags": [
+    "St. Josemaría Escrivá"
+   ],
+   "variants": [
+    {
+     "id": 7000002324,
+     "title": "Default Title",
+     "price": "19.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000002424,
+   "title": "Holy Rosary",
+   "handle": "holy-rosary",
+   "body_html": "<p>Short meditations on the mysteries of the Rosary.</p>",
+   "vendor": "St. Josemaría Escrivá",
+   "product_type": "Book",
+   "tags": [
+    "St. Josemaría Escrivá",
+    "Rosary"
+   ],
+   "variants": [
+    {
+     "id": 7000002425,
+     "title": "Default Title",
+     "price": "9.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000002525,
+   "title": "Sanctifying Ordinary Work",
+   "handle": "sanctifying-ordinary-work",
+   "body_html": "<p>Ordinary work, done with love and offered to God, is not a distraction from prayer: it is prayer. Texts for everyone who works.</p>",
+   "vendor": "Scepter Publishers",
+   "product_type": "Book",
+   "tags": [
+    "Work"
+   ],
+   "variants": [
+    {
+     "id": 7000002526,
+     "title": "Default Title",
+     "price": "12.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000002626,
+   "title": "In Conversation With God: 7-Volume Set",
+   "handle": "in-conversation-with-god-7-volume-set",
+   "body_html": "<p>Meditations for each day of the year, in a slipcase.</p>",
+   "vendor": "Francis Fernandez-Carvajal",
+   "product_type": "Book",
+   "tags": [
+    "Francis Carvajal"
+   ],
+   "variants": [
+    {
+     "id": 7000002627,
+     "title": "Default Title",
+     "price": "199.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000002727,
+   "title": "In Conversation With God Volume 1 - Advent & Christmastide",
+   "handle": "in-conversation-with-god-volume-1-advent-and-christmastide",
+   "body_html": "<p>Daily meditations for Advent and Christmastide drawn from the Mass readings and the writings of the saints.</p>",
+   "vendor": "Francis Fernandez-Carvajal",
+   "product_type": "Book",
+   "tags": [
+    "Francis Carvajal",
+    "Advent",
+    "Christmas"
+   ],
+   "variants": [
+    {
+     "id": 7000002728,
+     "title": "Default Title",
+     "price": "29.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000002828,
+   "title": "In Conversation With God Volume 2 - Lent & Eastertide",
+   "handle": "in-conversation-with-god-volume-2-lent-and-eastertide",
+   "body_html": "<p>Daily meditations for Lent and Eastertide drawn from the Mass readings and the writings of the saints.</p>",
+   "vendor": "Francis Fernandez-Carvajal",
+   "product_type": "Book",
+   "tags": [
+    "Francis Carvajal",
+    "Lent",
+    "Easter"
+   ],
+   "variants": [
+    {
+     "id": 7000002829,
+     "title": "Default Title",
+     "price": "29.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000002929,
+   "title": "In Conversation With God: Volume 4, Weeks 13-23",
+   "handle": "in-conversation-with-god-volume-4-weeks-13-23",
+   "body_html": "<p>Daily meditations for Ordinary Time, weeks 13 to 23.</p>",
+   "vendor": "Francis Fernandez-Carvajal",
+   "product_type": "Book",
+   "tags": [
+    "Francis Carvajal"
+   ],
+   "variants": [
+    {
+     "id": 7000002930,
+     "title": "Default Title",
+     "price": "29.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000003030,
+   "title": "In Conversation With God: Volume 5, Weeks 24-34",
+   "handle": "copy-of-in-conversation-with-god-volume-5-weeks-24-34",
+   "body_html": "<p>Daily meditations for Ordinary Time, weeks 24 to 34.</p>",
+   "vendor": "Francis Fernandez-Carvajal",
+   "product_type": "Book",
+   "tags": [
+    "Francis Carvajal"
+   ],
+   "variants": [
+    {
+     "id": 7000003031,
+     "title": "Default Title",
+     "price": "29.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000003131,
+   "title": "In Conversation With God: Volume 6, Feasts, January-June",
+   "handle": "in-conversation-with-god-volume-6-feasts-january-june",
+   "body_html": "<p>Meditations for the feasts of the first half of the year.</p>",
+   "vendor": "Francis Fernandez-Carvajal",
+   "product_type": "Book",
+   "tags": [
+    "Francis Carvajal"
+   ],
+   "variants": [
+    {
+     "id": 7000003132,
+     "title": "Default Title",
+     "price": "29.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000003232,
+   "title": "The Faith Explained",
+   "handle": "the-faith-explained",
+   "body_html": "<p>An all-in-one handbook to help you understand, explain and defend the great truths of the Catholic Faith, in brief and readable chapters. Perfect for RCIA classes, a refresher for Catholics, and an illuminating resource for non-Catholics with questions.</p>",
+   "vendor": "Leo J. Trese",
+   "product_type": "Book",
+   "tags": [
+    "Leo Trese"
+   ],
+   "variants": [
+    {
+     "id": 7000003233,
+     "title": "Default Title",
+     "price": "19.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000003333,
+   "title": "The Faith Explained Today",
+   "handle": "the-faith-explained-today",
+   "body_html": "<p>A modern companion in the tradition of The Faith Explained: the creed, the sacraments and the moral life for today's readers.</p>",
+   "vendor": "Joe Babendreier",
+   "product_type": "Book",
+   "tags": [
+    "Joe Babendreier"
+   ],
+   "variants": [
+    {
+     "id": 7000003334,
+     "title": "Default Title",
+     "price": "24.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000003434,
+   "title": "La fe explicada (The Faith Explained)",
+   "handle": "la-fe-explicada",
+   "body_html": "<p>Edición en español.</p>",
+   "vendor": "Leo J. Trese",
+   "product_type": "Book",
+   "tags": [
+    "Leo Trese"
+   ],
+   "variants": [
+    {
+     "id": 7000003435,
+     "title": "Default Title",
+     "price": "19.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000003535,
+   "title": "Love, Marriage, Money: Your Guide to a Financially Healthy Family",
+   "handle": "love-marriage-money",
+   "body_html": "<p>Financial stability for married couples: budgeting, generosity and peace at home.</p>",
+   "vendor": "Joe Salem",
+   "product_type": "Book",
+   "tags": [
+    "Joe Salem"
+   ],
+   "variants": [
+    {
+     "id": 7000003536,
+     "title": "Default Title",
+     "price": "16.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000003636,
+   "title": "The Thoughtful Home",
+   "handle": "the-thoughtful-home",
+   "body_html": "<p>The nature and purpose of the home, and guidance on creating peace, welcome and warmth in one's household.</p>",
+   "vendor": "Scepter Publishers",
+   "product_type": "Book",
+   "tags": [
+    "Home"
+   ],
+   "variants": [
+    {
+     "id": 7000003637,
+     "title": "Default Title",
+     "price": "18.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000003737,
+   "title": "Lifeline: The Religious Upbringing of Your Children",
+   "handle": "lifeline-the-religious-upbringing-of-your-children",
+   "body_html": "<p>Practical wisdom for parents passing on the faith to their children.</p>",
+   "vendor": "James B. Stenson",
+   "product_type": "Book",
+   "tags": [
+    "James Stenson"
+   ],
+   "variants": [
+    {
+     "id": 7000003738,
+     "title": "Default Title",
+     "price": "12.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000003838,
+   "title": "Compass: A Handbook on Parent Leadership",
+   "handle": "compass-a-handbook-on-parent-leadership",
+   "body_html": "<p>Parents as leaders: forming children's character with confidence.</p>",
+   "vendor": "James B. Stenson",
+   "product_type": "Book",
+   "tags": [
+    "James Stenson"
+   ],
+   "variants": [
+    {
+     "id": 7000003839,
+     "title": "Default Title",
+     "price": "12.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000003939,
+   "title": "Successful Fathers",
+   "handle": "successful-fathers",
+   "body_html": "<p>What successful fathers do: leadership, example and time with their children.</p>",
+   "vendor": "James B. Stenson",
+   "product_type": "Book",
+   "tags": [
+    "James Stenson"
+   ],
+   "variants": [
+    {
+     "id": 7000003940,
+     "title": "Default Title",
+     "price": "9.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000004040,
+   "title": "Marriage: A Path to Sanctity",
+   "handle": "marriage-a-path-to-sanctity",
+   "body_html": "<p>Married love as a path to holiness: the vocation, the virtues and the daily life of Christian spouses.</p>",
+   "vendor": "Javier Abad and Eugenio Fenoy",
+   "product_type": "Book",
+   "tags": [
+    "Marriage"
+   ],
+   "variants": [
+    {
+     "id": 7000004041,
+     "title": "Default Title",
+     "price": "16.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000004141,
+   "title": "Marcus",
+   "handle": "marcus",
+   "body_html": "<p>A novel set in second-century Rome: a young man's search for truth among the first Christians.</p>",
+   "vendor": "Michael E. Giesler",
+   "product_type": "Book",
+   "tags": [
+    "Michael Giesler",
+    "Fiction"
+   ],
+   "variants": [
+    {
+     "id": 7000004142,
+     "title": "Default Title",
+     "price": "14.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000004242,
+   "title": "The Company We Keep: True Friendship and Why It Matters",
+   "handle": "preorder-the-company-we-keep-true-friendship-and-why-it-matters",
+   "body_html": "<p>Christian friendship through the wisdom of Aristotle, St. Thomas Aquinas and the Gospel.</p>",
+   "vendor": "Scepter Publishers",
+   "product_type": "Book",
+   "tags": [
+    "Friendship"
+   ],
+   "variants": [
+    {
+     "id": 7000004243,
+     "title": "Default Title",
+     "price": "17.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000004343,
+   "title": "RSV Pocket Catholic New Testament",
+   "handle": "pocket-new-testament",
+   "body_html": "<p>The Catholic New Testament in the RSV, in a size you can carry in your pocket.</p>",
+   "vendor": "Scepter Publishers",
+   "product_type": "Book",
+   "tags": [
+    "New Testament Paperback"
+   ],
+   "variants": [
+    {
+     "id": 7000004344,
+     "title": "Default Title",
+     "price": "12.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000004444,
+   "title": "Why Priests? Answers Guided by the Teaching of Benedict XVI",
+   "handle": "why-priests-answers-guided-by-the-teaching-of-benedict-xvi",
+   "body_html": "<p>A wide-ranging view of the priesthood: its origins, its history, the problems priests face, and personal faith.</p>",
+   "vendor": "Paul Josef Cardinal Cordes",
+   "product_type": "Book",
+   "tags": [
+    "Priesthood"
+   ],
+   "variants": [
+    {
+     "id": 7000004445,
+     "title": "Default Title",
+     "price": "17.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000004545,
+   "title": "The Founder of Opus Dei Full Set",
+   "handle": "the-founder-of-opus-dei-full-set",
+   "body_html": "<p>The three-volume biography of St. Josemaría Escrivá.</p>",
+   "vendor": "Andrés Vázquez de Prada",
+   "product_type": "Book",
+   "tags": [],
+   "variants": [
+    {
+     "id": 7000004546,
+     "title": "Default Title",
+     "price": "89.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000004646,
+   "title": "In God's House",
+   "handle": "in-gods-house",
+   "body_html": "<p>A free e-booklet.</p>",
+   "vendor": "Scepter Publishers",
+   "product_type": "Book",
+   "tags": [
+    "Free Booklet"
+   ],
+   "variants": [
+    {
+     "id": 7000004647,
+     "title": "Default Title",
+     "price": "0.00",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000004747,
+   "title": "The Sacred Passion",
+   "handle": "the-sacred-passion",
+   "body_html": "<p>A classic meditation on the Passion of Christ, for Lent and for every season of sorrow.</p>",
+   "vendor": "Luis de la Palma",
+   "product_type": "Book",
+   "tags": [
+    "Lent"
+   ],
+   "variants": [
+    {
+     "id": 7000004748,
+     "title": "Default Title",
+     "price": "17.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000004848,
+   "title": "Seven Prophets and the Culture War: Undoing the Philosophies of a World in Crisis",
+   "handle": "seven-prophets-and-the-culture-war-undoing-the-philosophies-of-a-world-in-crisis",
+   "body_html": "<p>How seven prophetic voices answer the philosophies behind the modern crisis of culture.</p>",
+   "vendor": "Scepter Publishers",
+   "product_type": "Book",
+   "tags": [
+    "Culture"
+   ],
+   "variants": [
+    {
+     "id": 7000004849,
+     "title": "Default Title",
+     "price": "19.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000004949,
+   "title": "La Iglesia (The Church, Introduction to Ecclesiology)",
+   "handle": "la-iglesia-1",
+   "body_html": "<p>Edición en español.</p>",
+   "vendor": "Scepter Publishers",
+   "product_type": "Book",
+   "tags": [],
+   "variants": [
+    {
+     "id": 7000004950,
+     "title": "Default Title",
+     "price": "24.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000005050,
+   "title": "Biblia de Navarra v.1, Pentateuco (Navarre Bible v.1, Pentateuch)",
+   "handle": "pentateuco",
+   "body_html": "<p>Edición en español.</p>",
+   "vendor": "Scepter Publishers",
+   "product_type": "Book",
+   "tags": [],
+   "variants": [
+    {
+     "id": 7000005051,
+     "title": "Default Title",
+     "price": "49.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000005151,
+   "title": "Order",
+   "handle": "order",
+   "body_html": "",
+   "vendor": "Scepter Publishers",
+   "product_type": "Book",
+   "tags": [],
+   "variants": [
+    {
+     "id": 7000005152,
+     "title": "Default Title",
+     "price": "1.00",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000005252,
+   "title": "Handbook of Prayers",
+   "handle": "handbook-of-prayers",
+   "body_html": "<p>The prayers of a Catholic life in one volume: morning and evening prayers, the Mass, confession, devotions.</p>",
+   "vendor": "James Socias",
+   "product_type": "Book",
+   "tags": [
+    "Prayer"
+   ],
+   "variants": [
+    {
+     "id": 7000005253,
+     "title": "Default Title",
+     "price": "24.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000005353,
+   "title": "Jesus as Friend",
+   "handle": "jesus-as-friend",
+   "body_html": "<p>Short, warm meditations on friendship with Jesus.</p>",
+   "vendor": "Salvador Canals",
+   "product_type": "Book",
+   "tags": [
+    "Friendship"
+   ],
+   "variants": [
+    {
+     "id": 7000005354,
+     "title": "Default Title",
+     "price": "11.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000005454,
+   "title": "The Navarre Bible: Gospels and Acts",
+   "handle": "navarre-bible-gospels-and-acts",
+   "body_html": "<p>The RSV text of the Gospels and Acts with a commentary drawing on the Fathers, the Doctors of the Church and Church documents.</p>",
+   "vendor": "Scepter Publishers",
+   "product_type": "Book",
+   "tags": [
+    "Bible"
+   ],
+   "variants": [
+    {
+     "id": 7000005455,
+     "title": "Default Title",
+     "price": "49.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000005555,
+   "title": "Saxum: The Life of Álvaro del Portillo",
+   "handle": "saxum-the-life-of-alvaro-del-portillo",
+   "body_html": "<p>The biography of Blessed Álvaro del Portillo, the first successor of St. Josemaría at the head of Opus Dei.</p>",
+   "vendor": "Javier Medina Bayo",
+   "product_type": "Book",
+   "tags": [
+    "Biography"
+   ],
+   "variants": [
+    {
+     "id": 7000005556,
+     "title": "Default Title",
+     "price": "29.95",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000005656,
+   "title": "Scepter Gift Card",
+   "handle": "scepter-gift-card",
+   "body_html": "",
+   "vendor": "Scepter Publishers",
+   "product_type": "Gift Card",
+   "tags": [],
+   "variants": [
+    {
+     "id": 7000005657,
+     "title": "Default Title",
+     "price": "25.00",
+     "available": true
+    }
+   ],
+   "images": []
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{%- comment -%}
+  Scepter kit: the four brand colours from a section's settings as CSS custom properties
+  (the in-between shades are derived). Usage: style="{% render 'scepter-colors', s: section.settings %}"
+{%- endcomment -%}
+{%- if s.color_forest != blank -%}--sp-forest: {{ s.color_forest }}; --sp-forest-deep: {{ s.color_forest | color_darken: 6 }}; --sp-forest-mid: {{ s.color_forest | color_lighten: 10 }};{%- endif -%}
+{%- if s.color_sage != blank %} --sp-sage: {{ s.color_sage }}; --sp-sage-soft: {{ s.color_sage | color_lighten: 5 }}; --sp-sage-mist: {{ s.color_sage | color_lighten: 9 }}; --sp-sage-strong: {{ s.color_sage | color_darken: 13 }};{%- endif -%}
+{%- if s.color_burgundy != blank %} --sp-burgundy: {{ s.color_burgundy }}; --sp-burgundy-hover: {{ s.color_burgundy | color_lighten: 6 }}; --sp-burgundy-tint: {{ s.color_burgundy | color_mix: '#ffffff', 12 }};{%- endif -%}
+{%- if s.color_cream != blank %} --sp-cream: {{ s.color_cream }};{%- endif -%}

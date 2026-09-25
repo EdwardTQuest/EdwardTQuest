@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pop-ups Preview</title>
+  <link rel="stylesheet" href="../theme/assets/scepter.css">
+  <link rel="stylesheet" href="demo.css">
+</head>
+<body>
+  <header class="demo-bar">
+    <a href="index.html" class="demo-home">Scepter quiz kit · local preview</a>
+    <nav><a href="quiz.html?v=mission">Mission</a><a href="quiz.html?v=adventure">Adventure</a><a href="quiz.html?v=treasures">Treasures</a><a href="popups.html">Pop-ups</a></nav>
+  </header>
+  <main class="demo-page">
+    <h1>The two pop-ups</h1>
+    <p>On the live site these open on their own (the e-book offer after a delay, on scroll, or on exit intent; the temperament test from its floating button), or from any link to <code>#free-ebook</code> or <code>#temperament-test</code>. Here, use the buttons.</p>
+    <div class="demo-buttons" style="margin-top:20px">
+      <button type="button" data-demo="ebook" data-sp-open="ebook">Open the free e-book offer</button>
+      <button type="button" data-demo="temperament" data-sp-open="temperament">Open the temperament test</button>
+      <a href="#free-ebook">A plain link to #free-ebook</a>
+    </div>
+    <p style="margin-top:28px">Scroll-depth and exit-intent triggers are off in this preview so the page stays still.</p>
+  </main>
+  <div id="ebook"></div>
+  <div id="temperament"></div>
+  <script src="demo.js"></script>
+  <script src="../theme/assets/scepter-lead.js"></script>
+  <script src="../theme/assets/scepter-temperament.js"></script>
+  <script src="../theme/assets/scepter-popups.js"></script>
+  <script>
+    fetch('mock/products.json').then(function (r) { return r.json(); }).then(function (j) {
+      var byHandle = {};
+      j.products.forEach(function (p) { byHandle[p.handle] = p; });
+      function book(handle, forWho) {
+        var p = byHandle[handle];
+        return { handle: p.handle, title: p.title, url: '/products/' + p.handle, image: '', price_cents: Math.round(Number(p.variants[0].price) * 100), variant: p.variants[0].id, for: forWho };
+      }
+      var lead = { klaviyo: { publicKey: 'DEMO12', listId: 'AbC123' }, webhook: 'https://hooks.example.com/scepter', shopify: true };
+      ScepterPopups.mountEbook(document.getElementById('ebook'), {
+        triggers: { delay: 0, scroll: 0, exitIntent: false }, lead: lead, deliver: 'both',
+        interests: [
+          { key: 'peace', label: 'Peace', title: 'Rest for the Restless Heart', author: 'A Scepter e-booklet', url: '#download-peace' },
+          { key: 'prosperity', label: 'Prosperity', title: 'Work Well, Live Well', author: 'A Scepter e-booklet', url: '#download-prosperity' },
+          { key: 'enlightenment', label: 'Enlightenment', title: 'Light for the Mind', author: 'A Scepter e-booklet', url: '#download-enlightenment' }
+        ]
+      });
+      ScepterPopups.mountTemperament(document.getElementById('temperament'), {
+        triggers: { launcher: true, launcherPosition: 'right', delay: 0, exitIntent: false }, lead: lead, askEmail: 'optional',
+        books: [
+          book('from-temperament-to-character', ['all']),
+          book('copy-of-virtuous-leadership-an-agenda-for-personal-excellence', ['choleric']),
+          book('created-for-greatness-the-power-of-magnanimity', ['melancholic', 'phlegmatic']),
+          book('discovering-a-mission-alexandre-havard', ['sanguine'])
+        ]
+      });
+    });
+  </script>
+</body>
+</html>

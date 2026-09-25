@@ -1,0 +1,228 @@
+{%- comment -%}
+  Scepter formation quiz: one section, three variants ("Discover your mission!", "What adventure is
+  God calling you on?", "What hidden treasures has God laid in store for you this week?").
+
+  Where the books come from, in order of authority:
+    1. Starter rules (the blocks of this section): "when the reader … give one of these books in month N".
+    2. The curated library: Content → Metaobjects → Formation book (see scepter/setup/README).
+    3. The Best Sellers and recent best-sellers collections chosen below (their order is their rank).
+    4. Scepter's own topic collections (the "Topic collections" box), and every other published
+       product, which the browser fetches from /products.json while the reader answers.
+  The algorithm is documented in scepter/ALGORITHM.md.
+{%- endcomment -%}
+{%- liquid
+  assign s = section.settings
+  assign root = routes.root_url | append: '/' | replace: '//', '/'
+  assign best = s.bestsellers_collection
+  assign trend = s.trending_collection
+  assign fb = shop.metaobjects.formation_book
+-%}
+{%- render 'scepter-head', load_fonts: s.load_fonts -%}
+<div class="sp-section-pad" style="padding-top: {{ s.padding_top }}px; padding-bottom: {{ s.padding_bottom }}px;">
+  <div class="sp sp-quiz sp-v-{{ s.variant }}" data-sp-quiz data-variant="{{ s.variant }}" style="{%- render 'scepter-colors', s: s -%}">
+    <noscript><p style="padding: 2rem; text-align: center;">This quiz needs JavaScript turned on.</p></noscript>
+    <script type="application/json" data-sp-config>
+      {
+        "variant": {{ s.variant | json }},
+        "sectionId": {{ section.id | json }},
+        "rootUrl": {{ root | json }},
+        "currency": {{ cart.currency.iso_code | json }},
+        "fetchCatalog": {{ s.fetch_catalog | json }},
+        "copy": { "kicker": {{ s.kicker | json }}, "title": {{ s.heading | json }}, "lead": {{ s.intro | json }}, "cta": {{ s.cta | json }} },
+        "settings": {
+          "bestsellerShare": {{ s.bestseller_share | divided_by: 100.0 }},
+          "maxPerAuthor": {{ s.max_per_author }},
+          "excludeTags": {{ s.exclude_tags | json }},
+          "excludeHandles": {{ s.exclude_handles | json }},
+          "excludeSpanish": {{ s.exclude_spanish | json }},
+          "excludeBundles": {{ s.exclude_bundles | json }},
+          "publisherNames": {{ s.publisher_names | json }}
+        },
+        "topicMap": {{ s.topic_map | json }},
+        "lists": {
+          "bestsellers": [{%- if best != blank -%}{%- for p in best.products limit: 50 -%}{{ p.handle | json }}{%- unless forloop.last -%},{%- endunless -%}{%- endfor -%}{%- endif -%}],
+          "trending": [{%- if trend != blank -%}{%- for p in trend.products limit: 50 -%}{{ p.handle | json }}{%- unless forloop.last -%},{%- endunless -%}{%- endfor -%}{%- endif -%}],
+          "topics": {
+            {%- assign topic_lines = s.topic_map | newline_to_br | split: '<br />' -%}
+            {%- assign topic_sep = '' -%}
+            {%- for line in topic_lines -%}
+              {%- if line contains ':' -%}
+                {%- assign topic_handle = line | split: ':' | first | strip | downcase -%}
+                {%- assign topic_col = collections[topic_handle] -%}
+                {%- if topic_handle != blank and topic_col != blank and topic_col.products_count > 0 -%}
+                  {{- topic_sep -}}{{ topic_handle | json }}: [{%- for p in topic_col.products limit: 50 -%}{{ p.handle | json }}{%- unless forloop.last -%},{%- endunless -%}{%- endfor -%}]
+                  {%- assign topic_sep = ',' -%}
+                {%- endif -%}
+              {%- endif -%}
+            {%- endfor -%}
+          }
+        },
+        "products": [
+          {%- if best != blank -%}{%- for p in best.products limit: 50 -%}{%- render 'scepter-product-json', product: p -%},{%- endfor -%}{%- endif -%}
+          {%- if trend != blank -%}{%- for p in trend.products limit: 50 -%}{%- render 'scepter-product-json', product: p -%},{%- endfor -%}{%- endif -%}
+          {%- for block in section.blocks -%}{%- for p in block.settings.products -%}{%- render 'scepter-product-json', product: p -%},{%- endfor -%}{%- endfor -%}
+          {%- for p in s.featured_products -%}{%- render 'scepter-product-json', product: p -%},{%- endfor -%}
+          null
+        ],
+        "library": [
+          {%- if fb.values_count > 0 -%}
+            {%- paginate fb.values by 250 -%}
+              {%- for e in fb.values -%}
+                {%- assign lp = e.product.value -%}
+                {%- if lp != blank -%}
+                  {"handle": {{ lp.handle | json }}, "themes": {{ e.themes.value | json }}, "good_for": {{ e.good_for.value | json }}, "depth": {{ e.depth.value | json }}, "seasons": {{ e.seasons.value | json }}, "start_when": {{ e.start_when.value | json }}, "why": {{ e.why.value | json }}, "boost": {{ e.boost.value | default: 0 | json }}, "exclude": {{ e.exclude.value | json }}, "product": {%- render 'scepter-product-json', product: lp -%}},
+                {%- endif -%}
+              {%- endfor -%}
+            {%- endpaginate -%}
+          {%- endif -%}
+          null
+        ],
+        "rules": [
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'starter_rule' -%}
+              {"condition": {{ block.settings.condition | json }}, "month": {{ block.settings.month | json }}, "match": {{ block.settings.match | json }}, "note": {{ block.settings.note | json }}, "products": [{%- for p in block.settings.products -%}{{ p.handle | json }}{%- unless forloop.last -%},{%- endunless -%}{%- endfor -%}]},
+            {%- endif -%}
+          {%- endfor -%}
+          null
+        ],
+        "featured": [{%- for p in s.featured_products -%}{{ p.handle | json }}{%- unless forloop.last -%},{%- endunless -%}{%- endfor -%}],
+        "lead": {% render 'scepter-lead-json', s: s %},
+        "planPageUrl": {% if s.plan_page != blank %}{{ s.plan_page.url | json }}{% else %}{{ root | append: 'pages/reading-plan' | json }}{% endif %},
+        "privacyUrl": {{ shop.privacy_policy.url | json }}
+      }
+    </script>
+  </div>
+</div>
+<script src="{{ 'scepter-engine.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'scepter-lead.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'scepter-quiz.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "Scepter formation quiz",
+  "tag": "section",
+  "class": "section scepter-quiz-section",
+  "limit": 1,
+  "settings": [
+    { "type": "header", "content": "The quiz" },
+    {
+      "type": "select", "id": "variant", "label": "Variant", "default": "mission",
+      "options": [
+        { "value": "mission", "label": "Discover your mission!" },
+        { "value": "adventure", "label": "What adventure is God calling you on?" },
+        { "value": "treasures", "label": "What hidden treasures has God laid in store for you this week?" }
+      ],
+      "info": "All three ask the same questions in a different order and voice."
+    },
+    { "type": "text", "id": "kicker", "label": "Small heading", "info": "Leave the text fields blank to use the variant's own words." },
+    { "type": "textarea", "id": "heading", "label": "Heading" },
+    { "type": "textarea", "id": "intro", "label": "Introduction" },
+    { "type": "text", "id": "cta", "label": "Start button" },
+    { "type": "header", "content": "Books" },
+    { "type": "collection", "id": "bestsellers_collection", "label": "Bestsellers collection", "info": "Its order is the bestseller rank. First 50 products." },
+    { "type": "collection", "id": "trending_collection", "label": "Recent bestsellers collection", "info": "For example the six-month best-sellers." },
+    { "type": "range", "id": "bestseller_share", "label": "Share of bestsellers in a plan", "min": 50, "max": 95, "step": 5, "unit": "%", "default": 70, "info": "The rest come from the backlist, placed where they fit best." },
+    { "type": "range", "id": "max_per_author", "label": "Most books by one author", "min": 1, "max": 4, "step": 1, "default": 2 },
+    { "type": "product_list", "id": "featured_products", "label": "Give these books a nudge in this quiz", "limit": 12 },
+    {
+      "type": "textarea", "id": "topic_map", "label": "Topic collections",
+      "default": "marriage-and-family: marriage, family\nfamily-parenting: family, audience:parents\nfathers: family, audience:parents, audience:men\nfr-jacques-philippe: peace, prayer\nin-conversation-with-god: prayer\nalexandre-havard: leadership, virtue\nlenten-and-easter-collection: season:lent\nspiritual-classics: classic\njohn-henry-newman: saints, doctrine",
+      "info": "One per line: collection-handle: themes. Themes: peace, prayer, hope, virtue, work, leadership, marriage, family, doctrine, scripture, saints, mary, priesthood, religious, friendship, story, classic, seeker, culture. Also season:lent, audience:parents."
+    },
+    { "type": "checkbox", "id": "fetch_catalog", "label": "Also consider the whole catalogue (backlist)", "default": true, "info": "Reads /products.json in the visitor's browser while they answer." },
+    { "type": "text", "id": "exclude_tags", "label": "Never recommend products tagged", "default": "no-quiz" },
+    { "type": "text", "id": "exclude_handles", "label": "Never recommend these product handles", "default": "order", "info": "Comma-separated." },
+    { "type": "checkbox", "id": "exclude_spanish", "label": "Skip Spanish-language editions", "default": true },
+    { "type": "checkbox", "id": "exclude_bundles", "label": "Skip sets, packs and bundles", "default": true, "info": "A bundle you add to the curated library is still allowed." },
+    { "type": "text", "id": "publisher_names", "label": "Vendor names that mean the publisher, not the author", "default": "Scepter Publishers, Scepter" },
+    { "type": "page", "id": "plan_page", "label": "Reading plan page", "info": "A page using the template page.scepter-reading-plan. Emails link here." },
+    { "type": "header", "content": "Email" },
+    { "type": "text", "id": "klaviyo_public_key", "label": "Klaviyo public API key", "info": "The six-character site ID. Leave blank if you don't use Klaviyo." },
+    { "type": "text", "id": "klaviyo_list_id", "label": "Klaviyo list ID" },
+    { "type": "text", "id": "klaviyo_event", "label": "Klaviyo event name", "default": "Completed Formation Quiz", "info": "Trigger your plan email flow on this event." },
+    { "type": "url", "id": "webhook_url", "label": "Webhook URL", "info": "Optional: Zapier, Make or your own endpoint. Form-encoded POST." },
+    { "type": "checkbox", "id": "shopify_customer", "label": "Add subscribers as Shopify customers", "default": true },
+    { "type": "text", "id": "customer_tag", "label": "Customer tag", "default": "scepter-quiz" },
+    { "type": "checkbox", "id": "share_sensitive", "label": "Send religion and gender to the email platform", "default": false, "info": "Off by default: they shape the reading plan either way." },
+    { "type": "text", "id": "consent_text", "label": "Marketing checkbox text", "default": "Also send me occasional emails from Scepter: new books, reading ideas, offers. Unsubscribe anytime." },
+    { "type": "checkbox", "id": "consent_checked", "label": "Marketing checkbox ticked by default", "default": true },
+    { "type": "header", "content": "Look" },
+    { "type": "color", "id": "color_forest", "label": "Dark green", "default": "#1f3d2e" },
+    { "type": "color", "id": "color_sage", "label": "Light green", "default": "#d7e5d2" },
+    { "type": "color", "id": "color_burgundy", "label": "Burgundy", "default": "#6f1d2c" },
+    { "type": "color", "id": "color_cream", "label": "Cream", "default": "#fbf8f1" },
+    { "type": "checkbox", "id": "load_fonts", "label": "Load the quiz fonts (Cormorant Garamond, Source Sans 3)", "default": true },
+    { "type": "range", "id": "padding_top", "label": "Top padding", "min": 0, "max": 100, "step": 4, "unit": "px", "default": 0 },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom padding", "min": 0, "max": 100, "step": 4, "unit": "px", "default": 0 }
+  ],
+  "blocks": [
+    {
+      "type": "starter_rule",
+      "name": "Starter rule",
+      "settings": [
+        { "type": "paragraph", "content": "When a reader matches, one of these books goes into their plan at the month you choose. Rules run top to bottom; the first to claim a month keeps it." },
+        {
+          "type": "select", "id": "condition", "label": "When the reader…", "default": "struggling",
+          "options": [
+            { "value": "everyone", "label": "Everyone" },
+            { "value": "struggling", "label": "feels pretty poor about God, religion or the world" },
+            { "value": "faith_distant", "label": "has a distant, doubting or absent faith" },
+            { "value": "faith_dry", "label": "finds prayer dry" },
+            { "value": "faith_on_fire", "label": "has a faith on fire" },
+            { "value": "catholic", "label": "is Catholic" },
+            { "value": "not_catholic", "label": "is not Catholic" },
+            { "value": "single", "label": "is single" },
+            { "value": "engaged", "label": "is engaged" },
+            { "value": "married", "label": "is married" },
+            { "value": "newlywed", "label": "is engaged or married five years or less" },
+            { "value": "long_married", "label": "has been married sixteen years or more" },
+            { "value": "parents", "label": "has children" },
+            { "value": "big_family", "label": "has four or more children" },
+            { "value": "widowed", "label": "is widowed" },
+            { "value": "priest", "label": "is a priest" },
+            { "value": "priest_parish", "label": "is a parish priest" },
+            { "value": "priest_religious", "label": "is a religious priest" },
+            { "value": "religious", "label": "is a religious sister or brother" },
+            { "value": "leader", "label": "leads people (business, government, military)" },
+            { "value": "professional", "label": "works in a profession" },
+            { "value": "student", "label": "is a student" },
+            { "value": "homemaker", "label": "works at home raising a family" },
+            { "value": "retired", "label": "is retired" },
+            { "value": "work_not_service", "label": "doesn't see work as serving God and others" },
+            { "value": "work_burnout", "label": "is stretched thin or burned out at work" },
+            { "value": "work_restless", "label": "is restless or searching at work" },
+            { "value": "home_hard", "label": "rates home life 4 or lower" },
+            { "value": "home_good", "label": "rates home life 8 or higher" },
+            { "value": "wants_grow", "label": "wants to grow" },
+            { "value": "wants_learn", "label": "wants to learn" },
+            { "value": "wants_discover", "label": "wants to discover" },
+            { "value": "young", "label": "is under 25" },
+            { "value": "senior", "label": "is 65 or older" },
+            { "value": "man", "label": "is a man" },
+            { "value": "woman", "label": "is a woman" }
+          ]
+        },
+        { "type": "product_list", "id": "products", "label": "…give one of these books", "limit": 10, "info": "The first that fits best. Order is your preference." },
+        { "type": "text", "id": "match", "label": "…or any book by or titled", "info": "Used when none of the books above is available, e.g. Jacques Philippe." },
+        { "type": "range", "id": "month", "label": "In month", "min": 1, "max": 12, "step": 1, "default": 1 },
+        { "type": "textarea", "id": "note", "label": "Why (shown to the reader)", "info": "Optional. Otherwise the plan explains the pick in the reader's own terms." }
+      ]
+    }
+  ],
+  "max_blocks": 20,
+  "presets": [
+    {
+      "name": "Scepter formation quiz",
+      "category": "Scepter",
+      "settings": { "variant": "mission" },
+      "blocks": [
+        { "type": "starter_rule", "settings": { "condition": "struggling", "match": "Jacques Philippe", "month": 1, "note": "When God, the Church or the world feel heavy, we always begin with peace, and Fr. Jacques Philippe is the surest guide we know." } },
+        { "type": "starter_rule", "settings": { "condition": "priest", "month": 1 } },
+        { "type": "starter_rule", "settings": { "condition": "leader", "match": "Havard", "month": 2 } },
+        { "type": "starter_rule", "settings": { "condition": "work_not_service", "month": 3 } },
+        { "type": "starter_rule", "settings": { "condition": "not_catholic", "match": "The Faith Explained", "month": 4 } }
+      ]
+    }
+  ]
+}
+{% endschema %}

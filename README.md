@@ -33,6 +33,7 @@ overseer and its specialists divide a title, `CLAUDE.md` for the operating rules
 | `assets/` | fonts (OFL), ornaments, the hawk, a portable wordlist |
 | `art/index.csv` | 3,435 open-access paintings, filtered for the house; `art/used.csv` the ledger |
 | `books/<slug>/` | one book: `book.yaml`, `0-source/ … 5-proof/`, `NOTES.md`, `changes.csv`, `run-log.md` |
+| `scepter/` | separate from the pipeline: scepterpublishers.org's three formation quizzes, free e-book and temperament pop-ups, and their reading-plan engine, as Shopify theme sections (`scepter/README.md`) |
 
 ## Needs
 

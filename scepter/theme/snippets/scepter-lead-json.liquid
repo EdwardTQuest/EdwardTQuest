@@ -1,0 +1,6 @@
+{%- comment -%}
+  Scepter kit: where leads go (Klaviyo, a webhook, Shopify customers), from a section's settings.
+  Every value has an explicit default, so a section without one of these settings still prints valid JSON.
+  Usage: "lead": {% render 'scepter-lead-json', s: section.settings %}
+{%- endcomment -%}
+{"klaviyo":{"publicKey":{{ s.klaviyo_public_key | default: '' | strip | json }},"listId":{{ s.klaviyo_list_id | default: '' | strip | json }}},"eventName":{{ s.klaviyo_event | default: '' | json }},"webhook":{{ s.webhook_url | default: '' | json }},"shopify":{{ s.shopify_customer | default: false | json }},"tag":{{ s.customer_tag | default: '' | json }},"sensitive":{{ s.share_sensitive | default: false | json }},"consentText":{{ s.consent_text | default: '' | json }},"consentChecked":{{ s.consent_checked | default: false | json }}}

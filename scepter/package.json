@@ -1,0 +1,15 @@
+{
+  "name": "scepter-quiz-kit",
+  "private": true,
+  "description": "Scepter Publishers: three formation quizzes, a free e-book pop-up and a temperament test, as Shopify theme sections.",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "check:theme": "node tools/check-theme.mjs",
+    "screenshots": "node tools/screenshots.mjs",
+    "build:temperament": "node tools/build-temperament-section.mjs"
+  },
+  "devDependencies": {
+    "@shopify/theme-check-node": "^3.29.1",
+    "liquidjs": "^10.21.0"
+  }
+}

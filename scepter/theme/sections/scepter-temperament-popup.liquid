@@ -1,0 +1,943 @@
+{%- comment -%}
+  Scepter temperament test pop-up: the test, the reader's temperament (dominant and secondary),
+  the virtue to grow, then Scepter's Alexandre Havard books to buy. Add it once, to the footer
+  group (Customize → Footer → Add section). Any link to #temperament-test opens it, and an optional
+  floating button offers it on every page.
+
+  Questions are blocks (one per question). The preset's questions are a stand-in written for this
+  kit; replace them with the official test (with HVLI's permission) here in the editor, or build a
+  new preset from a spreadsheet: node scepter/tools/build-temperament-section.mjs questions.csv
+{%- endcomment -%}
+{%- liquid
+  assign s = section.settings
+  assign root = routes.root_url | append: '/' | replace: '//', '/'
+-%}
+{%- render 'scepter-head', load_fonts: s.load_fonts -%}
+<div data-sp-popup="temperament" hidden>
+  <script type="application/json" data-sp-config>
+    {
+      "sectionId": {{ section.id | json }},
+      "enabled": {{ s.enabled | json }},
+      "rootUrl": {{ root | json }},
+      "currency": {{ cart.currency.iso_code | json }},
+      "triggers": { "launcher": {{ s.launcher | json }}, "launcherPosition": {{ s.launcher_position | json }}, "delay": {{ s.delay | json }}, "exitIntent": {{ s.exit_intent | json }}, "hash": "temperament-test" },
+      "suppressDays": {{ s.suppress_days | json }},
+      "excludePaths": {{ s.exclude_paths | split: ',' | json }},
+      "askEmail": {{ s.ask_email | json }},
+      "maxBooks": {{ s.max_books | json }},
+      "style": {% capture sp_style %}{% render 'scepter-colors', s: s %}{% endcapture %}{{ sp_style | strip | json }},
+      "copy": {
+        "kicker": {{ s.kicker | json }}, "title": {{ s.heading | json }}, "lead": {{ s.intro | json }}, "cta": {{ s.cta | json }},
+        "meta": {{ s.meta | json }}, "attribution": {{ s.attribution | json }}, "attributionUrl": {{ s.attribution_url | json }},
+        "booksTitle": {{ s.books_title | json }}, "booksLead": {{ s.books_lead | json }}, "forYou": {{ s.for_you_label | json }},
+        "launcher": {{ s.launcher_label | json }}
+      },
+      "books": [
+        {%- if s.book_all != blank -%}{"for": ["all"], "product": {% render 'scepter-product-json', product: s.book_all %}},{%- endif -%}
+        {%- if s.book_choleric != blank -%}{"for": ["choleric"], "product": {% render 'scepter-product-json', product: s.book_choleric %}},{%- endif -%}
+        {%- if s.book_melancholic != blank -%}{"for": ["melancholic"], "product": {% render 'scepter-product-json', product: s.book_melancholic %}},{%- endif -%}
+        {%- if s.book_sanguine != blank -%}{"for": ["sanguine"], "product": {% render 'scepter-product-json', product: s.book_sanguine %}},{%- endif -%}
+        {%- if s.book_phlegmatic != blank -%}{"for": ["phlegmatic"], "product": {% render 'scepter-product-json', product: s.book_phlegmatic %}},{%- endif -%}
+        {%- if s.more_books != blank -%}{%- for p in s.more_books.products limit: 12 -%}{"for": [], "product": {% render 'scepter-product-json', product: p %}},{%- endfor -%}{%- endif -%}
+        null
+      ],
+      "questions": [
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'question' and block.settings.prompt != blank -%}
+            {"prompt": {{ block.settings.prompt | json }}, "weight": {{ block.settings.weight | json }}, "answers": [
+              {"text": {{ block.settings.answer_1 | json }}, "score": {{ block.settings.score_1 | json }}},
+              {"text": {{ block.settings.answer_2 | json }}, "score": {{ block.settings.score_2 | json }}},
+              {"text": {{ block.settings.answer_3 | json }}, "score": {{ block.settings.score_3 | json }}},
+              {"text": {{ block.settings.answer_4 | json }}, "score": {{ block.settings.score_4 | json }}}
+            ]},
+          {%- endif -%}
+        {%- endfor -%}
+        null
+      ],
+      "results": {
+        {%- assign result_sep = '' -%}
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'result' -%}
+            {{- result_sep -}}{{ block.settings.temperament | json }}: {"name": {{ block.settings.name | json }}, "tagline": {{ block.settings.tagline | json }}, "summary": {{ block.settings.summary | json }}, "strengths": {{ block.settings.strengths | json }}, "watch": {{ block.settings.watch | json }}, "virtue": {{ block.settings.virtue | json }}, "virtueText": {{ block.settings.virtue_text | json }}}
+            {%- assign result_sep = ',' -%}
+          {%- endif -%}
+        {%- endfor -%}
+      },
+      "lead": {% render 'scepter-lead-json', s: s %}
+    }
+  </script>
+</div>
+<script src="{{ 'scepter-lead.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'scepter-temperament.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'scepter-popups.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "Scepter temperament test",
+  "tag": "div",
+  "class": "scepter-temperament-section",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enabled",
+      "label": "Show the test",
+      "default": true
+    },
+    {
+      "type": "paragraph",
+      "content": "In the editor, click this section to open the test. On the site, any link to #temperament-test opens it."
+    },
+    {
+      "type": "header",
+      "content": "When it opens"
+    },
+    {
+      "type": "checkbox",
+      "id": "launcher",
+      "label": "Floating button on every page",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "launcher_position",
+      "label": "Button position",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Bottom left"
+        },
+        {
+          "value": "right",
+          "label": "Bottom right"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "launcher_label",
+      "label": "Button text",
+      "default": "What’s your temperament?"
+    },
+    {
+      "type": "range",
+      "id": "delay",
+      "label": "Also open by itself after",
+      "min": 0,
+      "max": 120,
+      "step": 5,
+      "unit": "s",
+      "default": 0,
+      "info": "0: only from the button or a link."
+    },
+    {
+      "type": "checkbox",
+      "id": "exit_intent",
+      "label": "Or when a desktop visitor moves to leave",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "suppress_days",
+      "label": "After a visitor closes it, wait",
+      "min": 1,
+      "max": 90,
+      "step": 1,
+      "unit": "d",
+      "default": 30
+    },
+    {
+      "type": "text",
+      "id": "exclude_paths",
+      "label": "Never on pages starting with",
+      "default": "/cart, /checkout, /account"
+    },
+    {
+      "type": "header",
+      "content": "Words"
+    },
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Small heading",
+      "default": "Temperament test"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What’s your temperament?"
+    },
+    {
+      "type": "textarea",
+      "id": "intro",
+      "label": "Introduction",
+      "default": "Twenty-two quick questions about your first reactions. Answer with what comes to you first, not what you think you should say. You’ll discover your dominant temperament, your secondary one, and the virtue that will help you most."
+    },
+    {
+      "type": "text",
+      "id": "cta",
+      "label": "Start button",
+      "default": "Start the test"
+    },
+    {
+      "type": "text",
+      "id": "meta",
+      "label": "Under the button",
+      "default": "22 questions · about 5 minutes"
+    },
+    {
+      "type": "textarea",
+      "id": "attribution",
+      "label": "Credit line",
+      "default": "Based on the four classical temperaments as Alexandre Havard presents them in From Temperament to Character.",
+      "info": "With the official questions, e.g. “Alexandre Havard’s Temperament Test, used with permission of HVLI.”"
+    },
+    {
+      "type": "url",
+      "id": "attribution_url",
+      "label": "Credit link"
+    },
+    {
+      "type": "header",
+      "content": "Havard books"
+    },
+    {
+      "type": "product",
+      "id": "book_all",
+      "label": "For everyone",
+      "info": "Shown to every result, e.g. From Temperament to Character."
+    },
+    {
+      "type": "product",
+      "id": "book_choleric",
+      "label": "Best next book for a choleric"
+    },
+    {
+      "type": "product",
+      "id": "book_melancholic",
+      "label": "Best next book for a melancholic"
+    },
+    {
+      "type": "product",
+      "id": "book_sanguine",
+      "label": "Best next book for a sanguine"
+    },
+    {
+      "type": "product",
+      "id": "book_phlegmatic",
+      "label": "Best next book for a phlegmatic"
+    },
+    {
+      "type": "collection",
+      "id": "more_books",
+      "label": "More books to offer",
+      "info": "For example the Alexandre Havard collection."
+    },
+    {
+      "type": "range",
+      "id": "max_books",
+      "label": "Books to show",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "text",
+      "id": "books_title",
+      "label": "Books heading",
+      "default": "Go deeper with Alexandre Havard"
+    },
+    {
+      "type": "text",
+      "id": "books_lead",
+      "label": "Books line",
+      "default": "Temperament is where we start; character is what we build. These books show how."
+    },
+    {
+      "type": "text",
+      "id": "for_you_label",
+      "label": "Label on the reader's own book",
+      "default": "Written for you"
+    },
+    {
+      "type": "header",
+      "content": "Email"
+    },
+    {
+      "type": "select",
+      "id": "ask_email",
+      "label": "Offer to email the result",
+      "default": "optional",
+      "options": [
+        {
+          "value": "optional",
+          "label": "Yes, under the result"
+        },
+        {
+          "value": "off",
+          "label": "No"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "klaviyo_public_key",
+      "label": "Klaviyo public API key"
+    },
+    {
+      "type": "text",
+      "id": "klaviyo_list_id",
+      "label": "Klaviyo list ID"
+    },
+    {
+      "type": "text",
+      "id": "klaviyo_event",
+      "label": "Klaviyo event name",
+      "default": "Completed Temperament Test"
+    },
+    {
+      "type": "url",
+      "id": "webhook_url",
+      "label": "Webhook URL"
+    },
+    {
+      "type": "checkbox",
+      "id": "shopify_customer",
+      "label": "Add subscribers as Shopify customers",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "customer_tag",
+      "label": "Customer tag",
+      "default": "temperament-test"
+    },
+    {
+      "type": "header",
+      "content": "Look"
+    },
+    {
+      "type": "color",
+      "id": "color_forest",
+      "label": "Dark green",
+      "default": "#1f3d2e"
+    },
+    {
+      "type": "color",
+      "id": "color_sage",
+      "label": "Light green",
+      "default": "#d7e5d2"
+    },
+    {
+      "type": "color",
+      "id": "color_burgundy",
+      "label": "Burgundy",
+      "default": "#6f1d2c"
+    },
+    {
+      "type": "color",
+      "id": "color_cream",
+      "label": "Cream",
+      "default": "#fbf8f1"
+    },
+    {
+      "type": "checkbox",
+      "id": "load_fonts",
+      "label": "Load the fonts",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "prompt",
+          "label": "Question"
+        },
+        {
+          "type": "text",
+          "id": "answer_1",
+          "label": "Answer 1"
+        },
+        {
+          "type": "select",
+          "id": "score_1",
+          "label": "Answer 1 counts for",
+          "default": "choleric",
+          "options": [
+            {
+              "value": "choleric",
+              "label": "Choleric"
+            },
+            {
+              "value": "melancholic",
+              "label": "Melancholic"
+            },
+            {
+              "value": "sanguine",
+              "label": "Sanguine"
+            },
+            {
+              "value": "phlegmatic",
+              "label": "Phlegmatic"
+            },
+            {
+              "value": "none",
+              "label": "Nothing"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "answer_2",
+          "label": "Answer 2"
+        },
+        {
+          "type": "select",
+          "id": "score_2",
+          "label": "Answer 2 counts for",
+          "default": "melancholic",
+          "options": [
+            {
+              "value": "choleric",
+              "label": "Choleric"
+            },
+            {
+              "value": "melancholic",
+              "label": "Melancholic"
+            },
+            {
+              "value": "sanguine",
+              "label": "Sanguine"
+            },
+            {
+              "value": "phlegmatic",
+              "label": "Phlegmatic"
+            },
+            {
+              "value": "none",
+              "label": "Nothing"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "answer_3",
+          "label": "Answer 3"
+        },
+        {
+          "type": "select",
+          "id": "score_3",
+          "label": "Answer 3 counts for",
+          "default": "sanguine",
+          "options": [
+            {
+              "value": "choleric",
+              "label": "Choleric"
+            },
+            {
+              "value": "melancholic",
+              "label": "Melancholic"
+            },
+            {
+              "value": "sanguine",
+              "label": "Sanguine"
+            },
+            {
+              "value": "phlegmatic",
+              "label": "Phlegmatic"
+            },
+            {
+              "value": "none",
+              "label": "Nothing"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "answer_4",
+          "label": "Answer 4",
+          "info": "Leave empty for a three-answer question."
+        },
+        {
+          "type": "select",
+          "id": "score_4",
+          "label": "Answer 4 counts for",
+          "default": "phlegmatic",
+          "options": [
+            {
+              "value": "choleric",
+              "label": "Choleric"
+            },
+            {
+              "value": "melancholic",
+              "label": "Melancholic"
+            },
+            {
+              "value": "sanguine",
+              "label": "Sanguine"
+            },
+            {
+              "value": "phlegmatic",
+              "label": "Phlegmatic"
+            },
+            {
+              "value": "none",
+              "label": "Nothing"
+            }
+          ]
+        },
+        {
+          "type": "range",
+          "id": "weight",
+          "label": "Weight",
+          "min": 1,
+          "max": 3,
+          "step": 1,
+          "default": 1,
+          "info": "A heavier question also breaks ties."
+        }
+      ]
+    },
+    {
+      "type": "result",
+      "name": "Result text",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "select",
+          "id": "temperament",
+          "label": "Temperament",
+          "default": "choleric",
+          "options": [
+            {
+              "value": "choleric",
+              "label": "Choleric"
+            },
+            {
+              "value": "melancholic",
+              "label": "Melancholic"
+            },
+            {
+              "value": "sanguine",
+              "label": "Sanguine"
+            },
+            {
+              "value": "phlegmatic",
+              "label": "Phlegmatic"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": "Blank fields keep the built-in words."
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        },
+        {
+          "type": "text",
+          "id": "tagline",
+          "label": "Tagline"
+        },
+        {
+          "type": "textarea",
+          "id": "summary",
+          "label": "Summary"
+        },
+        {
+          "type": "textarea",
+          "id": "strengths",
+          "label": "Strengths"
+        },
+        {
+          "type": "textarea",
+          "id": "watch",
+          "label": "Watch out for"
+        },
+        {
+          "type": "text",
+          "id": "virtue",
+          "label": "The virtue to grow"
+        },
+        {
+          "type": "textarea",
+          "id": "virtue_text",
+          "label": "About that virtue"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 50,
+  "presets": [
+    {
+      "name": "Scepter temperament test",
+      "category": "Scepter",
+      "blocks": [
+        {
+          "type": "question",
+          "settings": {
+            "prompt": "Someone contradicts you in front of others. Your first reaction:",
+            "weight": 1,
+            "answer_1": "I push back right away. I won’t let it stand.",
+            "score_1": "choleric",
+            "answer_2": "I go quiet, but I’ll turn it over for days.",
+            "score_2": "melancholic",
+            "answer_3": "I laugh it off. By dinner it’s forgotten.",
+            "score_3": "sanguine",
+            "answer_4": "I stay calm and let it go. Not worth a fight.",
+            "score_4": "phlegmatic"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "prompt": "A free Saturday with nothing planned:",
+            "weight": 1,
+            "answer_1": "I call friends and see what happens.",
+            "score_1": "sanguine",
+            "answer_2": "Wonderful: a slow, quiet day at home.",
+            "score_2": "phlegmatic",
+            "answer_3": "I tackle the project I’ve been meaning to finish.",
+            "score_3": "choleric",
+            "answer_4": "A long walk, a good book, time to think.",
+            "score_4": "melancholic"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "prompt": "A new project lands on your desk. You:",
+            "weight": 1,
+            "answer_1": "Take charge and set the goal.",
+            "score_1": "choleric",
+            "answer_2": "Think it through and plan every detail.",
+            "score_2": "melancholic",
+            "answer_3": "Get excited and share ideas with everyone.",
+            "score_3": "sanguine",
+            "answer_4": "Wait to see what’s needed, then do your part steadily.",
+            "score_4": "phlegmatic"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "prompt": "At a party where you know almost no one:",
+            "weight": 1,
+            "answer_1": "By the end of the night I know half the room.",
+            "score_1": "sanguine",
+            "answer_2": "I find the people worth talking to and get to it.",
+            "score_2": "choleric",
+            "answer_3": "I find one person and have a pleasant chat.",
+            "score_3": "phlegmatic",
+            "answer_4": "I’d rather be home; I stay near the edge.",
+            "score_4": "melancholic"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "prompt": "When you make a mistake:",
+            "weight": 1,
+            "answer_1": "It stays with me for a long time.",
+            "score_1": "melancholic",
+            "answer_2": "I apologize, laugh, and move on.",
+            "score_2": "sanguine",
+            "answer_3": "I fix it fast and make sure it never happens again.",
+            "score_3": "choleric",
+            "answer_4": "I accept it calmly. These things happen.",
+            "score_4": "phlegmatic"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "prompt": "Your friends would say you are:",
+            "weight": 1,
+            "answer_1": "Determined and direct.",
+            "score_1": "choleric",
+            "answer_2": "Fun and full of life.",
+            "score_2": "sanguine",
+            "answer_3": "Easygoing and dependable.",
+            "score_3": "phlegmatic",
+            "answer_4": "Thoughtful and deep.",
+            "score_4": "melancholic"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "prompt": "Plans change at the last minute:",
+            "weight": 1,
+            "answer_1": "Great, something new!",
+            "score_1": "sanguine",
+            "answer_2": "It unsettles me; I had it all worked out.",
+            "score_2": "melancholic",
+            "answer_3": "Annoying. I make a new plan on the spot.",
+            "score_3": "choleric",
+            "answer_4": "Fine by me. I adapt without fuss.",
+            "score_4": "phlegmatic"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "prompt": "In a disagreement, you tend to:",
+            "weight": 1,
+            "answer_1": "Argue until it’s settled.",
+            "score_1": "choleric",
+            "answer_2": "Look for a compromise so everyone is at peace.",
+            "score_2": "phlegmatic",
+            "answer_3": "Weigh every side, and often keep my view to myself.",
+            "score_3": "melancholic",
+            "answer_4": "Say what I think in the moment, then forget it.",
+            "score_4": "sanguine"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "prompt": "What drains you most?",
+            "weight": 1,
+            "answer_1": "Routine, and being alone too long.",
+            "score_1": "sanguine",
+            "answer_2": "Slowness and indecision in others.",
+            "score_2": "choleric",
+            "answer_3": "Noise, disorder and superficial talk.",
+            "score_3": "melancholic",
+            "answer_4": "Conflict and pressure.",
+            "score_4": "phlegmatic"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "prompt": "When someone hurts you:",
+            "weight": 1,
+            "answer_1": "I feel it deeply, and it takes a long time to heal.",
+            "score_1": "melancholic",
+            "answer_2": "I get angry quickly, and I don’t forget easily.",
+            "score_2": "choleric",
+            "answer_3": "I flare up, and then it’s over.",
+            "score_3": "sanguine",
+            "answer_4": "I hardly show it; it doesn’t shake me much.",
+            "score_4": "phlegmatic"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "prompt": "Deadlines:",
+            "weight": 1,
+            "answer_1": "I set them, for myself and for others.",
+            "score_1": "choleric",
+            "answer_2": "I meet them at my own steady pace.",
+            "score_2": "phlegmatic",
+            "answer_3": "I usually make them at the last minute.",
+            "score_3": "sanguine",
+            "answer_4": "I start early because I want it done perfectly.",
+            "score_4": "melancholic"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "prompt": "When you walk into a room, people notice:",
+            "weight": 1,
+            "answer_1": "My energy and my laugh.",
+            "score_1": "sanguine",
+            "answer_2": "My confidence.",
+            "score_2": "choleric",
+            "answer_3": "Not much at first; I like to observe.",
+            "score_3": "melancholic",
+            "answer_4": "My calm.",
+            "score_4": "phlegmatic"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "prompt": "Your workspace is usually:",
+            "weight": 1,
+            "answer_1": "Organized, with everything in its place.",
+            "score_1": "melancholic",
+            "answer_2": "Cheerful chaos.",
+            "score_2": "sanguine",
+            "answer_3": "Set up for maximum efficiency.",
+            "score_3": "choleric",
+            "answer_4": "Comfortable, a little cluttered, and that’s fine.",
+            "score_4": "phlegmatic"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "prompt": "Faced with a big decision:",
+            "weight": 1,
+            "answer_1": "I decide quickly and don’t look back.",
+            "score_1": "choleric",
+            "answer_2": "I deliberate for a long time; I want to get it right.",
+            "score_2": "melancholic",
+            "answer_3": "I go with my gut in the moment.",
+            "score_3": "sanguine",
+            "answer_4": "I take my time and ask what others think.",
+            "score_4": "phlegmatic"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "prompt": "In a group project, you are the one who:",
+            "weight": 1,
+            "answer_1": "Leads and drives it forward.",
+            "score_1": "choleric",
+            "answer_2": "Keeps spirits up and throws out ideas.",
+            "score_2": "sanguine",
+            "answer_3": "Catches every detail and every flaw.",
+            "score_3": "melancholic",
+            "answer_4": "Keeps the peace and does the steady work.",
+            "score_4": "phlegmatic"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "prompt": "Good news arrives. You:",
+            "weight": 1,
+            "answer_1": "Tell everyone right away!",
+            "score_1": "sanguine",
+            "answer_2": "Smile and enjoy it quietly.",
+            "score_2": "phlegmatic",
+            "answer_3": "Think about what it makes possible next.",
+            "score_3": "choleric",
+            "answer_4": "Savor it, and wonder whether it will last.",
+            "score_4": "melancholic"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "prompt": "Your most familiar struggle:",
+            "weight": 1,
+            "answer_1": "Pride and impatience.",
+            "score_1": "choleric",
+            "answer_2": "Discouragement and self-criticism.",
+            "score_2": "melancholic",
+            "answer_3": "Being scattered; not following through.",
+            "score_3": "sanguine",
+            "answer_4": "Comfort; putting things off.",
+            "score_4": "phlegmatic"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "prompt": "Stuck in a long line:",
+            "weight": 1,
+            "answer_1": "Unbearable. I look for a faster way.",
+            "score_1": "choleric",
+            "answer_2": "I start chatting with the person next to me.",
+            "score_2": "sanguine",
+            "answer_3": "No problem. I’m patient.",
+            "score_3": "phlegmatic",
+            "answer_4": "I think, and notice everything around me.",
+            "score_4": "melancholic"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "prompt": "When you take up a hobby:",
+            "weight": 1,
+            "answer_1": "I start many and finish few.",
+            "score_1": "sanguine",
+            "answer_2": "I go deep and want to master it.",
+            "score_2": "melancholic",
+            "answer_3": "I want to excel, even to win.",
+            "score_3": "choleric",
+            "answer_4": "I keep one or two, the same ones for years.",
+            "score_4": "phlegmatic"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "prompt": "People sometimes tell you that you are:",
+            "weight": 1,
+            "answer_1": "Too blunt.",
+            "score_1": "choleric",
+            "answer_2": "Too serious.",
+            "score_2": "melancholic",
+            "answer_3": "Too talkative.",
+            "score_3": "sanguine",
+            "answer_4": "Too laid-back.",
+            "score_4": "phlegmatic"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "prompt": "Your emotions are usually:",
+            "weight": 2,
+            "answer_1": "Quick to rise and quick to pass.",
+            "score_1": "sanguine",
+            "answer_2": "Strong, and they last.",
+            "score_2": "choleric",
+            "answer_3": "Deep, and slow to fade.",
+            "score_3": "melancholic",
+            "answer_4": "Mild and even.",
+            "score_4": "phlegmatic"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "prompt": "Your ideal vacation:",
+            "weight": 1,
+            "answer_1": "An ambitious trip with a packed itinerary.",
+            "score_1": "choleric",
+            "answer_2": "Somewhere lively, with friends and new faces.",
+            "score_2": "sanguine",
+            "answer_3": "A quiet place full of beauty and history.",
+            "score_3": "melancholic",
+            "answer_4": "A hammock, a book, and nowhere to be.",
+            "score_4": "phlegmatic"
+          }
+        },
+        {
+          "type": "result",
+          "settings": {
+            "temperament": "choleric"
+          }
+        },
+        {
+          "type": "result",
+          "settings": {
+            "temperament": "melancholic"
+          }
+        },
+        {
+          "type": "result",
+          "settings": {
+            "temperament": "sanguine"
+          }
+        },
+        {
+          "type": "result",
+          "settings": {
+            "temperament": "phlegmatic"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

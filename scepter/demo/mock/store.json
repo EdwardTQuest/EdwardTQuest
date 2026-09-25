@@ -1,0 +1,342 @@
+{
+ "_note": "Demo data. Handles marked verified were seen on scepterpublishers.org in search results (Sept 2026); the rest are illustrative. Rankings, prices and descriptions are samples. On the live store the engine reads the real catalogue, the real Best Sellers collection and the real metaobjects.",
+ "verified_handles": [
+  "searching-for-and-maintaining-peace",
+  "interior-freedom",
+  "copy-of-time-for-god",
+  "called-to-life",
+  "in-the-school-of-the-holy-spirit",
+  "thirsting-for-prayer",
+  "fire-light",
+  "jacques-philippe-starter-pack",
+  "jacques-philippe-nine-days-at-home-retreat-series",
+  "la-oracion-camino-de-amor",
+  "from-temperament-to-character",
+  "discovering-a-mission-alexandre-havard",
+  "copy-of-virtuous-leadership-an-agenda-for-personal-excellence",
+  "created-for-greatness-the-power-of-magnanimity",
+  "the-way-furrow-the-forge",
+  "large-print-the-way-furrow-the-forge",
+  "the-way-mini-edition",
+  "furrow-josemaria-escriva",
+  "the-forge-mini-edition",
+  "the-way-of-the-cross",
+  "the-collected-letters-volume-1",
+  "sanctifying-ordinary-work",
+  "in-conversation-with-god-7-volume-set",
+  "in-conversation-with-god-volume-1-advent-and-christmastide",
+  "in-conversation-with-god-volume-2-lent-and-eastertide",
+  "in-conversation-with-god-volume-4-weeks-13-23",
+  "copy-of-in-conversation-with-god-volume-5-weeks-24-34",
+  "in-conversation-with-god-volume-6-feasts-january-june",
+  "the-faith-explained",
+  "the-faith-explained-today",
+  "la-fe-explicada",
+  "love-marriage-money",
+  "the-thoughtful-home",
+  "marcus",
+  "preorder-the-company-we-keep-true-friendship-and-why-it-matters",
+  "pocket-new-testament",
+  "why-priests-answers-guided-by-the-teaching-of-benedict-xvi",
+  "the-founder-of-opus-dei-full-set",
+  "in-gods-house",
+  "the-sacred-passion",
+  "seven-prophets-and-the-culture-war-undoing-the-philosophies-of-a-world-in-crisis",
+  "la-iglesia-1",
+  "pentateuco",
+  "order"
+ ],
+ "lists": {
+  "bestsellers": [
+   "interior-freedom",
+   "searching-for-and-maintaining-peace",
+   "copy-of-time-for-god",
+   "the-way-mini-edition",
+   "in-conversation-with-god-7-volume-set",
+   "the-faith-explained",
+   "the-way-furrow-the-forge",
+   "from-temperament-to-character",
+   "called-to-life",
+   "in-the-school-of-the-holy-spirit",
+   "copy-of-virtuous-leadership-an-agenda-for-personal-excellence",
+   "created-for-greatness-the-power-of-magnanimity",
+   "the-eight-doors-of-the-kingdom",
+   "thirsting-for-prayer",
+   "handbook-of-prayers",
+   "the-way-of-the-cross",
+   "pocket-new-testament",
+   "in-conversation-with-god-volume-1-advent-and-christmastide",
+   "in-conversation-with-god-volume-2-lent-and-eastertide",
+   "friends-of-god",
+   "christ-is-passing-by",
+   "lifeline-the-religious-upbringing-of-your-children"
+  ],
+  "trending": [
+   "discovering-a-mission-alexandre-havard",
+   "preorder-the-company-we-keep-true-friendship-and-why-it-matters",
+   "the-thoughtful-home",
+   "the-faith-explained-today",
+   "seven-prophets-and-the-culture-war-undoing-the-philosophies-of-a-world-in-crisis",
+   "love-marriage-money"
+  ],
+  "topics": {
+   "marriage-and-family": [
+    "love-marriage-money",
+    "the-thoughtful-home",
+    "lifeline-the-religious-upbringing-of-your-children",
+    "compass-a-handbook-on-parent-leadership",
+    "successful-fathers",
+    "marriage-a-path-to-sanctity"
+   ],
+   "fathers": [
+    "successful-fathers",
+    "compass-a-handbook-on-parent-leadership"
+   ],
+   "fr-jacques-philippe": [
+    "searching-for-and-maintaining-peace",
+    "interior-freedom",
+    "copy-of-time-for-god",
+    "called-to-life",
+    "in-the-school-of-the-holy-spirit",
+    "thirsting-for-prayer",
+    "fire-light",
+    "the-eight-doors-of-the-kingdom"
+   ],
+   "in-conversation-with-god": [
+    "in-conversation-with-god-volume-1-advent-and-christmastide",
+    "in-conversation-with-god-volume-2-lent-and-eastertide",
+    "in-conversation-with-god-volume-4-weeks-13-23",
+    "copy-of-in-conversation-with-god-volume-5-weeks-24-34",
+    "in-conversation-with-god-volume-6-feasts-january-june"
+   ],
+   "alexandre-havard": [
+    "from-temperament-to-character",
+    "discovering-a-mission-alexandre-havard",
+    "copy-of-virtuous-leadership-an-agenda-for-personal-excellence",
+    "created-for-greatness-the-power-of-magnanimity"
+   ],
+   "lenten-and-easter-collection": [
+    "the-way-of-the-cross",
+    "the-sacred-passion",
+    "in-conversation-with-god-volume-2-lent-and-eastertide"
+   ],
+   "spiritual-classics": [
+    "the-way-mini-edition",
+    "the-way-furrow-the-forge",
+    "furrow-josemaria-escriva",
+    "the-forge-mini-edition",
+    "the-sacred-passion",
+    "friends-of-god",
+    "christ-is-passing-by"
+   ]
+  }
+ },
+ "topicMap": "marriage-and-family: marriage, family\nfamily-parenting: family, audience:parents\nfathers: family, audience:parents, audience:men\nfr-jacques-philippe: peace, prayer\nin-conversation-with-god: prayer\nalexandre-havard: leadership, virtue\nlenten-and-easter-collection: season:lent\nspiritual-classics: classic\njohn-henry-newman: saints, doctrine",
+ "library": [
+  {
+   "handle": "searching-for-and-maintaining-peace",
+   "themes": [
+    "Peace & trust",
+    "Hope in suffering"
+   ],
+   "good_for": [
+    "Everyone",
+    "Newcomers & seekers",
+    "Other Christians"
+   ],
+   "depth": "Gentle",
+   "start_when": [
+    "Struggling with God or the world"
+   ],
+   "why": "Fr. Jacques Philippe's small classic on peace of heart: the book we give first to anyone who feels weighed down.",
+   "boost": 2
+  },
+  {
+   "handle": "the-faith-explained",
+   "themes": [
+    "Doctrine & apologetics",
+    "For newcomers & seekers"
+   ],
+   "good_for": [
+    "Everyone",
+    "Newcomers & seekers",
+    "Other Christians"
+   ],
+   "depth": "Steady",
+   "start_when": [
+    "New to the faith",
+    "Wants to learn"
+   ],
+   "boost": 1
+  },
+  {
+   "handle": "discovering-a-mission-alexandre-havard",
+   "themes": [
+    "Leadership",
+    "Virtue & character",
+    "Work & ordinary life"
+   ],
+   "good_for": [
+    "Everyone",
+    "Professionals",
+    "Leaders",
+    "Young adults"
+   ],
+   "depth": "Gentle",
+   "start_when": [
+    "Leaders"
+   ],
+   "boost": 1
+  },
+  {
+   "handle": "in-conversation-with-god-volume-1-advent-and-christmastide",
+   "themes": [
+    "Prayer & interior life"
+   ],
+   "seasons": [
+    "Advent",
+    "Christmas"
+   ],
+   "depth": "Steady"
+  },
+  {
+   "handle": "marcus",
+   "themes": [
+    "Fiction & story",
+    "Saints & biography"
+   ],
+   "seasons": [
+    "Summer"
+   ],
+   "good_for": [
+    "Everyone",
+    "Young adults"
+   ],
+   "depth": "Gentle"
+  },
+  {
+   "handle": "preorder-the-company-we-keep-true-friendship-and-why-it-matters",
+   "themes": [
+    "Friendship & apostolate",
+    "Virtue & character"
+   ],
+   "good_for": [
+    "Everyone",
+    "Young adults",
+    "Singles"
+   ],
+   "depth": "Steady"
+  },
+  {
+   "handle": "why-priests-answers-guided-by-the-teaching-of-benedict-xvi",
+   "themes": [
+    "Priesthood"
+   ],
+   "good_for": [
+    "Priests",
+    "Seminarians"
+   ],
+   "depth": "Deep"
+  },
+  {
+   "handle": "friends-of-god",
+   "themes": [
+    "Work & ordinary life",
+    "Prayer & interior life",
+    "Virtue & character",
+    "Spiritual classic"
+   ],
+   "good_for": [
+    "Everyone"
+   ],
+   "depth": "Steady",
+   "start_when": [
+    "Work feels meaningless"
+   ]
+  },
+  {
+   "handle": "christ-is-passing-by",
+   "themes": [
+    "Work & ordinary life",
+    "Prayer & interior life",
+    "Spiritual classic"
+   ],
+   "good_for": [
+    "Everyone"
+   ],
+   "depth": "Steady"
+  },
+  {
+   "handle": "copy-of-time-for-god",
+   "themes": [
+    "Prayer & interior life",
+    "Peace & trust"
+   ],
+   "good_for": [
+    "Everyone",
+    "Newcomers & seekers",
+    "Other Christians"
+   ],
+   "depth": "Gentle",
+   "why": "The clearest short guide to mental prayer we know: how to begin, what to do when it feels like nothing is happening, and why it matters."
+  }
+ ],
+ "rules": [
+  {
+   "condition": "struggling",
+   "products": [
+    "searching-for-and-maintaining-peace",
+    "interior-freedom"
+   ],
+   "match": "Jacques Philippe",
+   "month": 1,
+   "note": "When God, the Church or the world feel heavy, we always begin with peace, and Fr. Jacques Philippe is the surest guide we know."
+  },
+  {
+   "condition": "leader",
+   "products": [
+    "discovering-a-mission-alexandre-havard",
+    "copy-of-virtuous-leadership-an-agenda-for-personal-excellence"
+   ],
+   "match": "Havard",
+   "month": 2,
+   "note": ""
+  },
+  {
+   "condition": "work_not_service",
+   "products": [
+    "sanctifying-ordinary-work"
+   ],
+   "match": "",
+   "month": 3,
+   "note": ""
+  },
+  {
+   "condition": "priest",
+   "products": [
+    "why-priests-answers-guided-by-the-teaching-of-benedict-xvi"
+   ],
+   "match": "",
+   "month": 1,
+   "note": ""
+  },
+  {
+   "condition": "not_catholic",
+   "products": [
+    "the-faith-explained"
+   ],
+   "match": "",
+   "month": 4,
+   "note": ""
+  }
+ ],
+ "featured": {
+  "mission": [
+   "discovering-a-mission-alexandre-havard"
+  ],
+  "adventure": [
+   "called-to-life"
+  ],
+  "treasures": []
+ }
+}

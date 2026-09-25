@@ -1,0 +1,91 @@
+{
+  "sections": {
+    "quiz": {
+      "type": "scepter-quiz",
+      "blocks": {
+        "rule_peace": {
+          "type": "starter_rule",
+          "settings": {
+            "condition": "struggling",
+            "products": [
+              "searching-for-and-maintaining-peace",
+              "interior-freedom"
+            ],
+            "match": "Jacques Philippe",
+            "month": 1,
+            "note": "When God, the Church or the world feel heavy, we always begin with peace, and Fr. Jacques Philippe is the surest guide we know."
+          }
+        },
+        "rule_priest": {
+          "type": "starter_rule",
+          "settings": {
+            "condition": "priest",
+            "products": [
+              "why-priests-answers-guided-by-the-teaching-of-benedict-xvi"
+            ],
+            "match": "",
+            "month": 1,
+            "note": ""
+          }
+        },
+        "rule_leader": {
+          "type": "starter_rule",
+          "settings": {
+            "condition": "leader",
+            "products": [
+              "discovering-a-mission-alexandre-havard",
+              "copy-of-virtuous-leadership-an-agenda-for-personal-excellence"
+            ],
+            "match": "Havard",
+            "month": 2,
+            "note": ""
+          }
+        },
+        "rule_work": {
+          "type": "starter_rule",
+          "settings": {
+            "condition": "work_not_service",
+            "products": [
+              "sanctifying-ordinary-work"
+            ],
+            "match": "",
+            "month": 3,
+            "note": ""
+          }
+        },
+        "rule_newcomer": {
+          "type": "starter_rule",
+          "settings": {
+            "condition": "not_catholic",
+            "products": [
+              "the-faith-explained"
+            ],
+            "match": "The Faith Explained",
+            "month": 4,
+            "note": ""
+          }
+        }
+      },
+      "block_order": [
+        "rule_peace",
+        "rule_priest",
+        "rule_leader",
+        "rule_work",
+        "rule_newcomer"
+      ],
+      "settings": {
+        "variant": "mission",
+        "bestsellers_collection": "best-sellers",
+        "trending_collection": "best-selling-products",
+        "bestseller_share": 70,
+        "featured_products": [
+          "discovering-a-mission-alexandre-havard"
+        ],
+        "plan_page": "reading-plan"
+      }
+    }
+  },
+  "order": [
+    "quiz"
+  ]
+}

@@ -1,0 +1,24 @@
+<!--
+  Klaviyo email: the temperament result. Flow trigger: metric "Completed Temperament Test".
+  Link the book buttons to your Havard products (edit the URLs below once).
+-->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f8f1;">
+  <tr><td align="center" style="padding:24px 12px;">
+    <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border-radius:14px;overflow:hidden;">
+      <tr><td style="background:#1f3d2e;padding:40px 32px;text-align:center;">
+        <p style="margin:0 0 10px;font:700 12px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#a9c5a6;">Your temperament</p>
+        <h1 style="margin:0;font:600 38px/1.1 Georgia,'Times New Roman',serif;color:#fbf8f1;">{{ event.temperament }}</h1>
+        {% if event.secondary %}<p style="margin:12px 0 0;font:17px/1.5 Georgia,serif;color:#dfe8dc;">with a {{ event.secondary|lower }} streak</p>{% endif %}
+      </td></tr>
+      <tr><td style="padding:30px 32px;text-align:center;">
+        <div style="background:#6f1d2c;border-radius:12px;padding:20px;color:#ffffff;">
+          <p style="margin:0 0 6px;font:700 12px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#f0d9dd;">The virtue to grow</p>
+          <p style="margin:0;font:600 28px/1.1 Georgia,serif;">{{ event.virtue }}</p>
+        </div>
+        <p style="margin:26px 0 18px;font:16px/1.55 Arial,Helvetica,sans-serif;color:#33443a;">Temperament is where we start; character is what we build. Alexandre Havard’s books show how.</p>
+        <a href="https://scepterpublishers.org/products/from-temperament-to-character" style="display:inline-block;background:#1f3d2e;color:#fbf8f1;font:700 15px/1 Arial,Helvetica,sans-serif;padding:14px 22px;border-radius:999px;text-decoration:none;">From Temperament to Character</a>
+        <p style="margin:14px 0 0;"><a href="https://scepterpublishers.org/collections/alexandre-havard" style="font:15px Arial,Helvetica,sans-serif;color:#6f1d2c;">All of Alexandre Havard’s books</a></p>
+      </td></tr>
+    </table>
+  </td></tr>
+</table>

@@ -1,0 +1,41 @@
+{%- comment -%}
+  Scepter reading plan page: shows a saved plan from its link (?plan=…). The quiz results and the
+  plan email both link here. Put this section on a page that uses the template
+  page.scepter-reading-plan (e.g. /pages/reading-plan) and pick that page in the quiz settings.
+{%- endcomment -%}
+{%- liquid
+  assign s = section.settings
+  assign root = routes.root_url | append: '/' | replace: '//', '/'
+-%}
+{%- render 'scepter-head', load_fonts: s.load_fonts -%}
+<div class="sp-section-pad" style="padding-top: {{ s.padding_top }}px; padding-bottom: {{ s.padding_bottom }}px;">
+  <div class="sp sp-quiz sp-planpage" data-sp-plan-page style="{%- render 'scepter-colors', s: s -%}">
+    <noscript><p style="padding: 2rem; text-align: center;">This page needs JavaScript turned on.</p></noscript>
+    <script type="application/json" data-sp-config>
+      { "rootUrl": {{ root | json }}, "quizUrl": {{ s.quiz_page.url | json }}, "currency": {{ cart.currency.iso_code | json }} }
+    </script>
+  </div>
+</div>
+<script src="{{ 'scepter-engine.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'scepter-lead.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'scepter-quiz.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "Scepter reading plan",
+  "tag": "section",
+  "class": "section scepter-plan-section",
+  "limit": 1,
+  "settings": [
+    { "type": "page", "id": "quiz_page", "label": "Quiz page", "info": "For the “Take the quiz” and “Retake the quiz” buttons." },
+    { "type": "color", "id": "color_forest", "label": "Dark green", "default": "#1f3d2e" },
+    { "type": "color", "id": "color_sage", "label": "Light green", "default": "#d7e5d2" },
+    { "type": "color", "id": "color_burgundy", "label": "Burgundy", "default": "#6f1d2c" },
+    { "type": "color", "id": "color_cream", "label": "Cream", "default": "#fbf8f1" },
+    { "type": "checkbox", "id": "load_fonts", "label": "Load the quiz fonts", "default": true },
+    { "type": "range", "id": "padding_top", "label": "Top padding", "min": 0, "max": 100, "step": 4, "unit": "px", "default": 0 },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom padding", "min": 0, "max": 100, "step": 4, "unit": "px", "default": 0 }
+  ],
+  "presets": [ { "name": "Scepter reading plan", "category": "Scepter" } ]
+}
+{% endschema %}

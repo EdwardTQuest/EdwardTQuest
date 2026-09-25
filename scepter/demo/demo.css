@@ -1,0 +1,27 @@
+@font-face { font-family: "Scepter Serif"; src: url("../theme/assets/scepter-cormorant.woff2") format("woff2"); font-weight: 300 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Scepter Serif"; src: url("../theme/assets/scepter-cormorant-italic.woff2") format("woff2"); font-weight: 300 700; font-style: italic; font-display: swap; }
+@font-face { font-family: "Scepter Sans"; src: url("../theme/assets/scepter-source-sans.woff2") format("woff2"); font-weight: 200 900; font-style: normal; font-display: swap; }
+/* Preview chrome only: none of this ships to the theme. */
+:root { color-scheme: light; }
+html, body { margin: 0; background: #f4f1ea; font-family: "Scepter Sans", system-ui, sans-serif; color: #16201b; }
+.demo-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 12px 16px; background: #fff; border-bottom: 1px solid #e3ddd0; position: sticky; top: 0; z-index: 10; }
+.demo-home { font-weight: 700; text-decoration: none; color: #1f3d2e; }
+.demo-bar nav { display: flex; gap: 14px; flex-wrap: wrap; }
+.demo-bar nav a { color: #6f1d2c; text-decoration: none; font-weight: 600; font-size: .92rem; }
+main { max-width: 1200px; margin: 0 auto; }
+.demo-inspector { position: fixed; left: 12px; bottom: 12px; z-index: 5; max-width: min(460px, calc(100vw - 24px)); max-height: 60vh; overflow: auto; background: #111c16; color: #e6efe4; border-radius: 12px; font: 12px/1.45 ui-monospace, Menlo, monospace; box-shadow: 0 12px 30px rgba(0,0,0,.35); }
+.demo-inspector summary { cursor: pointer; padding: 10px 14px; font-weight: 700; }
+.demo-inspector summary span { background: #6f1d2c; color: #fff; border-radius: 99px; padding: 1px 8px; margin-left: 6px; }
+.demo-inspector ol { margin: 0; padding: 0 14px 12px 30px; }
+.demo-inspector pre { white-space: pre-wrap; word-break: break-word; margin: 4px 0 10px; color: #b9d0b6; }
+.demo-page { padding: 40px 16px; max-width: 980px; margin: 0 auto; }
+.demo-page h1 { font-family: "Scepter Serif", serif; font-size: 2.6rem; margin: 0 0 8px; color: #1f3d2e; }
+.demo-page p { color: #56665c; max-width: 60ch; }
+.demo-cards { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); margin: 26px 0; }
+.demo-card { display: block; padding: 20px; border-radius: 16px; text-decoration: none; color: #fbf8f1; background: linear-gradient(160deg, #1f3d2e, #132a1f); }
+.demo-card.light { background: #eaf2e6; color: #16201b; border: 1px solid #d7e5d2; }
+.demo-card.warm { background: linear-gradient(160deg, #2a1d20, #132a1f 70%); }
+.demo-card strong { font-family: "Scepter Serif", serif; font-size: 1.6rem; display: block; line-height: 1.1; margin-bottom: 8px; }
+.demo-card span { font-size: .92rem; opacity: .8; }
+.demo-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
+.demo-buttons a, .demo-buttons button { font: 600 .95rem system-ui; padding: 10px 16px; border-radius: 999px; border: 1.5px solid #1f3d2e; background: #fff; color: #1f3d2e; cursor: pointer; text-decoration: none; }

@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "plan": {
+      "type": "scepter-reading-plan",
+      "settings": {
+        "quiz_page": "discover-your-mission"
+      }
+    }
+  },
+  "order": [
+    "plan"
+  ]
+}

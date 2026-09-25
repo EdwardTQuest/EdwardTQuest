@@ -1,0 +1,20 @@
+<!--
+  Klaviyo email: delivers the free e-book. Flow trigger: metric "Requested Free E-book".
+  event.ebook_url is the download link set in the pop-up's e-book block.
+-->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f8f1;">
+  <tr><td align="center" style="padding:24px 12px;">
+    <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#fbf8f1;border-radius:14px;overflow:hidden;text-align:center;">
+      <tr><td style="background:#1f3d2e;padding:36px 32px;">
+        <p style="margin:0 0 10px;font:700 12px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#a9c5a6;">{{ event.interest }}</p>
+        <h1 style="margin:0;font:600 32px/1.1 Georgia,'Times New Roman',serif;color:#fbf8f1;">It’s yours, {{ first_name|default:'friend' }}.</h1>
+      </td></tr>
+      <tr><td style="padding:32px;">
+        {% if event.ebook_image %}<img src="{{ event.ebook_image }}" width="160" alt="" style="display:block;margin:0 auto 20px;border-radius:4px;">{% endif %}
+        <p style="margin:0 0 6px;font:600 24px/1.2 Georgia,serif;color:#16201b;">{{ event.ebook_title }}</p>
+        <p style="margin:0 0 24px;font:16px/1.55 Arial,Helvetica,sans-serif;color:#33443a;">Here is your free e-book. We hope it brings you a little more {{ event.interest|lower }} this week.</p>
+        <a href="{{ event.ebook_url }}" style="display:inline-block;background:#6f1d2c;color:#ffffff;font:700 15px/1 Arial,Helvetica,sans-serif;padding:14px 24px;border-radius:999px;text-decoration:none;">Download the e-book</a>
+      </td></tr>
+    </table>
+  </td></tr>
+</table>

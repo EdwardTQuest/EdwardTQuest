@@ -1,0 +1,13 @@
+{%- comment -%}
+  Scepter kit: the stylesheet and, optionally, the two fonts the designs use (Cormorant Garamond
+  and Source Sans 3, SIL Open Font License 1.1), served from the theme's own assets.
+  Usage: {% render 'scepter-head', load_fonts: section.settings.load_fonts %}
+{%- endcomment -%}
+{%- if load_fonts -%}
+  <style>
+    @font-face { font-family: "Scepter Serif"; src: url("{{ 'scepter-cormorant.woff2' | asset_url }}") format("woff2"); font-weight: 300 700; font-style: normal; font-display: swap; }
+    @font-face { font-family: "Scepter Serif"; src: url("{{ 'scepter-cormorant-italic.woff2' | asset_url }}") format("woff2"); font-weight: 300 700; font-style: italic; font-display: swap; }
+    @font-face { font-family: "Scepter Sans"; src: url("{{ 'scepter-source-sans.woff2' | asset_url }}") format("woff2"); font-weight: 200 900; font-style: normal; font-display: swap; }
+  </style>
+{%- endif -%}
+{{ 'scepter.css' | asset_url | stylesheet_tag }}
