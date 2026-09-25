@@ -391,7 +391,7 @@ def structure_battery(md):
         if p.count('“') != p.count('”'):
             nxt = paras[i + 1] if i + 1 < len(paras) else ''
             prv = paras[i - 1] if i else ''
-            continued = (p.count('“') > p.count('”') and nxt.lstrip('| >').startswith('“')) or \
+            continued = (p.count('“') > p.count('”') and (nxt.lstrip('| >').startswith('“') or nxt.count('”') > nxt.count('“'))) or \
                         (p.count('”') > p.count('“') and prv.count('“') > prv.count('”'))
             if not continued and not (p.startswith('|') and (nxt.startswith('|') or prv.startswith('|'))):
                 findings.append(('unbalanced double quotes', p[:70]))
