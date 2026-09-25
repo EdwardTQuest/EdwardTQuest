@@ -255,9 +255,15 @@ def dictionary_sweep(md):
     body = re.sub(r'^#.*$', '', body, flags=re.M)
     body_t = re.sub(r'\b[A-Z]\.(?![A-Za-z])', ' ', body)          # A.D., B.C., C. Musonius: initials are not words
     body_t = re.sub(r'(?<![A-Za-z])(' + '|'.join(ABBREV) + r')\.', ' ', body_t, flags=re.I)   # pp. cf. ibid. vol.: abbreviations are not words
+    body_t = re.sub(r'(?<![A-Za-z])[a-z]\.', ' ', body_t)                                        # e.g., i.e., a.m.: a lone letter with a period
     body_t = re.sub(r'\b[A-Z]\b(?![’\'])', ' ', body_t)             # "Mr. A and B": a bare capital is a name
     body_t = re.sub(r'(?<=\d)[A-Za-z]+', ' ', body_t)                 # 5th, 1st, 20s
     italic = set(t for span in re.findall(r'\*([^*\n]{1,300})\*', body_t) for t in re.findall(r"[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ’'-]*[A-Za-zÀ-ÿ]|[A-Za-zÀ-ÿ]", span))
+    # a line of another language (a Latin epigraph, a French quotation): most of its words unknown
+    for line in body_t.split('\n'):
+        lt = re.findall(r"[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ’'-]*[A-Za-zÀ-ÿ]|[A-Za-zÀ-ÿ]", line)
+        if len(lt) >= 4 and sum(1 for t in lt if not known(t)) >= 0.5 * len(lt):
+            italic.update(lt)
     tokens = re.findall(r"[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ’'-]*[A-Za-zÀ-ÿ]|[A-Za-zÀ-ÿ]", body_t)
     counts = collections.Counter(tokens)
     # one pass: every capitalised word that appears after a lowercase word or a comma (mid-sentence)
