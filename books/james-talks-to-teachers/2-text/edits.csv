@@ -1,0 +1,7 @@
+rule,count,cap,category,example
+hyphen joins,1,652,O,but always keep your leg- and body-muscles half contracted f  →  but always keep your leg-and body-muscles half contracted fo
+curly quotes,883,13048,I,"inimum of what is deemed 'scientific' in psychology, and are  →  inimum of what is deemed ‘scientific’ in psychology, and are"
+ellipses,47,1304,I, of psychologic doctrine....  > “In such a discord of opinio  →   of psychologic doctrine. . . .  > “In such a discord of opi
+dashes,182,3262,I,"redness of individuality,--is, at any rate, the outward tole  →  redness of individuality,—is, at any rate, the outward toler"
+caps openings,1,652,C,"imagine it to possess.  CAMBRIDGE, MASS., March, 1899.  :::   →  imagine it to possess.  Cambridge, mass., March, 1899.  ::: "
+spacing and ligatures,31,3262,N," finally insert the words ’*by mere reiteration*,’ and the s  →   finally insert the words’*by mere reiteration*,’ and the se"
