@@ -110,9 +110,29 @@ contrast, speckled, given a gutter shadow and a mirrored bleed-through of the pa
 (sample in `docs/samples/poor-scan-page.png`). Then `ath ocr` on it, with no other witness,
 and again with the Gutenberg text as a second witness — the situation of a real book.
 
-{{OCR_TABLE}}
+| configuration | word accuracy against the truth text | errors in 7,034 words |
+|---|---|---|
+| tesseract alone (psm 3) on the poor scan | 84.9% | 1,059 (851 substitutions, 207 deletions) |
+| the Gutenberg text itself (a different edition, footnotes placed differently) | 97.2% | 194, nearly all placement, not reading |
+| consensus, OCR as base, Gutenberg voting (`--base tess-psm3.txt`) | 89.9% | 708; 330 corrections applied, 216 refused because both readings were real words |
+| consensus, default base (the pipeline ranks Gutenberg above tesseract) | 97.2% | 194; 15 substitutions from the scan applied |
 
-{{OCR_VERDICT}}
+Time: one tesseract pass over 24 pages at 300 dpi took about 35 minutes on this container
+while the batch was also running — roughly 1.5 minutes a page on a scan this bad, so a
+300-page book is a night's work for the OCR stage alone, and two page-segmentation modes
+double it. The dark first attempt (a scan degraded past legibility) read 523 words of 7,000
+and the report said so.
+
+What this says. The consensus mechanism does what it was built to do and no more: it never
+invents, it refuses a change when both witnesses read a real word, and it reports agreement
+per witness so the overseer sees the 0.848 and knows the scan is bad. On its own, tesseract
+on a poor scan is not a text (85%); with a second witness it recovers only to 90% because the
+refusal rule is deliberately conservative; with the better witness as the base — which is the
+pipeline's default ranking — the scan's job becomes correcting the good text, and it did
+(15 substitutions, all recorded). So "held up" means: it did not produce a bad book quietly.
+A poorly scanned text *with no other witness* is exactly the case the pipeline sends back to
+the overseer, and the reading lenses in AGENTS.md exist for it. The real archive.org scans
+could not be tested from here (blocked network), and that remains the open item.
 
 ## 5. Better than pipeline 1, with fewer credits?
 

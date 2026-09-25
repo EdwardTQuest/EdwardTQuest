@@ -11,7 +11,7 @@ edition_credit: ''
 pd_basis: published before 1 January 1931; public domain in the United States
 source:
   kind: scan
-  gutenberg: null
+  gutenberg: 11224
   archive: []
   files:
   - 0-source/scan.pdf
@@ -36,4 +36,12 @@ typeset:
   chapters_open_recto: true
   opening_smallcaps: true
   signature_font: La Belle Aurore
-status: {}
+status:
+  ocr:
+    state: done
+    when: 2026-09-25 21:09
+    witnesses: 2
+    base: pg-11224.txt
+    decisions:
+      substitute: 15
+    flags: 566

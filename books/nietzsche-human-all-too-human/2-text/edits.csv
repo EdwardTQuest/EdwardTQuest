@@ -1,0 +1,7 @@
+rule,count,cap,category,example
+hyphen joins,0,397,O,
+curly quotes,324,7955,I,"ll my writings, from the ""Birth of Tragedy"" to the recently   →  ll my writings, from the “Birth of Tragedy” to the recently "
+ellipses,1,795,I,ves (lebt) on deception ... but am I not beginning to do all  →  ves (lebt) on deception . . . but am I not beginning to do a
+dashes,359,1988,I,at!? Everything is merely--human--all too human? With this e  →  at!? Everything is merely—human—all too human? With this exc
+caps openings,0,397,C,
+spacing and ligatures,10,1988,N,rives (lebt) on deception . . . but am I not beginning to do  →  rives (lebt) on deception. . . but am I not beginning to do 

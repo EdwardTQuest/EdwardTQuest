@@ -1,0 +1,106 @@
+slug: james-varieties-of-religious-experience
+title: The Varieties of Religious Experience
+subtitle: ''
+author: William James
+author_sort: William James
+translator: ''
+language: en
+series: The Athanasius Library
+year_first: 1902
+edition_credit: the Project Gutenberg transcription of the 1902 Longmans edition
+pd_basis: published before 1 January 1931; public domain in the United States
+source:
+  kind: gutenberg
+  gutenberg: 621
+  archive: []
+  files:
+  - 0-source/pg621.txt
+  note: ''
+plan:
+  summary: ''
+  audience: ''
+  structure: ''
+  art_subjects: []
+  movement: landscape
+art:
+  cover: null
+  plates: []
+  plates_wanted: 10
+  plate_mode: grayscale
+blurb: ''
+editions:
+- deluxe
+- everyman
+- scholar
+typeset:
+  chapters_open_recto: true
+  opening_smallcaps: true
+  signature_font: La Belle Aurore
+status:
+  edit:
+    state: done
+    when: 2026-09-25 21:01
+    words: 116398
+    chapters: 16
+    unknown: 998
+    suspicious: 44
+    errors: 0
+    battery: 27
+  typeset:
+    deluxe:
+      pages: 599
+      spine_in: 1.75
+      inside_margin: 0.9
+      plates: 0
+      plates_on_sections: false
+      layout:
+        runt: 65
+        loose line: 10
+        widow: 8
+        orphan: 3
+      pdf: 3-typeset/deluxe.pdf
+    everyman:
+      pages: 630
+      spine_in: 1.6393
+      inside_margin: 0.9
+      plates: 0
+      plates_on_sections: false
+      layout:
+        widow: 8
+        runt: 82
+        loose line: 48
+        orphan: 6
+      pdf: 3-typeset/everyman.pdf
+    scholar:
+      pages: 769
+      spine_in: 2.0009
+      inside_margin: 1.0
+      plates: 0
+      plates_on_sections: false
+      layout:
+        loose line: 74
+        runt: 81
+        widow: 10
+        orphan: 8
+      pdf: 3-typeset/scholar.pdf
+  epub:
+    state: problems
+    when: 2026-09-25 21:08
+    problems: 1
+    size_mb: 1.65
+    cover: false
+  proof:
+    state: done
+    when: 2026-09-25 21:09
+    findings: 1426
+checks:
+  expected_sections: 20
+forced:
+- command: typeset
+  gates:
+  - text
+  when: 2026-09-25 21:01
+- command: epub
+  gates:
+  - text
+  when: 2026-09-25 21:08

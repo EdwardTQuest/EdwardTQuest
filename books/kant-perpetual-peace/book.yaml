@@ -59,8 +59,45 @@ status:
         loose line: 3
         orphan: 1
       pdf: 3-typeset/deluxe.pdf
+    everyman:
+      pages: 172
+      spine_in: 0.4475
+      inside_margin: 0.7
+      plates: 0
+      plates_on_sections: false
+      layout:
+        runt: 22
+        loose line: 7
+        orphan: 2
+      pdf: 3-typeset/everyman.pdf
+    scholar:
+      pages: 214
+      spine_in: 0.5568
+      inside_margin: 0.85
+      plates: 0
+      plates_on_sections: false
+      layout:
+        loose line: 15
+        runt: 14
+        orphan: 2
+        widow: 1
+      pdf: 3-typeset/scholar.pdf
+  epub:
+    state: problems
+    when: 2026-09-25 20:35
+    problems: 1
+    size_mb: 1.33
+    cover: false
+  proof:
+    state: done
+    when: 2026-09-25 20:36
+    findings: 710
 forced:
 - command: typeset
   gates:
   - text
   when: 2026-09-25 20:34
+- command: epub
+  gates:
+  - text
+  when: 2026-09-25 20:35
