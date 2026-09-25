@@ -1,0 +1,7 @@
+rule,count,cap,category,example
+hyphen joins,1,784,O," heard of, the anti-self- consciousness theory of Carlyle. I  →   heard of, the anti-self-consciousness theory of Carlyle. I "
+curly quotes,437,15689,I, this period of my father's life there are two things which   →   this period of my father’s life there are two things which 
+ellipses,0,1568,I,
+dashes,65,3922,I,d; not trying experiments--a kind of discipline which I have  →  d; not trying experiments—a kind of discipline which I have 
+caps openings,1,784,C,this memoir may close.  NOTES:  [1]In a subsequent stage of   →  this memoir may close.  Notes:  [1]In a subsequent stage of 
+spacing and ligatures,5,3922,N,"on of Wealth, and of an “ Appeal” in behalf of women against  →  on of Wealth, and of an “Appeal” in behalf of women against "

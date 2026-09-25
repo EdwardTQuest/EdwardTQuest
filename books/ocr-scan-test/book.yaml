@@ -1,0 +1,39 @@
+slug: ocr-scan-test
+title: Utilitarianism (scan test)
+subtitle: ''
+author: John Stuart Mill
+author_sort: John Stuart Mill
+translator: ''
+language: en
+series: The Athanasius Library
+year_first: ''
+edition_credit: ''
+pd_basis: published before 1 January 1931; public domain in the United States
+source:
+  kind: scan
+  gutenberg: null
+  archive: []
+  files:
+  - 0-source/scan.pdf
+  note: ''
+plan:
+  summary: ''
+  audience: ''
+  structure: ''
+  art_subjects: []
+  movement: landscape
+art:
+  cover: null
+  plates: []
+  plates_wanted: 10
+  plate_mode: grayscale
+blurb: ''
+editions:
+- deluxe
+- everyman
+- scholar
+typeset:
+  chapters_open_recto: true
+  opening_smallcaps: true
+  signature_font: La Belle Aurore
+status: {}
