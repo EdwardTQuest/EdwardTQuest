@@ -1,0 +1,7 @@
+rule,count,cap,category,example
+hyphen joins,0,366,O,
+curly quotes,1200,7338,I,"apsodical autobiography, ""Ecce Homo,"" ""The Antichrist"" is th  →  apsodical autobiography, “Ecce Homo,” “The Antichrist” is th"
+ellipses,261,733,I," effect of Christianity ... upon the weak and ailing,” and “  →   effect of Christianity . . . upon the weak and ailing,” and"
+dashes,695,1834,I,"avels in search of health--at Nice, at Venice, at Sils-Maria  →  avels in search of health—at Nice, at Venice, at Sils-Maria "
+caps openings,0,366,C,
+spacing and ligatures,7,1834,N,"ng effect of Christianity . . . upon the weak and ailing,” a  →  ng effect of Christianity. . . upon the weak and ailing,” an"
