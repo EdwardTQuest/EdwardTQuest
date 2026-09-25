@@ -104,7 +104,7 @@ def main(argv):
     lenses.append((4, 'page layout', 'every page of every PDF: widows, orphans, runts, hyphen stacks, loose lines, stranded headings, thin chapter ends', n4, a4 or ['- no PDFs yet'], 'clean' if n4 == 0 else 'findings'))
 
     # 5 dictionary
-    unknown, names, total, ctx = E.dictionary_sweep(md)
+    unknown, names, total, ctx, _italic = E.dictionary_sweep(md)
     n5 = sum(unknown.values())
     top = sorted(unknown.items(), key=lambda kv: -kv[1])
     lenses.append((5, 'dictionary sweep', f'every token of the body ({total:,}); wordlist + house list; names accepted when capitalised mid-sentence ({len(names)})', n5,

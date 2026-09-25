@@ -261,15 +261,15 @@ def dictionary_sweep(md):
     for w, c in counts.items():
         if known(w):
             continue
-        if w[0].isupper() and w in mid:
-            names[w] = c
+        if w[0].isupper() and w in mid and suspicion(w, c) < 5:
+            names[w] = c                     # a capitalised word mid-sentence is a name, unless it is shaped like a misread
         else:
             unknown[w] = c
     def ctx(w):
         m = re.search(r'.{0,40}\b' + re.escape(w) + r'\b.{0,40}', body)
         return m.group(0).replace('\n', ' ') if m else ''
     total = sum(counts.values())
-    return unknown, names, total, ctx
+    return unknown, names, total, ctx, italic
 
 
 ARCHAIC = re.compile(r"^(?:[a-z]+(?:est|eth|st|dst|'st)|thou|thee|thy|thine|ye|hath|doth|wilt|shalt|art|wert|wast|ere|oft|whence|whither|thither|hither|nay|yea|betwixt|amongst|whilst|unto|saith|spake|hast|dost|didst|canst|wouldst|shouldst|couldst|mayst|wherewith|wherein|whereof|thereof|therein|hereof|forsooth|methinks|to-day|to-morrow|to-night)$", re.I)
@@ -290,8 +290,8 @@ def suspicion(word, count, italic=False):
         sc += 4                                        # ts, Tf
     if re.search(r'[^aeiouyAEIOUY]{5,}', w):
         sc += 4                                        # impossible consonant run
-    if len(w) >= 3 and sum(1 for ch in w.lower() if ch in 'ivxlc') >= 0.7 * len(w):
-        sc += 5                                        # a roman numeral misread: Xxviti, LXXl
+    if len(w) >= 3 and sum(1 for ch in w.lower() if ch in 'ivxlc') >= 0.7 * len(w) and (re.search(r'[A-Z]', w) or len(w) >= 5):
+        sc += 5                                        # a roman numeral misread: Xxviti, LXXl (not a Latin "viri")
     if re.search(r'(rn|vv|ii|ll1|1l|0o|o0)', w) and any(known(w.replace(a, b_)) for a, b_ in (('rn', 'm'), ('vv', 'w'), ('ii', 'll'), ('1', 'l'), ('0', 'o'))):
         sc += 4
     for i in range(len(w)):
@@ -437,7 +437,7 @@ def main(argv):
     errs, warns, stats = M.validate(md)
 
     # 5. checks
-    unknown, names, total, ctx = dictionary_sweep(md)
+    unknown, names, total, ctx, italic = dictionary_sweep(md)
     seq = sequence_proof(md, b.get('checks.expected_sections'))
     battery = structure_battery(md)
 

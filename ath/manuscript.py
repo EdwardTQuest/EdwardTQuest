@@ -796,6 +796,8 @@ def validate(md):
         m = HEAD.match(l)
         if m:
             lv = len(m.group(1)); levels.append(lv); stats[f'h{lv}'] += 1
+            if in_div > 0:
+                stats[f'h{lv} in divisions'] += 1
             if len(m.group(2)) > 120:
                 warns.append(f'line {i}: heading over 120 characters')
             for r in NOTE_REF.findall(l):
@@ -838,7 +840,7 @@ def validate(md):
         warns.append('parts (#) with no chapters (##)')
     if not levels:
         errs.append('no headings at all — a book needs at least one ## chapter')
-    stats['chapters'] = stats.get('h2', 0) or stats.get('h1', 0)
+    stats['chapters'] = (stats.get('h2', 0) - stats.get('h2 in divisions', 0)) or (stats.get('h1', 0) - stats.get('h1 in divisions', 0))
     return errs, warns, dict(stats)
 
 
