@@ -169,6 +169,15 @@ def spacing(text):
     return text, n
 
 
+def escape_markers(text):
+    """A paragraph that begins 'II. ' or '1. ' or '- ' would become a list in pandoc; a backslash keeps it prose."""
+    n = 0
+    out = []
+    for para in text.split('\n\n'):
+        p2, k = M.escape_list_markers(para); n += k; out.append(p2)
+    return '\n\n'.join(out), n
+
+
 RULES = [
     # name, function, cap as fraction of words (a runaway rule stops the run), tracker category.
     # Order matters: hyphen joins see "Dis- — courses" before the dash rule turns it into "Dis-—courses".
@@ -178,6 +187,7 @@ RULES = [
     ('dashes', dashes, 0.05, 'I'),
     ('caps openings', caps_openings, 0.01, 'C'),
     ('spacing and ligatures', spacing, 0.05, 'N'),
+    ('list markers escaped', escape_markers, 0.05, 'N'),
 ]
 
 

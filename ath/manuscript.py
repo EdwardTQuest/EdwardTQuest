@@ -499,6 +499,23 @@ def prepare_gutenberg(text, title='', author=''):
     return text, dict(c)
 
 
+LIST_MARKER = re.compile(r'^(\(?(?:[IVXLC]+|[ivxlc]+|\d+|[A-Za-z])[.)])(\s)')
+
+
+def escape_list_markers(para):
+    """'II. Man thinks.' at the start of a paragraph is a numbered definition, not a list item;
+    pandoc would make it an <ol> (and Typst an enum), and the numeral would leave the text.
+    A backslash keeps it a paragraph in every renderer. Idempotent."""
+    if para.startswith(('#', '|', '>', ':::', '![', '* * *', '[^', '\\')):
+        return para, 0
+    m = LIST_MARKER.match(para)
+    if m and not para.startswith(m.group(1)[:-1] + '\\'):
+        return m.group(1)[:-1] + '\\' + m.group(1)[-1] + para[len(m.group(1)):], 1
+    if re.match(r'^[-+*]\s', para):
+        return '\\' + para, 1
+    return para, 0
+
+
 def title_case(s):
     """ALL-CAPS heading -> Title Case, Chicago-ish (small words down, first/last up)."""
     small = {'a', 'an', 'the', 'and', 'but', 'or', 'nor', 'for', 'yet', 'so', 'at', 'by', 'in', 'of', 'on', 'to', 'up', 'as', 'if', 'per', 'via', 'vs', 'from', 'with', 'into', 'upon', 'over', 'than', 'that', 'this'}
@@ -610,6 +627,8 @@ def import_text(text, title='', author='', kind='text'):
         # a note definition paragraph stays a note definition
         if para.startswith('[^') and re.match(r'^\[\^[^\]]+\]: ', para):
             out.append(para); rep['notes'] += 1; continue
+        para, n_esc = escape_list_markers(para)
+        rep['list markers escaped'] += n_esc
         out.append(para); rep['paragraphs'] += 1
     out, n_merged, merged_at = merge_split_titles(out)
     rep['split titles merged'] = n_merged
@@ -824,6 +843,8 @@ def validate(md):
             warns.append(f'line {i}: tab character')
         if re.search(r'[ ]{2,}', l) and not l.startswith('|'):
             warns.append(f'line {i}: doubled space')
+        if not l.startswith(('|', '#', '>', ':::', '![', '[^')) and LIST_MARKER.match(l) and not re.match(r'^\(?(?:[IVXLC]+|[ivxlc]+|\d+|[A-Za-z])\\[.)]', l):
+            warns.append(f'line {i}: paragraph begins with a list marker — pandoc will make it a list; escape the period (II\\.): {l[:40]}')
         lc = re.sub(r'\[\^[^\]]+\]', '', l)
         if lc and not l.startswith(('|', '#', '>', ':::', '![')) and re.match(r'^[a-z]', lc):
             warns.append(f'line {i}: paragraph begins lowercase (page-turn split?): {l[:50]}')
