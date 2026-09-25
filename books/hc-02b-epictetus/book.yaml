@@ -275,9 +275,9 @@ status:
       pdf: 3-typeset/scholar.pdf
   epub:
     state: done
-    when: 2026-09-25 14:43
+    when: 2026-09-25 14:46
     problems: 0
-    size_mb: 1.44
+    size_mb: 1.65
     cover: true
   cover:
     state: done
@@ -289,7 +289,7 @@ status:
     plates: 10
   proof:
     state: done
-    when: 2026-09-25 14:43
+    when: 2026-09-25 14:46
     findings: 12
 checks:
   expected_sections: null

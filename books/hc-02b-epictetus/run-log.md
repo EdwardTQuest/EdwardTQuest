@@ -45,3 +45,5 @@ Read first, write last.
 - 2026-09-25 14:44 · **cover** · scholar: spread 10.390 × 7.250 in, spine 0.14 in for 56 pages, wrap 0.125 in (paperback, glossy)
 - 2026-09-25 14:44 · **cover** · fronts {'deluxe': 'plate', 'everyman': 'plate', 'scholar': 'plate'}; epub + site covers; 10 plates prepared (print grayscale, epub colour). Look at 1-plan/cover-contact.jpg.
 - 2026-09-25 14:44 · **plan** · wrote 1-plan/plan.md (skim of 2-text/manuscript.md); overseer fills it, then `ath plan hc-02b-epictetus --sync`
+- 2026-09-25 14:46 · **epub** · hc-02b-epictetus.epub built (1.65 MB), 0 problems; see 4-epub/epub-check.md
+- 2026-09-25 14:46 · **proof** · PROOF.md written; findings: structure and sequence 12, dictionary sweep 102, apparatus 0, cross-edition consistency 0, mechanical 0, render and look 4

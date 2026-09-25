@@ -116,8 +116,8 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 - deluxe: manuscript words absent from the PDF text: 3 (e.g. ['nothing', 'un', 'impeded']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
 - everyman: manuscript words absent from the PDF text: 1 (e.g. ['morrow']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
 - scholar: manuscript words absent from the PDF text: 38 (e.g. ['according', 'philosophers', 'nothing', 'authority', 'importance', 'happiness', 'himself', 'understanding', 'possible', 'possessions']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
-- epub: 5 spine items, 11 manifest items, 2.8 MB unpacked
-- epub: manuscript words 10,736; EPUB words 11,186; manuscript words not found in EPUB: 0
+- epub: 5 spine items, 12 manifest items, 3.0 MB unpacked
+- epub: manuscript words 10,736; EPUB words 11,194; manuscript words not found in EPUB: 0
 
 ## Lens 9 · mechanical — 0 (clean)
 *Scope:* PDF page size, page count, embedded fonts; EPUB structure (see lens 8)
