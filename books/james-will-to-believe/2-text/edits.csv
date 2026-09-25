@@ -1,0 +1,7 @@
+rule,count,cap,category,example
+hyphen joins,0,1044,O,
+curly quotes,1356,20895,I,"han in philosophy. I say 'empiricism,' because it is content  →  han in philosophy. I say ‘empiricism,’ because it is content"
+ellipses,38,2089,I,"leasure of the believer,... Whoso would deserve well of his   →  leasure of the believer,. . . Whoso would deserve well of hi"
+dashes,419,5223,I,"holly banished. Something--“call it fate, chance, freedom, s  →  holly banished. Something—“call it fate, chance, freedom, sp"
+caps openings,2,1044,C, Action and Theism.[1]  MEMBERS OF THE MINISTERS’ INSTITUTE:  →   Action and Theism.[1]  Members Of The ministers’ Institute:
+spacing and ligatures,189,5223,N," | HARVARD UNIVERSITY, |   CAMBRIDGE, MASSACHUSETTS, |     D  →   | HARVARD UNIVERSITY, | CAMBRIDGE, MASSACHUSETTS, | Decembe"
