@@ -22,12 +22,12 @@ Source: `0-source/HC-02b-epictetus-edited-text.txt` (10,654 words). Import: {'pa
 
 - level 3 "#": 80 numbered, first 1, last 80
 
-## Dictionary sweep: 114 unknown tokens of 10,593 (1.08%), 71 distinct; 21 names accepted
+## Dictionary sweep: 113 unknown tokens of 10,589 (1.07%), 71 distinct; 20 names accepted
 
 ### Suspicious first — 6 likely errors (fix in the source, re-run)
 
 - **Xxviti** ×1 (score 5) — Xxviti Concerning the Gods, there are who deny
-- **D** ×2 (score 4) — about the middle of the first century A.D. His early history is unknown till we f
+- **D** ×1 (score 4) — about the middle of the first century A.D. His early history is unknown till we f
 - **ts** ×1 (score 4) — Antisthenes?* Hast thou never heard?—It ts a kingly thing, O Cyrus, to do well and
 - **Tf** ×1 (score 4) — alternation is seen in earthly things? “Tf then all things that grow, nay, our own
 - **T** ×6 (score 3) — I am an Athenian or a Corinthian,” but “T am a citizen of the world.”
