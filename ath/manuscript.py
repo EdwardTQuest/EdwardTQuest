@@ -810,9 +810,9 @@ def validate(md):
         for r in NOTE_REF.findall(l):
             refs[r] += 1
         if l.startswith('|'):
-            stats['verse_lines'] += 1
+            stats['verse_lines'] += 1; stats['words'] += len(l[1:].split())
         elif l.startswith('>'):
-            stats['quote_lines'] += 1
+            stats['quote_lines'] += 1; stats['words'] += len(l[1:].split())
         elif BREAK.match(l):
             stats['breaks'] += 1
         elif l.strip():
