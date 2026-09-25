@@ -1,0 +1,22 @@
+{
+ "_add": [
+  {
+   "id": "christ-on-earth",
+   "title": "Christ on Earth",
+   "subtitle": "",
+   "author": "Joseph Pich",
+   "shelf": "spirituality",
+   "kind": "book",
+   "description": "",
+   "isbn": "9715540848",
+   "pages": 228,
+   "featured": false,
+   "status": "likely",
+   "evidence": "Found on scepter.uk (body_christ_on_earth.html) with ISBN 971-554-084-8; the 971-554 prefix is the one Sinag-Tala uses for Friends of God (9789715540353) and Metaphysics (9715540309), so this is the Sinag-Tala edition. Not seen on Sinag-Tala's own pages.",
+   "sources": [
+    "http://scepter.uk/html/body_christ_on_earth.html"
+   ],
+   "prices_seen": []
+  }
+ ]
+}

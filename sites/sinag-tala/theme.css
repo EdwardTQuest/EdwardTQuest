@@ -1,0 +1,18 @@
+/* Sinag-Tala — starlight. Night indigo, star gold, warm sampaguita paper; a soft, generous serif. */
+:root {
+  --bar-h: 68px;
+  --paper: #FBF7EE; --paper-2: #F3ECDC; --ink: #1B1D3A; --ink-2: #5E5F77; --line: #E4D9C3;
+  --deep: #151941; --deep-ink: #FBF4E2; --deep-ink-2: #B7B5CE;
+  --accent: #F3B33A; --accent-ink: #151941; --accent-strong: #C9412A; --focus: #C9412A;
+  --display: 'Fraunces', Georgia, serif;
+  --text: 'Fraunces', Georgia, serif;
+  --ui: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --radius: 12px;
+  --word-weight: 600; --word-track: -0.01em; --word-size: 1.45rem;
+  --hero-weight: 500; --hero-track: -0.035em; --hero-size: clamp(3.4rem, 10vw, 8.4rem);
+  --h2-weight: 500; --h2-track: -0.02em;
+  --cover-weight: 600; --cover-track: -0.02em;
+  --hero-glow: radial-gradient(800px 520px at 30% 0%, rgba(243, 179, 58, .2), transparent 60%), linear-gradient(180deg, #11143A 0%, #1C2152 100%);
+  --hero-art-opacity: .7; --hero-em-color: var(--accent);
+}
+.hero-art { right: auto; left: 30vw; }

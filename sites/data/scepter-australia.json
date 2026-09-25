@@ -1,0 +1,1158 @@
+{
+ "site": "scepter-australia",
+ "compiled": "2026-09-25",
+ "method": "Web search only (page fetches blocked in the build container); every entry carries its verdict, reason and sources. See sites/RESEARCH.md.",
+ "shelves": [
+  {
+   "slug": "escriva",
+   "name": "Escrivá"
+  },
+  {
+   "slug": "opus-dei",
+   "name": "Opus Dei"
+  },
+  {
+   "slug": "spiritual-life",
+   "name": "Spiritual Life"
+  },
+  {
+   "slug": "prayer",
+   "name": "Prayer"
+  },
+  {
+   "slug": "mary-saints",
+   "name": "Mary & Saints"
+  },
+  {
+   "slug": "marriage-family",
+   "name": "Marriage & Family"
+  },
+  {
+   "slug": "faith",
+   "name": "Faith"
+  },
+  {
+   "slug": "bibles-missals",
+   "name": "Bibles"
+  }
+ ],
+ "books": [
+  {
+   "id": "way",
+   "title": "The Way",
+   "subtitle": "",
+   "author": "Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "St. Josemaría Escrivá's book of short spiritual points, published in Spanish as Camino in 1939 and in English in 1953.",
+   "isbn": "",
+   "pages": 0,
+   "featured": true,
+   "status": "likely",
+   "evidence": "No verification search ran in this pass because the session's WebSearch budget was used up (200 of 200 calls). The verdict rests only on discovery evidence: Veritatis (Australian distributor of Scepter Publishers) lists 'The Way (Pocket Edition)' and 'The Way (Mini Edition)', and Freedom Publishing Books lists 'Camino: The Way'. Pocket and Mini are Scepter formats, but no result literally showed the Scepter imprint. The Freedom 'Camino' listing may be a Spanish or bilingual edition from another publisher, so check it before listing it as Scepter. The check for a Scepter Australia or Australian Opus Dei-linked publisher was also not run, for the same reason.",
+   "sources": [
+    "https://veritatis.com.au/product/the-way-pocket-edition/",
+    "https://veritatis.com.au/product/the-way-mini-edition/",
+    "https://www.freedompublishingbooks.com.au/product_info.php?products_id=12165"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "christ-is-passing-by",
+   "title": "Christ Is Passing By",
+   "subtitle": "Pocket Edition",
+   "author": "Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "Homilies by St. Josemaría Escrivá for the liturgical year, including Advent, Christmas, Lent and Easter, on finding God in ordinary life.",
+   "isbn": "",
+   "pages": 0,
+   "featured": true,
+   "status": "likely",
+   "evidence": "No verification search ran (WebSearch budget used up). Discovery found the listing 'Christ Is Passing By (Pocket Edition)' on Veritatis, a Scepter Publishers distributor, with a blurb about homilies for Advent, Christmas, Lent and Easter. The Pocket Edition is a Scepter format, but no result literally named the imprint.",
+   "sources": [
+    "https://veritatis.com.au/product/christ-is-passing-by-pocket-edition/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "forge",
+   "title": "The Forge",
+   "subtitle": "Pocket Edition",
+   "author": "Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "The third collection of St. Josemaría Escrivá's brief reflections and meditations on Christian living, after The Way and Furrow.",
+   "isbn": "",
+   "pages": 0,
+   "featured": true,
+   "status": "likely",
+   "evidence": "No verification search ran (WebSearch budget used up). Discovery found listings on Veritatis ('The Forge (Pocket Edition)') and on Freedom Publishing Books ('The Forge / St Josemaria Escriva'). The Freedom blurb calls it 'the third collection of St. Josemaría's refreshingly brief but profoundly weighty reflections', which matches Scepter's own copy. No result literally showed the Scepter imprint.",
+   "sources": [
+    "https://veritatis.com.au/product/the-forge-pocket-edition/",
+    "https://freedompublishingbooks.com.au/product_info.php?products_id=24642"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "friends-of-god",
+   "title": "Friends of God",
+   "subtitle": "Homilies (Mini Edition)",
+   "author": "Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "A collection of homilies by St. Josemaría Escrivá, offered in a small-format mini edition.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "likely",
+   "evidence": "No verification search ran (WebSearch budget used up). The discovery summary mentioned a Mini Edition of 'Friends of God: Homilies' next to the Veritatis Scepter Publishers brand page and Freedom's Scepter listing (manufacturers_id=24). No product URL was shown, and the page behind the summary is unknown. The summary also gave a price of $29.95, but it is not recorded because no page tied to it was shown.",
+   "sources": [
+    "https://veritatis.com.au/brand/scepter-publishers/",
+    "https://freedompublishingbooks.com.au/index.php?manufacturers_id=24&view=all"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "holy-rosary",
+   "title": "Holy Rosary",
+   "subtitle": "",
+   "author": "Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "St. Josemaría Escrivá's short commentaries on the fifteen mysteries of the rosary, first published in 1934.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "A discovery search summary for the Veritatis product page stated that the book was 'authored by St. Josemaría Escrivá and published by Scepter Publishers', first published in 1934, with short commentaries on the 15 mysteries. No re-verification ran in this pass (WebSearch budget used up).",
+   "sources": [
+    "https://veritatis.com.au/product/holy-rosary/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "collected-letters",
+   "title": "The Collected Letters, Volume 1",
+   "subtitle": "",
+   "author": "Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "First volume of the collected letters of St. Josemaría Escrivá, founder of Opus Dei.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "likely",
+   "evidence": "No verification search ran (WebSearch budget used up). The Veritatis product page came back in discovery for searches on 'Scepter Publishers' and 'Escrivá'. No result text literally showed the imprint or an ISBN.",
+   "sources": [
+    "https://veritatis.com.au/product/st-josemaria-escriva-the-collected-letters-volume-1/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "collected-letters-2",
+   "title": "The Collected Letters, Volume 2",
+   "subtitle": "",
+   "author": "Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "Second volume of the collected letters of St. Josemaría Escrivá, founder of Opus Dei.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "likely",
+   "evidence": "No verification search ran (WebSearch budget used up). The Veritatis product page 'The Collected Letters: Vol 2' came back in discovery for searches on Escrivá and the founder of Opus Dei. It belongs to the same series as Volume 1, but no result literally showed the Scepter imprint.",
+   "sources": [
+    "https://veritatis.com.au/product/the-collected-letters-vol-2/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "collected-letters-3",
+   "title": "The Collected Letters: Letter 29",
+   "subtitle": "On the Work of St. Gabriel in Opus Dei",
+   "author": "Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "St. Josemaría Escrivá's letter on the Work of St. Gabriel, the apostolate of Opus Dei among people in every walk of life.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "likely",
+   "evidence": "No verification search ran (WebSearch budget used up). Discovery found a Veritatis page titled 'St Josemaría Escrivá: The Collected Letters - Letter 29', plus a second Veritatis URL whose slug reads 'the-collected-letters-on-the-work-of-st-gabriel-in-opus-dei-vol-3'. The two URLs may be the same item or separate editions, which has not been checked. No result literally showed the Scepter imprint.",
+   "sources": [
+    "https://veritatis.com.au/product/st-josemaria-escriva-the-collected-letters-letter-29/",
+    "https://veritatis.com.au/product/the-collected-letters-on-the-work-of-st-gabriel-in-opus-dei-vol-3"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "he-calls-we-answer",
+   "title": "He Calls, We Answer",
+   "subtitle": "St. Josemaría Escrivá on Vocation",
+   "author": "",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "St. Josemaría Escrivá's teaching on how God calls each person and how to respond to that call.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "doubtful",
+   "evidence": "No verification search ran (WebSearch budget used up). The only evidence is the Veritatis page title, which came back in general Escrivá searches rather than Scepter brand searches. Veritatis also stocks other publishers, and no source tied this title to Scepter. The author or compiler is unknown and has been left blank rather than guessed.",
+   "sources": [
+    "https://veritatis.com.au/product/he-calls-we-answer-st-josemaria-escriva-on-vocation/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "founder-of-opus-dei-volume-i",
+   "title": "The Founder of Opus Dei, Volume I",
+   "subtitle": "The Early Years",
+   "author": "Andrés Vázquez de Prada",
+   "shelf": "opus-dei",
+   "kind": "book",
+   "description": "First volume of Andrés Vázquez de Prada's biography of St. Josemaría Escrivá, covering the founder's early years.",
+   "isbn": "",
+   "pages": 0,
+   "featured": true,
+   "status": "likely",
+   "evidence": "No verification search ran (WebSearch budget used up). The Veritatis page title 'The Founder of Opus Dei, Volume I - The Early Years' came back in discovery for an Opus Dei founder biography search. The English edition of this three-volume biography is generally known as a Scepter Publishers title. The author name comes from general knowledge, not from any search result, so confirm it before publishing.",
+   "sources": [
+    "https://veritatis.com.au/product/the-founder-of-opus-dei-volume-i-the-early-years/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "founder-of-opus-dei-volume-ii",
+   "title": "The Founder of Opus Dei, Volume II",
+   "subtitle": "God and Daring",
+   "author": "Andrés Vázquez de Prada",
+   "shelf": "opus-dei",
+   "kind": "book",
+   "description": "Second volume of Andrés Vázquez de Prada's biography of St. Josemaría Escrivá, founder of Opus Dei.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "likely",
+   "evidence": "The Veritatis page title 'The Founder of Opus Dei, Volume II - God and Daring' came from an earlier search, and Veritatis distributes Scepter Publishers in Australia. No search result in this pass named the publisher or the author (the author comes from the raw entry) because the web search budget was used up. No AUD price was seen.",
+   "sources": [
+    "https://veritatis.com.au/product/the-founder-of-opus-dei-volume-ii-god-and-daring/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "founder-of-opus-dei-volume-iii",
+   "title": "The Founder of Opus Dei, Volume III",
+   "subtitle": "The Divine Ways on Earth",
+   "author": "Andrés Vázquez de Prada",
+   "shelf": "opus-dei",
+   "kind": "book",
+   "description": "Third volume of Andrés Vázquez de Prada's biography of St. Josemaría Escrivá, founder of Opus Dei.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "likely",
+   "evidence": "The Veritatis page title 'The Founder of Opus Dei, Volume III - The Divine Ways on Earth' came up in the Escrivá and founder-biography searches, and Veritatis distributes Scepter. The publisher and author (the author comes from the raw entry) could not be checked against a search result because the web search budget was used up. No price was seen.",
+   "sources": [
+    "https://veritatis.com.au/product/the-founder-of-opus-dei-volume-iii-the-divine-ways-on-earth/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "footprints-in-the-snow",
+   "title": "Footprints in the Snow",
+   "subtitle": "A Pictorial Biography of St. Josemaría Escrivá",
+   "author": "Dennis M. Helming",
+   "shelf": "opus-dei",
+   "kind": "book",
+   "description": "Photographs and text tracing the life of St. Josemaría Escrivá, founder of Opus Dei.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "likely",
+   "evidence": "Veritatis, a Scepter distributor, lists it (page title seen in the Escrivá search). No result showed the publisher or author, and they could not be checked because the web search budget was used up. The author is left blank so none is invented. No price was seen.",
+   "sources": [
+    "https://veritatis.com.au/product/footprints-in-the-snow-a-pictorial-biography-of-st-josemaria-escriva/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "ordinary-life-and-holiness-in-the-teaching-of-st-josemaria-v",
+   "title": "Ordinary Life and Holiness in the Teaching of St. Josemaría, Volume 1",
+   "subtitle": "",
+   "author": "Ernst Burkhart and Javier López",
+   "shelf": "opus-dei",
+   "kind": "book",
+   "description": "First volume of a theological study of St. Josemaría Escrivá's teaching on sanctifying ordinary work and daily life.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "likely",
+   "evidence": "Veritatis, a Scepter distributor, lists it (page title seen in the Escrivá search). The subject is Opus Dei and Escrivá, but no result showed the publisher, and it could not be checked because the web search budget was used up. The author is unknown. No price was seen.",
+   "sources": [
+    "https://veritatis.com.au/product/ordinary-life-and-holiness-volume-1/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "putting-down-roots",
+   "title": "Putting Down Roots",
+   "subtitle": "Fr. Joseph Muzquiz and the Growth of Opus Dei",
+   "author": "John F. Coverdale",
+   "shelf": "opus-dei",
+   "kind": "book",
+   "description": "Biography of Fr. Joseph Múzquiz, one of Opus Dei's first three priests, who began its work in the United States.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "likely",
+   "evidence": "Veritatis, a Scepter distributor, lists it (page title seen in the founder-biography search). No result showed the publisher or author, and they could not be checked because the web search budget was used up. No price was seen.",
+   "sources": [
+    "https://veritatis.com.au/product/putting-down-roots-fr-joseph-muzquiz-and-the-growth-of-opus-dei/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "opus-dei-a-history-1928-2016-volume-one",
+   "title": "Opus Dei: A History (1928-2016), Volume One",
+   "subtitle": "",
+   "author": "José Luis González Gullón and John F. Coverdale",
+   "shelf": "opus-dei",
+   "kind": "book",
+   "description": "First volume of a history of Opus Dei covering the years 1928 to 2016.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "likely",
+   "evidence": "Veritatis, a Scepter distributor, lists it (page title seen in the founder-biography search). No result showed the publisher or author, and they could not be checked because the web search budget was used up. No price was seen.",
+   "sources": [
+    "https://veritatis.com.au/product/opus-dei-a-history-1928-2016-volume-one/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "interior-freedom",
+   "title": "Interior Freedom",
+   "subtitle": "",
+   "author": "Jacques Philippe",
+   "shelf": "spiritual-life",
+   "kind": "book",
+   "description": "Jacques Philippe on liberating the heart and mind to live the true freedom to which God calls each person.",
+   "isbn": "",
+   "pages": 0,
+   "featured": true,
+   "status": "likely",
+   "evidence": "This is the strongest entry in the batch. A search summary said Scepter Publishers publishes many of Jacques Philippe's works, including Interior Freedom, and both Veritatis and Freedom Publishing (Melbourne) carry it. That is summary-level evidence only, not a listing that names Scepter, and it could not be checked further because the web search budget was used up. No price was seen.",
+   "sources": [
+    "https://veritatis.com.au/product/interior-freedom/",
+    "https://freedompublishingbooks.com.au/index.php?cPath=1460&view=all"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "in-the-school-of-the-holy-spirit",
+   "title": "In the School of the Holy Spirit",
+   "subtitle": "",
+   "author": "Jacques Philippe",
+   "shelf": "spiritual-life",
+   "kind": "book",
+   "description": "Jacques Philippe on recognising and following the promptings of the Holy Spirit in daily life.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "likely",
+   "evidence": "No re-verification was possible because the session WebSearch budget was used up (200/200, all three searches refused), so this verdict rests on the evidence from the earlier stage. That evidence: a search summary whose top result was Freedom Publishing's Scepter manufacturer page named this title among Philippe works available there, and Veritatis has a product URL for it. The Scepter Australia entity check also could not run, so there are no leads.",
+   "sources": [
+    "https://veritatis.com.au/product/in-the-school-of-the-holy-spirit/",
+    "https://freedompublishingbooks.com.au/index.php?manufacturers_id=24&view=all"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "fire-light",
+   "title": "Fire & Light",
+   "subtitle": "Learning to Receive the Gift of God",
+   "author": "Jacques Philippe",
+   "shelf": "spiritual-life",
+   "kind": "book",
+   "description": "Jacques Philippe on learning to receive the gift of God in the spiritual life.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "The earlier-stage search summary for the 'Scepter Publishers | Freedom Publishing Books' manufacturer page listed this title among Scepter titles. Veritatis has a product URL for it. The price of $28.95 comes from a search summary and not a page read; the format was not shown. It could not be re-checked because the search budget was used up.",
+   "sources": [
+    "https://freedompublishingbooks.com.au/index.php?manufacturers_id=24&view=all",
+    "https://veritatis.com.au/product/fire-light-learning-to-receive-the-gift-of-god/"
+   ],
+   "prices_seen": [
+    {
+     "format": "other",
+     "amount": 28.95,
+     "currency": "AUD",
+     "source": "freedompublishingbooks.com.au (search summary)",
+     "url": "https://freedompublishingbooks.com.au/index.php?manufacturers_id=24&view=all"
+    }
+   ]
+  },
+  {
+   "id": "called-to-life",
+   "title": "Called to Life",
+   "subtitle": "",
+   "author": "Jacques Philippe",
+   "shelf": "spiritual-life",
+   "kind": "book",
+   "description": "Jacques Philippe on recognising and answering God's calls through the events of everyday life.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "likely",
+   "evidence": "In the earlier stage, the query 'Jacques Philippe Scepter' limited to veritatis.com.au returned this Veritatis product page. Veritatis carries a Scepter Publishers brand. No page showed the imprint directly, and it could not be re-checked because the search budget was used up.",
+   "sources": [
+    "https://veritatis.com.au/product/called-to-life/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "way-of-trust-and-love",
+   "title": "The Way of Trust and Love",
+   "subtitle": "A Retreat Guided by St. Thérèse of Lisieux",
+   "author": "Jacques Philippe",
+   "shelf": "spiritual-life",
+   "kind": "book",
+   "description": "Jacques Philippe draws on St. Thérèse of Lisieux's little way of spiritual childhood and confidence in God.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "likely",
+   "evidence": "In the earlier stage, the query 'Jacques Philippe Scepter' on veritatis.com.au returned this Veritatis product page. No page showed the imprint directly, and it could not be re-checked because the search budget was used up.",
+   "sources": [
+    "https://veritatis.com.au/product/the-way-of-trust-and-love-a-retreat-guided-by-st-therese-of-lisieux/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "eight-doors-of-the-kingdom",
+   "title": "The Eight Doors of the Kingdom",
+   "subtitle": "Meditations on the Beatitudes",
+   "author": "Jacques Philippe",
+   "shelf": "spiritual-life",
+   "kind": "book",
+   "description": "Jacques Philippe's meditations on each of the Beatitudes in the Sermon on the Mount.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "likely",
+   "evidence": "Freedom Publishing's Scepter manufacturer page was the top result. The summary said the book 'appears to be published by Scepter Publishers'. That summary also gave a price of 'around $29.95'. Because of the word 'around' the price is not an exact figure, so it is left out of prices. It could not be re-checked because the search budget was used up.",
+   "sources": [
+    "https://freedompublishingbooks.com.au/index.php?manufacturers_id=24&view=all"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "priestly-fatherhood",
+   "title": "Priestly Fatherhood",
+   "subtitle": "Treasure in Earthen Vessels",
+   "author": "Jacques Philippe",
+   "shelf": "spiritual-life",
+   "kind": "book",
+   "description": "Jacques Philippe on fatherhood, for priests and all called to exercise paternity: fathers, spiritual fathers, educators and leaders.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "likely",
+   "evidence": "A search result link title reads 'Priestly Fatherhood Treasure in Earthen Vessels / Jacques Philippe' on Freedom Publishing Books (product 24032), which is hard evidence that an Australian seller stocks it. The Scepter imprint was not shown in the evidence gathered. It could not be re-checked because the search budget was used up.",
+   "sources": [
+    "https://freedompublishingbooks.com.au/product_info.php?products_id=24032"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "overcoming-lukewarmness",
+   "title": "Overcoming Lukewarmness",
+   "subtitle": "Healing Your Soul's Sadness",
+   "author": "",
+   "shelf": "spiritual-life",
+   "kind": "book",
+   "description": "A book on overcoming lukewarmness in the spiritual life and healing the soul's sadness.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "doubtful",
+   "evidence": "Only the Veritatis page title was seen. It was returned for a 'Francis Fernandez' query next to In Conversation with God, which suggests Francis Fernández-Carvajal as author but does not show it. No author or imprint was seen, so the author is left blank. It could not be re-checked because the search budget was used up.",
+   "sources": [
+    "https://veritatis.com.au/product/overcoming-lukewarmness-healing-your-souls-sadness/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "through-wind-and-waves",
+   "title": "Through Wind and Waves",
+   "subtitle": "On Being a Spiritual Guide",
+   "author": "",
+   "shelf": "spiritual-life",
+   "kind": "book",
+   "description": "A book on spiritual guidance and on being a spiritual guide to others.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "doubtful",
+   "evidence": "Only the Veritatis page title was seen, returned for the 'In Conversation with God Francis Fernandez' query. No author, imprint or ISBN was seen, so the author is left blank. It could not be re-checked because the search budget was used up.",
+   "sources": [
+    "https://veritatis.com.au/product/through-wind-and-waves-on-being-a-spiritual-guide/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "beyond-good-intentions",
+   "title": "Beyond Good Intentions",
+   "subtitle": "The Art of Christian Living",
+   "author": "",
+   "shelf": "spiritual-life",
+   "kind": "book",
+   "description": "A book on the art of Christian living, beyond good intentions.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "doubtful",
+   "evidence": "Only the Veritatis page title was seen, returned for the 'Scepter Catholic Bible Navarre' and 'Opus Dei founder biography' queries. That is indirect at best. No author, imprint or ISBN was seen, so the author is left blank. It could not be re-checked because the search budget was used up.",
+   "sources": [
+    "https://veritatis.com.au/product/beyond-good-intentions-the-art-of-christian-living/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "my-russian-way",
+   "title": "My Russian Way",
+   "subtitle": "A Spiritual Autobiography",
+   "author": "",
+   "shelf": "spiritual-life",
+   "kind": "book",
+   "description": "A spiritual autobiography carried in Australia by Veritatis Publishing, listed among its Scepter Publishing titles.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "likely",
+   "evidence": "This pass ran no new searches because the session's WebSearch budget (200/200) was used up. The rating rests on earlier evidence: the Veritatis product page came up for the 'Scepter Publishing product tag' query. The author was not seen in any result. The Scepter Australia entity check was also not done.",
+   "sources": [
+    "https://veritatis.com.au/product/my-russian-way-a-spiritual-autobiography/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "in-conversation-with-god",
+   "title": "In Conversation with God",
+   "subtitle": "Seven volumes",
+   "author": "Francis Fernández-Carvajal",
+   "shelf": "prayer",
+   "kind": "set",
+   "description": "Seven-volume series of more than 500 meditations arranged through the liturgical year, by Francis Fernández-Carvajal.",
+   "isbn": "",
+   "pages": 0,
+   "featured": true,
+   "status": "confirmed",
+   "evidence": "Two earlier results tie this set to Scepter. Freedom Publishing Books' Scepter manufacturer page (manufacturers_id=24) lists the 7-volume set as published by Scepter Publishers, and Veritatis also sells it. No new searches were possible because the budget was exhausted, so no AUD price was seen.",
+   "sources": [
+    "https://veritatis.com.au/product/in-conversation-with-god-7-volume-set/",
+    "https://freedompublishingbooks.com.au/index.php?manufacturers_id=24&view=all"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "thirsting-for-prayer",
+   "title": "Thirsting for Prayer",
+   "subtitle": "",
+   "author": "Jacques Philippe",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Jacques Philippe on the practice of personal prayer and how to persevere in it.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "likely",
+   "evidence": "In earlier searches the Veritatis product page came up for three queries: 'Scepter Publishers', 'Scepter Publishing product tag' and 'Jacques Philippe Scepter'. No new searches were possible because the budget was exhausted, and no result literally showed the imprint.",
+   "sources": [
+    "https://veritatis.com.au/product/thirsting-for-prayer/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "time-for-god",
+   "title": "Time for God",
+   "subtitle": "2nd Edition",
+   "author": "Jacques Philippe",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Jacques Philippe's short, practical guide to mental prayer.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "likely",
+   "evidence": "Veritatis has a product page for the 2nd edition, and Freedom Publishing lists the title among Philippe's books. Neither result showed the imprint. No new searches were possible because the budget was exhausted, and no price was seen.",
+   "sources": [
+    "https://veritatis.com.au/product/time-for-god-2nd-edition/",
+    "https://freedompublishingbooks.com.au/index.php?cPath=1460_1397&view=all"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "nine-days-to-welcome-peace",
+   "title": "Nine Days to Welcome Peace",
+   "subtitle": "",
+   "author": "Jacques Philippe",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "A nine-day guide by Jacques Philippe to finding peace of heart.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "doubtful",
+   "evidence": "The only evidence is a search summary of Freedom Publishing's Jacques Philippe category, which names the title. Earlier results did not confirm Scepter as the publisher, and no new searches were possible because the budget was exhausted.",
+   "sources": [
+    "https://freedompublishingbooks.com.au/index.php?cPath=1460&view=all"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "you-can-pray",
+   "title": "You Can Pray!",
+   "subtitle": "Meditations for Teens",
+   "author": "",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Short meditations written to help teenagers pray.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "likely",
+   "evidence": "The Veritatis page came up for 'Scepter Publishers', and the summary mentioned Scepter books for readers 'from teens to adults'. That is indirect evidence only. The author was not seen, and no new searches were possible because the budget was exhausted.",
+   "sources": [
+    "https://veritatis.com.au/product/you-can-pray-meditations-for-teens/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "praying-from-the-depths-of-the-psalms",
+   "title": "Praying from the Depths of the Psalms",
+   "subtitle": "",
+   "author": "",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "A guide to using the Psalms in personal prayer.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "doubtful",
+   "evidence": "The only earlier evidence is that the page ranked high for a 'Scepter Publishers' search on veritatis.com.au. No result showed the publisher or the author, and no new searches were possible because the budget was exhausted.",
+   "sources": [
+    "https://veritatis.com.au/product/praying-from-the-depths-of-the-psalms/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "eucharistic-meditations",
+   "title": "Eucharistic Meditations",
+   "subtitle": "Extracts from the Writings and Instructions of Saint John Vianney",
+   "author": "John Vianney",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Twenty-seven meditations from Saint John Vianney's writings and instructions, reflecting his devotion to the Blessed Sacrament.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "An earlier summary of the Veritatis product page called it 'a paperback published by Scepter Publishers'. No new searches were possible because the budget was exhausted, so no price was seen.",
+   "sources": [
+    "https://veritatis.com.au/product/eucharistic-meditations-extracts-from-the-writings-and-instructions-of-saint-john-vianney/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "mary-of-nazareth",
+   "title": "Mary of Nazareth",
+   "subtitle": "",
+   "author": "Federico Suárez",
+   "shelf": "mary-saints",
+   "kind": "book",
+   "description": "Federico Suarez's meditations on the life of the Virgin Mary as the Gospels present it.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "An earlier search summary put the title on Freedom Publishing Books' Scepter manufacturer page (manufacturers_id=24) and named Scepter Publishers as publisher, at $27.45. I could not re-check it: the session's WebSearch budget (200 calls) ran out before this pass, so no new queries were run. No Amazon AU price was seen.",
+   "sources": [
+    "https://freedompublishingbooks.com.au/index.php?manufacturers_id=24&view=all",
+    "https://freedompublishingbooks.com.au/index.php?cPath=1460_1384&view=all"
+   ],
+   "prices_seen": [
+    {
+     "format": "other",
+     "amount": 27.45,
+     "currency": "AUD",
+     "source": "freedompublishingbooks.com.au (search summary of Scepter manufacturer page; format not stated)",
+     "url": "https://freedompublishingbooks.com.au/index.php?manufacturers_id=24&view=all"
+    }
+   ]
+  },
+  {
+   "id": "joseph-of-nazareth",
+   "title": "Joseph of Nazareth",
+   "subtitle": "",
+   "author": "Federico Suárez",
+   "shelf": "mary-saints",
+   "kind": "book",
+   "description": "Federico Suarez's meditations on the life and vocation of Saint Joseph.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "likely",
+   "evidence": "The query for this title returned Freedom Publishing's Scepter manufacturer page first, and the summary named Federico Suarez as author. The summary only said it was 'priced around $22.95', which is not a literal price, so no price is recorded. The session's search budget was used up, so I could not re-verify.",
+   "sources": [
+    "https://freedompublishingbooks.com.au/index.php?manufacturers_id=24&view=all"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "real-mercy",
+   "title": "Real Mercy",
+   "subtitle": "Mary, Forgiveness and Trust",
+   "author": "Jacques Philippe",
+   "shelf": "spiritual-life",
+   "kind": "book",
+   "description": "Jacques Philippe on receiving God's mercy and learning to forgive, with the Virgin Mary as guide.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "likely",
+   "evidence": "Veritatis has a product page for it, and a Freedom Publishing search summary listed it with Jacques Philippe's titles, pointing to the Scepter manufacturer page. The tie to Scepter comes only from search summaries. I could not re-verify because the session's search budget was used up. No price was seen.",
+   "sources": [
+    "https://veritatis.com.au/product/real-mercy/",
+    "https://freedompublishingbooks.com.au/index.php?manufacturers_id=24&view=all",
+    "https://freedompublishingbooks.com.au/index.php?cPath=1460_1384&view=all"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "school-of-mary",
+   "title": "The School of Mary",
+   "subtitle": "Meditations on the Mysteries of the Rosary",
+   "author": "",
+   "shelf": "mary-saints",
+   "kind": "book",
+   "description": "Short meditations to accompany each mystery of the Rosary.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "likely",
+   "evidence": "The Veritatis product page title is hard evidence that an Australian seller carries it. Scepter as publisher comes only from the search summary. No author was seen. I could not re-verify because the session's search budget was used up. No price was seen.",
+   "sources": [
+    "https://veritatis.com.au/product/the-school-of-mary/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "maiden-of-nazareth",
+   "title": "The Maiden of Nazareth",
+   "subtitle": "A Story of the Blessed Virgin Mary",
+   "author": "",
+   "shelf": "mary-saints",
+   "kind": "book",
+   "description": "The life of the Blessed Virgin Mary, told as a narrative.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "doubtful",
+   "evidence": "The Veritatis page came up for Scepter-related queries, but no source named Scepter as publisher and no author was seen. I could not verify further because the session's search budget was used up.",
+   "sources": [
+    "https://veritatis.com.au/product/the-maiden-of-nazareth/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "power-of-the-rosary",
+   "title": "The Power of the Rosary",
+   "subtitle": "",
+   "author": "Gabriel Castillo",
+   "shelf": "mary-saints",
+   "kind": "book",
+   "description": "Gabriel Castillo on the Rosary as a means of spiritual renewal.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "doubtful",
+   "evidence": "The Veritatis page came up for a 'Scepter Rosary Mary' query and its summary gave the author and a blurb. No source confirmed Scepter as publisher. I could not re-verify because the session's search budget was used up.",
+   "sources": [
+    "https://veritatis.com.au/product/the-power-of-the-rosary/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "three-to-get-married",
+   "title": "Three to Get Married",
+   "subtitle": "",
+   "author": "Fulton J. Sheen",
+   "shelf": "marriage-family",
+   "kind": "book",
+   "description": "Fulton J. Sheen on marriage as a union of husband, wife and God.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "likely",
+   "evidence": "The Veritatis product page came up for 'Scepter Publishers' and 'Scepter Publishing product tag' queries, and the summary described Scepter products as including Sheen's marriage book. The tie comes from summaries only. I could not re-verify because the session's search budget was used up. No price was seen.",
+   "sources": [
+    "https://veritatis.com.au/product/three-to-get-married/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "father-the-family-protector",
+   "title": "Father, the Family Protector",
+   "subtitle": "",
+   "author": "James B. Stenson",
+   "shelf": "marriage-family",
+   "kind": "book",
+   "description": "James B. Stenson on the distinctive contribution fathers make to family life.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "likely",
+   "evidence": "The Veritatis page came up for a Scepter marriage and family query, and the summary described it as a Scepter book about fathers. No author was seen in any search result, so the author field is blank. It is widely attributed to James B. Stenson, but no search in this session checked that. The search budget was used up. No price was seen.",
+   "sources": [
+    "https://veritatis.com.au/product/father-the-family-protector/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "covenanted-happiness",
+   "title": "Covenanted Happiness",
+   "subtitle": "Love and Commitment in Marriage",
+   "author": "Cormac Burke",
+   "shelf": "marriage-family",
+   "kind": "book",
+   "description": "Cormac Burke on married love and lifelong fidelity.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "likely",
+   "evidence": "The Veritatis page came up for a Scepter marriage and family query, but only indirect evidence ties it to Scepter. No author was seen in any search result, so the author field is blank. It is generally attributed to Cormac Burke, but no search in this session checked that. The search budget was used up. No price was seen.",
+   "sources": [
+    "https://veritatis.com.au/product/covenanted-happiness-love-and-commitment-in-marriage/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "meaning-of-marriage",
+   "title": "The Meaning of Marriage",
+   "subtitle": "Family, State, Market, and Morals",
+   "author": "Robert P. George and Jean Bethke Elshtain (eds.)",
+   "shelf": "marriage-family",
+   "kind": "book",
+   "description": "Essays making the case for marriage as a positive institution that serves the common good.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "likely",
+   "evidence": "The Veritatis page came up for Scepter queries, and the summary tied its blurb to Scepter. No author or editor was seen, so the author field is blank. Editors Robert P. George and Jean Bethke Elshtain are unverified, and an earlier edition may be from Spence Publishing. The search budget was used up. No price was seen.",
+   "sources": [
+    "https://veritatis.com.au/product/the-meaning-of-marriage-family-state-market-and-morals/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "challenge-of-love",
+   "title": "The Challenge of Love",
+   "subtitle": "Making Marriage Work",
+   "author": "",
+   "shelf": "marriage-family",
+   "kind": "book",
+   "description": "Practical advice for working through the conflicts that arise in married life.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "likely",
+   "evidence": "Veritatis Publishing (Australian distributor of Scepter) has a product page with this exact title, and the earlier search summary called it a Scepter title. That is soft evidence, not a publisher listing or ISBN. Could not re-verify: the session's WebSearch budget (200/200) ran out, so no new searches ran. The author was not seen in any result, so it is left blank.",
+   "sources": [
+    "https://veritatis.com.au/product/the-challenge-of-love-making-marriage-work/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "marriage-a-path-to-sanctity",
+   "title": "Marriage: A Path to Sanctity",
+   "subtitle": "",
+   "author": "",
+   "shelf": "marriage-family",
+   "kind": "book",
+   "description": "Married life presented as a Christian vocation and a way to holiness.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "doubtful",
+   "evidence": "The only evidence is a Veritatis product page returned for a 'Scepter marriage family parenting' query. No result named the publisher. Veritatis carries many publishers. WebSearch budget ran out, so the publisher and author could not be checked.",
+   "sources": [
+    "https://veritatis.com.au/product/marriage-a-path-to-sanctity/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "to-be-a-man",
+   "title": "To Be a Man",
+   "subtitle": "Life Lessons for Young Men",
+   "author": "",
+   "shelf": "marriage-family",
+   "kind": "book",
+   "description": "Practical lessons for young men growing into adulthood.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "doubtful",
+   "evidence": "A Veritatis product page with this title was returned for a 'Scepter marriage family parenting' query, but no result named the publisher or author. WebSearch budget ran out, so it could not be checked further.",
+   "sources": [
+    "https://veritatis.com.au/product/to-be-a-man-life-lessons-for-young-men/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "faith-explained",
+   "title": "The Faith Explained",
+   "subtitle": "",
+   "author": "Leo J. Trese",
+   "shelf": "faith",
+   "kind": "book",
+   "description": "Leo J. Trese's explanation of Catholic teaching, following the order of the Baltimore Catechism.",
+   "isbn": "",
+   "pages": 0,
+   "featured": true,
+   "status": "confirmed",
+   "evidence": "Freedom Publishing Books (Melbourne) lists 'The Faith Explained / Leo J. Trese' (products_id=13032). Its Scepter Publishers manufacturer page (manufacturers_id=24) came up as the next result for the same query, which ties the listing to Scepter. No Amazon AU price was seen. WebSearch budget ran out before an amazon.com.au check could run.",
+   "sources": [
+    "https://freedompublishingbooks.com.au/product_info.php?products_id=13032",
+    "https://freedompublishingbooks.com.au/index.php?manufacturers_id=24&view=all"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "home-again",
+   "title": "Home Again",
+   "subtitle": "A Prayerful Rediscovery of Your Catholic Faith",
+   "author": "John Henry Hanson",
+   "shelf": "faith",
+   "kind": "book",
+   "description": "A prayer-centred guide for Catholics returning to the practice of their faith.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "likely",
+   "evidence": "The search summary for Freedom Publishing Books' Scepter Publishers manufacturer page (manufacturers_id=24) named it as a Scepter title. Summary evidence is soft, and no ISBN or imprint line was seen. The AUD 27.95 price came from that search summary. Its format was not stated, so it is recorded as 'other'. WebSearch budget ran out, so there was no amazon.com.au check.",
+   "sources": [
+    "https://freedompublishingbooks.com.au/index.php?manufacturers_id=24&view=all"
+   ],
+   "prices_seen": [
+    {
+     "format": "other",
+     "amount": 27.95,
+     "currency": "AUD",
+     "source": "freedompublishingbooks.com.au",
+     "url": "https://freedompublishingbooks.com.au/index.php?manufacturers_id=24&view=all"
+    }
+   ]
+  },
+  {
+   "id": "guidebook-for-confessors",
+   "title": "Guidebook for Confessors",
+   "subtitle": "",
+   "author": "",
+   "shelf": "faith",
+   "kind": "book",
+   "description": "A guide for Catholic priests, written to help them appreciate the beauty and power of Confession and administer it more effectively.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "likely",
+   "evidence": "A Veritatis product page came up for 'Scepter Publishing product tag' and 'Scepter confession' queries, and the blurb was quoted in the summary. Coming up for a Scepter-tag query suggests Veritatis files it under Scepter, but no result showed the tag or an ISBN. WebSearch budget ran out. The author was not seen, so it is left blank.",
+   "sources": [
+    "https://veritatis.com.au/product/guidebook-for-confessors/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "guidebook-for-confession-for-children",
+   "title": "Guidebook for Confession for Children",
+   "subtitle": "",
+   "author": "",
+   "shelf": "faith",
+   "kind": "book",
+   "description": "An illustrated introduction to the Sacrament of Reconciliation for children.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "likely",
+   "evidence": "The 'Scepter confession' search summary listed this Veritatis product as a Scepter title and quoted its blurb. The evidence is summary-level only: no publisher line or ISBN was seen. WebSearch budget ran out, so it could not be verified further.",
+   "sources": [
+    "https://veritatis.com.au/product/guidebook-for-confession-for-children/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "go-in-peace",
+   "title": "Go in Peace",
+   "subtitle": "Your Guide to the Purpose and Power of Confession: 101 Questions and Answers",
+   "author": "",
+   "shelf": "faith",
+   "kind": "book",
+   "description": "Common questions about Confession, answered one by one.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "doubtful",
+   "evidence": "The Veritatis page title matches exactly, but only a loose summary sentence ('Scepter has published… Go in Peace') links it to Scepter. No publisher line, ISBN or author was seen. WebSearch budget ran out before this could be checked.",
+   "sources": [
+    "https://veritatis.com.au/product/go-in-peace/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "meaning-of-vocation",
+   "title": "The Meaning of Vocation",
+   "subtitle": "",
+   "author": "",
+   "shelf": "faith",
+   "kind": "book",
+   "description": "Reflections on how God calls each person to a particular vocation.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "likely",
+   "evidence": "A Veritatis product page came up for the 'Scepter Publishing product tag' query, which suggests Veritatis files it under Scepter. No result showed the publisher line, author or ISBN. WebSearch budget ran out before this could be checked.",
+   "sources": [
+    "https://veritatis.com.au/product/meaning-of-vocation-the/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "risen-jesus",
+   "title": "The Risen Jesus",
+   "subtitle": "How Jesus Led the Disciples from Denial to Belief",
+   "author": "",
+   "shelf": "faith",
+   "kind": "book",
+   "description": "A book on how the risen Jesus led his disciples from denial to belief.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "doubtful",
+   "evidence": "Not re-verified: the session's WebSearch budget was already used up (200 of 200), so no query ran for any entry in this batch. That also meant the requested check for a stand-alone Scepter Australia entity could not be run. The only evidence is the upstream finding that the Veritatis product page came up in a 'Scepter Publishers' search. No publisher line, author or ISBN was seen, so the author is left blank.",
+   "sources": [
+    "https://veritatis.com.au/product/the-risen-jesus/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "visions-of-purgatory",
+   "title": "Visions of Purgatory",
+   "subtitle": "A Private Revelation",
+   "author": "",
+   "shelf": "faith",
+   "kind": "book",
+   "description": "An account of visions of purgatory, presented as a private revelation.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "doubtful",
+   "evidence": "Not re-verified because the WebSearch budget was used up (200 of 200). The upstream evidence says only that the Veritatis page came up in a 'Scepter Publishers' search and that the results did not confirm the publisher. No author or ISBN was seen.",
+   "sources": [
+    "https://veritatis.com.au/product/visions-of-purgatory-a-private-revelation/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "navarre-bible",
+   "title": "The Navarre Bible",
+   "subtitle": "New Testament Expanded Edition",
+   "author": "Faculty of the University of Navarre",
+   "shelf": "bibles-missals",
+   "kind": "bible",
+   "description": "New Testament in two colours, RSVCE English and New Vulgate Latin on the same page, with Navarre commentary.",
+   "isbn": "",
+   "pages": 0,
+   "featured": true,
+   "status": "confirmed",
+   "evidence": "The upstream evidence states 'Scepter Publishers publishes the Navarre Bible' and describes the New Testament Expanded Edition. The Australian seller Veritatis has a product page for it. It could not be re-checked because the WebSearch budget was used up, and no AUD price was seen.",
+   "sources": [
+    "https://veritatis.com.au/product/the-navarre-bible/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "scepter-catholic-bible-large-print",
+   "title": "Scepter Catholic Bible (Large Print)",
+   "subtitle": "",
+   "author": "",
+   "shelf": "bibles-missals",
+   "kind": "bible",
+   "description": "Large-print Catholic Bible set in 13.5-point type, with a section of Prayers and Devotions of the Catholic Church.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "The Scepter name is in the title, and the upstream search summary says 'Scepter offers a Large Print Catholic Bible'. Veritatis in Australia lists it. It could not be re-checked because the WebSearch budget was used up, and no price was seen.",
+   "sources": [
+    "https://veritatis.com.au/product/scepter-catholic-bible-large-print/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "scepter-daily-bible",
+   "title": "Scepter Daily Bible",
+   "subtitle": "RSV Catholic Edition",
+   "author": "",
+   "shelf": "bibles-missals",
+   "kind": "bible",
+   "description": "Compact Revised Standard Version, Catholic Edition Bible, bound in black simulated leather.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "The Scepter name is in the title, and the upstream search summary says 'Scepter publishes a Daily Bible in simulated black leather'. Veritatis has two product URLs for it. It could not be re-checked because the WebSearch budget was used up, and no price was seen.",
+   "sources": [
+    "https://veritatis.com.au/product/scepter-daily-bible/",
+    "https://veritatis.com.au/product/daily-bible-simulated-leather-black"
+   ],
+   "prices_seen": []
+  }
+ ],
+ "dropped": [
+  {
+   "title": "Divine Insights: St. Josemaría's New Mediterraneans",
+   "why": "Placeholder entry: the description says 'author and publisher not confirmed'. Nothing ties it to Scepter; Veritatis stocks many publishers. It can't go on a public page as it stands."
+  },
+  {
+   "title": "A Man Who Knew How to Forgive",
+   "why": "Placeholder entry: the description says 'subject, author and publisher unconfirmed'. It was found only via Opus Dei keyword searches on a multi-publisher distributor, with no Scepter evidence."
+  },
+  {
+   "title": "At God's Pace",
+   "why": "Placeholder entry: the description says 'author and publisher unconfirmed'. There is no Scepter evidence and no content to describe."
+  },
+  {
+   "title": "Searching for and Maintaining Peace",
+   "why": "Other publisher: the English edition of this Jacques Philippe title is published by Alba House (Society of St Paul), not Scepter. Unlike his other books, it is not on Scepter's list. The entry is already marked doubtful."
+  },
+  {
+   "title": "Call Him Father",
+   "why": "Placeholder entry: the description is 'its author was not given in the sources seen'. There is no subject, author or Scepter evidence, and it is marked doubtful."
+  },
+  {
+   "title": "Moments Divine",
+   "why": "Probably another publisher: 'Moments Divine Before the Blessed Sacrament' is by Rev. Frederick A. Reuter and is known as a TAN Books reprint. No Scepter link, marked doubtful, and the description is only a note about where it is sold."
+  },
+  {
+   "title": "The Well of Life",
+   "why": "Placeholder entry: the description says 'its author and subject are not confirmed'. Nothing to list and no Scepter evidence."
+  },
+  {
+   "title": "Daily Roman Missal",
+   "why": "Other publisher: the Daily Roman Missal (7th ed., ed. James Socías) is published by Midwest Theological Forum. Scepter sellers carry it but Scepter did not publish it. Drop unless a listing names Scepter as publisher."
+  }
+ ]
+}

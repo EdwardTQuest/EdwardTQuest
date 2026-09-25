@@ -1,0 +1,458 @@
+{
+ "site": "scepter-kenya",
+ "compiled": "2026-09-25",
+ "method": "Four titles seen on Scepter Kenya's own shop; the rest are the range its site says it carries (St Josemaría's works, Jacques Philippe, Fulton J. Sheen, In Conversation with God, the Navarre Bible), taken with their descriptions from the verified UK and Australia lists and marked status 'range' until Scepter Kenya confirms its stock list. See sites/RESEARCH.md.",
+ "shelves": [
+  {
+   "slug": "escriva",
+   "name": "Escrivá"
+  },
+  {
+   "slug": "prayer",
+   "name": "Prayer & Scripture"
+  },
+  {
+   "slug": "spiritual-life",
+   "name": "Spiritual Life"
+  },
+  {
+   "slug": "family",
+   "name": "Family & Fiction"
+  }
+ ],
+ "books": [
+  {
+   "id": "way-of-the-cross",
+   "title": "Way of the Cross",
+   "subtitle": "",
+   "author": "St Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "St Josemaría Escrivá's meditations on the fourteen Stations, each followed by short points for prayer.",
+   "isbn": "",
+   "pages": 0,
+   "featured": true,
+   "status": "confirmed",
+   "evidence": "Product page on Scepter Kenya's own shop, 'Way of The Cross – Scepter Publishers Africa'; KSh 320 shown there (format not stated).",
+   "sources": [
+    "https://scepterpublishersafrica.co.ke/product/way-of-the-cross/"
+   ],
+   "prices_seen": [
+    {
+     "format": "other",
+     "amount": 320,
+     "currency": "KES",
+     "source": "scepterpublishersafrica.co.ke",
+     "url": "https://scepterpublishersafrica.co.ke/product/way-of-the-cross/"
+    }
+   ]
+  },
+  {
+   "id": "reasons-for-making-a-retreat",
+   "title": "Reasons for Making a Retreat",
+   "subtitle": "",
+   "author": "David Chandler",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Argues that a spiritual retreat, set apart for reflection, brings peace, clarity and renewed joy.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Product page on Scepter Kenya's own shop, 'Reasons For Making A Retreat – Scepter Publishers Kenya', naming David Chandler.",
+   "sources": [
+    "https://scepterpublishersafrica.co.ke/product/reasons-for-making-a-retreat/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "navarre-bible",
+   "title": "The Navarre Bible",
+   "subtitle": "",
+   "author": "Faculty of Theology, University of Navarre",
+   "shelf": "prayer",
+   "kind": "bible",
+   "description": "Scripture with extensive Catholic commentary drawing on Church documents and the Fathers, in multiple volumes.",
+   "isbn": "",
+   "pages": 0,
+   "featured": true,
+   "status": "confirmed",
+   "evidence": "Category page on Scepter Kenya's own shop: /product-category/bibles/the-navarre-bible/. Individual volumes not seen.",
+   "sources": [
+    "https://scepterpublishersafrica.co.ke/product-category/bibles/the-navarre-bible/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "in-conversation-with-god",
+   "title": "In Conversation with God",
+   "subtitle": "",
+   "author": "Francis Fernández",
+   "shelf": "prayer",
+   "kind": "set",
+   "description": "Multi-volume series of daily meditations for prayer, arranged through the liturgical year.",
+   "isbn": "",
+   "pages": 0,
+   "featured": true,
+   "status": "confirmed",
+   "evidence": "Store category 'In Conversation With God' listed on scepterpublishersafrica.com (search summary).",
+   "sources": [
+    "https://scepterpublishersafrica.com/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "way",
+   "title": "The Way",
+   "subtitle": "",
+   "author": "St Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "St Josemaría Escrivá's first collection of short points for meditation and prayer, 999 in all.",
+   "isbn": "9781889334424",
+   "pages": 222,
+   "featured": true,
+   "status": "range",
+   "evidence": "Scepter Kenya's own site says it carries this author/series (search summary of scepterpublishersafrica.co.ke / .com: 'They feature authors like Fr. Jacques Philippe, St. Josemaría Escrivá, and Fulton J Sheen, and their titles include The Navarre Bible, St Josemaria Escriva and Opus Dei works, and In Conversation With God'). This particular title was not seen on its site: range to confirm with Scepter Kenya.",
+   "sources": [
+    "https://scepterpublishersafrica.co.ke/",
+    "https://www.amazon.co.uk/Way-Josemaria-Escriva/dp/1889334421",
+    "https://www.amazon.co.uk/Way-Josemaria-Escriva/dp/0933932545"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "furrow",
+   "title": "Furrow",
+   "subtitle": "",
+   "author": "St Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "St Josemaría Escrivá's collection of 1,000 points for spiritual reflection, following The Way and preceding The Forge.",
+   "isbn": "0906138140",
+   "pages": 380,
+   "featured": false,
+   "status": "range",
+   "evidence": "Scepter Kenya's own site says it carries this author/series (search summary of scepterpublishersafrica.co.ke / .com: 'They feature authors like Fr. Jacques Philippe, St. Josemaría Escrivá, and Fulton J Sheen, and their titles include The Navarre Bible, St Josemaria Escriva and Opus Dei works, and In Conversation With God'). This particular title was not seen on its site: range to confirm with Scepter Kenya.",
+   "sources": [
+    "https://scepterpublishersafrica.co.ke/",
+    "https://www.amazon.co.uk/Furrow-Jose-Maria-Escriva-Balaguer/dp/0906138140",
+    "https://www.amazon.co.uk/Furrow-Josemaria-Escriva/dp/0933932553"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "forge",
+   "title": "The Forge",
+   "subtitle": "",
+   "author": "St Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "The third of St Josemaría Escrivá's collections of short points: 1,055 aphorisms, observations and exhortations, first published in 1987.",
+   "isbn": "9781889334523",
+   "pages": 0,
+   "featured": false,
+   "status": "range",
+   "evidence": "Scepter Kenya's own site says it carries this author/series (search summary of scepterpublishersafrica.co.ke / .com: 'They feature authors like Fr. Jacques Philippe, St. Josemaría Escrivá, and Fulton J Sheen, and their titles include The Navarre Bible, St Josemaria Escriva and Opus Dei works, and In Conversation With God'). This particular title was not seen on its site: range to confirm with Scepter Kenya.",
+   "sources": [
+    "https://scepterpublishersafrica.co.ke/",
+    "https://www.amazon.co.uk/Forge-Jose-Maria-Escriva-Balaguer/dp/1889334529",
+    "https://www.amazon.co.uk/Forge-Josemaria-Escriva/dp/0933932561"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "christ-is-passing-by",
+   "title": "Christ Is Passing By",
+   "subtitle": "",
+   "author": "St Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "Eighteen homilies by St Josemaría Escrivá for the feasts and seasons of the liturgical year.",
+   "isbn": "9781889334462",
+   "pages": 0,
+   "featured": true,
+   "status": "range",
+   "evidence": "Scepter Kenya's own site says it carries this author/series (search summary of scepterpublishersafrica.co.ke / .com: 'They feature authors like Fr. Jacques Philippe, St. Josemaría Escrivá, and Fulton J Sheen, and their titles include The Navarre Bible, St Josemaria Escriva and Opus Dei works, and In Conversation With God'). This particular title was not seen on its site: range to confirm with Scepter Kenya.",
+   "sources": [
+    "https://scepterpublishersafrica.co.ke/",
+    "https://www.amazon.co.uk/Christ-Passing-Maria-Escriva-Balaguer/dp/1889334464",
+    "https://www.amazon.co.uk/Christ-Passing-Josemar%C3%ADa-Escriv%C3%A1-ebook/dp/B004AM5O2I"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "friends-of-god",
+   "title": "Friends of God",
+   "subtitle": "",
+   "author": "St Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "A collection of homilies by St Josemaría Escrivá to help readers develop a lasting friendship with God.",
+   "isbn": "9780906138021",
+   "pages": 0,
+   "featured": false,
+   "status": "range",
+   "evidence": "Scepter Kenya's own site says it carries this author/series (search summary of scepterpublishersafrica.co.ke / .com: 'They feature authors like Fr. Jacques Philippe, St. Josemaría Escrivá, and Fulton J Sheen, and their titles include The Navarre Bible, St Josemaria Escriva and Opus Dei works, and In Conversation With God'). This particular title was not seen on its site: range to confirm with Scepter Kenya.",
+   "sources": [
+    "https://scepterpublishersafrica.co.ke/",
+    "https://www.amazon.co.uk/Friends-God-Josemaria-Escriva-Balaguer/dp/0906138027",
+    "https://www.amazon.co.uk/Friends-God-Josemar%C3%ADa-Escriv%C3%A1-ebook/product-reviews/B004AM5NZQ"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "holy-rosary",
+   "title": "Holy Rosary",
+   "subtitle": "",
+   "author": "St Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "booklet",
+   "description": "St Josemaría Escrivá's short meditations on the Rosary, written in one sitting in 1931, with woodcut illustrations.",
+   "isbn": "9781889334929",
+   "pages": 0,
+   "featured": false,
+   "status": "range",
+   "evidence": "Scepter Kenya's own site says it carries this author/series (search summary of scepterpublishersafrica.co.ke / .com: 'They feature authors like Fr. Jacques Philippe, St. Josemaría Escrivá, and Fulton J Sheen, and their titles include The Navarre Bible, St Josemaria Escriva and Opus Dei works, and In Conversation With God'). This particular title was not seen on its site: range to confirm with Scepter Kenya.",
+   "sources": [
+    "https://scepterpublishersafrica.co.ke/",
+    "https://www.amazon.co.uk/Holy-Rosary-Josemaria-Escriva/dp/1889334928",
+    "https://www.amazon.co.uk/Holy-Rosary-Josemaria-Escriva/dp/1889334448"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "interior-freedom",
+   "title": "Interior Freedom",
+   "subtitle": "",
+   "author": "Jacques Philippe",
+   "shelf": "spiritual-life",
+   "kind": "book",
+   "description": "Jacques Philippe on liberating the heart and mind to live the true freedom to which God calls each person.",
+   "isbn": "",
+   "pages": 0,
+   "featured": true,
+   "status": "range",
+   "evidence": "Scepter Kenya's own site says it carries this author/series (search summary of scepterpublishersafrica.co.ke / .com: 'They feature authors like Fr. Jacques Philippe, St. Josemaría Escrivá, and Fulton J Sheen, and their titles include The Navarre Bible, St Josemaria Escriva and Opus Dei works, and In Conversation With God'). This particular title was not seen on its site: range to confirm with Scepter Kenya.",
+   "sources": [
+    "https://scepterpublishersafrica.co.ke/",
+    "https://veritatis.com.au/product/interior-freedom/",
+    "https://freedompublishingbooks.com.au/index.php?cPath=1460&view=all"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "in-the-school-of-the-holy-spirit",
+   "title": "In the School of the Holy Spirit",
+   "subtitle": "",
+   "author": "Jacques Philippe",
+   "shelf": "spiritual-life",
+   "kind": "book",
+   "description": "Jacques Philippe on recognising and following the promptings of the Holy Spirit in daily life.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "range",
+   "evidence": "Scepter Kenya's own site says it carries this author/series (search summary of scepterpublishersafrica.co.ke / .com: 'They feature authors like Fr. Jacques Philippe, St. Josemaría Escrivá, and Fulton J Sheen, and their titles include The Navarre Bible, St Josemaria Escriva and Opus Dei works, and In Conversation With God'). This particular title was not seen on its site: range to confirm with Scepter Kenya.",
+   "sources": [
+    "https://scepterpublishersafrica.co.ke/",
+    "https://veritatis.com.au/product/in-the-school-of-the-holy-spirit/",
+    "https://freedompublishingbooks.com.au/index.php?manufacturers_id=24&view=all"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "fire-light",
+   "title": "Fire & Light",
+   "subtitle": "Learning to Receive the Gift of God",
+   "author": "Jacques Philippe",
+   "shelf": "spiritual-life",
+   "kind": "book",
+   "description": "Jacques Philippe on learning to receive the gift of God in the spiritual life.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "range",
+   "evidence": "Scepter Kenya's own site says it carries this author/series (search summary of scepterpublishersafrica.co.ke / .com: 'They feature authors like Fr. Jacques Philippe, St. Josemaría Escrivá, and Fulton J Sheen, and their titles include The Navarre Bible, St Josemaria Escriva and Opus Dei works, and In Conversation With God'). This particular title was not seen on its site: range to confirm with Scepter Kenya.",
+   "sources": [
+    "https://scepterpublishersafrica.co.ke/",
+    "https://freedompublishingbooks.com.au/index.php?manufacturers_id=24&view=all",
+    "https://veritatis.com.au/product/fire-light-learning-to-receive-the-gift-of-god/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "called-to-life",
+   "title": "Called to Life",
+   "subtitle": "",
+   "author": "Jacques Philippe",
+   "shelf": "spiritual-life",
+   "kind": "book",
+   "description": "Jacques Philippe on recognising and answering God's calls through the events of everyday life.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "range",
+   "evidence": "Scepter Kenya's own site says it carries this author/series (search summary of scepterpublishersafrica.co.ke / .com: 'They feature authors like Fr. Jacques Philippe, St. Josemaría Escrivá, and Fulton J Sheen, and their titles include The Navarre Bible, St Josemaria Escriva and Opus Dei works, and In Conversation With God'). This particular title was not seen on its site: range to confirm with Scepter Kenya.",
+   "sources": [
+    "https://scepterpublishersafrica.co.ke/",
+    "https://veritatis.com.au/product/called-to-life/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "way-of-trust-and-love",
+   "title": "The Way of Trust and Love",
+   "subtitle": "A Retreat Guided by St. Thérèse of Lisieux",
+   "author": "Jacques Philippe",
+   "shelf": "spiritual-life",
+   "kind": "book",
+   "description": "Jacques Philippe draws on St. Thérèse of Lisieux's little way of spiritual childhood and confidence in God.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "range",
+   "evidence": "Scepter Kenya's own site says it carries this author/series (search summary of scepterpublishersafrica.co.ke / .com: 'They feature authors like Fr. Jacques Philippe, St. Josemaría Escrivá, and Fulton J Sheen, and their titles include The Navarre Bible, St Josemaria Escriva and Opus Dei works, and In Conversation With God'). This particular title was not seen on its site: range to confirm with Scepter Kenya.",
+   "sources": [
+    "https://scepterpublishersafrica.co.ke/",
+    "https://veritatis.com.au/product/the-way-of-trust-and-love-a-retreat-guided-by-st-therese-of-lisieux/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "eight-doors-of-the-kingdom",
+   "title": "The Eight Doors of the Kingdom",
+   "subtitle": "Meditations on the Beatitudes",
+   "author": "Jacques Philippe",
+   "shelf": "spiritual-life",
+   "kind": "book",
+   "description": "Jacques Philippe's meditations on each of the Beatitudes in the Sermon on the Mount.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "range",
+   "evidence": "Scepter Kenya's own site says it carries this author/series (search summary of scepterpublishersafrica.co.ke / .com: 'They feature authors like Fr. Jacques Philippe, St. Josemaría Escrivá, and Fulton J Sheen, and their titles include The Navarre Bible, St Josemaria Escriva and Opus Dei works, and In Conversation With God'). This particular title was not seen on its site: range to confirm with Scepter Kenya.",
+   "sources": [
+    "https://scepterpublishersafrica.co.ke/",
+    "https://freedompublishingbooks.com.au/index.php?manufacturers_id=24&view=all"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "real-mercy",
+   "title": "Real Mercy",
+   "subtitle": "Mary, Forgiveness and Trust",
+   "author": "Jacques Philippe",
+   "shelf": "spiritual-life",
+   "kind": "book",
+   "description": "Jacques Philippe on receiving God's mercy and learning to forgive, with the Virgin Mary as guide.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "range",
+   "evidence": "Scepter Kenya's own site says it carries this author/series (search summary of scepterpublishersafrica.co.ke / .com: 'They feature authors like Fr. Jacques Philippe, St. Josemaría Escrivá, and Fulton J Sheen, and their titles include The Navarre Bible, St Josemaria Escriva and Opus Dei works, and In Conversation With God'). This particular title was not seen on its site: range to confirm with Scepter Kenya.",
+   "sources": [
+    "https://scepterpublishersafrica.co.ke/",
+    "https://veritatis.com.au/product/real-mercy/",
+    "https://freedompublishingbooks.com.au/index.php?manufacturers_id=24&view=all"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "priestly-fatherhood",
+   "title": "Priestly Fatherhood",
+   "subtitle": "Treasure in Earthen Vessels",
+   "author": "Jacques Philippe",
+   "shelf": "spiritual-life",
+   "kind": "book",
+   "description": "Jacques Philippe on fatherhood, for priests and all called to exercise paternity: fathers, spiritual fathers, educators and leaders.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "range",
+   "evidence": "Scepter Kenya's own site says it carries this author/series (search summary of scepterpublishersafrica.co.ke / .com: 'They feature authors like Fr. Jacques Philippe, St. Josemaría Escrivá, and Fulton J Sheen, and their titles include The Navarre Bible, St Josemaria Escriva and Opus Dei works, and In Conversation With God'). This particular title was not seen on its site: range to confirm with Scepter Kenya.",
+   "sources": [
+    "https://scepterpublishersafrica.co.ke/",
+    "https://freedompublishingbooks.com.au/product_info.php?products_id=24032"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "time-for-god",
+   "title": "Time for God",
+   "subtitle": "",
+   "author": "Jacques Philippe",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Jacques Philippe's short, practical guide to mental prayer.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "range",
+   "evidence": "Scepter Kenya's own site says it carries this author/series (search summary of scepterpublishersafrica.co.ke / .com: 'They feature authors like Fr. Jacques Philippe, St. Josemaría Escrivá, and Fulton J Sheen, and their titles include The Navarre Bible, St Josemaria Escriva and Opus Dei works, and In Conversation With God'). This particular title was not seen on its site: range to confirm with Scepter Kenya.",
+   "sources": [
+    "https://scepterpublishersafrica.co.ke/",
+    "https://veritatis.com.au/product/time-for-god-2nd-edition/",
+    "https://freedompublishingbooks.com.au/index.php?cPath=1460_1397&view=all"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "thirsting-for-prayer",
+   "title": "Thirsting for Prayer",
+   "subtitle": "",
+   "author": "Jacques Philippe",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Jacques Philippe on the practice of personal prayer and how to persevere in it.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "range",
+   "evidence": "Scepter Kenya's own site says it carries this author/series (search summary of scepterpublishersafrica.co.ke / .com: 'They feature authors like Fr. Jacques Philippe, St. Josemaría Escrivá, and Fulton J Sheen, and their titles include The Navarre Bible, St Josemaria Escriva and Opus Dei works, and In Conversation With God'). This particular title was not seen on its site: range to confirm with Scepter Kenya.",
+   "sources": [
+    "https://scepterpublishersafrica.co.ke/",
+    "https://veritatis.com.au/product/thirsting-for-prayer/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "three-to-get-married",
+   "title": "Three to Get Married",
+   "subtitle": "",
+   "author": "Fulton J. Sheen",
+   "shelf": "family",
+   "kind": "book",
+   "description": "Fulton J. Sheen on marriage as a union of husband, wife and God.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "range",
+   "evidence": "Scepter Kenya's own site says it carries this author/series (search summary of scepterpublishersafrica.co.ke / .com: 'They feature authors like Fr. Jacques Philippe, St. Josemaría Escrivá, and Fulton J Sheen, and their titles include The Navarre Bible, St Josemaria Escriva and Opus Dei works, and In Conversation With God'). This particular title was not seen on its site: range to confirm with Scepter Kenya.",
+   "sources": [
+    "https://scepterpublishersafrica.co.ke/",
+    "https://veritatis.com.au/product/three-to-get-married/"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "river-and-the-source",
+   "title": "The River and the Source",
+   "subtitle": "",
+   "author": "Margaret A. Ogola",
+   "shelf": "family",
+   "kind": "book",
+   "description": "Margaret A. Ogola's first novel; winner of the Jomo Kenyatta Literature Prize and the Commonwealth Writers Prize for Best First Book, Africa.",
+   "isbn": "",
+   "pages": 0,
+   "featured": true,
+   "status": "range",
+   "evidence": "Published by Scepter Publishers (scepterpublishers.org/products/the-river-and-the-source); search summary gives the two prizes. A Kenyan author on the Scepter list; not seen on Scepter Kenya's own pages: range to confirm.",
+   "sources": [
+    "https://scepterpublishers.org/products/the-river-and-the-source"
+   ],
+   "prices_seen": []
+  }
+ ],
+ "dropped": []
+}

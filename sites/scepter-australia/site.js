@@ -1,0 +1,33 @@
+window.SITE = {
+  key: 'scepter-australia',
+  name: 'Scepter Australia',
+  title: 'Scepter Australia — Books, eBooks & Audiobooks',
+  wordmark: 'Scepter<small>Australia</small>',
+  locale: 'en-AU', currency: 'AUD',
+  motif: 'southern', mark: 'cross', logo: null,
+  hero: { eyebrow: 'Australia', title: 'Scepter' },
+  palette: [
+    { bg: '#13243A', fg: '#F3EDE3', ac: '#E7B04A' },
+    { bg: '#A8432B', fg: '#FBF0E4', ac: '#F4C878' },
+    { bg: '#56796A', fg: '#F6F2EA', ac: '#F3D591' },
+    { bg: '#E8DAC3', fg: '#13243A', ac: '#A8432B' },
+    { bg: '#3B3561', fg: '#F4EEF0', ac: '#EDB75E' },
+    { bg: '#1F5E73', fg: '#F2F0EA', ac: '#F2C46C' },
+    { bg: '#22262D', fg: '#EFEAE2', ac: '#E5A83C' },
+    { bg: '#E5A83C', fg: '#191D26', ac: '#13243A' },
+  ],
+  formats: { print: 'Book', ebook: 'eBook', audio: 'Audiobook' },
+  kinds: { booklet: 'Booklet', set: 'Set', bible: 'Bible', dvd: 'DVD', other: '' },
+  words: {
+    browse: 'Browse', titles: 'titles', all: 'All', none: 'Nothing found', noneHint: 'Try an author, or one word from the title.',
+    unpriced: 'Price to follow', toPrice: '{n} to be priced at checkout', add: 'Add to cart', added: 'Added', basket: 'Cart', total: 'Subtotal',
+    checkout: 'Checkout', checkoutNote: 'Preview only — checkout is not connected yet.', empty: 'Your cart is empty.',
+    remove: 'Remove', more: 'More in', isbn: 'ISBN', pages: 'Pages', kind: 'Format',
+  },
+  footer: [
+    ['Scepter Australia', 'Sydney · Melbourne · Brisbane · Perth'],
+    ['Every title', 'Book · eBook · Audiobook'],
+    ['Delivery', 'Australia-wide'],
+  ],
+  note: 'Concept preview for a Scepter Australia · catalogue of Scepter titles carried in Australia, compiled September 2026',
+};

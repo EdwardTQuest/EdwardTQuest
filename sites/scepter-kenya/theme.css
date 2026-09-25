@@ -1,0 +1,17 @@
+/* Scepter Kenya — Nairobi. Highland forest, ochre sun, red earth; a confident grotesque. */
+:root {
+  --bar-h: 68px;
+  --paper: #F5EFE3; --paper-2: #ECE3D1; --ink: #16251E; --ink-2: #5A645C; --line: #DBCFBA;
+  --deep: #0E2E23; --deep-ink: #F6EFE2; --deep-ink-2: #B4C0B5;
+  --accent: #E3A437; --accent-ink: #10271E; --accent-strong: #B04F2A; --focus: #B04F2A;
+  --display: 'Bricolage Grotesque', 'Figtree', system-ui, sans-serif;
+  --text: 'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --ui: 'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --radius: 10px;
+  --word-weight: 700; --word-track: -0.02em; --word-size: 1.4rem;
+  --hero-weight: 700; --hero-track: -0.045em; --hero-size: clamp(3.6rem, 10.5vw, 8.8rem);
+  --h2-weight: 700; --h2-track: -0.03em;
+  --cover-weight: 700; --cover-track: -0.025em;
+  --hero-glow: radial-gradient(900px 560px at 76% 4%, rgba(227, 164, 55, .22), transparent 60%), linear-gradient(180deg, #0B271D 0%, #123829 100%);
+  --hero-art-opacity: .6;
+}

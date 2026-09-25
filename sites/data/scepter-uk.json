@@ -1,0 +1,671 @@
+{
+ "site": "scepter-uk",
+ "compiled": "2026-09-25",
+ "method": "Web search only (page fetches blocked in the build container); every entry carries its verdict, reason and sources. See sites/RESEARCH.md.",
+ "shelves": [
+  {
+   "slug": "escriva",
+   "name": "Escrivá"
+  },
+  {
+   "slug": "prayer",
+   "name": "Prayer & Scripture"
+  },
+  {
+   "slug": "lives",
+   "name": "Lives"
+  },
+  {
+   "slug": "more",
+   "name": "Classics & more"
+  }
+ ],
+ "books": [
+  {
+   "id": "way",
+   "title": "The Way",
+   "subtitle": "",
+   "author": "St Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "St Josemaría Escrivá's first collection of short points for meditation and prayer, 999 in all.",
+   "isbn": "9781889334424",
+   "pages": 222,
+   "featured": true,
+   "status": "likely",
+   "evidence": "The brief names The Way as a Scepter UK title, but every listing seen (Amazon UK 1889334421, 222 pp, Scepter Pubs 2002; Mini Edition 0933932545; 1979 edition 0933932014; Kindle B004AM5NVA) is a Scepter Publishers (US) edition. No 978-0-906138 ISBN or scepter.uk page was seen. The WebSearch budget for this session was used up (200/200) before this pass could re-verify, so the verdict rests on the earlier sweep only. The count of 999 is 3,054 (one-volume total) minus 1,000 (Furrow) minus 1,055 (The Forge).",
+   "sources": [
+    "https://www.amazon.co.uk/Way-Josemaria-Escriva/dp/1889334421",
+    "https://www.amazon.co.uk/Way-Josemaria-Escriva/dp/0933932545",
+    "https://www.amazon.co.uk/Title-Jos%C3%A9-Mar%C3%ADa-Escriv%C3%A1-Balaguer/dp/0933932014"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "furrow",
+   "title": "Furrow",
+   "subtitle": "",
+   "author": "St Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "St Josemaría Escrivá's collection of 1,000 points for spiritual reflection, following The Way and preceding The Forge.",
+   "isbn": "0906138140",
+   "pages": 380,
+   "featured": true,
+   "status": "confirmed",
+   "evidence": "Amazon UK listing /dp/0906138140 carries Scepter (U.K.)'s own ISBN prefix 0-906138. Its summary gives a Scepter edition of 1 January 1987, 380 pages, with '1000 points for spiritual reflection'. Other Amazon listings (0933932553, 1889334502) are Scepter US editions. This pass could not re-search because the budget was exhausted.",
+   "sources": [
+    "https://www.amazon.co.uk/Furrow-Jose-Maria-Escriva-Balaguer/dp/0906138140",
+    "https://www.amazon.co.uk/Furrow-Josemaria-Escriva/dp/0933932553",
+    "https://www.amazon.co.uk/Furrow-Saint-Escriv-Ba/dp/1889334502"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "forge",
+   "title": "The Forge",
+   "subtitle": "",
+   "author": "St Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "The third of St Josemaría Escrivá's collections of short points: 1,055 aphorisms, observations and exhortations, first published in 1987.",
+   "isbn": "9781889334523",
+   "pages": 0,
+   "featured": true,
+   "status": "likely",
+   "evidence": "The brief names this as a core Escrivá work, but the only editions seen on Amazon UK are Scepter Publishers (US): 9781889334523 and 9780933932562. No 0906138 edition or scepter.uk page was seen. The search budget was exhausted, so there was no re-verification this pass.",
+   "sources": [
+    "https://www.amazon.co.uk/Forge-Jose-Maria-Escriva-Balaguer/dp/1889334529",
+    "https://www.amazon.co.uk/Forge-Josemaria-Escriva/dp/0933932561"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "way-furrow-the-forge",
+   "title": "The Way, Furrow, The Forge",
+   "subtitle": "One Volume",
+   "author": "St Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "Single-volume edition bringing together The Way, Furrow and The Forge: 3,054 short points for reflection and mental prayer.",
+   "isbn": "9781889334721",
+   "pages": 0,
+   "featured": false,
+   "status": "doubtful",
+   "evidence": "The only evidence is an Amazon UK listing of a Scepter Publishers (US) edition, ISBN prefix 1-889334. Nothing seen shows scepter.uk listing it or Scepter (U.K.) as its publisher, which the brief requires before including US titles. The search budget was exhausted, so this could not be checked on scepter.uk.",
+   "sources": [
+    "https://www.amazon.co.uk/Way-Furrow-Forge-Single/dp/1889334723"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "christ-is-passing-by",
+   "title": "Christ Is Passing By",
+   "subtitle": "Homilies",
+   "author": "St Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "Eighteen homilies by St Josemaría Escrivá for the feasts and seasons of the liturgical year.",
+   "isbn": "9781889334462",
+   "pages": 0,
+   "featured": true,
+   "status": "likely",
+   "evidence": "The brief names it as a Scepter UK Escrivá title, and its companion volume Friends of God has a Scepter (U.K.) ISBN. However, the listing seen (9781889334462, 'Scepter Pubs', January 2002) is the US edition. The publisher of the Kindle edition (B004AM5O2I) and of the older ASIN-only listing was not shown. The search budget was exhausted, so there was no re-verification.",
+   "sources": [
+    "https://www.amazon.co.uk/Christ-Passing-Maria-Escriva-Balaguer/dp/1889334464",
+    "https://www.amazon.co.uk/Christ-Passing-Josemar%C3%ADa-Escriv%C3%A1-ebook/dp/B004AM5O2I",
+    "https://www.amazon.co.uk/Christ-passing-Mar%C3%ADa-Escriv%C3%A1-Balaguer/dp/B0006W1QBE"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "friends-of-god",
+   "title": "Friends of God",
+   "subtitle": "Homilies",
+   "author": "St Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "A collection of homilies by St Josemaría Escrivá to help readers develop a lasting friendship with God.",
+   "isbn": "9780906138021",
+   "pages": 0,
+   "featured": true,
+   "status": "confirmed",
+   "evidence": "Amazon UK listing 9780906138021 carries the Scepter (U.K.) prefix 978-0-906138, and its summary says 'published by Scepter (U.K.) Ltd in 1981'. A Kindle edition (B004AM5NZQ) and a US edition (0933932839) also exist.",
+   "sources": [
+    "https://www.amazon.co.uk/Friends-God-Josemaria-Escriva-Balaguer/dp/0906138027",
+    "https://www.amazon.co.uk/Friends-God-Josemar%C3%ADa-Escriv%C3%A1-ebook/product-reviews/B004AM5NZQ",
+    "https://www.amazon.co.uk/Friends-God-Josemaria-Escriva/dp/0933932839"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "way-of-the-cross",
+   "title": "The Way of the Cross",
+   "subtitle": "",
+   "author": "St Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "St Josemaría Escrivá's meditations on the fourteen Stations, each followed by short points for prayer.",
+   "isbn": "9780906138076",
+   "pages": 0,
+   "featured": true,
+   "status": "confirmed",
+   "evidence": "Amazon UK listing 'The Way of the Cross: Escriva de Balaguer, Josemaria: 9780906138076' carries Scepter (U.K.)'s own ISBN prefix 978-0-906138. The description states only the form given by the title. No blurb was seen, and the search budget was exhausted.",
+   "sources": [
+    "https://www.amazon.co.uk/Way-Cross-Josemaria-Escriva-Balaguer/dp/0906138078"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "holy-rosary",
+   "title": "Holy Rosary",
+   "subtitle": "",
+   "author": "St Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "booklet",
+   "description": "St Josemaría Escrivá's short meditations on the Rosary, written in one sitting in 1931, with woodcut illustrations.",
+   "isbn": "9781889334929",
+   "pages": 0,
+   "featured": false,
+   "status": "likely",
+   "evidence": "The brief names it as a Scepter UK Escrivá title, but the editions seen on Amazon UK are Scepter Publishers (US) editions, 9781889334929 and 1889334448. Their summaries describe a compact book of rosary meditations written after Mass in 1931, with woodcut drawings. No 0906138 edition was seen. The search budget was exhausted, so there was no re-verification.",
+   "sources": [
+    "https://www.amazon.co.uk/Holy-Rosary-Josemaria-Escriva/dp/1889334928",
+    "https://www.amazon.co.uk/Holy-Rosary-Josemaria-Escriva/dp/1889334448"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "way-critical-historical-edition",
+   "title": "The Way: Critical-Historical Edition",
+   "subtitle": "",
+   "author": "St Josemaría Escrivá (ed. Pedro Rodríguez)",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "A 1,173-page hardback critical-historical edition of St Josemaría Escrivá's The Way, edited by Pedro Rodríguez.",
+   "isbn": "9780906138731",
+   "pages": 1173,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "scepter.uk has its own page (body_the_way_critical_edition.html) for 'The Way: Critical-Historical Edition' by Pedro Rodriguez. The page gives: published by Scepter on 9 January 2010, ISBN 9780906138731 (Scepter UK prefix), 1173 pages, hardback, 5.50 x 8.50 in.",
+   "sources": [
+    "http://scepter.uk/html/body_the_way_critical_edition.html"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "foundational-letters-introduction",
+   "title": "The Collection of Foundational Letters",
+   "subtitle": "Introduction",
+   "author": "José Luis Illanes",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "Introduction by José Luis Illanes to St Josemaría's thirty-eight Letters on Opus Dei, covering their genre, pre-history and writing.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "likely",
+   "evidence": "No new searches could be run (session WebSearch budget of 200 was already used up), so this rests on the earlier sweep. That sweep found an Amazon UK Kindle listing in the Foundational Letters series. Sibling volumes (Letters 3 and 4) were shown in summaries as published by Scepter UK Ltd, and this entry's own summary seems to credit the series to Scepter too, but the text was cut off. The series tie is strong but indirect. No price was seen.",
+   "sources": [
+    "https://www.amazon.co.uk/Collection-Foundational-Letters-Introduction-Foundation-ebook/dp/B09Q3MQH12"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "letter-3-res-omnes",
+   "title": "Letter 3: Res omnes",
+   "subtitle": "The Collection of Foundational Letters · 9 January 1932",
+   "author": "St Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "St Josemaría's 1932 Letter on aspects of the spirit of Opus Dei, with the mission of service as its thread.",
+   "isbn": "",
+   "pages": 256,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "The earlier sweep's summary of the Amazon UK Kindle listing names the publisher as Scepter UK Ltd, dated 13 February 2022, 256 pages. It could not be re-checked this session because the WebSearch budget was used up, and the evidence is a search summary, not a page read. No price was seen.",
+   "sources": [
+    "https://www.amazon.co.uk/Collection-Foundational-Letters-Josemaria-Foundation-ebook/dp/B09SGP84TL"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "letter-4-vos-autem",
+   "title": "Letter 4: Vos autem",
+   "subtitle": "The Collection of Foundational Letters · 16 July 1933",
+   "author": "St Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "St Josemaría's 1933 Letter on the path to follow in apostolic work and on evangelizing dialogue.",
+   "isbn": "",
+   "pages": 70,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "The earlier sweep's summary of the Amazon UK Kindle listing says the series is published by Scepter UK Ltd, dated 22 February 2022, 70 pages. It could not be re-checked this session because the WebSearch budget was used up. No price was seen.",
+   "sources": [
+    "https://www.amazon.co.uk/Collection-Foundational-Letters-Josemaria-Foundation-ebook/dp/B09T79PT61"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "in-conversation-with-god",
+   "title": "In Conversation with God",
+   "subtitle": "",
+   "author": "Francis Fernández",
+   "shelf": "prayer",
+   "kind": "set",
+   "description": "Francis Fernández's series of daily meditations, published as a complete set in seven volumes.",
+   "isbn": "0906138191",
+   "pages": 0,
+   "featured": true,
+   "status": "confirmed",
+   "evidence": "The ISBN 0906138191 uses Scepter UK's own 0-906138 prefix. The scepter.uk home page names the In Conversation with God series among its best-selling titles (seen in 3 earlier sweeps). It could not be re-checked this session because the WebSearch budget was used up. No price was seen.",
+   "sources": [
+    "http://www.scepter.uk/body_index.html",
+    "https://www.amazon.co.uk/Conversation-God-Complete-Meditations-Each/dp/0906138191",
+    "https://www.amazon.co.uk/Conversation-God-Meditations-Fernandez-Paperback/dp/B0169MAATI"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "jesus-as-friend",
+   "title": "Jesus as Friend",
+   "subtitle": "",
+   "author": "Salvatore Canals",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Short meditations by Salvatore Canals, drawn from St Josemaría's teaching, on vocation, interior life, hope and humility.",
+   "isbn": "9781889334035",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "scepter.uk has its own page for the title (html/body_jesus_as_friend.html), so Scepter UK sells it even though the ISBN has a US Scepter prefix (1-889334). This was found in 2 earlier sweeps and could not be re-checked this session because the WebSearch budget was used up. No price was seen.",
+   "sources": [
+    "http://www.scepter.uk/html/body_jesus_as_friend.html",
+    "https://www.amazon.co.uk/Jesus-as-Friend-salvatore-canals/dp/1889334030"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "interior-freedom",
+   "title": "Interior Freedom",
+   "subtitle": "",
+   "author": "Jacques Philippe",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Jacques Philippe on the space of inner freedom no one can take away, and growth in faith, hope and love.",
+   "isbn": "9781594170522",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "scepter.uk has its own page for the title (html/body_interior_freedom.html). The edition is Scepter Publishers (US), ISBN prefix 1594170, and Amazon UK also lists a Kindle edition. This was found in 2 earlier sweeps and could not be re-checked this session because the WebSearch budget was used up. No price was seen.",
+   "sources": [
+    "http://scepter.uk/html/body_interior_freedom.html",
+    "https://www.amazon.co.uk/Interior-Freedom-Jacques-Philippe/dp/1594170525",
+    "https://www.amazon.co.uk/Interior-Freedom-Jacques-Philippe-ebook/dp/B003V8BGI8"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "interior-freedom-study-guide",
+   "title": "Interior Freedom Study Guide",
+   "subtitle": "",
+   "author": "Marie Thibodeau",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "A study guide by Marie Thibodeau to accompany Jacques Philippe's Interior Freedom.",
+   "isbn": "9781594172892",
+   "pages": 0,
+   "featured": false,
+   "status": "doubtful",
+   "evidence": "The only evidence is an Amazon UK listing with a Scepter Publishers (US) ISBN (prefix 1594172). No sweep showed a scepter.uk page for it or Scepter (UK) as publisher, which the task requires before including a US Scepter title. It could not be re-checked this session because the WebSearch budget was used up. No price was seen.",
+   "sources": [
+    "https://www.amazon.co.uk/Interior-Freedom-Study-Guide/dp/1594172897"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "navarre-bible",
+   "title": "The Navarre Bible",
+   "subtitle": "",
+   "author": "",
+   "shelf": "prayer",
+   "kind": "set",
+   "description": "The Scripture text with commentary by the Faculty of Theology of the University of Navarra, issued in several volumes.",
+   "isbn": "",
+   "pages": 0,
+   "featured": true,
+   "status": "likely",
+   "evidence": "The scepter.uk home page names 'the Navarre Bible series' among its best-selling titles. But the site has no dedicated page for it, and the wording may be copied from the US Scepter site. Re-verification was not possible because the WebSearch budget was exhausted. No price seen.",
+   "sources": [
+    "http://www.scepter.uk/body_index.html"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "christ-on-earth",
+   "title": "Christ on Earth",
+   "subtitle": "",
+   "author": "Joseph Pich",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "",
+   "isbn": "9715540848",
+   "pages": 228,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Scepter UK's own site has a page for it (body_christ_on_earth.html): Joseph Pich, paperback, 228 pages, ISBN 971 554 084 8. That ISBN has a Sinag-Tala (Philippines) prefix, so Scepter UK sells it but did not publish it. No content blurb was seen, so the description covers form only. No price seen.",
+   "sources": [
+    "http://scepter.uk/html/body_christ_on_earth.html"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "putting-down-roots",
+   "title": "Putting Down Roots",
+   "subtitle": "Fr. Joseph Muzquiz and the Growth of Opus Dei",
+   "author": "John F. Coverdale",
+   "shelf": "lives",
+   "kind": "book",
+   "description": "John F. Coverdale's account of Fr Joseph Muzquiz and the beginnings of Opus Dei in the United States.",
+   "isbn": "9781594170812",
+   "pages": 152,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Scepter UK's own site has a page for it (body_putting_down_roots.html): John F. Coverdale, paperback, 152 pages, ISBN 9781594170812. The ISBN has the Scepter US prefix, so this is a US title that Scepter UK sells. No price seen.",
+   "sources": [
+    "http://scepter.uk/html/body_putting_down_roots.html"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "our-lives-in-his-hands",
+   "title": "Our Lives in His Hands",
+   "subtitle": "",
+   "author": "",
+   "shelf": "lives",
+   "kind": "book",
+   "description": "The story of Tomás Alvira and his wife Paquita, who raised a large family; their cause for beatification is open.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Scepter UK's own site has a page for it (body_our_lives_in_his_hands.html) describing the life of Tomas and Paquita. The evidence gathered names no author and no ISBN. No price seen.",
+   "sources": [
+    "http://scepter.uk/html/body_our_lives_in_his_hands.html"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "saxum",
+   "title": "Saxum",
+   "subtitle": "The Life of Álvaro del Portillo",
+   "author": "John F. Coverdale",
+   "shelf": "lives",
+   "kind": "book",
+   "description": "John F. Coverdale's biography of Blessed Álvaro del Portillo, who succeeded St Josemaría at the head of Opus Dei.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "doubtful",
+   "evidence": "Amazon.co.uk has print and Kindle listings, but the results do not name the publisher. It appears to be a Scepter US title. Nothing seen shows that scepter.uk lists it. Re-verification was not possible because the WebSearch budget was exhausted. No price seen.",
+   "sources": [
+    "https://www.amazon.co.uk/Saxum-Life-Alvaro-del-Portillo-ebook/dp/B00LOKG7CU",
+    "https://www.amazon.co.uk/Saxum-Life-Alvaro-del-Portillo/dp/B00OTY2GRI"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "opus-dei",
+   "title": "Opus Dei",
+   "subtitle": "Life and Work of Its Founder, Josemaria Escriva",
+   "author": "Peter Berglar",
+   "shelf": "lives",
+   "kind": "book",
+   "description": "Peter Berglar's life of St Josemaría Escrivá, drawing on Opus Dei archives and interviews with his closest associates.",
+   "isbn": "9780933932654",
+   "pages": 0,
+   "featured": false,
+   "status": "doubtful",
+   "evidence": "The Amazon.co.uk listing shows ISBN 9780933932654, which has the Scepter US prefix (0-933932), not the UK prefix. Nothing seen shows that scepter.uk lists it. Re-verification was not possible because the WebSearch budget was exhausted. No price seen.",
+   "sources": [
+    "https://www.amazon.co.uk/Opus-Dei-Founder-Josemaria-Escriva/dp/0933932650"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "mary-of-nazareth",
+   "title": "Mary of Nazareth",
+   "subtitle": "",
+   "author": "Federico Suárez",
+   "shelf": "lives",
+   "kind": "book",
+   "description": "Federico Suárez's spiritual biography of Mary, presented as fully human and chosen by God.",
+   "isbn": "9780906138090",
+   "pages": 249,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "The Amazon.co.uk listing shows ISBN 9780906138090, which has Scepter UK's own 0-906138 prefix. The summary gives 249 pages, published 1985. A separate Scepter US edition (188933488X) also exists. No price seen.",
+   "sources": [
+    "https://www.amazon.co.uk/Mary-Nazareth-Federico-Suarez/dp/0906138094",
+    "https://www.amazon.co.uk/MARY-NAZARETH-Federico-Suarez/dp/188933488X"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "joseph-of-nazareth",
+   "title": "Joseph of Nazareth",
+   "subtitle": "",
+   "author": "Federico Suárez",
+   "shelf": "lives",
+   "kind": "book",
+   "description": "Federico Suárez's spiritual biography of St Joseph, a companion to his Mary of Nazareth.",
+   "isbn": "9780906138083",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "The Amazon.co.uk listing shows ISBN 9780906138083, which has Scepter UK's own 0-906138 prefix. A Scepter US edition (9781594170201) also exists. No price seen.",
+   "sources": [
+    "https://www.amazon.co.uk/Joseph-Nazareth-Federico-Suarez/dp/0906138086",
+    "https://www.amazon.co.uk/Title-Joseph-Nazareth-Federico-Suarez/dp/1594170207"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "simon-peter",
+   "title": "Simon Peter",
+   "subtitle": "Lessons From the First Pope",
+   "author": "Georges Chevrot",
+   "shelf": "lives",
+   "kind": "book",
+   "description": "Georges Chevrot's study of St Peter, from walking on the water to his three denials of Christ.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "doubtful",
+   "evidence": "Only a Kindle listing on Amazon.co.uk was seen. Its summary says 'published by Scepter' without saying which Scepter, and it is probably the US house. Nothing seen shows that scepter.uk lists it. Re-verification was not possible because the WebSearch budget was exhausted. No price seen.",
+   "sources": [
+    "https://www.amazon.co.uk/Simon-Peter-Lessons-First-Pope-ebook/dp/B08XY7PXN1"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "successful-fathers",
+   "title": "Successful Fathers",
+   "subtitle": "",
+   "author": "James B. Stenson",
+   "shelf": "more",
+   "kind": "booklet",
+   "description": "James B. Stenson's booklet for fathers on the quiet, lasting ways they form their children's character.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "scepter.uk has its own product page (body_successful_fathers.html), and Stenson's Amazon author summary names Successful Fathers among his Scepter booklets. I could not run new searches because the session's WebSearch budget was used up (200/200), so this verdict rests on the evidence from the earlier sweeps. No price was seen.",
+   "sources": [
+    "http://scepter.uk/html/body_successful_fathers.html",
+    "https://www.amazon.co.uk/James-B.-Stenson/e/B001K7VRGI",
+    "https://www.amazon.co.uk/Books-James-Stenson/s?rh=n:266239,p_27:James Stenson"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "father-the-family-protector",
+   "title": "Father, the Family Protector",
+   "subtitle": "",
+   "author": "James B. Stenson",
+   "shelf": "more",
+   "kind": "book",
+   "description": "James B. Stenson on the father's role as protector of his family.",
+   "isbn": "9781594170331",
+   "pages": 0,
+   "featured": false,
+   "status": "doubtful",
+   "evidence": "The only evidence is Amazon UK listings (a print edition with ISBN 978-1-59417, the Scepter Publishers US prefix, and Kindle B0045UA8EY). No scepter.uk page was seen and Amazon UK does not show Scepter (UK) as publisher. The search budget was used up, so I could not check further.",
+   "sources": [
+    "https://www.amazon.co.uk/Father-Family-Protector-James-Stenson/dp/1594170339",
+    "https://www.amazon.co.uk/Father-Family-Protector-James-Stenson-ebook/dp/B0045UA8EY"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "compass",
+   "title": "Compass",
+   "subtitle": "A Handbook on Parent Leadership",
+   "author": "James B. Stenson",
+   "shelf": "more",
+   "kind": "book",
+   "description": "A handbook for parents by James B. Stenson on leadership in the family.",
+   "isbn": "9781594170003",
+   "pages": 0,
+   "featured": false,
+   "status": "doubtful",
+   "evidence": "The only evidence is an Amazon UK listing with ISBN 978-1-59417, the Scepter Publishers (US) prefix. No scepter.uk page was seen and Scepter (UK) is not shown as publisher. The search budget was used up, so I could not check further.",
+   "sources": [
+    "https://www.amazon.co.uk/Compass-Handbook-Leadership-James-Stenson/dp/1594170002"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "lifeline",
+   "title": "Lifeline",
+   "subtitle": "The Religious Upbringing of Your Children",
+   "author": "James B. Stenson",
+   "shelf": "more",
+   "kind": "book",
+   "description": "A book by James B. Stenson for parents on the religious upbringing of their children.",
+   "isbn": "9780933932975",
+   "pages": 0,
+   "featured": false,
+   "status": "doubtful",
+   "evidence": "The only evidence is an Amazon UK listing with ISBN 978-0-933932, a Scepter Publishers (US) prefix. No scepter.uk page was seen and Scepter (UK) is not shown as publisher. The search budget was used up, so I could not check further.",
+   "sources": [
+    "https://www.amazon.co.uk/Lifeline-Religious-Upbringing-Your-Children/dp/0933932979"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "covenanted-happiness",
+   "title": "Covenanted Happiness",
+   "subtitle": "Love and Commitment in Marriage",
+   "author": "Cormac Burke",
+   "shelf": "more",
+   "kind": "book",
+   "description": "Cormac Burke on marriage, covering sexual identity, family planning, divorce, contraception and the value of children.",
+   "isbn": "9781889334158",
+   "pages": 0,
+   "featured": false,
+   "status": "doubtful",
+   "evidence": "Amazon UK shows a US edition (ISBN 978-1-889334, the Scepter Publishers US prefix) and a Kenyan-ISBN edition (9966751076). Neither is tied to Scepter (U.K.) Ltd, and no scepter.uk page was seen. The search budget was used up, so I could not check further.",
+   "sources": [
+    "https://www.amazon.co.uk/Covenanted-Happiness-Love-Commitment-Marriage/dp/1889334154",
+    "https://www.amazon.co.uk/Covenanted-Happiness-Love-Commitment-Marriage/dp/9966751076"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "four-last-things",
+   "title": "The Four Last Things",
+   "subtitle": "The Supplication of Souls; A Dialogue on Conscience",
+   "author": "St Thomas More",
+   "shelf": "more",
+   "kind": "book",
+   "description": "Thomas More recommends frequent meditation on Death, Judgment, Pain and Joy as a remedy against the seven deadly sins.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "scepter.uk has its own product page (body_four_last_things.html) describing the book. The description is drawn from that page's summary. No price was seen, and I could not search further because the search budget was used up.",
+   "sources": [
+    "http://scepter.uk/html/body_four_last_things.html"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "gospel-in-the-home",
+   "title": "The Gospel in the Home",
+   "subtitle": "",
+   "author": "Georges Chevrot",
+   "shelf": "more",
+   "kind": "book",
+   "description": "Georges Chevrot on the Gospel in family life.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "doubtful",
+   "evidence": "The only evidence is an Amazon UK Kindle listing that does not name a publisher. No scepter.uk page or Scepter ISBN was seen. The search budget was used up, so I could not check further.",
+   "sources": [
+    "https://www.amazon.co.uk/Gospel-home-Georges-Chevrot-ebook/dp/B075S7WW1D"
+   ],
+   "prices_seen": []
+  },
+  {
+   "id": "junia",
+   "title": "Junia",
+   "subtitle": "",
+   "author": "Michael E. Giesler",
+   "shelf": "more",
+   "kind": "book",
+   "description": "A novel of life at the very beginning of Christianity, showing the new faith's attraction amid social and family struggle.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "scepter.uk has its own product page (body_junia.html) with a blurb calling it a fictional exploration of life at the beginning of Christianity. No price was seen, and I could not search further because the search budget was used up.",
+   "sources": [
+    "http://scepter.uk/html/body_junia.html"
+   ],
+   "prices_seen": []
+  }
+ ],
+ "dropped": [
+  {
+   "title": "Conversations with Saint Josemaria Escriva",
+   "why": "This is marked doubtful, and the only evidence, given in its own description, is the US Scepter Publishers edition. The task admits US titles only when scepter.uk lists them or Amazon UK shows Scepter (UK) as publisher. It is also not among the Escrivá works the brief names for Scepter UK. Restore it only if a scepter.uk or Amazon UK (Scepter UK) listing turns up."
+  },
+  {
+   "title": "Time for God",
+   "why": "This is marked doubtful, and the description's only claim is that Scepter Publishers of the United States published it. That fails the task's inclusion rule for US titles, and the description says nothing about the book. Restore it with a content description only if a scepter.uk or Amazon UK (Scepter UK) listing is found."
+  },
+  {
+   "title": "Thirsting for Prayer",
+   "why": "This is marked doubtful, and the description only says it is the US Scepter Publishers edition. That fails the inclusion rule, and the description has no content. Restore it only on scepter.uk or Amazon UK (Scepter UK) evidence."
+  },
+  {
+   "title": "The Narrow Gate",
+   "why": "This is marked doubtful, and the description only says Scepter Publishers of the United States published it. That fails the inclusion rule, and the description has no content."
+  },
+  {
+   "title": "Pocket New Testament",
+   "why": "This is marked doubtful, and the description credits Scepter Publishers (US), 2018. There is no UK listing, so it fails the inclusion rule. Its kind 'bible' is also used nowhere else in the list."
+  },
+  {
+   "title": "Man and Values",
+   "why": "This is marked doubtful, and the description only records the US Scepter Publishers 2008 edition. There is no scepter.uk or Amazon UK (Scepter UK) evidence, and the description has no content."
+  },
+  {
+   "title": "Havard Interview",
+   "why": "A scepter.uk web page (an interview with Alexandre Havard about 'Leadership for Everyone'), not a product. The results named no Havard book title, so there is nothing to list without inventing one. The verify stage could look for Havard titles on scepter.uk."
+  }
+ ]
+}

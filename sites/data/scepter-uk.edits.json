@@ -1,0 +1,69 @@
+{
+ "_shelves": [
+  {
+   "slug": "escriva",
+   "name": "Escrivá"
+  },
+  {
+   "slug": "prayer",
+   "name": "Prayer & Scripture"
+  },
+  {
+   "slug": "lives",
+   "name": "Lives"
+  },
+  {
+   "slug": "more",
+   "name": "Classics & more"
+  }
+ ],
+ "christ-on-earth": {
+  "description": "",
+  "shelf": "prayer"
+ },
+ "navarre-bible": {
+  "shelf": "prayer"
+ },
+ "successful-fathers": {
+  "shelf": "more"
+ },
+ "four-last-things": {
+  "shelf": "more"
+ },
+ "junia": {
+  "shelf": "more"
+ },
+ "father-the-family-protector": {
+  "shelf": "more"
+ },
+ "compass": {
+  "shelf": "more"
+ },
+ "lifeline": {
+  "shelf": "more"
+ },
+ "covenanted-happiness": {
+  "shelf": "more"
+ },
+ "gospel-in-the-home": {
+  "shelf": "more"
+ },
+ "way": {
+  "description": "St Josemaría Escrivá's first collection of short points for meditation and prayer, 999 in all."
+ },
+ "collection-of-foundational-letters-introduction": {
+  "id": "foundational-letters-introduction",
+  "title": "The Collection of Foundational Letters",
+  "subtitle": "Introduction"
+ },
+ "collection-of-foundational-letters-letter-3-res-omnes-9-janu": {
+  "id": "letter-3-res-omnes",
+  "title": "Letter 3: Res omnes",
+  "subtitle": "The Collection of Foundational Letters · 9 January 1932"
+ },
+ "collection-of-foundational-letters-letter-4-vos-autem-16-jul": {
+  "id": "letter-4-vos-autem",
+  "title": "Letter 4: Vos autem",
+  "subtitle": "The Collection of Foundational Letters · 16 July 1933"
+ }
+}

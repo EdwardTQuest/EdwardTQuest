@@ -1,0 +1,68 @@
+{
+ "_shelves": [
+  {
+   "slug": "escriva",
+   "name": "Escrivá"
+  },
+  {
+   "slug": "opus-dei",
+   "name": "Opus Dei"
+  },
+  {
+   "slug": "spiritual-life",
+   "name": "Spiritual Life"
+  },
+  {
+   "slug": "prayer",
+   "name": "Prayer"
+  },
+  {
+   "slug": "mary-saints",
+   "name": "Mary & Saints"
+  },
+  {
+   "slug": "marriage-family",
+   "name": "Marriage & Family"
+  },
+  {
+   "slug": "faith",
+   "name": "Faith"
+  },
+  {
+   "slug": "bibles-missals",
+   "name": "Bibles"
+  }
+ ],
+ "in-conversation-with-god": {
+  "subtitle": "Seven volumes",
+  "kind": "set"
+ },
+ "scepter-daily-bible": {
+  "subtitle": "RSV Catholic Edition",
+  "kind": "bible"
+ },
+ "scepter-catholic-bible-large-print": {
+  "kind": "bible"
+ },
+ "navarre-bible": {
+  "kind": "bible"
+ },
+ "collected-letters": {
+  "title": "The Collected Letters, Volume 1",
+  "subtitle": ""
+ },
+ "collected-letters-2": {
+  "title": "The Collected Letters, Volume 2",
+  "subtitle": ""
+ },
+ "collected-letters-3": {
+  "title": "The Collected Letters: Letter 29",
+  "subtitle": "On the Work of St. Gabriel in Opus Dei"
+ },
+ "mary-of-nazareth": {
+  "author": "Federico Suárez"
+ },
+ "joseph-of-nazareth": {
+  "author": "Federico Suárez"
+ }
+}

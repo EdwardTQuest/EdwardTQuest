@@ -1,0 +1,130 @@
+{
+ "publisher": "scepter-kenya",
+ "categories": [
+  "Escrivá",
+  "Bibles",
+  "Prayer",
+  "Spiritual Life",
+  "Family",
+  "Children",
+  "Theology"
+ ],
+ "dropped": [],
+ "books": [
+  {
+   "title": "Way of The Cross",
+   "author": "St. Josemaría Escrivá",
+   "kind": "book",
+   "category": "Escrivá",
+   "isbn": "",
+   "pages": 0,
+   "description": "St Josemaría's meditations on each station of the Cross, helping readers find paths to holiness in everyday circumstances.",
+   "prices": [
+    {
+     "format": "other",
+     "amount": 320,
+     "currency": "KES",
+     "source": "scepterpublishersafrica.co.ke",
+     "url": "https://scepterpublishersafrica.co.ke/product/way-of-the-cross/"
+    }
+   ],
+   "sources": [
+    "https://scepterpublishersafrica.co.ke/product/way-of-the-cross/"
+   ],
+   "verdict": "confirmed",
+   "verdict_reason": "The publisher's own product page is titled 'Way of The Cross – Scepter Publishers Africa'. The KSh 320 price was recorded by the earlier search stage from that page, where no format was given. I could not check it again because the session's web search budget (200 of 200) was used up before any new query ran. No Amazon price was seen.",
+   "featured": true
+  },
+  {
+   "title": "The Navarre Bible",
+   "author": "Faculty of Theology, University of Navarre",
+   "kind": "set",
+   "category": "Bibles",
+   "isbn": "",
+   "pages": 0,
+   "description": "Bible volumes with extensive Catholic commentary compiled by the faculty of the University of Navarre, drawing on Church documents and the Fathers.",
+   "prices": [],
+   "sources": [
+    "https://scepterpublishersafrica.co.ke/product-category/bibles/the-navarre-bible/",
+    "https://scepterpublishersafrica.com/"
+   ],
+   "verdict": "confirmed",
+   "verdict_reason": "The publisher's own site has a category page titled 'The Navarre Bible – Scepter Publishers Kenya' under Bibles, so the shop sells the series. It is a multi-volume series, not one title. Individual volumes and prices were not seen, and the search budget was used up, so nothing could be checked again.",
+   "featured": true
+  },
+  {
+   "title": "In Conversation With God",
+   "author": "Francis Fernandez",
+   "kind": "set",
+   "category": "Prayer",
+   "isbn": "",
+   "pages": 0,
+   "description": "Francis Fernandez's multi-volume series of daily meditations for prayer; the Kenyan shop lists six related products.",
+   "prices": [],
+   "sources": [
+    "https://scepterpublishersafrica.com/"
+   ],
+   "verdict": "confirmed",
+   "verdict_reason": "The earlier search stage found the scepterpublishersafrica.com homepage summary listing the store category 'In Conversation With God (6)'. The publisher's category list and its list of titles sold also name it. This rests on summary text, not on a product page title, and it could not be checked again because the search budget was used up. No individual volumes or prices were seen.",
+   "featured": true
+  },
+  {
+   "title": "Reasons For Making A Retreat",
+   "author": "David Chandler",
+   "kind": "book",
+   "category": "Spiritual Life",
+   "isbn": "",
+   "pages": 0,
+   "description": "David Chandler makes the case for spiritual retreats, which bring peace, clarity and renewed joy through reflection.",
+   "prices": [],
+   "sources": [
+    "https://scepterpublishersafrica.co.ke/product/reasons-for-making-a-retreat/"
+   ],
+   "verdict": "confirmed",
+   "verdict_reason": "The publisher's own product page is titled 'Reasons For Making A Retreat – Scepter Publishers Kenya' and names David Chandler as the author. No price or format was seen, and it may be a short booklet, which is not verified. It could not be checked again because the session's web search budget was used up.",
+   "featured": true
+  }
+ ],
+ "skeptic": {
+  "flags": [
+   {
+    "title": "Way of The Cross",
+    "issue": "The title casing is wrong: 'The' is capitalised mid-title, and the Kenyan product slug is /product/way-of-the-cross/. The author spelling 'St. Josemaría Escrivá' has a full stop that the description ('St Josemaría') does not use, so the list should settle on one form: St Josemaría Escrivá. The category 'Escrivá' is an author shelf, while every other entry has a subject category. The Kenyan site files devotional titles under Prayer Books, so this belongs under Prayer.",
+    "action": "fix",
+    "fix": {
+     "title": "Way of the Cross",
+     "author": "St Josemaría Escrivá",
+     "category": "Prayer"
+    }
+   },
+   {
+    "title": "In Conversation With God",
+    "issue": "The description ends with an internal research note ('the Kenyan shop lists six related products'). A reader cannot check it, and it is confusing because the English series runs to seven volumes. The description also repeats the author field. The title casing should have a lowercase 'with'.",
+    "action": "fix",
+    "fix": {
+     "title": "In Conversation with God",
+     "description": "Multi-volume series of daily meditations for prayer, arranged through the liturgical year."
+    }
+   },
+   {
+    "title": "Reasons For Making A Retreat",
+    "issue": "The title casing is wrong ('For', 'A'); the slug is /product/reasons-for-making-a-retreat/. The description states the book's promise as fact ('which bring peace, clarity and renewed joy'), so it reads as hype that no one can verify. It should say the book argues this. The author 'David Chandler' could not be re-checked because the search budget ran out, so confirm it before the list ships.",
+    "action": "fix",
+    "fix": {
+     "title": "Reasons for Making a Retreat",
+     "description": "Argues that a spiritual retreat, set apart for reflection, brings peace, clarity and renewed joy."
+    }
+   },
+   {
+    "title": "The Navarre Bible",
+    "issue": "The description is exactly 22 words, at the cap. It repeats the title word 'Navarre' and restates the author field ('compiled by the faculty of the University of Navarre'). Tighten it to the claims only.",
+    "action": "fix",
+    "fix": {
+     "description": "Scripture with extensive Catholic commentary drawing on Church documents and the Fathers, in multiple volumes."
+    }
+   }
+  ],
+  "summary": "I reviewed 4 entries and flagged 4, all as fixes; nothing needs dropping or merging. I found no duplicates and no titles from other publishers (such as the Sceptre imprint or fantasy novels). The fixes are mostly style: title casing on three titles, one spelling of the author as 'St Josemaría Escrivá' with no full stop, and moving Way of the Cross from an author shelf ('Escrivá') to the subject category Prayer. Three descriptions need rewriting: one ends with an internal research note a reader cannot check, one states the book's promise as fact, and one repeats the title and author. Two limits on this review: 1) The WebSearch budget ran out (200 of 200 calls used), so I could not spot-check anything online. The flags rest on the catalogue text, the product slugs given in the brief, and well-known facts about these Scepter titles. The one doubtful point I could not check is 'David Chandler' as author of Reasons for Making a Retreat; confirm it before the list ships. 2) The catalogue is badly incomplete: 4 titles against a shop that says it carries 400+. It has none of the Jacques Philippe, Fulton Sheen or Margaret A. Ogola titles the brief names, and no KSh prices. It is not a usable full list for the Kenya site."
+ },
+ "raw_count": 4
+}

@@ -1,0 +1,35 @@
+window.SITE = {
+  key: 'sinag-tala',
+  name: 'Sinag-Tala',
+  title: 'Sinag-Tala — Books, eBooks & Audiobooks · Philippines',
+  wordmark: 'Sinag-Tala',
+  locale: 'en-PH', currency: 'PHP',
+  motif: 'rays', mark: 'star',
+  // Their own logo stays: drop it in as sinag-tala/logo.png (or .svg) and set logo: 'logo.png'.
+  logo: null,
+  hero: { eyebrow: 'Makati · Philippines', title: 'Sinag-<em>Tala</em>' },
+  palette: [
+    { bg: '#1F2456', fg: '#FBF4E2', ac: '#F3B33A' },
+    { bg: '#1D5C8C', fg: '#F7F3EA', ac: '#F6C75E' },
+    { bg: '#D6553C', fg: '#FFF6EA', ac: '#FFD684' },
+    { bg: '#F4EEDC', fg: '#1F2456', ac: '#D6553C' },
+    { bg: '#255C4A', fg: '#F6F1E4', ac: '#F3C35C' },
+    { bg: '#5A2F5E', fg: '#F9EFF0', ac: '#F3B84E' },
+    { bg: '#F0A12E', fg: '#1F2456', ac: '#9E3520' },
+    { bg: '#14162E', fg: '#F2EBDA', ac: '#F3B33A' },
+  ],
+  formats: { print: 'Book', ebook: 'eBook', audio: 'Audiobook' },
+  kinds: { booklet: 'Booklet', set: 'Set', bible: 'Bible', dvd: 'DVD', other: '' },
+  words: {
+    browse: 'Browse', titles: 'titles', all: 'All', none: 'Nothing found', noneHint: 'Try an author, or one word from the title.',
+    unpriced: 'Price to follow', toPrice: '{n} to be priced at checkout', add: 'Add to cart', added: 'Added', basket: 'Cart', total: 'Subtotal',
+    checkout: 'Checkout', checkoutNote: 'Preview only — GCash and card checkout not connected yet.', empty: 'Your cart is empty.',
+    remove: 'Remove', more: 'More in', isbn: 'ISBN', pages: 'Pages', kind: 'Format',
+  },
+  footer: [
+    ['Sinag-Tala Publishers, Inc.', '6F Loubel Bldg., C. Roces Avenue', 'San Antonio Village, Makati City'],
+    ['Write to us', '<a href="mailto:sinagtalaofficial@gmail.com">sinagtalaofficial@gmail.com</a>'],
+    ['Books', 'to clarify, not confuse;', 'to uplift, not degrade;', 'to cheer up, not depress.'],
+  ],
+  note: 'Concept preview for Sinag-Tala Publishers, Inc. · catalogue compiled September 2026',
+};

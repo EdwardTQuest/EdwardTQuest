@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Four Bookshops</title>
+<meta name="description" content="Scepter London, Sinag-Tala, Scepter Kenya and Scepter Australia: every title as a book, an eBook and an audiobook.">
+<meta name="theme-color" content="#0E0F14">
+<link rel="stylesheet" href="scepter-uk/fonts.css">
+<link rel="stylesheet" href="sinag-tala/fonts.css">
+<link rel="stylesheet" href="scepter-kenya/fonts.css">
+<link rel="stylesheet" href="scepter-australia/fonts.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body { margin: 0; min-height: 100dvh; background: #0E0F14; color: #F2EEE6; font: 400 15px/1.5 'Instrument Sans', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  header { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 22px clamp(16px, 3vw, 36px); font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: #9C988F; }
+  main { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px; min-height: calc(100dvh - 64px); }
+  .house { position: relative; overflow: hidden; isolation: isolate; display: flex; flex-direction: column; justify-content: flex-end; min-height: 42vh; padding: clamp(24px, 4vw, 52px); color: var(--ink); background: var(--bg); text-decoration: none; }
+  .house::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--glow); }
+  .art { position: absolute; z-index: -1; right: -8%; top: -30%; width: 70%; aspect-ratio: 2 / 3; opacity: .55; --cv-ac: var(--ac); --cv-fg: var(--ink); transition: transform 1.2s cubic-bezier(.2, .7, .2, 1); }
+  .art svg { width: 100%; height: 100%; }
+  .art { -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 45%); mask-image: linear-gradient(90deg, transparent 0, #000 45%); }
+  .house:hover .art { transform: translateY(-3%) scale(1.03); }
+  .mark { width: 26px; color: var(--ac); margin-bottom: auto; }
+  .place { font: 600 11px/1 'Instrument Sans', system-ui, sans-serif; letter-spacing: .24em; text-transform: uppercase; color: var(--ac); }
+  .name { margin: 14px 0 12px; font-family: var(--display); font-weight: var(--w, 400); font-style: var(--st, normal); letter-spacing: var(--tr, -0.02em); font-size: clamp(2.6rem, 6vw, 5.2rem); line-height: .92; }
+  .meta { display: flex; align-items: center; gap: 12px; font-size: 14px; color: color-mix(in srgb, var(--ink) 70%, transparent); }
+  .meta svg { width: 18px; transition: transform .3s; }
+  .house:hover .meta svg { transform: translateX(4px); }
+  .house:focus-visible { outline: 2px solid var(--ac); outline-offset: -6px; }
+  @media (max-width: 760px) { main { grid-template-columns: 1fr; } .house { min-height: 58vw; } }
+  @media (prefers-reduced-motion: reduce) { .art, .meta svg { transition: none; } }
+</style>
+</head>
+<body>
+<header><span>Four bookshops</span><span>Book · eBook · Audiobook</span></header>
+<main id="houses"></main>
+<script src="engine/covers.js"></script>
+<script>
+  const HOUSES = /*HOUSES*/[];
+  const arrow = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  document.getElementById('houses').innerHTML = HOUSES.map(h => `
+    <a class="house" href="${h.key}/index.html" style="--bg:${h.bg};--ink:${h.ink};--ac:${h.ac};--glow:${h.glow};--display:${h.display};--w:${h.weight};--st:${h.style};--tr:${h.track}">
+      <div class="art">${Covers.heroArt({ key: h.key, motif: h.motif }, h.key + '-hub')}</div>
+      <span class="mark">${Covers.MARKS[h.mark]}</span>
+      <span class="place">${h.place}</span>
+      <span class="name">${h.name}</span>
+      <span class="meta">${h.count} titles ${arrow}</span>
+    </a>`).join('');
+</script>
+</body>
+</html>

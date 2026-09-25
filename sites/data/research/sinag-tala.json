@@ -1,0 +1,772 @@
+{
+ "publisher": "sinag-tala",
+ "categories": [
+  "Escrivá",
+  "Spirituality",
+  "Bibles & Catechism",
+  "Guidebooks",
+  "Lives",
+  "Children",
+  "Philosophy"
+ ],
+ "dropped": [
+  {
+   "title": "Siya ay Nabuhay na Mag-uli!",
+   "reason": "Only the title of a blog post (17 June 2020, apparently a Tagalog Easter item) was seen on sinagtalapublishersph.wordpress.com. It has no author and nothing shows it is a book or booklet for sale, so it is web content, not a catalogue item."
+  },
+  {
+   "title": "The Way; The Furrow; The Forge - All in One",
+   "reason": "Not a separate work. It was merged into 'The Way • Furrow • The Forge' as another edition of the same combined volume. Its ISBN 9789715540407 and URL were carried over."
+  },
+  {
+   "title": "Guía de la Confesión para niños",
+   "reason": "Not dropped outright. It is a Spanish-language edition (84- ISBN) of the same work, so it was merged into 'Guidebook for Confession for Children' with its URL and evidence. The evidence notes that it is probably a Spanish publisher's translation, not a Sinag-Tala product. The verify stage should decide whether to keep the link."
+  }
+ ],
+ "books": [
+  {
+   "title": "The Way",
+   "author": "St. Josemaría Escrivá",
+   "kind": "book",
+   "category": "Escrivá",
+   "isbn": "",
+   "pages": 0,
+   "description": "St. Josemaría Escrivá's first and best-known work, 999 brief points for prayer and meditation.",
+   "verdict": "confirmed",
+   "verdict_reason": "Found in the discovery stage on the publisher's own page, By Saint Josemaría Escrivá, with its blurb quoted (999 points; 4.5 million copies in 43 languages). Verify-stage searches could not run because the session's WebSearch budget was used up (200 of 200), so this was not re-checked and no ISBN or price was seen.",
+   "prices": [],
+   "sources": [
+    "https://sinagtalapublishers.wordpress.com/by-saint-josemaria-escriva/",
+    "https://sinagtalapublishersph.wordpress.com/by-saint-josemaria-escriva/",
+    "https://sinagtalapublishers.wordpress.com/"
+   ],
+   "featured": true
+  },
+  {
+   "title": "Furrow",
+   "author": "St. Josemaría Escrivá",
+   "kind": "book",
+   "category": "Escrivá",
+   "isbn": "",
+   "pages": 0,
+   "description": "A collection of 1,000 points made up of passages from Sacred Scripture, personal experiences and Escrivá's letters.",
+   "verdict": "confirmed",
+   "verdict_reason": "The publisher's By Saint Josemaría Escrivá page lists it with a quoted blurb (from discovery-stage evidence). It could not be re-verified because the search budget was used up. No ISBN or price was seen.",
+   "prices": [],
+   "sources": [
+    "https://sinagtalapublishers.wordpress.com/by-saint-josemaria-escriva/",
+    "https://sinagtalapublishers.wordpress.com/about-saint-josemaria-escriva-and-opus-dei/"
+   ],
+   "featured": false
+  },
+  {
+   "title": "The Forge",
+   "author": "St. Josemaría Escrivá",
+   "kind": "book",
+   "category": "Escrivá",
+   "isbn": "",
+   "pages": 0,
+   "description": "1,055 points leading the reader to the forge of divine love and a desire for holiness and apostolate.",
+   "verdict": "confirmed",
+   "verdict_reason": "The publisher's By Saint Josemaría Escrivá page lists it with a quoted blurb (from discovery-stage evidence). It could not be re-verified because the search budget was used up. No ISBN or price was seen.",
+   "prices": [],
+   "sources": [
+    "https://sinagtalapublishers.wordpress.com/by-saint-josemaria-escriva/"
+   ],
+   "featured": false
+  },
+  {
+   "title": "The Way • Furrow • The Forge",
+   "author": "St. Josemaría Escrivá",
+   "kind": "book",
+   "category": "Escrivá",
+   "isbn": "9789711172206",
+   "pages": 0,
+   "description": "Escrivá's The Way, Furrow and The Forge, three collections of brief points, published together in one volume.",
+   "verdict": "confirmed",
+   "verdict_reason": "The publisher's Escrivá page lists a combined volume, and an Amazon listing ('The Way, Furrow, The Forge', ISBN 9789711172206) carries the 971-117 Philippine prefix. A second Amazon listing ('The Way; The Furrow; The Forge - All in One', ISBN 9789715540407, prefix 971-554) is probably an earlier edition of the same book. None of this could be re-verified because the search budget was used up. No price was seen.",
+   "prices": [],
+   "sources": [
+    "https://sinagtalapublishers.wordpress.com/by-saint-josemaria-escriva/",
+    "https://www.amazon.com/Way-Furrow-Forge-Josemaria-Escriva/dp/9711172208",
+    "https://www.amazon.com/Way-Furrow-Forge-All-One/dp/9715540406"
+   ],
+   "featured": true
+  },
+  {
+   "title": "Christ is Passing By",
+   "author": "St. Josemaría Escrivá",
+   "kind": "book",
+   "category": "Escrivá",
+   "isbn": "",
+   "pages": 0,
+   "description": "The first published collection of homilies by St. Josemaría Escrivá, marked by his love for God and people.",
+   "verdict": "confirmed",
+   "verdict_reason": "The publisher's By Saint Josemaría Escrivá page lists it with a quoted blurb (from discovery-stage evidence). It could not be re-verified because the search budget was used up. No ISBN or price was seen.",
+   "prices": [],
+   "sources": [
+    "https://sinagtalapublishers.wordpress.com/by-saint-josemaria-escriva/"
+   ],
+   "featured": true
+  },
+  {
+   "title": "Friends of God",
+   "subtitle": "Homilies",
+   "author": "St. Josemaría Escrivá",
+   "kind": "book",
+   "category": "Escrivá",
+   "isbn": "9789715540353",
+   "pages": 0,
+   "description": "A collection of homilies preached by St. Josemaría Escrivá, in a Philippine edition carried by Sinag-Tala.",
+   "verdict": "likely",
+   "verdict_reason": "An Amazon listing ('Friends of God: Homilies by Josemaria Escriva', ISBN 9789715540353) uses the 971-554 Philippine prefix, which Sinag-Tala's Metaphysics also uses. It came up in two Sinag-Tala Escrivá searches. No quote from the publisher's own page was captured, and it could not be re-verified because the search budget was used up. No price was seen.",
+   "prices": [],
+   "sources": [
+    "https://sinagtalapublishers.wordpress.com/by-saint-josemaria-escriva/",
+    "https://www.amazon.com/Friends-God-Homilies-Josemaria-Escriva/dp/971554035X"
+   ],
+   "featured": true
+  },
+  {
+   "title": "Blessed Be Pain!",
+   "subtitle": "Lessons on Sickness and Suffering from St. Josemaría Escrivá",
+   "author": "Miguel Monge (ed.)",
+   "kind": "book",
+   "category": "Escrivá",
+   "isbn": "",
+   "pages": 0,
+   "description": "Lessons from St. Josemaría Escrivá on sickness and suffering, edited by Miguel Monge.",
+   "verdict": "confirmed",
+   "verdict_reason": "Listed on the publisher's New Releases page as 'BLESSED BE PAIN! Lessons on Sickness and Suffering from St. Josemaría Escrivá', edited by Miguel Monge (discovery-stage evidence). It could not be re-verified because the search budget was used up. No ISBN or price was seen.",
+   "prices": [],
+   "sources": [
+    "https://sinagtalapublishersph.wordpress.com/new-releases/"
+   ],
+   "featured": false
+  },
+  {
+   "title": "Journey to the Depths of Hope",
+   "author": "Jose Luis Olaizola",
+   "kind": "book",
+   "category": "Escrivá",
+   "isbn": "",
+   "pages": 0,
+   "description": "A well-known writer tracks Opus Dei's work in Latin America and meets people who received favors from St. Josemaría.",
+   "verdict": "confirmed",
+   "verdict_reason": "The publisher's About Saint Josemaría Escrivá and Opus Dei page (both wordpress sites) lists it with a blurb (discovery-stage evidence). It could not be re-verified because the search budget was used up. No ISBN or price was seen.",
+   "prices": [],
+   "sources": [
+    "https://sinagtalapublishers.wordpress.com/about-saint-josemaria-escriva-and-opus-dei/",
+    "https://sinagtalapublishersph.wordpress.com/about-saint-josemaria-escriva-and-opus-dei/"
+   ],
+   "featured": false
+  },
+  {
+   "title": "You Are the Light of the World",
+   "subtitle": "Explaining Opus Dei to the Youth",
+   "author": "Martin Rhonheimer",
+   "kind": "book",
+   "category": "Escrivá",
+   "isbn": "",
+   "pages": 0,
+   "description": "Martin Rhonheimer explains Opus Dei to young readers: how one can love and follow Christ in ordinary life.",
+   "verdict": "likely",
+   "verdict_reason": "The publisher's About Saint Josemaría Escrivá and Opus Dei page lists it with a short blurb (discovery-stage evidence). The exact title, subtitle and author could not be re-checked because the search budget was used up, and no ISBN, Amazon listing or price was seen.",
+   "prices": [],
+   "sources": [
+    "https://sinagtalapublishers.wordpress.com/about-saint-josemaria-escriva-and-opus-dei/"
+   ],
+   "featured": false
+  },
+  {
+   "title": "Kristong Hari",
+   "author": "San Josemaría Escrivá",
+   "kind": "other",
+   "category": "Escrivá",
+   "isbn": "",
+   "pages": 0,
+   "description": "Tagalog translation of St. Josemaría Escrivá's homily for the feast of Christ the King, 22 November 1970.",
+   "verdict": "doubtful",
+   "verdict_reason": "It appears only as a blog post (27 Nov 2020) on the publisher's wordpress site. There is no sign it is a booklet for sale: no ISBN, price or retail listing. It could not be checked further because the search budget was used up. It is probably web content, not a catalogue item.",
+   "prices": [],
+   "sources": [
+    "https://sinagtalapublishersph.wordpress.com/2020/11/27/kristong-hari/"
+   ],
+   "featured": false
+  },
+  {
+   "title": "Simon Peter",
+   "author": "George Chevrot",
+   "kind": "book",
+   "category": "Spirituality",
+   "isbn": "",
+   "pages": 0,
+   "description": "George Chevrot's book on the apostle Simon Peter, listed among the notable spirituality titles Sinag-Tala publishes.",
+   "verdict": "confirmed",
+   "verdict_reason": "Earlier evidence found 'Simon Peter by George Chevrot' among the notable titles on Sinag-tala's own WordPress site. No publisher blurb was seen, so the description gives only title, author and subject. It could not be re-checked because this session's search budget is used up (200/200). No price seen.",
+   "sources": [
+    "https://sinagtalapublishers.wordpress.com/",
+    "https://sinagtalapublishers.wordpress.com/spirituality/"
+   ],
+   "prices": [],
+   "featured": false
+  },
+  {
+   "title": "Yes, Father",
+   "subtitle": "Uniformity with God's Will",
+   "author": "Richard Graef",
+   "kind": "book",
+   "category": "Spirituality",
+   "isbn": "",
+   "pages": 0,
+   "description": "A practical guide for souls, with chapters on Scripture passages about surrendering one's will to God's will.",
+   "verdict": "confirmed",
+   "verdict_reason": "Listed on the Spirituality page of both Sinag-tala WordPress sites, with the blurb 'a practical guide of souls' and chapters on Scripture passages about surrendering to God's will. The description is based on that blurb. It could not be re-checked because the search budget is used up. No price seen.",
+   "sources": [
+    "https://sinagtalapublishersph.wordpress.com/spirituality/",
+    "https://sinagtalapublishers.wordpress.com/spirituality/"
+   ],
+   "prices": [],
+   "featured": false
+  },
+  {
+   "title": "Lukewarmness",
+   "subtitle": "The Devil in Disguise",
+   "author": "Francis Fernandez Carvajal",
+   "kind": "book",
+   "category": "Spirituality",
+   "isbn": "9789715540896",
+   "pages": 0,
+   "description": "A spiritual book by Francis Fernandez Carvajal on lukewarmness, subtitled The Devil in Disguise.",
+   "verdict": "likely",
+   "verdict_reason": "The Amazon listing reads 'Lukewarmness: The Devil in Disguise: Francis Fernandez Carvajal: 9789715540896' and came up in a Sinag-tala search. Earlier evidence ties it to the Sinag-tala Spirituality pages, and the ISBN uses the 971-554 prefix shared with other Sinag-Tala titles. No explicit publisher statement was seen and it could not be re-checked (search budget used up), so this is likely, not confirmed. The author's full name follows the Amazon listing. No blurb seen, so the description covers only author and subject. No price seen.",
+   "sources": [
+    "https://www.amazon.com/Lukewarmness-Disguise-Francis-Fernandez-Carvajal/dp/9715540899",
+    "https://sinagtalapublishersph.wordpress.com/spirituality/",
+    "https://sinagtalapublishers.wordpress.com/spirituality/"
+   ],
+   "prices": [],
+   "featured": false
+  },
+  {
+   "title": "Jesus as Friend",
+   "author": "Salvador Canals",
+   "kind": "book",
+   "category": "Spirituality",
+   "isbn": "",
+   "pages": 0,
+   "description": "Meditations by Salvador Canals on friendship with Jesus, in a Sinag-Tala paperback edition dated 1983.",
+   "verdict": "likely",
+   "verdict_reason": "The Amazon listing (ASIN B0018IIQGI, URL naming Michael Adams) was summarised as 'published by Sinag-Tala on January 1, 1983', a paperback of meditations. That tie to Sinag-Tala comes only from the soft search summary. Other editions credit Salvador (Salvatore) Canals as author, and Michael Adams, named in the URL, is probably the translator. Not on the publisher's own site in the evidence. Could not be re-checked (search budget used up). No price seen.",
+   "sources": [
+    "https://www.amazon.com/Jesus-as-friend-Michael-Adams/dp/B0018IIQGI"
+   ],
+   "prices": [],
+   "featured": false
+  },
+  {
+   "title": "Handbook of Prayers",
+   "author": "",
+   "kind": "book",
+   "category": "Guidebooks",
+   "isbn": "",
+   "pages": 0,
+   "description": "A complete treasury of prayers with the Order of Mass in Latin and English, in pocket and regular sizes.",
+   "verdict": "confirmed",
+   "verdict_reason": "Listed on Sinag-tala's Guidebooks and Booklets and Bibles and Catechisms pages as 'a complete treasury of prayers and Order of Mass in Latin and English, available in pocket and regular sizes.' No editor was named in the evidence, so author is blank. Could not be re-checked (search budget used up). No price seen.",
+   "sources": [
+    "https://sinagtalapublishers.wordpress.com/guidebooks-and-booklets/",
+    "https://sinagtalapublishers.wordpress.com/bibles-and-catechisms/"
+   ],
+   "prices": [],
+   "featured": true
+  },
+  {
+   "title": "Spiritual Direction",
+   "author": "Javier de Pedro",
+   "kind": "booklet",
+   "category": "Guidebooks",
+   "isbn": "",
+   "pages": 0,
+   "description": "A guide by Javier de Pedro to spiritual direction, listed among Sinag-Tala's guidebooks and booklets.",
+   "verdict": "confirmed",
+   "verdict_reason": "Listed on both Sinag-tala sites' Guidebooks and Booklets pages as 'Spiritual Direction by Javier de Pedro.' No blurb seen, so the description covers only form, author and subject. Could not be re-checked (search budget used up). No price seen.",
+   "sources": [
+    "https://sinagtalapublishers.wordpress.com/guidebooks-and-booklets/",
+    "https://sinagtalapublishersph.wordpress.com/guidebooks-and-booklets/"
+   ],
+   "prices": [],
+   "featured": false
+  },
+  {
+   "title": "How to Help Children in Their Studies",
+   "author": "Gerardo Castillo",
+   "kind": "booklet",
+   "category": "Guidebooks",
+   "isbn": "",
+   "pages": 0,
+   "description": "A guide by Gerardo Castillo on how to help children in their studies, listed among Sinag-Tala's guidebooks and booklets.",
+   "verdict": "confirmed",
+   "verdict_reason": "Listed on both Sinag-tala sites' Guidebooks and Booklets pages as 'How to Help Children in Their Studies by Gerardo Castillo.' No blurb seen, so the description covers only form, author and subject. Could not be re-checked (search budget used up). No price seen.",
+   "sources": [
+    "https://sinagtalapublishers.wordpress.com/guidebooks-and-booklets/",
+    "https://sinagtalapublishersph.wordpress.com/guidebooks-and-booklets/"
+   ],
+   "prices": [],
+   "featured": false
+  },
+  {
+   "title": "The Catholic Bible in Pictures",
+   "author": "",
+   "kind": "bible",
+   "category": "Bibles & Catechism",
+   "isbn": "",
+   "pages": 0,
+   "description": "An illustrated Catholic Bible, listed among Sinag-Tala's new releases and on its 2022 pricelist.",
+   "verdict": "confirmed",
+   "verdict_reason": "Listed on Sinag-tala's New Releases page and on the publisher's 2022 SPI Pricelist page. The pricelist showed 795.00 with a 20% discount. That snippet had no currency symbol, but it is the Philippine publisher's peso pricelist, so the price is recorded as PHP 795 (2022 list price before discount, format not stated). No Amazon price seen. Could not be re-checked (search budget used up).",
+   "sources": [
+    "https://sinagtalapublishersph.wordpress.com/new-releases/",
+    "https://sinagtalapublishersph.wordpress.com/spi-pricelist/"
+   ],
+   "prices": [
+    {
+     "format": "other",
+     "amount": 795,
+     "currency": "PHP",
+     "source": "sinagtalapublishersph.wordpress.com (2022 SPI pricelist, list price before 20% discount)",
+     "url": "https://sinagtalapublishersph.wordpress.com/spi-pricelist/"
+    }
+   ],
+   "featured": true
+  },
+  {
+   "title": "The New Testament",
+   "subtitle": "Confraternity Edition",
+   "author": "",
+   "kind": "bible",
+   "category": "Bibles & Catechism",
+   "isbn": "",
+   "pages": 0,
+   "description": "A pocket New Testament revising the Challoner-Rheims Version from the Latin Vulgate, with vinyl cover and ribbon marker.",
+   "verdict": "confirmed",
+   "verdict_reason": "Listed on both Sinag-tala sites' Bibles and Catechisms pages as 'a revision of the Challoner-Rheims Version translated from the Latin Vulgate', pocket size with vinyl cover and ribbon marker. Could not be re-checked (search budget used up). No price seen.",
+   "sources": [
+    "https://sinagtalapublishers.wordpress.com/bibles-and-catechisms/",
+    "https://sinagtalapublishersph.wordpress.com/bibles-and-catechisms/"
+   ],
+   "prices": [],
+   "featured": false
+  },
+  {
+   "title": "The Faith Explained",
+   "author": "Leo J. Trese",
+   "kind": "book",
+   "category": "Bibles & Catechism",
+   "isbn": "",
+   "pages": 0,
+   "description": "A clear presentation by Leo J. Trese of the central elements of the Catholic faith: the Creed, prayer and the commandments.",
+   "verdict": "confirmed",
+   "verdict_reason": "Listed on Sinag-tala's Bibles and Catechisms page with the blurb 'Presents central elements of the Catholic faith – the Creed, prayer and the commandments – in a clear and vivid writing style.' Whether Sinag-Tala prints its own edition or only distributes it was not shown. Could not be re-checked (search budget used up). No price seen.",
+   "sources": [
+    "https://sinagtalapublishers.wordpress.com/bibles-and-catechisms/"
+   ],
+   "prices": [],
+   "featured": true
+  },
+  {
+   "title": "Question & Answer Catholic Catechism",
+   "author": "Fr. Marciano Guzman",
+   "kind": "book",
+   "category": "Bibles & Catechism",
+   "isbn": "",
+   "pages": 0,
+   "description": "A question-and-answer catechism by Fr. Marciano Guzman, a simplified presentation of Catholic doctrine for teachers, students and ordinary faithful.",
+   "prices": [],
+   "sources": [
+    "https://sinagtalapublishers.wordpress.com/bibles-and-catechisms/"
+   ],
+   "verdict": "confirmed",
+   "verdict_reason": "Listed on Sinag-Tala's own Bibles and Catechisms page. That page's blurb calls it 'a useful instrument for teachers and students of religion'. Taken from catalogue-stage evidence: the search budget was used up, so this pass could not re-check the listing, author spelling, ISBN or price.",
+   "featured": false
+  },
+  {
+   "title": "The Virtues of 50 Saints",
+   "author": "",
+   "kind": "book",
+   "category": "Lives",
+   "isbn": "",
+   "pages": 0,
+   "description": "A book on fifty saints that answers what made them holy, presenting the virtues of Christian heroes.",
+   "prices": [],
+   "sources": [
+    "https://sinagtalapublishersph.wordpress.com/new-releases/",
+    "https://sinagtalapublishers.wordpress.com/lives-of-saints/"
+   ],
+   "verdict": "confirmed",
+   "verdict_reason": "Listed on Sinag-Tala's New Releases and Lives of Saints pages, which say it 'answers what made them holy'. No author or ISBN was seen. Taken from catalogue-stage evidence; the search budget was used up, so no re-check or price search was possible.",
+   "featured": false
+  },
+  {
+   "title": "The Bones of St. Peter",
+   "author": "John Evangelist Walsh",
+   "kind": "book",
+   "category": "Lives",
+   "isbn": "",
+   "pages": 0,
+   "description": "John Evangelist Walsh's account of the search for the body of St. Peter, the first pope.",
+   "prices": [],
+   "sources": [
+    "https://sinagtalapublishers.wordpress.com/lives-of-saints/"
+   ],
+   "verdict": "confirmed",
+   "verdict_reason": "Listed on Sinag-Tala's Lives of Saints page as 'a fascinating account of the search for the body of the first pope', so Sinag-Tala sells it. No ISBN was seen, so it is not established whether Sinag-Tala publishes its own edition or distributes another publisher's. Taken from catalogue-stage evidence; the search budget was used up, so no re-check was possible.",
+   "featured": false
+  },
+  {
+   "title": "The Story of a Family",
+   "subtitle": "The Home of St. Therese, the Little Flower",
+   "author": "",
+   "kind": "book",
+   "category": "Lives",
+   "isbn": "",
+   "pages": 0,
+   "description": "A portrait of the household of Louis and Zélie Martin, parents of St. Thérèse, as a model of Christian marriage.",
+   "prices": [],
+   "sources": [
+    "https://sinagtalapublishers.wordpress.com/lives-of-saints/",
+    "https://sinagtalapublishersph.wordpress.com/lives-of-saints/"
+   ],
+   "verdict": "confirmed",
+   "verdict_reason": "Listed on the Lives of Saints page of both Sinag-Tala sites, with a blurb about the Martin household as 'a vivid portrayal of a Christian marriage'. The listing seen names no author. The well-known book of this title is by Fr. Stéphane-Joseph Piat, but that was not checked here, so the author field is left blank. The search budget was used up, so no re-check was possible.",
+   "featured": false
+  },
+  {
+   "title": "Rising Sun Blinking",
+   "subtitle": "A Young Boy's Memoirs of the Japanese Occupation in the Philippines",
+   "author": "Jose Maria Lacambra",
+   "kind": "book",
+   "category": "Lives",
+   "isbn": "9789711172268",
+   "pages": 0,
+   "description": "Jose Maria Lacambra's memoir of his boyhood during the Japanese occupation of the Philippines in the Second World War.",
+   "prices": [],
+   "sources": [
+    "https://www.amazon.com/Rising-sun-blinking-occupation-Philippines/dp/9711172267"
+   ],
+   "verdict": "confirmed",
+   "verdict_reason": "The Amazon listing shows ISBN 9789711172268, which has Sinag-Tala's 978-971-117 prefix, and its summary gives Sinag-tala Publishers, January 1, 1994 as the publisher. Amazon writes the title in lower case; it is given here in title case. No price was seen, and the search budget was used up.",
+   "featured": false
+  },
+  {
+   "title": "My First Confession, My First Communion",
+   "author": "",
+   "kind": "book",
+   "category": "Children",
+   "isbn": "",
+   "pages": 0,
+   "description": "A children's guide to the Catholic faith in 29 lessons, each with story, Bible reference, resolution, catechism questions and exercises.",
+   "prices": [],
+   "sources": [
+    "https://sinagtalapublishers.wordpress.com/39-2/",
+    "https://sinagtalapublishersph.wordpress.com/childrens-books/",
+    "https://sinagtalapublishers.wordpress.com/guidebooks-and-booklets/"
+   ],
+   "verdict": "confirmed",
+   "verdict_reason": "Listed on Sinag-Tala's Children's Books and Guidebooks and Booklets pages, described as covering the main points of the Catholic faith in 29 lessons. No author or ISBN was seen. Taken from catalogue-stage evidence; the search budget was used up, so no re-check was possible.",
+   "featured": false
+  },
+  {
+   "title": "Children's Bible",
+   "author": "",
+   "kind": "bible",
+   "category": "Children",
+   "isbn": "",
+   "pages": 0,
+   "description": "Illustrated Bible lessons for children, from the Creation of Man to the Coronation of the Blessed Virgin, each with a resolution.",
+   "prices": [],
+   "sources": [
+    "https://sinagtalapublishers.wordpress.com/39-2/",
+    "https://sinagtalapublishersph.wordpress.com/childrens-books/"
+   ],
+   "verdict": "confirmed",
+   "verdict_reason": "Listed on the Children's Books page of both Sinag-Tala sites, as colour-illustrated lessons 'from the Creation of Man to the Coronation of the Blessed Virgin'. The exact listed title may be longer; no ISBN was seen. The search budget was used up, so no re-check was possible.",
+   "featured": false
+  },
+  {
+   "title": "Guidebook for Confession for Children",
+   "author": "Beatriz B. Brillantes (ed.)",
+   "kind": "booklet",
+   "category": "Children",
+   "isbn": "9789711170387",
+   "pages": 0,
+   "description": "An illustrated children's guide to the Sacrament of Reconciliation, explaining sin and its effects and how to prepare for confession.",
+   "prices": [],
+   "sources": [
+    "https://sinagtalapublishers.wordpress.com/39-2/",
+    "https://sinagtalapublishers.wordpress.com/guidebooks-and-booklets/",
+    "https://www.amazon.com/Guidebook-for-Confession-Children/dp/9711170388"
+   ],
+   "verdict": "confirmed",
+   "verdict_reason": "Listed on Sinag-Tala's Children's Books and Guidebooks pages. One Amazon listing has ISBN 9789711170387, which carries Sinag-Tala's 971-117 prefix. A second Amazon ISBN, 9789715541077, has a different prefix and may be another printing or distributor. The Spanish 'Guía de la Confesión para niños' (ISBN 9788498400113) looks like a Spanish publisher's translation, not a Sinag-Tala product, so it is left out. The editor credit comes from the input and was not re-checked; the search budget was used up.",
+   "featured": true
+  },
+  {
+   "title": "The Life of Josemaría Escrivá for Young Readers",
+   "author": "Michael Carceles and Elizabeth Torra",
+   "kind": "book",
+   "category": "Children",
+   "isbn": "",
+   "pages": 0,
+   "description": "An illustrated life of St. Josemaría Escrivá for young readers, following the important milestones of his life.",
+   "prices": [],
+   "sources": [
+    "https://sinagtalapublishers.wordpress.com/39-2/",
+    "https://sinagtalapublishers.wordpress.com/about-saint-josemaria-escriva-and-opus-dei/",
+    "https://sinagtalapublishers.wordpress.com/lives-of-saints/"
+   ],
+   "verdict": "confirmed",
+   "verdict_reason": "Listed on three Sinag-Tala pages: Children's Books, the St Josemaría/Opus Dei page and Lives of Saints ('This well-illustrated book focuses on the important milestones in the life of Saint Josemaría Escrivá'). The author spelling comes from the input and was not re-checked; no ISBN was seen. The search budget was used up.",
+   "featured": false
+  },
+  {
+   "title": "Alexia",
+   "subtitle": "A Story of Joy and Heroism in Suffering",
+   "author": "",
+   "kind": "book",
+   "category": "Children",
+   "isbn": "",
+   "pages": 0,
+   "description": "The story of Alexia, a 14-year-old girl who died of Ewing's sarcoma, showing peaceful optimism and serene acceptance of pain.",
+   "prices": [],
+   "sources": [
+    "https://sinagtalapublishers.wordpress.com/39-2/",
+    "https://sinagtalapublishersph.wordpress.com/childrens-books/"
+   ],
+   "verdict": "confirmed",
+   "verdict_reason": "Listed on the Children's Books page of both Sinag-Tala sites, with a blurb about a 14-year-old girl who died of Ewing's sarcoma. No author or ISBN was seen. Taken from catalogue-stage evidence; the search budget was used up, so no re-check was possible.",
+   "featured": false
+  },
+  {
+   "title": "Introduction to Philosophy",
+   "author": "Mariano Artigas",
+   "kind": "book",
+   "category": "Philosophy",
+   "isbn": "9789711171964",
+   "pages": 0,
+   "description": "An introduction to philosophy by Mariano Artigas, published in Sinag-Tala's Philosophy Books Series.",
+   "verdict": "confirmed",
+   "verdict_reason": "The ISBN carries Sinag-Tala's own 978-971-117 prefix. The Amazon listing 'Introduction to Philosophy (Philosophy Books Series): Mariano Artigas: 9789711171964' was seen earlier, and a search summary said Sinag-Tala Publishers, Inc. published it. The title is also cited from the publisher's Philosophy & Ethics page. This session's WebSearch budget ran out (200/200), so no new searches were possible. The verdict rests on the evidence gathered before. No price was seen.",
+   "sources": [
+    "https://www.amazon.com/Introduction-Philosophy-Books-Mariano-Artigas/dp/9711171961",
+    "https://sinagtalapublishers.wordpress.com/philosophy-ethics/",
+    "https://sinagtalapublishersph.wordpress.com/philosophy-ethics/"
+   ],
+   "prices": [],
+   "featured": false
+  },
+  {
+   "title": "Ethics",
+   "subtitle": "A Modern Version of Its Classic Themes",
+   "author": "Leonardo Polo",
+   "kind": "book",
+   "category": "Philosophy",
+   "isbn": "",
+   "pages": 0,
+   "description": "A study of ethics as it first arises in human experience, by Leonardo Polo.",
+   "verdict": "confirmed",
+   "verdict_reason": "It is listed on Sinag-Tala's own Philosophy & Ethics page, whose blurb reads 'an attempt to study ethics in statu nascente, as it arises in human experience.' No new searches were possible because this session's WebSearch budget is used up. No ISBN or price was seen.",
+   "sources": [
+    "https://sinagtalapublishers.wordpress.com/philosophy-ethics/",
+    "https://sinagtalapublishersph.wordpress.com/philosophy-ethics/"
+   ],
+   "prices": [],
+   "featured": false
+  },
+  {
+   "title": "Ethics in Medical Practice",
+   "author": "Michael A. Monge",
+   "kind": "book",
+   "category": "Philosophy",
+   "isbn": "",
+   "pages": 0,
+   "description": "A study of medical ethics by Michael A. Monge that presents areas of current debate in medicine.",
+   "verdict": "confirmed",
+   "verdict_reason": "It is listed on Sinag-Tala's own Philosophy & Ethics page, whose blurb says it 'presents areas of current debate in medicine.' The author's name follows the input and could not be checked again because this session's WebSearch budget is used up. No ISBN or price was seen.",
+   "sources": [
+    "https://sinagtalapublishers.wordpress.com/philosophy-ethics/"
+   ],
+   "prices": [],
+   "featured": false
+  },
+  {
+   "title": "History of Ancient Philosophy",
+   "author": "Ignatius Yarza",
+   "kind": "book",
+   "category": "Philosophy",
+   "isbn": "",
+   "pages": 0,
+   "description": "A history of ancient philosophy showing the strengths and weaknesses of early philosophers' arguments and their contribution to Christian philosophy.",
+   "verdict": "confirmed",
+   "verdict_reason": "It is listed on Sinag-Tala's own Philosophy & Ethics page, whose blurb says it shows 'the pitfalls, strengths and weaknesses of the arguments of early philosophers and their contribution to Christian philosophy.' No new searches were possible because this session's WebSearch budget is used up. No ISBN or price was seen.",
+   "sources": [
+    "https://sinagtalapublishers.wordpress.com/philosophy-ethics/"
+   ],
+   "prices": [],
+   "featured": false
+  },
+  {
+   "title": "Metaphysics",
+   "author": "Tomas Alvira, Luis Clavell, Tomas Melendo",
+   "kind": "book",
+   "category": "Philosophy",
+   "isbn": "9789715540308",
+   "pages": 0,
+   "description": "A study of metaphysics, the philosophy of being, by Tomas Alvira, Luis Clavell and Tomas Melendo.",
+   "verdict": "likely",
+   "verdict_reason": "The Amazon listing 'Metaphysics: Tomas Alvira, Luis Clavell, Tomas Melendo: 9789715540308' was seen, and a search summary said Sinag-Tala published a book on Metaphysics (January 1, 1991). But the ISBN prefix 971-554 is not Sinag-Tala's known 971-117 prefix, and the title was not seen on the publisher's own site. It fits alongside Artigas's 'Introduction to Philosophy' in the same philosophy series, but that link is not confirmed. No new searches were possible because this session's WebSearch budget is used up. No price was seen.",
+   "sources": [
+    "https://www.amazon.com/Metaphysics-Tomas-Alvira/dp/9715540309"
+   ],
+   "prices": [],
+   "featured": false
+  }
+ ],
+ "skeptic": {
+  "flags": [
+   {
+    "title": "The Way",
+    "issue": "The description calls The Way Escrivá's 'first' work, which is wrong: Holy Rosary (written 1931, published 1934) and Consideraciones espirituales (1934) came before Camino (1939). 'Best-known' is accurate.",
+    "action": "fix",
+    "fix": {
+     "description": "St. Josemaría Escrivá's best-known work: 999 brief points for prayer and meditation."
+    }
+   },
+   {
+    "title": "Kristong Hari",
+    "issue": "The author is spelled 'San Josemaría Escrivá' here but 'St. Josemaría Escrivá' in every other entry. The kind is 'other', but a single translated homily is a booklet. No source has tied this item to Sinag-Tala, so it is still unconfirmed and should be kept only if the original source names Sinag-Tala.",
+    "action": "fix",
+    "fix": {
+     "author": "St. Josemaría Escrivá",
+     "kind": "booklet"
+    }
+   },
+   {
+    "title": "Simon Peter",
+    "issue": "The author is misspelled: the French priest-author is Georges Chevrot, not George. The description is filler ('listed among the notable spirituality titles Sinag-Tala publishes'): it says where the book is listed, not what it is about.",
+    "action": "fix",
+    "fix": {
+     "author": "Georges Chevrot",
+     "description": "Georges Chevrot on the life and character of the apostle Peter."
+    }
+   },
+   {
+    "title": "Alexia",
+    "issue": "Wrong category. This is the life of Alexia González-Barros, a girl who died at 14, told as an example of holiness in suffering. It is a biography, not a children's book.",
+    "action": "fix",
+    "fix": {
+     "category": "Lives"
+    }
+   },
+   {
+    "title": "Friends of God",
+    "issue": "The second half of the description ('in a Philippine edition carried by Sinag-Tala') is a sourcing note, not a description. Replace it with what the book is: the second volume of Escrivá's homilies (after Christ is Passing By), on the Christian virtues.",
+    "action": "fix",
+    "fix": {
+     "description": "The second collection of St. Josemaría Escrivá's homilies, on the virtues of ordinary Christian life."
+    }
+   },
+   {
+    "title": "Journey to the Depths of Hope",
+    "issue": "'A well-known writer' is puffery that a reader cannot check. Name the author instead.",
+    "action": "fix",
+    "fix": {
+     "description": "Jose Luis Olaizola tracks Opus Dei's work in Latin America and meets people who received favors from St. Josemaría."
+    }
+   },
+   {
+    "title": "Blessed Be Pain!",
+    "issue": "The description only repeats the subtitle ('Lessons on Sickness and Suffering from St. Josemaría Escrivá') and the editor.",
+    "action": "fix",
+    "fix": {
+     "description": "St. Josemaría Escrivá's teaching on bearing illness and pain, gathered by Miguel Monge."
+    }
+   },
+   {
+    "title": "Lukewarmness",
+    "issue": "The description repeats the title and subtitle ('on lukewarmness, subtitled The Devil in Disguise') and says nothing about the content.",
+    "action": "fix",
+    "fix": {
+     "description": "Francis Fernandez Carvajal on how tepidity creeps into the spiritual life and how to overcome it."
+    }
+   },
+   {
+    "title": "Spiritual Direction",
+    "issue": "The description repeats the title and adds a sourcing note ('listed among Sinag-Tala's guidebooks and booklets') instead of describing the book.",
+    "action": "fix",
+    "fix": {
+     "description": "Javier de Pedro's booklet on the practice of spiritual direction."
+    }
+   },
+   {
+    "title": "How to Help Children in Their Studies",
+    "issue": "The description repeats the title word for word and adds a sourcing note ('listed among Sinag-Tala's guidebooks and booklets').",
+    "action": "fix",
+    "fix": {
+     "description": "Gerardo Castillo's booklet of practical advice for parents on supporting a child's schoolwork."
+    }
+   },
+   {
+    "title": "The Catholic Bible in Pictures",
+    "issue": "The description is a sourcing note ('listed among Sinag-Tala's new releases and on its 2022 pricelist'), not a description, and it repeats the title.",
+    "action": "fix",
+    "fix": {
+     "description": "The main events of Scripture, told through illustrations."
+    }
+   },
+   {
+    "title": "Handbook of Prayers",
+    "issue": "'Complete treasury' is an unverifiable superlative. Drop 'complete'.",
+    "action": "fix",
+    "fix": {
+     "description": "A treasury of prayers with the Order of Mass in Latin and English, in pocket and regular sizes."
+    }
+   },
+   {
+    "title": "Question & Answer Catholic Catechism",
+    "issue": "This is the only author entry with a clerical honorific ('Fr.'). Other priest-authors, such as Leo J. Trese, are listed without one. The description also repeats the title ('A question-and-answer catechism').",
+    "action": "fix",
+    "fix": {
+     "author": "Marciano Guzman",
+     "description": "Marciano Guzman's simplified presentation of Catholic doctrine for teachers, students and ordinary faithful."
+    }
+   },
+   {
+    "title": "Introduction to Philosophy",
+    "issue": "The description repeats the title ('An introduction to philosophy by…') and otherwise gives only the series name.",
+    "action": "fix",
+    "fix": {
+     "description": "Mariano Artigas's primer for readers new to the subject, in Sinag-Tala's Philosophy Books Series."
+    }
+   },
+   {
+    "title": "History of Ancient Philosophy",
+    "issue": "The description opens by repeating the title ('A history of ancient philosophy') and does not name the author.",
+    "action": "fix",
+    "fix": {
+     "description": "Ignatius Yarza weighs the strengths and weaknesses of the earliest philosophers' arguments and their contribution to Christian philosophy."
+    }
+   },
+   {
+    "title": "Metaphysics",
+    "issue": "The description opens by repeating the title ('A study of metaphysics').",
+    "action": "fix",
+    "fix": {
+     "description": "The philosophy of being, set out by Tomas Alvira, Luis Clavell and Tomas Melendo."
+    }
+   }
+  ],
+  "summary": "WebSearch spot-checks could not be run: this session had already used its 200-search budget, and every query returned 'search budget exhausted'. The flags therefore rest on the catalogue's own internal consistency, the house rules for descriptions, and well-established bibliographic facts. I found no duplicates. 'The Way • Furrow • The Forge' is a separate combined edition, so it is not a duplicate of the three single volumes.\n\nFlags (16):\n- **Factual:** The Way is not Escrivá's 'first' work.\n- **Name spelling:** George → Georges Chevrot.\n- **Category:** Alexia is a life, not a children's book.\n- **Consistency:**\n  - 'San' → 'St.' Josemaría Escrivá on Kristong Hari, which stays doubtful and has its kind changed to booklet.\n  - 'Fr.' honorific dropped for Marciano Guzman.\n- **Descriptions:** 11 rewrites for sourcing-note filler, title repetition or hype. These are Friends of God, Journey to the Depths of Hope, Blessed Be Pain!, Lukewarmness, Spiritual Direction, How to Help Children in Their Studies, The Catholic Bible in Pictures, Handbook of Prayers, Introduction to Philosophy, History of Ancient Philosophy and Metaphysics.\n\nOpen items I did not turn into fixes because I could not verify them:\n1. **Monge spelling:** 'Miguel Monge (ed.)' (Blessed Be Pain!) and 'Michael A. Monge' (Ethics in Medical Practice) are probably the same Navarra physician-priest, Miguel Ángel Monge. Use one spelling once the covers confirm it.\n2. **Missing authors:** Handbook of Prayers is usually credited to James Socias (ed.), and The Story of a Family to Stéphane-Joseph Piat. I added neither because no search result showed it. Alexia, The Virtues of 50 Saints, the Children's Bible and My First Confession, My First Communion also have no author.\n3. **Other publishers' books:** Several titles originate elsewhere (Bones of St. Peter, Story of a Family, Handbook of Prayers, Confraternity New Testament, possibly The Catholic Bible in Pictures). They are kept as titles Sinag-Tala distributes and sells, which the brief allows.\n4. **Unconfirmed attributions:** The authors credited for 'You Are the Light of the World' (Rhonheimer) and 'The Life of Josemaría Escrivá for Young Readers' (Carceles/Torra) could not be re-checked."
+ },
+ "raw_count": 38
+}

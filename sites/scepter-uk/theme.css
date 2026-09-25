@@ -1,0 +1,16 @@
+/* Scepter UK — London. Caslon (the English letter) on chalk paper; royal ink and gold. */
+:root {
+  --bar-h: 68px;
+  --paper: #F6F1E7; --paper-2: #EEE7D8; --ink: #15203A; --ink-2: #5D6272; --line: #DCD3C1;
+  --deep: #101A2F; --deep-ink: #F4EEDF; --deep-ink-2: #B5B2A8;
+  --accent: #C9A45C; --accent-ink: #101A2F; --accent-strong: #97722E; --focus: #97722E;
+  --display: 'Libre Caslon Display', 'Libre Caslon Text', Georgia, serif;
+  --text: 'Libre Caslon Text', Georgia, serif;
+  --ui: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --radius: 4px;
+  --word-case: uppercase; --word-track: 0.24em; --word-size: 1.12rem;
+  --hero-size: clamp(3.8rem, 11vw, 9.2rem); --hero-track: -0.015em;
+  --hero-glow: radial-gradient(900px 520px at 78% 8%, rgba(201, 164, 92, .18), transparent 62%), linear-gradient(180deg, #0E172A 0%, #15213B 100%);
+  --hero-art-opacity: .55;
+  --cover-track: 0;
+}

@@ -1,0 +1,33 @@
+window.SITE = {
+  key: 'scepter-kenya',
+  name: 'Scepter Kenya',
+  title: 'Scepter Kenya — Books, eBooks & Audiobooks · Nairobi',
+  wordmark: 'Scepter<small>Kenya</small>',
+  locale: 'en-KE', currency: 'KES',
+  motif: 'strata', mark: 'peaks', logo: null,
+  hero: { eyebrow: 'Nairobi', title: 'Scepter<small>Kenya</small>' },
+  palette: [
+    { bg: '#154233', fg: '#F4EDE0', ac: '#E3A437' },
+    { bg: '#A9492A', fg: '#FBF1E4', ac: '#F5CB7E' },
+    { bg: '#2F6690', fg: '#F3EFE7', ac: '#F2BA5C' },
+    { bg: '#E7D6A6', fg: '#17281F', ac: '#A9492A' },
+    { bg: '#4A3426', fg: '#F4EADB', ac: '#E0A845' },
+    { bg: '#6B7B3C', fg: '#FAF5E8', ac: '#F7D583' },
+    { bg: '#1C2430', fg: '#F1ECE2', ac: '#E3A437' },
+    { bg: '#D99A36', fg: '#17281F', ac: '#7C2D16' },
+  ],
+  formats: { print: 'Book', ebook: 'eBook', audio: 'Audiobook' },
+  kinds: { booklet: 'Booklet', set: 'Set', bible: 'Bible', dvd: 'DVD', other: '' },
+  words: {
+    browse: 'Browse', titles: 'titles', all: 'All', none: 'Nothing found', noneHint: 'Try an author, or one word from the title.',
+    unpriced: 'Price to follow', toPrice: '{n} to be priced at checkout', add: 'Add to cart', added: 'Added', basket: 'Cart', total: 'Subtotal',
+    checkout: 'Checkout', checkoutNote: 'Preview only — M-Pesa and card checkout not connected yet.', empty: 'Your cart is empty.',
+    remove: 'Remove', more: 'More in', isbn: 'ISBN', pages: 'Pages', kind: 'Format',
+  },
+  footer: [
+    ['Scepter Publishers Kenya', 'Nairobi'],
+    ['Every title', 'Book · eBook · Audiobook'],
+    ['Online', '<a href="https://scepterpublishersafrica.co.ke/">scepterpublishersafrica.co.ke</a>'],
+  ],
+  note: 'Concept preview for Scepter Publishers Kenya · catalogue compiled September 2026',
+};
