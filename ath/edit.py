@@ -42,7 +42,8 @@ ROMAN_NUM = re.compile(r'^(?=[ivxlcdm])m{0,4}(cm|cd|d?c{0,3})(xc|xl|l?x{0,3})(ix
 
 
 def known(word):
-    if ROMAN_NUM.match(word.strip("’'.")):
+    word = word.replace('\u2019', "'")
+    if ROMAN_NUM.match(word.strip("'.")):
         return True
     d = dictionary()
     w = word.lower().strip("’'")
@@ -382,10 +383,10 @@ def structure_battery(md):
     for i, p in enumerate(paras):
         if p.startswith(('#', '|', '>', ':::', '![', '* * *', '[^')):
             continue
-        if re.match(r'^[a-z]', p):
-            findings.append(('lowercase paragraph start', p[:70]))
-        if re.search(r'\b(\w+) \1\b', p, re.I) and not re.search(r'\b(that that|had had|very very)\b', p, re.I):
-            m = re.search(r'\b(\w+) \1\b', p, re.I)
+        if re.match(r'^[a-z]', p) and not (i and paras[i - 1].startswith(('|', '>'))):
+            findings.append(('lowercase paragraph start', p[:70]))       # after a verse or quotation the sentence may continue
+        if re.search(r'\b(\w+) \1\b(?!-)', p, re.I) and not re.search(r'\b(that that|had had|very very|on on|in in|to to)\b', p, re.I):
+            m = re.search(r'\b(\w+) \1\b(?!-)', p, re.I)
             findings.append(('doubled word', m.group(0) + ' … ' + p[max(0, m.start() - 30):m.end() + 30]))
         if p.count('“') != p.count('”'):
             nxt = paras[i + 1] if i + 1 < len(paras) else ''

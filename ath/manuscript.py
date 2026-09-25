@@ -274,9 +274,12 @@ def prepare_gutenberg(text, title='', author=''):
         m = re.match(r'\s*\[([A-Za-z0-9]{1,4})\]\s*(.*)$', blk, flags=re.S)
         if m and m.group(2) and not re.match(r'\s*\[[A-Za-z0-9]{1,4}\]\s*\[', blk):
             num, body = m.group(1), re.sub(r'\s+', ' ', m.group(2)).strip()
-            # the nearest preceding unbound call [num]
-            for bi in range(len(kept) - 1, max(-1, len(kept) - 40), -1):
+            # the nearest preceding unbound call [num], back to the previous heading (numbering
+            # restarts per chapter, and an essay's note 1 may sit two hundred paragraphs after its call)
+            for bi in range(len(kept) - 1, max(-1, len(kept) - 400), -1):
                 k = kept[bi].rfind(f'[{num}]')
+                if k < 0 and bi < len(kept) - 40 and _heading_like((kept[bi].strip().split('\n') or [''])[0]) and len(kept[bi].strip().split('\n')) == 1:
+                    break
                 if k >= 0:
                     uid += 1; defs[str(uid)] = body
                     kept[bi] = kept[bi][:k] + f'[^{uid}]' + kept[bi][k + len(num) + 2:]
