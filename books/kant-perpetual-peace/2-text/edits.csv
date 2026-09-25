@@ -1,7 +1,0 @@
-rule,count,cap,category,example
-hyphen joins,1,571,O," but forfeited. The myth- and poetry-loving Greeks, and, lat  →   but forfeited. The myth-and poetry-loving Greeks, and, late"
-curly quotes,0,11439,I,
-ellipses,31,1143,I,any desire to harm them ... sufficing to himself.”[^2] (*Dis  →  any desire to harm them . . . sufficing to himself.”[^2] (*D
-dashes,319,2859,I,apt in universal law.”  — TENNYSON: _Locksley Hall  :::  :::  →  apt in universal law.”  —TENNYSON: _Locksley Hall  :::  ::: 
-caps openings,0,571,C,
-spacing and ligatures,115,2859,N,t any desire to harm them . . . sufficing to himself.”[^2] (  →  t any desire to harm them. . . sufficing to himself.”[^2] (*

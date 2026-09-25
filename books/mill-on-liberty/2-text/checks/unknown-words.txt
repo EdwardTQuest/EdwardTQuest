@@ -29,7 +29,7 @@ fellow-men	2	e, either physical or moral, from their fellow-men, so long as it i
 unmolested	2	rivate property is robbery, ought to be unmolested when simply circulated through the pres
 uncustomary	2	s circumstances or his character may be uncustomary. Thirdly, though the customs be both go
 self-control	2	, and when he has decided, firmness and self-control to hold to his deliberate decision. And
-self-development	2	denial.”[^11] There is a Greek ideal of self-development, which the Platonic and Christian ideal
+self-development	2	denial.”[^12] There is a Greek ideal of self-development, which the Platonic and Christian ideal
 burthen	2	r, while to another it is a distracting burthen, which suspends or crushes all internal
 progressiveness	2	his have discovered the secret of human progressiveness, and must have kept themselves steadily
 self-respect	2	 folly, or want of personal dignity and self-respect; but they are only a subject of moral r
@@ -37,6 +37,8 @@ gambling-house	2	rson be free to be a pimp, or to keep a gambling-house? The cas
 gambling-houses	2	e members and their visitors—yet public gambling-houses should not be permitted. It is true tha
 inspirer	1	 and deplored memory of her who was the inspirer, and in part the author, of all that is
 re-examination	1	having been reserved for a more careful re-examination, which they are now never destined to r
+epigraph	1	::: {.epigraph}
+VON	1	—WILHELM VON HUMBOLDT: Sphere and Duties of Governme
 re-perusal	1	good deal of work—as, for instance, the re-perusal of the *Iliad* and the *Odyssey* in the
 far-off	1	intellectual sympathy he caught maybe a far-off reflection of the light which had irrad
 unimpressionable	1	ined according to the “dry light” of so unimpressionable a man as James Mill, the father; but th
@@ -46,7 +48,6 @@ dithyrambic	1	es of the *Autobiography* ring with the dithyrambic praise of his 
 sad-looking	1	 “iridescent,” “pale and passionate and sad-looking, a living-romance heroine of the royali
 living-romance	1	“pale and passionate and sad-looking, a living-romance heroine of the royalist volition and qu
 Garnett	1	pts at loquacity for two hours. But Dr. Garnett tells us, in his *Life of Carlyle*, tha
-L	1	[W. L. Courtney.]{.smallcaps}
 hoped-for	1	rs, this earth would already become the hoped-for Heaven.” These lines prove the intensit
 presentment	1	tract speculation, the lively and vivid presentment of concrete fact comes as a delightful 
 re-write	1	cheme complete, and then laboriously to re-write it in order to perfect the phrases and 
@@ -60,7 +61,6 @@ Philosophie	1	velopment, which we largely owe to the *Philosophie Positive* of M
 Auguste	1	owe to the *Philosophie Positive* of M. Auguste Comte, is so familiar and possibly so d
 oligarchical	1	King, or as a caste of nobles, or as an oligarchical plutocracy, or even as trades unions, i
 smallcaps	1	[W. L. Courtney.]{.smallcaps}
-VON	1	pment in its richest diversity.—WILHELM VON HUMBOLDT: *Sphere and Duties of Governm
 misnamed	1	e Will, so unfortunately opposed to the misnamed doctrine of Philosophical Necessity; bu
 self-justifying	1	mselves appear to them self-evident and self-justifying. This all but universal illusion is one
 contemptuousness	1	ir envy or jealousy, their arrogance or contemptuousness: but most commonly, their desires or fe
@@ -86,7 +86,6 @@ uncared	1	rong, we should leave all our interests uncared for, and all our dutie
 unperformed	1	terests uncared for, and all our duties unperformed. An objection which applies to all cond
 ninety-nine	1	 any matter not self-evident, there are ninety-nine persons totally incapable of judging of
 corrigible	1	oral being, namely, that his errors are corrigible. He is capable of rectifying his mistak
-di	1	tilitarianism of Aristotle, “*i maestri di color che sanno*,” the two headsprings 
 sanno	1	 of Aristotle, “*i maestri di color che sanno*,” the two headsprings of ethical as of
 headsprings	1	i maestri di color che sanno*,” the two headsprings of ethical as of all other philosophy. 
 corruptor	1	, by his doctrines and instructions, a “corruptor of youth.” Of these charges the tribuna
@@ -101,7 +100,7 @@ Fra	1	t down. Arnold of Brescia was put down. Fra Dolcino was put down. Savonaro
 propagandism	1	by long intervals of almost undisturbed propagandism. It is a piece of idle sentimentality t
 introducers	1	id, that we do not now put to death the introducers of new opinions: we are not like our fa
 twenty-one	1	all relations of life, was sentenced to twenty-one months’ imprisonment, for uttering, and
-jurymen	1	eparate occasions,[^7] were rejected as jurymen, and one of them grossly insulted by th
+jurymen	1	eparate occasions,[^8] were rejected as jurymen, and one of them grossly insulted by th
 self-convicted	1	er than affirm a falsehood. A rule thus self-convicted of absurdity so far as regards its prof
 ill-thought	1	 open avowal of any opinions, but to be ill-thought of and ill-spoken of, and this it ought
 ill-spoken	1	 opinions, but to be ill-thought of and ill-spoken of, and this it ought not to require a 
@@ -141,7 +140,6 @@ unprevailing	1	nst the prevailing opinion: against the unprevailing they may not
 uninfluential	1	ed, because they are in general few and uninfluential, and nobody but themselves feel much in
 unmeasured	1	ght degree without losing ground: while unmeasured vituperation employed on the side of th
 controversialists	1	I am happy to think that there are many controversialists who to a great extent observe it, and a
-ill-judged	1	rnment Press Prosecutions of 1858. That ill-judged interference with the liberty of public
 self-defence	1	sailed, which alone, in the exercise of self-defence, can legitimately punish attacks direct
 corn-dealers	1	o some mischievous act. An opinion that corn-dealers are starvers of the poor, or that priva
 starvers	1	s act. An opinion that corn-dealers are starvers of the poor, or that private property i
@@ -154,7 +152,7 @@ ape-like	1	s no need of any other faculty than the ape-like one of imitation. He
 co-exist	1	 strength, while others, which ought to co-exist with them, remain weak and inactive. It
 steam-engine	1	s own, has no character, no more than a steam-engine has a character. If, in addition to bei
 self-assertion	1	ses than merely to be abnegated. “Pagan self-assertion” is one of the elements of human worth,
-self-denial	1	s of human worth, as well as “Christian self-denial.”[^11] There is a Greek ideal of self-d
+self-denial	1	s of human worth, as well as “Christian self-denial.”[^12] There is a Greek ideal of self-d
 aliment	1	and animating, furnishing more abundant aliment to high thoughts and elevating feelings
 well-developed	1	duality which produces, or can produce, well-developed human beings, I might here close the ar
 ever-recurring	1	here were a succession of persons whose ever-recurring originality prevents the grounds of tho
@@ -225,5 +223,6 @@ half-examined	1	 mill-horse round, of rushing into some half-examined crudity wh
 pedantocracy	1	 have our bureaucracy degenerate into a pedantocracy, this body must not engross all the occ
 maladministration	1	 case, for the cure of rooted habits of maladministration in matters deeply affecting not the loc
 first-rate	1	ough perfectly justifiable in a case of first-rate national interest, would be wholly out 
+ill-judged	1	rnment Press Prosecutions of 1858. That ill-judged interference with the liberty of public
 corner-stone	1	tianity. . . . Toleration was the great corner-stone of the religious liberties of this coun
 fire-worshippers	1	g tribe, the descendants of the Persian fire-worshippers, flying from their native country befor

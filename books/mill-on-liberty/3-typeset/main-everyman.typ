@@ -1,4 +1,0 @@
-#import "/templates/typst/house.typ": book
-#show: book.with((title: "On Liberty", author: "John Stuart Mill", subtitle: "", translator: "", series: "The Athanasius Library", year: "2026", has_parts: false, opening_smallcaps: true, publication: ([#smallcaps(all: true)[athanasius]], [The Athanasius Library], [], [This Athanasius edition follows the text of the Project Gutenberg transcription of the 1869 fourth edition (Longmans).], [The text of this work is in the public domain in the United States: published before 1 January 1931; public domain in the United States.], [Set in EB Garamond. Printed in the United States of America.], [No claim is made to any pre-existing public-domain material reproduced here. Editorial arrangement © 2026 Athanasius.],), signature: "/books/mill-on-liberty/3-typeset/signature-everyman.png"), ed-name: "everyman")
-#set page(margin: (inside: 0.7in))
-#include "/books/mill-on-liberty/3-typeset/body.typ"

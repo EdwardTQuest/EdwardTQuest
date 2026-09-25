@@ -1,6 +1,6 @@
 # On Liberty — John Stuart Mill
 
-**Imprint:** Athanasius. **Created:** 2026-09-25 20:10.
+**Imprint:** Athanasius. **Created:** 2026-09-25 21:33.
 
 ## Edition used
 

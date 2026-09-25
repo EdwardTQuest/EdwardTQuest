@@ -1,6 +1,6 @@
 # Edit report — On Liberty
 
-Source: `0-source/pg34901.txt` (55,074 words). Import: {'pg transcriber notes removed': 0, 'pg page markers removed': 0, 'pg paragraph markers removed': 0, 'pg emphasis markup removed': 0, 'pg footnotes headings dropped': 4, 'pg footnote calls': 13, 'pg orphan note paragraphs': 1, 'pg front blocks dropped': 5, 'pg front prose kept': 0, 'pg contents runs removed': 1, 'pg contents and furniture dropped': 11, 'pg dedication kept': 1, 'pg chapter titles merged': 5, 'paragraphs': 142, 'chapters': 10, 'signature lines': 1, 'notes': 13, 'split titles merged': 0, 'front divisions': 1, 'levels': {'#plain': 2, '#num': 3, 'Chapter': 2}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 1.
+Source: `0-source/pg34901.txt` (55,074 words). Import: {'pg transcriber notes removed': 0, 'pg page markers removed': 0, 'pg paragraph markers removed': 0, 'pg emphasis markup removed': 0, 'pg footnotes headings dropped': 4, 'pg footnote calls': 14, 'pg front blocks dropped': 5, 'pg front prose kept': 0, 'pg contents runs removed': 1, 'pg half-title dropped': 1, 'pg contents and furniture dropped': 12, 'pg epigraph kept': 1, 'pg dedication kept': 1, 'pg chapter titles merged': 5, 'paragraphs': 144, 'chapters': 9, 'signature lines': 1, 'notes': 14, 'split titles merged': 0, 'front divisions': 1, 'levels': {'#plain': 2, '#num': 3, 'Chapter': 2}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 2.
 
 ## House-style rules (count / cap)
 
@@ -10,29 +10,29 @@ Source: `0-source/pg34901.txt` (55,074 words). Import: {'pg transcriber notes re
 | curly quotes | 247 | 11014 | ove his physical powers. "I never was a boy," he says; "neve  →  ove his physical powers. “I never was a boy,” |
 | ellipses | 2 | 1101 | ns, depend on human will.... *I had indeed partially learnt   →  ns, depend on human will. . . . *I had indeed |
 | dashes | 90 | 2753 | at is best in my writings--the friend and wife whose exalted  →  at is best in my writings—the friend and wife |
-| caps openings | 1 | 550 | Courtney.]{.smallcaps}  LONDON, *July 5th, 1901*.  The grand  →  Courtney.]{.smallcaps}  London, *July 5th, 19 |
+| caps openings | 1 | 550 | Courtney.]{.smallcaps}  LONDON, *July 5th, 1901*.  :::  ## C  →  Courtney.]{.smallcaps}  London, *July 5th, 19 |
 | spacing and ligatures | 0 | 2753 |  |
 
 ## Validation: 0 errors, 0 warnings
 
 
-## Stats: {'h2': 8, 'h2 in divisions': 2, 'words': 51924, 'h3': 3, 'h3 in divisions': 3, 'notes': 13, 'chapters': 6}
+## Stats: {'h2': 7, 'h2 in divisions': 2, 'words': 51925, 'h3': 3, 'h3 in divisions': 3, 'notes': 14, 'chapters': 5}
 
 ## Sequence proof
 
-- level 3 "#": 3 numbered, first 1, last 3
+- level 3 "#" (run 2): 3 numbered, first 1, last 3
 - level 2 "chapter": 5 numbered, first 1, last 5; expected 5: OK
 
-## Dictionary sweep: 309 unknown tokens of 51,804 (0.60%), 229 distinct; 35 names accepted
+## Dictionary sweep: 308 unknown tokens of 51,806 (0.59%), 228 distinct; 35 names accepted
 
-### Suspicious first — 1 likely errors (fix in the source, re-run)
+### Suspicious first — 0 likely errors (fix in the source, re-run)
 
-- **L** ×1 (score 4) — [W. L. Courtney.]{.smallcaps}
+- none
 
 ### The rest — archaic forms, names, other languages (read to the end; every entry must be one of those)
 
 - inspirer ×1 —  and deplored memory of her who was the inspirer, and in part the author, of all that is
-- VON ×1 — pment in its richest diversity.—WILHELM VON HUMBOLDT: *Sphere and Duties of Governm
+- VON ×1 — —WILHELM VON HUMBOLDT: Sphere and Duties of Governme
 - indefeasible ×1 — ly asserted freedom of conscience as an indefeasible right, and denied absolutely that a hum
 - gainers ×1 — ntal and spiritual. Mankind are greater gainers by suffering each other to live as seem
 - uncared ×1 — rong, we should leave all our interests uncared for, and all our duties unperformed. An
@@ -54,7 +54,6 @@ Source: `0-source/pg34901.txt` (55,074 words). Import: {'pg transcriber notes re
 - accessary ×1 — tify the moral anomaly of punishing the accessary, when the principal is (and must be) al
 - diffuser ×1 — l depository, and active circulator and diffuser, of the experience resulting from many 
 - von ×5 — e meaning of the doctrine which Wilhelm von Humboldt, so eminent both as a *savant*
-- di ×1 — tilitarianism of Aristotle, “*i maestri di color che sanno*,” the two headsprings 
 - de ×5 — nal relations of the individual, he is *de jure* amenable to those whose interests
 - co-operation ×2 — n of Women*, in which he had the active co-operation of his step-daughter. A book on Sociali
 - blamable ×2 — ns, accordingly, on what is laudable or blamable, are affected by all the multifarious c
@@ -70,6 +69,7 @@ Source: `0-source/pg34901.txt` (55,074 words). Import: {'pg transcriber notes re
 - uncustomary ×2 — s circumstances or his character may be uncustomary. Thirdly, though the customs be both go
 - burthen ×2 — r, while to another it is a distracting burthen, which suspends or crushes all internal
 - progressiveness ×2 — his have discovered the secret of human progressiveness, and must have kept themselves steadily
+- epigraph ×1 — ::: {.epigraph}
 - unimpressionable ×1 — ined according to the “dry light” of so unimpressionable a man as James Mill, the father; but th
 - encomium ×1 — women was made the occasion for another encomium. We shall hardly be wrong in attributin
 - dithyrambic ×1 — es of the *Autobiography* ring with the dithyrambic praise of his “almost infallible counse
@@ -94,7 +94,7 @@ Source: `0-source/pg34901.txt` (55,074 words). Import: {'pg transcriber notes re
 - cotemporaries ×1 — the best and most enlightened among his cotemporaries, it was the Emperor Marcus Aurelius. Ab
 - unblemished ×1 — reserved through life not only the most unblemished justice, but what was less to be expect
 - tragical ×1 — ity. To my mind this is one of the most tragical facts in all history. It is a bitter th
-- jurymen ×1 — eparate occasions,[^7] were rejected as jurymen, and one of them grossly insulted by th
+- jurymen ×1 — eparate occasions,[^8] were rejected as jurymen, and one of them grossly insulted by th
 - ill-thought ×1 —  open avowal of any opinions, but to be ill-thought of and ill-spoken of, and this it ought
 - ill-spoken ×1 —  opinions, but to be ill-thought of and ill-spoken of, and this it ought not to require a 
 - overtopping ×1 — h grew up a stately and spreading tree, overtopping the older and less vigorous growths, an
@@ -174,7 +174,7 @@ Source: `0-source/pg34901.txt` (55,074 words). Import: {'pg transcriber notes re
 - battle-field ×2 — on to differ. It is accordingly on this battle-field, almost solely, that the rights of the 
 - fellow-men ×2 — e, either physical or moral, from their fellow-men, so long as it is at their own risk and
 - self-control ×2 — , and when he has decided, firmness and self-control to hold to his deliberate decision. And
-- self-development ×2 — denial.”[^11] There is a Greek ideal of self-development, which the Platonic and Christian ideal
+- self-development ×2 — denial.”[^12] There is a Greek ideal of self-development, which the Platonic and Christian ideal
 - self-respect ×2 —  folly, or want of personal dignity and self-respect; but they are only a subject of moral r
 - gambling-house ×2 — rson be free to be a pimp, or to keep a gambling-house? The case is one of those which lie on 
 - gambling-houses ×2 — e members and their visitors—yet public gambling-houses should not be permitted. It is true tha
@@ -204,9 +204,9 @@ Source: `0-source/pg34901.txt` (55,074 words). Import: {'pg transcriber notes re
 
 ## Questions for the text gate (GATES.md)
 
-1. Suspicious list: 1 entries — each fixed in the source or explained?
+1. Suspicious list: 0 entries — each fixed in the source or explained?
 2. The rest of the dictionary list (228 entries): read to the end?
-3. Sequence proof: level 3 "#": 3 numbered, first 1, last 3; level 2 "chapter": 5 numbered, first 1, last 5; expected 5: OK — does it match what the source prints?
+3. Sequence proof: level 3 "#" (run 2): 3 numbered, first 1, last 3; level 2 "chapter": 5 numbered, first 1, last 5; expected 5: OK — does it match what the source prints?
 4. Structure battery: 0 findings — each decided?
 5. Rules: hyphen joins 0, curly quotes 247, ellipses 2, dashes 90, caps openings 1, spacing and ligatures 0 — plausible for 55,074 words?
 6. Would a reader who knows this book notice anything wrong in the first chapter you open at random?

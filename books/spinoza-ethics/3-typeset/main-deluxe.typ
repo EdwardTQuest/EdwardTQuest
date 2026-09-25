@@ -1,4 +1,0 @@
-#import "/templates/typst/house.typ": book
-#show: book.with((title: "Ethics", author: "Benedict de Spinoza", subtitle: "", translator: "R. H. M. Elwes", series: "The Athanasius Library", year: "2026", has_parts: true, opening_smallcaps: true, publication: ([#smallcaps(all: true)[athanasius]], [The Athanasius Library], [], [This Athanasius edition follows the text of the Elwes translation of 1883 (Project Gutenberg #3800).], [The text of this work is in the public domain in the United States: published before 1 January 1931; public domain in the United States.], [Set in EB Garamond. Printed in the United States of America.], [No claim is made to any pre-existing public-domain material reproduced here. Editorial arrangement © 2026 Athanasius.],), signature: "/books/spinoza-ethics/3-typeset/signature-deluxe.png"), ed-name: "deluxe")
-#set page(margin: (inside: 0.8in))
-#include "/books/spinoza-ethics/3-typeset/body.typ"

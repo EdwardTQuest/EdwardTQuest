@@ -1,7 +1,0 @@
-rule,count,cap,category,example
-hyphen joins,0,982,O,
-curly quotes,183,19644,I,"remeditated design. They ""are not made, but grow."" Our busin  →  remeditated design. They “are not made, but grow.” Our busin"
-ellipses,1,1964,I, the machinery will work.... I am quite sure that if some pe  →   the machinery will work. . . . I am quite sure that if some
-dashes,141,4911,I,ored) are the work of men--owe their origin and their whole   →  ored) are the work of men—owe their origin and their whole e
-caps openings,0,982,C,
-spacing and ligatures,9,4911,N, of Government.  | CHAP.  III. |   That the Ideally Best For  →   of Government.  | CHAP. III. | That the Ideally Best Form o

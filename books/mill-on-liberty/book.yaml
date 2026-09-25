@@ -39,62 +39,17 @@ typeset:
 status:
   edit:
     state: done
-    when: 2026-09-25 20:11
-    words: 51924
-    chapters: 6
-    unknown: 229
-    suspicious: 1
+    when: 2026-09-25 21:34
+    words: 51925
+    chapters: 5
+    unknown: 228
+    suspicious: 0
     errors: 0
     battery: 0
-  typeset:
-    deluxe:
-      pages: 176
-      spine_in: 0.625
-      inside_margin: 0.75
-      plates: 0
-      plates_on_sections: false
-      layout:
-        loose line: 2
-        runt: 10
-      pdf: 3-typeset/deluxe.pdf
-    everyman:
-      pages: 174
-      spine_in: 0.4527
-      inside_margin: 0.7
-      plates: 0
-      plates_on_sections: false
-      layout:
-        runt: 10
-        loose line: 5
-      pdf: 3-typeset/everyman.pdf
-    scholar:
-      pages: 220
-      spine_in: 0.5724
-      inside_margin: 0.85
-      plates: 0
-      plates_on_sections: false
-      layout:
-        runt: 8
-        loose line: 6
-      pdf: 3-typeset/scholar.pdf
-  epub:
-    state: done
-    when: 2026-09-25 20:12
-    problems: 0
-    size_mb: 1.31
-    cover: false
-  proof:
-    state: done
-    when: 2026-09-25 20:12
-    findings: 122
 checks:
   expected_sections: 5
 forced:
 - command: typeset
   gates:
   - text
-  when: 2026-09-25 20:11
-- command: epub
-  gates:
-  - text
-  when: 2026-09-25 20:12
+  when: 2026-09-25 21:34
