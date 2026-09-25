@@ -46,6 +46,47 @@ status:
     suspicious: 0
     errors: 0
     battery: 0
+  typeset:
+    deluxe:
+      pages: 176
+      spine_in: 0.625
+      inside_margin: 0.75
+      plates: 0
+      plates_on_sections: false
+      layout:
+        loose line: 2
+        runt: 10
+      pdf: 3-typeset/deluxe.pdf
+    everyman:
+      pages: 174
+      spine_in: 0.4527
+      inside_margin: 0.7
+      plates: 0
+      plates_on_sections: false
+      layout:
+        runt: 10
+        loose line: 5
+      pdf: 3-typeset/everyman.pdf
+    scholar:
+      pages: 218
+      spine_in: 0.5672
+      inside_margin: 0.85
+      plates: 0
+      plates_on_sections: false
+      layout:
+        loose line: 6
+        runt: 7
+      pdf: 3-typeset/scholar.pdf
+  epub:
+    state: done
+    when: 2026-09-25 21:35
+    problems: 0
+    size_mb: 1.31
+    cover: false
+  proof:
+    state: done
+    when: 2026-09-25 21:35
+    findings: 42
 checks:
   expected_sections: 5
 forced:
@@ -53,3 +94,27 @@ forced:
   gates:
   - text
   when: 2026-09-25 21:34
+- command: epub
+  gates:
+  - text
+  when: 2026-09-25 21:35
+- command: typeset
+  gates:
+  - text
+  when: 2026-09-25 21:36
+- command: typeset
+  gates:
+  - text
+  when: 2026-09-25 21:37
+- command: typeset
+  gates:
+  - text
+  when: 2026-09-25 21:38
+- command: typeset
+  gates:
+  - text
+  when: 2026-09-25 21:39
+- command: typeset
+  gates:
+  - text
+  when: 2026-09-25 21:41

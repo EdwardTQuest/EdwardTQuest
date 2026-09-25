@@ -1,0 +1,7 @@
+rule,count,cap,category,example
+hyphen joins,0,308,O,
+curly quotes,69,6175,I,"s, and asserted (if Plato's dialogue be grounded on a real c  →  s, and asserted (if Plato’s dialogue be grounded on a real c"
+ellipses,0,617,I,
+dashes,44,1543,I,s of right and wrong. For--besides that the existence of suc  →  s of right and wrong. For—besides that the existence of such
+caps openings,0,308,C,
+spacing and ligatures,0,1543,N,

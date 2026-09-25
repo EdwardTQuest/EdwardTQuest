@@ -1,0 +1,99 @@
+slug: mill-subjection-of-women
+title: The Subjection of Women
+subtitle: ''
+author: John Stuart Mill
+author_sort: John Stuart Mill
+translator: ''
+language: en
+series: The Athanasius Library
+year_first: 1869
+edition_credit: the Project Gutenberg transcription
+pd_basis: published before 1 January 1931; public domain in the United States
+source:
+  kind: gutenberg
+  gutenberg: 27083
+  archive: []
+  files:
+  - 0-source/pg27083.txt
+  note: ''
+plan:
+  summary: ''
+  audience: ''
+  structure: ''
+  art_subjects: []
+  movement: landscape
+art:
+  cover: null
+  plates: []
+  plates_wanted: 10
+  plate_mode: grayscale
+blurb: ''
+editions:
+- deluxe
+- everyman
+- scholar
+typeset:
+  chapters_open_recto: true
+  opening_smallcaps: true
+  signature_font: La Belle Aurore
+status:
+  edit:
+    state: done
+    when: 2026-09-25 21:37
+    words: 43967
+    chapters: 4
+    unknown: 194
+    suspicious: 3
+    errors: 0
+    battery: 0
+  typeset:
+    deluxe:
+      pages: 144
+      spine_in: 0.5625
+      inside_margin: 0.75
+      plates: 0
+      plates_on_sections: false
+      layout:
+        runt: 5
+        loose line: 1
+      pdf: 3-typeset/deluxe.pdf
+    everyman:
+      pages: 138
+      spine_in: 0.3591
+      inside_margin: 0.6
+      plates: 0
+      plates_on_sections: false
+      layout:
+        runt: 3
+      pdf: 3-typeset/everyman.pdf
+    scholar:
+      pages: 178
+      spine_in: 0.4632
+      inside_margin: 0.85
+      plates: 0
+      plates_on_sections: false
+      layout:
+        runt: 5
+        loose line: 5
+      pdf: 3-typeset/scholar.pdf
+  epub:
+    state: done
+    when: 2026-09-25 21:37
+    problems: 0
+    size_mb: 1.29
+    cover: false
+  proof:
+    state: done
+    when: 2026-09-25 21:38
+    findings: 20
+checks:
+  expected_sections: 4
+forced:
+- command: typeset
+  gates:
+  - text
+  when: 2026-09-25 21:37
+- command: epub
+  gates:
+  - text
+  when: 2026-09-25 21:37
