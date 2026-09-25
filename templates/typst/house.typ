@@ -36,6 +36,7 @@
 #let epigraph(own-page: false, body) = if own-page {
   pagebreak(to: "odd", weak: true)
   page(header: none, footer: none)[
+    #metadata("part") <partpage>
     #v(30%)
     #block(inset: (left: 10%, right: 10%), breakable: false)[
       #set par(justify: false, first-line-indent: 0em)
