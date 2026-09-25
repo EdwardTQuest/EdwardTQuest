@@ -17,7 +17,8 @@ audiobook at one price: the price Amazon lists.
 - **On a laptop, no network:** open `dist/scepter-uk.html` (or any of the four). Each is one
   self-contained file: fonts, styles, scripts and catalogue inlined. AirDrop or email it to a phone.
 - **As a site:** serve this folder (`npx http-server sites` or any static host) and open `/`.
-  Every page also works straight from `file://`.
+  Every page also works straight from `file://`. `vercel.json` deploys the folder as it stands
+  (`vercel --cwd sites`), with `noindex` so the previews stay out of search engines.
 
 ## What's where
 
