@@ -79,3 +79,4 @@ Read first, write last.
 - 2026-09-25 15:19 · **cover** · layouts { deluxe: plate, everyman: plate, scholar: plate }; contrast { deluxe: 11.17, everyman: 11.17, scholar: 11.17 }; 10 plates. Read 1-plan/cover-report.md, look at cover-contact.jpg, then decide the cover gate.
 - 2026-09-25 15:19 · **proof** · PROOF.md written; findings: structure and sequence 12, page layout 13, dictionary sweep 114, apparatus 0, cross-edition consistency 0, mechanical 0, render and look 4
 - 2026-09-25 15:32 · **edit** · manuscript.md written: 10,395 words, 2 chapters, 0 notes; 0 errors, 0 warnings; unknown words 71; see 2-text/edit-report.md
+- 2026-09-25 18:03 · **edit** · manuscript.md written: 10,395 words, 2 chapters, 0 notes; 0 errors, 0 warnings; unknown words 70; see 2-text/edit-report.md

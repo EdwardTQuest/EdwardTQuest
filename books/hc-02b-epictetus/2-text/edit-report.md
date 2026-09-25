@@ -22,12 +22,11 @@ Source: `0-source/HC-02b-epictetus-edited-text.txt` (10,654 words). Import: {'pa
 
 - level 3 "#": 80 numbered, first 1, last 80
 
-## Dictionary sweep: 113 unknown tokens of 10,589 (1.07%), 71 distinct; 20 names accepted
+## Dictionary sweep: 112 unknown tokens of 10,590 (1.06%), 70 distinct; 20 names accepted
 
-### Suspicious first — 6 likely errors (fix in the source, re-run)
+### Suspicious first — 5 likely errors (fix in the source, re-run)
 
 - **Xxviti** ×1 (score 5) — Xxviti Concerning the Gods, there are who deny
-- **D** ×1 (score 4) — about the middle of the first century A.D. His early history is unknown till we f
 - **ts** ×1 (score 4) — Antisthenes?* Hast thou never heard?—It ts a kingly thing, O Cyrus, to do well and
 - **Tf** ×1 (score 4) — alternation is seen in earthly things? “Tf then all things that grow, nay, our own
 - **T** ×6 (score 3) — I am an Athenian or a Corinthian,” but “T am a citizen of the world.”
@@ -118,7 +117,7 @@ Source: `0-source/HC-02b-epictetus-edited-text.txt` (10,654 words). Import: {'pa
 
 ## Questions for the text gate (GATES.md)
 
-1. Suspicious list: 6 entries — each fixed in the source or explained?
+1. Suspicious list: 5 entries — each fixed in the source or explained?
 2. The rest of the dictionary list (65 entries): read to the end?
 3. Sequence proof: level 3 "#": 80 numbered, first 1, last 80 — does it match what the source prints?
 4. Structure battery: 5 findings — each decided?

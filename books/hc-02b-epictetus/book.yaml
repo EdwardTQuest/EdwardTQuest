@@ -249,11 +249,11 @@ typeset:
 status:
   edit:
     state: done
-    when: 2026-09-25 15:32
+    when: 2026-09-25 18:03
     words: 10395
     chapters: 2
-    unknown: 71
-    suspicious: 6
+    unknown: 70
+    suspicious: 5
     errors: 0
     battery: 5
   typeset:

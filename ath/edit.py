@@ -244,7 +244,7 @@ def drop_title_block(body, title, author):
 def dictionary_sweep(md):
     fm, body = M.split_front_matter(md)
     body = re.sub(r'^#.*$', '', body, flags=re.M)
-    body_t = re.sub(r'\b[A-Z]\.(?=\s|[A-Z]\.)', ' ', body)      # A.D., B.C., C. Musonius: initials are not words
+    body_t = re.sub(r'\b[A-Z]\.(?![A-Za-z])', ' ', body)          # A.D., B.C., C. Musonius: initials are not words
     tokens = re.findall(r"[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ’'-]*[A-Za-zÀ-ÿ]|[A-Za-zÀ-ÿ]", body_t)
     counts = collections.Counter(tokens)
     unknown, names = {}, {}
