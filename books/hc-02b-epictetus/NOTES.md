@@ -52,3 +52,12 @@ Translation first published 1903 (Golden Treasury), this setting 1909; before 1 
 Shortlist in `1-plan/art-shortlist.md`; automatic pick was Corot, *Dance under the Trees at the
 Edge of the Lake* (NGA, 1867) — a fair mood for the book; Inness, *Spring Blossoms* second. To be
 looked at by an art reviewer (templates/briefs/art.md) before use.
+
+## Gates
+
+- 2026-09-25 15:17 · **plan** · pass · Test book: plan filled by hand in book.yaml; Epictetus, 1909 Collier setting verified in pipeline 1; subjects set; blurb 96 words (short, acceptable for a test) · overseer
+- 2026-09-25 15:17 · **text** · pass · Test book: suspicious list read; ts/Tf/Xxviti and four lost note calls are source defects recorded in NOTES.md; sequence 1..80 clean; passing to exercise the pipeline · overseer
+- 2026-09-25 15:17 · **art** · pass · Test book only: stand-in photographs, not paintings; real art gate must be decided on a fetched painting from a machine with network · overseer
+- 2026-09-25 15:17 · **typeset** · pass · Test book: pages looked at (docs/samples sheets); runts on 15/18/19/22 tolerable in a 60-page test; no widows or orphans · overseer
+- 2026-09-25 15:17 · **epub** · pass · Test book: structure and text equivalence pass; ten plates present; not opened in a reader here · overseer
+- 2026-09-25 15:17 · **cover** · pass · Test book: layouts and contrast measured; stand-in photographs; real decision deferred to a fetched painting · overseer

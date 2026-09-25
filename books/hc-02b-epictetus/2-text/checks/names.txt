@@ -5,6 +5,7 @@ Florus	2
 Felicion	2
 Gyara	2
 Hierapolis	1
+C	1
 Epirus	1
 Arrian	1
 Encheiridion	1

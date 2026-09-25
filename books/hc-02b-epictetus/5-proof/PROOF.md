@@ -5,7 +5,8 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 | # | lens | scope | findings | status |
 |---|---|---|---|---|
 | 3 | structure and sequence | every heading and paragraph of manuscript.md (10,395 words, 2 chapters) | 12 | findings |
-| 5 | dictionary sweep | every token of the body (10,593); wordlist + house list; names accepted when capitalised mid-sentence (20) | 102 | read the list |
+| 4 | page layout | every page of every PDF: widows, orphans, runts, hyphen stacks, loose lines, stranded headings, thin chapter ends | 13 | findings |
+| 5 | dictionary sweep | every token of the body (10,593); wordlist + house list; names accepted when capitalised mid-sentence (21) | 114 | read the list |
 | 7 | apparatus | contents vs headings, note calls vs notes, front and back matter present in every edition | 0 | clean |
 | 8 | cross-edition consistency | the words of manuscript.md against the text of each PDF and of the EPUB | 0 | clean |
 | 9 | mechanical | PDF page size, page count, embedded fonts; EPUB structure (see lens 8) | 0 | clean |
@@ -36,16 +37,26 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 - stray mark: …to show thyself fair in God’s * sight; long to be pure with t…
 - stray mark: … you cannot show me one fully _ modelled, let me at least see…
 
-## Lens 5 · dictionary sweep — 102 (read the list)
-*Scope:* every token of the body (10,593); wordlist + house list; names accepted when capitalised mid-sentence (20)
+## Lens 4 · page layout — 13 (findings)
+*Scope:* every page of every PDF: widows, orphans, runts, hyphen stacks, loose lines, stranded headings, thin chapter ends
+
+- deluxe: {'runt': 4} — see 3-typeset/typeset-report.md for the pages
+- everyman: {'runt': 4} — see 3-typeset/typeset-report.md for the pages
+- scholar: {'loose line': 2, 'runt': 3} — see 3-typeset/typeset-report.md for the pages
+
+## Lens 5 · dictionary sweep — 114 (read the list)
+*Scope:* every token of the body (10,593); wordlist + house list; names accepted when capitalised mid-sentence (21)
 
 - dost ×9 — In what character dost thou now come forward? As a witness sum
+- T ×6 — I am an Athenian or a Corinthian,” but “T am a citizen of the world.”
 - hast ×5 —  take up his abode there. “Friend, thou hast forgotten thine intention! This was not
 - didst ×5 — ill the appointed round of office. Thou didst not come to choose out what places are 
 - wouldst ×4 — eds. Were an image of God present, thou wouldst not dare to act as thou dost, yet, when
 - to-day ×3 — selves. When you have had enough to eat to-day, you sit down and weep about to-morrow’
+- Ts ×3 — er aught that necessity lays upon you.—“Ts this oath like theirs?” They swear to h
 - bearest ×3 — d whom thou exercisest, a God whom thou bearest about with thee, O miserable! and thou 
 - canst ×3 —  the daily sights that meet thine eyes? canst thou behold aught greater or nobler tha
+- D ×2 — about the middle of the first century A.D. His early history is unknown till we f
 - wert ×2 — t wherein thou wast born and where thou wert appointed to be a citizen.”
 - Hast ×2 — What saith Antisthenes?* Hast thou never heard?—It ts a kingly thing,
 - wherewith ×2 — What then? have you not received powers wherewith to endure all that comes to pass? have 
@@ -60,6 +71,7 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 - wast ×1 — t rather to return to that wherein thou wast born and where thou wert appointed to b
 - un-impeded ×1 — y of thine and thy possessions free and un-impeded, but as it is, be not deceived:—it is n
 - Seemeth ×1 — lt not blame or flatter any. What then? Seemeth this to thee a little thing?”—God forbi
+- ts ×1 — Antisthenes?* Hast thou never heard?—It ts a kingly thing, O Cyrus, to do well and
 - To-morrow ×1 — e culprit was in no very strange case. “To-morrow, my friend,” I said, “you will find an 
 - to-morrow’s ×1 — eat to-day, you sit down and weep about to-morrow’s food. Slave! if you have it, well and g
 - self-contradictory ×1 — hs, and persists in maintaining what is self-contradictory. Most of us dread mortification of the 
@@ -95,10 +107,6 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 - carest ×1 — ause God is thy Maker, is that why thou carest not of what sort thou shalt show thysel
 - high-minded ×1 —  Nature hath made him—modest, faithful, high-minded, a stranger to fear, to passion, to per
 - acaty ×1 — to whose care you entrust your horses?” acaty, “Ts it to the first comer, who knows n
-- ill-favoured ×1 — you? Unless indeed the mirror harms the ill-favoured man by showing him to himself just as h
-- lookers-on ×1 — re derided by the multitude. So are the lookers-on by the traders: aye, and if the beasts 
-- appre-hendest ×1 — outspread Earth and Sea? If indeed thou appre-hendest Him who administers the universe, if th
-- mightest ×1 — e thyself down a philosopher, when thou mightest have written what was the fact, namely,
 - …
 
 ## Lens 7 · apparatus — 0 (clean)
@@ -114,8 +122,8 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 *Scope:* the words of manuscript.md against the text of each PDF and of the EPUB
 
 - deluxe: manuscript words absent from the PDF text: 4 (e.g. ['nothing', 'un', 'impeded', 'accomplish']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
-- everyman: manuscript words absent from the PDF text: 2 (e.g. ['morrow', 'administer']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
-- scholar: manuscript words absent from the PDF text: 38 (e.g. ['according', 'philosophers', 'nothing', 'authority', 'importance', 'happiness', 'himself', 'understanding', 'possible', 'possessions']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
+- everyman: manuscript words absent from the PDF text: 1 (e.g. ['morrow']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
+- scholar: manuscript words absent from the PDF text: 29 (e.g. ['nothing', 'importance', 'happiness', 'himself', 'understanding', 'possible', 'possessions', 'themselves', 'distinguished', 'household']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
 - epub: 5 spine items, 21 manifest items, 4.9 MB unpacked
 - epub: manuscript words 10,736; EPUB words 11,258; manuscript words not found in EPUB: 0
 
@@ -134,6 +142,18 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 - 5-proof/pages-scholar.jpg — 16 sampled pages. LOOK AT IT: openers, running heads, verse, notes, the last page.
 - 1-plan/cover-contact.jpg — the three fronts. LOOK AT IT: whole painting, no crop of the subject, legible type, nothing unsuitable.
 
+## Gates (GATES.md)
+
+| gate | verdict | when | by | note |
+|---|---|---|---|---|
+| plan | pass | 2026-09-25 15:17 | overseer | Test book: plan filled by hand in book.yaml; Epictetus, 1909 Collier setting verified in pipeline 1; subjects set; blurb |
+| art | pass | 2026-09-25 15:17 | overseer | Test book only: stand-in photographs, not paintings; real art gate must be decided on a fetched painting from a machine  |
+| text | pass | 2026-09-25 15:17 | overseer | Test book: suspicious list read; ts/Tf/Xxviti and four lost note calls are source defects recorded in NOTES.md; sequence |
+| typeset | pass | 2026-09-25 15:17 | overseer | Test book: pages looked at (docs/samples sheets); runts on 15/18/19/22 tolerable in a 60-page test; no widows or orphans |
+| epub | pass | 2026-09-25 15:17 | overseer | Test book: structure and text equivalence pass; ten plates present; not opened in a reader here |
+| cover | pass | 2026-09-25 15:17 | overseer | Test book: layouts and contrast measured; stand-in photographs; real decision deferred to a fetched painting |
+| final | undecided |  |  |  |
+
 ## Definition of done
 
 - [ ] lenses 3, 5, 7, 8, 9 at zero findings, or every remaining finding recorded in changes.csv with a decision
@@ -143,3 +163,4 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 - [ ] cover: whole painting, no nudity, no religious subject, painting not in art/used.csv before this book
 - [ ] KDP: page count 24–828, PDF page size = trim, fonts embedded; cover spreads sized from the final page counts
 - [ ] run-log.md has today's entry
+- [ ] every gate passed with a written note; nothing forced

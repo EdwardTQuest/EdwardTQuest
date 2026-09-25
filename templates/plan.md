@@ -39,6 +39,13 @@ art:
 end with one sentence on why this book belongs on a shelf now)
 ```
 
+## Go / no-go
+
+- Source quality: (is the best witness the canon setting? scan clean? text layer usable? how many witnesses of the same setting exist?)
+- Rights: (work and edition both pre-1931 US? any modern apparatus to cut?)
+- Worth the shelf: (who reads this, and why this edition rather than the free Gutenberg file?)
+- Decision: GO / NO-GO, in one sentence.
+
 ## Edition notes
 
 - Deluxe / Everyman / Scholar: anything edition-specific (an epigraph only in Deluxe? none)

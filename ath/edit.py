@@ -34,9 +34,14 @@ def dictionary():
     return _WORDS
 
 
+SHORT_OK = {'a', 'i', 'o', 'an', 'as', 'at', 'be', 'by', 'do', 'go', 'he', 'if', 'in', 'is', 'it', 'me', 'my', 'no', 'of', 'on', 'or', 'so', 'to', 'up', 'us', 'we', 'am', 'ah', 'oh', 'lo', 'ye', 'ox', 'ad', 'id', 'ex', 're', 'st', 'mr', 'dr', 'ms', 'ii', 'iv', 'vi', 'ix', 'xi', 'xx', 'xl', 'lx', 'cc', 'ab', 'ye', 'em', 'en'}
+
+
 def known(word):
     d = dictionary()
     w = word.lower().strip("’'")
+    if len(w) <= 2:
+        return w in SHORT_OK                 # the wordlists accept "ts", "tf", "ba": OCR's favourite errors
     if w in d:
         return True
     for suf in ('s', 'es', 'ed', 'd', 'ing', 'ly', "'s", '’s'):
@@ -257,6 +262,49 @@ def dictionary_sweep(md):
     return unknown, names, total, ctx
 
 
+ARCHAIC = re.compile(r"^(?:[a-z]+(?:est|eth|st|dst|'st)|thou|thee|thy|thine|ye|hath|doth|wilt|shalt|art|wert|wast|ere|oft|whence|whither|thither|hither|nay|yea|betwixt|amongst|whilst|unto|saith|spake|hast|dost|didst|canst|wouldst|shouldst|couldst|mayst|wherewith|wherein|whereof|thereof|therein|hereof|forsooth|methinks|to-day|to-morrow|to-night)$", re.I)
+
+
+def suspicion(word, count):
+    """How likely an unknown token is an OCR/transcription error rather than a legitimate rarity.
+    High: digits inside letters, mixed case inside a word, 1–2 letter tokens, impossible clusters,
+    a real word with one letter swapped (ts/is, Tf/If, rn/m). Low: archaic inflections, hyphenated
+    compounds of real words, capitalised names, Latin-looking endings."""
+    w = word.strip("’'")
+    sc = 0
+    if re.search(r'\d', w):
+        sc += 5
+    if re.search(r'[a-z][A-Z]', w):
+        sc += 5                                        # Xxviti
+    if len(w) <= 2:
+        sc += 4                                        # ts, Tf
+    if re.search(r'[^aeiouyAEIOUY]{5,}', w):
+        sc += 4                                        # impossible consonant run
+    if len(w) >= 3 and sum(1 for ch in w.lower() if ch in 'ivxlc') >= 0.7 * len(w):
+        sc += 5                                        # a roman numeral misread: Xxviti, LXXl
+    if re.search(r'(rn|vv|ii|ll1|1l|0o|o0)', w) and any(known(w.replace(a, b_)) for a, b_ in (('rn', 'm'), ('vv', 'w'), ('ii', 'll'), ('1', 'l'), ('0', 'o'))):
+        sc += 4
+    for i in range(len(w)):
+        for c in 'abcdefghijklmnopqrstuvwxyz':
+            cand = w[:i] + c + w[i + 1:]
+            if cand != w and known(cand) and len(w) >= 3:
+                sc += 2; break
+        else:
+            continue
+        break
+    if ARCHAIC.match(w):
+        sc -= 4
+    if '-' in w and all(known(part) for part in w.split('-') if part):
+        sc -= 4
+    if w[:1].isupper() and len(w) > 3:
+        sc -= 2
+    if re.search(r'(us|um|is|ae|orum|ibus|ensis)$', w) and w[:1].isupper():
+        sc -= 2
+    if count >= 3:
+        sc -= 1
+    return sc
+
+
 def sequence_proof(md, expected=None):
     """Numbered headings must run 1..n without gap or repeat. External count if given."""
     def val(s):
@@ -389,11 +437,25 @@ def main(argv):
     report += ['', f'## Validation: {len(errs)} errors, {len(warns)} warnings', ''] + [f'- ERROR {e}' for e in errs] + [f'- warn {w}' for w in warns[:60]]
     report += ['', f'## Stats: {stats}', '', '## Sequence proof', ''] + [f'- {s}' for s in (seq or ['no numbered headings'])]
     unk_sorted = sorted(unknown.items(), key=lambda kv: -kv[1])
+    scored = sorted(((suspicion(w, c), w, c) for w, c in unknown.items()), key=lambda t: (-t[0], -t[2]))
+    suspicious = [(w, c, sc) for sc, w, c in scored if sc >= 3]
     report += ['', f'## Dictionary sweep: {sum(unknown.values())} unknown tokens of {total:,} ({100*sum(unknown.values())/max(1,total):.2f}%), {len(unknown)} distinct; {len(names)} names accepted', '',
-               'Read the list: expect archaic forms, proper names, Latin. Anything else is an OCR error to fix in the source and re-run.', '']
-    report += [f'- {w} ×{c} — {ctx(w)}' for w, c in unk_sorted[:120]]
+               f'### Suspicious first — {len(suspicious)} likely errors (fix in the source, re-run)', '']
+    report += [f'- **{w}** ×{c} (score {sc}) — {ctx(w)}' for w, c, sc in suspicious[:60]] or ['- none']
+    report += ['', '### The rest — archaic forms, names, other languages (read to the end; every entry must be one of those)', '']
+    report += [f'- {w} ×{c} — {ctx(w)}' for sc, w, c in scored if sc < 3][:160]
     report += ['', f'## Structure battery: {len(battery)} findings', ''] + [f'- {k}: {v}' for k, v in battery[:80]]
     report += ['', f'## Flags: {len(flags)}', ''] + [f'- {k}: {v}' for k, v in flags[:80]]
+    wit = (b.get('status.ocr') or {}).get('witnesses')
+    report += ['', '## Witnesses', '',
+               (f'- {wit} witnesses voted (see 2-text/ocr-report.md).' if wit else '- single-witness text (an edited text or a transcription): consensus was not possible. The text gate requires a reading lens by a reviewer against the page images before it passes.')]
+    report += ['', '## Questions for the text gate (GATES.md)', '',
+               f'1. Suspicious list: {len(suspicious)} entries — each fixed in the source or explained?',
+               f'2. The rest of the dictionary list ({len(unknown) - len(suspicious)} entries): read to the end?',
+               f'3. Sequence proof: {"; ".join(seq) if seq else "no numbered headings"} — does it match what the source prints?',
+               f'4. Structure battery: {len(battery)} findings — each decided?',
+               '5. Rules: ' + ', '.join(f"{r['rule']} {r['count']}" for r in rows) + f' — plausible for {words0:,} words?',
+               '6. Would a reader who knows this book notice anything wrong in the first chapter you open at random?']
     report_md = '\n'.join(report) + '\n'
     if a.dry:
         print(report_md); return 0
@@ -405,14 +467,15 @@ def main(argv):
         f.write('\n'.join(f'{w}\t{c}\t{ctx(w)}' for w, c in unk_sorted) + '\n')
     with open(b.path('2-text', 'checks', 'names.txt'), 'w', encoding='utf8') as f:
         f.write('\n'.join(f'{w}\t{c}' for w, c in sorted(names.items(), key=lambda kv: -kv[1])) + '\n')
+    tracker.replace_stage(b, 'edit', 'ath edit')
     for r in rows:
         if r['count']:
             tracker.add(b, stage='edit', category=r['category'], location='throughout', as_was=r['rule'], now_reads=f'{r["count"]} instances', evidence='house style (STYLE.md)', status='applied', by='ath edit')
     if n_demote:
         tracker.add(b, 'edit', 'K', 'headings', f'{n_demote} bare-numeral headings', 'sections (###) under one chapter', 'numbered points, not chapters', 'applied', 'ath edit')
-    b.set_status('edit', 'done' if not errs else 'errors', words=stats.get('words'), chapters=stats.get('chapters'), unknown=len(unknown), errors=len(errs))
+    b.set_status('edit', 'done' if not errs else 'errors', words=stats.get('words'), chapters=stats.get('chapters'), unknown=len(unknown), suspicious=len(suspicious), errors=len(errs), battery=len(battery))
     b.log('edit', f'manuscript.md written: {stats.get("words"):,} words, {stats.get("chapters")} chapters, {stats.get("notes",0)} notes; {len(errs)} errors, {len(warns)} warnings; unknown words {len(unknown)}; see 2-text/edit-report.md')
     if errs:
         print('\n'.join('ERROR ' + e for e in errs)); return 2
-    print(f'ok — {stats.get("words"):,} words, {stats.get("chapters")} chapters; read 2-text/edit-report.md')
+    print(f'ok — {stats.get("words"):,} words, {stats.get("chapters")} chapters; {len(suspicious)} suspicious tokens, {len(battery)} structure findings. Read 2-text/edit-report.md, then `ath gate {b.slug} text pass|fail --note "…"`')
     return 0

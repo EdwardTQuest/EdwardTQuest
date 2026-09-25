@@ -10,7 +10,7 @@ def main(argv):
     print(f'{b.meta.get("title")} — {b.meta.get("author")}  [{b.slug}]')
     checks = [
         ('plan',    b.path('1-plan', 'plan.md')),
-        ('art',     b.path('1-plan', 'cover.jpg')),
+        ('art',     b.path(b.get('art.cover.file') or '1-plan/art/cover-source.jpg')),
         ('blurb',   b.path('1-plan', 'blurb.md')),
         ('text',    b.manuscript),
         ('edits',   b.path('2-text', 'edits.csv')),
@@ -29,5 +29,9 @@ def main(argv):
     st = b.meta.get('status', {})
     for k, v in st.items():
         print(f'  status.{k}: {v}')
-    print(f'\nnext: {nxt or "done — read 5-proof/PROOF.md and NOTES.md"}')
+    from . import gates as G
+    gs = b.meta.get('gates') or {}
+    print('  gates: ' + '  '.join(f'{g}:{(gs.get(g) or {}).get("verdict", "·")}' for g in G.GATES) + ('  FORCED' if b.meta.get('forced') else ''))
+    undecided = [g for g in G.GATES if not (gs.get(g) or {}).get('verdict')]
+    print(f'\nnext: {nxt or "done — read 5-proof/PROOF.md and NOTES.md"}' + (f'; gates undecided: {undecided}' if undecided else ''))
     return 0

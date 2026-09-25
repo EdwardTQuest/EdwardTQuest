@@ -43,6 +43,12 @@ definition of done in PROOF.md is met. Never delegates a decision about the text
 7. Save the report early and append; if interrupted, the overseer resumes the same agent by
    message rather than relaunching.
 
+## Gates are the overseer's alone
+
+A specialist's report is evidence; the verdict is the overseer's, written with `ath gate`. A
+specialist never passes or fails a gate, and the overseer never passes a gate it has not looked
+at itself (pages, covers, the museum page). The criteria are in `GATES.md`.
+
 ## Convergence
 
 Stop adding lenses when two in a row come back in single digits. Record every lens run, its scope

@@ -89,6 +89,20 @@ def main(argv):
     lenses.append((3, 'structure and sequence', f'every heading and paragraph of manuscript.md ({stats.get("words",0):,} words, {stats.get("chapters")} chapters)', n3,
                    [f'- {s}' for s in seq] + [f'- {k}: {v}' for k, v in bat[:40]] + [f'- stray mark: …{c}…' for _, c in stray[:30]] + [f'- ERROR {e}' for e in errs], 'clean' if n3 == 0 else 'findings'))
 
+    # 4 page layout (from typeset-report.md, re-run here on the current PDFs)
+    from . import layout_check
+    a4 = []
+    n4 = 0
+    for e in b.get('editions', EDITIONS):
+        p = b.path('3-typeset', f'{e}.pdf')
+        if not os.path.exists(p):
+            continue
+        fnd, lst = layout_check.analyze(p)
+        counts = {k: v for k, v in lst.items() if k not in ('pages', 'measure_in', 'line_height_pt')}
+        n4 += sum(counts.values())
+        a4.append(f'- {e}: {counts or "nothing found"} — see 3-typeset/typeset-report.md for the pages')
+    lenses.append((4, 'page layout', 'every page of every PDF: widows, orphans, runts, hyphen stacks, loose lines, stranded headings, thin chapter ends', n4, a4 or ['- no PDFs yet'], 'clean' if n4 == 0 else 'findings'))
+
     # 5 dictionary
     unknown, names, total, ctx = E.dictionary_sweep(md)
     n5 = sum(unknown.values())
@@ -187,6 +201,14 @@ def main(argv):
         out += ['| 1–2 | word-by-word against a witness | (not run) | — |', '| 6 | fresh specialist readers | (not run) | — |', '| 7r | apparatus read by a reviewer | (not run) | — |']
     for n, name, scope, cnt, det, st in lenses:
         out += ['', f'## Lens {n} · {name} — {cnt} ({st})', f'*Scope:* {scope}', ''] + (det or ['- nothing to report'])
+    gs = b.meta.get('gates') or {}
+    out += ['', '## Gates (GATES.md)', '', '| gate | verdict | when | by | note |', '|---|---|---|---|---|']
+    from . import gates as G
+    for g in G.GATES:
+        v = gs.get(g) or {}
+        out.append(f'| {g} | {v.get("verdict", "undecided")} | {v.get("when", "")} | {v.get("by", "")} | {(v.get("note") or "").replace("|", "/")[:120]} |')
+    if b.meta.get('forced'):
+        out.append(f'\nFORCED past gates: {b.meta["forced"]}')
     out += ['', '## Definition of done', '',
             '- [ ] lenses 3, 5, 7, 8, 9 at zero findings, or every remaining finding recorded in changes.csv with a decision',
             '- [ ] lens 10 looked at by the overseer (say so in NOTES.md, with the date)',
@@ -194,7 +216,8 @@ def main(argv):
             '- [ ] NOTES.md complete: edition, witnesses, decisions, open flags; CHANGES.md rendered',
             '- [ ] cover: whole painting, no nudity, no religious subject, painting not in art/used.csv before this book',
             '- [ ] KDP: page count 24–828, PDF page size = trim, fonts embedded; cover spreads sized from the final page counts',
-            '- [ ] run-log.md has today\'s entry']
+            '- [ ] run-log.md has today\'s entry',
+            '- [ ] every gate passed with a written note; nothing forced']
     b.write('5-proof/PROOF.md', '\n'.join(out) + '\n')
     tracker.render(b)
     total = sum(c for _, _, _, c, _, st in lenses if st == 'findings')

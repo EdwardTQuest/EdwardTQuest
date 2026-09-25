@@ -11,19 +11,9 @@ import yaml
 from .book import Book, ROOT, ASSETS, TEMPLATES, EDITIONS, Fail, run, pdf_pages
 from . import manuscript as M
 from . import signature
-
-# KDP minimum inside (gutter) margin by page count, inches
-KDP_INSIDE = [(150, 0.375), (300, 0.5), (500, 0.625), (700, 0.75), (828, 0.875)]
-KDP_MAX_PAGES = 828
-# paper thickness for spine width: KDP cream 0.0025 in/page, white 0.002252
-PAPER = {'cream': 0.0025, 'white': 0.002252}
-
-
-def kdp_inside(pages):
-    for lim, m in KDP_INSIDE:
-        if pages <= lim:
-            return m
-    return None
+from . import print_spec as P
+from . import gates
+from . import layout_check
 
 
 def plates_for(b, md, has_parts):
@@ -139,21 +129,29 @@ def typeset(b, edition):
         if code != 0:
             raise Fail(f'typst failed for {edition}:\n{err[-3000:]}')
         pages = pdf_pages(pdf)
-        need = kdp_inside(pages)
+        need = P.inside_min(pages)
         tpl_inside = {'deluxe': 0.75, 'everyman': 0.60, 'scholar': 0.85}[edition]
-        if need is None:
-            b.log('typeset', f'{edition}: {pages} pages exceeds KDP maximum {KDP_MAX_PAGES}; split the volume (see PIPELINE.md)')
-            break
+        if pages > P.MAX_PAGES:
+            b.log('typeset', f'{edition}: {pages} pages exceeds the house maximum {P.MAX_PAGES}; split the volume (see PIPELINE.md)')
         if need > (inside or tpl_inside) and attempt == 0:
             inside = need
             continue
         break
-    spine = round(pages * PAPER['cream'], 3)
+    spine = P.spine_in(pages, 'cream', P.BINDING[edition])
     sample = render_pages(b, edition, pdf, pages)
+    findings, lstats, md_rep = layout_check.report(b, edition, pdf)
     st = b.meta.setdefault('status', {}).setdefault('typeset', {})
-    st[edition] = {'pages': pages, 'spine_in': spine, 'inside_margin': inside or tpl_inside, 'plates': len(plates), 'plates_on_sections': on_sections, 'pdf': f'3-typeset/{edition}.pdf'}
+    layout_counts = {k: v for k, v in lstats.items() if k not in ('pages', 'measure_in', 'line_height_pt')}
+    st[edition] = {'pages': pages, 'spine_in': spine, 'inside_margin': inside or tpl_inside, 'plates': len(plates), 'plates_on_sections': on_sections,
+                   'layout': layout_counts, 'pdf': f'3-typeset/{edition}.pdf'}
     b.save()
-    b.log('typeset', f'{edition}: {pages} pages, spine {spine} in (cream), inside margin {inside or tpl_inside} in, {len(plates)} plates; page samples {sample[:6]}… in 3-typeset/pages/')
+    # one report for all editions, rewritten per run
+    rp = b.path('3-typeset', 'typeset-report.md')
+    existing = b.read('3-typeset/typeset-report.md') or f'# Typeset report — {b.meta.get("title")}\n\nWhat the page-layout lens found in each PDF (widows, orphans, runts, hyphen stacks, loose lines, stranded headings, thin chapter ends). A finding is a place to look; the typeset gate decides whether it is tolerable where it is. Look at 3-typeset/pages/ first, then read this.\n'
+    import re as _re
+    existing = _re.sub(rf'\n## {edition} — .*?(?=\n## |\Z)', '', existing, flags=_re.S)
+    b.write('3-typeset/typeset-report.md', existing.rstrip('\n') + '\n\n' + md_rep)
+    b.log('typeset', f'{edition}: {pages} pages, spine {spine} in, inside margin {inside or tpl_inside} in, {len(plates)} plates; layout {layout_counts or "clean"}; samples in 3-typeset/pages/')
     return pages
 
 
@@ -161,13 +159,18 @@ def main(argv):
     ap = argparse.ArgumentParser(prog='ath typeset')
     ap.add_argument('slug')
     ap.add_argument('--edition', default='all', choices=EDITIONS + ['all'])
+    ap.add_argument('--force', action='store_true', help='run without the text gate passed (logged)')
     a = ap.parse_args(argv)
     b = Book(a.slug)
+    gates.require(b, 'typeset', a.force)
     if not os.path.exists(b.manuscript):
         raise Fail('no 2-text/manuscript.md — run `ath edit` first')
     eds = EDITIONS if a.edition == 'all' else [a.edition]
     eds = [e for e in eds if e in b.get('editions', EDITIONS)]
     for e in eds:
         typeset(b, e)
-    print('ok — look at 3-typeset/pages/*.png before going on')
+    ed_done = b.get('status.typeset') or {}
+    qs = ['', 'Questions for the typeset gate (GATES.md): look at 3-typeset/pages/ for every edition, read 3-typeset/typeset-report.md, then',
+          f'`ath gate {b.slug} typeset pass|fail --note "…"`']
+    print('ok — ' + '; '.join(f'{e}: {v.get("pages")} pp, layout {v.get("layout") or "clean"}' for e, v in ed_done.items()) + '\n' + '\n'.join(qs))
     return 0

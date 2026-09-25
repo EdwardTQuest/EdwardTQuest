@@ -13,6 +13,9 @@ the judgement at the named points and the record.
    and a note in `NOTES.md` when you decide anything. The log, not the session, is the memory.
 3. Say what you are picking up. Do not re-derive the pipeline.
 4. Work one book at a time. Finish the stage you are in and its report before starting another.
+5. Decide the gate before moving on: `ath gate <slug> <gate> pass|fail --note "…"` against
+   `GATES.md`. Look first (pages, covers, the museum page), then read the report, then write the
+   reason. A fail is cheap; a pass without looking is the one thing this pipeline cannot recover from.
 
 ## The rules that were bought with real failures (do not relax them)
 
@@ -35,6 +38,7 @@ the judgement at the named points and the record.
   book. If the automatic pick breaks any of these, choose another from the shortlist.
 - Binaries do not travel through chat or a connector's inline API. Files move by file I/O, git,
   or the R2 bucket.
+- Never `--force` past a gate on a book that will ship. It is logged everywhere for a reason.
 
 ## The judgement points (where a model earns its keep)
 
@@ -45,7 +49,8 @@ the judgement at the named points and the record.
 | after `ath ocr` | read `ocr-report.md`: agreement per witness, decisions, refused variants; add `ocr.restore` pairs for named damage (Gop→GOD) | `book.yaml`, NOTES.md |
 | after `ath edit` | read `edit-report.md`: the rule counts, the dictionary list (every entry: archaic, name, Latin, or an error to fix in the source), the structure battery | fix the source and re-run; NOTES.md |
 | after `ath typeset` | look at the page samples; check openers, running heads, verse, notes | template fix or manuscript fix, re-run |
-| after `ath proof` | run at least one reading lens with a reviewer (AGENTS.md); decide every finding; render the tracker; sign NOTES.md | `5-proof/reports/`, `changes.csv`, NOTES.md |
+| after `ath cover` | read cover-report.md (crop, contrast, blurb fit); look at cover-contact.jpg and cover-thumb.jpg; compare candidates; decide the cover gate | `ath gate … cover` |
+| after `ath proof` | run at least one reading lens with a reviewer (AGENTS.md); decide every finding; render the tracker; sign NOTES.md; decide the final gate | `5-proof/reports/`, `changes.csv`, NOTES.md |
 
 ## Cost discipline
 

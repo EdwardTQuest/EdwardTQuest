@@ -249,50 +249,101 @@ typeset:
 status:
   edit:
     state: done
-    when: 2026-09-25 14:27
+    when: 2026-09-25 15:19
     words: 10395
     chapters: 2
-    unknown: 67
+    unknown: 71
+    suspicious: 6
     errors: 0
+    battery: 5
   typeset:
     deluxe:
       pages: 60
-      spine_in: 0.15
+      spine_in: 0.375
       inside_margin: 0.75
       plates: 10
       plates_on_sections: true
+      layout:
+        runt: 4
       pdf: 3-typeset/deluxe.pdf
     everyman:
       pages: 58
-      spine_in: 0.145
+      spine_in: 0.1509
       inside_margin: 0.6
       plates: 10
       plates_on_sections: true
+      layout:
+        runt: 4
       pdf: 3-typeset/everyman.pdf
     scholar:
       pages: 70
-      spine_in: 0.175
+      spine_in: 0.1821
       inside_margin: 0.85
       plates: 10
       plates_on_sections: true
+      layout:
+        loose line: 2
+        runt: 3
       pdf: 3-typeset/scholar.pdf
   epub:
     state: done
-    when: 2026-09-25 14:49
+    when: 2026-09-25 15:17
     problems: 0
     size_mb: 3.55
     cover: true
   cover:
     state: done
-    when: 2026-09-25 14:49
+    when: 2026-09-25 15:19
     layout:
       deluxe: plate
       everyman: plate
       scholar: plate
+    legibility:
+      deluxe: 11.17
+      everyman: 11.17
+      scholar: 11.17
+    blurb_fit: 1.0
     plates: 10
   proof:
     state: done
-    when: 2026-09-25 14:49
-    findings: 12
+    when: 2026-09-25 15:19
+    findings: 25
 checks:
   expected_sections: null
+gates:
+  plan:
+    verdict: pass
+    note: 'Test book: plan filled by hand in book.yaml; Epictetus, 1909 Collier setting verified
+      in pipeline 1; subjects set; blurb 96 words (short, acceptable for a test)'
+    when: 2026-09-25 15:17
+    by: overseer
+  text:
+    verdict: pass
+    note: 'Test book: suspicious list read; ts/Tf/Xxviti and four lost note calls are source
+      defects recorded in NOTES.md; sequence 1..80 clean; passing to exercise the pipeline'
+    when: 2026-09-25 15:17
+    by: overseer
+  art:
+    verdict: pass
+    note: 'Test book only: stand-in photographs, not paintings; real art gate must be decided
+      on a fetched painting from a machine with network'
+    when: 2026-09-25 15:17
+    by: overseer
+  typeset:
+    verdict: pass
+    note: 'Test book: pages looked at (docs/samples sheets); runts on 15/18/19/22 tolerable
+      in a 60-page test; no widows or orphans'
+    when: 2026-09-25 15:17
+    by: overseer
+  epub:
+    verdict: pass
+    note: 'Test book: structure and text equivalence pass; ten plates present; not opened
+      in a reader here'
+    when: 2026-09-25 15:17
+    by: overseer
+  cover:
+    verdict: pass
+    note: 'Test book: layouts and contrast measured; stand-in photographs; real decision deferred
+      to a fetched painting'
+    when: 2026-09-25 15:17
+    by: overseer

@@ -13,11 +13,12 @@ ath typeset <slug>         # 3  Deluxe 5×7 · Everyman 4¼×6⅜ · Scholar 5×
 ath epub <slug>            # 4  EPUB 3 (pandoc) + check
 ath cover <slug>           #    fronts, backs, spreads sized from the page counts, e-book and site covers
 ath proof <slug>           # 5  the lens battery → 5-proof/PROOF.md ; ath tracker → CHANGES.md
+ath gate <slug> <gate> pass|fail --note "…"   the recorded judgement between stages (GATES.md)
 ```
 
-Start with `ath preflight`. Read `PIPELINE.md` for the stages and their contracts, `STYLE.md` for
-the house style, `AGENTS.md` for how an overseer and its specialists divide a title, `CLAUDE.md`
-for the operating rules any model follows here.
+Start with `ath preflight`. Read `PIPELINE.md` for the stages and their contracts, `GATES.md` for
+what "good enough" means at each of them, `STYLE.md` for the house style, `AGENTS.md` for how an
+overseer and its specialists divide a title, `CLAUDE.md` for the operating rules any model follows.
 
 ## Layout
 
@@ -47,5 +48,10 @@ with Pillow and PyYAML. `setup.sh` installs them on a Mac (Homebrew) or Debian/U
   painting entire on the house green). No zoomed details. No nudes, no religious art; romantic,
   impressionist and landscape painting first. A ledger, not a sheet column, stops repeats.
 - The signature block on the publication page replaces the ISBN block.
+- Between stages there are gates: a written pass or fail against fixed criteria, by a named hand.
+  The next stage refuses to run until the gate before it is passed. Judgement is the product.
+- Every report ends with the questions its gate asks, filled with the numbers; every stage
+  measures what a judgement rests on (contrast of type over the picture, crop, blurb fit, widows
+  and orphans and runts read from the PDF, suspicious tokens ranked first).
 - Proofing is a table of lenses with scopes and counts, not a "clean".
 - Every rule that edits text carries a count and a cap; a rule that fires past its cap stops the run.

@@ -37,6 +37,24 @@ def add(b, stage, category, location, as_was, now_reads, evidence='', status='ap
     return n + 1
 
 
+def replace_stage(b, stage, by):
+    """Drop the rows a generator wrote last time (stage + by), so a re-run regenerates them.
+    Hand-written rows (by 'overseer' or a reviewer) are never touched."""
+    p = b.path('changes.csv')
+    if not os.path.exists(p):
+        return 0
+    with open(p, encoding='utf8') as f:
+        rs = list(csv.DictReader(f))
+    keep = [r for r in rs if not (r['stage'] == stage and r['by'] == by)]
+    if len(keep) == len(rs):
+        return 0
+    with open(p, 'w', newline='', encoding='utf8') as f:
+        w = csv.DictWriter(f, fieldnames=FIELDS); w.writeheader()
+        for i, r in enumerate(keep, 1):
+            r['id'] = i; w.writerow(r)
+    return len(rs) - len(keep)
+
+
 def rows(b):
     p = b.path('changes.csv')
     if not os.path.exists(p):

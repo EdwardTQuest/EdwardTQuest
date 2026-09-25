@@ -12,6 +12,7 @@ import yaml
 from .book import Book, ROOT, ASSETS, TEMPLATES, Fail, run
 from . import manuscript as M
 from . import signature
+from . import gates
 
 
 def front_matter_html(b, sig_rel):
@@ -121,8 +122,10 @@ def check(b, path):
 def main(argv):
     ap = argparse.ArgumentParser(prog='ath epub')
     ap.add_argument('slug')
+    ap.add_argument('--force', action='store_true', help='run without the text gate passed (logged)')
     a = ap.parse_args(argv)
     b = Book(a.slug)
+    gates.require(b, 'epub', a.force)
     if not os.path.exists(b.manuscript):
         raise Fail('no 2-text/manuscript.md — run `ath edit` first')
     out_dir = b.stage('4-epub')
@@ -176,10 +179,16 @@ def main(argv):
     problems, notes = check(b, epub)
     rep = [f'# EPUB check — {b.meta.get("title")}', '', f'File: `4-epub/{b.slug}.epub` ({os.path.getsize(epub)/1e6:.2f} MB)', '']
     rep += [f'- {n}' for n in notes] + [''] + ([f'- PROBLEM {p}' for p in problems] or ['- no problems found'])
-    rep += ['', 'Not checked here (do on a reader): rendering of small caps, footnote pop-ups, plate scaling. Run `epubcheck` too if installed.']
+    rep += ['', 'Not checked here (do on a reader): rendering of small caps, footnote pop-ups, plate scaling. Run `epubcheck` too if installed.',
+            '', '## Questions for the epub gate (GATES.md)', '',
+            '1. Opened in a reader: does the cover show on the shelf, and does the first page look like the title page?',
+            '2. Navigation: every chapter listed with its label and title, each link landing on its opener?',
+            '3. Small-caps openings, verse lines, section ornaments, footnote pop-ups: do they render, or fall back cleanly?',
+            f'4. Plates: {len(plates)} figures in colour with captions — whole pictures, not cropped by the reader?',
+            '5. Would you be content to see this file on athanasius.online tonight?']
     b.write('4-epub/epub-check.md', '\n'.join(rep) + '\n')
     b.set_status('epub', 'done' if not problems else 'problems', problems=len(problems), size_mb=round(os.path.getsize(epub)/1e6, 2), cover=os.path.exists(cover))
     b.log('epub', f'{os.path.basename(epub)} built ({os.path.getsize(epub)/1e6:.2f} MB), {len(problems)} problems; see 4-epub/epub-check.md')
     if problems:
         print('\n'.join('PROBLEM ' + p for p in problems)); return 2
-    print('ok — 4-epub/epub-check.md'); return 0
+    print(f'ok — 4-epub/epub-check.md; then `ath gate {b.slug} epub pass|fail --note "…"`'); return 0

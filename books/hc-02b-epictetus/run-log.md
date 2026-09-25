@@ -56,3 +56,25 @@ Read first, write last.
 - 2026-09-25 14:49 · **cover** · scholar: spread 10.423 × 7.250 in, spine 0.175 in for 70 pages, wrap 0.125 in (paperback, glossy)
 - 2026-09-25 14:49 · **cover** · fronts {'deluxe': 'plate', 'everyman': 'plate', 'scholar': 'plate'}; epub + site covers; 10 plates prepared (print grayscale, epub colour). Look at 1-plan/cover-contact.jpg.
 - 2026-09-25 14:49 · **proof** · PROOF.md written; findings: structure and sequence 12, dictionary sweep 102, apparatus 0, cross-edition consistency 0, mechanical 0, render and look 4
+- 2026-09-25 15:17 · **edit** · manuscript.md written: 10,395 words, 2 chapters, 0 notes; 0 errors, 0 warnings; unknown words 67; see 2-text/edit-report.md
+- 2026-09-25 15:17 · **gate** · plan: PASS — Test book: plan filled by hand in book.yaml; Epictetus, 1909 Collier setting verified in pipeline 1; subjects set; blurb 96 words (short, acceptable for a test) (overseer)
+- 2026-09-25 15:17 · **gate** · text: PASS — Test book: suspicious list read; ts/Tf/Xxviti and four lost note calls are source defects recorded in NOTES.md; sequence 1..80 clean; passing to exercise the pipeline (overseer)
+- 2026-09-25 15:17 · **gate** · art: PASS — Test book only: stand-in photographs, not paintings; real art gate must be decided on a fetched painting from a machine with network (overseer)
+- 2026-09-25 15:17 · **typeset** · deluxe: 60 pages, spine 0.375 in, inside margin 0.75 in, 10 plates; layout {'runt': 4}; samples in 3-typeset/pages/
+- 2026-09-25 15:17 · **typeset** · everyman: 58 pages, spine 0.1509 in, inside margin 0.6 in, 10 plates; layout {'runt': 4}; samples in 3-typeset/pages/
+- 2026-09-25 15:17 · **typeset** · scholar: 70 pages, spine 0.1821 in, inside margin 0.85 in, 10 plates; layout {'loose line': 2, 'runt': 3}; samples in 3-typeset/pages/
+- 2026-09-25 15:17 · **epub** · hc-02b-epictetus.epub built (3.55 MB), 0 problems; see 4-epub/epub-check.md
+- 2026-09-25 15:17 · **cover** · deluxe: hardcover spread 12.255 × 8.500 in, spine 0.375 in for 60 pages (case laminate, matte); hardcover spine estimated; read the exact spine from the IngramSpark cover template and pass --spine
+- 2026-09-25 15:17 · **cover** · everyman: paperback spread 8.901 × 6.625 in, spine 0.1509 in for 58 pages (perfect bound, matte)
+- 2026-09-25 15:17 · **cover** · scholar: paperback spread 10.432 × 7.250 in, spine 0.1821 in for 70 pages (perfect bound, gloss)
+- 2026-09-25 15:17 · **cover** · layouts { deluxe: plate, everyman: plate, scholar: plate }; contrast { deluxe: 11.17, everyman: 11.17, scholar: 11.17 }; 10 plates. Read 1-plan/cover-report.md, look at cover-contact.jpg, then decide the cover gate.
+- 2026-09-25 15:17 · **gate** · typeset: PASS — Test book: pages looked at (docs/samples sheets); runts on 15/18/19/22 tolerable in a 60-page test; no widows or orphans (overseer)
+- 2026-09-25 15:17 · **gate** · epub: PASS — Test book: structure and text equivalence pass; ten plates present; not opened in a reader here (overseer)
+- 2026-09-25 15:17 · **gate** · cover: PASS — Test book: layouts and contrast measured; stand-in photographs; real decision deferred to a fetched painting (overseer)
+- 2026-09-25 15:17 · **proof** · PROOF.md written; findings: structure and sequence 12, page layout 13, dictionary sweep 102, apparatus 0, cross-edition consistency 0, mechanical 0, render and look 4
+- 2026-09-25 15:19 · **edit** · manuscript.md written: 10,395 words, 2 chapters, 0 notes; 0 errors, 0 warnings; unknown words 71; see 2-text/edit-report.md
+- 2026-09-25 15:19 · **cover** · deluxe: hardcover spread 12.255 × 8.500 in, spine 0.375 in for 60 pages (case laminate, matte); hardcover spine estimated; read the exact spine from the IngramSpark cover template and pass --spine
+- 2026-09-25 15:19 · **cover** · everyman: paperback spread 8.901 × 6.625 in, spine 0.1509 in for 58 pages (perfect bound, matte)
+- 2026-09-25 15:19 · **cover** · scholar: paperback spread 10.432 × 7.250 in, spine 0.1821 in for 70 pages (perfect bound, gloss)
+- 2026-09-25 15:19 · **cover** · layouts { deluxe: plate, everyman: plate, scholar: plate }; contrast { deluxe: 11.17, everyman: 11.17, scholar: 11.17 }; 10 plates. Read 1-plan/cover-report.md, look at cover-contact.jpg, then decide the cover gate.
+- 2026-09-25 15:19 · **proof** · PROOF.md written; findings: structure and sequence 12, page layout 13, dictionary sweep 114, apparatus 0, cross-edition consistency 0, mechanical 0, render and look 4

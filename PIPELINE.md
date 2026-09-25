@@ -7,13 +7,30 @@ stages re-run (they are idempotent and fast).
 | # | stage | command | takes | emits | model's job |
 |---|---|---|---|---|---|
 | 0 | source | `ath new` | a text, a scan, an archive.org id, a PG number | `0-source/`, `book.yaml`, `NOTES.md` | name the canon setting; verify it by printed folio |
-| 1 | plan + art | `ath plan`, `ath art`, `ath cover` | the text | `1-plan/plan.md`, art shortlist, cover, plates, `blurb.md` | fill plan.md (five sentences, structure, art brief, blurb); choose from the shortlist or accept the pick; look at `cover-contact.jpg` |
+| 1 | plan + art | `ath plan`, `ath art`, `ath cover` | the text | `1-plan/plan.md`, art shortlist (with crop per trim and sharpness), cover, candidates side by side, plates, `blurb.md`, `cover-report.md` (crop, contrast of type over picture, scrim, blurb fit, spread geometry) | fill plan.md incl. go/no-go; open the museum pages and look; `--candidates 3` to compare fronts; decide the plan, art and cover gates |
 | 2 | text | `ath ocr`, `ath edit` | witnesses | `2-text/consensus.txt`, `manuscript.md`, `edits.csv`, `edit-report.md`, `checks/` | read the OCR report and the dictionary list; fix real errors in the witnesses or add `ocr.restore` pairs; never patch an output |
-| 3 | typeset | `ath typeset` | `manuscript.md` | `3-typeset/<edition>.pdf`, `pages/*.png` | look at the pages |
+| 3 | typeset | `ath typeset` | `manuscript.md` | `3-typeset/<edition>.pdf`, `pages/*.png`, `typeset-report.md` (widows, orphans, runts, hyphen stacks, loose lines, stranded headings, thin chapter ends, read from the PDF's own line geometry) | look at the pages; read the report; decide the typeset gate |
 | 4 | epub | `ath epub` | `manuscript.md` | `4-epub/<slug>.epub`, `epub-check.md` | read the check; open the file in a reader when possible |
 | 5 | proof | `ath proof`, `ath tracker` | everything | `5-proof/PROOF.md`, `pages-*.jpg`, `CHANGES.md` | run the reading lenses (AGENTS.md); decide every open finding; sign NOTES.md |
 
 `ath all <slug>` runs edit → typeset → epub → cover → proof. `ath status <slug>` says what is next.
+
+## Gates — the judgement between stages
+
+Output is not the product; the decision about it is. After each stage the overseer looks at the
+evidence the stage names, answers the criteria in `GATES.md`, and records a verdict:
+
+```
+ath gate <slug>                                  the table: verdict, date, hand, note, evidence
+ath gate <slug> text pass --note "…"             at least 20 characters of reason, always
+ath gate <slug> cover fail --note "…"            a fail reopens every later gate
+ath check <slug>                                 the cheap checks again, then the table
+```
+
+`ath art` needs the plan gate; `ath typeset` and `ath epub` need the text gate; `ath cover` needs
+the art gate; the final gate needs all of them. `--force` runs a stage past an unpassed gate and
+is written into run-log.md, NOTES.md, `ath status` and PROOF.md. It is for a demo, never for a
+book that ships. Every report ends with the questions its gate asks, filled with the numbers.
 
 ## The book folder
 
@@ -43,17 +60,18 @@ typesetter from `book.yaml`, not by hand.
 
 ## Editions
 
-| edition | trim | margins (in/out/top/bottom) | type | finish | print house |
-|---|---|---|---|---|---|
-| Deluxe | 5 × 7 in | 0.75 / 0.55 / 0.62 / 0.70 | EB Garamond 10.5/14.7 | hardcover, case laminate | KDP hardcover does not offer 5 × 7 (its smallest is 5.5 × 8.5): use IngramSpark or Lulu for 5 × 7, or set `deluxe` to 5.5 × 8.5 in `house.typ` for KDP |
-| Everyman | 4.25 × 6.375 in (the Loeb size) | 0.60 / 0.45 / 0.50 / 0.58 | 9.6/13.8 | paperback, matte | KDP custom trim (4–8.5 × 6–11.69 allowed) |
-| Scholar | 5 × 7 in | 0.85 / 1.00 / 0.75 / 0.85 | 10.5/15.3 | paperback, glossy | KDP custom trim |
+| edition | trim | margins (in/out/top/bottom) | type | binding and finish |
+|---|---|---|---|---|
+| Deluxe | 5 × 7 in | 0.75 / 0.55 / 0.62 / 0.70 | EB Garamond 10.5/14.7 | hardcover, case laminate, matte |
+| Everyman | 4.25 × 6.375 in (the Loeb size) | 0.60 / 0.45 / 0.50 / 0.58 | 9.6/13.8 | paperback, matte |
+| Scholar | 5 × 7 in | 0.85 / 1.00 / 0.75 / 0.85 | 10.5/15.3 | paperback, gloss, wide margins for the hand |
 
-The inside margin is raised automatically to KDP's minimum for the page count (0.375 to 0.875 in).
-A book over 828 pages is flagged; split it into volumes (two `book.yaml`s, `title: … Volume I`).
-Spine width = pages × 0.0025 in (cream). Paperback spreads carry a 0.125 in bleed; the Deluxe
-spread is built with a 0.591 in wrap for a case-laminate template — check the printer's own
-calculator before upload.
+The print house is IngramSpark by default and every number it needs lives in `ath/print_spec.py`:
+paper 0.002602 in/page cream, paperback bleed 0.125 in, case-laminate wrap 0.625 in with 0.5 in
+hinges, board width = trim − 0.185, board height = trim + 0.25. The hardcover spine in the spread
+is an estimate; take the exact figure from the IngramSpark cover template and pass
+`ath cover --spine X`. The inside margin is raised automatically to the house minimum for the
+page count (0.60 to 1.00 in). A book over 800 pages is flagged; split it into volumes.
 
 ## Where the model comes in, and where it does not
 

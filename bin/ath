@@ -12,6 +12,8 @@
   ath epub <slug>                       pandoc -> 4-epub/<slug>.epub + epub-check.md
   ath proof <slug>                      the lens battery -> 5-proof/PROOF.md
   ath tracker <slug>                    render CHANGES.md from changes.csv
+  ath gate <slug> [<gate> pass|fail --note "…"]   the recorded judgement between stages (GATES.md)
+  ath check <slug>                      re-run the cheap checks on what exists; print the gate table
   ath signature [--samples]             the green-pen signature block (all editions)
   ath status <slug>                     what is done, what is next
   ath all <slug>                        edit -> typeset -> epub -> cover -> proof
@@ -49,6 +51,10 @@ def main(argv):
             from ath import proof; return proof.main(rest)
         if cmd == 'tracker':
             from ath import tracker; return tracker.main(rest)
+        if cmd == 'gate':
+            from ath import gates; return gates.main(rest)
+        if cmd == 'check':
+            from ath import check; return check.main(rest)
         if cmd == 'signature':
             from ath import signature; return signature.main(rest)
         if cmd == 'status':

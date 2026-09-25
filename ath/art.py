@@ -18,6 +18,8 @@ House rules for 2.0 (from Tom, Sept 2026):
 import argparse, csv, json, os, re, sys, time, unicodedata, urllib.parse, urllib.request
 from .book import Book, ART, UA, Fail
 from . import tracker
+from . import gates
+from . import print_spec as P
 
 MAX_PER_PAINTER = 6          # across the whole library
 MAX_PER_PAINTER_IN_BOOK = 2  # among a book's plates
@@ -182,6 +184,26 @@ def pick(b, scored, plates_wanted):
     return cover, plates
 
 
+def suitability(r):
+    """Facts a chooser wants beside the score: how much of the picture each trim would crop, and
+    whether it will print sharp. Crop over 12% means the plate layout, not a crop."""
+    try:
+        w, h = int(r.get('width') or 0), int(r.get('height') or 0)
+    except ValueError:
+        w = h = 0
+    out = {}
+    if w and h:
+        ar = w / h
+        for e, (tw, th) in P.TRIMS.items():
+            t = tw / th
+            loss = 1 - min(ar, t) / max(ar, t)
+            out[e] = f'{loss * 100:.0f}%' + ('' if loss <= 0.12 else ' → plate')
+        out['sharp'] = 'yes' if min(w, h) >= 1800 else f'soft ({min(w, h)} px)'
+    else:
+        out['sharp'] = 'unknown size'
+    return out
+
+
 def row_public(r):
     return {k: r.get(k, '') for k in ('id', 'title', 'artist', 'year', 'era', 'section', 'source', 'page_url', 'image_url', 'thumb_url', 'rights', 'width', 'height', 'orientation')}
 
@@ -254,8 +276,11 @@ def main(argv):
     ap.add_argument('--pick', action='store_true', help='choose cover + plates automatically into book.yaml')
     ap.add_argument('--cover', help='force this candidate id as the cover')
     ap.add_argument('--fetch', action='store_true', help='download the chosen images into 1-plan/art/')
+    ap.add_argument('--candidates', type=int, default=0, help='with --fetch: also download the top N shortlist pictures as 1-plan/art/candidate-NN.jpg for `ath cover --candidates N`')
+    ap.add_argument('--force', action='store_true', help='run without the plan gate passed (logged)')
     a = ap.parse_args(argv)
     b = Book(a.slug)
+    gates.require(b, 'art', a.force)
     b.stage('1-plan')
     extra = []
     if a.commons:
@@ -271,9 +296,11 @@ def main(argv):
     lines = [f'# Art shortlist — {b.meta.get("title")}', '',
              f'Subjects: {b.get("plan.art_subjects")}. Movement: {b.get("plan.movement")}. Avoid: {b.get("plan.art_avoid")}.',
              f'Rejected: {dict(sorted(reasons.items(), key=lambda kv: -kv[1]))}', '',
-             '| # | score | painting | painter | year | section | source | why |', '|---|---|---|---|---|---|---|---|']
+             '| # | score | painting | painter | year | section | source | crop deluxe / everyman | sharp | why |', '|---|---|---|---|---|---|---|---|---|---|']
     for i, (s, why, r) in enumerate(scored[:a.shortlist], 1):
-        lines.append(f'| {i} | {s:.0f} | [{r["title"]}]({r["page_url"]}) | {r["artist"]} | {r["year"]} | {r["section"]} | {r["source"]} | {why} |')
+        su = suitability(r)
+        lines.append(f'| {i} | {s:.0f} | [{r["title"]}]({r["page_url"]}) | {r["artist"]} | {r["year"]} | {r["section"]} | {r["source"]} | {su.get("deluxe", "?")} / {su.get("everyman", "?")} | {su.get("sharp")} | {why} |')
+    lines += ['', 'How to choose: open the museum page of the top five and LOOK. The score ranks by subject match, movement, era and section; it cannot see the picture. Prefer one subject over a crowd, a quiet sky or ground where the title will sit, a picture that survives at thumbnail size. Then `--candidates 3 --fetch` renders the top three as Deluxe fronts side by side.']
     lines += ['', 'To choose by hand: `ath art <slug> --pick --cover <id>` with the id from 1-plan/art-shortlist.json.']
     b.write('1-plan/art-shortlist.md', '\n'.join(lines) + '\n')
     b.write('1-plan/art-shortlist.json', json.dumps([dict(score=s, why=why, **row_public(r)) for s, why, r in scored[:a.shortlist * 2]], indent=1, ensure_ascii=False))
@@ -290,6 +317,7 @@ def main(argv):
     b.meta['art']['plates'] = [dict(row_public(r), why=why) for _, why, r in plates]
     b.save()
     b.log('art', f'cover: {cover[2]["title"]} — {cover[2]["artist"]} ({cover[1]}); {len(plates)} plates chosen')
+    tracker.replace_stage(b, 'art', 'ath art')
     tracker.add(b, 'art', 'K', 'cover', '', f'{cover[2]["title"]} — {cover[2]["artist"]}', cover[1], 'applied', 'ath art')
     if a.fetch:
         d = b.stage('1-plan/art')
@@ -303,6 +331,11 @@ def main(argv):
             except Exception as e:
                 p['error'] = str(e)
                 b.log('art', f'plate {i} failed to download: {e}')
+        for i, (sc, why, r) in enumerate(scored[:a.candidates], 1):
+            try:
+                fetch(r['image_url'], os.path.join(d, f'candidate-{i:02d}.jpg'), width=3000)
+            except Exception as e:
+                b.log('art', f'candidate {i} failed to download: {e}')
         b.save()
-        b.log('art', 'images fetched and recorded in art/used.csv; next: `ath cover`')
+        b.log('art', 'images fetched and recorded in art/used.csv; next: `ath cover` (with --candidates N to compare), then decide the art gate')
     return 0

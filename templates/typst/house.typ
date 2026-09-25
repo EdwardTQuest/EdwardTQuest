@@ -82,7 +82,8 @@
   set document(title: title, author: author)
   set page(width: ed.trim.at(0), height: ed.trim.at(1),
            margin: (inside: ed.inside, outside: ed.outside, top: ed.top, bottom: ed.bottom))
-  set text(font: "EB Garamond", size: ed.size, lang: "en", hyphenate: true, number-type: "old-style")
+  set text(font: "EB Garamond", size: ed.size, lang: "en", hyphenate: true, number-type: "old-style",
+           costs: (hyphenation: 120%, runt: 160%, widow: 280%, orphan: 280%))
   set par(justify: true, leading: ed.leading, first-line-indent: 1.15em, spacing: ed.leading)
   show emph: set text(style: "italic")
   show quote.where(block: true): it => block(above: 1.0em, below: 1.0em, inset: (left: 1.6em, right: 1.2em))[

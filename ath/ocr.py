@@ -304,6 +304,7 @@ def main(argv):
         w = csv.writer(f); w.writerow(['position', 'kind', 'base', 'variant', 'votes'])
         for v in variants:
             w.writerow(v)
+    tracker.replace_stage(b, 'ocr', 'ath ocr')
     for kind, n in decisions.items():
         tracker.add(b, 'ocr', 'O', 'consensus', kind, f'{n} tokens', f'{n_w} witnesses, majority {min_votes}', 'applied', 'ath ocr')
     b.set_status('ocr', 'done', witnesses=len(files), base=os.path.basename(base), decisions=dict(decisions), flags=len(variants))
