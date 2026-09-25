@@ -2,7 +2,7 @@
 :root {
   --paper: #FBF7EE; --paper-2: #F3ECDC; --ink: #1B1D3A; --ink-2: #5E5F77; --line: #E4D9C3;
   --deep: #151941; --deep-ink: #FBF4E2; --deep-ink-2: #B7B5CE;
-  --accent: #F3B33A; --accent-ink: #151941; --accent-strong: #C9412A; --focus: #C9412A;
+  --accent: #F3B33A; --accent-ink: #151941; --accent-strong: #C9412A; --eyebrow: #BF3E28; --focus: #C9412A;
   --display: 'Fraunces', Georgia, serif;
   --text: 'Fraunces', Georgia, serif;
   --ui: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;

@@ -15,6 +15,7 @@
   *, *::before, *::after { box-sizing: border-box; }
   body { margin: 0; min-height: 100dvh; background: #0E0F14; color: #F2EEE6; font: 400 15px/1.5 'Instrument Sans', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
   header { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 22px clamp(16px, 3vw, 36px); font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: #9C988F; }
+  header h1 { margin: 0; font: inherit; }
   main { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px; min-height: calc(100dvh - 64px); }
   .house { position: relative; overflow: hidden; isolation: isolate; display: flex; flex-direction: column; justify-content: flex-end; min-height: 42vh; padding: clamp(24px, 4vw, 52px); color: var(--ink); background: var(--bg); text-decoration: none; }
   .house::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--glow); }
@@ -30,12 +31,12 @@
   .meta svg { width: 18px; transition: transform .3s; }
   .house:hover .meta svg { transform: translateX(4px); }
   .house:focus-visible { outline: 2px solid var(--ac); outline-offset: -6px; }
-  @media (max-width: 760px) { main { grid-template-columns: 1fr; } .house { min-height: 58vw; } header { flex-direction: column; align-items: flex-start; gap: 6px; } header span { white-space: nowrap; } }
+  @media (max-width: 760px) { main { grid-template-columns: 1fr; } .house { min-height: 58vw; } header { flex-direction: column; align-items: flex-start; gap: 6px; } header h1, header span { white-space: nowrap; } }
   @media (prefers-reduced-motion: reduce) { .art, .meta svg { transition: none; } }
 </style>
 </head>
 <body>
-<header><span>Four bookshops</span><span>Book · eBook · Audiobook</span></header>
+<header><h1>Four bookshops</h1><span>Book · eBook · Audiobook</span></header>
 <main id="houses"></main>
 <script src="engine/covers.js"></script>
 <script>
@@ -46,7 +47,7 @@
       <div class="art">${Covers.heroArt({ key: h.key, motif: h.motif }, h.key + '-hub')}</div>
       <span class="mark">${Covers.MARKS[h.mark]}</span>
       <span class="place">${h.place}</span>
-      <span class="name">${h.html || h.name}</span>
+      <h2 class="name">${h.html || h.name}</h2>
       <span class="meta">${h.count} titles ${arrow}</span>
     </a>`).join('');
 </script>

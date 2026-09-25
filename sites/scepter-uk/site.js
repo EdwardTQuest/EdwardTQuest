@@ -23,7 +23,7 @@ window.SITE = {
     browse: 'Browse', titles: 'titles', all: 'All', none: 'Nothing found', noneHint: 'Try an author, or one word from the title.',
     unpriced: 'Price to follow', toPrice: '{n} to be priced at checkout', add: 'Add to basket', added: 'Added', basket: 'Basket', total: 'Subtotal',
     checkout: 'Checkout', checkoutNote: 'Preview only — checkout is not connected yet.', empty: 'Your basket is empty.',
-    remove: 'Remove', more: 'More in', isbn: 'ISBN', pages: 'Pages', kind: 'Format',
+    remove: 'Remove', removed: 'Removed', books: 'Books', more: 'More in', isbn: 'ISBN', pages: 'Pages', kind: 'Format',
   },
   footer: [
     ['Scepter (U.K.) Ltd', 'London'],

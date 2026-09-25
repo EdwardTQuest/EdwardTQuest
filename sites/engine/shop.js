@@ -62,7 +62,7 @@
     <label class="search">${ICON.search}<span class="sr-only">Search books</span>
       <input type="search" id="q" placeholder="Search" autocomplete="off" spellcheck="false"></label>
     <div class="fmt" role="group" aria-label="Show prices for"${anyPriced ? '' : ' hidden'}>
-      ${FORMATS.map(f => `<button type="button" data-fmt="${f}" aria-pressed="${f === state.format}">${ICON[f]}<span>${esc(SITE.formats[f])}</span></button>`).join('')}
+      ${FORMATS.map(f => `<button type="button" data-fmt="${f}" aria-pressed="${f === state.format}" aria-label="${esc(SITE.formats[f])}">${ICON[f]}<span>${esc(SITE.formats[f])}</span></button>`).join('')}
     </div>
     <button type="button" class="bag-btn" id="bag-open" aria-label="Basket">${ICON.bag}<span class="bag-count" id="bag-count" hidden>0</span></button>
   </header>
@@ -80,7 +80,8 @@
       </div>
     </section>
     <nav class="shelves" aria-label="Shelves"><div class="shelves-in" id="shelves"></div></nav>
-    <section class="catalogue" id="catalogue" tabindex="-1" aria-live="polite"></section>
+    <section class="catalogue" id="catalogue" tabindex="-1" aria-label="${esc(SITE.words.books)}"></section>
+    <p class="sr-only" id="status" role="status"></p>
   </main>
   <footer class="foot">
     <div class="foot-in">
@@ -101,12 +102,12 @@
 
   // ---------- catalogue ----------
   // No price yet: show the three formats every title comes in.
-  const priceCell = p => (p == null ? `<span class="fmt-icons" title="${esc(FORMATS.map(f => SITE.formats[f]).join(' · '))}">${FORMATS.map(f => ICON[f]).join('')}</span>` : show(p));
+  const priceCell = p => (p == null ? `<span class="fmt-icons" title="${esc(FORMATS.map(f => SITE.formats[f]).join(' · '))}">${FORMATS.map(f => ICON[f]).join('')}<span class="sr-only">${esc(FORMATS.map(f => SITE.formats[f]).join(', '))}</span></span>` : show(p));
 
   function card(b, i) {
     const p = priceOf(b, state.format);
     return `<a class="card" href="#/book/${b.id}" style="--d:${Math.min(i, 16)}">
-      <div class="card-cover">${cover(b, SITE, shelfIndex[b.shelf] || 0)}</div>
+      <div class="card-cover" aria-hidden="true">${cover(b, SITE, shelfIndex[b.shelf] || 0)}</div>
       <div class="card-body">
         <h3 class="card-title">${esc(b.title)}</h3>
         <p class="card-author">${esc(b.author)}</p>
@@ -116,11 +117,13 @@
 
   function renderShelves() {
     const counts = Object.fromEntries(shelves.map(s => [s.slug, books.filter(b => b.shelf === s.slug).length]));
+    const had = document.activeElement && document.activeElement.matches('#shelves .chip') ? document.activeElement.getAttribute('href') : null;
     $('#shelves').innerHTML =
       `<a href="#/" class="chip" aria-current="${state.shelf === 'all' && !state.q}">${esc(SITE.words.all)}<span>${books.length}</span></a>` +
       shelves.map(s => `<a href="#/shelf/${s.slug}" class="chip" aria-current="${state.shelf === s.slug && !state.q}">${esc(s.name)}<span>${counts[s.slug]}</span></a>`).join('');
-    const cur = $('#shelves [aria-current="true"]');
-    if (cur) cur.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'auto' });
+    const cur = $('#shelves [aria-current="true"]'), box = $('#shelves');
+    if (cur) box.scrollLeft += cur.getBoundingClientRect().left - box.getBoundingClientRect().left - (box.clientWidth - cur.offsetWidth) / 2;
+    if (had) { const n = $(`#shelves .chip[href="${had}"]`); if (n) n.focus({ preventScroll: true }); }
   }
 
   function renderCatalogue() {
@@ -141,6 +144,8 @@
       }).join('');
     }
     renderShelves();
+    const n = q ? el.querySelectorAll('.card').length : books.filter(b => state.shelf === 'all' || b.shelf === state.shelf).length;
+    $('#status').textContent = q ? `${n} ${SITE.words.titles}: “${state.q.trim()}”` : state.shelf === 'all' ? '' : `${shelfName[state.shelf]}: ${n} ${SITE.words.titles}`;
   }
 
   // ---------- book ----------
@@ -157,7 +162,7 @@
     $('#dlg-book').innerHTML = `
       <button type="button" class="x" data-close aria-label="Close">${ICON.close}</button>
       <div class="bk">
-        <div class="bk-cover">${cover(b, SITE, shelfIndex[b.shelf] || 0)}</div>
+        <div class="bk-cover" aria-hidden="true">${cover(b, SITE, shelfIndex[b.shelf] || 0)}</div>
         <div class="bk-info">
           <a class="eyebrow" href="#/shelf/${b.shelf}" data-shelf>${esc(shelfName[b.shelf] || '')}</a>
           <h2 id="bk-title" class="bk-title" tabindex="-1">${typo(b.title)}</h2>
@@ -243,9 +248,11 @@
       <footer class="bag-foot"><p class="total"><span>${esc(SITE.words.total)}</span>${bagUnpriced() === state.basket.length ? `<span class="line-pending">${esc(SITE.words.unpriced)}</span>` : `<strong>${show(bagTotal())}</strong>`}</p>
         ${bagUnpriced() && bagUnpriced() < state.basket.length ? `<p class="bag-pending">${esc(SITE.words.toPrice.replace('{n}', bagUnpriced()))}</p>` : ''}
         <button type="button" class="btn btn-primary btn-wide" id="checkout">${esc(SITE.words.checkout)}</button>
-        <p class="bag-note" id="bag-note" hidden>${esc(SITE.words.checkoutNote)}</p></footer>`
+        <p class="bag-note" id="bag-note" role="status"></p></footer>`
       : `<div class="bag-empty">${ICON.bag}<p>${esc(SITE.words.empty)}</p></div>`}`;
   }
+
+  function refocusBag(sel) { const el = $('#dlg-bag ' + sel) || $('#dlg-bag .x'); if (el) el.focus(); }
 
   function addToBag(b, format, n) {
     const line = state.basket.find(l => l.id === b.id && l.format === format);
@@ -265,7 +272,7 @@
   }
 
   // ---------- routing ----------
-  let lastList = '#/';
+  let lastList = '#/', focusCatalogue = false;
   function route() {
     const h = location.hash || '#/';
     const m = h.match(/^#\/book\/([\w-]+)/);
@@ -282,6 +289,7 @@
       renderCatalogue();
       if (s) scrollToCatalogue();
     }
+    if (focusCatalogue) { focusCatalogue = false; $('#catalogue').focus({ preventScroll: true }); }
   }
   function scrollToCatalogue() {
     const top = $('#catalogue').getBoundingClientRect().top + window.scrollY - stickyOffset();
@@ -312,7 +320,7 @@
       }
       return;
     }
-    if (t.closest('[data-shelf]')) { e.preventDefault(); openedInApp = false; location.hash = t.closest('a').hash; return; }
+    if (t.closest('[data-shelf]')) { e.preventDefault(); openedInApp = false; focusCatalogue = true; location.hash = t.closest('a').hash; return; }
     if (t.closest('[data-close]')) { const d = t.closest('dialog'); if (d.id === 'dlg-book') leaveBook(); else d.close(); return; }
     if (t.closest('#bag-open')) { renderBag(); $('#dlg-bag').showModal(); return; }
     const dq = t.closest('[data-qty]');
@@ -324,11 +332,17 @@
     if (dl) {
       const l = state.basket[Number(dl.dataset.line)];
       l.qty = Math.max(1, Math.min(99, l.qty + Number(dl.dataset.d)));
-      save('basket', state.basket); renderBag(); renderBagCount(); return;
+      save('basket', state.basket); renderBag(); renderBagCount();
+      refocusBag(`[data-line="${dl.dataset.line}"][data-d="${dl.dataset.d}"]`); return;
     }
     const rm = t.closest('[data-remove]');
-    if (rm) { state.basket.splice(Number(rm.dataset.remove), 1); save('basket', state.basket); renderBag(); renderBagCount(); return; }
-    if (t.closest('#checkout')) { $('#bag-note').hidden = false; return; }
+    if (rm) {
+      const i = Number(rm.dataset.remove);
+      state.basket.splice(i, 1); save('basket', state.basket); renderBag(); renderBagCount();
+      refocusBag(state.basket.length ? `[data-remove="${Math.min(i, state.basket.length - 1)}"]` : '.x');
+      toast(SITE.words.removed); return;
+    }
+    if (t.closest('#checkout')) { $('#bag-note').textContent = SITE.words.checkoutNote; return; }
     // A click on the dialog's own backdrop closes it.
     if (t.matches('dialog.dlg')) { const r = t.getBoundingClientRect(); if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) { if (t.id === 'dlg-book') leaveBook(); else t.close(); } }
   });

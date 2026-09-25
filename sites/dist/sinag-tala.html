@@ -63,7 +63,7 @@
 
 :root { --bar-h: 68px; --shelves-h: 65px; }
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: smooth; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: calc(var(--bar-h) + var(--shelves-h) + 12px); }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
 body { margin: 0; background: var(--paper); color: var(--ink); font: 400 16px/1.55 var(--text); font-feature-settings: "kern", "liga"; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
 img, svg { display: block; max-width: 100%; }
@@ -86,7 +86,8 @@ h1, h2, h3, p { margin: 0; }
 .brand-logo { height: 34px; width: auto; }
 .search { position: relative; justify-self: center; width: min(100%, 440px); }
 .search svg { position: absolute; left: 14px; top: 50%; width: 18px; transform: translateY(-50%); color: var(--ink-2); pointer-events: none; }
-.search input { width: 100%; height: 42px; padding: 0 16px 0 42px; border: 1px solid var(--line); border-radius: 999px; background: var(--paper-2); font: 400 15px var(--ui); outline: none; transition: border-color .2s, background .2s; }
+.search input { width: 100%; height: 42px; padding: 0 16px 0 42px; border: 1px solid color-mix(in srgb, var(--ink-2) 35%, var(--line)); border-radius: 999px; background: var(--paper-2); font: 400 15px var(--ui); transition: border-color .2s, background .2s; }
+.search input:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 .search input:focus { border-color: var(--ink-2); background: var(--paper); }
 .search input::placeholder { color: var(--ink-2); }
 .search input::-webkit-search-cancel-button { filter: grayscale(1); }
@@ -109,6 +110,7 @@ h1, h2, h3, p { margin: 0; }
 .hero-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); align-items: end; gap: 40px; min-height: min(86vh, 780px); max-width: 1360px; margin: 0 auto; padding: clamp(56px, 9vh, 110px) 20px clamp(48px, 8vh, 96px); }
 .hero-copy { align-self: center; max-width: 34rem; }
 .eyebrow { display: inline-block; font: 600 12px/1.2 var(--ui); letter-spacing: 0.24em; text-transform: uppercase; color: var(--eyebrow, var(--accent-strong)); }
+.hero, .foot { --focus: var(--accent); }
 .hero .eyebrow { color: var(--hero-eyebrow, var(--accent)); }
 .hero-title { margin: 18px 0 30px; font-family: var(--display); font-weight: var(--hero-weight, 400); font-size: var(--hero-size, clamp(3.6rem, 10.5vw, 8.6rem)); line-height: 0.9; letter-spacing: var(--hero-track, -0.02em); text-transform: var(--hero-case, none); }
 .hero-title small { display: block; margin-top: 0.3em; font-size: 0.34em; letter-spacing: 0.02em; opacity: 0.85; }
@@ -169,13 +171,13 @@ h1, h2, h3, p { margin: 0; }
 .cover::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, rgba(0, 0, 0, .14) 0, rgba(255, 255, 255, .07) 2.5%, transparent 7%, transparent 93%, rgba(0, 0, 0, .06)); }
 .cv-art { position: absolute; inset: 0; width: 100%; height: 100%; }
 .cv-text { position: absolute; left: 10cqw; right: 9cqw; bottom: 19cqw; display: flex; flex-direction: column; gap: 4cqw; }
-.cv-author { font: 600 4.3cqw/1.25 var(--ui); letter-spacing: 0.14em; text-transform: uppercase; opacity: .82; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.cv-author { font: 600 4.3cqw/1.25 var(--ui); letter-spacing: 0.14em; text-transform: uppercase; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
 .cv-title { font-family: var(--display); font-weight: var(--cover-weight, 400); font-style: var(--cover-style, normal); line-height: 1.02; letter-spacing: var(--cover-track, -0.005em); text-transform: var(--cover-case, none); text-wrap: balance; overflow-wrap: break-word; hyphens: auto; }
 .cv-xl { font-size: 18.5cqw; } .cv-l { font-size: 14.5cqw; } .cv-m { font-size: 11.5cqw; } .cv-s { font-size: 9.4cqw; } .cv-xs { font-size: 7.8cqw; }
 .cv-mark { position: absolute; left: 10cqw; bottom: 6.5cqw; width: 6.4cqw; color: var(--cv-ac); }
 .cv-mark svg { width: 100%; height: auto; --paper: var(--cv-bg); }
-.cv-kind { position: absolute; right: 8cqw; bottom: 7.5cqw; font: 700 3.5cqw/1 var(--ui); letter-spacing: 0.16em; text-transform: uppercase; color: var(--cv-ac); }
-@container (max-width: 150px) { .cv-author, .cv-kind { display: none; } }
+.cv-kind { position: absolute; right: 8cqw; bottom: 7.5cqw; font: 700 3.5cqw/1 var(--ui); letter-spacing: 0.16em; text-transform: uppercase; color: var(--cv-fg); opacity: .9; }
+@container (max-width: 200px) { .cv-author, .cv-kind { display: none; } }
 .cv-booklet::before { content: ""; position: absolute; inset: 4.5cqw; border: 1px solid var(--cv-ac); opacity: .45; pointer-events: none; }
 .cv-bible::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 2.2cqw; background: var(--cv-ac); opacity: .8; }
 .cv-set { box-shadow: inset 3px 0 0 rgba(0, 0, 0, .16), 4px -4px 0 0 color-mix(in srgb, var(--cv-bg) 72%, #000), 8px -8px 0 0 color-mix(in srgb, var(--cv-bg) 52%, #000), 0 12px 26px -16px rgba(0, 0, 0, .55); }
@@ -276,7 +278,7 @@ h1, h2, h3, p { margin: 0; }
   .chip { padding: 0 11px; gap: 6px; }
 }
 @media (max-width: 1020px) {
-  .fmt button span { display: none; }
+  .fmt button span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   .fmt button { padding: 0 10px; }
   .hero-inner { grid-template-columns: 1fr; align-items: start; gap: 12px; min-height: 0; }
   .ascent { min-height: 0; justify-content: flex-start; padding: 26px 0 0; }
@@ -342,13 +344,20 @@ h1, h2, h3, p { margin: 0; }
 .fmt-icons svg { width: 17px; height: 17px; }
 .bag-pending { margin: -8px 0 16px; font: 400 13px var(--ui); color: var(--ink-2); }
 .bk-title:focus { outline: none; }
+
+/* Windows high-contrast: keep the chosen shelf, format and buttons distinguishable */
+@media (forced-colors: active) {
+  .chip[aria-current="true"], .fmt button[aria-pressed="true"] { forced-color-adjust: none; background: Highlight; color: HighlightText; border-color: Highlight; }
+  .fopt input:checked + .fopt-in { outline: 3px solid Highlight; outline-offset: -3px; }
+  .btn { border: 1px solid ButtonText; }
+}
 </style>
 <style>
 /* Sinag-Tala — starlight. Night indigo, star gold, warm sampaguita paper; a soft, generous serif. */
 :root {
   --paper: #FBF7EE; --paper-2: #F3ECDC; --ink: #1B1D3A; --ink-2: #5E5F77; --line: #E4D9C3;
   --deep: #151941; --deep-ink: #FBF4E2; --deep-ink-2: #B7B5CE;
-  --accent: #F3B33A; --accent-ink: #151941; --accent-strong: #C9412A; --focus: #C9412A;
+  --accent: #F3B33A; --accent-ink: #151941; --accent-strong: #C9412A; --eyebrow: #BF3E28; --focus: #C9412A;
   --display: 'Fraunces', Georgia, serif;
   --text: 'Fraunces', Georgia, serif;
   --ui: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -379,8 +388,8 @@ window.SITE = {
   palette: [
     { bg: '#1F2456', fg: '#FBF4E2', ac: '#F3B33A' },
     { bg: '#1D5C8C', fg: '#F7F3EA', ac: '#F6C75E' },
-    { bg: '#D6553C', fg: '#FFF6EA', ac: '#FFD684' },
-    { bg: '#F4EEDC', fg: '#1F2456', ac: '#D6553C' },
+    { bg: '#BC4B35', fg: '#FFF6EA', ac: '#FFD684' },
+    { bg: '#F4EEDC', fg: '#1F2456', ac: '#B64833' },
     { bg: '#255C4A', fg: '#F6F1E4', ac: '#F3C35C' },
     { bg: '#5A2F5E', fg: '#F9EFF0', ac: '#F3B84E' },
     { bg: '#F0A12E', fg: '#1F2456', ac: '#9E3520' },
@@ -392,7 +401,7 @@ window.SITE = {
     browse: 'Browse', titles: 'titles', all: 'All', none: 'Nothing found', noneHint: 'Try an author, or one word from the title.',
     unpriced: 'Price to follow', toPrice: '{n} to be priced at checkout', add: 'Add to cart', added: 'Added', basket: 'Cart', total: 'Subtotal',
     checkout: 'Checkout', checkoutNote: 'Preview only — GCash and card checkout not connected yet.', empty: 'Your cart is empty.',
-    remove: 'Remove', more: 'More in', isbn: 'ISBN', pages: 'Pages', kind: 'Format',
+    remove: 'Remove', removed: 'Removed', books: 'Books', more: 'More in', isbn: 'ISBN', pages: 'Pages', kind: 'Format',
   },
   footer: [
     ['Sinag-Tala Publishers, Inc.', '6F Loubel Bldg., C. Roces Avenue', 'San Antonio Village, Makati City'],
@@ -643,7 +652,7 @@ window.CATALOG = {"generated":"2026-09-25","shelves":[{"slug":"escriva","name":"
     <label class="search">${ICON.search}<span class="sr-only">Search books</span>
       <input type="search" id="q" placeholder="Search" autocomplete="off" spellcheck="false"></label>
     <div class="fmt" role="group" aria-label="Show prices for"${anyPriced ? '' : ' hidden'}>
-      ${FORMATS.map(f => `<button type="button" data-fmt="${f}" aria-pressed="${f === state.format}">${ICON[f]}<span>${esc(SITE.formats[f])}</span></button>`).join('')}
+      ${FORMATS.map(f => `<button type="button" data-fmt="${f}" aria-pressed="${f === state.format}" aria-label="${esc(SITE.formats[f])}">${ICON[f]}<span>${esc(SITE.formats[f])}</span></button>`).join('')}
     </div>
     <button type="button" class="bag-btn" id="bag-open" aria-label="Basket">${ICON.bag}<span class="bag-count" id="bag-count" hidden>0</span></button>
   </header>
@@ -661,7 +670,8 @@ window.CATALOG = {"generated":"2026-09-25","shelves":[{"slug":"escriva","name":"
       </div>
     </section>
     <nav class="shelves" aria-label="Shelves"><div class="shelves-in" id="shelves"></div></nav>
-    <section class="catalogue" id="catalogue" tabindex="-1" aria-live="polite"></section>
+    <section class="catalogue" id="catalogue" tabindex="-1" aria-label="${esc(SITE.words.books)}"></section>
+    <p class="sr-only" id="status" role="status"></p>
   </main>
   <footer class="foot">
     <div class="foot-in">
@@ -682,12 +692,12 @@ window.CATALOG = {"generated":"2026-09-25","shelves":[{"slug":"escriva","name":"
 
   // ---------- catalogue ----------
   // No price yet: show the three formats every title comes in.
-  const priceCell = p => (p == null ? `<span class="fmt-icons" title="${esc(FORMATS.map(f => SITE.formats[f]).join(' · '))}">${FORMATS.map(f => ICON[f]).join('')}</span>` : show(p));
+  const priceCell = p => (p == null ? `<span class="fmt-icons" title="${esc(FORMATS.map(f => SITE.formats[f]).join(' · '))}">${FORMATS.map(f => ICON[f]).join('')}<span class="sr-only">${esc(FORMATS.map(f => SITE.formats[f]).join(', '))}</span></span>` : show(p));
 
   function card(b, i) {
     const p = priceOf(b, state.format);
     return `<a class="card" href="#/book/${b.id}" style="--d:${Math.min(i, 16)}">
-      <div class="card-cover">${cover(b, SITE, shelfIndex[b.shelf] || 0)}</div>
+      <div class="card-cover" aria-hidden="true">${cover(b, SITE, shelfIndex[b.shelf] || 0)}</div>
       <div class="card-body">
         <h3 class="card-title">${esc(b.title)}</h3>
         <p class="card-author">${esc(b.author)}</p>
@@ -697,11 +707,13 @@ window.CATALOG = {"generated":"2026-09-25","shelves":[{"slug":"escriva","name":"
 
   function renderShelves() {
     const counts = Object.fromEntries(shelves.map(s => [s.slug, books.filter(b => b.shelf === s.slug).length]));
+    const had = document.activeElement && document.activeElement.matches('#shelves .chip') ? document.activeElement.getAttribute('href') : null;
     $('#shelves').innerHTML =
       `<a href="#/" class="chip" aria-current="${state.shelf === 'all' && !state.q}">${esc(SITE.words.all)}<span>${books.length}</span></a>` +
       shelves.map(s => `<a href="#/shelf/${s.slug}" class="chip" aria-current="${state.shelf === s.slug && !state.q}">${esc(s.name)}<span>${counts[s.slug]}</span></a>`).join('');
-    const cur = $('#shelves [aria-current="true"]');
-    if (cur) cur.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'auto' });
+    const cur = $('#shelves [aria-current="true"]'), box = $('#shelves');
+    if (cur) box.scrollLeft += cur.getBoundingClientRect().left - box.getBoundingClientRect().left - (box.clientWidth - cur.offsetWidth) / 2;
+    if (had) { const n = $(`#shelves .chip[href="${had}"]`); if (n) n.focus({ preventScroll: true }); }
   }
 
   function renderCatalogue() {
@@ -722,6 +734,8 @@ window.CATALOG = {"generated":"2026-09-25","shelves":[{"slug":"escriva","name":"
       }).join('');
     }
     renderShelves();
+    const n = q ? el.querySelectorAll('.card').length : books.filter(b => state.shelf === 'all' || b.shelf === state.shelf).length;
+    $('#status').textContent = q ? `${n} ${SITE.words.titles}: “${state.q.trim()}”` : state.shelf === 'all' ? '' : `${shelfName[state.shelf]}: ${n} ${SITE.words.titles}`;
   }
 
   // ---------- book ----------
@@ -738,7 +752,7 @@ window.CATALOG = {"generated":"2026-09-25","shelves":[{"slug":"escriva","name":"
     $('#dlg-book').innerHTML = `
       <button type="button" class="x" data-close aria-label="Close">${ICON.close}</button>
       <div class="bk">
-        <div class="bk-cover">${cover(b, SITE, shelfIndex[b.shelf] || 0)}</div>
+        <div class="bk-cover" aria-hidden="true">${cover(b, SITE, shelfIndex[b.shelf] || 0)}</div>
         <div class="bk-info">
           <a class="eyebrow" href="#/shelf/${b.shelf}" data-shelf>${esc(shelfName[b.shelf] || '')}</a>
           <h2 id="bk-title" class="bk-title" tabindex="-1">${typo(b.title)}</h2>
@@ -824,9 +838,11 @@ window.CATALOG = {"generated":"2026-09-25","shelves":[{"slug":"escriva","name":"
       <footer class="bag-foot"><p class="total"><span>${esc(SITE.words.total)}</span>${bagUnpriced() === state.basket.length ? `<span class="line-pending">${esc(SITE.words.unpriced)}</span>` : `<strong>${show(bagTotal())}</strong>`}</p>
         ${bagUnpriced() && bagUnpriced() < state.basket.length ? `<p class="bag-pending">${esc(SITE.words.toPrice.replace('{n}', bagUnpriced()))}</p>` : ''}
         <button type="button" class="btn btn-primary btn-wide" id="checkout">${esc(SITE.words.checkout)}</button>
-        <p class="bag-note" id="bag-note" hidden>${esc(SITE.words.checkoutNote)}</p></footer>`
+        <p class="bag-note" id="bag-note" role="status"></p></footer>`
       : `<div class="bag-empty">${ICON.bag}<p>${esc(SITE.words.empty)}</p></div>`}`;
   }
+
+  function refocusBag(sel) { const el = $('#dlg-bag ' + sel) || $('#dlg-bag .x'); if (el) el.focus(); }
 
   function addToBag(b, format, n) {
     const line = state.basket.find(l => l.id === b.id && l.format === format);
@@ -846,7 +862,7 @@ window.CATALOG = {"generated":"2026-09-25","shelves":[{"slug":"escriva","name":"
   }
 
   // ---------- routing ----------
-  let lastList = '#/';
+  let lastList = '#/', focusCatalogue = false;
   function route() {
     const h = location.hash || '#/';
     const m = h.match(/^#\/book\/([\w-]+)/);
@@ -863,6 +879,7 @@ window.CATALOG = {"generated":"2026-09-25","shelves":[{"slug":"escriva","name":"
       renderCatalogue();
       if (s) scrollToCatalogue();
     }
+    if (focusCatalogue) { focusCatalogue = false; $('#catalogue').focus({ preventScroll: true }); }
   }
   function scrollToCatalogue() {
     const top = $('#catalogue').getBoundingClientRect().top + window.scrollY - stickyOffset();
@@ -893,7 +910,7 @@ window.CATALOG = {"generated":"2026-09-25","shelves":[{"slug":"escriva","name":"
       }
       return;
     }
-    if (t.closest('[data-shelf]')) { e.preventDefault(); openedInApp = false; location.hash = t.closest('a').hash; return; }
+    if (t.closest('[data-shelf]')) { e.preventDefault(); openedInApp = false; focusCatalogue = true; location.hash = t.closest('a').hash; return; }
     if (t.closest('[data-close]')) { const d = t.closest('dialog'); if (d.id === 'dlg-book') leaveBook(); else d.close(); return; }
     if (t.closest('#bag-open')) { renderBag(); $('#dlg-bag').showModal(); return; }
     const dq = t.closest('[data-qty]');
@@ -905,11 +922,17 @@ window.CATALOG = {"generated":"2026-09-25","shelves":[{"slug":"escriva","name":"
     if (dl) {
       const l = state.basket[Number(dl.dataset.line)];
       l.qty = Math.max(1, Math.min(99, l.qty + Number(dl.dataset.d)));
-      save('basket', state.basket); renderBag(); renderBagCount(); return;
+      save('basket', state.basket); renderBag(); renderBagCount();
+      refocusBag(`[data-line="${dl.dataset.line}"][data-d="${dl.dataset.d}"]`); return;
     }
     const rm = t.closest('[data-remove]');
-    if (rm) { state.basket.splice(Number(rm.dataset.remove), 1); save('basket', state.basket); renderBag(); renderBagCount(); return; }
-    if (t.closest('#checkout')) { $('#bag-note').hidden = false; return; }
+    if (rm) {
+      const i = Number(rm.dataset.remove);
+      state.basket.splice(i, 1); save('basket', state.basket); renderBag(); renderBagCount();
+      refocusBag(state.basket.length ? `[data-remove="${Math.min(i, state.basket.length - 1)}"]` : '.x');
+      toast(SITE.words.removed); return;
+    }
+    if (t.closest('#checkout')) { $('#bag-note').textContent = SITE.words.checkoutNote; return; }
     // A click on the dialog's own backdrop closes it.
     if (t.matches('dialog.dlg')) { const r = t.getBoundingClientRect(); if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) { if (t.id === 'dlg-book') leaveBook(); else t.close(); } }
   });

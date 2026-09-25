@@ -8,8 +8,8 @@ window.SITE = {
   hero: { eyebrow: 'Australia', title: 'Scepter' },
   palette: [
     { bg: '#13243A', fg: '#F3EDE3', ac: '#E7B04A' },
-    { bg: '#A8432B', fg: '#FBF0E4', ac: '#F4C878' },
-    { bg: '#56796A', fg: '#F6F2EA', ac: '#F3D591' },
+    { bg: '#A04029', fg: '#FBF0E4', ac: '#F4C878' },
+    { bg: '#466256', fg: '#F6F2EA', ac: '#F3D591' },
     { bg: '#E8DAC3', fg: '#13243A', ac: '#A8432B' },
     { bg: '#3B3561', fg: '#F4EEF0', ac: '#EDB75E' },
     { bg: '#1F5E73', fg: '#F2F0EA', ac: '#F2C46C' },
@@ -22,7 +22,7 @@ window.SITE = {
     browse: 'Browse', titles: 'titles', all: 'All', none: 'Nothing found', noneHint: 'Try an author, or one word from the title.',
     unpriced: 'Price to follow', toPrice: '{n} to be priced at checkout', add: 'Add to cart', added: 'Added', basket: 'Cart', total: 'Subtotal',
     checkout: 'Checkout', checkoutNote: 'Preview only — checkout is not connected yet.', empty: 'Your cart is empty.',
-    remove: 'Remove', more: 'More in', isbn: 'ISBN', pages: 'Pages', kind: 'Format',
+    remove: 'Remove', removed: 'Removed', books: 'Books', more: 'More in', isbn: 'ISBN', pages: 'Pages', kind: 'Format',
   },
   footer: [
     ['Scepter Australia', 'Sydney · Melbourne · Brisbane · Perth'],

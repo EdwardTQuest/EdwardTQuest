@@ -11,8 +11,8 @@ window.SITE = {
   palette: [
     { bg: '#1F2456', fg: '#FBF4E2', ac: '#F3B33A' },
     { bg: '#1D5C8C', fg: '#F7F3EA', ac: '#F6C75E' },
-    { bg: '#D6553C', fg: '#FFF6EA', ac: '#FFD684' },
-    { bg: '#F4EEDC', fg: '#1F2456', ac: '#D6553C' },
+    { bg: '#BC4B35', fg: '#FFF6EA', ac: '#FFD684' },
+    { bg: '#F4EEDC', fg: '#1F2456', ac: '#B64833' },
     { bg: '#255C4A', fg: '#F6F1E4', ac: '#F3C35C' },
     { bg: '#5A2F5E', fg: '#F9EFF0', ac: '#F3B84E' },
     { bg: '#F0A12E', fg: '#1F2456', ac: '#9E3520' },
@@ -24,7 +24,7 @@ window.SITE = {
     browse: 'Browse', titles: 'titles', all: 'All', none: 'Nothing found', noneHint: 'Try an author, or one word from the title.',
     unpriced: 'Price to follow', toPrice: '{n} to be priced at checkout', add: 'Add to cart', added: 'Added', basket: 'Cart', total: 'Subtotal',
     checkout: 'Checkout', checkoutNote: 'Preview only — GCash and card checkout not connected yet.', empty: 'Your cart is empty.',
-    remove: 'Remove', more: 'More in', isbn: 'ISBN', pages: 'Pages', kind: 'Format',
+    remove: 'Remove', removed: 'Removed', books: 'Books', more: 'More in', isbn: 'ISBN', pages: 'Pages', kind: 'Format',
   },
   footer: [
     ['Sinag-Tala Publishers, Inc.', '6F Loubel Bldg., C. Roces Avenue', 'San Antonio Village, Makati City'],
