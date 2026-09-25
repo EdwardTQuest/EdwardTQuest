@@ -4,7 +4,7 @@ window.SITE = {
   title: 'Scepter Australia — Books, eBooks & Audiobooks',
   wordmark: 'Scepter<small>Australia</small>',
   locale: 'en-AU', currency: 'AUD',
-  motif: 'southern', mark: 'cross', logo: null,
+  motif: 'southern', mark: 'cross', logo: null, coverFit: 0.8,
   hero: { eyebrow: 'Australia', title: 'Scepter' },
   palette: [
     { bg: '#13243A', fg: '#F3EDE3', ac: '#E7B04A' },

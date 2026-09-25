@@ -287,7 +287,7 @@
     const fromBook = $('#dlg-book').open;
     closeBook();
     if ($('#dlg-bag').open) $('#dlg-bag').close();
-    if (fromBook && h === lastList) return;
+    if (fromBook && h === lastList) { if (focusCatalogue) { focusCatalogue = false; $('#catalogue').focus({ preventScroll: true }); } return; }
     const s = h.match(/^#\/shelf\/([\w-]+)/);
     const next = s && shelves.some(x => x.slug === s[1]) ? s[1] : 'all';
     const changed = next !== state.shelf || state.q;

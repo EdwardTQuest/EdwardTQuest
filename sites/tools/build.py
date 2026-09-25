@@ -113,7 +113,7 @@ def single(site):
                 path = os.path.join(base, m.group(2))
                 mime = {'svg': 'image/svg+xml', 'png': 'image/png', 'jpg': 'image/jpeg', 'jpeg': 'image/jpeg', 'webp': 'image/webp'}[path.rsplit('.', 1)[-1].lower()]
                 return "logo: 'data:%s;base64,%s'" % (mime, base64.b64encode(open(path, 'rb').read()).decode())
-            text = re.sub(r"^(\s*)logo:\s*'([^']+)'", lambda m: m.group(1) + logo(m), text, flags=re.M)
+            text = re.sub(r"^(?!\s*//)(.*?\b)logo:\s*'([^']+)'", lambda m: m.group(1) + logo(m), text, flags=re.M)
         return text.replace('</script', '<\\/script')
     html = re.sub(r'<script src="([^"]+)"></script>', lambda m: '<script>\n%s</script>' % js(m.group(1)), html)
     html = re.sub(r'<link rel="icon" href="([^"]+\.svg)" type="image/svg\+xml">',

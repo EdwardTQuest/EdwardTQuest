@@ -135,8 +135,9 @@
     star: '<svg viewBox="0 0 40 40" aria-hidden="true"><path transform="translate(20 20)" d="' + star8(18, 6.5) + '" fill="currentColor"/><circle cx="20" cy="20" r="3.2" fill="var(--paper, #fff)"/></svg>',
   };
 
-  function titleSize(t) {
-    const n = t.length, longest = Math.max(...t.split(/\s+/).map(w => w.length));
+  // fit: how wide the house's display face runs (1 for Fraunces, Bricolage, Caslon; less for a condensed face).
+  function titleSize(t, fit) {
+    const k = fit || 1, n = t.length * k, longest = Math.max(...t.split(/\s+/).map(w => w.length)) * k;
     if (n <= 10 && longest <= 8) return 'xl';
     if (n <= 22 && longest <= 9) return 'l';
     if (n <= 40 && longest <= 11) return 'm';
@@ -158,7 +159,7 @@
     return `<div class="cover cv-${book.kind || 'book'}" style="--cv-bg:${pal.bg};--cv-fg:${pal.fg};--cv-ac:${pal.ac}">` +
       `<svg class="cv-art" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${art}</svg>` +
       `<div class="cv-text"><span class="cv-author">${esc(book.authorShort || book.author || '')}</span>` +
-      `<span class="cv-title cv-${titleSize(book.title)}">${typo(book.title)}</span></div>` +
+      `<span class="cv-title cv-${titleSize(book.title, site.coverFit)}">${typo(book.title)}</span></div>` +
       `<span class="cv-mark">${MARKS[site.mark]}</span>${kind}</div>`;
   }
 
