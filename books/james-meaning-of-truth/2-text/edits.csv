@@ -1,0 +1,7 @@
+rule,count,cap,category,example
+hyphen joins,0,604,O,
+curly quotes,1603,12094,I,t of the relation called 'truth' which may obtain between an  →  t of the relation called ‘truth’ which may obtain between an
+ellipses,8,1209,I, with that object mean? ... Pragmatism asks its usual questi  →   with that object mean? . . . Pragmatism asks its usual ques
+dashes,191,3023,I,o much on their good will--oh for the rarity of Christian ch  →  o much on their good will—oh for the rarity of Christian cha
+caps openings,6,604,C,:: {.front} ## Preface  THE pivotal part of my book named Pr  →  :: {.front} ## Preface  The pivotal part of my book named Pr
+spacing and ligatures,4,3023,N,nt with that object mean? . . . Pragmatism asks its usual qu  →  nt with that object mean?. . . Pragmatism asks its usual que

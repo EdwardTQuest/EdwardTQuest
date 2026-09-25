@@ -1,0 +1,108 @@
+slug: james-talks-to-teachers
+title: Talks to Teachers on Psychology
+subtitle: ''
+author: William James
+author_sort: William James
+translator: ''
+language: en
+series: The Athanasius Library
+year_first: 1899
+edition_credit: the Project Gutenberg transcription
+pd_basis: published before 1 January 1931; public domain in the United States
+source:
+  kind: gutenberg
+  gutenberg: 16287
+  archive: []
+  files:
+  - 0-source/pg16287.txt
+  note: ''
+plan:
+  summary: ''
+  audience: ''
+  structure: ''
+  art_subjects: []
+  movement: landscape
+art:
+  cover: null
+  plates: []
+  plates_wanted: 10
+  plate_mode: grayscale
+blurb: ''
+editions:
+- deluxe
+- everyman
+- scholar
+typeset:
+  chapters_open_recto: true
+  opening_smallcaps: true
+  signature_font: La Belle Aurore
+status:
+  edit:
+    state: done
+    when: 2026-09-25 21:22
+    words: 60365
+    chapters: 18
+    unknown: 539
+    suspicious: 8
+    errors: 0
+    battery: 11
+  typeset:
+    deluxe:
+      pages: 226
+      spine_in: 0.75
+      inside_margin: 0.75
+      plates: 0
+      plates_on_sections: false
+      layout:
+        runt: 14
+        loose line: 6
+        widow: 1
+      pdf: 3-typeset/deluxe.pdf
+    everyman:
+      pages: 220
+      spine_in: 0.5724
+      inside_margin: 0.7
+      plates: 0
+      plates_on_sections: false
+      layout:
+        widow: 3
+        loose line: 5
+        runt: 27
+      pdf: 3-typeset/everyman.pdf
+    scholar:
+      pages: 274
+      spine_in: 0.7129
+      inside_margin: 0.85
+      plates: 0
+      plates_on_sections: false
+      layout:
+        runt: 33
+        loose line: 14
+      pdf: 3-typeset/scholar.pdf
+  epub:
+    state: done
+    when: 2026-09-25 21:23
+    problems: 0
+    size_mb: 1.36
+    cover: false
+  proof:
+    state: done
+    when: 2026-09-25 21:23
+    findings: 340
+forced:
+- command: typeset
+  gates:
+  - text
+  when: 2026-09-25 21:22
+- command: epub
+  gates:
+  - text
+  when: 2026-09-25 21:23
+- command: typeset
+  gates:
+  - text
+  when: 2026-09-25 21:24
+- command: typeset
+  gates:
+  - text
+  when: 2026-09-25 21:27
