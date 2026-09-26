@@ -48,13 +48,13 @@ status:
     battery: 0
   epub:
     state: done
-    when: 2026-09-25 22:04
+    when: 2026-09-26 00:22
     problems: 0
     size_mb: 1.28
     cover: false
   proof:
     state: done
-    when: 2026-09-25 22:04
+    when: 2026-09-26 00:22
     findings: 97
   typeset:
     deluxe:
@@ -112,3 +112,7 @@ forced:
   gates:
   - text
   when: 2026-09-26 00:21
+- command: epub
+  gates:
+  - text
+  when: 2026-09-26 00:22

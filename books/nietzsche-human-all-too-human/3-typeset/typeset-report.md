@@ -2,36 +2,6 @@
 
 What the page-layout lens found in each PDF (widows, orphans, runts, hyphen stacks, loose lines, stranded headings, thin chapter ends). A finding is a place to look; the typeset gate decides whether it is tolerable where it is. Look at 3-typeset/pages/ first, then read this.
 
-## scholar — 170 pages, measure 3.15 in, line box 13.7 pt
-
-counts: loose line 9, runt 16
-
-- p.41 loose line: mean gap 0.57 em: Metaphysical Explanation.—Man, when he is young,
-- p.41 runt: more.
-- p.48 loose line: mean gap 0.63 em: Age of Comparison.—The less men are bound by
-- p.48 loose line: mean gap 0.57 em: ings. Who now feels any great impulse to establish
-- p.56 runt: opposite.
-- p.75 runt: man.
-- p.80 runt: Utopians.
-- p.84 runt: olent.
-- p.87 loose line: mean gap 0.56 em: itself when it is represented by mere humbugs: the
-- p.91 runt: sighted.
-- p.92 runt: aroused.
-- p.93 runt: so—
-- p.98 runt: wholly.
-- p.103 loose line: mean gap 0.68 em: Luke 18:14 Improved.—He that humbleth himself
-- p.112 runt: pleasure.
-- p.138 runt: religion.
-- p.140 runt: believed?
-- p.145 runt: paradise.
-- p.145 runt: pictures.
-- p.145 loose line: mean gap 0.57 em: fears, exhaustions and delights of the saint are w
-- p.147 runt: people.
-- p.149 loose line: mean gap 0.63 em: eration must render it possible to propound some
-- p.155 runt: salvation.
-- p.158 loose line: mean gap 0.56 em: one is, in affection, or disposition, the most mor
-- p.162 loose line: mean gap 0.58 em: In all pessimistic religions the act of procreatio
-
 ## deluxe — 140 pages, measure 3.69 in, line box 13.7 pt
 
 counts: runt 9, loose line 2
@@ -74,3 +44,33 @@ counts: runt 18, loose line 4
 - p.132 runt: tendency.”
 - p.133 runt: saints.
 - p.134 runt: sinfulness.
+
+## scholar — 170 pages, measure 3.15 in, line box 13.7 pt
+
+counts: loose line 9, runt 16
+
+- p.41 loose line: mean gap 0.57 em: Metaphysical Explanation.—Man, when he is young,
+- p.41 runt: more.
+- p.48 loose line: mean gap 0.63 em: Age of Comparison.—The less men are bound by
+- p.48 loose line: mean gap 0.57 em: ings. Who now feels any great impulse to establish
+- p.56 runt: opposite.
+- p.75 runt: man.
+- p.80 runt: Utopians.
+- p.84 runt: olent.
+- p.87 loose line: mean gap 0.56 em: itself when it is represented by mere humbugs: the
+- p.91 runt: sighted.
+- p.92 runt: aroused.
+- p.93 runt: so—
+- p.98 runt: wholly.
+- p.103 loose line: mean gap 0.68 em: Luke 18:14 Improved.—He that humbleth himself
+- p.112 runt: pleasure.
+- p.138 runt: religion.
+- p.140 runt: believed?
+- p.145 runt: paradise.
+- p.145 runt: pictures.
+- p.145 loose line: mean gap 0.57 em: fears, exhaustions and delights of the saint are w
+- p.147 runt: people.
+- p.149 loose line: mean gap 0.63 em: eration must render it possible to propound some
+- p.155 runt: salvation.
+- p.158 loose line: mean gap 0.56 em: one is, in affection, or disposition, the most mor
+- p.162 loose line: mean gap 0.58 em: In all pessimistic religions the act of procreatio

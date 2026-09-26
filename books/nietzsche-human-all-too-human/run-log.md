@@ -21,3 +21,7 @@ Read first, write last.
 - 2026-09-26 00:21 · **typeset** · FORCED past unpassed gate(s) ['text']
 - 2026-09-26 00:22 · **typeset** · deluxe: 140 pages, spine 0.5625 in, inside margin 0.75 in, 0 plates; layout {'runt': 9, 'loose line': 2}; samples in 3-typeset/pages/
 - 2026-09-26 00:22 · **typeset** · everyman: 136 pages, spine 0.3539 in, inside margin 0.6 in, 0 plates; layout {'runt': 18, 'loose line': 4}; samples in 3-typeset/pages/
+- 2026-09-26 00:22 · **typeset** · scholar: 170 pages, spine 0.4423 in, inside margin 0.85 in, 0 plates; layout {'loose line': 9, 'runt': 16}; samples in 3-typeset/pages/
+- 2026-09-26 00:22 · **epub** · FORCED past unpassed gate(s) ['text']
+- 2026-09-26 00:22 · **epub** · nietzsche-human-all-too-human.epub built (1.28 MB), 0 problems; see 4-epub/epub-check.md
+- 2026-09-26 00:22 · **proof** · PROOF.md written; findings: structure and sequence 39, page layout 58, dictionary sweep 363, apparatus 0, cross-edition consistency 0, mechanical 0, render and look 3
