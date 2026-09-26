@@ -344,13 +344,13 @@
   function mountTemperament(host, cfgIn) {
     var cfg = cfgIn || readConfig(host);
     if (cfg.enabled === false) return null;
-    var T = window.ScepterTemperament, L = window.ScepterLead;
+    var T = window.ScepterTemperament, L = window.ScepterLead, TS = T.twoStage;
     var copy = merge({
       kicker: 'Temperament test', title: 'What’s your temperament?',
       lead: 'Twenty-two quick questions about your first reactions. Answer with what comes to you first, not what you think you should say. You’ll discover your dominant temperament, your secondary one, and the virtue that will help you most.',
       cta: 'Start the test', meta: '22 questions · about 5 minutes',
-      attribution: 'Based on the four classical temperaments as Alexandre Havard presents them in From Temperament to Character.',
-      attributionUrl: '', resultKicker: 'Your temperament', booksTitle: 'Go deeper with Alexandre Havard',
+      standInCredit: 'Based on the four classical temperaments as Alexandre Havard presents them in From Temperament to Character.',
+      resultKicker: 'Your temperament', booksTitle: 'Go deeper with Alexandre Havard',
       booksLead: 'Temperament is where we start; character is what we build. These books show how.',
       launcher: 'What’s your temperament?', emailTitle: 'Email me my result', progress: '{n} of {total}',
       consent: 'Also send me occasional emails from Scepter. Unsubscribe anytime.'
@@ -364,91 +364,224 @@
       return b.product ? Object.assign({}, b.product, { for: b.for || [] }) : b;
     }).filter(function (b) { return b && b.handle; });
     var modal = createModal({ id: 'temperament', label: copy.title, theme: 'dark', narrow: true, className: 'sp-modal--temperament', style: cfg.style });
+    // The stand-in: picks per question. Havard's test: H (his set) and run (the reader's way through it).
     var picks = [], index = 0, stage = 'intro', outcome = null, advancing = null;
+    var H = null, run = null;
 
-    function topbar(n, total) {
+    // Havard's set, when its data file is installed (scepter-temperament-havard.js) and chosen.
+    function havardSet() {
+      if (cfg.questionSet === 'standin' || !TS) return null;
+      var set = (window.ScepterTemperamentSets || {}).havard;
+      if (!set) return null;
+      var problems = TS.validateSet(set);
+      if (problems.length) { if (window.console) console.warn('[scepter-popups] Havard test file is incomplete:', problems); return null; }
+      return set;
+    }
+    var ARROW = '→';
+    function titleCase(x) {
+      x = String(x || '');
+      return x === x.toUpperCase() ? x.toLowerCase().replace(/(^|[\s-])(\S)/g, function (m, a, b) { return a + b.toUpperCase(); }) : x;
+    }
+    // The reader's dominant temperament as the book blocks name it (choleric …).
+    function resultKey() { return run && run.result ? TS.TYPE_KEY[run.result.dominant] : outcome && outcome.dominant; }
+
+    function topbar(n, total, canGoBack) {
       return h('div', { class: 'sp-topbar' }, [
-        h('button', { type: 'button', class: 'sp-back', 'aria-label': 'Back', onclick: back, html: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>' }),
+        h('button', { type: 'button', class: 'sp-back', 'aria-label': 'Back', disabled: canGoBack === false ? true : null, onclick: back, html: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>' }),
         h('div', { class: 'sp-progress', role: 'progressbar', 'aria-valuemin': '0', 'aria-valuemax': String(total), 'aria-valuenow': String(n - 1), 'aria-label': 'Progress' },
           [h('span', { style: 'width:' + Math.round(((n - 1) / total) * 100) + '%' })]),
         h('div', { class: 'sp-count', text: copy.progress.replace('{n}', n).replace('{total}', total) })
       ]);
     }
     function back() {
+      if (H && run) {
+        // As on Havard's page, back moves within a stage; from the first statement, to the intro.
+        if (TS.canBack(run)) TS.back(run);
+        else if (run.phase === 'stage1') stage = 'intro';
+        render(); return;
+      }
       if (stage === 'q' && index > 0) { index--; render(); return; }
       stage = 'intro'; render();
     }
-    function attribution() {
-      return h('p', { class: 'sp-temp__attrib' }, copy.attributionUrl
-        ? [h('a', { href: copy.attributionUrl, target: '_blank', rel: 'noopener', text: copy.attribution })]
-        : [copy.attribution]);
+    function attribution(set) {
+      var text = copy.attribution || (set ? set.credit : copy.standInCredit);
+      var url = copy.attributionUrl || (set && !copy.attribution ? set.creditUrl : '');
+      return h('p', { class: 'sp-temp__attrib' }, url ? [h('a', { href: url, target: '_blank', rel: 'noopener', text: text })] : [text]);
+    }
+    function focusTitle(box, sel) {
+      var t = box.querySelector(sel);
+      if (t) { try { t.focus({ preventScroll: true }); } catch (e) { t.focus(); } }
     }
 
     function render() {
       var box = h('div', { class: 'sp-temp' });
       modal.content.innerHTML = '';
       modal.content.appendChild(box);
-      if (stage === 'intro') {
-        box.appendChild(h('div', { class: 'sp-temp__intro sp-enter-forward' }, [
-          h('div', { class: 'sp-emblem', html: '<svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="50" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M60 10 A50 50 0 0 1 110 60 L60 60 Z" fill="var(--sp-burgundy-hover)"/><path d="M110 60 A50 50 0 0 1 60 110 L60 60 Z" fill="currentColor" opacity=".55"/><path d="M60 110 A50 50 0 0 1 10 60 L60 60 Z" fill="currentColor" opacity=".25"/><path d="M10 60 A50 50 0 0 1 60 10 L60 60 Z" fill="currentColor" opacity=".85"/><circle cx="60" cy="60" r="14" fill="var(--sp-forest-deep)"/></svg>' }),
-          h('p', { class: 'sp-kicker', text: copy.kicker }),
-          h('h2', { class: 'sp-display', id: 'sp-temp-title', text: copy.title }),
-          h('p', { class: 'sp-lead', text: copy.lead }),
-          h('button', { type: 'button', class: 'sp-btn sp-btn--primary sp-btn--lg', autofocus: true, onclick: function () {
-            stage = 'q'; index = picks.findIndex(function (p) { return p === undefined || p === null; });
-            if (index < 0) index = picks.length < questions.length ? picks.length : 0;
-            emit('temperament:start', {}); render();
-          } }, [copy.cta, h('span', { class: 'sp-btn__arrow', 'aria-hidden': 'true', text: '→' })]),
-          h('ul', { class: 'sp-meta' }, copy.meta.split('·').map(function (m) { return h('li', { text: m.trim() }); })),
-          attribution()
-        ]));
-        modal.root.setAttribute('aria-labelledby', 'sp-temp-title');
-        return;
-      }
-      if (stage === 'q') {
-        var q = questions[index];
-        box.appendChild(topbar(index + 1, questions.length));
-        var list = h('div', { class: 'sp-options sp-options--list', role: 'group', 'aria-label': q.prompt });
-        q.answers.forEach(function (a, i) {
-          list.appendChild(h('button', { type: 'button', class: 'sp-opt' + (picks[index] === i ? ' is-selected' : ''), 'aria-pressed': picks[index] === i ? 'true' : 'false',
-            onclick: function (ev) {
-              var at = index;
-              if (advancing === at) return; // a second tap on the same question
-              advancing = at;
-              picks[index] = i;
-              Array.prototype.forEach.call(list.children, function (b) { b.classList.remove('is-selected'); b.setAttribute('aria-pressed', 'false'); });
-              ev.currentTarget.classList.add('is-selected'); ev.currentTarget.setAttribute('aria-pressed', 'true');
-              setTimeout(function () {
-                advancing = null;
-                if (index !== at || stage !== 'q') return;
-                if (index < questions.length - 1) { index++; render(); }
-                else finish();
-              }, 200);
-            } }, [h('span', { class: 'sp-opt__label', text: a.text })]));
-        });
-        box.appendChild(h('section', { class: 'sp-temp__q sp-enter-forward' }, [h('h2', { class: 'sp-title', tabindex: '-1', text: q.prompt }), list]));
-        var title = box.querySelector('.sp-title');
-        if (title) { try { title.focus({ preventScroll: true }); } catch (e) { title.focus(); } }
-        return;
-      }
+      if (stage === 'intro') return renderIntro(box);
+      if (stage === 'q' && H) return renderHavard(box);
+      if (stage === 'q') return renderStandIn(box);
       if (stage === 'result') renderResult(box);
     }
 
+    function renderIntro(box) {
+      var set = (run && run.phase !== 'done' && H) || havardSet();
+      var missing = !set && cfg.questionSet !== 'standin' && designMode();
+      box.appendChild(h('div', { class: 'sp-temp__intro sp-enter-forward' }, [
+        missing ? h('p', { class: 'sp-editor-note', text: 'Alexandre Havard’s test isn’t installed, so the stand-in questions show. Upload scepter-temperament-havard.js to the theme’s assets (see the kit’s README, “The temperament test”).' }) : null,
+        h('div', { class: 'sp-emblem', html: '<svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="50" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M60 10 A50 50 0 0 1 110 60 L60 60 Z" fill="var(--sp-burgundy-hover)"/><path d="M110 60 A50 50 0 0 1 60 110 L60 60 Z" fill="currentColor" opacity=".55"/><path d="M60 110 A50 50 0 0 1 10 60 L60 60 Z" fill="currentColor" opacity=".25"/><path d="M10 60 A50 50 0 0 1 60 10 L60 60 Z" fill="currentColor" opacity=".85"/><circle cx="60" cy="60" r="14" fill="var(--sp-forest-deep)"/></svg>' }),
+        h('p', { class: 'sp-kicker', text: copy.kicker }),
+        h('h2', { class: 'sp-display', id: 'sp-temp-title', text: copy.title }),
+        h('p', { class: 'sp-lead', text: set ? set.copy.intro : copy.lead }),
+        set && set.copy.notice ? h('p', { class: 'sp-temp__notice', text: set.copy.notice }) : null,
+        h('button', { type: 'button', class: 'sp-btn sp-btn--primary sp-btn--lg', autofocus: true, onclick: begin }, [copy.cta, h('span', { class: 'sp-btn__arrow', 'aria-hidden': 'true', text: ARROW })]),
+        h('ul', { class: 'sp-meta' }, String(set ? set.copy.duration : copy.meta).split('·').map(function (m) { return h('li', { text: m.trim() }); })),
+        attribution(set)
+      ]));
+      modal.root.setAttribute('aria-labelledby', 'sp-temp-title');
+    }
+
+    function begin() {
+      if (!(H && run && run.phase !== 'done')) {
+        H = havardSet();
+        run = H ? TS.start(H) : null;
+      }
+      stage = 'q';
+      if (!H) {
+        index = picks.findIndex(function (p) { return p === undefined || p === null; });
+        if (index < 0) index = picks.length < questions.length ? picks.length : 0;
+      }
+      emit('temperament:start', { test: H ? 'havard' : 'stand-in' });
+      render();
+    }
+
+    // Havard's test: a statement with TRUE / FALSE, the stage-2 page, then the result.
+    function renderHavard(box) {
+      if (run.phase === 'done') { stage = 'result'; return renderResult(box); }
+      if (run.phase === 'transition') {
+        var name = ((H.temperaments[run.dominant] || {}).name || run.dominant).toLowerCase();
+        box.appendChild(h('div', { class: 'sp-temp__stage sp-enter-forward' }, [
+          h('p', { class: 'sp-kicker', text: H.copy.stage2Kicker }),
+          h('h2', { class: 'sp-display', tabindex: '-1' }, [H.copy.stage2Title, h('em', { text: name }), H.copy.stage2TitleEnd]),
+          h('p', { class: 'sp-lead', text: H.copy.stage2Text }),
+          h('button', { type: 'button', class: 'sp-btn sp-btn--primary sp-btn--lg', onclick: function () { TS.proceed(run); render(); } }, [H.copy.continue, h('span', { class: 'sp-btn__arrow', 'aria-hidden': 'true', text: ARROW })])
+        ]));
+        focusTitle(box, '.sp-display');
+        return;
+      }
+      var item = TS.current(run), p = TS.progress(H, run), was = TS.given(run), text = H.items[item.id];
+      box.appendChild(topbar(p.n, p.total, TS.canBack(run) || run.phase === 'stage1'));
+      var row = h('div', { class: 'sp-truefalse', role: 'group', 'aria-label': text });
+      [[true, H.copy.yes], [false, H.copy.no]].forEach(function (choice) {
+        var on = was === choice[0];
+        row.appendChild(h('button', { type: 'button', class: 'sp-opt sp-truefalse__btn' + (on ? ' is-selected' : ''), 'aria-pressed': on ? 'true' : 'false',
+          onclick: function (ev) {
+            var at = run.phase + ':' + run.index;
+            if (advancing === at) return; // a second tap on the same statement
+            advancing = at;
+            Array.prototype.forEach.call(row.children, function (b) { b.classList.remove('is-selected'); b.setAttribute('aria-pressed', 'false'); });
+            ev.currentTarget.classList.add('is-selected'); ev.currentTarget.setAttribute('aria-pressed', 'true');
+            setTimeout(function () {
+              advancing = null;
+              if (stage !== 'q' || run.phase + ':' + run.index !== at) return;
+              TS.answer(H, run, choice[0]);
+              if (run.phase === 'done') finish(); else render();
+            }, 200);
+          } }, [h('span', { class: 'sp-opt__label', text: choice[1] })]));
+      });
+      box.appendChild(h('section', { class: 'sp-temp__q sp-temp__q--statement sp-enter-forward', 'data-statement': item.id }, [h('h2', { class: 'sp-title', tabindex: '-1', text: text }), row]));
+      focusTitle(box, '.sp-title');
+    }
+
+    function renderStandIn(box) {
+      var q = questions[index];
+      box.appendChild(topbar(index + 1, questions.length));
+      var list = h('div', { class: 'sp-options sp-options--list', role: 'group', 'aria-label': q.prompt });
+      q.answers.forEach(function (a, i) {
+        list.appendChild(h('button', { type: 'button', class: 'sp-opt' + (picks[index] === i ? ' is-selected' : ''), 'aria-pressed': picks[index] === i ? 'true' : 'false',
+          onclick: function (ev) {
+            var at = index;
+            if (advancing === at) return; // a second tap on the same question
+            advancing = at;
+            picks[index] = i;
+            Array.prototype.forEach.call(list.children, function (b) { b.classList.remove('is-selected'); b.setAttribute('aria-pressed', 'false'); });
+            ev.currentTarget.classList.add('is-selected'); ev.currentTarget.setAttribute('aria-pressed', 'true');
+            setTimeout(function () {
+              advancing = null;
+              if (index !== at || stage !== 'q') return;
+              if (index < questions.length - 1) { index++; render(); }
+              else finish();
+            }, 200);
+          } }, [h('span', { class: 'sp-opt__label', text: a.text })]));
+      });
+      box.appendChild(h('section', { class: 'sp-temp__q sp-enter-forward' }, [h('h2', { class: 'sp-title', tabindex: '-1', text: q.prompt }), list]));
+      focusTitle(box, '.sp-title');
+    }
+
     function finish() {
-      outcome = T.score(questions, picks);
+      var saved;
+      if (H) {
+        var r = run.result;
+        saved = { d: TS.TYPE_KEY[r.dominant], s: r.secondary ? TS.TYPE_KEY[r.secondary] : null, p: r.key };
+        emit('temperament:complete', { test: 'havard', dominant: saved.d, secondary: saved.s, profile: r.key });
+      } else {
+        outcome = T.score(questions, picks);
+        saved = { d: outcome.dominant, s: outcome.secondary };
+        emit('temperament:complete', { test: 'stand-in', dominant: outcome.dominant, secondary: outcome.secondary });
+      }
       stage = 'result';
-      set('local', 'sp:temperament:result', JSON.stringify({ d: outcome.dominant, s: outcome.secondary, t: Date.now() }));
-      emit('temperament:complete', { dominant: outcome.dominant, secondary: outcome.secondary });
+      saved.t = Date.now();
+      set('local', 'sp:temperament:result', JSON.stringify(saved));
       render();
     }
 
     function renderResult(box) {
-      var d = results[outcome.dominant], s = outcome.secondary ? results[outcome.secondary] : null;
       var wrap = h('div', { class: 'sp-temp__result sp-enter-forward' });
+      if (H && run && run.result) havardResult(wrap); else standInResult(wrap);
+      wrap.appendChild(renderBooks());
+      if (cfg.askEmail !== 'off' && L && canEmail(cfg)) wrap.appendChild(emailForm());
+      wrap.appendChild(h('div', { class: 'sp-results__actions' }, [
+        h('button', { type: 'button', class: 'sp-btn sp-btn--quiet', onclick: function () { picks = []; index = 0; outcome = null; run = null; H = null; stage = 'intro'; render(); } }, 'Retake the test')
+      ]));
+      wrap.appendChild(attribution(H && run && run.result ? H : null));
+      box.appendChild(wrap);
+      requestAnimationFrame(function () { requestAnimationFrame(function () {
+        Array.prototype.forEach.call(box.querySelectorAll('.sp-bar__fill'), function (f) { f.style.width = f.getAttribute('data-w'); });
+      }); });
+      focusTitle(box, '.sp-display');
+      modal.dialog.scrollTop = 0;
+    }
+
+    // His result page: the profile, the virtue-challenge, the four virtue-challenges with the
+    // reader's marked, strength, weakness, the challenge, and his words on temperament and character.
+    function havardResult(wrap) {
+      var r = run.result, prof = H.profiles[r.key], c = H.copy;
+      wrap.appendChild(h('p', { class: 'sp-kicker', text: c.profile }));
+      wrap.appendChild(h('h2', { class: 'sp-display', tabindex: '-1', text: titleCase(prof.name) }));
+      wrap.appendChild(h('p', { class: 'sp-temp__label' }, [prof.label, r.pure && c.pure ? h('span', { class: 'sp-temp__pure', text: c.pure }) : null]));
+      wrap.appendChild(h('p', { class: 'sp-temp__facts' }, [
+        h('span', {}, [c.challenge + ': ', h('strong', { text: prof.challenge })]),
+        !r.pure && r.intensity ? h('span', {}, [c.intensity + ': ', h('strong', { text: r.intensity === 'marked' ? c.marked : c.light })]) : null
+      ]));
+      wrap.appendChild(h('div', { class: 'sp-virtues', role: 'list', 'aria-label': c.virtues }, [h('p', { class: 'sp-virtues__title', text: c.virtues })].concat(['COL', 'MEL', 'SAN', 'FLE'].map(function (k) {
+        var v = H.virtues[k] || {}, mine = k === r.dominant;
+        return h('div', { class: 'sp-virtues__row' + (mine ? ' is-mine' : ''), role: 'listitem', 'aria-current': mine ? 'true' : null }, [
+          h('p', { class: 'sp-virtues__name' }, [h('strong', { text: v.name || '' }), h('span', { text: ' · ' + ((H.temperaments[k] || {}).name || k).toLowerCase() })]),
+          v.detail ? h('p', { class: 'sp-virtues__detail', text: v.detail }) : null
+        ]);
+      }))));
+      wrap.appendChild(h('div', { class: 'sp-temp__cols sp-temp__cols--stack' }, [
+        h('div', { class: 'sp-temp__card' }, [h('h4', { text: c.strength }), h('p', { text: prof.strength })]),
+        h('div', { class: 'sp-temp__card' }, [h('h4', { text: c.weakness }), h('p', { text: prof.weakness })])
+      ]));
+      wrap.appendChild(h('div', { class: 'sp-virtue sp-virtue--havard' }, [h('p', { class: 'sp-eyebrow', text: c.yourChallenge }), h('p', { class: 'sp-virtue__text', text: prof.text })]));
+      if (c.quote) wrap.appendChild(h('blockquote', { class: 'sp-temp__quote' }, [h('p', { text: c.quote }), c.quoteBy ? h('footer', { text: c.quoteBy }) : null]));
+    }
+
+    function standInResult(wrap) {
+      var d = results[outcome.dominant], s = outcome.secondary ? results[outcome.secondary] : null;
       wrap.appendChild(h('p', { class: 'sp-kicker', text: copy.resultKicker }));
       wrap.appendChild(h('h2', { class: 'sp-display', tabindex: '-1', text: d.name }));
       wrap.appendChild(h('p', { class: 'sp-lead', text: d.tagline + (s ? ', with ' + (outcome.close ? 'a strong ' : 'a ') + s.name.toLowerCase() + ' streak.' : '.') + ' ' + d.summary }));
-
       // Share of answers per temperament: sorted, labelled, never colour alone.
       var bars = h('div', { class: 'sp-bars', role: 'list', 'aria-label': 'Your answers by temperament' });
       outcome.ranking.forEach(function (k, i) {
@@ -470,19 +603,6 @@
         h('p', { class: 'sp-virtue__name', text: d.virtue }),
         h('p', { text: d.virtueText })
       ]));
-      wrap.appendChild(renderBooks());
-      if (cfg.askEmail !== 'off' && L && canEmail(cfg)) wrap.appendChild(emailForm());
-      wrap.appendChild(h('div', { class: 'sp-results__actions' }, [
-        h('button', { type: 'button', class: 'sp-btn sp-btn--quiet', onclick: function () { picks = []; index = 0; stage = 'intro'; render(); } }, 'Retake the test')
-      ]));
-      wrap.appendChild(attribution());
-      box.appendChild(wrap);
-      requestAnimationFrame(function () { requestAnimationFrame(function () {
-        Array.prototype.forEach.call(box.querySelectorAll('.sp-bar__fill'), function (f) { f.style.width = f.getAttribute('data-w'); });
-      }); });
-      var title = box.querySelector('.sp-display');
-      if (title) { try { title.focus({ preventScroll: true }); } catch (e) { /* ignore */ } }
-      modal.dialog.scrollTop = 0;
     }
 
     // Books: the one chosen for this temperament first, then the one for everyone, then the rest.
@@ -493,7 +613,7 @@
         if (!merged[b.handle]) { merged[b.handle] = Object.assign({}, b, { for: [] }); books.push(merged[b.handle]); }
         merged[b.handle].for = merged[b.handle].for.concat(b.for || []);
       });
-      var dom = outcome.dominant;
+      var dom = resultKey();
       var ordered = books.slice().sort(function (a, b) {
         function rank(x) { var f = x.for || []; return f.indexOf(dom) >= 0 ? 0 : f.indexOf('all') >= 0 ? 1 : 2; }
         return rank(a) - rank(b);
@@ -506,7 +626,7 @@
         h('p', { class: 'sp-sub', text: copy.booksLead }),
         h('div', { class: 'sp-books' }, ordered.map(function (b, i) {
           var mine = (b.for || []).indexOf(dom) >= 0;
-          var note = mine ? (cfg.copy && cfg.copy.forYou) || 'Written for you' : (b.for || []).indexOf('all') >= 0 ? 'Start here' : '';
+          var note = mine ? copy.forYou || 'Written for you' : (b.for || []).indexOf('all') >= 0 ? 'Start here' : '';
           var price = b.price_cents ? b.price_cents / 100 : b.price;
           return h('div', { class: 'sp-book' + (i === 0 ? ' is-featured' : '') }, [
             h('a', { href: b.url, tabindex: '-1', 'aria-hidden': 'true' }, [cover({ title: b.title, author: b.author || (b.vendor && !/scepter/i.test(b.vendor) ? b.vendor : 'Alexandre Havard'), image: b.image })]),
@@ -530,7 +650,7 @@
         .then(function (r) { if (!r.ok) throw new Error('cart'); return r.json(); })
         .then(function () {
           btn.textContent = 'Added ✓'; btn.classList.add('is-done');
-          emit('cart:add', { source: 'temperament', temperament: outcome && outcome.dominant });
+          emit('cart:add', { source: 'temperament', temperament: resultKey() });
           try { document.dispatchEvent(new CustomEvent('cart:refresh', { bubbles: true })); } catch (e) { /* theme-specific */ }
           if (!btn.parentNode.querySelector('.sp-link--cart')) btn.after(h('a', { class: 'sp-link sp-link--cart', href: root + 'cart', text: 'View cart' }));
         })
@@ -542,6 +662,27 @@
         });
     }
 
+    // What the email platform receives about the result (names, never the answers).
+    function resultFacts() {
+      if (H && run && run.result) {
+        var r = run.result, prof = H.profiles[r.key];
+        var dn = (H.temperaments[r.dominant] || {}).name || TS.TYPE_KEY[r.dominant];
+        var sn = r.secondary ? (H.temperaments[r.secondary] || {}).name || TS.TYPE_KEY[r.secondary] : '';
+        return {
+          tags: ['temperament-' + TS.TYPE_KEY[r.dominant], 'profile-' + r.key.toLowerCase()],
+          properties: { temperament: dn, temperament_secondary: sn, temperament_profile: titleCase(prof.name), temperament_virtue: prof.challenge },
+          event: { test: 'Alexandre Havard’s Temperament Test', temperament: dn, secondary: sn, profile: titleCase(prof.name), profile_key: r.key,
+            label: prof.label, virtue: prof.challenge, pure: r.pure, intensity: r.intensity || '', strength: prof.strength, weakness: prof.weakness, challenge: prof.text }
+        };
+      }
+      var d = results[outcome.dominant], s = outcome.secondary ? results[outcome.secondary] : null;
+      return {
+        tags: ['temperament-' + outcome.dominant],
+        properties: { temperament: d.name, temperament_secondary: s ? s.name : '', temperament_virtue: d.virtue },
+        event: { test: 'Scepter temperament test', temperament: d.name, secondary: s ? s.name : '', virtue: d.virtue, percent: outcome.percent }
+      };
+    }
+
     function emailForm() {
       var err = h('p', { class: 'sp-error', role: 'alert' });
       var email = h('input', { class: 'sp-input', type: 'email', name: 'email', autocomplete: 'email', placeholder: 'Email address', 'aria-label': 'Email address' });
@@ -550,14 +691,14 @@
       var form = h('form', { class: 'sp-form sp-temp__email', novalidate: true, onsubmit: function (ev) {
         ev.preventDefault();
         if (!L.validEmail(email.value)) { err.textContent = 'Please enter a valid email address.'; return; }
-        var d = results[outcome.dominant], s = outcome.secondary ? results[outcome.secondary] : null;
+        var facts = resultFacts();
         send.disabled = true;
         L.submit(leadConfig(cfg), {
           email: email.value.trim(), source: 'Scepter temperament test', marketing: consent.checked,
-          tags: [(cfg.lead || {}).tag || 'temperament-test', 'temperament-' + outcome.dominant],
-          properties: { temperament: d.name, temperament_secondary: s ? s.name : '', temperament_virtue: d.virtue },
+          tags: [(cfg.lead || {}).tag || 'temperament-test'].concat(facts.tags),
+          properties: facts.properties,
           eventName: (cfg.lead || {}).eventName || 'Completed Temperament Test',
-          eventProperties: { temperament: d.name, secondary: s ? s.name : '', virtue: d.virtue, percent: outcome.percent }
+          eventProperties: facts.event
         }).then(function (r) {
           if (r.ok) form.replaceWith(h('p', { class: 'sp-sent', role: 'status', text: 'Sent. Look for your result in your inbox.' }));
           else { send.disabled = false; err.textContent = 'We couldn’t send it just now. Please try again in a moment.'; }
@@ -577,7 +718,7 @@
     };
     function open(src) {
       if (modal.isOpen()) return;
-      if (stage === 'result' && !outcome) stage = 'intro';
+      if (stage === 'result' && !outcome && !(run && run.result)) stage = 'intro';
       render();
       modal.show();
       emit('popup:open', { popup: 'temperament', source: src });

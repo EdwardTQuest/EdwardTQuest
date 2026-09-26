@@ -21,12 +21,16 @@
       <a href="#free-ebook">A plain link to #free-ebook</a>
     </div>
     <p style="margin-top:28px">Scroll-depth and exit-intent triggers are off in this preview so the page stays still.</p>
+    <p id="demo-set" style="margin-top:12px"></p>
   </main>
   <div id="ebook"></div>
   <div id="temperament"></div>
   <script src="demo.js"></script>
   <script src="../theme/assets/scepter-lead.js"></script>
   <script src="../theme/assets/scepter-temperament.js"></script>
+  <script src="../theme/assets/scepter-temperament-havard.js"></script>
+  <!-- Havard's own test, if you have imported it (node scepter/tools/import-havard-test.mjs); a 404 here is harmless. -->
+  <script src="../private/scepter-temperament-havard.js"></script>
   <script src="../theme/assets/scepter-popups.js"></script>
   <script>
     fetch('mock/products.json').then(function (r) { return r.json(); }).then(function (j) {
@@ -45,8 +49,15 @@
           { key: 'enlightenment', label: 'Enlightenment', title: 'Light for the Mind', author: 'A Scepter e-booklet', url: '#download-enlightenment' }
         ]
       });
+      var standin = /[?&]set=standin/.test(location.search);
+      var hasHavard = !!(window.ScepterTemperamentSets && window.ScepterTemperamentSets.havard);
+      document.getElementById('demo-set').innerHTML = standin
+        ? 'The test runs the <strong>stand-in questions</strong>. ' + (hasHavard ? '<a href="popups.html">Use Alexandre Havard’s test</a>.' : '')
+        : hasHavard ? 'The test runs <strong>Alexandre Havard’s Temperament Test</strong> (from your imported file). <a href="popups.html?set=standin">Use the stand-in questions</a>.'
+          : 'The test runs the <strong>stand-in questions</strong>: Alexandre Havard’s test isn’t imported here (see the README).';
       ScepterPopups.mountTemperament(document.getElementById('temperament'), {
         triggers: { launcher: true, launcherPosition: 'right', delay: 0, exitIntent: false }, lead: lead, askEmail: 'optional',
+        questionSet: standin ? 'standin' : 'havard',
         books: [
           book('from-temperament-to-character', ['all']),
           book('copy-of-virtuous-leadership-an-agenda-for-personal-excellence', ['choleric']),

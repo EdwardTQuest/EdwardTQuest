@@ -144,7 +144,16 @@ test('temperament pop-up: the preset prints 22 questions the scorer reads, and t
     book_all: 'from-temperament-to-character', book_melancholic: 'created-for-greatness-the-power-of-magnanimity',
     book_phlegmatic: 'created-for-greatness-the-power-of-magnanimity', more_books: 'alexandre-havard'
   });
-  const { config: c } = await render('scepter-temperament-popup.liquid', { id: 'footer-temp', settings, blocks });
+  const { config: c, html } = await render('scepter-temperament-popup.liquid', { id: 'footer-temp', settings, blocks });
+  // Havard's test by default: its data file loads before the pop-ups, and no credit overrides his.
+  assert.equal(c.questionSet, 'havard');
+  const scripts = [...html.matchAll(/assets\/([\w.-]+\.js)/g)].map((m) => m[1]);
+  assert.ok(scripts.indexOf('scepter-temperament-havard.js') > scripts.indexOf('scepter-temperament.js'));
+  assert.ok(scripts.indexOf('scepter-temperament-havard.js') < scripts.indexOf('scepter-popups.js'));
+  assert.equal(c.copy.attribution, null, 'blank credit: the set supplies its own');
+  const standIn = await render('scepter-temperament-popup.liquid', { id: 'footer-temp', settings: { ...settings, question_set: 'standin' }, blocks });
+  assert.equal(standIn.config.questionSet, 'standin');
+  assert.ok(!standIn.html.includes('scepter-temperament-havard.js'), 'the stand-in does not load his file');
   const qs = T.normaliseQuestions(c.questions.filter(Boolean));
   assert.equal(qs.length, 22);
   assert.ok(qs.every((q) => q.answers.length === 4 && q.answers.every((a) => Object.keys(a.score).length === 1)));

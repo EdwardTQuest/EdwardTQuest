@@ -1,12 +1,12 @@
 {%- comment -%}
-  Scepter temperament test pop-up: the test, the reader's temperament (dominant and secondary),
-  the virtue to grow, then Scepter's Alexandre Havard books to buy. Add it once, to the footer
-  group (Customize → Footer → Add section). Any link to #temperament-test opens it, and an optional
-  floating button offers it on every page.
+  Scepter temperament test pop-up: the test, the reader's temperament, the virtue to grow, then
+  Scepter's Alexandre Havard books to buy. Add it once, to the footer group (Customize → Footer →
+  Add section). Any link to #temperament-test opens it, and an optional floating button offers it on
+  every page.
 
-  Questions are blocks (one per question). The preset's questions are a stand-in written for this
-  kit; replace them with the official test (with HVLI's permission) here in the editor, or build a
-  new preset from a spreadsheet: node scepter/tools/build-temperament-section.mjs questions.csv
+  It runs Alexandre Havard's own Temperament Test once assets/scepter-temperament-havard.js holds
+  it (the theme ships a placeholder; see the kit's README). Until then, or when "Question set" is
+  the stand-in, it runs the kit's stand-in questions: the question blocks below.
 {%- endcomment -%}
 {%- liquid
   assign s = section.settings
@@ -23,6 +23,7 @@
       "triggers": { "launcher": {{ s.launcher | json }}, "launcherPosition": {{ s.launcher_position | json }}, "delay": {{ s.delay | json }}, "exitIntent": {{ s.exit_intent | json }}, "hash": "temperament-test" },
       "suppressDays": {{ s.suppress_days | json }},
       "excludePaths": {{ s.exclude_paths | split: ',' | json }},
+      "questionSet": {{ s.question_set | default: 'havard' | json }},
       "askEmail": {{ s.ask_email | json }},
       "maxBooks": {{ s.max_books | json }},
       "style": {% capture sp_style %}{% render 'scepter-colors', s: s %}{% endcapture %}{{ sp_style | strip | json }},
@@ -69,6 +70,9 @@
 </div>
 <script src="{{ 'scepter-lead.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'scepter-temperament.js' | asset_url }}" defer="defer"></script>
+{%- if s.question_set != 'standin' %}
+<script src="{{ 'scepter-temperament-havard.js' | asset_url }}" defer="defer"></script>
+{%- endif %}
 <script src="{{ 'scepter-popups.js' | asset_url }}" defer="defer"></script>
 
 {% schema %}
@@ -87,6 +91,23 @@
     {
       "type": "paragraph",
       "content": "In the editor, click this section to open the test. On the site, any link to #temperament-test opens it."
+    },
+    {
+      "type": "select",
+      "id": "question_set",
+      "label": "Question set",
+      "default": "havard",
+      "options": [
+        {
+          "value": "havard",
+          "label": "Alexandre Havard's test"
+        },
+        {
+          "value": "standin",
+          "label": "Stand-in questions"
+        }
+      ],
+      "info": "Havard's test needs assets/scepter-temperament-havard.js (see the kit's README). Without it, the stand-in questions show."
     },
     {
       "type": "header",
@@ -173,6 +194,7 @@
       "type": "textarea",
       "id": "intro",
       "label": "Introduction",
+      "info": "Stand-in questions only. Havard's test shows his own introduction.",
       "default": "Twenty-two quick questions about your first reactions. Answer with what comes to you first, not what you think you should say. You’ll discover your dominant temperament, your secondary one, and the virtue that will help you most."
     },
     {
@@ -185,14 +207,14 @@
       "type": "text",
       "id": "meta",
       "label": "Under the button",
+      "info": "Stand-in questions only.",
       "default": "22 questions · about 5 minutes"
     },
     {
       "type": "textarea",
       "id": "attribution",
       "label": "Credit line",
-      "default": "Based on the four classical temperaments as Alexandre Havard presents them in From Temperament to Character.",
-      "info": "With the official questions, e.g. “Alexandre Havard’s Temperament Test, used with permission of HVLI.”"
+      "info": "Leave blank for the standard credit, which links to virtuousleadership.com for Havard's test. Once HVLI agrees, e.g. “Alexandre Havard’s Temperament Test, used with permission of Virtuous Leadership.”"
     },
     {
       "type": "url",
@@ -366,8 +388,12 @@
   "blocks": [
     {
       "type": "question",
-      "name": "Question",
+      "name": "Stand-in question",
       "settings": [
+        {
+          "type": "paragraph",
+          "content": "Used when Havard's test isn't installed, or when Question set is the stand-in."
+        },
         {
           "type": "textarea",
           "id": "prompt",
@@ -520,7 +546,7 @@
     },
     {
       "type": "result",
-      "name": "Result text",
+      "name": "Stand-in result words",
       "limit": 4,
       "settings": [
         {
@@ -549,7 +575,7 @@
         },
         {
           "type": "paragraph",
-          "content": "Blank fields keep the built-in words."
+          "content": "For the stand-in questions. Blank fields keep the built-in words. Havard's test shows his own profiles."
         },
         {
           "type": "text",

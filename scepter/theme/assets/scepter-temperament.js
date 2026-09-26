@@ -1,13 +1,15 @@
 /*!
- * Scepter temperament test — scoring and default content for the four classical temperaments
- * (choleric, melancholic, sanguine, phlegmatic) as Alexandre Havard presents them in
- * "From Temperament to Character".
+ * Scepter temperament test: the method, and the kit's stand-in questions.
  *
- * THE DEFAULT QUESTIONS ARE A STAND-IN written for this kit, not Havard's own test (his site
- * could not be reached from the build environment). Replace them with the official questions,
- * with HVLI's permission, from the theme editor (one block per question) or in QUESTIONS below;
- * see README "Temperament test". The scoring handles either format: forced choice with four
- * answers, or statements answered yes / somewhat / no.
+ * Two question sets:
+ *  - Alexandre Havard's Temperament Test (twoStage below). His statements and result words are in
+ *    a separate data file, scepter-temperament-havard.js, imported from virtuousleadership.com by
+ *    tools/import-havard-test.mjs. They are HVLI's copyright, so that file is kept out of this
+ *    public repository; the theme ships a placeholder of the same name. twoStage is his method,
+ *    step for step, as his test page runs it.
+ *  - A stand-in (QUESTIONS below): twenty-two forced-choice questions written for this kit in the
+ *    same four-temperament framework, used until his data file is installed. Never present them as
+ *    his test. The theme editor can replace them (one block per question).
  */
 (function (root, factory) {
   if (typeof module === 'object' && module.exports) module.exports = factory();
@@ -35,21 +37,21 @@
       summary: 'You are slower to react, but your impressions run deep and last. You notice what others miss, and you long for what is true, beautiful and well done.',
       strengths: 'Deep, reflective, faithful, idealistic and attentive to detail.',
       watch: 'Discouragement, perfectionism, indecision, and brooding over hurts.',
-      virtue: 'Magnanimity', virtueText: 'Dare great things. Your ideals are meant to be lived, not only contemplated.'
+      virtue: 'Boldness', virtueText: 'Your ideals are meant to be lived, not only contemplated. Boldness is the courage to act before everything is perfect.'
     },
     sanguine: {
       name: 'Sanguine', tagline: 'People-oriented',
       summary: 'You react quickly and brightly, and you move on just as quickly. You bring joy, warmth and energy into every room you enter.',
       strengths: 'Warm, enthusiastic, optimistic, generous: a natural connector.',
       watch: 'Superficiality, distraction, and starting much while finishing little.',
-      virtue: 'Fortitude', virtueText: 'Constancy turns enthusiasm into lasting fruit: finish what you begin, and your joy will run deep.'
+      virtue: 'Perseverance', virtueText: 'Constancy turns enthusiasm into lasting fruit: finish what you begin, and your joy will run deep.'
     },
     phlegmatic: {
       name: 'Phlegmatic', tagline: 'Peace-oriented',
       summary: 'You react slowly and mildly, and you keep an even keel. You are steady, patient, and a peacemaker by nature.',
       strengths: 'Calm, reliable, patient, diplomatic, and a wonderful listener.',
       watch: 'Passivity, comfort, avoiding conflict, and putting things off.',
-      virtue: 'Courage', virtueText: 'Your peace is a gift. Courage turns it into initiative: say the word, take the step, lead.'
+      virtue: 'Magnanimity', virtueText: 'Your peace is a gift. Magnanimity gives it a direction: dream big, and turn the dream into a mission.'
     }
   };
 
@@ -147,5 +149,172 @@
     };
   }
 
-  return { KEYS: KEYS, TEMPERAMENTS: TEMPERAMENTS, QUESTIONS: QUESTIONS, SOURCE: 'stand-in', parseScore: parseScore, normaliseQuestions: normaliseQuestions, score: score };
+  // -------------------------------------------------------------------------------------------
+  // Alexandre Havard's two-stage test, as his page runs it (virtuousleadership.com, 2026-09-26).
+  // The set (statements, structure, profiles) comes from scepter-temperament-havard.js.
+  //
+  //  Stage 1  Sixteen statements, four per temperament, in four rounds of one each (a new order
+  //           every round, never the same temperament twice in a row). TRUE gives its temperament
+  //           1 point; FALSE gives the opposite temperament half a point (choleric <-> phlegmatic,
+  //           sanguine <-> melancholic).
+  //  Ties     If two or more temperaments share first place, each asks its two tie-breakers,
+  //           scored the same way. A tie that remains goes to the temperament with more TRUE
+  //           answers in stage 1, and among equals to the first of choleric, sanguine,
+  //           melancholic, phlegmatic.
+  //  Stage 2  Six statements for the dominant temperament: three point to one neighbour (A),
+  //           three to the other (B). Each TRUE counts +1 for A or -1 for B.
+  //  Profile  Pure when stage 1 led by 2 or more and stage 2 stayed within ±1. Otherwise the
+  //           secondary is A (score > 0), B (< 0), or on 0 whichever had more stage-1 points
+  //           (A on a draw). The secondary is "marked" at ±3, "light" below.
+  // So a reader answers 22 statements, 26, 28 or 30 with a tie.
+  // -------------------------------------------------------------------------------------------
+  var TYPES = ['COL', 'SAN', 'MEL', 'FLE'];
+  var TYPE_KEY = { COL: 'choleric', MEL: 'melancholic', SAN: 'sanguine', FLE: 'phlegmatic' };
+
+  function shuffle(list, rand) {
+    var a = list.slice();
+    for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(rand() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; }
+    return a;
+  }
+  function zero() { return { COL: 0, SAN: 0, MEL: 0, FLE: 0 }; }
+
+  // Problems that make a set unusable ([] when it is fine).
+  function validateSet(set) {
+    var out = [];
+    if (!set || typeof set !== 'object') return ['no question set'];
+    var items = set.items || {};
+    function text(id, where) { if (typeof items[id] !== 'string' || !items[id].trim()) out.push(where + ': no text for ' + id); }
+    TYPES.forEach(function (k) {
+      var s1 = (set.stage1 || {})[k], tb = (set.tiebreak || {})[k], s2 = (set.stage2 || {})[k];
+      if (!Array.isArray(s1) || !s1.length) out.push('stage1: none for ' + k); else s1.forEach(function (id) { text(id, 'stage1'); });
+      if (!Array.isArray(tb) || !tb.length) out.push('tiebreak: none for ' + k); else tb.forEach(function (id) { text(id, 'tiebreak'); });
+      if (TYPES.indexOf((set.opposite || {})[k]) < 0) out.push('opposite: none for ' + k);
+      if (!s2 || TYPES.indexOf(s2.A) < 0 || TYPES.indexOf(s2.B) < 0 || !Array.isArray(s2.items) || !s2.items.length) { out.push('stage2: incomplete for ' + k); return; }
+      s2.items.forEach(function (x) { text(x && x.id, 'stage2'); if (!x || (x.adj !== 'A' && x.adj !== 'B')) out.push('stage2: bad neighbour in ' + k); });
+      [k, k + '-' + s2.A, k + '-' + s2.B].forEach(function (key) { if (!((set.profiles || {})[key] || {}).name) out.push('profiles: none for ' + key); });
+    });
+    return out;
+  }
+
+  function stage1Order(set, rand) {
+    var perm = {}, rounds = 0;
+    TYPES.forEach(function (k) {
+      perm[k] = shuffle(set.stage1[k].map(function (id, i) { return i; }), rand);
+      rounds = Math.max(rounds, set.stage1[k].length);
+    });
+    var out = [];
+    for (var r = 0; r < rounds; r++) {
+      var order = shuffle(TYPES.filter(function (k) { return r < set.stage1[k].length; }), rand);
+      if (out.length && order.length > 1 && order[0] === out[out.length - 1].type) {
+        var o = 1 + Math.floor(rand() * (order.length - 1));
+        var t = order[0]; order[0] = order[o]; order[o] = t;
+      }
+      order.forEach(function (k) { out.push({ id: set.stage1[k][perm[k][r]], type: k }); });
+    }
+    return out;
+  }
+
+  // answers[i]: true, false, or nothing yet.
+  function tally(set, items, answers) {
+    var n = zero();
+    items.forEach(function (it, i) {
+      if (answers[i] === true) n[it.type] += 1;
+      else if (answers[i] === false) n[set.opposite[it.type]] += 0.5;
+    });
+    return n;
+  }
+  function add(a, b) { var n = zero(); TYPES.forEach(function (k) { n[k] = a[k] + b[k]; }); return n; }
+  function rank(scores) {
+    var sorted = TYPES.slice().sort(function (a, b) { return (scores[b] - scores[a]) || (TYPES.indexOf(a) - TYPES.indexOf(b)); });
+    return {
+      sorted: sorted, top: sorted[0], second: sorted[1], margin: scores[sorted[0]] - scores[sorted[1]],
+      tied: sorted.filter(function (k) { return scores[k] === scores[sorted[0]]; })
+    };
+  }
+  function tieItems(set, tied, rand) {
+    var list = [];
+    tied.forEach(function (k) { set.tiebreak[k].forEach(function (id) { list.push({ id: id, type: k }); }); });
+    return shuffle(list, rand);
+  }
+  // The dominant temperament after stage 1 and any tie-breakers.
+  function settle(set, s1, a1, tie, at) {
+    var scores = tally(set, s1, a1);
+    if (tie && tie.length) scores = add(scores, tally(set, tie, at || []));
+    var r = rank(scores), dominant = r.top;
+    if (tie && tie.length && r.tied.length >= 2) {
+      var trues = zero();
+      s1.forEach(function (it, i) { if (a1[i] === true) trues[it.type] += 1; });
+      dominant = r.tied.reduce(function (best, k) { return trues[k] > trues[best] ? k : best; }, r.tied[0]);
+    }
+    return { dominant: dominant, scores: scores };
+  }
+  function stage2Order(set, dominant, rand) {
+    return shuffle(set.stage2[dominant].items.map(function (x) { return { id: x.id, adj: x.adj, type: dominant }; }), rand);
+  }
+  function stage2Score(items, answers) {
+    var n = 0;
+    items.forEach(function (it, i) { if (answers[i] === true) n += it.adj === 'A' ? 1 : -1; });
+    return n;
+  }
+  function decide(set, dominant, scores, s2) {
+    var margin = rank(scores).margin, pair = set.stage2[dominant];
+    var out = { dominant: dominant, margin: margin, s2: s2, scores: scores, key: dominant, pure: true, secondary: null, intensity: null };
+    if (margin >= 2 && Math.abs(s2) <= 1) return out;
+    var sec = s2 > 0 ? pair.A : s2 < 0 ? pair.B : (scores[pair.A] >= scores[pair.B] ? pair.A : pair.B);
+    out.key = dominant + '-' + sec; out.pure = false; out.secondary = sec;
+    out.intensity = Math.abs(s2) >= 3 ? 'marked' : 'light';
+    return out;
+  }
+
+  // A reader's way through the test, one statement at a time. The pop-up keeps one of these.
+  function start(set, rand) {
+    return { phase: 'stage1', s1: stage1Order(set, rand || Math.random), a1: [], tie: [], at: [], s2: [], a2: [], index: 0, dominant: null, scores: null, result: null };
+  }
+  function lists(st) { return st.phase === 'tie' ? [st.tie, st.at] : st.phase === 'stage2' ? [st.s2, st.a2] : [st.s1, st.a1]; }
+  function current(st) {
+    if (st.phase !== 'stage1' && st.phase !== 'tie' && st.phase !== 'stage2') return null;
+    return lists(st)[0][st.index] || null;
+  }
+  function progress(set, st) {
+    var s2len = st.s2.length || set.stage2[TYPES[0]].items.length;
+    var before = st.phase === 'tie' ? st.s1.length : st.phase === 'stage2' ? st.s1.length + st.tie.length : 0;
+    return { n: before + st.index + 1, total: st.s1.length + st.tie.length + s2len };
+  }
+  // Records an answer (true / false) and moves on: to the next statement, the tie-breakers, the
+  // stage-2 page ("transition"), or the result ("done"). Returns the state.
+  function answer(set, st, value, rand) {
+    rand = rand || Math.random;
+    var l = lists(st), items = l[0], answers = l[1];
+    if (!items[st.index]) return st;
+    answers[st.index] = value === true;
+    if (st.index + 1 < items.length) { st.index++; return st; }
+    if (st.phase === 'stage1') {
+      var r = rank(tally(set, st.s1, st.a1));
+      if (r.tied.length >= 2) { st.tie = tieItems(set, r.tied, rand); st.at = []; st.index = 0; st.phase = 'tie'; return st; }
+      st.tie = []; st.at = [];
+    }
+    if (st.phase === 'stage1' || st.phase === 'tie') {
+      var d = settle(set, st.s1, st.a1, st.tie, st.at);
+      st.dominant = d.dominant; st.scores = d.scores;
+      st.s2 = stage2Order(set, d.dominant, rand); st.a2 = []; st.index = 0; st.phase = 'transition';
+      return st;
+    }
+    st.result = decide(set, st.dominant, st.scores, stage2Score(st.s2, st.a2));
+    st.phase = 'done';
+    return st;
+  }
+  function proceed(st) { if (st.phase === 'transition') { st.phase = 'stage2'; st.index = 0; } return st; }
+  // Back goes one statement at a time within a stage, as on his page.
+  function canBack(st) { return (st.phase === 'stage1' || st.phase === 'tie' || st.phase === 'stage2') && st.index > 0; }
+  function back(st) { if (canBack(st)) st.index--; return st; }
+  // The answer already given to the current statement (after going back), if any.
+  function given(st) { return current(st) ? lists(st)[1][st.index] : undefined; }
+
+  var twoStage = {
+    TYPES: TYPES, TYPE_KEY: TYPE_KEY, validateSet: validateSet, stage1Order: stage1Order, tally: tally, rank: rank,
+    tieItems: tieItems, settle: settle, stage2Order: stage2Order, stage2Score: stage2Score, decide: decide,
+    start: start, current: current, progress: progress, answer: answer, proceed: proceed, canBack: canBack, back: back, given: given
+  };
+
+  return { KEYS: KEYS, TEMPERAMENTS: TEMPERAMENTS, QUESTIONS: QUESTIONS, SOURCE: 'stand-in', parseScore: parseScore, normaliseQuestions: normaliseQuestions, score: score, twoStage: twoStage };
 });

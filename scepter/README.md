@@ -42,12 +42,13 @@ Havard books with add-to-cart buttons.
 
 How books are chosen, with a worked example: **[ALGORITHM.md](ALGORITHM.md)**.
 
-> **The temperament questions are a stand-in.** Alexandre Havard's own test (22 questions at
-> virtuousleadership.com) could not be read from the build environment, whose network blocks that
-> site. The kit ships with 22 original first-reaction questions in the same four-temperament
-> framework, credited accurately ("based on the four classical temperaments as Alexandre Havard
-> presents them…"). To use his exact test, get HVLI's permission and put the questions in. See
-> [The temperament test](#the-temperament-test).
+> **The temperament test is Alexandre Havard's own**, read from virtuousleadership.com: his 48
+> statements, his two stages, his twelve profiles, scored exactly as his page scores them. His
+> words are the copyright of Virtuous Leadership (HVLI), and this repository is public, so they
+> live in one file kept in the **private Heron repository**, `scepter-havard/scepter-temperament-havard.js`.
+> Upload that file to the theme and the pop-up runs his test. **Ask HVLI's permission before it
+> goes live.** Scepter publishes his books, so it should be a short email. Until the file is in
+> place, the pop-up runs the kit's own stand-in questions. See [The temperament test](#the-temperament-test).
 
 ## Try it without Shopify
 
@@ -65,7 +66,8 @@ A developer or anyone comfortable with *Online Store → Themes → Edit code* c
 
 1. **Duplicate your live theme** (Online Store → Themes → ⋯ → Duplicate) and work on the copy.
 2. **Upload the files** in `theme/` into the same folders of the theme:
-   - `assets/`: the five `scepter-*.js`, `scepter.css`, and the three `.woff2` fonts;
+   - `assets/`: the six `scepter-*.js`, `scepter.css`, and the three `.woff2` fonts. For Havard's
+     test, use the real `scepter-temperament-havard.js` from Heron in place of the placeholder;
    - `sections/`: four `.liquid` files;
    - `snippets/`: four `.liquid` files;
    - `templates/`: four `page.scepter-*.json` files.
@@ -143,28 +145,58 @@ section settings.
   "ready to download".
 - **Temperament test.** A floating button ("What's your temperament?"), plus any link to
   `#temperament-test`. Pick a book for everyone (*From Temperament to Character*), one per
-  temperament, and a collection for the rest (*alexandre-havard*). The result shows the reader's
-  own book first, marked *Written for you*.
+  temperament (the dominant one decides), and a collection for the rest (*alexandre-havard*). The
+  result shows the reader's own book first, marked *Written for you*.
 
 In the theme editor, clicking either section opens its pop-up so you can see your edits.
 
 ## The temperament test
 
-Each question is a block (up to 46) with four answers. Each answer counts for choleric,
-melancholic, sanguine, phlegmatic or nothing, and a question can weigh double. Result words per
-temperament (name, summary, strengths, watch-outs, the virtue to grow) are optional *Result text*
-blocks.
+**Alexandre Havard's test, as his page runs it.** Each screen is one statement, answered TRUE or
+FALSE, "with the first reaction that appears before thinking".
+1. **Stage 1:** sixteen statements, four per temperament, in four rounds. TRUE gives that
+   temperament a point. FALSE gives half a point to its opposite (choleric and phlegmatic, sanguine
+   and melancholic).
+2. **Ties:** if two or more share first place, each asks two more statements. A tie that remains
+   goes to more TRUE answers.
+3. **Stage 2:** after "Your dominant temperament is …", six statements weigh the two neighbouring
+   temperaments.
+4. **Result:** one of twelve profiles (*The Doer*, *The Contemplative Doer*, … *The Demonstrative
+   Mediator*). It is *pure* when stage 1 was clear and stage 2 was balanced. Otherwise the secondary
+   temperament is *light* or *marked*.
 
-To use Alexandre Havard's official test, first ask HVLI (virtuousleadership.com) for permission and
-the question set: it is his work. Then either:
-- type the questions into the blocks, or
-- put them in a spreadsheet (`prompt, answer_1, score_1 … answer_4, score_4, weight`) and run
-  `node scepter/tools/build-temperament-section.mjs questions.csv`. This builds a new preset;
-  remove and re-add the section to use it.
+A reader answers 22 statements, or 26–30 after a tie. The result gives:
+- the profile, and the virtue-challenge (humility, boldness, persistence or magnanimity);
+- the four virtue-challenges, the reader's own marked;
+- strength, weakness and challenge, in his words, and his line on temperament and character;
+- then the Havard books.
 
-Then change the credit line to e.g. *"Alexandre Havard's Temperament Test, used with permission of
-HVLI."* If you allow `virtuousleadership.com` in this environment's network settings, a future
-session can import it for you.
+`theme/assets/scepter-temperament.js` (`twoStage`) holds the method. Its tests check every rule on
+made-up statements. `npm run crosscheck:havard` runs it against Havard's own scoring functions,
+taken from his site, on 100,000 random answer sheets: zero differences. A deliberate one-character
+change to the purity rule makes it fail.
+
+**Installing it.** The theme ships a placeholder `assets/scepter-temperament-havard.js`. Replace
+it with the real file:
+- from the private **Heron** repository (branch `claude/scepter-interactive-quizzes-dqo2rl`,
+  `scepter-havard/scepter-temperament-havard.js`); or
+- by running `npm run import:havard` in `scepter/`. This reads the test from virtuousleadership.com
+  and writes `scepter/private/scepter-temperament-havard.js` (git-ignored). Add `--lang es`, `fr`
+  or `ru` for his other languages. If his site changes how it scores, the importer refuses and
+  says what changed.
+
+Never commit the real file to this public repository. Once HVLI agrees, you can put *"used with
+permission"* in the section's **Credit line**. Left blank, the credit reads "Alexandre Havard's
+Temperament Test, from Virtuous Leadership (virtuousleadership.com)" and links to his test.
+
+**The stand-in.** Without the file, or with **Question set** switched to *Stand-in questions*,
+the pop-up asks twenty-two forced-choice questions of the kit's own. They use the same four
+temperaments and the same virtue for each. Each is a block in the section (up to 46). Each of its
+four answers counts for one temperament or none, and a question can weigh double. *Stand-in result
+words* blocks rewrite the result per temperament. To build a new set from a spreadsheet
+(`prompt, answer_1, score_1 … answer_4, score_4, weight`), run
+`node scepter/tools/build-temperament-section.mjs questions.csv`. It writes a new preset: remove
+and re-add the section to use it. Never present the stand-in as Havard's test.
 
 ## Email
 
@@ -205,7 +237,8 @@ npm run screenshots      # walks every quiz and pop-up at phone and desktop size
 | `theme/assets/scepter-engine.js` | the recommendation engine (pure; runs in the browser and in Node) |
 | `theme/assets/scepter-quiz.js` | the quiz: questions, the three voices, branching, results, the plan page |
 | `theme/assets/scepter-popups.js` | the pop-up manager, the e-book offer and the temperament test |
-| `theme/assets/scepter-temperament.js` | temperament scoring and the stand-in question bank |
+| `theme/assets/scepter-temperament.js` | Havard's two-stage method (`twoStage`), the stand-in scoring and questions |
+| `theme/assets/scepter-temperament-havard.js` | placeholder for Havard's statements and profiles (the real file is in Heron) |
 | `theme/assets/scepter-lead.js` | Klaviyo / webhook / Shopify lead capture |
 | `theme/assets/scepter.css` | all styling, as tokens; three variant treatments |
 | `theme/sections/*.liquid` | the four sections and their editor settings |
@@ -214,7 +247,8 @@ npm run screenshots      # walks every quiz and pop-up at phone and desktop size
 | `setup/` | metaobject definition, CSV import, Klaviyo email templates |
 | `demo/` | local preview with a mock catalogue |
 | `tests/` | `node --test` suites |
-| `tools/` | screenshots, theme-check, temperament preset builder |
+| `tools/` | screenshots, theme-check, Havard test importer, stand-in preset builder |
+| `private/` | git-ignored: where `npm run import:havard` writes Havard's test |
 
 The scripts work on any modern browser and need no build step. They talk to Shopify only through
 its public storefront endpoints: `/products.json`, `/products/<handle>.js`, `/cart/add.js` and

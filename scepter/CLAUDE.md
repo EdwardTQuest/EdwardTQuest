@@ -18,8 +18,13 @@ pipeline's rules (preflight, gates, run-logs) do not apply here; these do.
   trailing commas. `tests/liquid.test.mjs` renders the sections and parses what they print.
 - Colours: burgundy on dark green fails contrast for anything that carries meaning. Keep meaning on
   cream or light surfaces (see the temperament bars).
-- The temperament questions in `scepter-temperament.js` are a stand-in, not Alexandre Havard's
-  test. Never present them as his. Replacing them needs HVLI's permission (README).
+- The temperament pop-up runs Alexandre Havard's own test from `scepter-temperament-havard.js`.
+  His words are HVLI's copyright and this repository is public: the file in `theme/assets/` is a
+  placeholder, and the real one lives in the private Heron repo (`scepter-havard/`) or in the
+  git-ignored `private/` (`npm run import:havard`). Never commit the real file, or screenshots of
+  his test, here. `twoStage` in `scepter-temperament.js` is his method. If you change it, run
+  `npm run crosscheck:havard` (his own scoring code against yours; it must report 0 differences).
+  The stand-in questions are the kit's own; never present them as his.
 - Never invent Scepter product handles in `theme/templates/`. The ones there were seen on
   scepterpublishers.org. The demo catalogue may use illustrative ones (`demo/mock/store.json`
   lists which are verified).

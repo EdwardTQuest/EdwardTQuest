@@ -1,5 +1,7 @@
 // Walk each quiz variant (and the pop-ups) with a scripted visitor and save screenshots.
-//   node scepter/tools/screenshots.mjs [outDir] [--only mission,adventure,treasures,popups] [--mobile-only]
+//   node scepter/tools/screenshots.mjs [outDir] [--only=mission,adventure,treasures,popups] [--mobile-only] [--set=standin]
+// The temperament test runs Alexandre Havard's test when scepter/private/scepter-temperament-havard.js
+// exists (see tools/import-havard-test.mjs), else the stand-in; --set=standin forces the stand-in.
 // Needs Playwright with Chromium (preinstalled in Claude Code cloud containers; elsewhere `npx playwright install chromium`).
 import http from 'node:http';
 import { readFile, mkdir } from 'node:fs/promises';
@@ -16,6 +18,7 @@ const args = process.argv.slice(2);
 const OUT = resolve(args.find((a) => !a.startsWith('--')) || join(ROOT, 'scepter/docs/screens-tmp'));
 const only = (args.find((a) => a.startsWith('--only=')) || '').slice(7).split(',').filter(Boolean);
 const mobileOnly = args.includes('--mobile-only');
+const questionSet = (args.find((a) => a.startsWith('--set=')) || '').slice(6);
 const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg' };
 
 const server = http.createServer(async (req, res) => {
@@ -103,12 +106,17 @@ async function runQuiz(browser, variant, viewport, tag, shots) {
 async function runPopups(browser, viewport, tag) {
   const page = await browser.newPage({ viewport, deviceScaleFactor: viewport.width < 500 ? 2 : 1 });
   await preparePage(page);
+  // The same order of statements every run, so the screens can be compared.
+  await page.addInitScript(() => { let s = 20260926; Math.random = () => { s = (s * 16807) % 2147483647; return (s - 1) / 2147483646; }; });
   const errors = [];
   page.on('pageerror', (e) => errors.push(e.message));
-  page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
-  await page.goto(base + 'popups.html');
+  // A 404 for the optional private Havard file is expected where it hasn't been imported.
+  page.on('console', (m) => { if (m.type() === 'error' && !/\/scepter\/private\//.test(m.location().url || '')) errors.push(m.text()); });
+  const url = base + 'popups.html' + (questionSet === 'standin' ? '?set=standin' : '');
+  await page.goto(url);
   await page.evaluate(() => { localStorage.clear(); sessionStorage.clear(); });
   await page.reload();
+  const test = await page.evaluate((forced) => (forced !== 'standin' && window.ScepterTemperamentSets && window.ScepterTemperamentSets.havard ? 'havard' : 'stand-in'), questionSet);
   await page.click('[data-demo="ebook"]');
   await page.waitForSelector('.sp-ebook');
   await page.waitForTimeout(500);
@@ -127,24 +135,48 @@ async function runPopups(browser, viewport, tag) {
   await page.waitForTimeout(400);
   await page.screenshot({ path: join(OUT, `${tag}-temperament-intro.png`) });
   await page.click('.sp-temp .sp-btn--primary');
-  for (let i = 0; i < 40; i++) {
+  let asked = 0, stage2Shot = false;
+  for (let i = 0; i < 60; i++) {
     if (await page.locator('.sp-temp__result').count()) break;
+    if (await page.locator('.sp-temp__stage').count()) {
+      if (!stage2Shot) { await page.waitForTimeout(300); await page.screenshot({ path: join(OUT, `${tag}-temperament-stage2.png`) }); stage2Shot = true; }
+      await page.click('.sp-temp__stage .sp-btn--primary');
+      await page.waitForTimeout(260);
+      continue;
+    }
     const opts = page.locator('.sp-temp__q .sp-opt');
     const n = await opts.count();
     if (!n) { await page.waitForTimeout(200); continue; }
-    if (i === 2) await page.screenshot({ path: join(OUT, `${tag}-temperament-question.png`) });
-    await opts.nth(i % 5 === 0 ? 1 : 0).click(); // mostly the first (choleric-leaning) answer
+    if (asked === 2) await page.screenshot({ path: join(OUT, `${tag}-temperament-question.png`) });
+    // Stand-in: mostly the first (choleric-leaning) answer. Havard: a choleric with a marked melancholic
+    // side (TRUE to choleric statements, and to the stage-2 ones that point to melancholic).
+    let pick = asked % 5 === 0 ? 1 : 0;
+    if (test === 'havard') {
+      pick = await page.evaluate(() => {
+        const id = document.querySelector('.sp-temp__q[data-statement]').getAttribute('data-statement');
+        const set = window.ScepterTemperamentSets.havard;
+        const yes = set.stage1.COL.concat(set.tiebreak.COL, set.stage2.COL.items.filter((x) => set.stage2.COL[x.adj] === 'MEL').map((x) => x.id));
+        return yes.includes(id) ? 0 : 1;
+      });
+    }
+    await opts.nth(pick).click();
+    asked++;
     await page.waitForTimeout(260);
   }
   await page.waitForSelector('.sp-temp__result');
   await page.waitForTimeout(1000);
   await page.screenshot({ path: join(OUT, `${tag}-temperament-result.png`) });
   const dialog = page.locator('[data-sp-modal="temperament"] .sp-modal__dialog');
-  await dialog.evaluate((d) => d.scrollTo(0, d.scrollHeight));
-  await page.waitForTimeout(300);
-  await page.screenshot({ path: join(OUT, `${tag}-temperament-books.png`) });
+  const height = await dialog.evaluate((d) => d.scrollHeight);
+  const step = Math.round(viewport.height * 0.8);
+  for (let y = step, k = 2; y < height && k < 9; y += step, k++) {
+    await dialog.evaluate((d, top) => d.scrollTo(0, top), y);
+    await page.waitForTimeout(250);
+    await page.screenshot({ path: join(OUT, `${tag}-temperament-result-${k}.png`) });
+  }
+  const profile = await page.locator('.sp-temp__result .sp-display').textContent();
   await page.close();
-  return { errors };
+  return { test, asked, profile, errors };
 }
 
 import { execFileSync } from 'node:child_process';

@@ -578,3 +578,35 @@
 .sp .sp-cart-error { flex-basis: 100%; font-size: .85rem; color: #9b1c2c; font-weight: 600; }
 .sp .sp-first .sp-link { color: var(--sp-muted); }
 .sp .sp-first .sp-link:hover { color: var(--sp-burgundy); }
+
+/* Alexandre Havard's test: a statement with TRUE / FALSE, the stage-2 page, and his profile. */
+.sp .sp-back[disabled] { opacity: .3; cursor: default; background: none; }
+.sp .sp-temp__notice { max-width: 34em; margin: -8px auto 26px; padding-left: 12px; border-left: 2px solid var(--sp-sage-strong); color: var(--sp-text-2); font-style: italic; text-align: left; font-size: .95rem; }
+.sp-temp__q--statement { text-align: center; }
+.sp-temp__q--statement .sp-title { font-size: clamp(1.4rem, 3.4vw, 1.9rem); line-height: 1.3; font-weight: 500; min-height: 5.2em; display: flex; align-items: center; justify-content: center; margin: 6px auto 22px; max-width: 26em; }
+.sp-truefalse { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 460px; margin: 0 auto; }
+.sp .sp-truefalse__btn { align-items: center; justify-content: center; text-align: center; min-height: 58px; letter-spacing: .12em; }
+.sp .sp-truefalse__btn .sp-opt__label { font-weight: 700; }
+.sp .sp-truefalse__btn.is-selected { padding-right: 44px; padding-left: 44px; }
+.sp-temp__stage { text-align: center; padding: clamp(20px, 6vh, 64px) 0; }
+.sp-temp__stage .sp-display em { font-style: italic; color: var(--sp-sage-strong); }
+.sp-temp__stage .sp-lead { margin: 0 auto 28px; }
+.sp .sp-temp__label { font-family: var(--sp-font-display); font-style: italic; font-size: 1.3rem; color: var(--sp-text-2); margin-top: -8px; }
+.sp .sp-temp__pure { font-family: var(--sp-font-body); font-style: normal; font-size: .82rem; margin-left: 8px; }
+.sp .sp-temp__facts { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 18px; margin: 12px auto 0; font-size: .92rem; color: var(--sp-text-2); }
+.sp .sp-temp__facts strong { color: var(--sp-text); }
+.sp-virtues { background: var(--sp-cream); color: var(--sp-ink); border-radius: var(--sp-radius); padding: 14px 18px 10px; margin: 24px auto 6px; max-width: 560px; text-align: left; }
+.sp .sp-virtues__title { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: var(--sp-muted); margin-bottom: 4px; }
+.sp-virtues__row { padding: 9px 12px; margin: 0 -12px; border-left: 3px solid transparent; border-radius: 0 8px 8px 0; }
+.sp-virtues__row.is-mine { background: #f3e6e8; border-left-color: var(--sp-burgundy); }
+.sp .sp-virtues__name strong { font-family: var(--sp-font-display); font-size: 1.12rem; font-weight: 600; color: var(--sp-forest-deep); }
+.sp .sp-virtues__name span { font-size: .82rem; color: var(--sp-muted); }
+.sp-virtues__row.is-mine .sp-virtues__name strong { color: var(--sp-burgundy); }
+.sp .sp-virtues__detail { font-size: .86rem; color: var(--sp-muted); line-height: 1.45; }
+.sp-temp__cols--stack { grid-template-columns: 1fr !important; }
+.sp .sp-virtue--havard .sp-virtue__text { font-family: var(--sp-font-display); font-style: italic; font-size: 1.22rem; line-height: 1.45; opacity: 1; }
+.sp-temp__quote { margin: 26px auto 0; max-width: 560px; padding: 4px 0 4px 18px; border-left: 3px solid var(--sp-sage-strong); text-align: left; }
+.sp .sp-temp__quote p { font-family: var(--sp-font-display); font-style: italic; font-size: 1.15rem; line-height: 1.5; color: var(--sp-text); }
+.sp .sp-temp__quote footer { margin-top: 8px; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--sp-text-2); }
+.sp .sp-editor-note { margin: 0 auto 18px; max-width: 34em; padding: 10px 14px; border-radius: 10px; background: var(--sp-cream); color: var(--sp-burgundy); font-size: .85rem; font-weight: 600; text-align: left; }
+@media (max-width: 480px) { .sp-temp__q--statement .sp-title { min-height: 4.2em; } }

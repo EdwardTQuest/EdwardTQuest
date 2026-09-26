@@ -1,23 +1,39 @@
 <!--
   Klaviyo email: the temperament result. Flow trigger: metric "Completed Temperament Test".
   Link the book buttons to your Havard products (edit the URLs below once).
+  With Alexandre Havard's test the event carries his profile (profile, label, virtue, strength,
+  weakness, challenge); with the stand-in questions, the temperament, a secondary and the virtue.
 -->
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f8f1;">
   <tr><td align="center" style="padding:24px 12px;">
     <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border-radius:14px;overflow:hidden;">
       <tr><td style="background:#1f3d2e;padding:40px 32px;text-align:center;">
+        {% if event.profile %}
+        <p style="margin:0 0 10px;font:700 12px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#a9c5a6;">Your profile</p>
+        <h1 style="margin:0;font:600 38px/1.1 Georgia,'Times New Roman',serif;color:#fbf8f1;">{{ event.profile }}</h1>
+        <p style="margin:12px 0 0;font:italic 18px/1.5 Georgia,serif;color:#dfe8dc;">{{ event.label }}</p>
+        {% else %}
         <p style="margin:0 0 10px;font:700 12px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#a9c5a6;">Your temperament</p>
         <h1 style="margin:0;font:600 38px/1.1 Georgia,'Times New Roman',serif;color:#fbf8f1;">{{ event.temperament }}</h1>
         {% if event.secondary %}<p style="margin:12px 0 0;font:17px/1.5 Georgia,serif;color:#dfe8dc;">with a {{ event.secondary|lower }} streak</p>{% endif %}
+        {% endif %}
       </td></tr>
       <tr><td style="padding:30px 32px;text-align:center;">
+        {% if event.strength %}
+        <p style="margin:0 0 6px;text-align:left;font:700 12px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#6f1d2c;">Strength</p>
+        <p style="margin:0 0 18px;text-align:left;font:16px/1.55 Arial,Helvetica,sans-serif;color:#33443a;">{{ event.strength }}</p>
+        <p style="margin:0 0 6px;text-align:left;font:700 12px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#6f1d2c;">Weakness</p>
+        <p style="margin:0 0 22px;text-align:left;font:16px/1.55 Arial,Helvetica,sans-serif;color:#33443a;">{{ event.weakness }}</p>
+        {% endif %}
         <div style="background:#6f1d2c;border-radius:12px;padding:20px;color:#ffffff;">
-          <p style="margin:0 0 6px;font:700 12px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#f0d9dd;">The virtue to grow</p>
+          <p style="margin:0 0 6px;font:700 12px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#f0d9dd;">{% if event.profile %}Your virtue-challenge{% else %}The virtue to grow{% endif %}</p>
           <p style="margin:0;font:600 28px/1.1 Georgia,serif;">{{ event.virtue }}</p>
+          {% if event.challenge %}<p style="margin:10px 0 0;font:italic 17px/1.5 Georgia,serif;color:#fbeff1;">{{ event.challenge }}</p>{% endif %}
         </div>
         <p style="margin:26px 0 18px;font:16px/1.55 Arial,Helvetica,sans-serif;color:#33443a;">Temperament is where we start; character is what we build. Alexandre Havard’s books show how.</p>
         <a href="https://scepterpublishers.org/products/from-temperament-to-character" style="display:inline-block;background:#1f3d2e;color:#fbf8f1;font:700 15px/1 Arial,Helvetica,sans-serif;padding:14px 22px;border-radius:999px;text-decoration:none;">From Temperament to Character</a>
         <p style="margin:14px 0 0;"><a href="https://scepterpublishers.org/collections/alexandre-havard" style="font:15px Arial,Helvetica,sans-serif;color:#6f1d2c;">All of Alexandre Havard’s books</a></p>
+        {% if event.profile %}<p style="margin:26px 0 0;font:12px/1.5 Arial,Helvetica,sans-serif;color:#6b7a70;">From Alexandre Havard’s Temperament Test, <a href="https://virtuousleadership.com" style="color:#6b7a70;">virtuousleadership.com</a>.</p>{% endif %}
       </td></tr>
     </table>
   </td></tr>
