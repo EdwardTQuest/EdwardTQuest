@@ -4,7 +4,7 @@ What the page-layout lens found in each PDF (widows, orphans, runts, hyphen stac
 
 ## deluxe — 206 pages, measure 3.69 in, line box 13.7 pt
 
-counts: loose line 14, runt 33, orphan 2, widow 1
+counts: loose line 13, runt 35, widow 1
 
 - p.7 loose line: mean gap 0.55 em: ARE THOSE THAT WE CAN ASSIMILATE, VALIDATE,
 - p.11 runt: conclusion.
@@ -12,9 +12,8 @@ counts: loose line 14, runt 33, orphan 2, widow 1
 - p.20 runt: DREAM.
 - p.25 runt: CONtext.¹²
 - p.29 loose line: mean gap 0.85 em: And thus do men invariably decide such a question.
-- p.40 orphan: WORKABILITY of the feeling or idea as equivalent to that
-- p.40 runt: detail.
-- p.41 loose line: mean gap 0.58 em: SATISFACTORY ADAPTATION to the particular reality,
+- p.40 runt: TION;
+- p.40 runt: with;
 - p.49 loose line: mean gap 0.58 em: Receiving from the Editor of Mind an advance proof
 - p.50 runt: method.‘
 - p.52 loose line: mean gap 0.56 em: lines of least, resistance ‘on the whole.‘ ‘In oth
@@ -22,9 +21,9 @@ counts: loose line 14, runt 33, orphan 2, widow 1
 - p.57 runt: discussed.
 - p.59 runt: things.
 - p.75 loose line: mean gap 0.63 em: Are they not all mere matters of CONSISTENCY—and
-- p.77 orphan: positive addition to the previous reality, and later judgmen
 - p.89 runt: effects.
 - p.91 runt: ⁴²
+- p.95 runt: woven.⁴⁶
 - p.96 runt: minous.
 - p.99 runt: been.
 - p.101 runt: ⁴⁷
@@ -59,7 +58,7 @@ counts: loose line 14, runt 33, orphan 2, widow 1
 
 ## everyman — 200 pages, measure 3.11 in, line box 12.5 pt
 
-counts: loose line 17, runt 27
+counts: loose line 18, runt 24
 
 - p.9 loose line: mean gap 0.56 em: them all to mean the same thing, viz., the presenc
 - p.17 runt: instead.]
@@ -67,16 +66,14 @@ counts: loose line 17, runt 27
 - p.27 runt: reality?
 - p.28 loose line: mean gap 0.57 em: And thus do men invariably decide such a question.
 - p.33 runt: realities.
-- p.40 runt: else.
-- p.40 loose line: mean gap 0.57 em: 1. The possibly undue prominence given to resembli
+- p.40 loose line: mean gap 0.57 em: 3. The experienceable environment, as the vehicle 
+- p.40 loose line: mean gap 0.56 em: ING it, as determining the pointing to IT and not 
 - p.48 runt: method.‘
 - p.50 runt: belief.
 - p.61 runt: enough.
 - p.69 runt: claims.
 - p.72 loose line: mean gap 0.63 em: Our judgments at any rate change the character of
 - p.75 runt: these:—
-- p.75 runt: up.³⁸
-- p.76 runt: advance.
 - p.78 runt: are:
 - p.86 runt: complete?
 - p.91 loose line: mean gap 0.56 em: The essential service of humanism, as I conceive t
@@ -108,7 +105,7 @@ counts: loose line 17, runt 27
 
 ## scholar — 252 pages, measure 3.15 in, line box 13.7 pt
 
-counts: runt 31, loose line 26
+counts: runt 30, loose line 28
 
 - p.18 runt: 1909.
 - p.20 runt: instead.]
@@ -118,8 +115,9 @@ counts: runt 31, loose line 26
 - p.41 loose line: mean gap 0.77 em: AND RESEMBLES; ACONCEPTUAL FEELING,
 - p.44 runt: eyes.
 - p.46 loose line: mean gap 0.70 em: What can save us at all and prevent us from
-- p.48 runt: it;
-- p.49 runt: object.
+- p.48 runt: object.
+- p.49 loose line: mean gap 0.58 em: 3. The imperfect development of the generalized
+- p.49 runt: realm.
 - p.53 runt: yields.³¹
 - p.59 loose line: mean gap 0.80 em: The subject is unquestionably difficult. Messrs.
 - p.63 loose line: mean gap 0.55 em: thoughts of God. The main forms of our thinking,
@@ -131,13 +129,13 @@ counts: runt 31, loose line 26
 - p.80 loose line: mean gap 0.66 em: ‘artefacts,‘ their properties and relations can be
 - p.84 runt: claims.
 - p.86 loose line: mean gap 0.60 em: But is this not the globe, the elephant and the
-- p.92 runt: out.
 - p.107 runt: effects.
 - p.108 loose line: mean gap 0.55 em: SCENDENCY FOR US. And this cash value, it is
 - p.111 runt: ⁴⁵
 - p.112 runt: away.
 - p.113 runt: result.
 - p.114 loose line: mean gap 0.56 em: CONSIDERED, EXPERIENCE AS A WHOLE IS
+- p.116 loose line: mean gap 0.57 em: (2) They must simply exist as so many ultimate
 - p.118 runt: minous.
 - p.119 loose line: mean gap 0.58 em: OF BEING SUBSTITUTABLE FOR IT IN OUR
 - p.133 runt: prudent?

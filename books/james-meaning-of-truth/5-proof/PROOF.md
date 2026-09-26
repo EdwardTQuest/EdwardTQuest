@@ -5,7 +5,7 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 | # | lens | scope | findings | status |
 |---|---|---|---|---|
 | 3 | structure and sequence | every heading and paragraph of manuscript.md (57,234 words, 15 chapters) | 14 | findings |
-| 4 | page layout | every page of every PDF: widows, orphans, runts, hyphen stacks, loose lines, stranded headings, thin chapter ends | 151 | findings |
+| 4 | page layout | every page of every PDF: widows, orphans, runts, hyphen stacks, loose lines, stranded headings, thin chapter ends | 149 | findings |
 | 5 | dictionary sweep | every token of the body (56,433); wordlist + house list; names accepted when capitalised mid-sentence (92) | 1154 | read the list |
 | 7 | apparatus | contents vs headings, note calls vs notes, front and back matter present in every edition | 1 | findings |
 | 8 | cross-edition consistency | the words of manuscript.md against the text of each PDF and of the EPUB | 1 | findings |
@@ -33,7 +33,7 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 - stray mark: … terms drawn from experience. [Things of an unexperienceable …
 - stray mark: …s the existence of a FEELING. [If the reader share the curren…
 - stray mark: …reto,—by the way of practical [missing section] is an incompl…
-- stray mark: …nd myself.  4. The treatment, [earlier], of percepts as the o…
+- stray mark: …d myself.  4\. The treatment, [earlier], of percepts as the o…
 - stray mark: … is independently certain, we [then] have to admit that the r…
 - stray mark: …r drive them from any comfort [discomfort?] in that which the…
 - stray mark: … believe the other’ (p. 400). [Logic, I may say in passing, w…
@@ -42,12 +42,12 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 - stray mark: …n may ere long see the light. [I referred in this note to Roy…
 - stray mark: …at the rule for attaining the [highest] grade of clearness of…
 
-## Lens 4 · page layout — 151 (findings)
+## Lens 4 · page layout — 149 (findings)
 *Scope:* every page of every PDF: widows, orphans, runts, hyphen stacks, loose lines, stranded headings, thin chapter ends
 
-- deluxe: {'loose line': 14, 'runt': 33, 'orphan': 2, 'widow': 1} — see 3-typeset/typeset-report.md for the pages
-- everyman: {'loose line': 17, 'runt': 27} — see 3-typeset/typeset-report.md for the pages
-- scholar: {'runt': 31, 'loose line': 26} — see 3-typeset/typeset-report.md for the pages
+- deluxe: {'loose line': 13, 'runt': 35, 'widow': 1} — see 3-typeset/typeset-report.md for the pages
+- everyman: {'loose line': 18, 'runt': 24} — see 3-typeset/typeset-report.md for the pages
+- scholar: {'runt': 30, 'loose line': 28} — see 3-typeset/typeset-report.md for the pages
 
 ## Lens 5 · dictionary sweep — 1154 (read the list)
 *Scope:* every token of the body (56,433); wordlist + house list; names accepted when capitalised mid-sentence (92)
@@ -89,7 +89,7 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 - experiential ×4 —  in short, is the truth’s cash-value in experiential terms?” The moment pragmatism asks this
 - trans-empirical ×4 — universe needs, in short, no extraneous trans-empirical connective support, but possesses in it
 - solipsism ×4 —  redeemed from the condition of being a solipsism. If now the new created reality RESEMBL
-- epistemologist ×4 — 2. The critic, reader, or epistemologist, with his own belief, as warrant for th
+- epistemologist ×4 — 2\. The critic, reader, or epistemologist, with his own belief, as warrant for th
 - known-as ×4 — ch a case as this? What is the pointing known-as, here?
 - so-called ×4 — s a logical or saltatory distinction, a so-called ‘pure relation.’
 - skrkl ×4 —  which I give utterance by the vocable ‘skrkl,’ claiming at the same time that it is 
@@ -127,10 +127,10 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 *Scope:* the words of manuscript.md against the text of each PDF and of the EPUB
 
 - deluxe: manuscript words absent from the PDF text: 206 (e.g. ['as', 'definition', 'will', 'one', 's', 'experiences', 'from', 'would', 'cash', 'value']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
-- everyman: manuscript words absent from the PDF text: 431 (e.g. ['object', 'reality', 'pragmatists', 'definition', 'question', 'concrete', 's', 'experiences', 'different', 'from']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
-- scholar: manuscript words absent from the PDF text: 485 (e.g. ['pragmatism', 'reality', 'intellectualists', 'definition', 'concrete', 'difference', 's', 'actual', 'experiences', 'from']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
+- everyman: manuscript words absent from the PDF text: 428 (e.g. ['object', 'reality', 'pragmatists', 'definition', 'question', 's', 'experiences', 'different', 'from', 'practical']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
+- scholar: manuscript words absent from the PDF text: 491 (e.g. ['pragmatism', 'reality', 'intellectualists', 'definition', 'concrete', 'difference', 's', 'actual', 'experiences', 'from']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
 - epub: no cover image yet (run `ath cover` and rebuild)
-- epub: 18 spine items, 23 manifest items, 2.9 MB unpacked
+- epub: 18 spine items, 23 manifest items, 2.8 MB unpacked
 - epub: manuscript words 57,993; EPUB words 59,101; manuscript words not found in EPUB: 88
 - epub PROBLEM text loss: 88 manuscript words are absent from the EPUB, e.g. ['a', 'with', 's', 'from', 'have', 'for', 'by', 'under', 'philosophy', 'article', 'p', 'another']
 
@@ -160,7 +160,7 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 | cover | undecided |  |  |  |
 | final | undecided |  |  |  |
 
-FORCED past gates: [{'command': 'typeset', 'gates': ['text'], 'when': '2026-09-25 22:45'}, {'command': 'epub', 'gates': ['text'], 'when': '2026-09-25 22:46'}]
+FORCED past gates: [{'command': 'typeset', 'gates': ['text'], 'when': '2026-09-25 22:45'}, {'command': 'epub', 'gates': ['text'], 'when': '2026-09-25 22:46'}, {'command': 'typeset', 'gates': ['text'], 'when': '2026-09-26 01:04'}, {'command': 'epub', 'gates': ['text'], 'when': '2026-09-26 01:05'}]
 
 ## Definition of done
 

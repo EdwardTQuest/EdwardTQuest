@@ -1,6 +1,6 @@
 # Edit report — The Meaning of Truth
 
-Source: `0-source/pg5117.txt` (60,473 words). Import: {'pg transcriber notes removed': 0, 'pg page markers removed': 0, 'pg paragraph markers removed': 0, 'pg emphasis markup removed': 0, 'pg footnote blocks': 67, 'pg footnote calls': 67, 'pg front blocks dropped': 4, 'pg front prose kept': 0, 'pg contents runs removed': 1, 'pg contents and furniture dropped': 19, 'chapters': 44, 'paragraphs': 404, 'speaker labels': 1, 'notes': 67, 'split titles merged': 14, 'front divisions': 1, 'levels': {'#plain': 2, '#numtitle2': 2, '#num': 3}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 1.
+Source: `0-source/pg5117.txt` (60,473 words). Import: {'pg transcriber notes removed': 0, 'pg page markers removed': 0, 'pg paragraph markers removed': 0, 'pg emphasis markup removed': 0, 'pg footnote blocks': 67, 'pg footnote calls': 67, 'pg front blocks dropped': 4, 'pg front prose kept': 0, 'pg contents runs removed': 1, 'pg contents and furniture dropped': 19, 'chapters': 44, 'list markers escaped': 23, 'paragraphs': 404, 'speaker labels': 1, 'notes': 67, 'split titles merged': 14, 'front divisions': 1, 'levels': {'#plain': 2, '#numtitle2': 2, '#num': 3}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 1.
 
 ## House-style rules (count / cap)
 
@@ -12,6 +12,7 @@ Source: `0-source/pg5117.txt` (60,473 words). Import: {'pg transcriber notes rem
 | dashes | 191 | 3023 | o much on their good will--oh for the rarity of Christian ch  →  o much on their good will—oh for the rarity o |
 | caps openings | 6 | 604 | :: {.front} ## Preface  THE pivotal part of my book named Pr  →  :: {.front} ## Preface  The pivotal part of m |
 | spacing and ligatures | 4 | 3023 | nt with that object mean? . . . Pragmatism asks its usual qu  →  nt with that object mean?. . . Pragmatism ask |
+| list markers escaped | 0 | 3023 |  |
 
 ## Validation: 0 errors, 0 warnings
 
@@ -227,5 +228,5 @@ Source: `0-source/pg5117.txt` (60,473 words). Import: {'pg transcriber notes rem
 2. The rest of the dictionary list (659 entries): read to the end?
 3. Sequence proof: level 2 "#": 14 numbered, first 2, last 15; level 3 "#" (run 6): 3 numbered, first 2, last 4; level 3 "#" (run 7): 1 numbered, first 2, last 2; level 3 "#" (run 8): 2 numbered, first 1, last 2 — does it match what the source prints?
 4. Structure battery: 1 findings — each decided?
-5. Rules: hyphen joins 0, curly quotes 1603, ellipses 8, dashes 191, caps openings 6, spacing and ligatures 4 — plausible for 60,473 words?
+5. Rules: hyphen joins 0, curly quotes 1603, ellipses 8, dashes 191, caps openings 6, spacing and ligatures 4, list markers escaped 0 — plausible for 60,473 words?
 6. Would a reader who knows this book notice anything wrong in the first chapter you open at random?

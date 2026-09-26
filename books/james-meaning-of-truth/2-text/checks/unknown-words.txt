@@ -35,7 +35,7 @@ intellectualist	5	ore concrete. The entire quarrel of the intellectualist with h
 experiential	4	 in short, is the truth’s cash-value in experiential terms?” The moment pragmatism asks this
 trans-empirical	4	universe needs, in short, no extraneous trans-empirical connective support, but possesses in it
 solipsism	4	 redeemed from the condition of being a solipsism. If now the new created reality RESEMBL
-epistemologist	4	2. The critic, reader, or epistemologist, with his own belief, as warrant for th
+epistemologist	4	2\. The critic, reader, or epistemologist, with his own belief, as warrant for th
 known-as	4	ch a case as this? What is the pointing known-as, here?
 so-called	4	s a logical or saltatory distinction, a so-called ‘pure relation.’
 skrkl	4	 which I give utterance by the vocable ‘skrkl,’ claiming at the same time that it is 
@@ -314,7 +314,7 @@ synoptical	1	ze and classify and schematize and make synoptical tables and inven
 non-existence	1	in order. My great trammel has been the non-existence of any definitely stated alternative on
 Commonsense	1	nto the gap, as a sort of intermediary. Commonsense theories left the gap untouched, declar
 self-transcending	1	eclaring our mind able to clear it by a self-transcending leap. Transcendentalist theories left i
-self-same	1	(1) the self-same piece of experience taken twice over in
+self-same	1	(1\) the self-same piece of experience taken twice over in
 STARTING-POINT	1	ess fulfilled, the result is that THEIR STARTING-POINT THEREBY BECOMES A KNOWER AND THEIR TERM
 KNOWER	1	 THEIR STARTING-POINT THEREBY BECOMES A KNOWER AND THEIR TERMINUS AN OBJECT MEANT OR K
 aliunde	1	 If we knew any more real kind of union aliunde, we might be entitled to brand all our 

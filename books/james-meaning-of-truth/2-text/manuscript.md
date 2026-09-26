@@ -144,27 +144,27 @@ What can save us at all and prevent us from flying asunder into a chaos of mutua
 
 Note.—The reader will easily see how much of the account of the truth-function developed later in Pragmatism was already explicit in this earlier article, and how much came to be defined later. In this earlier article we find distinctly asserted:—
 
-1. The reality, external to the true idea;
+1\. The reality, external to the true idea;
 
-2. The critic, reader, or epistemologist, with his own belief, as warrant for this reality’s existence;
+2\. The critic, reader, or epistemologist, with his own belief, as warrant for this reality’s existence;
 
-3. The experienceable environment, as the vehicle or medium connecting knower with known, and yielding the cognitive RELATION;
+3\. The experienceable environment, as the vehicle or medium connecting knower with known, and yielding the cognitive RELATION;
 
-4. The notion of POINTING, through this medium, to the reality, as one condition of our being said to know it;
+4\. The notion of POINTING, through this medium, to the reality, as one condition of our being said to know it;
 
-5. That of RESEMBLING it, and eventually AFFECTING it, as determining the pointing to IT and not to something else.
+5\. That of RESEMBLING it, and eventually AFFECTING it, as determining the pointing to IT and not to something else.
 
-6. The elimination of the ‘epistemological gulf,’ so that the whole truth-relation falls inside of the continuities of concrete experience, and is constituted of particular processes, varying with every object and subject, and susceptible of being described in detail.
+6\. The elimination of the ‘epistemological gulf,’ so that the whole truth-relation falls inside of the continuities of concrete experience, and is constituted of particular processes, varying with every object and subject, and susceptible of being described in detail.
 
 The defects in this earlier account are:—
 
-1. The possibly undue prominence given to resembling, which altho a fundamental function in knowing truly, is so often dispensed with;
+1\. The possibly undue prominence given to resembling, which altho a fundamental function in knowing truly, is so often dispensed with;
 
-2. The undue emphasis laid upon operating on the object itself, which in many cases is indeed decisive of that being what we refer to, but which is often lacking, or replaced by operations on other things related to the object.
+2\. The undue emphasis laid upon operating on the object itself, which in many cases is indeed decisive of that being what we refer to, but which is often lacking, or replaced by operations on other things related to the object.
 
-3. The imperfect development of the generalized notion of the WORKABILITY of the feeling or idea as equivalent to that SATISFACTORY ADAPTATION to the particular reality, which constitutes the truth of the idea. It is this more generalized notion, as covering all such specifications as pointing, fitting, operating or resembling, that distinguishes the developed view of Dewey, Schiller, and myself.
+3\. The imperfect development of the generalized notion of the WORKABILITY of the feeling or idea as equivalent to that SATISFACTORY ADAPTATION to the particular reality, which constitutes the truth of the idea. It is this more generalized notion, as covering all such specifications as pointing, fitting, operating or resembling, that distinguishes the developed view of Dewey, Schiller, and myself.
 
-4. The treatment, [earlier], of percepts as the only realm of reality. I now treat concepts as a co-ordinate realm.
+4\. The treatment, [earlier], of percepts as the only realm of reality. I now treat concepts as a co-ordinate realm.
 
 The next paper represents a somewhat broader grasp of the topic on the writer’s part.
 
@@ -296,17 +296,17 @@ In some men theory is a passion, just as music is in others. The form of inner c
 
 I am well aware that this paper has been rambling in the extreme. But the whole subject is inductive, and sharp logic is hardly yet in order. My great trammel has been the non-existence of any definitely stated alternative on my opponents’ part. It may conduce to clearness if I recapitulate, in closing, what I conceive the main points of humanism to be. They are these:—
 
-1. An experience, perceptual or conceptual, must conform to reality in order to be true.
+1\. An experience, perceptual or conceptual, must conform to reality in order to be true.
 
-2. By ‘reality’ humanism means nothing more than the other conceptual or perceptual experiences with which a given present experience may find itself in point of fact mixed up. [^27]
+2\. By ‘reality’ humanism means nothing more than the other conceptual or perceptual experiences with which a given present experience may find itself in point of fact mixed up. [^27]
 
-3. By ‘conforming,’ humanism means taking account-of in such a way as to gain any intellectually and practically satisfactory result.
+3\. By ‘conforming,’ humanism means taking account-of in such a way as to gain any intellectually and practically satisfactory result.
 
-4. To ‘take account-of’ and to be ‘satisfactory’ are terms that admit of no definition, so many are the ways in which these requirements can practically be worked out.
+4\. To ‘take account-of’ and to be ‘satisfactory’ are terms that admit of no definition, so many are the ways in which these requirements can practically be worked out.
 
-5. Vaguely and in general, we take account of a reality by preserving it in as unmodified a form as possible. But, to be then satisfactory, it must not contradict other realities outside of it which claim also to be preserved. That we must preserve all the experience we can and minimize contradiction in what we preserve, is about all that can be said in advance.
+5\. Vaguely and in general, we take account of a reality by preserving it in as unmodified a form as possible. But, to be then satisfactory, it must not contradict other realities outside of it which claim also to be preserved. That we must preserve all the experience we can and minimize contradiction in what we preserve, is about all that can be said in advance.
 
-6. The truth which the conforming experience embodies may be a positive addition to the previous reality, and later judgments may have to conform to it. Yet, virtually at least, it may have been true previously. Pragmatically, virtual and actual truth mean the same thing: the possibility of only one answer, when once the question is raised.
+6\. The truth which the conforming experience embodies may be a positive addition to the previous reality, and later judgments may have to conform to it. Yet, virtually at least, it may have been true previously. Pragmatically, virtual and actual truth mean the same thing: the possibility of only one answer, when once the question is raised.
 
 ## IV. The Relation Between Knower and Known
 
@@ -314,11 +314,11 @@ I am well aware that this paper has been rambling in the extreme. But the whole 
 
 Throughout the history of philosophy the subject and its object have been treated as absolutely discontinuous entities; and thereupon the presence of the latter to the former, or the ‘apprehension’ by the former of the latter, has assumed a paradoxical character which all sorts of theories had to be invented to overcome. Representative theories put a mental ‘representation,’ ‘image,’ or ‘content’ into the gap, as a sort of intermediary. Commonsense theories left the gap untouched, declaring our mind able to clear it by a self-transcending leap. Transcendentalist theories left it impossible to traverse by finite knowers, and brought an absolute in to perform the saltatory act. All the while, in the very bosom of the finite experience, every conjunction required to make the relation intelligible is given in full. Either the knower and the known are:
 
-(1) the self-same piece of experience taken twice over in different contexts; or they are
+(1\) the self-same piece of experience taken twice over in different contexts; or they are
 
-(2) two pieces of ACTUAL experience belonging to the same subject, with definite tracts of conjunctive transitional experience between them; or
+(2\) two pieces of ACTUAL experience belonging to the same subject, with definite tracts of conjunctive transitional experience between them; or
 
-(3) the known is a POSSIBLE experience either of that subject or another, to which the said conjunctive transitions WOULD lead, if sufficiently prolonged.
+(3\) the known is a POSSIBLE experience either of that subject or another, to which the said conjunctive transitions WOULD lead, if sufficiently prolonged.
 
 To discuss all the ways in which one experience may function as the knower of another, would be incompatible with the limits of this essay. I have treated of type 1, the kind of knowledge called perception, in an article in the Journal of Philosophy, for September 1, 1904, called ‘Does consciousness exist?’ This is the type of case in which the mind enjoys direct ‘acquaintance’ with a present object. In the other types the mind has ‘knowledge-about’ an object not immediately there. Type 3 can always formally and hypothetically be reduced to type 2, so that a brief description of that type will now put the present reader sufficiently at my point of view, and make him see what the actual meanings of the mysterious cognitive relation may be.
 
@@ -382,9 +382,9 @@ It gets rid, for example, of the whole agnostic controversy, by refusing to ente
 
 If the central humanistic thesis, printed above in italics, be accepted, it will follow that, if there be any such thing at all as knowing, the knower and the object known must both be portions of experience. One part of experience must, therefore, either
 
-(1) Know another part of experience—in other words, parts must, as Professor Woodbridge says, [^34] represent ONE ANOTHER instead of representing realities outside of ‘consciousness’—this case is that of conceptual knowledge; or else
+(1\) Know another part of experience—in other words, parts must, as Professor Woodbridge says, [^34] represent ONE ANOTHER instead of representing realities outside of ‘consciousness’—this case is that of conceptual knowledge; or else
 
-(2) They must simply exist as so many ultimate THATS or facts of being, in the first instance; and then, as a secondary complication, and without doubling up its entitative singleness, any one and the same THAT in experience must figure alternately as a thing known and as a knowledge of the thing, by reason of two divergent kinds of context into which, in the general course of experience, it gets woven. [^35]
+(2\) They must simply exist as so many ultimate THATS or facts of being, in the first instance; and then, as a secondary complication, and without doubling up its entitative singleness, any one and the same THAT in experience must figure alternately as a thing known and as a knowledge of the thing, by reason of two divergent kinds of context into which, in the general course of experience, it gets woven. [^35]
 
 This second case is that of sense-perception. There is a stage of thought that goes beyond common sense, and of it I shall say more presently; but the common-sense stage is a perfectly definite halting-place of thought, primarily for purposes of action; and, so long as we remain on the common-sense stage of thought, object and subject FUSE in the fact of ‘presentation’ or sense-perception-the pen and hand which I now SEE writing, for example, ARE the physical realities which those words designate. In this case there is no self-transcendency implied in the knowing. Humanism, here, is only a more comminuted IDENTITATSPHILOSOPHIE.
 
@@ -670,7 +670,7 @@ The pragmatism or pluralism which I defend has to fall back on a certain ultimat
 
 Professor Marcel Hebert is a singularly erudite and liberal thinker (a seceder, I believe, from the Catholic priesthood) and an uncommonly direct and clear writer. His book Le Divin is one of the ablest reviews of the general subject of religious philosophy which recent years have produced; and in the small volume the title of which is copied above he has, perhaps, taken more pains not to do injustice to pragmatism than any of its numerous critics. Yet the usual fatal misapprehension of its purposes vitiates his exposition and his critique. His pamphlet seems to me to form a worthy hook, as it were, on which to hang one more attempt to tell the reader what the pragmatist account of truth really means.
 
-M. Hebert takes it to mean what most people take it to mean, the doctrine, namely, that whatever proves subjectively expedient in the way of our thinking is ‘true’ in the absolute and unrestricted sense of the word, whether it corresponds to any objective state of things outside of our thought or not. Assuming this to be the pragmatist thesis, M. Hebert opposes it at length. Thought that proves itself to be thus expedient may, indeed, have every OTHER kind of value for the thinker, he says, but cognitive value, representative value, VALEUR DE CONNAISSANCE PROPREMENT DITE, it has not; and when it does have a high degree of general utility value, this is in every case derived from its previous value in the way of correctly representing independent objects that have an important influence on our lives. Only by thus representing things truly do we reap the useful fruits. But the fruits follow on the truth, they do not constitute it; so M. Hebert accuses pragmatism of telling us everything about truth except what it essentially is. He admits, indeed, that the world is so framed that when men have true ideas of realities, consequential utilities ensue in abundance; and no one of our critics, I think, has shown as concrete a sense of the variety of these utilities as he has; but he reiterates that, whereas such utilities are secondary, we insist on treating them as primary, and that the connaissance objective from which they draw all their being is something which we neglect, exclude, and destroy. The utilitarian value and the strictly cognitive value of our ideas may perfectly well harmonize, he says—and in the main he allows that they do harmonize—but they are not logically identical for that. He admits that subjective interests, desires, impulses may even have the active ‘primacy’ in our intellectual life. Cognition awakens only at their spur, and follows their cues and aims; yet, when it IS awakened, it is objective cognition proper and not merely another name for the impulsive tendencies themselves in the state of satisfaction. The owner of a picture ascribed to Corot gets uneasy when its authenticity is doubted. He looks up its origin and is reassured. But his uneasiness does not make the proposition false, any more than his relief makes the proposition true, that the actual Corot was the painter. Pragmatism, which, according to M. Hebert, claims that our sentiments MAKE truth and falsehood, would oblige us to conclude that our minds exert no genuinely cognitive function whatever.
+M\. Hebert takes it to mean what most people take it to mean, the doctrine, namely, that whatever proves subjectively expedient in the way of our thinking is ‘true’ in the absolute and unrestricted sense of the word, whether it corresponds to any objective state of things outside of our thought or not. Assuming this to be the pragmatist thesis, M. Hebert opposes it at length. Thought that proves itself to be thus expedient may, indeed, have every OTHER kind of value for the thinker, he says, but cognitive value, representative value, VALEUR DE CONNAISSANCE PROPREMENT DITE, it has not; and when it does have a high degree of general utility value, this is in every case derived from its previous value in the way of correctly representing independent objects that have an important influence on our lives. Only by thus representing things truly do we reap the useful fruits. But the fruits follow on the truth, they do not constitute it; so M. Hebert accuses pragmatism of telling us everything about truth except what it essentially is. He admits, indeed, that the world is so framed that when men have true ideas of realities, consequential utilities ensue in abundance; and no one of our critics, I think, has shown as concrete a sense of the variety of these utilities as he has; but he reiterates that, whereas such utilities are secondary, we insist on treating them as primary, and that the connaissance objective from which they draw all their being is something which we neglect, exclude, and destroy. The utilitarian value and the strictly cognitive value of our ideas may perfectly well harmonize, he says—and in the main he allows that they do harmonize—but they are not logically identical for that. He admits that subjective interests, desires, impulses may even have the active ‘primacy’ in our intellectual life. Cognition awakens only at their spur, and follows their cues and aims; yet, when it IS awakened, it is objective cognition proper and not merely another name for the impulsive tendencies themselves in the state of satisfaction. The owner of a picture ascribed to Corot gets uneasy when its authenticity is doubted. He looks up its origin and is reassured. But his uneasiness does not make the proposition false, any more than his relief makes the proposition true, that the actual Corot was the painter. Pragmatism, which, according to M. Hebert, claims that our sentiments MAKE truth and falsehood, would oblige us to conclude that our minds exert no genuinely cognitive function whatever.
 
 This subjectivist interpretation of our position seems to follow from my having happened to write (without supposing it necessary to explain that I was treating of cognition solely on its subjective side) that in the long run the true is the expedient in the way of our thinking, much as the good is the expedient in the way of our behavior! Having previously written that truth means ‘agreement with reality,’ and insisted that the chief part of the expediency of any one opinion is its agreement with the rest of acknowledged truth, I apprehended no exclusively subjectivistic reading of my meaning. My mind was so filled with the notion of objective reference that I never dreamed that my hearers would let go of it; and the very last accusation I expected was that in speaking of ideas and their satisfactions, I was denying realities outside. My only wonder now is that critics should have found so silly a personage as I must have seemed in their eyes, worthy of explicit refutation.
 
@@ -798,7 +798,7 @@ It almost reconciles one to being no logician that one thereby escapes so much a
 
 In spite of my admiration of Mr. Russell’s analytic powers, I wish, after reading such an article, that pragmatism, even had it no other function, might result in making him and other similarly gifted men ashamed of having used such powers in such abstraction from reality. Pragmatism saves us at any rate from such diseased abstractionism as those pages show.
 
-P. S. Since the foregoing rejoinder was written an article on Pragmatism which I believe to be by Mr. Russell has appeared in the Edinburgh Review for April, 1909. As far as his discussion of the truth-problem goes, altho he has evidently taken great pains to be fair, it seems to me that he has in no essential respect improved upon his former arguments. I will therefore add nothing further, but simply refer readers who may be curious to pp. 272-280 of the said article.
+P\. S. Since the foregoing rejoinder was written an article on Pragmatism which I believe to be by Mr. Russell has appeared in the Edinburgh Review for April, 1909. As far as his discussion of the truth-problem goes, altho he has evidently taken great pains to be fair, it seems to me that he has in no essential respect improved upon his former arguments. I will therefore add nothing further, but simply refer readers who may be curious to pp. 272-280 of the said article.
 
 ## XV. A Dialogue
 

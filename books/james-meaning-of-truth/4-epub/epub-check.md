@@ -4,9 +4,9 @@ File: `4-epub/james-meaning-of-truth.epub` (1.35 MB)
 
 - no cover image yet (run `ath cover` and rebuild)
 - 18 spine items, 23 manifest items, 2.9 MB unpacked
-- manuscript words 57,993; EPUB words 59,101; manuscript words not found in EPUB: 88
+- manuscript words 57,993; EPUB words 59,226; manuscript words not found in EPUB: 0
 
-- PROBLEM text loss: 88 manuscript words are absent from the EPUB, e.g. ['a', 'with', 's', 'from', 'have', 'for', 'by', 'under', 'philosophy', 'article', 'p', 'another']
+- no problems found
 
 Not checked here (do on a reader): rendering of small caps, footnote pop-ups, plate scaling. Run `epubcheck` too if installed.
 
