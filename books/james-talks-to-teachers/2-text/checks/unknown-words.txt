@@ -281,7 +281,7 @@ splanchnic	1	arrests the movements of the heart: the splanchnic nerve arrests th
 subtile	1	nsuality, and the like; and in the more subtile manifestations of the moral life, whene
 expulsive	1	ibition. This has been well called the ‘expulsive power of the higher emotion.’
 ideational	1	notion of inhibition to the case of our ideational processes. I am lying in bed, for examp
-thermometric	1	(1) I may forget for a moment the thermometric conditions, and then the idea of gettin
+thermometric	1	(1\) I may forget for a moment the thermometric conditions, and then the idea of gettin
 melancholiacs	1	Certain melancholiacs furnish the extreme example of the over
 over-inhibited	1	iacs furnish the extreme example of the over-inhibited type. Their minds are cramped in a fixe
 abulia	1	e. So they show a condition of perfect ‘abulia,’ or inability to will or act. They can

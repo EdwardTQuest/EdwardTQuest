@@ -5,7 +5,7 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 | # | lens | scope | findings | status |
 |---|---|---|---|---|
 | 3 | structure and sequence | every heading and paragraph of manuscript.md (61,402 words, 18 chapters) | 41 | findings |
-| 4 | page layout | every page of every PDF: widows, orphans, runts, hyphen stacks, loose lines, stranded headings, thin chapter ends | 102 | findings |
+| 4 | page layout | every page of every PDF: widows, orphans, runts, hyphen stacks, loose lines, stranded headings, thin chapter ends | 103 | findings |
 | 5 | dictionary sweep | every token of the body (60,766); wordlist + house list; names accepted when capitalised mid-sentence (55) | 684 | read the list |
 | 7 | apparatus | contents vs headings, note calls vs notes, front and back matter present in every edition | 0 | clean |
 | 8 | cross-edition consistency | the words of manuscript.md against the text of each PDF and of the EPUB | 0 | clean |
@@ -59,11 +59,11 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 - stray mark: …w of his imprisonment, he saw [I abridge here Tolstoi’s descr…
 - stray mark: …and the old insipid existence [again].”  “I had undoubtedly ;…
 
-## Lens 4 · page layout — 102 (findings)
+## Lens 4 · page layout — 103 (findings)
 *Scope:* every page of every PDF: widows, orphans, runts, hyphen stacks, loose lines, stranded headings, thin chapter ends
 
 - deluxe: {'runt': 14, 'loose line': 6, 'widow': 1} — see 3-typeset/typeset-report.md for the pages
-- everyman: {'loose line': 5, 'runt': 27, 'widow': 2} — see 3-typeset/typeset-report.md for the pages
+- everyman: {'loose line': 5, 'runt': 28, 'widow': 2} — see 3-typeset/typeset-report.md for the pages
 - scholar: {'runt': 33, 'loose line': 14} — see 3-typeset/typeset-report.md for the pages
 
 ## Lens 5 · dictionary sweep — 684 (read the list)
@@ -176,7 +176,7 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 | cover | undecided |  |  |  |
 | final | undecided |  |  |  |
 
-FORCED past gates: [{'command': 'typeset', 'gates': ['text'], 'when': '2026-09-25 22:40'}, {'command': 'epub', 'gates': ['text'], 'when': '2026-09-25 22:41'}]
+FORCED past gates: [{'command': 'typeset', 'gates': ['text'], 'when': '2026-09-25 22:40'}, {'command': 'epub', 'gates': ['text'], 'when': '2026-09-25 22:41'}, {'command': 'typeset', 'gates': ['text'], 'when': '2026-09-26 01:00'}, {'command': 'epub', 'gates': ['text'], 'when': '2026-09-26 01:01'}]
 
 ## Definition of done
 

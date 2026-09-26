@@ -30,7 +30,7 @@ counts: runt 14, loose line 6, widow 1
 
 ## everyman — 220 pages, measure 3.11 in, line box 12.5 pt
 
-counts: loose line 5, runt 27, widow 2
+counts: loose line 5, runt 28, widow 2
 
 - p.13 loose line: mean gap 0.60 em: I say moreover that you make a great, a very great
 - p.27 runt: affect.
@@ -52,6 +52,7 @@ counts: loose line 5, runt 27, widow 2
 - p.119 runt: lished.
 - p.120 loose line: mean gap 0.56 em: more than the act of taking a thing into the mind.
 - p.132 loose line: mean gap 0.55 em: tendency will quench a lower one. Fear arrests app
+- p.133 runt: act.
 - p.134 loose line: mean gap 0.56 em: self to the mechanical conception of the psychophy
 - p.135 runt: hesitation.
 - p.136 runt: command.
@@ -103,7 +104,7 @@ counts: runt 33, loose line 14
 - p.146 runt: digest.
 - p.155 runt: existence.
 - p.164 loose line: mean gap 0.56 em: going on or keep it from occurring as it otherwise
-- p.166 runt: up—or
+- p.166 runt: —or
 - p.169 loose line: mean gap 0.56 em: to be all sicklied over with repressive forms of s
 - p.175 runt: feeling.
 - p.180 loose line: mean gap 0.56 em: There are two types of will. There are also two

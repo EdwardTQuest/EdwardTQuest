@@ -1,6 +1,6 @@
 # Edit report — Talks to Teachers on Psychology
 
-Source: `0-source/pg16287.txt` (65,243 words). Import: {'pg transcriber notes removed': 0, 'pg page markers removed': 0, 'pg paragraph markers removed': 0, 'pg emphasis markup removed': 7, 'pg footnote calls': 20, 'pg front blocks dropped': 6, 'pg front prose kept': 0, 'pg contents runs removed': 1, 'pg the end dropped': 1, 'pg contents and furniture dropped': 39, 'chapters': 22, 'paragraphs': 426, 'breaks': 20, 'quotes': 8, 'verse_blocks': 4, 'notes': 20, 'split titles merged': 0, 'front divisions': 1, 'levels': {'#plain': 2, '#numtitle': 2}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 1.
+Source: `0-source/pg16287.txt` (65,243 words). Import: {'pg transcriber notes removed': 0, 'pg page markers removed': 0, 'pg paragraph markers removed': 0, 'pg emphasis markup removed': 7, 'pg footnote calls': 20, 'pg front blocks dropped': 6, 'pg front prose kept': 0, 'pg contents runs removed': 1, 'pg the end dropped': 1, 'pg contents and furniture dropped': 39, 'chapters': 22, 'list markers escaped': 3, 'paragraphs': 426, 'breaks': 20, 'quotes': 8, 'verse_blocks': 4, 'notes': 20, 'split titles merged': 0, 'front divisions': 1, 'levels': {'#plain': 2, '#numtitle': 2}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 1.
 
 ## House-style rules (count / cap)
 
@@ -12,6 +12,7 @@ Source: `0-source/pg16287.txt` (65,243 words). Import: {'pg transcriber notes re
 | dashes | 182 | 3262 | redness of individuality,--is, at any rate, the outward tole  →  redness of individuality,—is, at any rate, th |
 | caps openings | 1 | 652 | imagine it to possess.  CAMBRIDGE, MASS., March, 1899.  :::   →  imagine it to possess.  Cambridge, mass., Mar |
 | spacing and ligatures | 31 | 3262 |  finally insert the words ’*by mere reiteration*,’ and the s  →   finally insert the words’*by mere reiteratio |
+| list markers escaped | 0 | 3262 |  |
 
 ## Validation: 0 errors, 2 warnings
 
@@ -176,7 +177,7 @@ Source: `0-source/pg16287.txt` (65,243 words). Import: {'pg transcriber notes re
 - subtile ×1 — nsuality, and the like; and in the more subtile manifestations of the moral life, whene
 - expulsive ×1 — ibition. This has been well called the ‘expulsive power of the higher emotion.’
 - ideational ×1 — notion of inhibition to the case of our ideational processes. I am lying in bed, for examp
-- thermometric ×1 — (1) I may forget for a moment the thermometric conditions, and then the idea of gettin
+- thermometric ×1 — (1\) I may forget for a moment the thermometric conditions, and then the idea of gettin
 - abulia ×1 — e. So they show a condition of perfect ‘abulia,’ or inability to will or act. They can
 - extensor ×1 — Just as our extensor muscles act most truly when a simultane
 - flexors ×1 —  when a simultaneous contraction of the flexors guides and steadies them; so the mind o
@@ -214,5 +215,5 @@ Source: `0-source/pg16287.txt` (65,243 words). Import: {'pg transcriber notes re
 2. The rest of the dictionary list (518 entries): read to the end?
 3. Sequence proof: level 2 "#" (run 1): 15 numbered, first 1, last 15; level 2 "#" (run 2): 3 numbered, first 1, last 3 — does it match what the source prints?
 4. Structure battery: 3 findings — each decided?
-5. Rules: hyphen joins 1, curly quotes 883, ellipses 47, dashes 182, caps openings 1, spacing and ligatures 31 — plausible for 65,243 words?
+5. Rules: hyphen joins 1, curly quotes 883, ellipses 47, dashes 182, caps openings 1, spacing and ligatures 31, list markers escaped 0 — plausible for 65,243 words?
 6. Would a reader who knows this book notice anything wrong in the first chapter you open at random?
