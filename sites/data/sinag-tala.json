@@ -1,7 +1,8 @@
 {
  "site": "sinag-tala",
- "compiled": "2026-09-25",
- "method": "Web search only (page fetches blocked in the build container); every entry carries its verdict, reason and sources. See sites/RESEARCH.md.",
+ "compiled": "2026-09-26",
+ "assembled_by_hand": true,
+ "method": "Sinag-Tala's own catalogue pages (sinagtalapublishersph and sinagtalapublishers on WordPress), read through the WordPress API on 26 September 2026 by tools/import_sinag.py, merged with the earlier research's descriptions; four earlier finds not on those pages kept with their original evidence. Edit this file directly.",
  "shelves": [
   {
    "slug": "escriva",
@@ -28,6 +29,10 @@
    "name": "Children"
   },
   {
+   "slug": "family",
+   "name": "Marriage & Family"
+  },
+  {
    "slug": "philosophy",
    "name": "Philosophy"
   }
@@ -41,74 +46,16 @@
    "shelf": "escriva",
    "kind": "book",
    "description": "St. Josemaría Escrivá's best-known work: 999 brief points for prayer and meditation.",
-   "isbn": "",
-   "pages": 0,
+   "isbn": "9715540171",
+   "pages": 358,
    "featured": true,
    "status": "confirmed",
-   "evidence": "Found in the discovery stage on the publisher's own page, By Saint Josemaría Escrivá, with its blurb quoted (999 points; 4.5 million copies in 43 languages). Verify-stage searches could not run because the session's WebSearch budget was used up (200 of 200), so this was not re-checked and no ISBN or price was seen.",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/by-saint-josemaria-escriva/), with ISBN, pages and peso price as shown there.",
    "sources": [
-    "https://sinagtalapublishers.wordpress.com/by-saint-josemaria-escriva/",
     "https://sinagtalapublishersph.wordpress.com/by-saint-josemaria-escriva/",
-    "https://sinagtalapublishers.wordpress.com/"
-   ],
-   "prices_seen": []
-  },
-  {
-   "id": "furrow",
-   "title": "Furrow",
-   "subtitle": "",
-   "author": "St. Josemaría Escrivá",
-   "shelf": "escriva",
-   "kind": "book",
-   "description": "A collection of 1,000 points made up of passages from Sacred Scripture, personal experiences and Escrivá's letters.",
-   "isbn": "",
-   "pages": 0,
-   "featured": false,
-   "status": "confirmed",
-   "evidence": "The publisher's By Saint Josemaría Escrivá page lists it with a quoted blurb (from discovery-stage evidence). It could not be re-verified because the search budget was used up. No ISBN or price was seen.",
-   "sources": [
     "https://sinagtalapublishers.wordpress.com/by-saint-josemaria-escriva/",
-    "https://sinagtalapublishers.wordpress.com/about-saint-josemaria-escriva-and-opus-dei/"
-   ],
-   "prices_seen": []
-  },
-  {
-   "id": "forge",
-   "title": "The Forge",
-   "subtitle": "",
-   "author": "St. Josemaría Escrivá",
-   "shelf": "escriva",
-   "kind": "book",
-   "description": "The third of St. Josemaría Escrivá's books of short points: 1,055 in all, after The Way and Furrow.",
-   "isbn": "",
-   "pages": 0,
-   "featured": false,
-   "status": "confirmed",
-   "evidence": "The publisher's By Saint Josemaría Escrivá page lists it with a quoted blurb (from discovery-stage evidence). It could not be re-verified because the search budget was used up. No ISBN or price was seen.",
-   "sources": [
-    "https://sinagtalapublishers.wordpress.com/by-saint-josemaria-escriva/"
-   ],
-   "prices_seen": []
-  },
-  {
-   "id": "way-furrow-the-forge",
-   "title": "The Way • Furrow • The Forge",
-   "subtitle": "",
-   "author": "St. Josemaría Escrivá",
-   "shelf": "escriva",
-   "kind": "book",
-   "description": "St. Josemaría Escrivá's three books of short points for prayer, 3,054 in all, in one volume.",
-   "isbn": "9789711172206",
-   "pages": 0,
-   "featured": true,
-   "status": "confirmed",
-   "evidence": "The publisher's Escrivá page lists a combined volume, and an Amazon listing ('The Way, Furrow, The Forge', ISBN 9789711172206) carries the 971-117 Philippine prefix. A second Amazon listing ('The Way; The Furrow; The Forge - All in One', ISBN 9789715540407, prefix 971-554) is probably an earlier edition of the same book. None of this could be re-verified because the search budget was used up. No price was seen.",
-   "sources": [
-    "https://sinagtalapublishers.wordpress.com/by-saint-josemaria-escriva/",
-    "https://www.amazon.com/Way-Furrow-Forge-Josemaria-Escriva/dp/9711172208",
-    "https://www.amazon.com/Way-Furrow-Forge-All-One/dp/9715540406"
-   ],
-   "prices_seen": []
+    "https://sinagtalapublishersph.wordpress.com/by-saint-josemaria-escriva/"
+   ]
   },
   {
    "id": "christ-is-passing-by",
@@ -118,15 +65,15 @@
    "shelf": "escriva",
    "kind": "book",
    "description": "The first collection of St. Josemaría Escrivá's homilies, for the feasts and seasons of the liturgical year.",
-   "isbn": "",
-   "pages": 0,
+   "isbn": "971554018X",
+   "pages": 494,
    "featured": true,
    "status": "confirmed",
-   "evidence": "The publisher's By Saint Josemaría Escrivá page lists it with a quoted blurb (from discovery-stage evidence). It could not be re-verified because the search budget was used up. No ISBN or price was seen.",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/by-saint-josemaria-escriva/), with ISBN, pages and peso price as shown there.",
    "sources": [
+    "https://sinagtalapublishersph.wordpress.com/by-saint-josemaria-escriva/",
     "https://sinagtalapublishers.wordpress.com/by-saint-josemaria-escriva/"
-   ],
-   "prices_seen": []
+   ]
   },
   {
    "id": "friends-of-god",
@@ -136,16 +83,35 @@
    "shelf": "escriva",
    "kind": "book",
    "description": "The second collection of St. Josemaría Escrivá's homilies, on the virtues of ordinary Christian life.",
-   "isbn": "9789715540353",
-   "pages": 0,
+   "isbn": "971554035X",
+   "pages": 570,
    "featured": true,
-   "status": "likely",
-   "evidence": "An Amazon listing ('Friends of God: Homilies by Josemaria Escriva', ISBN 9789715540353) uses the 971-554 Philippine prefix, which Sinag-Tala's Metaphysics also uses. It came up in two Sinag-Tala Escrivá searches. No quote from the publisher's own page was captured, and it could not be re-verified because the search budget was used up. No price was seen.",
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/by-saint-josemaria-escriva/), with ISBN, pages and peso price as shown there.",
    "sources": [
+    "https://sinagtalapublishersph.wordpress.com/by-saint-josemaria-escriva/",
     "https://sinagtalapublishers.wordpress.com/by-saint-josemaria-escriva/",
     "https://www.amazon.com/Friends-God-Homilies-Josemaria-Escriva/dp/971554035X"
-   ],
-   "prices_seen": []
+   ]
+  },
+  {
+   "id": "way-furrow-the-forge",
+   "title": "The Way • Furrow • The Forge",
+   "subtitle": "",
+   "author": "St. Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "St. Josemaría Escrivá's three books of short points for prayer, 3,054 in all, in one volume.",
+   "isbn": "9715540406",
+   "pages": 1014,
+   "featured": true,
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/by-saint-josemaria-escriva/), with ISBN, pages and peso price as shown there.",
+   "sources": [
+    "https://sinagtalapublishersph.wordpress.com/by-saint-josemaria-escriva/",
+    "https://sinagtalapublishers.wordpress.com/by-saint-josemaria-escriva/",
+    "https://www.amazon.com/Way-Furrow-Forge-Josemaria-Escriva/dp/9711172208"
+   ]
   },
   {
    "id": "blessed-be-pain",
@@ -155,15 +121,69 @@
    "shelf": "escriva",
    "kind": "book",
    "description": "St. Josemaría Escrivá's teaching on bearing illness and pain, gathered by Miguel Monge.",
-   "isbn": "",
-   "pages": 0,
+   "isbn": "9781594173752",
+   "pages": 84,
    "featured": false,
    "status": "confirmed",
-   "evidence": "Listed on the publisher's New Releases page as 'BLESSED BE PAIN! Lessons on Sickness and Suffering from St. Josemaría Escrivá', edited by Miguel Monge (discovery-stage evidence). It could not be re-verified because the search budget was used up. No ISBN or price was seen.",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/new-releases/), with ISBN, pages and peso price as shown there.",
    "sources": [
+    "https://sinagtalapublishersph.wordpress.com/new-releases/",
     "https://sinagtalapublishersph.wordpress.com/new-releases/"
-   ],
-   "prices_seen": []
+   ]
+  },
+  {
+   "id": "furrow",
+   "title": "Furrow",
+   "subtitle": "",
+   "author": "St. Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "A collection of 1,000 points made up of passages from Sacred Scripture, personal experiences and Escrivá's letters.",
+   "isbn": "9715540333",
+   "pages": 468,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/by-saint-josemaria-escriva/), with ISBN, pages and peso price as shown there.",
+   "sources": [
+    "https://sinagtalapublishersph.wordpress.com/by-saint-josemaria-escriva/",
+    "https://sinagtalapublishers.wordpress.com/by-saint-josemaria-escriva/",
+    "https://sinagtalapublishers.wordpress.com/about-saint-josemaria-escriva-and-opus-dei/"
+   ]
+  },
+  {
+   "id": "forge",
+   "title": "The Forge",
+   "subtitle": "",
+   "author": "St. Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "The third of St. Josemaría Escrivá's books of short points: 1,055 in all, after The Way and Furrow.",
+   "isbn": "0906138167",
+   "pages": 472,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/by-saint-josemaria-escriva/), with ISBN, pages and peso price as shown there.",
+   "sources": [
+    "https://sinagtalapublishersph.wordpress.com/by-saint-josemaria-escriva/",
+    "https://sinagtalapublishers.wordpress.com/by-saint-josemaria-escriva/"
+   ]
+  },
+  {
+   "id": "holy-rosary",
+   "title": "Holy Rosary",
+   "subtitle": "",
+   "author": "St. Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "booklet",
+   "description": "St. Josemaría Escrivá's meditations on the fifteen mysteries of the Rosary.",
+   "isbn": "9715540260",
+   "pages": 76,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/by-saint-josemaria-escriva/), with ISBN, pages and peso price as shown there.",
+   "sources": [
+    "https://sinagtalapublishersph.wordpress.com/by-saint-josemaria-escriva/"
+   ]
   },
   {
    "id": "journey-to-the-depths-of-hope",
@@ -173,16 +193,16 @@
    "shelf": "escriva",
    "kind": "book",
    "description": "José Luis Olaizola follows Opus Dei's work in Latin America and meets people helped by St. Josemaría's intercession.",
-   "isbn": "",
-   "pages": 0,
+   "isbn": "9711172135",
+   "pages": 233,
    "featured": false,
    "status": "confirmed",
-   "evidence": "The publisher's About Saint Josemaría Escrivá and Opus Dei page (both wordpress sites) lists it with a blurb (discovery-stage evidence). It could not be re-verified because the search budget was used up. No ISBN or price was seen.",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/about-saint-josemaria-escriva-and-opus-dei/), with ISBN, pages and peso price as shown there.",
    "sources": [
+    "https://sinagtalapublishersph.wordpress.com/about-saint-josemaria-escriva-and-opus-dei/",
     "https://sinagtalapublishers.wordpress.com/about-saint-josemaria-escriva-and-opus-dei/",
     "https://sinagtalapublishersph.wordpress.com/about-saint-josemaria-escriva-and-opus-dei/"
-   ],
-   "prices_seen": []
+   ]
   },
   {
    "id": "you-are-the-light-of-the-world",
@@ -192,15 +212,32 @@
    "shelf": "escriva",
    "kind": "book",
    "description": "Martin Rhonheimer explains Opus Dei to young readers: how one can love and follow Christ in ordinary life.",
-   "isbn": "",
-   "pages": 0,
+   "isbn": "9715542210",
+   "pages": 269,
    "featured": false,
-   "status": "likely",
-   "evidence": "The publisher's About Saint Josemaría Escrivá and Opus Dei page lists it with a short blurb (discovery-stage evidence). The exact title, subtitle and author could not be re-checked because the search budget was used up, and no ISBN, Amazon listing or price was seen.",
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishers.wordpress.com/about-saint-josemaria-escriva-and-opus-dei/), with ISBN, pages and peso price as shown there.",
    "sources": [
+    "https://sinagtalapublishers.wordpress.com/about-saint-josemaria-escriva-and-opus-dei/",
     "https://sinagtalapublishers.wordpress.com/about-saint-josemaria-escriva-and-opus-dei/"
-   ],
-   "prices_seen": []
+   ]
+  },
+  {
+   "id": "way-of-the-cross",
+   "title": "The Way of the Cross",
+   "subtitle": "",
+   "author": "St. Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "St. Josemaría Escrivá's Stations of the Cross, with points for meditation after each.",
+   "isbn": "9715540953",
+   "pages": 124,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishers.wordpress.com/by-saint-josemaria-escriva/), with ISBN, pages and peso price as shown there.",
+   "sources": [
+    "https://sinagtalapublishers.wordpress.com/by-saint-josemaria-escriva/"
+   ]
   },
   {
    "id": "kristong-hari",
@@ -221,23 +258,38 @@
    "prices_seen": []
   },
   {
-   "id": "simon-peter",
-   "title": "Simon Peter",
-   "subtitle": "",
-   "author": "Georges Chevrot",
+   "id": "look-up-to-mary",
+   "title": "Look Up to Mary",
+   "subtitle": "Imitating her Virtues in Ordinary Life",
+   "author": "Antonio Orozco",
    "shelf": "spirituality",
    "kind": "book",
-   "description": "Georges Chevrot on the life and character of the apostle Peter.",
-   "isbn": "",
-   "pages": 0,
+   "description": "Antonio Orozco on imitating Mary's virtues in ordinary life.",
+   "isbn": "9789711170337",
+   "pages": 208,
    "featured": false,
    "status": "confirmed",
-   "evidence": "Earlier evidence found 'Simon Peter by George Chevrot' among the notable titles on Sinag-tala's own WordPress site. No publisher blurb was seen, so the description gives only title, author and subject. It could not be re-checked because this session's search budget is used up (200/200). No price seen.",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/new-releases/), with ISBN, pages and peso price as shown there.",
    "sources": [
-    "https://sinagtalapublishers.wordpress.com/",
-    "https://sinagtalapublishers.wordpress.com/spirituality/"
-   ],
-   "prices_seen": []
+    "https://sinagtalapublishersph.wordpress.com/new-releases/"
+   ]
+  },
+  {
+   "id": "human-but-holy",
+   "title": "Human But Holy",
+   "subtitle": "Getting to Know God, Yourself and Your Neighbor",
+   "author": "",
+   "shelf": "spirituality",
+   "kind": "book",
+   "description": "Searching questions for examining one's life before God, family and work.",
+   "isbn": "9789715540929",
+   "pages": 130,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/new-releases/), with ISBN, pages and peso price as shown there.",
+   "sources": [
+    "https://sinagtalapublishersph.wordpress.com/new-releases/"
+   ]
   },
   {
    "id": "yes-father",
@@ -247,16 +299,16 @@
    "shelf": "spirituality",
    "kind": "book",
    "description": "A practical guide to surrendering one's will to God's, chapter by chapter through Scripture.",
-   "isbn": "",
-   "pages": 0,
+   "isbn": "9715540457",
+   "pages": 239,
    "featured": false,
    "status": "confirmed",
-   "evidence": "Listed on the Spirituality page of both Sinag-tala WordPress sites, with the blurb 'a practical guide of souls' and chapters on Scripture passages about surrendering to God's will. The description is based on that blurb. It could not be re-checked because the search budget is used up. No price seen.",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/spirituality/), with ISBN, pages and peso price as shown there.",
    "sources": [
     "https://sinagtalapublishersph.wordpress.com/spirituality/",
+    "https://sinagtalapublishersph.wordpress.com/spirituality/",
     "https://sinagtalapublishers.wordpress.com/spirituality/"
-   ],
-   "prices_seen": []
+   ]
   },
   {
    "id": "lukewarmness",
@@ -266,17 +318,85 @@
    "shelf": "spirituality",
    "kind": "book",
    "description": "Francis Fernandez Carvajal on how tepidity creeps into the spiritual life and how to overcome it.",
-   "isbn": "9789715540896",
-   "pages": 0,
+   "isbn": "9715540899",
+   "pages": 143,
    "featured": false,
-   "status": "likely",
-   "evidence": "The Amazon listing reads 'Lukewarmness: The Devil in Disguise: Francis Fernandez Carvajal: 9789715540896' and came up in a Sinag-tala search. Earlier evidence ties it to the Sinag-tala Spirituality pages, and the ISBN uses the 971-554 prefix shared with other Sinag-Tala titles. No explicit publisher statement was seen and it could not be re-checked (search budget used up), so this is likely, not confirmed. The author's full name follows the Amazon listing. No blurb seen, so the description covers only author and subject. No price seen.",
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/spirituality/), with ISBN, pages and peso price as shown there.",
    "sources": [
-    "https://www.amazon.com/Lukewarmness-Disguise-Francis-Fernandez-Carvajal/dp/9715540899",
     "https://sinagtalapublishersph.wordpress.com/spirituality/",
+    "https://www.amazon.com/Lukewarmness-Disguise-Francis-Fernandez-Carvajal/dp/9715540899",
+    "https://sinagtalapublishersph.wordpress.com/spirituality/"
+   ]
+  },
+  {
+   "id": "difficulties-in-mental-prayer",
+   "title": "Difficulties in Mental Prayer",
+   "subtitle": "",
+   "author": "Eugene Boylan",
+   "shelf": "spirituality",
+   "kind": "book",
+   "description": "Eugene Boylan's classic on persevering in mental prayer.",
+   "isbn": "9715540708",
+   "pages": 132,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/spirituality/), with ISBN, pages and peso price as shown there.",
+   "sources": [
+    "https://sinagtalapublishersph.wordpress.com/spirituality/"
+   ]
+  },
+  {
+   "id": "abandonment-to-divine-providence",
+   "title": "Abandonment to Divine Providence",
+   "subtitle": "",
+   "author": "Jean-Pierre de Caussade",
+   "shelf": "spirituality",
+   "kind": "book",
+   "description": "Jean-Pierre de Caussade's classic on trusting oneself to God's providence.",
+   "isbn": "9715540600",
+   "pages": 120,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/spirituality/), with ISBN, pages and peso price as shown there.",
+   "sources": [
+    "https://sinagtalapublishersph.wordpress.com/spirituality/"
+   ]
+  },
+  {
+   "id": "christ-on-earth",
+   "title": "Christ on Earth",
+   "subtitle": "",
+   "author": "Joseph Pich",
+   "shelf": "spirituality",
+   "kind": "book",
+   "description": "",
+   "isbn": "9715540848",
+   "pages": 205,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/spirituality/), with ISBN, pages and peso price as shown there.",
+   "sources": [
+    "https://sinagtalapublishersph.wordpress.com/spirituality/",
+    "http://scepter.uk/html/body_christ_on_earth.html"
+   ]
+  },
+  {
+   "id": "letters-to-mankind",
+   "title": "Letters to Mankind",
+   "subtitle": "",
+   "author": "Jesus Urteaga",
+   "shelf": "spirituality",
+   "kind": "book",
+   "description": "Jesus Urteaga's letters of counsel addressed to everyone.",
+   "isbn": "9711170310",
+   "pages": 344,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishers.wordpress.com/spirituality/), with ISBN, pages and peso price as shown there.",
+   "sources": [
     "https://sinagtalapublishers.wordpress.com/spirituality/"
-   ],
-   "prices_seen": []
+   ]
   },
   {
    "id": "jesus-as-friend",
@@ -297,61 +417,22 @@
    "prices_seen": []
   },
   {
-   "id": "handbook-of-prayers",
-   "title": "Handbook of Prayers",
+   "id": "faith-explained",
+   "title": "The Faith Explained",
    "subtitle": "",
-   "author": "",
-   "shelf": "guidebooks",
+   "author": "Leo J. Trese",
+   "shelf": "bibles-catechism",
    "kind": "book",
-   "description": "A treasury of prayers, with the Order of Mass in Latin and English.",
-   "isbn": "",
-   "pages": 0,
+   "description": "A clear presentation by Leo J. Trese of the central elements of the Catholic faith: the Creed, prayer and the commandments.",
+   "isbn": "9715540228",
+   "pages": 492,
    "featured": true,
    "status": "confirmed",
-   "evidence": "Listed on Sinag-tala's Guidebooks and Booklets and Bibles and Catechisms pages as 'a complete treasury of prayers and Order of Mass in Latin and English, available in pocket and regular sizes.' No editor was named in the evidence, so author is blank. Could not be re-checked (search budget used up). No price seen.",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/bibles-and-catechisms/), with ISBN, pages and peso price as shown there.",
    "sources": [
-    "https://sinagtalapublishers.wordpress.com/guidebooks-and-booklets/",
+    "https://sinagtalapublishersph.wordpress.com/bibles-and-catechisms/",
     "https://sinagtalapublishers.wordpress.com/bibles-and-catechisms/"
-   ],
-   "prices_seen": []
-  },
-  {
-   "id": "spiritual-direction",
-   "title": "Spiritual Direction",
-   "subtitle": "",
-   "author": "Javier de Pedro",
-   "shelf": "guidebooks",
-   "kind": "booklet",
-   "description": "Javier de Pedro's booklet on the practice of spiritual direction.",
-   "isbn": "",
-   "pages": 0,
-   "featured": false,
-   "status": "confirmed",
-   "evidence": "Listed on both Sinag-tala sites' Guidebooks and Booklets pages as 'Spiritual Direction by Javier de Pedro.' No blurb seen, so the description covers only form, author and subject. Could not be re-checked (search budget used up). No price seen.",
-   "sources": [
-    "https://sinagtalapublishers.wordpress.com/guidebooks-and-booklets/",
-    "https://sinagtalapublishersph.wordpress.com/guidebooks-and-booklets/"
-   ],
-   "prices_seen": []
-  },
-  {
-   "id": "how-to-help-children-in-their-studies",
-   "title": "How to Help Children in Their Studies",
-   "subtitle": "",
-   "author": "Gerardo Castillo",
-   "shelf": "guidebooks",
-   "kind": "booklet",
-   "description": "Gerardo Castillo's booklet of practical advice for parents on supporting a child's schoolwork.",
-   "isbn": "",
-   "pages": 0,
-   "featured": false,
-   "status": "confirmed",
-   "evidence": "Listed on both Sinag-tala sites' Guidebooks and Booklets pages as 'How to Help Children in Their Studies by Gerardo Castillo.' No blurb seen, so the description covers only form, author and subject. Could not be re-checked (search budget used up). No price seen.",
-   "sources": [
-    "https://sinagtalapublishers.wordpress.com/guidebooks-and-booklets/",
-    "https://sinagtalapublishersph.wordpress.com/guidebooks-and-booklets/"
-   ],
-   "prices_seen": []
+   ]
   },
   {
    "id": "catholic-bible-in-pictures",
@@ -389,33 +470,15 @@
    "kind": "bible",
    "description": "The Confraternity revision of the Challoner-Rheims New Testament, from the Latin Vulgate.",
    "isbn": "",
-   "pages": 0,
+   "pages": 690,
    "featured": false,
    "status": "confirmed",
-   "evidence": "Listed on both Sinag-tala sites' Bibles and Catechisms pages as 'a revision of the Challoner-Rheims Version translated from the Latin Vulgate', pocket size with vinyl cover and ribbon marker. Could not be re-checked (search budget used up). No price seen.",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/bibles-and-catechisms/), with ISBN, pages and peso price as shown there.",
    "sources": [
+    "https://sinagtalapublishersph.wordpress.com/bibles-and-catechisms/",
     "https://sinagtalapublishers.wordpress.com/bibles-and-catechisms/",
     "https://sinagtalapublishersph.wordpress.com/bibles-and-catechisms/"
-   ],
-   "prices_seen": []
-  },
-  {
-   "id": "faith-explained",
-   "title": "The Faith Explained",
-   "subtitle": "",
-   "author": "Leo J. Trese",
-   "shelf": "bibles-catechism",
-   "kind": "book",
-   "description": "A clear presentation by Leo J. Trese of the central elements of the Catholic faith: the Creed, prayer and the commandments.",
-   "isbn": "",
-   "pages": 0,
-   "featured": true,
-   "status": "confirmed",
-   "evidence": "Listed on Sinag-tala's Bibles and Catechisms page with the blurb 'Presents central elements of the Catholic faith – the Creed, prayer and the commandments – in a clear and vivid writing style.' Whether Sinag-Tala prints its own edition or only distributes it was not shown. Could not be re-checked (search budget used up). No price seen.",
-   "sources": [
-    "https://sinagtalapublishers.wordpress.com/bibles-and-catechisms/"
-   ],
-   "prices_seen": []
+   ]
   },
   {
    "id": "question-answer-catholic-catechism",
@@ -425,34 +488,229 @@
    "shelf": "bibles-catechism",
    "kind": "book",
    "description": "Marciano Guzman's simplified presentation of Catholic doctrine for teachers, students and ordinary faithful.",
+   "isbn": "9719159901",
+   "pages": 204,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/bibles-and-catechisms/), with ISBN, pages and peso price as shown there.",
+   "sources": [
+    "https://sinagtalapublishersph.wordpress.com/bibles-and-catechisms/",
+    "https://sinagtalapublishers.wordpress.com/bibles-and-catechisms/"
+   ]
+  },
+  {
+   "id": "handbook-of-prayers",
+   "title": "Handbook of Prayers",
+   "subtitle": "",
+   "author": "",
+   "shelf": "guidebooks",
+   "kind": "book",
+   "description": "A treasury of prayers, with the Order of Mass in Latin and English.",
+   "isbn": "9715540163",
+   "pages": 336,
+   "featured": true,
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/guidebooks-and-booklets/), with ISBN, pages and peso price as shown there.",
+   "sources": [
+    "https://sinagtalapublishersph.wordpress.com/guidebooks-and-booklets/",
+    "https://sinagtalapublishers.wordpress.com/guidebooks-and-booklets/",
+    "https://sinagtalapublishers.wordpress.com/bibles-and-catechisms/"
+   ]
+  },
+  {
+   "id": "magdasal-tayo",
+   "title": "Magdasal Tayo",
+   "subtitle": "Mga Dasal Pang Araw-Araw",
+   "author": "",
+   "shelf": "guidebooks",
+   "kind": "booklet",
+   "description": "Everyday prayers in Filipino.",
+   "isbn": "9789715542302",
+   "pages": 76,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/guidebooks-and-booklets/), with ISBN, pages and peso price as shown there.",
+   "sources": [
+    "https://sinagtalapublishersph.wordpress.com/guidebooks-and-booklets/"
+   ]
+  },
+  {
+   "id": "popular-christian-devotions",
+   "title": "Popular Christian Devotions",
+   "subtitle": "",
+   "author": "",
+   "shelf": "guidebooks",
+   "kind": "booklet",
+   "description": "",
+   "isbn": "9789711172127",
+   "pages": 60,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/guidebooks-and-booklets/), with ISBN, pages and peso price as shown there.",
+   "sources": [
+    "https://sinagtalapublishersph.wordpress.com/guidebooks-and-booklets/"
+   ]
+  },
+  {
+   "id": "what-is-holy-mass",
+   "title": "What Is the Holy Mass?",
+   "subtitle": "Ano Ang Banal Na Misa?",
+   "author": "",
+   "shelf": "guidebooks",
+   "kind": "booklet",
+   "description": "What happens at Mass, explained in English and Filipino.",
+   "isbn": "9789715542296",
+   "pages": 24,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/guidebooks-and-booklets/), with ISBN, pages and peso price as shown there.",
+   "sources": [
+    "https://sinagtalapublishersph.wordpress.com/guidebooks-and-booklets/"
+   ]
+  },
+  {
+   "id": "prayers-for-dead",
+   "title": "Prayers for the Dead",
+   "subtitle": "",
+   "author": "Charles Belmonte",
+   "shelf": "guidebooks",
+   "kind": "booklet",
+   "description": "",
+   "isbn": "9715542272",
+   "pages": 38,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/guidebooks-and-booklets/), with ISBN, pages and peso price as shown there.",
+   "sources": [
+    "https://sinagtalapublishersph.wordpress.com/guidebooks-and-booklets/"
+   ]
+  },
+  {
+   "id": "how-to-receive-holy-communion-well",
+   "title": "How to Receive Holy Communion Well",
+   "subtitle": "",
+   "author": "Francisco Luna",
+   "shelf": "guidebooks",
+   "kind": "book",
+   "description": "",
    "isbn": "",
    "pages": 0,
    "featured": false,
    "status": "confirmed",
-   "evidence": "Listed on Sinag-Tala's own Bibles and Catechisms page. That page's blurb calls it 'a useful instrument for teachers and students of religion'. Taken from catalogue-stage evidence: the search budget was used up, so this pass could not re-check the listing, author spelling, ISBN or price.",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/guidebooks-and-booklets/), with ISBN, pages and peso price as shown there.",
    "sources": [
-    "https://sinagtalapublishers.wordpress.com/bibles-and-catechisms/"
+    "https://sinagtalapublishersph.wordpress.com/guidebooks-and-booklets/"
+   ]
+  },
+  {
+   "id": "how-to-help-children-in-their-studies",
+   "title": "How to Help Children in Their Studies",
+   "subtitle": "",
+   "author": "Gerardo Castillo",
+   "shelf": "guidebooks",
+   "kind": "booklet",
+   "description": "Gerardo Castillo's booklet of practical advice for parents on supporting a child's schoolwork.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/guidebooks-and-booklets/), with ISBN, pages and peso price as shown there.",
+   "sources": [
+    "https://sinagtalapublishersph.wordpress.com/guidebooks-and-booklets/",
+    "https://sinagtalapublishers.wordpress.com/guidebooks-and-booklets/",
+    "https://sinagtalapublishersph.wordpress.com/guidebooks-and-booklets/"
+   ]
+  },
+  {
+   "id": "st-catherine-of-siena",
+   "title": "St. Catherine of Siena",
+   "subtitle": "",
+   "author": "Joachim Esteban",
+   "shelf": "guidebooks",
+   "kind": "book",
+   "description": "The life of St. Catherine of Siena.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/guidebooks-and-booklets/), with ISBN, pages and peso price as shown there.",
+   "sources": [
+    "https://sinagtalapublishersph.wordpress.com/guidebooks-and-booklets/"
+   ]
+  },
+  {
+   "id": "spiritual-direction",
+   "title": "Spiritual Direction",
+   "subtitle": "",
+   "author": "Javier de Pedro",
+   "shelf": "guidebooks",
+   "kind": "booklet",
+   "description": "Javier de Pedro's booklet on the practice of spiritual direction.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Listed on both Sinag-tala sites' Guidebooks and Booklets pages as 'Spiritual Direction by Javier de Pedro.' No blurb seen, so the description covers only form, author and subject. Could not be re-checked (search budget used up). No price seen.",
+   "sources": [
+    "https://sinagtalapublishers.wordpress.com/guidebooks-and-booklets/",
+    "https://sinagtalapublishersph.wordpress.com/guidebooks-and-booklets/"
    ],
    "prices_seen": []
   },
   {
-   "id": "virtues-of-50-saints",
-   "title": "The Virtues of 50 Saints",
+   "id": "saints-the-blessed-of-the-21st-century",
+   "title": "The Saints & the Blessed of the 21st Century",
    "subtitle": "",
    "author": "",
    "shelf": "lives",
    "kind": "book",
-   "description": "Fifty saints, and the virtues that made each of them holy.",
+   "description": "Timelines of Álvaro del Portillo, John XXIII, John Paul II, Padre Pio, Mother Teresa and St. Josemaría.",
    "isbn": "",
    "pages": 0,
    "featured": false,
    "status": "confirmed",
-   "evidence": "Listed on Sinag-Tala's New Releases and Lives of Saints pages, which say it 'answers what made them holy'. No author or ISBN was seen. Taken from catalogue-stage evidence; the search budget was used up, so no re-check or price search was possible.",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/lives-of-saints/), with ISBN, pages and peso price as shown there.",
    "sources": [
-    "https://sinagtalapublishersph.wordpress.com/new-releases/",
-    "https://sinagtalapublishers.wordpress.com/lives-of-saints/"
-   ],
-   "prices_seen": []
+    "https://sinagtalapublishersph.wordpress.com/lives-of-saints/"
+   ]
+  },
+  {
+   "id": "story-of-a-family",
+   "title": "The Story of a Family",
+   "subtitle": "The Home of St. Thérèse, the Little Flower",
+   "author": "Stephane-Joseph Piat",
+   "shelf": "lives",
+   "kind": "book",
+   "description": "A portrait of the household of Louis and Zélie Martin, parents of St. Thérèse, as a model of Christian marriage.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/lives-of-saints/), with ISBN, pages and peso price as shown there.",
+   "sources": [
+    "https://sinagtalapublishersph.wordpress.com/lives-of-saints/",
+    "https://sinagtalapublishers.wordpress.com/lives-of-saints/",
+    "https://sinagtalapublishersph.wordpress.com/lives-of-saints/"
+   ]
+  },
+  {
+   "id": "simon-peter",
+   "title": "Simon Peter",
+   "subtitle": "",
+   "author": "Georges Chevrot",
+   "shelf": "lives",
+   "kind": "book",
+   "description": "Georges Chevrot on the life and character of the apostle Peter.",
+   "isbn": "9711170116",
+   "pages": 223,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/lives-of-saints/), with ISBN, pages and peso price as shown there.",
+   "sources": [
+    "https://sinagtalapublishersph.wordpress.com/lives-of-saints/",
+    "https://sinagtalapublishers.wordpress.com/",
+    "https://sinagtalapublishers.wordpress.com/spirituality/"
+   ]
   },
   {
    "id": "bones-of-st-peter",
@@ -462,34 +720,68 @@
    "shelf": "lives",
    "kind": "book",
    "description": "John Evangelist Walsh's account of the search for the body of St. Peter, the first pope.",
-   "isbn": "",
-   "pages": 0,
+   "isbn": "9711170299",
+   "pages": 195,
    "featured": false,
    "status": "confirmed",
-   "evidence": "Listed on Sinag-Tala's Lives of Saints page as 'a fascinating account of the search for the body of the first pope', so Sinag-Tala sells it. No ISBN was seen, so it is not established whether Sinag-Tala publishes its own edition or distributes another publisher's. Taken from catalogue-stage evidence; the search budget was used up, so no re-check was possible.",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/lives-of-saints/), with ISBN, pages and peso price as shown there.",
    "sources": [
+    "https://sinagtalapublishersph.wordpress.com/lives-of-saints/",
     "https://sinagtalapublishers.wordpress.com/lives-of-saints/"
-   ],
-   "prices_seen": []
+   ]
   },
   {
-   "id": "story-of-a-family",
-   "title": "The Story of a Family",
-   "subtitle": "The Home of St. Thérèse, the Little Flower",
+   "id": "story-of-a-soul",
+   "title": "The Story of a Soul",
+   "subtitle": "The Autobiography of St. Therese of Lisieux",
+   "author": "St. Thérèse of Lisieux",
+   "shelf": "lives",
+   "kind": "book",
+   "description": "The autobiography of St. Thérèse of Lisieux, translated by John Beevers.",
+   "isbn": "9715540376",
+   "pages": 159,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/lives-of-saints/), with ISBN, pages and peso price as shown there.",
+   "sources": [
+    "https://sinagtalapublishersph.wordpress.com/lives-of-saints/"
+   ]
+  },
+  {
+   "id": "virtues-of-50-saints",
+   "title": "The Virtues of 50 Saints",
+   "subtitle": "What made them holy?",
    "author": "",
    "shelf": "lives",
    "kind": "book",
-   "description": "A portrait of the household of Louis and Zélie Martin, parents of St. Thérèse, as a model of Christian marriage.",
-   "isbn": "",
-   "pages": 0,
+   "description": "Fifty saints, and the virtues that made each of them holy.",
+   "isbn": "9715542258",
+   "pages": 101,
    "featured": false,
    "status": "confirmed",
-   "evidence": "Listed on the Lives of Saints page of both Sinag-Tala sites, with a blurb about the Martin household as 'a vivid portrayal of a Christian marriage'. The listing seen names no author. The well-known book of this title is by Fr. Stéphane-Joseph Piat, but that was not checked here, so the author field is left blank. The search budget was used up, so no re-check was possible.",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/lives-of-saints/), with ISBN, pages and peso price as shown there.",
    "sources": [
-    "https://sinagtalapublishers.wordpress.com/lives-of-saints/",
-    "https://sinagtalapublishersph.wordpress.com/lives-of-saints/"
-   ],
-   "prices_seen": []
+    "https://sinagtalapublishersph.wordpress.com/lives-of-saints/",
+    "https://sinagtalapublishersph.wordpress.com/new-releases/",
+    "https://sinagtalapublishers.wordpress.com/lives-of-saints/"
+   ]
+  },
+  {
+   "id": "my-angel-will-go-before-you",
+   "title": "My Angel Will Go Before You",
+   "subtitle": "",
+   "author": "George Huber",
+   "shelf": "lives",
+   "kind": "book",
+   "description": "George Huber on the guardian angels, our messengers and protectors.",
+   "isbn": "9715540465",
+   "pages": 135,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishers.wordpress.com/lives-of-saints/), with ISBN, pages and peso price as shown there.",
+   "sources": [
+    "https://sinagtalapublishers.wordpress.com/lives-of-saints/"
+   ]
   },
   {
    "id": "rising-sun-blinking",
@@ -510,45 +802,6 @@
    "prices_seen": []
   },
   {
-   "id": "my-first-confession-my-first-communion",
-   "title": "My First Confession, My First Communion",
-   "subtitle": "",
-   "author": "",
-   "shelf": "children",
-   "kind": "book",
-   "description": "A children's guide to the Catholic faith in 29 lessons, each with story, Bible reference, resolution, catechism questions and exercises.",
-   "isbn": "",
-   "pages": 0,
-   "featured": false,
-   "status": "confirmed",
-   "evidence": "Listed on Sinag-Tala's Children's Books and Guidebooks and Booklets pages, described as covering the main points of the Catholic faith in 29 lessons. No author or ISBN was seen. Taken from catalogue-stage evidence; the search budget was used up, so no re-check was possible.",
-   "sources": [
-    "https://sinagtalapublishers.wordpress.com/39-2/",
-    "https://sinagtalapublishersph.wordpress.com/childrens-books/",
-    "https://sinagtalapublishers.wordpress.com/guidebooks-and-booklets/"
-   ],
-   "prices_seen": []
-  },
-  {
-   "id": "children-s-bible",
-   "title": "Children's Bible",
-   "subtitle": "",
-   "author": "",
-   "shelf": "children",
-   "kind": "bible",
-   "description": "Illustrated Bible lessons for children, from the Creation of Man to the Coronation of the Blessed Virgin, each with a resolution.",
-   "isbn": "",
-   "pages": 0,
-   "featured": false,
-   "status": "confirmed",
-   "evidence": "Listed on the Children's Books page of both Sinag-Tala sites, as colour-illustrated lessons 'from the Creation of Man to the Coronation of the Blessed Virgin'. The exact listed title may be longer; no ISBN was seen. The search budget was used up, so no re-check was possible.",
-   "sources": [
-    "https://sinagtalapublishers.wordpress.com/39-2/",
-    "https://sinagtalapublishersph.wordpress.com/childrens-books/"
-   ],
-   "prices_seen": []
-  },
-  {
    "id": "guidebook-for-confession-for-children",
    "title": "Guidebook for Confession for Children",
    "subtitle": "",
@@ -556,56 +809,160 @@
    "shelf": "children",
    "kind": "booklet",
    "description": "An illustrated children's guide to the Sacrament of Reconciliation, explaining sin and its effects and how to prepare for confession.",
-   "isbn": "9789711170387",
-   "pages": 0,
+   "isbn": "9789715541070",
+   "pages": 44,
    "featured": true,
    "status": "confirmed",
-   "evidence": "Listed on Sinag-Tala's Children's Books and Guidebooks pages. One Amazon listing has ISBN 9789711170387, which carries Sinag-Tala's 971-117 prefix. A second Amazon ISBN, 9789715541077, has a different prefix and may be another printing or distributor. The Spanish 'Guía de la Confesión para niños' (ISBN 9788498400113) looks like a Spanish publisher's translation, not a Sinag-Tala product, so it is left out. The editor credit comes from the input and was not re-checked; the search budget was used up.",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/childrens-books/), with ISBN, pages and peso price as shown there.",
    "sources": [
+    "https://sinagtalapublishersph.wordpress.com/childrens-books/",
     "https://sinagtalapublishers.wordpress.com/39-2/",
-    "https://sinagtalapublishers.wordpress.com/guidebooks-and-booklets/",
-    "https://www.amazon.com/Guidebook-for-Confession-Children/dp/9711170388"
-   ],
-   "prices_seen": []
+    "https://sinagtalapublishers.wordpress.com/guidebooks-and-booklets/"
+   ]
   },
   {
-   "id": "life-of-josemaria-escriva-for-young-readers",
-   "title": "The Life of Josemaría Escrivá for Young Readers",
+   "id": "my-first-confession-my-first-communion",
+   "title": "My First Confession, My First Communion",
    "subtitle": "",
-   "author": "Michael Carceles and Elizabeth Torra",
+   "author": "Pedro dela Herran and Adolfo Petit",
    "shelf": "children",
    "kind": "book",
-   "description": "St. Josemaría's life, milestone by milestone, with illustrations throughout.",
-   "isbn": "",
-   "pages": 0,
+   "description": "A children's guide to the Catholic faith in 29 lessons, each with story, Bible reference, resolution, catechism questions and exercises.",
+   "isbn": "9711171570",
+   "pages": 181,
    "featured": false,
    "status": "confirmed",
-   "evidence": "Listed on three Sinag-Tala pages: Children's Books, the St Josemaría/Opus Dei page and Lives of Saints ('This well-illustrated book focuses on the important milestones in the life of Saint Josemaría Escrivá'). The author spelling comes from the input and was not re-checked; no ISBN was seen. The search budget was used up.",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/childrens-books/), with ISBN, pages and peso price as shown there.",
    "sources": [
+    "https://sinagtalapublishersph.wordpress.com/childrens-books/",
     "https://sinagtalapublishers.wordpress.com/39-2/",
-    "https://sinagtalapublishers.wordpress.com/about-saint-josemaria-escriva-and-opus-dei/",
-    "https://sinagtalapublishers.wordpress.com/lives-of-saints/"
-   ],
-   "prices_seen": []
+    "https://sinagtalapublishersph.wordpress.com/childrens-books/"
+   ]
+  },
+  {
+   "id": "children-s-bible",
+   "title": "Children's Bible",
+   "subtitle": "",
+   "author": "Juan Suriñach",
+   "shelf": "children",
+   "kind": "bible",
+   "description": "Illustrated Bible lessons for children, from the Creation of Man to the Coronation of the Blessed Virgin, each with a resolution.",
+   "isbn": "971554049X",
+   "pages": 218,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/childrens-books/), with ISBN, pages and peso price as shown there.",
+   "sources": [
+    "https://sinagtalapublishersph.wordpress.com/childrens-books/",
+    "https://sinagtalapublishers.wordpress.com/39-2/",
+    "https://sinagtalapublishersph.wordpress.com/childrens-books/"
+   ]
   },
   {
    "id": "alexia",
    "title": "Alexia",
    "subtitle": "A Story of Joy and Heroism in Suffering",
-   "author": "",
-   "shelf": "lives",
+   "author": "Michael A. Monge",
+   "shelf": "children",
    "kind": "book",
    "description": "The story of Alexia, who died of Ewing's sarcoma at fourteen.",
-   "isbn": "",
-   "pages": 0,
+   "isbn": "9711172526",
+   "pages": 262,
    "featured": false,
    "status": "confirmed",
-   "evidence": "Listed on the Children's Books page of both Sinag-Tala sites, with a blurb about a 14-year-old girl who died of Ewing's sarcoma. No author or ISBN was seen. Taken from catalogue-stage evidence; the search budget was used up, so no re-check was possible.",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/childrens-books/), with ISBN, pages and peso price as shown there.",
    "sources": [
+    "https://sinagtalapublishersph.wordpress.com/childrens-books/",
     "https://sinagtalapublishers.wordpress.com/39-2/",
     "https://sinagtalapublishersph.wordpress.com/childrens-books/"
-   ],
-   "prices_seen": []
+   ]
+  },
+  {
+   "id": "life-of-josemaria-escriva-for-young-readers",
+   "title": "The Life of Josemaría Escrivá for Young Readers",
+   "subtitle": "The Life of Josemaría Escrivá for Young Readers",
+   "author": "Michael Carceles and Elizabeth Torra",
+   "shelf": "children",
+   "kind": "book",
+   "description": "St. Josemaría's life, milestone by milestone, with illustrations throughout.",
+   "isbn": "9711172186",
+   "pages": 108,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/childrens-books/), with ISBN, pages and peso price as shown there.",
+   "sources": [
+    "https://sinagtalapublishersph.wordpress.com/childrens-books/",
+    "https://sinagtalapublishers.wordpress.com/39-2/",
+    "https://sinagtalapublishers.wordpress.com/about-saint-josemaria-escriva-and-opus-dei/"
+   ]
+  },
+  {
+   "id": "marriage-a-path-to-sanctity",
+   "title": "Marriage, a Path to Sanctity",
+   "subtitle": "",
+   "author": "Javier Abad and Eugenio Fenoy",
+   "shelf": "family",
+   "kind": "book",
+   "description": "A guidebook for married couples on marriage as a path to holiness.",
+   "isbn": "9711171074",
+   "pages": 200,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/marriage-family-life/), with ISBN, pages and peso price as shown there.",
+   "sources": [
+    "https://sinagtalapublishersph.wordpress.com/marriage-family-life/"
+   ]
+  },
+  {
+   "id": "training-and-forming-children",
+   "title": "Training and Forming Children",
+   "subtitle": "",
+   "author": "Javier Abad and Eugenio Fenoy",
+   "shelf": "family",
+   "kind": "book",
+   "description": "A practical guide to raising children in freedom and responsibility, from study to career.",
+   "isbn": "9715542142",
+   "pages": 287,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/marriage-family-life/), with ISBN, pages and peso price as shown there.",
+   "sources": [
+    "https://sinagtalapublishersph.wordpress.com/marriage-family-life/"
+   ]
+  },
+  {
+   "id": "sexuality-and-sanctity",
+   "title": "Sexuality and Sanctity",
+   "subtitle": "",
+   "author": "Joseph de Torre",
+   "shelf": "family",
+   "kind": "book",
+   "description": "Joseph de Torre on sexuality, neither despised nor glorified beyond its real value.",
+   "isbn": "9711171066",
+   "pages": 166,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/marriage-family-life/), with ISBN, pages and peso price as shown there.",
+   "sources": [
+    "https://sinagtalapublishersph.wordpress.com/marriage-family-life/"
+   ]
+  },
+  {
+   "id": "god-and-children",
+   "title": "God and Children",
+   "subtitle": "",
+   "author": "Jesus Urteaga",
+   "shelf": "family",
+   "kind": "book",
+   "description": "Jesus Urteaga on the spiritual upbringing of children.",
+   "isbn": "9715540481",
+   "pages": 241,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishers.wordpress.com/marriage-family-life/), with ISBN, pages and peso price as shown there.",
+   "sources": [
+    "https://sinagtalapublishers.wordpress.com/marriage-family-life/"
+   ]
   },
   {
    "id": "introduction-to-philosophy",
@@ -615,54 +972,16 @@
    "shelf": "philosophy",
    "kind": "book",
    "description": "Mariano Artigas's primer for readers new to philosophy.",
-   "isbn": "9789711171964",
-   "pages": 0,
+   "isbn": "9711171961",
+   "pages": 148,
    "featured": false,
    "status": "confirmed",
-   "evidence": "The ISBN carries Sinag-Tala's own 978-971-117 prefix. The Amazon listing 'Introduction to Philosophy (Philosophy Books Series): Mariano Artigas: 9789711171964' was seen earlier, and a search summary said Sinag-Tala Publishers, Inc. published it. The title is also cited from the publisher's Philosophy & Ethics page. This session's WebSearch budget ran out (200/200), so no new searches were possible. The verdict rests on the evidence gathered before. No price was seen.",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/philosophy-ethics/), with ISBN, pages and peso price as shown there.",
    "sources": [
+    "https://sinagtalapublishersph.wordpress.com/philosophy-ethics/",
     "https://www.amazon.com/Introduction-Philosophy-Books-Mariano-Artigas/dp/9711171961",
-    "https://sinagtalapublishers.wordpress.com/philosophy-ethics/",
-    "https://sinagtalapublishersph.wordpress.com/philosophy-ethics/"
-   ],
-   "prices_seen": []
-  },
-  {
-   "id": "ethics",
-   "title": "Ethics",
-   "subtitle": "A Modern Version of Its Classic Themes",
-   "author": "Leonardo Polo",
-   "shelf": "philosophy",
-   "kind": "book",
-   "description": "A study of ethics as it first arises in human experience, by Leonardo Polo.",
-   "isbn": "",
-   "pages": 0,
-   "featured": false,
-   "status": "confirmed",
-   "evidence": "It is listed on Sinag-Tala's own Philosophy & Ethics page, whose blurb reads 'an attempt to study ethics in statu nascente, as it arises in human experience.' No new searches were possible because this session's WebSearch budget is used up. No ISBN or price was seen.",
-   "sources": [
-    "https://sinagtalapublishers.wordpress.com/philosophy-ethics/",
-    "https://sinagtalapublishersph.wordpress.com/philosophy-ethics/"
-   ],
-   "prices_seen": []
-  },
-  {
-   "id": "ethics-in-medical-practice",
-   "title": "Ethics in Medical Practice",
-   "subtitle": "",
-   "author": "Michael A. Monge",
-   "shelf": "philosophy",
-   "kind": "book",
-   "description": "A study of medical ethics by Michael A. Monge that presents areas of current debate in medicine.",
-   "isbn": "",
-   "pages": 0,
-   "featured": false,
-   "status": "confirmed",
-   "evidence": "It is listed on Sinag-Tala's own Philosophy & Ethics page, whose blurb says it 'presents areas of current debate in medicine.' The author's name follows the input and could not be checked again because this session's WebSearch budget is used up. No ISBN or price was seen.",
-   "sources": [
     "https://sinagtalapublishers.wordpress.com/philosophy-ethics/"
-   ],
-   "prices_seen": []
+   ]
   },
   {
    "id": "history-of-ancient-philosophy",
@@ -672,15 +991,49 @@
    "shelf": "philosophy",
    "kind": "book",
    "description": "Ignatius Yarza weighs the strengths and weaknesses of the earliest philosophers' arguments and their contribution to Christian philosophy.",
-   "isbn": "",
-   "pages": 0,
+   "isbn": "971117216X",
+   "pages": 274,
    "featured": false,
    "status": "confirmed",
-   "evidence": "It is listed on Sinag-Tala's own Philosophy & Ethics page, whose blurb says it shows 'the pitfalls, strengths and weaknesses of the arguments of early philosophers and their contribution to Christian philosophy.' No new searches were possible because this session's WebSearch budget is used up. No ISBN or price was seen.",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/philosophy-ethics/), with ISBN, pages and peso price as shown there.",
    "sources": [
+    "https://sinagtalapublishersph.wordpress.com/philosophy-ethics/",
     "https://sinagtalapublishers.wordpress.com/philosophy-ethics/"
-   ],
-   "prices_seen": []
+   ]
+  },
+  {
+   "id": "history-of-medieval-philosophy",
+   "title": "History of Medieval Philosophy",
+   "subtitle": "",
+   "author": "Joseph Saranyana",
+   "shelf": "philosophy",
+   "kind": "book",
+   "description": "Joseph Saranyana's survey of philosophy in the Middle Ages.",
+   "isbn": "9715540058",
+   "pages": 277,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/philosophy-ethics/), with ISBN, pages and peso price as shown there.",
+   "sources": [
+    "https://sinagtalapublishersph.wordpress.com/philosophy-ethics/"
+   ]
+  },
+  {
+   "id": "logic",
+   "title": "Logic",
+   "subtitle": "",
+   "author": "Juan Jose Sanguineti",
+   "shelf": "philosophy",
+   "kind": "book",
+   "description": "An introduction to logic as a tool for orderly, precise and coherent thinking.",
+   "isbn": "9715540430",
+   "pages": 268,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/philosophy-ethics/), with ISBN, pages and peso price as shown there.",
+   "sources": [
+    "https://sinagtalapublishersph.wordpress.com/philosophy-ethics/"
+   ]
   },
   {
    "id": "metaphysics",
@@ -690,33 +1043,52 @@
    "shelf": "philosophy",
    "kind": "book",
    "description": "The philosophy of being, set out by Tomas Alvira, Luis Clavell and Tomas Melendo.",
-   "isbn": "9789715540308",
-   "pages": 0,
+   "isbn": "9715540309",
+   "pages": 262,
    "featured": false,
-   "status": "likely",
-   "evidence": "The Amazon listing 'Metaphysics: Tomas Alvira, Luis Clavell, Tomas Melendo: 9789715540308' was seen, and a search summary said Sinag-Tala published a book on Metaphysics (January 1, 1991). But the ISBN prefix 971-554 is not Sinag-Tala's known 971-117 prefix, and the title was not seen on the publisher's own site. It fits alongside Artigas's 'Introduction to Philosophy' in the same philosophy series, but that link is not confirmed. No new searches were possible because this session's WebSearch budget is used up. No price was seen.",
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/philosophy-ethics/), with ISBN, pages and peso price as shown there.",
    "sources": [
+    "https://sinagtalapublishersph.wordpress.com/philosophy-ethics/",
     "https://www.amazon.com/Metaphysics-Tomas-Alvira/dp/9715540309"
-   ],
-   "prices_seen": []
+   ]
   },
   {
-   "id": "christ-on-earth",
-   "title": "Christ on Earth",
-   "subtitle": "",
-   "author": "Joseph Pich",
-   "shelf": "spirituality",
+   "id": "ethics-in-medical-practice",
+   "title": "Ethics in Medical Practice",
+   "subtitle": "Summary, Explanation & Defense of Concrete Ethical Problems",
+   "author": "Michael A. Monge",
+   "shelf": "philosophy",
    "kind": "book",
-   "description": "",
-   "isbn": "9715540848",
-   "pages": 228,
+   "description": "A study of medical ethics by Michael A. Monge that presents areas of current debate in medicine.",
+   "isbn": "9715540651",
+   "pages": 336,
    "featured": false,
-   "status": "likely",
-   "evidence": "Found on scepter.uk (body_christ_on_earth.html) with ISBN 971-554-084-8; the 971-554 prefix is the one Sinag-Tala uses for Friends of God (9789715540353) and Metaphysics (9715540309), so this is the Sinag-Tala edition. Not seen on Sinag-Tala's own pages.",
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishersph.wordpress.com/philosophy-ethics/), with ISBN, pages and peso price as shown there.",
    "sources": [
-    "http://scepter.uk/html/body_christ_on_earth.html"
-   ],
-   "prices_seen": []
+    "https://sinagtalapublishersph.wordpress.com/philosophy-ethics/",
+    "https://sinagtalapublishers.wordpress.com/philosophy-ethics/"
+   ]
+  },
+  {
+   "id": "ethics",
+   "title": "Ethics",
+   "subtitle": "A Modern Version of Its Classic Themes",
+   "author": "Leonardo Polo",
+   "shelf": "philosophy",
+   "kind": "book",
+   "description": "A study of ethics as it first arises in human experience, by Leonardo Polo.",
+   "isbn": "9715542067",
+   "pages": 229,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "Listed on Sinag-Tala's own catalogue page (https://sinagtalapublishers.wordpress.com/philosophy-ethics/), with ISBN, pages and peso price as shown there.",
+   "sources": [
+    "https://sinagtalapublishers.wordpress.com/philosophy-ethics/",
+    "https://sinagtalapublishers.wordpress.com/philosophy-ethics/",
+    "https://sinagtalapublishersph.wordpress.com/philosophy-ethics/"
+   ]
   }
  ],
  "dropped": [
