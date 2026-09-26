@@ -539,6 +539,8 @@ def title_case(s):
 def looks_verse(block):
     """A blank-line block whose lines are short, unjustified and mostly capitalised at the start."""
     lines = [l for l in block.split('\n') if l.strip()]
+    if len(lines) == 2:                     # a couplet: both lines indented, short, capitalised
+        return all(re.match(r'\s{2,}[A-Z"\u201c\u2018\']', l) and len(l.strip()) < 62 for l in lines)
     if len(lines) < 3:
         return False
     lens = [len(l.rstrip()) for l in lines]

@@ -122,8 +122,9 @@ def main(argv):
     a7 = []
     if os.path.exists(epub_path):
         nav = nav_titles(epub_path)
-        missing = [t for t in chap_titles if not any(re.sub(r'\W', '', t).lower() == re.sub(r'\W', '', n).lower() for n in nav)]
-        extra = [n for n in nav if not any(re.sub(r'\W', '', t).lower() == re.sub(r'\W', '', n).lower() for t in chap_titles)]
+        key = lambda s: re.sub(r'\W', '', re.sub(r'\[\^[^\]]+\]', '', s)).lower()      # a note on the title is not part of the title
+        missing = [t for t in chap_titles if not any(key(t) == key(n) for n in nav)]
+        extra = [n for n in nav if not any(key(t) == key(n) for t in chap_titles)]
         a7 += [f'- EPUB nav: {len(nav)} entries vs {len(chap_titles)} chapter headings; missing from nav: {missing[:8] or "none"}; extra in nav: {extra[:8] or "none"}']
     else:
         a7.append('- no EPUB yet')

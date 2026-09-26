@@ -393,7 +393,7 @@ def structure_battery(md):
     for i, p in enumerate(paras):
         if p.startswith(('#', '|', '>', ':::', '![', '* * *', '[^')):
             continue
-        if re.match(r'^[a-z]', p) and not (i and paras[i - 1].startswith(('|', '>'))):
+        if re.match(r'^[a-z]', p) and not (i and (paras[i - 1].startswith(('|', '>')) or re.search(r'[\u2014\u2013,;:-]\s*$', paras[i - 1].rstrip('*_ ')))):
             findings.append(('lowercase paragraph start', p[:70]))       # after a verse or quotation the sentence may continue
         if re.search(r'\b(\w+) \1\b(?!-)', p, re.I) and not re.search(r'\b(that that|had had|very very|on on|in in|to to)\b', p, re.I):
             m = re.search(r'\b(\w+) \1\b(?!-)', p, re.I)
