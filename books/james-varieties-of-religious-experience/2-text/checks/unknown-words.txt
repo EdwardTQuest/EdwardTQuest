@@ -62,7 +62,7 @@ scrupulosity	3	to incredulity; or it may be from moral scrupulosity into freedom
 ideality	3	, it reveals new flights and reaches of ideality while it lasts. These revelations form 
 Beuve	3	, as to this, some remarks which Sainte‐Beuve in his History of Port‐Royal makes on t
 unspotted	3	epen its spiritual consistency and keep unspotted from the world. In some temperaments th
-Vianney	3	M. Vianney, the curé of Ars, was a French country 
+Vianney	3	M\. Vianney, the curé of Ars, was a French country 
 ich	3	Nathan the Wise, “mein Gott, mein Gott, ich habe nichts!” This ideal of the well‐bo
 priori	3	 things together without any special *a priori* theological system, and out of an aggr
 sidedness	3	mission to reveal, at the cost of a one‐sidedness for which other schools must make amend
@@ -468,7 +468,7 @@ desuetude	1	ctor of merit, it has largely come into desuetude, if not discredit.
 Channing’s	1	Channing’s asceticism, such as it was, was evident
 popish	1	heatres. Sometimes he wished to go to a popish monastery, to spend his life in devout 
 hortatory	1	ften been worked in a mercenary way for hortatory purposes, to call it a mercenary incent
-curé	1	M. Vianney, the curé of Ars, was a French country priest, wh
+curé	1	M\. Vianney, the curé of Ars, was a French country priest, wh
 whithersoever	1	“To reach what you possess not, go whithersoever you own nothing.
 leathern	1	trary, he devised something farther—two leathern loops into which he put his hands, and 
 dropsical	1	. His feet were full of sores, his legs dropsical, his knees bloody and seared, his loins
@@ -546,8 +546,8 @@ sneakingness	1	etzsche the saint represents little but sneakingness and slavishn
 slavishness	1	 represents little but sneakingness and slavishness. He is the sophisticated invalid, the d
 mouldiness	1	 male and cannibal, can see nothing but mouldiness and morbidness in the saint’s gentlenes
 worldling	1	is saintship, than if he had remained a worldling.[^221] Accordingly religion has seldom 
-Ineffability	1	1. *Ineffability.*—The handiest of the marks by which I 
-Noetic	1	2. *Noetic quality.*—Although so similar to states
+Ineffability	1	1\. *Ineffability.*—The handiest of the marks by which I 
+Noetic	1	2\. *Noetic quality.*—Although so similar to states
 mediumistic	1	hetic speech, automatic writing, or the mediumistic trance. When these latter conditions ar
 interruptive	1	s, strictly so called, are never merely interruptive. Some memory of their content always re
 straightway	1	Scripture in an entirely new light; and straightway I felt as if I were born anew. It was a
@@ -575,7 +575,7 @@ desireless	1	feeling of _I_, and yet the mind works, desireless, free from restl
 objectless	1	ks, desireless, free from restlessness, objectless, bodiless. Then the Truth shines in its
 superconsciousness	1	edantists say that one may stumble into superconsciousness sporadically, without the previous disc
 meditator	1	ere there exists nothing, and where the meditator says: “There exists absolutely nothing,
-Schmölders	1	M. Schmölders has translated a part of Al‐Ghazzali’s 
+Schmölders	1	M\. Schmölders has translated a part of Al‐Ghazzali’s 
 Ghazzali’s	1	 Schmölders has translated a part of Al‐Ghazzali’s autobiography into French:[^246]—
 uncomprehended	1	to discern various intellectual objects uncomprehended by sensation; just so in the prophetic 
 incommunicableness	1	This incommunicableness of the transport is the keynote of all 

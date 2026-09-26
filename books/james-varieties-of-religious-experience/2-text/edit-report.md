@@ -1,6 +1,6 @@
 # Edit report — The Varieties of Religious Experience
 
-Source: `0-source/pg621.txt` (189,585 words). Import: {'pg transcriber notes removed': 0, 'pg page markers removed': 0, 'pg paragraph markers removed': 0, 'pg emphasis markup removed': 0, 'pg footnotes headings dropped': 1, 'pg endnotes bound': 362, 'pg front blocks dropped': 14, 'pg front prose kept': 0, 'pg contents and furniture dropped': 0, 'pg index dropped (words)': 2319, 'chapters': 20, 'paragraphs': 891, 'quotes': 445, 'verse_blocks': 5, 'notes': 362, 'split titles merged': 0, 'front divisions': 1, 'levels': {'#plain': 2, 'Lecture': 2, 'Lectures': 2, '#num': 3}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 2.
+Source: `0-source/pg621.txt` (189,585 words). Import: {'pg transcriber notes removed': 0, 'pg page markers removed': 0, 'pg paragraph markers removed': 0, 'pg emphasis markup removed': 0, 'pg footnotes headings dropped': 1, 'pg endnotes bound': 362, 'pg front blocks dropped': 14, 'pg front prose kept': 0, 'pg contents and furniture dropped': 0, 'pg index dropped (words)': 2319, 'chapters': 20, 'list markers escaped': 24, 'paragraphs': 891, 'quotes': 445, 'verse_blocks': 5, 'notes': 362, 'split titles merged': 0, 'front divisions': 1, 'levels': {'#plain': 2, 'Lecture': 2, 'Lectures': 2, '#num': 3}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 2.
 
 ## House-style rules (count / cap)
 
@@ -12,6 +12,7 @@ Source: `0-source/pg621.txt` (189,585 words). Import: {'pg transcriber notes rem
 | dashes | 587 | 9479 | elf staggering up to Rev. ——’s Holiness tent—and as it was f  →  elf staggering up to Rev.——’s Holiness tent—a |
 | caps openings | 1 | 1895 | an I can well express.  HARVARD UNIVERSITY, March, 1902.  ::  →  an I can well express.  Harvard University, M |
 | spacing and ligatures | 90 | 9479 | iaries. His being shrinks . . . he becomes less and less, a   →  iaries. His being shrinks. . . he becomes les |
+| list markers escaped | 0 | 9479 |  |
 
 ## Validation: 0 errors, 0 warnings
 
@@ -131,7 +132,7 @@ Source: `0-source/pg621.txt` (189,585 words). Import: {'pg transcriber notes rem
 - paramountcy ×1 — is permanence to be true of the general paramountcy of the higher insight, even though in t
 - inexpressibly ×1 —  me, and of my dearness to him; with an inexpressibly sweet calmness of soul in an entire res
 - popish ×1 — heatres. Sometimes he wished to go to a popish monastery, to spend his life in devout 
-- curé ×1 — M. Vianney, the curé of Ars, was a French country priest, wh
+- curé ×1 — M\. Vianney, the curé of Ars, was a French country priest, wh
 - leathern ×1 — trary, he devised something farther—two leathern loops into which he put his hands, and 
 - Wer ×1 — l the freer to work out his salvation. “Wer nur selbst was hätte,” says Lessing’s T
 - nur ×1 — e freer to work out his salvation. “Wer nur selbst was hätte,” says Lessing’s Tempe
@@ -159,7 +160,7 @@ Source: `0-source/pg621.txt` (189,585 words). Import: {'pg transcriber notes rem
 - unshaken ×1 — on of its truth has ever since remained unshaken. It is that our normal waking conscious
 - shingly ×1 — utterflies; once more at night upon the shingly shore of the Northern Ocean, my back up
 - kelson ×1 — women my sisters and lovers, And that a kelson of the creation is love.”[^238]
-- Schmölders ×1 — M. Schmölders has translated a part of Al‐Ghazzali’s 
+- Schmölders ×1 — M\. Schmölders has translated a part of Al‐Ghazzali’s 
 - modeless ×1 — f the naked simple unity. It is in this modeless *where* that the highest bliss is to be
 - kann ×1 — ius again, “Er ist als ich so klein; Er kann nicht über mich, ich unter ihm nicht se
 - unter ×1 —  so klein; Er kann nicht über mich, ich unter ihm nicht sein.”[^273]
@@ -215,7 +216,7 @@ Source: `0-source/pg621.txt` (189,585 words). Import: {'pg transcriber notes rem
 
 ## Structure battery: 1 findings
 
-- paragraph ends mid-phrase (page-turn split?): 1. An uneasiness; and
+- paragraph ends mid-phrase (page-turn split?): 1\. An uneasiness; and
 
 ## Flags: 0
 
@@ -230,5 +231,5 @@ Source: `0-source/pg621.txt` (189,585 words). Import: {'pg transcriber notes rem
 2. The rest of the dictionary list (954 entries): read to the end?
 3. Sequence proof: level 2 "lecture": 9 numbered, first 1, last 20; GAPS after [4, 11]; expected 20: MISMATCH; level 3 "#" (run 13): 3 numbered, first 1, last 3 — does it match what the source prints?
 4. Structure battery: 1 findings — each decided?
-5. Rules: hyphen joins 0, curly quotes 0, ellipses 155, dashes 587, caps openings 1, spacing and ligatures 90 — plausible for 189,585 words?
+5. Rules: hyphen joins 0, curly quotes 0, ellipses 155, dashes 587, caps openings 1, spacing and ligatures 90, list markers escaped 0 — plausible for 189,585 words?
 6. Would a reader who knows this book notice anything wrong in the first chapter you open at random?

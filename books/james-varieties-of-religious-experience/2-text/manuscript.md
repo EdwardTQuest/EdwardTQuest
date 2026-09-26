@@ -444,7 +444,7 @@ The advance of liberalism, so‐called, in Christianity, during the past fifty y
 
 The persons to whom I refer have still retained for the most part their nominal connection with Christianity, in spite of their discarding of its more pessimistic theological elements. But in that “theory of evolution” which, gathering momentum for a century, has within the past twenty‐five years swept so rapidly over Europe and America, we see the ground laid for a new sort of religion of Nature, which has entirely displaced Christianity from the thought of a large part of our generation. The idea of a universal evolution lends itself to a doctrine of general meliorism and progress which fits the religious needs of the healthy‐minded so well that it seems almost as if it might have been created for their use. Accordingly we find “evolutionism” interpreted thus optimistically and embraced as a substitute for the religion they were born in, by a multitude of our contemporaries who have either been trained scientifically, or been fond of reading popular science, and who had already begun to be inwardly dissatisfied with what seemed to them the harshness and irrationality of the orthodox Christian scheme. As examples are better than descriptions, I will quote a document received in answer to Professor Starbuck’s circular of questions. The writer’s state of mind may by courtesy be called a religion, for it is his reaction on the whole nature of things, it is systematic and reflective, and it loyally binds him to certain inner ideals. I think you will recognize in him, coarse‐ meated and incapable of wounded spirit as he is, a sufficiently familiar contemporary type.
 
-Q. *What does Religion mean to you?*
+Q\. *What does Religion mean to you?*
 
 > A. It means nothing; and it seems, so far as I can observe, useless to others. I am sixty‐seven years of age and have resided in X. fifty years, and have been in business forty‐five, consequently I have some little experience of life and men, and some women too, and I find that the most religious and pious people are as a rule those most lacking in uprightness and morality. The men who do not go to church or have any religious convictions are the best. Praying, singing of hymns, and sermonizing are pernicious—they teach us to rely on some supernatural power, when we ought to rely on ourselves. I _tee_totally disbelieve in a God. The God‐idea was begotten in ignorance, fear, and a general lack of any knowledge of Nature. If I were to die now, being in a healthy condition for my age, both mentally and physically, I would just as lief, yes, rather, die with a hearty enjoyment of music, sport, or any other rational pastime. As a timepiece stops, we die—there being no immortality in either case.
 
@@ -452,19 +452,19 @@ Q. *What does Religion mean to you?*
 
 > A. Nothing whatever. I am a man without a religion. These words mean so much mythic bosh.
 
-Q. *Have you had any experiences which appeared providential?*
+Q\. *Have you had any experiences which appeared providential?*
 
 > A. None whatever. There is no agency of the superintending kind. A little judicious observation as well as knowledge of scientific law will convince any one of this fact.
 
-Q. *What things work most strongly on your emotions?*
+Q\. *What things work most strongly on your emotions?*
 
 > A. Lively songs and music; Pinafore instead of an Oratorio. I like Scott, Burns, Byron, Longfellow, especially Shakespeare, etc., etc. Of songs, the Star‐spangled Banner, America, Marseillaise, and all moral and soul‐stirring songs, but wishy‐washy hymns are my detestation. I greatly enjoy nature, especially fine weather, and until within a few years used to walk Sundays into the country, twelve miles often, with no fatigue, and bicycle forty or fifty. I have dropped the bicycle. I never go to church, but attend lectures when there are any good ones. All of my thoughts and cogitations have been of a healthy and cheerful kind, for instead of doubts and fears I see things as they are, for I endeavor to adjust myself to my environment. This I regard as the deepest law. Mankind is a progressive animal. I am satisfied he will have made a great advance over his present status a thousand years hence.
 
-Q. *What is your notion of sin?*
+Q\. *What is your notion of sin?*
 
 > A. It seems to me that sin is a condition, a disease, incidental to man’s development not being yet advanced enough. Morbidness over it increases the disease. We should think that a million of years hence equity, justice, and mental and physical good order will be so fixed and organized that no one will have any idea of evil or sin.
 
-Q. *What is your temperament?*
+Q\. *What is your temperament?*
 
 > A. Nervous, active, wide‐awake, mentally and physically. Sorry that Nature compels us to sleep at all.
 
@@ -1313,13 +1313,13 @@ The collective name for the ripe fruits of religion in a character is Saintlines
 
 They are these:—
 
-1. A feeling of being in a wider life than that of this world’s selfish little interests; and a conviction, not merely intellectual, but as it were sensible, of the existence of an Ideal Power. In Christian saintliness this power is always personified as God; but abstract moral ideals, civic or patriotic utopias, or inner visions of holiness or right may also be felt as the true lords and enlargers of our life, in ways which I described in the lecture on the Reality of the Unseen.[^153]
+1\. A feeling of being in a wider life than that of this world’s selfish little interests; and a conviction, not merely intellectual, but as it were sensible, of the existence of an Ideal Power. In Christian saintliness this power is always personified as God; but abstract moral ideals, civic or patriotic utopias, or inner visions of holiness or right may also be felt as the true lords and enlargers of our life, in ways which I described in the lecture on the Reality of the Unseen.[^153]
 
-2. A sense of the friendly continuity of the ideal power with our own life, and a willing self‐surrender to its control.
+2\. A sense of the friendly continuity of the ideal power with our own life, and a willing self‐surrender to its control.
 
-3. An immense elation and freedom, as the outlines of the confining selfhood melt down.
+3\. An immense elation and freedom, as the outlines of the confining selfhood melt down.
 
-4. A shifting of the emotional centre towards loving and harmonious affections, towards “yes, yes” and away from “no,” where the claims of the non‐ego are concerned.
+4\. A shifting of the emotional centre towards loving and harmonious affections, towards “yes, yes” and away from “no,” where the claims of the non‐ego are concerned.
 
 These fundamental inner conditions have characteristic practical consequences, as follows:—
 
@@ -1527,7 +1527,7 @@ Channing’s asceticism, such as it was, was evidently a compound of hardihood a
 
 In this poor man we have morbid melancholy and fear, and the sacrifices made are to purge out sin, and to buy safety. The hopelessness of Christian theology in respect of the flesh and the natural man generally has, in systematizing fear, made of it one tremendous incentive to self‐ mortification. It would be quite unfair, however, in spite of the fact that this incentive has often been worked in a mercenary way for hortatory purposes, to call it a mercenary incentive. The impulse to expiate and do penance is, in its first intention, far too immediate and spontaneous an expression of self‐despair and anxiety to be obnoxious to any such reproach. In the form of loving sacrifice, of spending all we have to show our devotion, ascetic discipline of the severest sort may be the fruit of highly optimistic religious feeling.
 
-M. Vianney, the curé of Ars, was a French country priest, whose holiness was exemplary. We read in his life the following account of his inner need of sacrifice:—
+M\. Vianney, the curé of Ars, was a French country priest, whose holiness was exemplary. We read in his life the following account of his inner need of sacrifice:—
 
 > “‘On this path,’ M. Vianney said, ‘it is only the first step that costs. There is in mortification a balm and a savor without which one cannot live when once one has made their acquaintance. There is but one way in which to give one’s self to God,—that is, to give one’s self entirely, and to keep nothing for one’s self. The little that one keeps is only good to double one and make one suffer.’ Accordingly he imposed it on himself that he should never smell a flower, never drink when parched with thirst, never drive away a fly, never show disgust before a repugnant object, never complain of anything that had to do with his personal comfort, never sit down, never lean upon his elbows when he was kneeling. The Curé of Ars was very sensitive to cold, but he would never take means to protect himself against it. During a very severe winter, one of his missionaries contrived a false floor to his confessional and placed a metal case of hot water beneath. The trick succeeded, and the Saint was deceived: ‘God is very good,’ he said with emotion. ‘This year, through all the cold, my feet have always been warm.’”[^178]
 
@@ -1909,15 +1909,15 @@ First of all, then, I ask, What does the expression “mystical states of consci
 
 The words “mysticism” and “mystical” are often used as terms of mere reproach, to throw at any opinion which we regard as vague and vast and sentimental, and without a base in either facts or logic. For some writers a “mystic” is any person who believes in thought‐transference, or spirit‐ return. Employed in this way the word has little value: there are too many less ambiguous synonyms. So, to keep it useful by restricting it, I will do what I did in the case of the word “religion,” and simply propose to you four marks which, when an experience has them, may justify us in calling it mystical for the purpose of the present lectures. In this way we shall save verbal disputation, and the recriminations that generally go therewith.
 
-1. *Ineffability.*—The handiest of the marks by which I classify a state of mind as mystical is negative. The subject of it immediately says that it defies expression, that no adequate report of its contents can be given in words. It follows from this that its quality must be directly experienced; it cannot be imparted or transferred to others. In this peculiarity mystical states are more like states of feeling than like states of intellect. No one can make clear to another who has never had a certain feeling, in what the quality or worth of it consists. One must have musical ears to know the value of a symphony; one must have been in love one’s self to understand a lover’s state of mind. Lacking the heart or ear, we cannot interpret the musician or the lover justly, and are even likely to consider him weak‐minded or absurd. The mystic finds that most of us accord to his experiences an equally incompetent treatment.
+1\. *Ineffability.*—The handiest of the marks by which I classify a state of mind as mystical is negative. The subject of it immediately says that it defies expression, that no adequate report of its contents can be given in words. It follows from this that its quality must be directly experienced; it cannot be imparted or transferred to others. In this peculiarity mystical states are more like states of feeling than like states of intellect. No one can make clear to another who has never had a certain feeling, in what the quality or worth of it consists. One must have musical ears to know the value of a symphony; one must have been in love one’s self to understand a lover’s state of mind. Lacking the heart or ear, we cannot interpret the musician or the lover justly, and are even likely to consider him weak‐minded or absurd. The mystic finds that most of us accord to his experiences an equally incompetent treatment.
 
-2. *Noetic quality.*—Although so similar to states of feeling, mystical states seem to those who experience them to be also states of knowledge. They are states of insight into depths of truth unplumbed by the discursive intellect. They are illuminations, revelations, full of significance and importance, all inarticulate though they remain; and as a rule they carry with them a curious sense of authority for after‐time.
+2\. *Noetic quality.*—Although so similar to states of feeling, mystical states seem to those who experience them to be also states of knowledge. They are states of insight into depths of truth unplumbed by the discursive intellect. They are illuminations, revelations, full of significance and importance, all inarticulate though they remain; and as a rule they carry with them a curious sense of authority for after‐time.
 
 These two characters will entitle any state to be called mystical, in the sense in which I use the word. Two other qualities are less sharply marked, but are usually found. These are:—
 
-3. *Transiency.*—Mystical states cannot be sustained for long. Except in rare instances, half an hour, or at most an hour or two, seems to be the limit beyond which they fade into the light of common day. Often, when faded, their quality can but imperfectly be reproduced in memory; but when they recur it is recognized; and from one recurrence to another it is susceptible of continuous development in what is felt as inner richness and importance.
+3\. *Transiency.*—Mystical states cannot be sustained for long. Except in rare instances, half an hour, or at most an hour or two, seems to be the limit beyond which they fade into the light of common day. Often, when faded, their quality can but imperfectly be reproduced in memory; but when they recur it is recognized; and from one recurrence to another it is susceptible of continuous development in what is felt as inner richness and importance.
 
-4. *Passivity.*—Although the oncoming of mystical states may be facilitated by preliminary voluntary operations, as by fixing the attention, or going through certain bodily performances, or in other ways which manuals of mysticism prescribe; yet when the characteristic sort of consciousness once has set in, the mystic feels as if his own will were in abeyance, and indeed sometimes as if he were grasped and held by a superior power. This latter peculiarity connects mystical states with certain definite phenomena of secondary or alternative personality, such as prophetic speech, automatic writing, or the mediumistic trance. When these latter conditions are well pronounced, however, there may be no recollection whatever of the phenomenon, and it may have no significance for the subject’s usual inner life, to which, as it were, it makes a mere interruption. Mystical states, strictly so called, are never merely interruptive. Some memory of their content always remains, and a profound sense of their importance. They modify the inner life of the subject between the times of their recurrence. Sharp divisions in this region are, however, difficult to make, and we find all sorts of gradations and mixtures.
+4\. *Passivity.*—Although the oncoming of mystical states may be facilitated by preliminary voluntary operations, as by fixing the attention, or going through certain bodily performances, or in other ways which manuals of mysticism prescribe; yet when the characteristic sort of consciousness once has set in, the mystic feels as if his own will were in abeyance, and indeed sometimes as if he were grasped and held by a superior power. This latter peculiarity connects mystical states with certain definite phenomena of secondary or alternative personality, such as prophetic speech, automatic writing, or the mediumistic trance. When these latter conditions are well pronounced, however, there may be no recollection whatever of the phenomenon, and it may have no significance for the subject’s usual inner life, to which, as it were, it makes a mere interruption. Mystical states, strictly so called, are never merely interruptive. Some memory of their content always remains, and a profound sense of their importance. They modify the inner life of the subject between the times of their recurrence. Sharp divisions in this region are, however, difficult to make, and we find all sorts of gradations and mixtures.
 
 These four characteristics are sufficient to mark out a group of states of consciousness peculiar enough to deserve a special name and to call for careful study. Let it then be called the mystical group.
 
@@ -2011,7 +2011,7 @@ In the Mohammedan world the Sufi sect and various dervish bodies are the possess
 
 Al‐Ghazzali, a Persian philosopher and theologian, who flourished in the eleventh century, and ranks as one of the greatest doctors of the Moslem church, has left us one of the few autobiographies to be found outside of Christian literature. Strange that a species of book so abundant among ourselves should be so little represented elsewhere—the absence of strictly personal confessions is the chief difficulty to the purely literary student who would like to become acquainted with the inwardness of religions other than the Christian.
 
-M. Schmölders has translated a part of Al‐Ghazzali’s autobiography into French:[^246]—
+M\. Schmölders has translated a part of Al‐Ghazzali’s autobiography into French:[^246]—
 
 > “The Science of the Sufis,” says the Moslem author, “aims at detaching the heart from all that is not God, and at giving to it for sole occupation the meditation of the divine being. Theory being more easy for me than practice, I read [certain books] until I understood all that can be learned by study and hearsay. Then I recognized that what pertains most exclusively to their method is just what no study can grasp, but only transport, ecstasy, and the transformation of the soul. How great, for example, is the difference between knowing the definitions of health, of satiety, with their causes and conditions, and being really healthy or filled. How different to know in what drunkenness consists,—as being a state occasioned by a vapor that rises from the stomach,—and _being_ drunk effectively. Without doubt, the drunken man knows neither the definition of drunkenness nor what makes it interesting for science. Being drunk, he knows nothing; whilst the physician, although not drunk, knows well in what drunkenness consists, and what are its predisposing conditions. Similarly there is a difference between knowing the nature of abstinence, and _being_ abstinent or having one’s soul detached from the world.—Thus I had learned what words could teach of Sufism, but what was left could be learned neither by study nor through the ears, but solely by giving one’s self up to ecstasy and leading a pious life.
 
@@ -2405,17 +2405,17 @@ The material of our study of human nature is now spread before us; and in this p
 
 Summing up in the broadest possible way the characteristics of the religious life, as we have found them, it includes the following beliefs:—
 
-1. That the visible world is part of a more spiritual universe from which it draws its chief significance;
+1\. That the visible world is part of a more spiritual universe from which it draws its chief significance;
 
-2. That union or harmonious relation with that higher universe is our true end;
+2\. That union or harmonious relation with that higher universe is our true end;
 
-3. That prayer or inner communion with the spirit thereof—be that spirit “God” or “law”—is a process wherein work is really done, and spiritual energy flows in and produces effects, psychological or material, within the phenomenal world.
+3\. That prayer or inner communion with the spirit thereof—be that spirit “God” or “law”—is a process wherein work is really done, and spiritual energy flows in and produces effects, psychological or material, within the phenomenal world.
 
 Religion includes also the following psychological characteristics:—
 
-4. A new zest which adds itself like a gift to life, and takes the form either of lyrical enchantment or of appeal to earnestness and heroism.
+4\. A new zest which adds itself like a gift to life, and takes the form either of lyrical enchantment or of appeal to earnestness and heroism.
 
-5. An assurance of safety and a temper of peace, and, in relation to others, a preponderance of loving affections.
+5\. An assurance of safety and a temper of peace, and, in relation to others, a preponderance of loving affections.
 
 In illustrating these characteristics by documents, we have been literally bathed in sentiment. In re‐reading my manuscript, I am almost appalled at the amount of emotionality which I find in it. After so much of this, we can afford to be dryer and less sympathetic in the rest of the work that lies before us.
 
@@ -2489,13 +2489,13 @@ And second, ought we to consider the testimony true?
 
 I will take up the first question first, and answer it immediately in the affirmative. The warring gods and formulas of the various religions do indeed cancel each other, but there is a certain uniform deliverance in which religions all appear to meet. It consists of two parts:—
 
-1. An uneasiness; and
+1\. An uneasiness; and
 
-2. Its solution.
+2\. Its solution.
 
-1. The uneasiness, reduced to its simplest terms, is a sense that there is *something wrong about us* as we naturally stand.
+1\. The uneasiness, reduced to its simplest terms, is a sense that there is *something wrong about us* as we naturally stand.
 
-2. The solution is a sense that *we are saved from the wrongness* by making proper connection with the higher powers.
+2\. The solution is a sense that *we are saved from the wrongness* by making proper connection with the higher powers.
 
 In those more developed minds which alone we are studying, the wrongness takes a moral character, and the salvation takes a mystical tinge. I think we shall keep well within the limits of what is common to all such minds if we formulate the essence of their religious experience in terms like these:—
 

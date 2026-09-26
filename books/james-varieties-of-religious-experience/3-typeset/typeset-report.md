@@ -4,7 +4,7 @@ What the page-layout lens found in each PDF (widows, orphans, runts, hyphen stac
 
 ## deluxe — 600 pages, measure 3.54 in, line box 13.7 pt
 
-counts: runt 66, loose line 10, widow 8, orphan 3
+counts: runt 68, loose line 10, widow 7, orphan 3
 
 - p.10 runt: world.
 - p.15 runt: influence.
@@ -65,14 +65,14 @@ counts: runt 66, loose line 10, widow 8, orphan 3
 - p.402 runt: peoples?
 - p.403 runt: suffers.
 - p.411 runt: brickbats.
-- p.414 orphan: Lacking the heart or ear, we cannot interpret the musician
+- p.415 runt: treatment.
 - p.416 runt: group.
 - p.422 runt: revelation.
 - p.432 runt: ically.
 - p.433 runt: learns—
 - p.433 runt: Soul.”²³⁹
-- p.434 widow: illumined.”²⁴⁰
 - p.434 runt: affords.²⁴¹
+- p.440 orphan: use of in other circumstances. Accordingly in this knowledge
 - p.440 loose line: mean gap 0.56 em: The first thing to be aimed at in orison is the mi
 - p.445 runt: it.”²⁵⁰
 - p.452 runt: sings:—
@@ -85,12 +85,12 @@ counts: runt 66, loose line 10, widow 8, orphan 3
 - p.517 runt: doing.”³²²
 - p.521 runt: suggest.
 - p.523 runt: beliefs:—
-- p.524 runt: —
-- … 7 more
+- p.524 runt: istics:—
+- … 8 more
 
 ## everyman — 630 pages, measure 2.9 in, line box 12.5 pt
 
-counts: runt 82, loose line 48, orphan 7, widow 7
+counts: runt 82, loose line 45, orphan 7, widow 6
 
 - p.13 runt: differs.
 - p.13 loose line: mean gap 0.55 em: Such a result is of course absolutely alien to my
@@ -172,11 +172,11 @@ counts: runt 82, loose line 48, orphan 7, widow 7
 - p.393 loose line: mean gap 0.62 em: Our survey of the phenomena of saintliness has
 - p.397 orphan: pher exclaims: “to be loved by a noble, elevated,
 - p.397 runt: example.
-- … 64 more
+- … 60 more
 
-## scholar — 768 pages, measure 3.0 in, line box 13.7 pt
+## scholar — 766 pages, measure 3.0 in, line box 13.7 pt
 
-counts: loose line 74, runt 81, widow 10, orphan 8
+counts: loose line 74, runt 79, widow 7, orphan 5
 
 - p.13 loose line: mean gap 0.57 em: tutions, but rather religious feelings and religio
 - p.15 loose line: mean gap 0.59 em: natural antecedents. What is nowadays called the
@@ -253,9 +253,9 @@ counts: loose line 74, runt 81, widow 10, orphan 8
 - p.358 loose line: mean gap 0.56 em: Leuba quotes the case of a Mr. Peek, where the
 - p.369 runt: deep.
 - p.379 loose line: mean gap 0.65 em: Such rapid abolition of ancient impulses and
-- p.380 orphan: world’s selfish little interests; and a conviction, not
-- p.381 runt: control.
 - p.386 loose line: mean gap 0.66 em: dant in religious literature. I could easily weary
 - p.391 runt: endure.
 - p.392 orphan: sweetness, far beyond all that I had ever felt before.
-- … 93 more
+- p.394 loose line: mean gap 0.57 em: Here, for instance, is an example of Christian
+- p.395 runt: again.‘
+- … 85 more

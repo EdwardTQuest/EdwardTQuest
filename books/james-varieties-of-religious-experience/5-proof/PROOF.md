@@ -5,7 +5,7 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 | # | lens | scope | findings | status |
 |---|---|---|---|---|
 | 3 | structure and sequence | every heading and paragraph of manuscript.md (184,189 words, 15 chapters) | 425 | findings |
-| 4 | page layout | every page of every PDF: widows, orphans, runts, hyphen stacks, loose lines, stranded headings, thin chapter ends | 404 | findings |
+| 4 | page layout | every page of every PDF: widows, orphans, runts, hyphen stacks, loose lines, stranded headings, thin chapter ends | 393 | findings |
 | 5 | dictionary sweep | every token of the body (180,319); wordlist + house list; names accepted when capitalised mid-sentence (381) | 1468 | read the list |
 | 7 | apparatus | contents vs headings, note calls vs notes, front and back matter present in every edition | 0 | clean |
 | 8 | cross-edition consistency | the words of manuscript.md against the text of each PDF and of the EPUB | 0 | clean |
@@ -25,7 +25,7 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 
 - level 2 "lecture": 9 numbered, first 1, last 20; GAPS after [4, 11]; expected 20: MISMATCH
 - level 3 "#" (run 13): 3 numbered, first 1, last 3
-- paragraph ends mid-phrase (page-turn split?): 1. An uneasiness; and
+- paragraph ends mid-phrase (page-turn split?): 1\. An uneasiness; and
 - stray mark: …n proportion to their purity. [They] affect us more than all …
 - stray mark: …enoting any object that is god_like_, whether it be a concret…
 - stray mark: …ng any object that is god_like_, whether it be a concrete dei…
@@ -57,12 +57,12 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 - stray mark: …blank was there instead of _It_: I couldn’t find anything. No…
 - stray mark: …ot any more have doubted that _He_ was there than that I was.…
 
-## Lens 4 · page layout — 404 (findings)
+## Lens 4 · page layout — 393 (findings)
 *Scope:* every page of every PDF: widows, orphans, runts, hyphen stacks, loose lines, stranded headings, thin chapter ends
 
-- deluxe: {'runt': 66, 'loose line': 10, 'widow': 8, 'orphan': 3} — see 3-typeset/typeset-report.md for the pages
-- everyman: {'runt': 82, 'loose line': 48, 'orphan': 7, 'widow': 7} — see 3-typeset/typeset-report.md for the pages
-- scholar: {'loose line': 74, 'runt': 81, 'widow': 10, 'orphan': 8} — see 3-typeset/typeset-report.md for the pages
+- deluxe: {'runt': 68, 'loose line': 10, 'widow': 7, 'orphan': 3} — see 3-typeset/typeset-report.md for the pages
+- everyman: {'runt': 82, 'loose line': 45, 'orphan': 7, 'widow': 6} — see 3-typeset/typeset-report.md for the pages
+- scholar: {'loose line': 74, 'runt': 79, 'widow': 7, 'orphan': 5} — see 3-typeset/typeset-report.md for the pages
 
 ## Lens 5 · dictionary sweep — 1468 (read the list)
 *Scope:* every token of the body (180,319); wordlist + house list; names accepted when capitalised mid-sentence (381)
@@ -142,8 +142,8 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 *Scope:* the words of manuscript.md against the text of each PDF and of the EPUB
 
 - deluxe: manuscript words absent from the PDF text: 208 (e.g. ['werthurtheil', 'consequential', '98', 'reasonableness', '9', 'devoutness', '11', 'callousness', '21', '22']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
-- everyman: manuscript words absent from the PDF text: 215 (e.g. ['extremer', 'propensities', '98', 'reasonableness', '9', 'superhuman', '11', '21', 'performing', '22']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
-- scholar: manuscript words absent from the PDF text: 528 (e.g. ['university', 'edinburgh', 'psychological', 'particulars', 'concrete', 'manuscript', 'information', 'documents', 'apology', 'published']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
+- everyman: manuscript words absent from the PDF text: 214 (e.g. ['extremer', 'propensities', '98', 'reasonableness', '9', 'superhuman', '11', '21', 'performing', '22']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
+- scholar: manuscript words absent from the PDF text: 531 (e.g. ['university', 'edinburgh', 'psychological', 'particulars', 'concrete', 'manuscript', 'information', 'documents', 'apology', 'published']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
 - epub: no cover image yet (run `ath cover` and rebuild)
 - epub: 19 spine items, 24 manifest items, 3.7 MB unpacked
 - epub: manuscript words 184,941; EPUB words 186,338; manuscript words not found in EPUB: 0
@@ -153,7 +153,7 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 
 - deluxe: 600 pages (even), page size 360 x 504 pts = trim, fonts 2, unembedded none, within KDP 24–828
 - everyman: 630 pages (even), page size 306 x 459 pts = trim, fonts 2, unembedded none, within KDP 24–828
-- scholar: 768 pages (even), page size 360 x 504 pts = trim, fonts 2, unembedded none, within KDP 24–828
+- scholar: 766 pages (even), page size 360 x 504 pts = trim, fonts 2, unembedded none, within KDP 24–828
 
 ## Lens 10 · render and look — 3 (needs eyes)
 *Scope:* sampled pages of every edition; the covers
@@ -174,7 +174,7 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 | cover | undecided |  |  |  |
 | final | undecided |  |  |  |
 
-FORCED past gates: [{'command': 'typeset', 'gates': ['text'], 'when': '2026-09-25 22:22'}, {'command': 'epub', 'gates': ['text'], 'when': '2026-09-25 22:27'}]
+FORCED past gates: [{'command': 'typeset', 'gates': ['text'], 'when': '2026-09-25 22:22'}, {'command': 'epub', 'gates': ['text'], 'when': '2026-09-25 22:27'}, {'command': 'typeset', 'gates': ['text'], 'when': '2026-09-26 00:42'}, {'command': 'epub', 'gates': ['text'], 'when': '2026-09-26 00:46'}]
 
 ## Definition of done
 
