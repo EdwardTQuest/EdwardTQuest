@@ -1,6 +1,6 @@
 # Edit report — The Antichrist
 
-Source: `0-source/pg19322.txt` (36,691 words). Import: {'pg transcriber notes removed': 0, 'pg page markers removed': 0, 'pg paragraph markers removed': 0, 'pg emphasis markup removed': 0, 'pg footnote calls': 30, 'pg front blocks dropped': 16, 'pg front prose kept': 0, 'pg the end dropped': 1, 'pg contents and furniture dropped': 2, 'chapters': 65, 'paragraphs': 122, 'breaks': 1, 'signature lines': 2, 'quotes': 3, 'notes': 30, 'split titles merged': 0, 'front divisions': 2, 'levels': {'#plain': 2, '#num': 3}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 2.
+Source: `0-source/pg19322.txt` (36,691 words). Import: {'pg transcriber notes removed': 0, 'pg page markers removed': 0, 'pg paragraph markers removed': 0, 'pg emphasis markup removed': 0, 'pg footnote calls': 30, 'pg front blocks dropped': 16, 'pg front prose kept': 0, 'pg the end dropped': 1, 'pg contents and furniture dropped': 2, 'chapters': 65, 'list markers escaped': 0, 'paragraphs': 122, 'breaks': 1, 'signature lines': 2, 'quotes': 3, 'notes': 30, 'split titles merged': 0, 'front divisions': 2, 'levels': {'#plain': 2, '#num': 3}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 2.
 
 ## House-style rules (count / cap)
 
@@ -12,6 +12,7 @@ Source: `0-source/pg19322.txt` (36,691 words). Import: {'pg transcriber notes re
 | dashes | 695 | 1834 | avels in search of health--at Nice, at Venice, at Sils-Maria  →  avels in search of health—at Nice, at Venice, |
 | caps openings | 0 | 366 |  |
 | spacing and ligatures | 7 | 1834 | ng effect of Christianity . . . upon the weak and ailing,” a  →  ng effect of Christianity. . . upon the weak  |
+| list markers escaped | 0 | 1834 |  |
 
 ## Validation: 0 errors, 0 warnings
 
@@ -207,5 +208,5 @@ Source: `0-source/pg19322.txt` (36,691 words). Import: {'pg transcriber notes re
 2. The rest of the dictionary list (324 entries): read to the end?
 3. Sequence proof: level 3 "#" (run 3): 62 numbered, first 1, last 62; expected 62: OK — does it match what the source prints?
 4. Structure battery: 0 findings — each decided?
-5. Rules: hyphen joins 0, curly quotes 1200, ellipses 261, dashes 695, caps openings 0, spacing and ligatures 7 — plausible for 36,691 words?
+5. Rules: hyphen joins 0, curly quotes 1200, ellipses 261, dashes 695, caps openings 0, spacing and ligatures 7, list markers escaped 0 — plausible for 36,691 words?
 6. Would a reader who knows this book notice anything wrong in the first chapter you open at random?
