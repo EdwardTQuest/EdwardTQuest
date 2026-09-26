@@ -1,6 +1,6 @@
 # Edit report — The Will to Believe
 
-Source: `0-source/pg26659.txt` (104,475 words). Import: {'pg transcriber notes removed': 1, 'pg page markers removed': 340, 'pg paragraph markers removed': 0, 'pg emphasis markup removed': 0, 'pg footnote calls': 61, 'pg orphan note paragraphs': 1, 'pg front blocks dropped': 18, 'pg front prose kept': 0, 'pg contents runs removed': 1, 'pg contents and furniture dropped': 30, 'pg index dropped (words)': 1481, 'chapters': 31, 'paragraphs': 521, 'verse_blocks': 29, 'breaks': 1, 'notes': 61, 'split titles merged': 0, 'front divisions': 1, 'levels': {'#plain': 2, '#num': 3}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 1.
+Source: `0-source/pg26659.txt` (104,475 words). Import: {'pg transcriber notes removed': 1, 'pg page markers removed': 340, 'pg paragraph markers removed': 0, 'pg emphasis markup removed': 0, 'pg footnote calls': 61, 'pg orphan note paragraphs': 1, 'pg front blocks dropped': 18, 'pg front prose kept': 0, 'pg contents runs removed': 1, 'pg contents and furniture dropped': 30, 'pg index dropped (words)': 1481, 'chapters': 31, 'list markers escaped': 14, 'paragraphs': 521, 'verse_blocks': 29, 'breaks': 1, 'notes': 61, 'split titles merged': 0, 'front divisions': 1, 'levels': {'#plain': 2, '#num': 3}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 1.
 
 ## House-style rules (count / cap)
 
@@ -12,6 +12,7 @@ Source: `0-source/pg26659.txt` (104,475 words). Import: {'pg transcriber notes r
 | dashes | 419 | 5223 | holly banished. Something--“call it fate, chance, freedom, s  →  holly banished. Something—“call it fate, chan |
 | caps openings | 2 | 1044 | ction and Theism.[^14]  MEMBERS OF THE MINISTERS’ INSTITUTE:  →  ction and Theism.[^14]  Members Of The minist |
 | spacing and ligatures | 189 | 5223 |  | HARVARD UNIVERSITY, |   CAMBRIDGE, MASSACHUSETTS, |     D  →   | HARVARD UNIVERSITY, | CAMBRIDGE, MASSACHUS |
+| list markers escaped | 0 | 5223 |  |
 
 ## Validation: 0 errors, 6 warnings
 
@@ -207,10 +208,9 @@ Source: `0-source/pg26659.txt` (104,475 words). Import: {'pg transcriber notes r
 - unconventionality ×1 —  disbeliever in them might possess. His unconventionality would probably have some grounds to sho
 - sacerdotalism ×1 — the bishops because there is no use for sacerdotalism in his scheme of life. Newman, on the c
 
-## Structure battery: 7 findings
+## Structure battery: 6 findings
 
 - lowercase paragraph start: sings Clough, while Huxley exclaims: “My only consolation lies in the 
-- unbalanced double quotes: “To breathe the air, how delicious! To speak, to walk, to seize someth
 - lowercase paragraph start: says Thomson; adding, “I ponder these thoughts, and they comfort me.” 
 - lowercase paragraph start: for if experts are the hardest people to satisfy, they have at any rat
 - lowercase paragraph start: we may say in that philosophy, the moment we have done our stroke of c
@@ -229,6 +229,6 @@ Source: `0-source/pg26659.txt` (104,475 words). Import: {'pg transcriber notes r
 1. Suspicious list: 8 entries — each fixed in the source or explained?
 2. The rest of the dictionary list (965 entries): read to the end?
 3. Sequence proof: level 3 "#" (run 2): 10 numbered, first 1, last 10; level 3 "#" (run 3): 4 numbered, first 1, last 4; level 3 "#" (run 4): 1 numbered, first 1, last 1; level 3 "#" (run 7): 5 numbered, first 1, last 5 — does it match what the source prints?
-4. Structure battery: 7 findings — each decided?
-5. Rules: hyphen joins 0, curly quotes 1356, ellipses 38, dashes 419, caps openings 2, spacing and ligatures 189 — plausible for 104,475 words?
+4. Structure battery: 6 findings — each decided?
+5. Rules: hyphen joins 0, curly quotes 1356, ellipses 38, dashes 419, caps openings 2, spacing and ligatures 189, list markers escaped 0 — plausible for 104,475 words?
 6. Would a reader who knows this book notice anything wrong in the first chapter you open at random?

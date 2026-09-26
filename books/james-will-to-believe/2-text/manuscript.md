@@ -54,11 +54,11 @@ Let us give the name of *hypothesis* to anything that may be proposed to our bel
 
 Next, let us call the decision between two hypotheses an *option*. Options may be of several kinds. They may be—1, *living* or *dead*; 2, *forced* or *avoidable*; 3, *momentous* or *trivial*; and for our purposes we may call an option a *genuine* option when it is of the forced, living, and momentous kind.
 
-1. A living option is one in which both hypotheses are live ones. If I say to you: “Be a theosophist or be a Mohammedan,” it is probably a dead option, because for you neither hypothesis is likely to be alive. But if I say: “Be an agnostic or be a Christian,” it is otherwise: trained as you are, each hypothesis makes some appeal, however small, to your belief.
+1\. A living option is one in which both hypotheses are live ones. If I say to you: “Be a theosophist or be a Mohammedan,” it is probably a dead option, because for you neither hypothesis is likely to be alive. But if I say: “Be an agnostic or be a Christian,” it is otherwise: trained as you are, each hypothesis makes some appeal, however small, to your belief.
 
-2. Next, if I say to you: “Choose between going out with your umbrella or without it,” I do not offer you a genuine option, for it is not forced. You can easily avoid it by not going out at all. Similarly, if I say, “Either love me or hate me,” “Either call my theory true or call it false,” your option is avoidable. You may remain indifferent to me, neither loving nor hating, and you may decline to offer any judgment as to my theory. But if I say, “Either accept this truth or go without it,” I put on you a forced option, for there is no standing place outside of the alternative. Every dilemma based on a complete logical disjunction, with no possibility of not choosing, is an option of this forced kind.
+2\. Next, if I say to you: “Choose between going out with your umbrella or without it,” I do not offer you a genuine option, for it is not forced. You can easily avoid it by not going out at all. Similarly, if I say, “Either love me or hate me,” “Either call my theory true or call it false,” your option is avoidable. You may remain indifferent to me, neither loving nor hating, and you may decline to offer any judgment as to my theory. But if I say, “Either accept this truth or go without it,” I put on you a forced option, for there is no standing place outside of the alternative. Every dilemma based on a complete logical disjunction, with no possibility of not choosing, is an option of this forced kind.
 
-3. Finally, if I were Dr. Nansen and proposed to you to join my North Pole expedition, your option would be momentous; for this would probably be your only similar opportunity, and your choice now would either exclude you from the North Pole sort of immortality altogether or put at least the chance of it into your hands. He who refuses to embrace a unique opportunity loses the prize as surely as if he tried and failed. *Per contra*, the option is trivial when the opportunity is not unique, when the stake is insignificant, or when the decision is reversible if it later prove unwise. Such trivial options abound in the scientific life. A chemist finds an hypothesis live enough to spend a year in its verification: he believes in it to that extent. But if his experiments prove inconclusive either way, he is quit for his loss of time, no vital harm being done.
+3\. Finally, if I were Dr. Nansen and proposed to you to join my North Pole expedition, your option would be momentous; for this would probably be your only similar opportunity, and your choice now would either exclude you from the North Pole sort of immortality altogether or put at least the chance of it into your hands. He who refuses to embrace a unique opportunity loses the prize as surely as if he tried and failed. *Per contra*, the option is trivial when the opportunity is not unique, when the stake is insignificant, or when the decision is reversible if it later prove unwise. Such trivial options abound in the scientific life. A chemist finds an hypothesis live enough to spend a year in its verification: he believes in it to that extent. But if his experiments prove inconclusive either way, he is quit for his loss of time, no vital harm being done.
 
 It will facilitate our discussion if we keep all these distinctions well in mind.
 
@@ -1172,27 +1172,27 @@ But I have tired the reader out. The worst of criticising Hegel is that the very
 
 To forefend this unwelcome adoption, let me recapitulate in a few propositions the reasons why I am not an hegelian.
 
-1. We cannot eat our cake and have it; that is, the only real contradiction there can be between thoughts is where one is true, the other false. When this happens, one must go forever; nor is there any ‘higher synthesis’ in which both can wholly revive.
+1\. We cannot eat our cake and have it; that is, the only real contradiction there can be between thoughts is where one is true, the other false. When this happens, one must go forever; nor is there any ‘higher synthesis’ in which both can wholly revive.
 
-2. A chasm is not a bridge in any utilizable sense; that is, no mere negation can be the instrument of a positive advance in thought.
+2\. A chasm is not a bridge in any utilizable sense; that is, no mere negation can be the instrument of a positive advance in thought.
 
-3. The continua, time, space, and the ego, are bridges, because they are without chasm.
+3\. The continua, time, space, and the ego, are bridges, because they are without chasm.
 
-4. But they bridge over the chasms between represented qualities only partially.
+4\. But they bridge over the chasms between represented qualities only partially.
 
-5. This partial bridging, however, makes the qualities share in a common world.
+5\. This partial bridging, however, makes the qualities share in a common world.
 
-6. The other characteristics of the qualities are separate facts.
+6\. The other characteristics of the qualities are separate facts.
 
-7. But the same quality appears in many times and spaces. Generic sameness of the quality wherever found becomes thus a further means by which the jolts are reduced.
+7\. But the same quality appears in many times and spaces. Generic sameness of the quality wherever found becomes thus a further means by which the jolts are reduced.
 
-8. What between different qualities jolts remain. Each, as far as the other is concerned, is an absolutely separate and contingent being.
+8\. What between different qualities jolts remain. Each, as far as the other is concerned, is an absolutely separate and contingent being.
 
-9. The moral judgment may lead us to postulate as irreducible the contingencies of the world.
+9\. The moral judgment may lead us to postulate as irreducible the contingencies of the world.
 
-10. Elements mutually contingent are not in conflict so long as they partake of the continua of time, space, etc.,—partaking being the exact opposite of strife. They conflict only when, as mutually exclusive possibilities, they strive to possess themselves of the same parts of time, space, and ego.
+10\. Elements mutually contingent are not in conflict so long as they partake of the continua of time, space, etc.,—partaking being the exact opposite of strife. They conflict only when, as mutually exclusive possibilities, they strive to possess themselves of the same parts of time, space, and ego.
 
-11. That there are such real conflicts, irreducible to any intelligence, and giving rise to an excess of possibility over actuality, is an hypothesis, but a credible one. No philosophy should pretend to be anything more.
+11\. That there are such real conflicts, irreducible to any intelligence, and giving rise to an excess of possibility over actuality, is an hypothesis, but a credible one. No philosophy should pretend to be anything more.
 
 Note.—Since the preceding article was written, some observations on the effects of nitrous-oxide-gas-intoxication which I was prompted to make by reading the pamphlet called The Anaesthetic Revelation and the Gist of Philosophy, by Benjamin Paul Blood, Amsterdam, N. Y., 1874, have made me understand better than ever before both the strength and the weakness of Hegel’s philosophy. I strongly urge others to repeat the experiment, which with pure gas is short and harmless enough. The effects will of course vary with the individual. Just as they vary in the same individual from time to time; but it is probable that in the former case, as in the latter, a generic resemblance will obtain. With me, as with every other person of whom I have heard, the keynote of the experience is the tremendously exciting sense of an intense metaphysical illumination. Truth lies open to the view in depth beneath depth of almost blinding evidence. The mind sees all the logical relations of being with an apparent subtlety and instantaneity to which its normal consciousness offers no parallel; only as sobriety returns, the feeling of insight fades, and one is left staring vacantly at a few disjointed words and phrases, as one stares at a cadaverous-looking snow-peak from which the sunset glow has just fled, or at the black cinder left by an extinguished brand.
 
