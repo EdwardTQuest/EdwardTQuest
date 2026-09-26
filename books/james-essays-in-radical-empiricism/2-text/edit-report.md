@@ -1,6 +1,6 @@
 # Edit report — Essays in Radical Empiricism
 
-Source: `0-source/pg32547.txt` (57,823 words). Import: {'pg transcriber notes removed': 2, 'pg page markers removed': 0, 'pg paragraph markers removed': 0, 'pg emphasis markup removed': 0, 'pg footnotes headings dropped': 13, 'pg footnote calls': 73, 'pg front blocks dropped': 12, 'pg front prose kept': 0, 'pg contents runs removed': 1, 'pg contents and furniture dropped': 14, 'pg index dropped (words)': 831, 'chapters': 54, 'paragraphs': 421, 'signature lines': 1, 'breaks': 5, 'notes': 73, 'split titles merged': 12, 'front divisions': 1, 'levels': {'#plain': 2, '#numtitle2': 2, '#num': 3, '#numtitle': 3}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 0.
+Source: `0-source/pg32547.txt` (57,823 words). Import: {'pg transcriber notes removed': 2, 'pg page markers removed': 0, 'pg paragraph markers removed': 0, 'pg emphasis markup removed': 0, 'pg footnotes headings dropped': 13, 'pg footnote calls': 73, 'pg front blocks dropped': 12, 'pg front prose kept': 0, 'pg contents runs removed': 1, 'pg contents and furniture dropped': 14, 'pg index dropped (words)': 831, 'chapters': 54, 'list markers escaped': 17, 'paragraphs': 421, 'signature lines': 1, 'breaks': 5, 'notes': 73, 'split titles merged': 12, 'front divisions': 1, 'levels': {'#plain': 2, '#numtitle2': 2, '#num': 3, '#numtitle': 3}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 0.
 
 ## House-style rules (count / cap)
 
@@ -12,6 +12,7 @@ Source: `0-source/pg32547.txt` (57,823 words). Import: {'pg transcriber notes re
 | dashes | 122 | 2891 | ich it is easily confused--the view which upholds a pure or   →  ich it is easily confused—the view which upho |
 | caps openings | 2 | 578 | on Perry.]{.smallcaps}  CAMBRIDGE, MASSACHUSETTS. January 8,  →  on Perry.]{.smallcaps}  Cambridge, massachuse |
 | spacing and ligatures | 15 | 2891 | ally day by day, concepts . . . can never fitly supersede pe  →  ally day by day, concepts. . . can never fitl |
+| list markers escaped | 0 | 2891 |  |
 
 ## Validation: 0 errors, 0 warnings
 
@@ -221,5 +222,5 @@ Source: `0-source/pg32547.txt` (57,823 words). Import: {'pg transcriber notes re
 2. The rest of the dictionary list (1636 entries): read to the end?
 3. Sequence proof: level 2 "#": 12 numbered, first 1, last 12; expected 12: OK; level 3 "#" (run 2): 8 numbered, first 1, last 8; level 3 "#" (run 3): 7 numbered, first 1, last 7; level 3 "#" (run 4): 6 numbered, first 1, last 6; level 3 "#" (run 5): 4 numbered, first 1, last 4; level 3 "#" (run 8): 4 numbered, first 1, last 4 — does it match what the source prints?
 4. Structure battery: 6 findings — each decided?
-5. Rules: hyphen joins 0, curly quotes 1997, ellipses 21, dashes 122, caps openings 2, spacing and ligatures 15 — plausible for 57,823 words?
+5. Rules: hyphen joins 0, curly quotes 1997, ellipses 21, dashes 122, caps openings 2, spacing and ligatures 15, list markers escaped 0 — plausible for 57,823 words?
 6. Would a reader who knows this book notice anything wrong in the first chapter you open at random?
