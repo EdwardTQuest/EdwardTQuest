@@ -83,13 +83,13 @@ status:
       pdf: 3-typeset/scholar.pdf
   epub:
     state: done
-    when: 2026-09-26 00:57
+    when: 2026-09-26 01:07
     problems: 0
     size_mb: 1.43
     cover: false
   proof:
     state: done
-    when: 2026-09-26 00:57
+    when: 2026-09-26 01:07
     findings: 205
 forced:
 - command: typeset
@@ -108,3 +108,7 @@ forced:
   gates:
   - text
   when: 2026-09-26 00:57
+- command: epub
+  gates:
+  - text
+  when: 2026-09-26 01:07

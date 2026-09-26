@@ -181,7 +181,7 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 | cover | undecided |  |  |  |
 | final | undecided |  |  |  |
 
-FORCED past gates: [{'command': 'typeset', 'gates': ['text'], 'when': '2026-09-25 22:35'}, {'command': 'epub', 'gates': ['text'], 'when': '2026-09-25 22:37'}, {'command': 'typeset', 'gates': ['text'], 'when': '2026-09-26 00:55'}, {'command': 'epub', 'gates': ['text'], 'when': '2026-09-26 00:57'}]
+FORCED past gates: [{'command': 'typeset', 'gates': ['text'], 'when': '2026-09-25 22:35'}, {'command': 'epub', 'gates': ['text'], 'when': '2026-09-25 22:37'}, {'command': 'typeset', 'gates': ['text'], 'when': '2026-09-26 00:55'}, {'command': 'epub', 'gates': ['text'], 'when': '2026-09-26 00:57'}, {'command': 'epub', 'gates': ['text'], 'when': '2026-09-26 01:07'}]
 
 ## Definition of done
 

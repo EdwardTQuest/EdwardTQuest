@@ -20,3 +20,6 @@ Read first, write last.
 - 2026-09-26 00:16 · **epub** · FORCED past unpassed gate(s) ['text']
 - 2026-09-26 00:16 · **epub** · kant-perpetual-peace.epub built (1.33 MB), 0 problems; see 4-epub/epub-check.md
 - 2026-09-26 00:16 · **proof** · PROOF.md written; findings: structure and sequence 75, page layout 72, dictionary sweep 836, apparatus 1, cross-edition consistency 0, mechanical 0, render and look 3
+- 2026-09-26 01:07 · **epub** · FORCED past unpassed gate(s) ['text']
+- 2026-09-26 01:07 · **epub** · kant-perpetual-peace.epub built (1.33 MB), 0 problems; see 4-epub/epub-check.md
+- 2026-09-26 01:07 · **proof** · PROOF.md written; findings: structure and sequence 75, page layout 72, dictionary sweep 836, apparatus 1, cross-edition consistency 0, mechanical 0, render and look 3

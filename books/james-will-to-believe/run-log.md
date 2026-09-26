@@ -20,3 +20,6 @@ Read first, write last.
 - 2026-09-26 00:57 · **epub** · FORCED past unpassed gate(s) ['text']
 - 2026-09-26 00:57 · **epub** · james-will-to-believe.epub built (1.43 MB), 0 problems; see 4-epub/epub-check.md
 - 2026-09-26 00:57 · **proof** · PROOF.md written; findings: structure and sequence 57, page layout 147, dictionary sweep 1450, apparatus 1, cross-edition consistency 0, mechanical 0, render and look 3
+- 2026-09-26 01:07 · **epub** · FORCED past unpassed gate(s) ['text']
+- 2026-09-26 01:07 · **epub** · james-will-to-believe.epub built (1.43 MB), 0 problems; see 4-epub/epub-check.md
+- 2026-09-26 01:07 · **proof** · PROOF.md written; findings: structure and sequence 57, page layout 147, dictionary sweep 1450, apparatus 1, cross-edition consistency 0, mechanical 0, render and look 3
