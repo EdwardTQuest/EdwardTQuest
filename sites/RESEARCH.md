@@ -33,7 +33,7 @@ came from.
 
 | shop | listed | confirmed | likely | range | held back (doubtful) | dropped |
 |---|---|---|---|---|---|---|
-| Scepter UK | 23 | 17 | 6 | – | 10 | 7 |
+| Scepter UK | 155 | 154 | 1 | – | 9 | 8 |
 | Sinag-Tala | 57 | 56 | 1 | – | 1 | 3 |
 | Scepter Kenya | 22 | 4 | – | 18 | – | – |
 | Scepter Australia | 56 | 37 | 19 | – | 3 | 8 |
@@ -114,3 +114,22 @@ stock lists and prices into `data/`.
   - Amazon (all three stores) answers plain requests with a captcha, so prices need a real browser.
     Chromium here does not trust the proxy certificate, and adding it was not permitted.
   - Veritatis and Freedom Publishing are behind bot checks.
+
+## Update, 26 September 2026 (later): Scepter UK from its own site
+
+scepter.uk is now allowed by the proxy but the live site does not answer (503, connection
+timeouts). The Wayback Machine holds the whole site as of 26 September 2022: the price lists
+'Titles we publish' (136) and 'Other titles we sell' (16), and 126 book pages with author, ISBN
+and synopsis. `data/research/scepter-uk-site.json` is that catalogue, 157 entries. The shop now
+lists 155 titles:
+
+- 152 from the site, each with Scepter UK's own 2022 list price in pounds (147 shown; 5 out of
+  print held back).
+- The three Foundational Letters from the earlier Amazon UK research.
+
+The separate 'Navarre Bible' entry was replaced by the individual volumes. Entries the site left
+unclear carry a note in the research file (e.g. no book page, a price-only line, an ISBN printed
+with a digit missing). The prices are 2022 publisher prices, not Amazon's: check them with the
+owners, or fill Amazon's when it can be read.
+
+Scepter Kenya: the archive holds only about 20 product pages from 2016, too old to use.

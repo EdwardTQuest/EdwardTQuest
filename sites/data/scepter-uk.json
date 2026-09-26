@@ -1,7 +1,8 @@
 {
  "site": "scepter-uk",
- "compiled": "2026-09-25",
- "method": "Web search only (page fetches blocked in the build container); every entry carries its verdict, reason and sources. See sites/RESEARCH.md.",
+ "compiled": "2026-09-26",
+ "assembled_by_hand": true,
+ "method": "Scepter (U.K.) Ltd's own website read from the Wayback Machine (snapshots of 26 September 2022; the live site did not answer): price lists 'Titles we publish' and 'Other titles we sell' plus each book page. See data/research/scepter-uk-site.json. Out-of-print titles are held back. Edit this file directly.",
  "shelves": [
   {
    "slug": "escriva",
@@ -9,11 +10,19 @@
   },
   {
    "slug": "prayer",
-   "name": "Prayer & Scripture"
+   "name": "Prayer"
+  },
+  {
+   "slug": "bibles",
+   "name": "Bibles"
   },
   {
    "slug": "lives",
    "name": "Lives"
+  },
+  {
+   "slug": "family",
+   "name": "Family"
   },
   {
    "slug": "more",
@@ -29,17 +38,16 @@
    "shelf": "escriva",
    "kind": "book",
    "description": "St Josemaría Escrivá's first collection of short points for meditation and prayer, 999 in all.",
-   "isbn": "9781889334424",
-   "pages": 222,
+   "isbn": "",
+   "pages": 0,
    "featured": true,
-   "status": "likely",
-   "evidence": "The brief names The Way as a Scepter UK title, but every listing seen (Amazon UK 1889334421, 222 pp, Scepter Pubs 2002; Mini Edition 0933932545; 1979 edition 0933932014; Kindle B004AM5NVA) is a Scepter Publishers (US) edition. No 978-0-906138 ISBN or scepter.uk page was seen. The WebSearch budget for this session was used up (200/200) before this pass could re-verify, so the verdict rests on the earlier sweep only. The count of 999 is 3,054 (one-volume total) minus 1,000 (Furrow) minus 1,055 (The Forge).",
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: Price is for the pocket edition, the only one listed.",
    "sources": [
-    "https://www.amazon.co.uk/Way-Josemaria-Escriva/dp/1889334421",
-    "https://www.amazon.co.uk/Way-Josemaria-Escriva/dp/0933932545",
-    "https://www.amazon.co.uk/Title-Jos%C3%A9-Mar%C3%ADa-Escriv%C3%A1-Balaguer/dp/0933932014"
+    "http://scepter.uk/html/body_the_way.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
    ],
-   "prices_seen": []
+   "own": true
   },
   {
    "id": "furrow",
@@ -49,17 +57,16 @@
    "shelf": "escriva",
    "kind": "book",
    "description": "St Josemaría Escrivá's collection of 1,000 points for spiritual reflection, following The Way and preceding The Forge.",
-   "isbn": "0906138140",
-   "pages": 380,
+   "isbn": "",
+   "pages": 0,
    "featured": true,
    "status": "confirmed",
-   "evidence": "Amazon UK listing /dp/0906138140 carries Scepter (U.K.)'s own ISBN prefix 0-906138. Its summary gives a Scepter edition of 1 January 1987, 380 pages, with '1000 points for spiritual reflection'. Other Amazon listings (0933932553, 1889334502) are Scepter US editions. This pass could not re-search because the budget was exhausted.",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: Pocket edition £5.50; the list also shows a hardback at £15.00.",
    "sources": [
-    "https://www.amazon.co.uk/Furrow-Jose-Maria-Escriva-Balaguer/dp/0906138140",
-    "https://www.amazon.co.uk/Furrow-Josemaria-Escriva/dp/0933932553",
-    "https://www.amazon.co.uk/Furrow-Saint-Escriv-Ba/dp/1889334502"
+    "http://scepter.uk/html/body_furrow.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
    ],
-   "prices_seen": []
+   "own": true
   },
   {
    "id": "forge",
@@ -69,74 +76,54 @@
    "shelf": "escriva",
    "kind": "book",
    "description": "The third of St Josemaría Escrivá's collections of short points: 1,055 aphorisms, observations and exhortations, first published in 1987.",
-   "isbn": "9781889334523",
+   "isbn": "",
    "pages": 0,
    "featured": true,
-   "status": "likely",
-   "evidence": "The brief names this as a core Escrivá work, but the only editions seen on Amazon UK are Scepter Publishers (US): 9781889334523 and 9780933932562. No 0906138 edition or scepter.uk page was seen. The search budget was exhausted, so there was no re-verification this pass.",
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: Pocket edition £5.50; the list also shows paperback £10.00 and hardback £16.00. The book page carries older prices (pocket £4.50, paperback £7.00, hardback £13.00).",
    "sources": [
-    "https://www.amazon.co.uk/Forge-Jose-Maria-Escriva-Balaguer/dp/1889334529",
-    "https://www.amazon.co.uk/Forge-Josemaria-Escriva/dp/0933932561"
+    "http://scepter.uk/html/body_the_forge.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
    ],
-   "prices_seen": []
-  },
-  {
-   "id": "way-furrow-the-forge",
-   "title": "The Way, Furrow, The Forge",
-   "subtitle": "One Volume",
-   "author": "St Josemaría Escrivá",
-   "shelf": "escriva",
-   "kind": "book",
-   "description": "Single-volume edition bringing together The Way, Furrow and The Forge: 3,054 short points for reflection and mental prayer.",
-   "isbn": "9781889334721",
-   "pages": 0,
-   "featured": false,
-   "status": "doubtful",
-   "evidence": "The only evidence is an Amazon UK listing of a Scepter Publishers (US) edition, ISBN prefix 1-889334. Nothing seen shows scepter.uk listing it or Scepter (U.K.) as its publisher, which the brief requires before including US titles. The search budget was exhausted, so this could not be checked on scepter.uk.",
-   "sources": [
-    "https://www.amazon.co.uk/Way-Furrow-Forge-Single/dp/1889334723"
-   ],
-   "prices_seen": []
+   "own": true
   },
   {
    "id": "christ-is-passing-by",
    "title": "Christ Is Passing By",
-   "subtitle": "Homilies",
+   "subtitle": "",
    "author": "St Josemaría Escrivá",
    "shelf": "escriva",
    "kind": "book",
    "description": "Eighteen homilies by St Josemaría Escrivá for the feasts and seasons of the liturgical year.",
-   "isbn": "9781889334462",
+   "isbn": "",
    "pages": 0,
    "featured": true,
-   "status": "likely",
-   "evidence": "The brief names it as a Scepter UK Escrivá title, and its companion volume Friends of God has a Scepter (U.K.) ISBN. However, the listing seen (9781889334462, 'Scepter Pubs', January 2002) is the US edition. The publisher of the Kindle edition (B004AM5O2I) and of the older ASIN-only listing was not shown. The search budget was exhausted, so there was no re-verification.",
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: Price is for the pocket edition, the only one listed.",
    "sources": [
-    "https://www.amazon.co.uk/Christ-Passing-Maria-Escriva-Balaguer/dp/1889334464",
-    "https://www.amazon.co.uk/Christ-Passing-Josemar%C3%ADa-Escriv%C3%A1-ebook/dp/B004AM5O2I",
-    "https://www.amazon.co.uk/Christ-passing-Mar%C3%ADa-Escriv%C3%A1-Balaguer/dp/B0006W1QBE"
+    "http://scepter.uk/html/body_christ_is_passing_by.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
    ],
-   "prices_seen": []
+   "own": true
   },
   {
    "id": "friends-of-god",
    "title": "Friends of God",
-   "subtitle": "Homilies",
+   "subtitle": "",
    "author": "St Josemaría Escrivá",
    "shelf": "escriva",
    "kind": "book",
    "description": "A collection of homilies by St Josemaría Escrivá to help readers develop a lasting friendship with God.",
-   "isbn": "9780906138021",
+   "isbn": "",
    "pages": 0,
    "featured": true,
    "status": "confirmed",
-   "evidence": "Amazon UK listing 9780906138021 carries the Scepter (U.K.) prefix 978-0-906138, and its summary says 'published by Scepter (U.K.) Ltd in 1981'. A Kindle edition (B004AM5NZQ) and a US edition (0933932839) also exist.",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: Price is for the pocket edition, the only one listed.",
    "sources": [
-    "https://www.amazon.co.uk/Friends-God-Josemaria-Escriva-Balaguer/dp/0906138027",
-    "https://www.amazon.co.uk/Friends-God-Josemar%C3%ADa-Escriv%C3%A1-ebook/product-reviews/B004AM5NZQ",
-    "https://www.amazon.co.uk/Friends-God-Josemaria-Escriva/dp/0933932839"
+    "http://scepter.uk/html/body_friends_of_god.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
    ],
-   "prices_seen": []
+   "own": true
   },
   {
    "id": "way-of-the-cross",
@@ -146,15 +133,168 @@
    "shelf": "escriva",
    "kind": "book",
    "description": "St Josemaría Escrivá's meditations on the fourteen Stations, each followed by short points for prayer.",
-   "isbn": "9780906138076",
+   "isbn": "",
    "pages": 0,
    "featured": true,
    "status": "confirmed",
-   "evidence": "Amazon UK listing 'The Way of the Cross: Escriva de Balaguer, Josemaria: 9780906138076' carries Scepter (U.K.)'s own ISBN prefix 978-0-906138. The description states only the form given by the title. No blurb was seen, and the search budget was exhausted.",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: Price is for the pocket edition, the only one listed.",
    "sources": [
-    "https://www.amazon.co.uk/Way-Cross-Josemaria-Escriva-Balaguer/dp/0906138078"
+    "http://scepter.uk/html/body_the_way_of_the_cross.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
    ],
-   "prices_seen": []
+   "own": true
+  },
+  {
+   "id": "a-man-of-god",
+   "title": "A Man of God",
+   "subtitle": "Testimonies on St Josemaria Escriva",
+   "author": "",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "Testimonies from witnesses of how St Josemaría practised the Christian virtues, above all his love for the Church.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: List line reads \"A Man of God: St Josemaria Testimonies: single volume\". No author, ISBN or page count on the page.",
+   "sources": [
+    "http://scepter.uk/html/body_a_man_of_god.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "changing-the-world",
+   "title": "Changing the World",
+   "subtitle": "The Timeliness of Opus Dei",
+   "author": "Martin Rhonheimer",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "How St Josemaría's stress on personal freedom and secularity anticipated the Second Vatican Council's call to lay engagement in the world.",
+   "isbn": "9781594170683",
+   "pages": 138,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_changing_the_world.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "conversations-with-monsignor-josemaria-escriva",
+   "title": "Conversations with Monsignor Josemaria Escriva",
+   "subtitle": "",
+   "author": "St Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "Interviews in which the founder of Opus Dei explains its nature and spirit and speaks on family, education, society and the Church.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: List line: \"Conversations with Monsignor Escriva\". The page has no author line; author given as St Josemaría because the page describes these as his interviews.",
+   "sources": [
+    "http://scepter.uk/html/body_conversations_with_monsignor_josemaria_escriva.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "cures",
+   "title": "Cures",
+   "subtitle": "Through the Intercession of St Josemaría Escrivá",
+   "author": "Flavio Capucci",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "Eighteen cures obtained through St Josemaría's intercession, including the two that allowed his beatification and canonisation to proceed.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_cures.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "dream-and-your-dreams-will-fall-short",
+   "title": "Dream and Your Dreams Will Fall Short",
+   "subtitle": "",
+   "author": "Pedro Casciaro",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "Personal recollections of St Josemaría spanning forty years, by one of the earliest members of Opus Dei.",
+   "isbn": "9780906138717",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_dream.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "favours-of-st-josemaria-escriva",
+   "title": "Favours of St Josemaría Escrivá",
+   "subtitle": "",
+   "author": "Flavio Capucci",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "First-person accounts of favours received through St Josemaría's intercession, from freedom from addiction to healed families.",
+   "isbn": "1594170045",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_favours.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "god-as-father",
+   "title": "God as Father",
+   "subtitle": "",
+   "author": "Monsignor F. Ocariz",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "A short analysis of the theological richness of St Josemaría's teaching on divine filiation.",
+   "isbn": "0933932758",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_god_as_father.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "holiness-and-the-world",
+   "title": "Holiness and the World",
+   "subtitle": "Studies in the Teaching of Blessed Josemaria Escriva",
+   "author": "M. Belda",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "Studies by Catholic scholars from a symposium on the theology and spirituality of Opus Dei, held after St Josemaría's beatification.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_holiness_and_the_world.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
   },
   {
    "id": "holy-rosary",
@@ -164,16 +304,149 @@
    "shelf": "escriva",
    "kind": "booklet",
    "description": "St Josemaría Escrivá's short meditations on the Rosary, written in one sitting in 1931, with woodcut illustrations.",
-   "isbn": "9781889334929",
+   "isbn": "",
    "pages": 0,
    "featured": false,
-   "status": "likely",
-   "evidence": "The brief names it as a Scepter UK Escrivá title, but the editions seen on Amazon UK are Scepter Publishers (US) editions, 9781889334929 and 1889334448. Their summaries describe a compact book of rosary meditations written after Mass in 1931, with woodcut drawings. No 0906138 edition was seen. The search budget was exhausted, so there was no re-verification.",
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
    "sources": [
-    "https://www.amazon.co.uk/Holy-Rosary-Josemaria-Escriva/dp/1889334928",
-    "https://www.amazon.co.uk/Holy-Rosary-Josemaria-Escriva/dp/1889334448"
+    "http://scepter.uk/html/body_holy_rosary.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
    ],
-   "prices_seen": []
+   "own": true
+  },
+  {
+   "id": "immersed-in-god",
+   "title": "Immersed in God",
+   "subtitle": "",
+   "author": "Cesare Cavalleri",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "Interviews with Bishop Álvaro del Portillo recounting St Josemaría's life of prayer and the early years of Opus Dei.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "held",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: List line: \"IMMERSED IN GOD – Portillo (out of print)\".",
+   "sources": [
+    "http://scepter.uk/html/body_immersed_in_god.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "in-love-with-the-church",
+   "title": "In Love with the Church",
+   "subtitle": "",
+   "author": "St Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "Four homilies by St Josemaría on deepening love for the Church and improving one's service to her.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: Paperback (centennial) £8.00; the list also shows a hardback (centennial) at £12.00.",
+   "sources": [
+    "http://scepter.uk/html/body_in_love_with_the_church.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "on-retreat-with-st-josemaria-escriva",
+   "title": "On Retreat with St Josemaria Escriva",
+   "subtitle": "",
+   "author": "John O'Dogherty",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "An anthology of St Josemaría's texts arranged for meditation on retreat, including notes from retreats he gave in the 1940s.",
+   "isbn": "9780906138748",
+   "pages": 140,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_on_retreat_with_st_josemaria_escriva.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "opus-dei-in-the-church",
+   "title": "Opus Dei in the Church",
+   "subtitle": "",
+   "author": "Pedro Rodriguez, Fernando Ocariz, Jose Luis Illanes",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "Three theologians examine Opus Dei as a personal prelature and its place in the mission of the whole Church.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_opus_dei_in_the_church.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "passionately-loving-the-world",
+   "title": "Passionately Loving the World",
+   "subtitle": "",
+   "author": "St Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "booklet",
+   "description": "A homily showing that holiness is found in work, family, friendship and leisure, by putting God into each moment.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: Kind \"booklet\" is inferred from the £2.50 price and single-homily content; no page count shown.",
+   "sources": [
+    "http://scepter.uk/html/body_passionately_loving_the_world.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "sanctification-of-work",
+   "title": "The Sanctification of Work",
+   "subtitle": "",
+   "author": "Jose Luis Illanes",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "A theological study of finding God in ordinary work: work and holiness, evaluating work, and Opus Dei and lay spirituality.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_sanctification_of_work.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "centennial-edition",
+   "title": "Centennial Edition of St Josemaría Escrivá's Complete Published Works",
+   "subtitle": "",
+   "author": "St Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "set",
+   "description": "St Josemaría's complete published works, from The Way, Furrow and The Forge to his homilies, devotional guides and interviews.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: List line: \"ST JOSEMARIA (CENTENNIAL WORKS – 9 volume Set): paperback edition\".",
+   "sources": [
+    "http://scepter.uk/html/body_st_josemaria_centenial_set.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
   },
   {
    "id": "way-critical-historical-edition",
@@ -187,11 +460,142 @@
    "pages": 1173,
    "featured": false,
    "status": "confirmed",
-   "evidence": "scepter.uk has its own page (body_the_way_critical_edition.html) for 'The Way: Critical-Historical Edition' by Pedro Rodriguez. The page gives: published by Scepter on 9 January 2010, ISBN 9780906138731 (Scepter UK prefix), 1173 pages, hardback, 5.50 x 8.50 in.",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: The page names Pedro Rodriguez as author (the shop lists St Josemaría Escrivá); hardback.",
    "sources": [
-    "http://scepter.uk/html/body_the_way_critical_edition.html"
+    "http://scepter.uk/html/body_the_way_critical_edition.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
    ],
-   "prices_seen": []
+   "own": true
+  },
+  {
+   "id": "way-furrow-the-forge",
+   "title": "The Way, Furrow, The Forge",
+   "subtitle": "In One Volume",
+   "author": "St Josemaría Escrivá",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "Single-volume edition bringing together The Way, Furrow and The Forge: 3,054 short points for reflection and mental prayer.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: Scepter paperback £15.00; the list also shows a Little Hills Press edition at £16.00, and the page mentions a deluxe hardback in a slip-case (no price).",
+   "sources": [
+    "http://scepter.uk/html/body_the_way-_furrow-_the_forge.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "uncommon-faith",
+   "title": "Uncommon Faith",
+   "subtitle": "The Early Years of Opus Dei (1928-1943)",
+   "author": "John F. Coverdale",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "Opus Dei's early years and St Josemaría's efforts to spread lay holiness amid the Spanish Civil War, from Spanish sources.",
+   "isbn": "188933474X",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_uncommon_faith.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "journey-to-the-depths-of-hope",
+   "title": "Journey to the Depths of Hope",
+   "subtitle": "",
+   "author": "Jose Luis Olaizola",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "A writer tracks Opus Dei's work in Latin America and meets people who received favours through St Josemaría.",
+   "isbn": "9715541186",
+   "pages": 233,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Other titles we sell'.",
+   "sources": [
+    "http://scepter.uk/html/body_journey_to_the_depths_of_hope.html",
+    "http://scepter.uk/html/body_other_titles.html"
+   ],
+   "own": false
+  },
+  {
+   "id": "what-is-opus-dei",
+   "title": "What Is Opus Dei?",
+   "subtitle": "",
+   "author": "Dominique le Tourneau",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "A systematic introduction to the history, spirituality, legal structure and membership of Opus Dei, answering its critics.",
+   "isbn": "0852441363",
+   "pages": 134,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Other titles we sell'. Note: List spells the author \"Dominic Le Tourneau\"; page spelling used.",
+   "sources": [
+    "http://scepter.uk/html/body_what_is_opus_dei.html",
+    "http://scepter.uk/html/body_other_titles.html"
+   ],
+   "own": false
+  },
+  {
+   "id": "virtues-in-st-josemaria-escriva",
+   "title": "Virtues in St Josemaria Escriva",
+   "subtitle": "",
+   "author": "",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "The first volume of the St Josemaría Escrivá Lexicon, with entries on the virtues as he taught them.",
+   "isbn": "9781910644201",
+   "pages": 238,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), not on either price list. Note: Shown only on the New Titles page, priced \"£10.00 [+ £2.00 p&p]\"; on neither price list, so own is null. No author shown.",
+   "sources": [
+    "http://scepter.uk/html/body_new_titles.html"
+   ],
+   "own": null
+  },
+  {
+   "id": "canonical-path-of-opus-dei",
+   "title": "Canonical Path of Opus Dei",
+   "subtitle": "",
+   "author": "A. de Fuenmayor, V. Gomez-Iglesias, J. Illanes",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "How St Josemaría sought a legal framework for Opus Dei, from its early years to its creation as a personal prelature.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), not on either price list. Note: Book page only (linked from the works index); on no price list.",
+   "sources": [
+    "http://scepter.uk/html/body_canonical_path_of_opus_dei.html"
+   ],
+   "own": null
+  },
+  {
+   "id": "opus-dei-leadership-and-vision",
+   "title": "Opus Dei",
+   "subtitle": "Leadership and Vision in Today's Catholic Church",
+   "author": "Vittorio Messori",
+   "shelf": "escriva",
+   "kind": "book",
+   "description": "A journalist's account of a year among Opus Dei members, explaining how the personal prelature actually functions.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), not on either price list. Note: Book page only (linked from the works index); on no price list. Page also names Regnery (the publisher).",
+   "sources": [
+    "http://scepter.uk/html/body_opus_dei-_leadership_and_vision.html"
+   ],
+   "own": null
   },
   {
    "id": "foundational-letters-introduction",
@@ -250,41 +654,493 @@
   {
    "id": "in-conversation-with-god",
    "title": "In Conversation with God",
-   "subtitle": "",
-   "author": "Francis Fernández",
+   "subtitle": "Complete Set in Seven Volumes",
+   "author": "Francis Fernandez",
    "shelf": "prayer",
    "kind": "set",
    "description": "Francis Fernández's series of daily meditations, published as a complete set in seven volumes.",
-   "isbn": "0906138191",
+   "isbn": "",
    "pages": 0,
    "featured": true,
    "status": "confirmed",
-   "evidence": "The ISBN 0906138191 uses Scepter UK's own 0-906138 prefix. The scepter.uk home page names the In Conversation with God series among its best-selling titles (seen in 3 earlier sweeps). It could not be re-checked this session because the WebSearch budget was used up. No price was seen.",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), not on either price list. Note: The set has its own page but no line on any price list, so no set price is shown; each volume is listed separately. Subtitle supplied from the page's seven volume links.",
    "sources": [
-    "http://www.scepter.uk/body_index.html",
-    "https://www.amazon.co.uk/Conversation-God-Complete-Meditations-Each/dp/0906138191",
-    "https://www.amazon.co.uk/Conversation-God-Meditations-Fernandez-Paperback/dp/B0169MAATI"
+    "http://scepter.uk/html/body_icwg_set.html"
    ],
-   "prices_seen": []
+   "own": null
   },
   {
-   "id": "jesus-as-friend",
-   "title": "Jesus as Friend",
+   "id": "a-primer-for-catechism-of-the-catholic-church",
+   "title": "A Primer for Catechism of the Catholic Church",
    "subtitle": "",
-   "author": "Salvatore Canals",
+   "author": "",
    "shelf": "prayer",
    "kind": "book",
-   "description": "Short meditations by Salvatore Canals, drawn from St Josemaría's teaching, on vocation, interior life, hope and humility.",
-   "isbn": "9781889334035",
+   "description": "",
+   "isbn": "",
    "pages": 0,
    "featured": false,
    "status": "confirmed",
-   "evidence": "scepter.uk has its own page for the title (html/body_jesus_as_friend.html), so Scepter UK sells it even though the ISBN has a US Scepter prefix (1-889334). This was found in 2 earlier sweeps and could not be re-checked this session because the WebSearch budget was used up. No price was seen.",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: On the price list only; no book page, so no author, ISBN or description.",
    "sources": [
-    "http://www.scepter.uk/html/body_jesus_as_friend.html",
-    "https://www.amazon.co.uk/Jesus-as-Friend-salvatore-canals/dp/1889334030"
+    "http://scepter.uk/html/body_scepter_titles.html"
    ],
-   "prices_seen": []
+   "own": true
+  },
+  {
+   "id": "a-primer-on-divine-revelation",
+   "title": "A Primer on Divine Revelation",
+   "subtitle": "",
+   "author": "Dwight P. Campbell",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "In one hundred questions and answers, a systematic study of each article of the dogmatic constitution Dei Verbum.",
+   "isbn": "1890177067",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_a_primer_on_divine_revelation.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "abba-father",
+   "title": "Abba Father",
+   "subtitle": "Deepening Our Relationship with God the Father",
+   "author": "Bonaventure Perquin",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Spiritual conferences on God's Fatherhood: his power, merciful love, wisdom, providence and faithfulness, and his gifts in the sacraments.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_abba_father.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "about-being-a-priest",
+   "title": "About Being a Priest",
+   "subtitle": "",
+   "author": "Federico Suarez",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "The daily life and duties of a priest, from preaching and study to mortification, poverty and friendship with other priests.",
+   "isbn": "093393288X",
+   "pages": 0,
+   "featured": false,
+   "status": "held",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: Book page says \"(currently out of stock)\"; the price list shows no such note.",
+   "sources": [
+    "http://scepter.uk/html/body_about_being_a_priest.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "about-the-holy-spirit",
+   "title": "About the Holy Spirit",
+   "subtitle": "",
+   "author": "Francisca Javiera del Valle",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "A ten-day devotion to the Holy Spirit, first published in Spanish in 1932, by a poor dressmaker of little schooling.",
+   "isbn": "1889334111",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_about_the_holy_spirit.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "call-him-father",
+   "title": "Call Him Father",
+   "subtitle": "",
+   "author": "Edward G. Maristany",
+   "shelf": "prayer",
+   "kind": "booklet",
+   "description": "A practical guide to knowing God as Father through prayer and service, and to passing that love on to children.",
+   "isbn": "",
+   "pages": 64,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_call_him_father.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "children-of-god",
+   "title": "Children of God",
+   "subtitle": "",
+   "author": "Francis Fernandez-Carvajal & Peter Beteta",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "A simple and systematic way to understand divine filiation, the life of spiritual childhood, and live it every day.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: The page prints \"ISBN 1-88934-05-7\", which is one digit short of an ISBN-10; left empty rather than guessed.",
+   "sources": [
+    "http://scepter.uk/html/body_children_of_god.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "difficulties-in-mental-prayer",
+   "title": "Difficulties in Mental Prayer",
+   "subtitle": "",
+   "author": "Eugene Boylan",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Help with the obstacles most people meet when they begin to pray regularly, from the standpoint of the ordinary Catholic.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_difficulties_in_mental_prayer.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "does-suffering-make-sense",
+   "title": "Does Suffering Make Sense?",
+   "subtitle": "",
+   "author": "Russell Shaw",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Simple Christian truths for facing suffering, examining its role in Christ's life and its importance for union with him.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_does_suffering_make_sense.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "frequent-confession",
+   "title": "Frequent Confession",
+   "subtitle": "",
+   "author": "Benedict Baur",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "The purpose and elements of a good confession, and how frequent confession helps overcome sin and grow in grace.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_frequent_confession.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "friendship-of-christ",
+   "title": "The Friendship of Christ",
+   "subtitle": "Exploring the Humanity of Jesus Christ",
+   "author": "Robert Hugh Benson",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Christ as the one ideal friend, seen at work in souls, in the Church, in the Eucharist and in his earthly ministry.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_friendship_of_christ.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "from-resentment-to-forgiveness",
+   "title": "From Resentment to Forgiveness",
+   "subtitle": "",
+   "author": "Francisco Ugarte",
+   "shelf": "prayer",
+   "kind": "booklet",
+   "description": "Resentment as perhaps the greatest obstacle to happiness, studied closely, with practical ways to resolve it.",
+   "isbn": "",
+   "pages": 64,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_from_resentment_to_forgiveness.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "guidebook-for-confession",
+   "title": "Guidebook for Confession",
+   "subtitle": "",
+   "author": "Monsignor Donal O. Cuilleanian (editor)",
+   "shelf": "prayer",
+   "kind": "booklet",
+   "description": "A handbook for making a good confession, with basic prayers, advice on preparation and a detailed examination of conscience.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_guidebook_for_confession.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "guidebook-for-confession-for-children",
+   "title": "Guidebook for Confession for Children",
+   "subtitle": "",
+   "author": "Beatriz B. Brillantes",
+   "shelf": "prayer",
+   "kind": "booklet",
+   "description": "An illustrated introduction to confession for children aged nine to thirteen, with an examination of conscience written for them.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_guidebook_for_confession_for_children.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "guidebook-for-confessors",
+   "title": "Guidebook for Confessors",
+   "subtitle": "",
+   "author": "",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: On the price list only; no book page, so no author, ISBN or description.",
+   "sources": [
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "how-to-profit-from-your-faults",
+   "title": "How to Profit from Your Faults",
+   "subtitle": "",
+   "author": "Joseph Tissot",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Guidance, drawing on St Francis de Sales, for gaining an accurate view of one's failings and turning them to advantage.",
+   "isbn": "",
+   "pages": 140,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_how_to_profit.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "in-conversation-with-god-volume-1",
+   "title": "In Conversation with God",
+   "subtitle": "Volume 1: Advent and Christmas",
+   "author": "Francis Fernandez",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Daily meditations for Advent and Christmas, drawn from the Mass readings and the writings of the saints.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_icwg_1.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "in-conversation-with-god-volume-2",
+   "title": "In Conversation with God",
+   "subtitle": "Volume 2: Lent and Eastertide",
+   "author": "Francis Fernandez",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Daily meditations for Lent and Eastertide, drawn from the Mass readings and the writings of the saints.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_icwg_2.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "in-conversation-with-god-volume-3",
+   "title": "In Conversation with God",
+   "subtitle": "Volume 3: Ordinary Time: Weeks 1-12",
+   "author": "Francis Fernandez",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Daily meditations for the first twelve weeks of Ordinary Time, drawn from the Mass readings and the writings of the saints.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_icwg_3.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "in-conversation-with-god-volume-4",
+   "title": "In Conversation with God",
+   "subtitle": "Volume 4: Ordinary Time: Weeks 13-23",
+   "author": "Francis Fernandez",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Daily meditations for weeks 13 to 23 of Ordinary Time, drawn from the Mass readings and the writings of the saints.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_icwg_4.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "in-conversation-with-god-volume-5",
+   "title": "In Conversation with God",
+   "subtitle": "Volume 5: Ordinary Time: Weeks 24-34",
+   "author": "Francis Fernandez",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Daily meditations for weeks 24 to 34 of Ordinary Time, drawn from the Mass readings and the writings of the saints.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_icwg_5.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "in-conversation-with-god-volume-6",
+   "title": "In Conversation with God",
+   "subtitle": "Volume 6: Feasts: January - June",
+   "author": "Francis Fernandez",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Daily meditations for the feasts from January to June, drawn from the Mass readings and the writings of the saints.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_icwg_6.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "in-conversation-with-god-volume-7",
+   "title": "In Conversation with God",
+   "subtitle": "Volume 7: Feasts: July - December",
+   "author": "Francis Fernandez",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Daily meditations for the feasts from July to December, drawn from the Mass readings and the writings of the saints.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_icwg_7.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "in-silence-with-god",
+   "title": "In Silence with God",
+   "subtitle": "",
+   "author": "Benedict Baur",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Brief meditations on the whole Christian life, from purity of heart and the virtues to prayer, the Mass and brotherly love.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_in_silence_with_god.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "in-the-school-of-the-holy-spirit",
+   "title": "In the School of the Holy Spirit",
+   "subtitle": "",
+   "author": "Jacques Philippe",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "How to grow more attentive to the movements of the Holy Spirit in daily life, with simple and concrete means.",
+   "isbn": "",
+   "pages": 144,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_in_the_school_of_the_holy_spirit.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
   },
   {
    "id": "interior-freedom",
@@ -294,17 +1150,506 @@
    "shelf": "prayer",
    "kind": "book",
    "description": "Jacques Philippe on the space of inner freedom no one can take away, and growth in faith, hope and love.",
-   "isbn": "9781594170522",
+   "isbn": "",
+   "pages": 96,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_interior_freedom.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "jesus-as-friend",
+   "title": "Jesus as Friend",
+   "subtitle": "",
+   "author": "Salvatore Canals",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Short meditations by Salvatore Canals, drawn from St Josemaría's teaching, on vocation, interior life, hope and humility.",
+   "isbn": "",
    "pages": 0,
    "featured": false,
    "status": "confirmed",
-   "evidence": "scepter.uk has its own page for the title (html/body_interior_freedom.html). The edition is Scepter Publishers (US), ISBN prefix 1594170, and Amazon UK also lists a Kindle edition. This was found in 2 earlier sweeps and could not be re-checked this session because the WebSearch budget was used up. No price was seen.",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
    "sources": [
-    "http://scepter.uk/html/body_interior_freedom.html",
-    "https://www.amazon.co.uk/Interior-Freedom-Jacques-Philippe/dp/1594170525",
-    "https://www.amazon.co.uk/Interior-Freedom-Jacques-Philippe-ebook/dp/B003V8BGI8"
+    "http://scepter.uk/html/body_jesus_as_friend.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
    ],
-   "prices_seen": []
+   "own": true
+  },
+  {
+   "id": "loving-the-mass",
+   "title": "Loving the Mass",
+   "subtitle": "",
+   "author": "",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: On the price list only; no book page. Priced like the booklets (£3.25) but kept as kind \"book\" since no page count is shown.",
+   "sources": [
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "lukewarmness",
+   "title": "Lukewarmness",
+   "subtitle": "The Devil in Disguise",
+   "author": "",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: List line has no price: \"LUKEWARMNESS THE DEVIL IN DISGUISE (new edition: OVERCOMING LUKEWARMNESS)\". No book page.",
+   "sources": [
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "my-angel-will-go-before-you",
+   "title": "My Angel Will Go Before You",
+   "subtitle": "",
+   "author": "Georges Huber",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Practical answers, for the ordinary reader, to the questions people ask about angels and whether they exist.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_my_angel_will_go_before_you.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "newman-on-the-bible",
+   "title": "Newman on the Bible",
+   "subtitle": "Scriptural Commentaries",
+   "author": "",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "held",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: On the price list only, marked \"(out of print)\"; no book page, so no author line (presumably Newman, not stated).",
+   "sources": [
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "divine-pity",
+   "title": "The Divine Pity",
+   "subtitle": "A Study in the Social Implications of the Beatitudes",
+   "author": "Rev Gerald Vann, OP",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "The Beatitudes as a guide to serving God through service of the souls around us, not an escape from the world.",
+   "isbn": "",
+   "pages": 236,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_the_divine_pity.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "faith-explained",
+   "title": "The Faith Explained",
+   "subtitle": "",
+   "author": "Leo Trese",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "A handbook explaining the truths of the Catholic Faith, from creation and the Incarnation to the sacraments and prayer.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_the_faith_explained.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "holy-spirit",
+   "title": "The Holy Spirit",
+   "subtitle": "",
+   "author": "Edward Leen",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "The Holy Spirit's role in creation, his mission, divine filiation and the principles of supernatural growth.",
+   "isbn": "",
+   "pages": 218,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_the_holy_spirit.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "meaning-of-grace",
+   "title": "The Meaning of Grace",
+   "subtitle": "",
+   "author": "Charles Journet",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Philosophy, revelation and history brought together to explain grace fully and correct common mistakes about it.",
+   "isbn": "0933932944",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_the_meaning_of_grace.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "meaning-of-vocation",
+   "title": "The Meaning of Vocation",
+   "subtitle": "",
+   "author": "Pope John Paul II",
+   "shelf": "prayer",
+   "kind": "booklet",
+   "description": "A compendium of Pope John Paul II's remarks on God's call and how to hear and answer it.",
+   "isbn": "0933932995",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: Kind inferred: the page calls it a \"compact compendium\" and it is priced with the booklets; no page count shown.",
+   "sources": [
+    "http://scepter.uk/html/body_the_meaning_of_vocation.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "narrow-gate",
+   "title": "The Narrow Gate",
+   "subtitle": "",
+   "author": "Federico Suarez",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Meditations for young people on seeking Jesus Christ and committing themselves generously against the current of an easy life.",
+   "isbn": "159417007X",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_the_narrow_gate.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "prodigal-son",
+   "title": "The Prodigal Son",
+   "subtitle": "",
+   "author": "Georges Chevrot",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Reflections on the parable of the Prodigal Son and its call to repent, be converted and begin again.",
+   "isbn": "0906138485",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_the_prodigal_son.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "risen-christ",
+   "title": "The Risen Christ",
+   "subtitle": "",
+   "author": "Caryll Houselander",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Meditations on the forty days after the Resurrection and the joy that marks every Christian life.",
+   "isbn": "",
+   "pages": 92,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_the_risen_christ.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "sacred-passion",
+   "title": "The Sacred Passion",
+   "subtitle": "",
+   "author": "Luis de la Palma",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Meditations on the Passion from Holy Thursday to Christ's burial, keeping closely to the Gospel accounts.",
+   "isbn": "1594170061",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_the_sacred_passion.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "time-for-god",
+   "title": "Time for God",
+   "subtitle": "A Guide to Mental Prayer",
+   "author": "Jacques Philippe",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "The fundamental principles of mental prayer and common mistakes about it, from a priest with long experience as a spiritual guide.",
+   "isbn": "9781594170669",
+   "pages": 108,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_time_for_god.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "understanding-the-mass",
+   "title": "Understanding the Mass",
+   "subtitle": "",
+   "author": "Charles Belmonte",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "A clear explanation of each part of the Mass, its roots in Scripture and Church history, and the liturgical vessels and vestments.",
+   "isbn": "0933932898",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_understanding_the_mass.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "when-the-son-of-man-comes",
+   "title": "When the Son of Man Comes",
+   "subtitle": "",
+   "author": "Federico Suarez",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Reflections on challenging Gospel passages about faith, obedience, repentance, poverty, penance and devotion to Mary.",
+   "isbn": "1594170193",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_when_the_son_of_man_comes.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "why-the-cross",
+   "title": "Why the Cross?",
+   "subtitle": "",
+   "author": "Edward Leen",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Christ's death on the Cross as the key to happiness, and why joy comes from embracing suffering rather than avoiding it.",
+   "isbn": "1889334286",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_why_the_cross.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "why-we-need-confession",
+   "title": "Why We Need Confession",
+   "subtitle": "",
+   "author": "Russell Shaw",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Why only sacramental confession restores harmony of soul and the grace lost by sin.",
+   "isbn": "9781594170621",
+   "pages": 128,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_why_we_need_confession.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "christ-on-earth",
+   "title": "Christ on Earth",
+   "subtitle": "",
+   "author": "Joseph Pich",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "How Christ's life on earth shows how life is to be lived, and how to discover the invisible God in visible things.",
+   "isbn": "9715540848",
+   "pages": 228,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Other titles we sell'.",
+   "sources": [
+    "http://scepter.uk/html/body_christ_on_earth.html",
+    "http://scepter.uk/html/body_other_titles.html"
+   ],
+   "own": false
+  },
+  {
+   "id": "didache-series",
+   "title": "The Didache Series",
+   "subtitle": "Complete Collection",
+   "author": "",
+   "shelf": "prayer",
+   "kind": "set",
+   "description": "A four-part course on Catholic doctrine, Scripture, Church history and moral life, grounded in the Catechism of the Catholic Church.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Other titles we sell'. Note: List line: \"DIDACHE CATECHETICAL SERIES - 4 VOLUMES\". The page links separate pages for Parts I–IV (not in the snapshot set); only the set is priced. No author shown.",
+   "sources": [
+    "http://scepter.uk/html/body_didache_series.html",
+    "http://scepter.uk/html/body_other_titles.html"
+   ],
+   "own": false
+  },
+  {
+   "id": "god-believes-in-man",
+   "title": "God Believes in Man",
+   "subtitle": "Being a Christian Yesterday, Today and Forever",
+   "author": "Justo Mullor",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Archbishop Justo Mullor on the spiritual meaning of human freedom and authentic religious experience in a secularised world.",
+   "isbn": "9711172631",
+   "pages": 323,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Other titles we sell'. Note: Paperback £8.50; the page also shows a hardback at £12.00.",
+   "sources": [
+    "http://scepter.uk/html/body_god_believes_in_man.html",
+    "http://scepter.uk/html/body_other_titles.html"
+   ],
+   "own": false
+  },
+  {
+   "id": "soul-of-the-apostolate",
+   "title": "Soul of the Apostolate",
+   "subtitle": "",
+   "author": "Dom J. B. Chautard",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "A classic showing that prayer, and above all the liturgy, is the core of all apostolic activity.",
+   "isbn": "8171097073",
+   "pages": 244,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Other titles we sell'.",
+   "sources": [
+    "http://scepter.uk/html/body_soul_of_the_apostolate.html",
+    "http://scepter.uk/html/body_other_titles.html"
+   ],
+   "own": false
+  },
+  {
+   "id": "talks-on-the-song-of-songs",
+   "title": "Talks on the Song of Songs",
+   "subtitle": "",
+   "author": "Bernard of Clairvaux",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Excerpts from St Bernard's 86 sermons on the Song of Songs, revealing his spirituality and theology of love.",
+   "isbn": "8171096832",
+   "pages": 166,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Other titles we sell'.",
+   "sources": [
+    "http://scepter.uk/html/body_talks_on_the_song_of_songs.html",
+    "http://scepter.uk/html/body_other_titles.html"
+   ],
+   "own": false
+  },
+  {
+   "id": "faith-applied",
+   "title": "The Faith Applied",
+   "subtitle": "",
+   "author": "Jean Daujat",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Chapters on the aim of life, prayer and unity of life, for living the faith fully amid work and family.",
+   "isbn": "9715540236",
+   "pages": 178,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Other titles we sell'.",
+   "sources": [
+    "http://scepter.uk/html/body_the_faith_applied.html",
+    "http://scepter.uk/html/body_other_titles.html"
+   ],
+   "own": false
+  },
+  {
+   "id": "be-who-you-are",
+   "title": "Be Who You Are",
+   "subtitle": "Developing Your Christian Personality",
+   "author": "",
+   "shelf": "prayer",
+   "kind": "book",
+   "description": "Guidance towards spiritual maturity by improving one's personality, self-esteem and virtue without imitating others' models.",
+   "isbn": "9781594173226",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), not on either price list. Note: Shown only on the New Titles page, with no price or author (\"the authors\").",
+   "sources": [
+    "http://scepter.uk/html/body_new_titles.html"
+   ],
+   "own": null
   },
   {
    "id": "interior-freedom-study-guide",
@@ -325,45 +1670,654 @@
    "prices_seen": []
   },
   {
-   "id": "navarre-bible",
-   "title": "The Navarre Bible",
-   "subtitle": "",
+   "id": "holy-bible-rsvce",
+   "title": "Holy Bible",
+   "subtitle": "Revised Standard Version Catholic Edition",
    "author": "",
-   "shelf": "prayer",
-   "kind": "set",
-   "description": "The Scripture text with commentary by the Faculty of Theology of the University of Navarra, issued in several volumes.",
+   "shelf": "bibles",
+   "kind": "bible",
+   "description": "The Revised Standard Version Catholic Edition of the Bible, a modern English translation approved for use by Catholics.",
    "isbn": "",
    "pages": 0,
-   "featured": true,
-   "status": "likely",
-   "evidence": "The scepter.uk home page names 'the Navarre Bible series' among its best-selling titles. But the site has no dedicated page for it, and the wording may be copied from the US Scepter site. Re-verification was not possible because the WebSearch budget was exhausted. No price seen.",
-   "sources": [
-    "http://www.scepter.uk/body_index.html"
-   ],
-   "prices_seen": []
-  },
-  {
-   "id": "christ-on-earth",
-   "title": "Christ on Earth",
-   "subtitle": "",
-   "author": "Joseph Pich",
-   "shelf": "prayer",
-   "kind": "book",
-   "description": "",
-   "isbn": "9715540848",
-   "pages": 228,
    "featured": false,
    "status": "confirmed",
-   "evidence": "Scepter UK's own site has a page for it (body_christ_on_earth.html): Joseph Pich, paperback, 228 pages, ISBN 971 554 084 8. That ISBN has a Sinag-Tala (Philippines) prefix, so Scepter UK sells it but did not publish it. No content blurb was seen, so the description covers form only. No price seen.",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: Page shows burgundy and black leather bindings.",
    "sources": [
-    "http://scepter.uk/html/body_christ_on_earth.html"
+    "http://scepter.uk/html/body_holy_bible-_rsvce.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
    ],
-   "prices_seen": []
+   "own": true
+  },
+  {
+   "id": "holy-bible-rsvce-compact",
+   "title": "Holy Bible",
+   "subtitle": "RSVCE Compact Edition",
+   "author": "",
+   "shelf": "bibles",
+   "kind": "bible",
+   "description": "The RSVCE text used in official Church pronouncements, with Dei Verbum and a section of Catholic prayers and devotions.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: List line: \"HOLY BIBLE – RSVCE Comp BURGUNDY, TIMBER\"; the page also pictures an Acorn colour.",
+   "sources": [
+    "http://scepter.uk/html/body_holy_bible-_rsvce_compact.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "navarre-bible-acts-of-the-apostles",
+   "title": "The Navarre Bible",
+   "subtitle": "Acts of the Apostles",
+   "author": "Members of the Faculty of Theology of the University of Navarre",
+   "shelf": "bibles",
+   "kind": "bible",
+   "description": "The Acts of the Apostles in the RSV Catholic Edition and New Vulgate, with the Navarre commentary.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: One volume of the twelve-volume New Testament Standard Edition; the page describes the series, not this volume.",
+   "sources": [
+    "http://scepter.uk/html/body_navarre_bible-_-_new_testament.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "navarre-bible-captivity-epistles",
+   "title": "The Navarre Bible",
+   "subtitle": "Captivity Epistles",
+   "author": "Members of the Faculty of Theology of the University of Navarre",
+   "shelf": "bibles",
+   "kind": "bible",
+   "description": "The Captivity Epistles in the RSV Catholic Edition and New Vulgate, with the Navarre commentary.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: One volume of the twelve-volume New Testament Standard Edition; the page describes the series, not this volume.",
+   "sources": [
+    "http://scepter.uk/html/body_navarre_bible-_-_new_testament.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "navarre-bible-catholic-epistles",
+   "title": "The Navarre Bible",
+   "subtitle": "Catholic Epistles",
+   "author": "Members of the Faculty of Theology of the University of Navarre",
+   "shelf": "bibles",
+   "kind": "bible",
+   "description": "The Catholic Epistles in the RSV Catholic Edition and New Vulgate, with the Navarre commentary.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: One volume of the twelve-volume New Testament Standard Edition; the page describes the series, not this volume.",
+   "sources": [
+    "http://scepter.uk/html/body_navarre_bible-_-_new_testament.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "navarre-bible-corinthians",
+   "title": "The Navarre Bible",
+   "subtitle": "Corinthians",
+   "author": "Members of the Faculty of Theology of the University of Navarre",
+   "shelf": "bibles",
+   "kind": "bible",
+   "description": "St Paul's letters to the Corinthians in the RSV Catholic Edition and New Vulgate, with the Navarre commentary.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: One volume of the twelve-volume New Testament Standard Edition; the page describes the series, not this volume.",
+   "sources": [
+    "http://scepter.uk/html/body_navarre_bible-_-_new_testament.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "navarre-bible-hebrews",
+   "title": "The Navarre Bible",
+   "subtitle": "Hebrews",
+   "author": "Members of the Faculty of Theology of the University of Navarre",
+   "shelf": "bibles",
+   "kind": "bible",
+   "description": "The Letter to the Hebrews in the RSV Catholic Edition and New Vulgate, with the Navarre commentary.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: One volume of the twelve-volume New Testament Standard Edition; the page describes the series, not this volume.",
+   "sources": [
+    "http://scepter.uk/html/body_navarre_bible-_-_new_testament.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "navarre-bible-romans-and-galatians",
+   "title": "The Navarre Bible",
+   "subtitle": "Romans & Galatians",
+   "author": "Members of the Faculty of Theology of the University of Navarre",
+   "shelf": "bibles",
+   "kind": "bible",
+   "description": "St Paul's letters to the Romans and Galatians in the RSV Catholic Edition and New Vulgate, with the Navarre commentary.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: One volume of the twelve-volume New Testament Standard Edition; the page describes the series, not this volume.",
+   "sources": [
+    "http://scepter.uk/html/body_navarre_bible-_-_new_testament.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "navarre-bible-st-john",
+   "title": "The Navarre Bible",
+   "subtitle": "St John",
+   "author": "Members of the Faculty of Theology of the University of Navarre",
+   "shelf": "bibles",
+   "kind": "bible",
+   "description": "St John's Gospel in the RSV Catholic Edition and New Vulgate, with the Navarre commentary.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: One volume of the twelve-volume New Testament Standard Edition; the page describes the series, not this volume.",
+   "sources": [
+    "http://scepter.uk/html/body_navarre_bible-_-_new_testament.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "navarre-bible-st-luke",
+   "title": "The Navarre Bible",
+   "subtitle": "St Luke",
+   "author": "Members of the Faculty of Theology of the University of Navarre",
+   "shelf": "bibles",
+   "kind": "bible",
+   "description": "St Luke's Gospel in the RSV Catholic Edition and New Vulgate, with the Navarre commentary.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: One volume of the twelve-volume New Testament Standard Edition; the page describes the series, not this volume.",
+   "sources": [
+    "http://scepter.uk/html/body_navarre_bible-_-_new_testament.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "navarre-bible-st-mark",
+   "title": "The Navarre Bible",
+   "subtitle": "St Mark",
+   "author": "Members of the Faculty of Theology of the University of Navarre",
+   "shelf": "bibles",
+   "kind": "bible",
+   "description": "St Mark's Gospel in the RSV Catholic Edition and New Vulgate, with the Navarre commentary.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: One volume of the twelve-volume New Testament Standard Edition; the page describes the series, not this volume.",
+   "sources": [
+    "http://scepter.uk/html/body_navarre_bible-_-_new_testament.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "navarre-bible-st-matthew",
+   "title": "The Navarre Bible",
+   "subtitle": "St Matthew",
+   "author": "Members of the Faculty of Theology of the University of Navarre",
+   "shelf": "bibles",
+   "kind": "bible",
+   "description": "St Matthew's Gospel in the RSV Catholic Edition and New Vulgate, with the Navarre commentary.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: One volume of the twelve-volume New Testament Standard Edition; the page describes the series, not this volume.",
+   "sources": [
+    "http://scepter.uk/html/body_navarre_bible-_-_new_testament.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "navarre-bible-thessalonians-and-pastoral-epistles",
+   "title": "The Navarre Bible",
+   "subtitle": "Thessalonians & Pastoral Epistles",
+   "author": "Members of the Faculty of Theology of the University of Navarre",
+   "shelf": "bibles",
+   "kind": "bible",
+   "description": "The Thessalonian and Pastoral Epistles in the RSV Catholic Edition and New Vulgate, with the Navarre commentary.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: One volume of the twelve-volume New Testament Standard Edition; the page describes the series, not this volume.",
+   "sources": [
+    "http://scepter.uk/html/body_navarre_bible-_-_new_testament.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "navarre-bible-letters-of-st-paul",
+   "title": "The Navarre Bible",
+   "subtitle": "The Letters of St Paul: Reader's Edition",
+   "author": "Members of the Faculty of Theology of the University of Navarre",
+   "shelf": "bibles",
+   "kind": "bible",
+   "description": "All of St Paul's letters in one omnibus volume, with the full RSV text and the Navarre commentary.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_navarre_bible-_-_new_testament.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "navarre-bible-gospels-and-acts",
+   "title": "The Navarre Bible",
+   "subtitle": "Gospels and Acts: Reader's Edition",
+   "author": "Members of the Faculty of Theology of the University of Navarre",
+   "shelf": "bibles",
+   "kind": "bible",
+   "description": "The four Gospels and the Acts of the Apostles with the Navarre notes, giving doctrinal and ascetical explanations.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_navarre_bible-_-_new_testament.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "navarre-bible-new-testament-compact",
+   "title": "The Navarre Bible",
+   "subtitle": "New Testament: Compact Edition",
+   "author": "Members of the Faculty of Theology of the University of Navarre",
+   "shelf": "bibles",
+   "kind": "bible",
+   "description": "The whole New Testament in the RSV Catholic Edition with concise notes, short introductions and a thematic index.",
+   "isbn": "",
+   "pages": 756,
+   "featured": false,
+   "status": "held",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: List and page both say out of print. Page count from the synopsis (\"runs to 756 pages\"). The list line links to the Old Testament page by mistake.",
+   "sources": [
+    "http://scepter.uk/html/body_navarre_bible-_-_new_testament.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "navarre-bible-pentateuch",
+   "title": "The Navarre Bible",
+   "subtitle": "Old Testament: Pentateuch",
+   "author": "Members of the Faculty of Theology of the University of Navarre",
+   "shelf": "bibles",
+   "kind": "bible",
+   "description": "The Pentateuch in the RSV and New Vulgate, with notes and introductions by the University of Navarre.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_navarre_bible-_-_old_testament.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "navarre-bible-joshua-kings",
+   "title": "The Navarre Bible",
+   "subtitle": "Old Testament: Joshua-Kings",
+   "author": "Members of the Faculty of Theology of the University of Navarre",
+   "shelf": "bibles",
+   "kind": "bible",
+   "description": "Joshua, Judges, Ruth, 1 and 2 Samuel and 1 and 2 Kings, with the Navarre notes and commentary.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_navarre_bible-_-_old_testament.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "navarre-bible-chronicles-maccabees",
+   "title": "The Navarre Bible",
+   "subtitle": "Old Testament: Chronicles-Maccabees",
+   "author": "Members of the Faculty of Theology of the University of Navarre",
+   "shelf": "bibles",
+   "kind": "bible",
+   "description": "Chronicles, Ezra, Nehemiah, Tobit, Judith, Esther and 1 and 2 Maccabees, with the Navarre commentary.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_navarre_bible-_-_old_testament.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "navarre-bible-psalms",
+   "title": "The Navarre Bible",
+   "subtitle": "Old Testament: Psalms and the Song of Solomon",
+   "author": "Members of the Faculty of Theology of the University of Navarre",
+   "shelf": "bibles",
+   "kind": "bible",
+   "description": "The Psalms and the Song of Songs, the lyric poetry of the Old Testament, with the Navarre commentary.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_navarre_bible-_-_old_testament.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "navarre-bible-wisdom",
+   "title": "The Navarre Bible",
+   "subtitle": "Old Testament: Wisdom Books",
+   "author": "Members of the Faculty of Theology of the University of Navarre",
+   "shelf": "bibles",
+   "kind": "bible",
+   "description": "The Old Testament wisdom books, with the Navarre notes and introductions on their spiritual message.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_navarre_bible-_-_old_testament.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "navarre-bible-major-prophets",
+   "title": "The Navarre Bible",
+   "subtitle": "Old Testament: Major Prophets",
+   "author": "Members of the Faculty of Theology of the University of Navarre",
+   "shelf": "bibles",
+   "kind": "bible",
+   "description": "Isaiah, Jeremiah, Ezekiel and Daniel in the RSV and New Vulgate, with the Navarre commentary.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_navarre_bible-_-_old_testament.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "navarre-bible-minor-prophets",
+   "title": "The Navarre Bible",
+   "subtitle": "Old Testament: Minor Prophets",
+   "author": "Members of the Faculty of Theology of the University of Navarre",
+   "shelf": "bibles",
+   "kind": "bible",
+   "description": "Hosea, Joel, Amos, Obadiah, Jonah, Micah, Nahum, Habakkuk, Zephaniah, Haggai and Zechariah, with the Navarre commentary.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: Minor Prophets page lists eleven books and omits Malachi; description follows the page.",
+   "sources": [
+    "http://scepter.uk/html/body_navarre_bible-_-_old_testament.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "new-testament",
+   "title": "New Testament",
+   "subtitle": "Confraternity Pocket Edition",
+   "author": "",
+   "shelf": "bibles",
+   "kind": "bible",
+   "description": "A reprint of the reliable Confraternity edition of the New Testament, first published in 1941.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_new_testament_-confraternity-.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "alvaro-del-portillo",
+   "title": "Alvaro del Portillo",
+   "subtitle": "",
+   "author": "",
+   "shelf": "lives",
+   "kind": "book",
+   "description": "",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "held",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: On the price list only, as \"ALVARO DEL PORTILLO (hardback) (currently out of print)\"; no book page, so author and edition are unknown. Not matched to the shop's Saxum entry because nothing on the site names the author.",
+   "sources": [
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "at-gods-pace",
+   "title": "At God's Pace",
+   "subtitle": "A Biography of Josemaria Escriva, Founder of Opus Dei",
+   "author": "Francois Gondrand",
+   "shelf": "lives",
+   "kind": "book",
+   "description": "A biography of St Josemaría by one who knew him, tracing Opus Dei from 1928 to his death in 1975.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_at_god-s_pace.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "joseph-the-silent",
+   "title": "Joseph the Silent",
+   "subtitle": "",
+   "author": "Michel Gasnier, OP",
+   "shelf": "lives",
+   "kind": "book",
+   "description": "Brief meditations on St Joseph's work, marriage and character, the flight into Egypt and the return to Nazareth.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_joseph_the_silent.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "joseph-of-nazareth",
+   "title": "Joseph of Nazareth",
+   "subtitle": "",
+   "author": "Federico Suarez",
+   "shelf": "lives",
+   "kind": "book",
+   "description": "Federico Suárez's spiritual biography of St Joseph, a companion to his Mary of Nazareth.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_joseph_of_nazareth.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "mary-of-nazareth",
+   "title": "Mary of Nazareth",
+   "subtitle": "",
+   "author": "Federico Suarez",
+   "shelf": "lives",
+   "kind": "book",
+   "description": "Federico Suárez's spiritual biography of Mary, presented as fully human and chosen by God.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_mary_of_nazareth.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "mary-the-mother-of-jesus",
+   "title": "Mary the Mother of Jesus",
+   "subtitle": "",
+   "author": "Franz Willam",
+   "shelf": "lives",
+   "kind": "book",
+   "description": "The scriptural and cultural background of Palestine that illuminates the events in the lives of Jesus and his parents.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_mary_the_mother_of_jesus.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "opus-dei",
+   "title": "Opus Dei",
+   "subtitle": "Life and Work of Its Founder",
+   "author": "Peter Berglar",
+   "shelf": "lives",
+   "kind": "book",
+   "description": "Peter Berglar's life of St Josemaría Escrivá, drawing on Opus Dei archives and interviews with his closest associates.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: List line specifies paperback.",
+   "sources": [
+    "http://scepter.uk/html/body_opus_dei_-_life_and_work.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "our-lives-in-his-hands",
+   "title": "Our Lives in His Hands",
+   "subtitle": "An Ordinary Couple's Path to Holiness",
+   "author": "Olga Marlin",
+   "shelf": "lives",
+   "kind": "book",
+   "description": "The story of Tomás Alvira and his wife Paquita, who raised a large family; their cause for beatification is open.",
+   "isbn": "9781594173110",
+   "pages": 224,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_our_lives_in_his_hands.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "paul-of-tarsus",
+   "title": "Paul of Tarsus",
+   "subtitle": "",
+   "author": "Joseph Holzner",
+   "shelf": "lives",
+   "kind": "book",
+   "description": "A biography of St Paul from his years under Gamaliel through his conversion and missions to his martyrdom in Rome.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_paul_of_tarsus.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "peter-the-apostle",
+   "title": "Peter the Apostle",
+   "subtitle": "",
+   "author": "William Thomas Walsh",
+   "shelf": "lives",
+   "kind": "book",
+   "description": "A biography of St Peter gathering the facts of archaeology, tradition and the New Testament, including his denials and friendship with Paul.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_peter_the_apostle.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
   },
   {
    "id": "putting-down-roots",
    "title": "Putting Down Roots",
-   "subtitle": "Father Joseph Muzquiz and the Growth of Opus Dei",
+   "subtitle": "Fr Joseph Muzquiz and the Growth of Opus Dei",
    "author": "John F. Coverdale",
    "shelf": "lives",
    "kind": "book",
@@ -372,29 +2326,183 @@
    "pages": 152,
    "featured": false,
    "status": "confirmed",
-   "evidence": "Scepter UK's own site has a page for it (body_putting_down_roots.html): John F. Coverdale, paperback, 152 pages, ISBN 9781594170812. The ISBN has the Scepter US prefix, so this is a US title that Scepter UK sells. No price seen.",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
    "sources": [
-    "http://scepter.uk/html/body_putting_down_roots.html"
+    "http://scepter.uk/html/body_putting_down_roots.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
    ],
-   "prices_seen": []
+   "own": true
   },
   {
-   "id": "our-lives-in-his-hands",
-   "title": "Our Lives in His Hands",
-   "subtitle": "",
-   "author": "",
+   "id": "founder-of-opus-dei-volume-1",
+   "title": "The Founder of Opus Dei",
+   "subtitle": "Volume 1: The Early Years (1902-1936)",
+   "author": "Andres Vazquez de Prada",
    "shelf": "lives",
    "kind": "book",
-   "description": "The story of Tomás Alvira and his wife Paquita, who raised a large family; their cause for beatification is open.",
+   "description": "The first of three volumes: St Josemaría's family, childhood and youth, and his early struggles to build up Opus Dei.",
    "isbn": "",
    "pages": 0,
    "featured": false,
    "status": "confirmed",
-   "evidence": "Scepter UK's own site has a page for it (body_our_lives_in_his_hands.html) describing the life of Tomas and Paquita. The evidence gathered names no author and no ISBN. No price seen.",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: Paperback £12.00; the list also shows a hardback at £18.00. The page numbers volumes 2 and 3 as II and III.",
    "sources": [
-    "http://scepter.uk/html/body_our_lives_in_his_hands.html"
+    "http://scepter.uk/html/body_the_founder_of_opus_dei.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
    ],
-   "prices_seen": []
+   "own": true
+  },
+  {
+   "id": "founder-of-opus-dei-volume-2",
+   "title": "The Founder of Opus Dei",
+   "subtitle": "Volume 2: God and Daring (1936-1946)",
+   "author": "Andres Vazquez de Prada",
+   "shelf": "lives",
+   "kind": "book",
+   "description": "St Josemaría from the outbreak of the Spanish Civil War, when he worked in secret, to his departure for Rome.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: Paperback £12.00; the list also shows a hardback at £18.00. The page numbers volumes 2 and 3 as II and III.",
+   "sources": [
+    "http://scepter.uk/html/body_the_founder_of_opus_dei.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "founder-of-opus-dei-volume-3",
+   "title": "The Founder of Opus Dei",
+   "subtitle": "Volume 3: The Divine Ways on Earth (1946-1975)",
+   "author": "Andres Vazquez de Prada",
+   "shelf": "lives",
+   "kind": "book",
+   "description": "St Josemaría's years in Rome until his death in 1975, as Opus Dei grew into a worldwide institution.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: Paperback £12.00; the list also shows a hardback at £18.00. The page numbers volumes 2 and 3 as II and III.",
+   "sources": [
+    "http://scepter.uk/html/body_the_founder_of_opus_dei.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "mystical-rose",
+   "title": "The Mystical Rose",
+   "subtitle": "",
+   "author": "John Henry Cardinal Newman",
+   "shelf": "lives",
+   "kind": "book",
+   "description": "Newman's defence of Marian devotion from Scripture and the Fathers, with an explanation of the titles in the Litany of Loreto.",
+   "isbn": "0933932960",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_the_mystical_rose.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "thomas-more",
+   "title": "Thomas More",
+   "subtitle": "A Portrait of Courage",
+   "author": "Gerard B. Wegemer",
+   "shelf": "lives",
+   "kind": "book",
+   "description": "A biography revealing the interior life of St Thomas More, using his own writings as a window on his conscience.",
+   "isbn": "188933412X",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_thomas_more-_a_portrait_of_courage.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "through-the-mountains",
+   "title": "Through the Mountains",
+   "subtitle": "The Life of St Josemaria in Pictures",
+   "author": "Paule Fostroy",
+   "shelf": "lives",
+   "kind": "book",
+   "description": "A comic-book biography of St Josemaría for young readers, conveying his message on sanctifying work and ordinary life.",
+   "isbn": "1594170401",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_through_the_mountains.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "autobiography-of-st-therese-of-lisieux",
+   "title": "The Autobiography of St Therese of Lisieux",
+   "subtitle": "",
+   "author": "St Therese of Lisieux",
+   "shelf": "lives",
+   "kind": "book",
+   "description": "Her way of spiritual childhood: serving God not for reward but solely out of love and a desire to win souls.",
+   "isbn": "9715540376",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Other titles we sell'. Note: List line: \"AUTOBIOGRAPHY OF A SAINT – ST THERESE OF LISIEUX\". No author line on the page; author taken from the title.",
+   "sources": [
+    "http://scepter.uk/html/body_autobiography_of_st_therese_of_lisieu.html",
+    "http://scepter.uk/html/body_other_titles.html"
+   ],
+   "own": false
+  },
+  {
+   "id": "glories-of-mary",
+   "title": "The Glories of Mary",
+   "subtitle": "",
+   "author": "Alphonsus de Liguori",
+   "shelf": "lives",
+   "kind": "book",
+   "description": "A modern abridgement of St Alphonsus's collection of the choicest passages promoting love of Mary.",
+   "isbn": "8171096735",
+   "pages": 208,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Other titles we sell'. Note: The book page prints \"Jean Daujat\" as author, evidently copied from The Faith Applied; author taken from the price list (\"Alphonsus de Liguori\"). List marks it \"(abridged)\".",
+   "sources": [
+    "http://scepter.uk/html/body_the_glories_of_mary.html",
+    "http://scepter.uk/html/body_other_titles.html"
+   ],
+   "own": false
+  },
+  {
+   "id": "wonder-of-guadalupe",
+   "title": "The Wonder of Guadalupe",
+   "subtitle": "",
+   "author": "Francis Johnston",
+   "shelf": "lives",
+   "kind": "book",
+   "description": "The apparitions to St Juan Diego and the portrait of herself the Virgin left him, supernatural in its loveliness.",
+   "isbn": "9715540880",
+   "pages": 143,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Other titles we sell'.",
+   "sources": [
+    "http://scepter.uk/html/body_the_wonder_of_guadalupe.html",
+    "http://scepter.uk/html/body_other_titles.html"
+   ],
+   "own": false
   },
   {
    "id": "saxum",
@@ -412,62 +2520,6 @@
    "sources": [
     "https://www.amazon.co.uk/Saxum-Life-Alvaro-del-Portillo-ebook/dp/B00LOKG7CU",
     "https://www.amazon.co.uk/Saxum-Life-Alvaro-del-Portillo/dp/B00OTY2GRI"
-   ],
-   "prices_seen": []
-  },
-  {
-   "id": "opus-dei",
-   "title": "Opus Dei",
-   "subtitle": "Life and Work of Its Founder, Josemaria Escriva",
-   "author": "Peter Berglar",
-   "shelf": "lives",
-   "kind": "book",
-   "description": "Peter Berglar's life of St Josemaría Escrivá, drawing on Opus Dei archives and interviews with his closest associates.",
-   "isbn": "9780933932654",
-   "pages": 0,
-   "featured": false,
-   "status": "doubtful",
-   "evidence": "The Amazon.co.uk listing shows ISBN 9780933932654, which has the Scepter US prefix (0-933932), not the UK prefix. Nothing seen shows that scepter.uk lists it. Re-verification was not possible because the WebSearch budget was exhausted. No price seen.",
-   "sources": [
-    "https://www.amazon.co.uk/Opus-Dei-Founder-Josemaria-Escriva/dp/0933932650"
-   ],
-   "prices_seen": []
-  },
-  {
-   "id": "mary-of-nazareth",
-   "title": "Mary of Nazareth",
-   "subtitle": "",
-   "author": "Federico Suárez",
-   "shelf": "lives",
-   "kind": "book",
-   "description": "Federico Suárez's spiritual biography of Mary, presented as fully human and chosen by God.",
-   "isbn": "9780906138090",
-   "pages": 249,
-   "featured": false,
-   "status": "confirmed",
-   "evidence": "The Amazon.co.uk listing shows ISBN 9780906138090, which has Scepter UK's own 0-906138 prefix. The summary gives 249 pages, published 1985. A separate Scepter US edition (188933488X) also exists. No price seen.",
-   "sources": [
-    "https://www.amazon.co.uk/Mary-Nazareth-Federico-Suarez/dp/0906138094",
-    "https://www.amazon.co.uk/MARY-NAZARETH-Federico-Suarez/dp/188933488X"
-   ],
-   "prices_seen": []
-  },
-  {
-   "id": "joseph-of-nazareth",
-   "title": "Joseph of Nazareth",
-   "subtitle": "",
-   "author": "Federico Suárez",
-   "shelf": "lives",
-   "kind": "book",
-   "description": "Federico Suárez's spiritual biography of St Joseph, a companion to his Mary of Nazareth.",
-   "isbn": "9780906138083",
-   "pages": 0,
-   "featured": false,
-   "status": "confirmed",
-   "evidence": "The Amazon.co.uk listing shows ISBN 9780906138083, which has Scepter UK's own 0-906138 prefix. A Scepter US edition (9781594170201) also exists. No price seen.",
-   "sources": [
-    "https://www.amazon.co.uk/Joseph-Nazareth-Federico-Suarez/dp/0906138086",
-    "https://www.amazon.co.uk/Title-Joseph-Nazareth-Federico-Suarez/dp/1594170207"
    ],
    "prices_seen": []
   },
@@ -490,104 +2542,426 @@
    "prices_seen": []
   },
   {
-   "id": "successful-fathers",
-   "title": "Successful Fathers",
-   "subtitle": "",
-   "author": "James B. Stenson",
-   "shelf": "more",
-   "kind": "booklet",
-   "description": "James B. Stenson's booklet for fathers on the quiet, lasting ways they form their children's character.",
+   "id": "anchor",
+   "title": "Anchor",
+   "subtitle": "God's Promises of Hope to Parents",
+   "author": "James B Stenson",
+   "shelf": "family",
+   "kind": "book",
+   "description": "Encouragement for parents, drawn from Scripture and the Church's wisdom, to persevere with confidence through the trials of parenthood.",
    "isbn": "",
    "pages": 0,
    "featured": false,
    "status": "confirmed",
-   "evidence": "scepter.uk has its own product page (body_successful_fathers.html), and Stenson's Amazon author summary names Successful Fathers among his Scepter booklets. I could not run new searches because the session's WebSearch budget was used up (200/200), so this verdict rests on the evidence from the earlier sweeps. No price was seen.",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
    "sources": [
-    "http://scepter.uk/html/body_successful_fathers.html",
-    "https://www.amazon.co.uk/James-B.-Stenson/e/B001K7VRGI",
-    "https://www.amazon.co.uk/Books-James-Stenson/s?rh=n:266239,p_27:James Stenson"
+    "http://scepter.uk/html/body_anchor.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
    ],
-   "prices_seen": []
+   "own": true
   },
   {
-   "id": "father-the-family-protector",
-   "title": "Father, the Family Protector",
+   "id": "catholic-truths-for-our-children",
+   "title": "Catholic Truths for Our Children",
    "subtitle": "",
-   "author": "James B. Stenson",
-   "shelf": "more",
+   "author": "Patti Armstrong",
+   "shelf": "family",
    "kind": "book",
-   "description": "James B. Stenson on the father's role as protector of his family.",
-   "isbn": "9781594170331",
+   "description": "Written by a parent for parents, a guide to understanding and living the Faith well in order to pass it on.",
+   "isbn": "",
+   "pages": 191,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_catholic_truths_for_our_children.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "character-building",
+   "title": "Character Building",
+   "subtitle": "A Guide for Parents and Teachers",
+   "author": "David Isaacs",
+   "shelf": "family",
+   "kind": "book",
+   "description": "Practical direction on teaching children of all ages the human virtues, with questions for self-assessment and teaching tips.",
+   "isbn": "",
    "pages": 0,
    "featured": false,
-   "status": "doubtful",
-   "evidence": "The only evidence is Amazon UK listings (a print edition with ISBN 978-1-59417, the Scepter Publishers US prefix, and Kindle B0045UA8EY). No scepter.uk page was seen and Amazon UK does not show Scepter (UK) as publisher. The search budget was used up, so I could not check further.",
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
    "sources": [
-    "https://www.amazon.co.uk/Father-Family-Protector-James-Stenson/dp/1594170339",
-    "https://www.amazon.co.uk/Father-Family-Protector-James-Stenson-ebook/dp/B0045UA8EY"
+    "http://scepter.uk/html/body_character_building.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
    ],
-   "prices_seen": []
+   "own": true
   },
   {
    "id": "compass",
    "title": "Compass",
    "subtitle": "A Handbook on Parent Leadership",
    "author": "James B. Stenson",
-   "shelf": "more",
+   "shelf": "family",
    "kind": "book",
    "description": "A handbook for parents by James B. Stenson on leadership in the family.",
-   "isbn": "9781594170003",
+   "isbn": "1594170002",
    "pages": 0,
    "featured": false,
-   "status": "doubtful",
-   "evidence": "The only evidence is an Amazon UK listing with ISBN 978-1-59417, the Scepter Publishers (US) prefix. No scepter.uk page was seen and Scepter (UK) is not shown as publisher. The search budget was used up, so I could not check further.",
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
    "sources": [
-    "https://www.amazon.co.uk/Compass-Handbook-Leadership-James-Stenson/dp/1594170002"
+    "http://scepter.uk/html/body_compass.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
    ],
-   "prices_seen": []
+   "own": true
+  },
+  {
+   "id": "covenanted-happiness",
+   "title": "Covenanted Happiness",
+   "subtitle": "",
+   "author": "Cormac Burke",
+   "shelf": "family",
+   "kind": "book",
+   "description": "Cormac Burke on marriage, covering sexual identity, family planning, divorce, contraception and the value of children.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_covenanted_happiness.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "family-as-primary-educator",
+   "title": "Family as Primary Educator",
+   "subtitle": "",
+   "author": "Aurora Bernal, Francisco Altarejos, Alfredo Rodriguez",
+   "shelf": "family",
+   "kind": "book",
+   "description": "The family as a community of persons whose relationships shape how a child understands itself and forms good habits.",
+   "isbn": "9781594170706",
+   "pages": 173,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_family_as_primary_educator.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "father-the-family-protector",
+   "title": "Father, the Family Protector",
+   "subtitle": "",
+   "author": "James Stenson",
+   "shelf": "family",
+   "kind": "book",
+   "description": "James B. Stenson on the father's role as protector of his family.",
+   "isbn": "1594170339",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_father_family_protector.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
   },
   {
    "id": "lifeline",
    "title": "Lifeline",
    "subtitle": "The Religious Upbringing of Your Children",
-   "author": "James B. Stenson",
-   "shelf": "more",
+   "author": "James Stenson",
+   "shelf": "family",
    "kind": "book",
    "description": "A book by James B. Stenson for parents on the religious upbringing of their children.",
-   "isbn": "9780933932975",
+   "isbn": "",
    "pages": 0,
    "featured": false,
-   "status": "doubtful",
-   "evidence": "The only evidence is an Amazon UK listing with ISBN 978-0-933932, a Scepter Publishers (US) prefix. No scepter.uk page was seen and Scepter (UK) is not shown as publisher. The search budget was used up, so I could not check further.",
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
    "sources": [
-    "https://www.amazon.co.uk/Lifeline-Religious-Upbringing-Your-Children/dp/0933932979"
+    "http://scepter.uk/html/body_lifeline.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
    ],
-   "prices_seen": []
+   "own": true
   },
   {
-   "id": "covenanted-happiness",
-   "title": "Covenanted Happiness",
-   "subtitle": "Love and Commitment in Marriage",
-   "author": "Cormac Burke",
-   "shelf": "more",
-   "kind": "book",
-   "description": "Cormac Burke on marriage, covering sexual identity, family planning, divorce, contraception and the value of children.",
-   "isbn": "9781889334158",
+   "id": "preparing-for-adolescence",
+   "title": "Preparing for Adolescence",
+   "subtitle": "",
+   "author": "",
+   "shelf": "family",
+   "kind": "booklet",
+   "description": "",
+   "isbn": "",
    "pages": 0,
    "featured": false,
-   "status": "doubtful",
-   "evidence": "Amazon UK shows a US edition (ISBN 978-1-889334, the Scepter Publishers US prefix) and a Kenyan-ISBN edition (9966751076). Neither is tied to Scepter (U.K.) Ltd, and no scepter.uk page was seen. The search budget was used up, so I could not check further.",
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: On the price list only; its link goes to the Preparing for Peer Pressure page, so no own details. Kind inferred from the £3.25 price.",
    "sources": [
-    "https://www.amazon.co.uk/Covenanted-Happiness-Love-Commitment-Marriage/dp/1889334154",
-    "https://www.amazon.co.uk/Covenanted-Happiness-Love-Commitment-Marriage/dp/9966751076"
+    "http://scepter.uk/html/body_scepter_titles.html"
    ],
-   "prices_seen": []
+   "own": true
+  },
+  {
+   "id": "preparing-for-peer-pressure",
+   "title": "Preparing for Peer Pressure",
+   "subtitle": "A Guide for Parents of Young Children",
+   "author": "Jim Stenson",
+   "shelf": "family",
+   "kind": "booklet",
+   "description": "A framework for instilling sound Christian values in children well before twelve, and for forming character while respecting freedom.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: Kind inferred from the £3.25 price; no page count shown.",
+   "sources": [
+    "http://scepter.uk/html/body_preparing_for_peer_pressure.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "successful-fathers",
+   "title": "Successful Fathers",
+   "subtitle": "The Subtle but Powerful Ways Fathers Mould Their Children's Characters",
+   "author": "James B. Stenson",
+   "shelf": "family",
+   "kind": "booklet",
+   "description": "James B. Stenson's booklet for fathers on the quiet, lasting ways they form their children's character.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_successful_fathers.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "three-to-get-married",
+   "title": "Three to Get Married",
+   "subtitle": "",
+   "author": "Fulton J. Sheen",
+   "shelf": "family",
+   "kind": "book",
+   "description": "The Church's understanding of marriage, the causes of and remedies for common marital crises, and Christ at its centre.",
+   "isbn": "0933932871",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_three_to_get_married.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "upbringing",
+   "title": "Upbringing",
+   "subtitle": "A Discussion Handbook for Parents of Young Children",
+   "author": "James Stenson",
+   "shelf": "family",
+   "kind": "book",
+   "description": "A framework for parents to discuss childrearing together, with questions and observations for individual reading.",
+   "isbn": "0933932529",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: List line subtitle: \"A Handbook for Parents\"; subtitle follows the page.",
+   "sources": [
+    "http://scepter.uk/html/body_upbringing.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "authority-and-obedience",
+   "title": "Authority and Obedience",
+   "subtitle": "Focus on Family Life",
+   "author": "Oliveros Otero",
+   "shelf": "family",
+   "kind": "book",
+   "description": "A practical guide to improving family relationships: living together, discipline and coping with one another.",
+   "isbn": "9715541356",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Other titles we sell'.",
+   "sources": [
+    "http://scepter.uk/html/body_authority_and_obedience.html",
+    "http://scepter.uk/html/body_other_titles.html"
+   ],
+   "own": false
+  },
+  {
+   "id": "children",
+   "title": "Children",
+   "subtitle": "Their Training, Formation and Education",
+   "author": "Javier Abad and Eugenio Fenoy",
+   "shelf": "family",
+   "kind": "book",
+   "description": "A reference book to help parents know their children deeply and see everything that influences their upbringing.",
+   "isbn": "9715540414",
+   "pages": 260,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Other titles we sell'.",
+   "sources": [
+    "http://scepter.uk/html/body_children.html",
+    "http://scepter.uk/html/body_other_titles.html"
+   ],
+   "own": false
+  },
+  {
+   "id": "genuine-friendship",
+   "title": "Genuine Friendship",
+   "subtitle": "",
+   "author": "",
+   "shelf": "family",
+   "kind": "book",
+   "description": "Insights for improving personal relationships and creating a culture of love, which requires real strength of character.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Other titles we sell'. Note: Page has no author, ISBN or \"Synopsis\" marker; description from the page text. Shelf family chosen because the text centres on relationships in the family.",
+   "sources": [
+    "http://scepter.uk/html/body_genuine_friendship.html",
+    "http://scepter.uk/html/body_other_titles.html"
+   ],
+   "own": false
+  },
+  {
+   "id": "marriage-a-path-to-sanctity",
+   "title": "Marriage, a Path to Sanctity",
+   "subtitle": "",
+   "author": "Javier Abad and Eugenio Fenoy",
+   "shelf": "family",
+   "kind": "book",
+   "description": "Guidance for married couples drawing on the Catechism of the Catholic Church and the encyclicals and letters of John Paul II.",
+   "isbn": "9715541534",
+   "pages": 288,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Other titles we sell'. Note: The synopsis describes only this updated edition; description kept to what it states.",
+   "sources": [
+    "http://scepter.uk/html/body_marriage_a_path_to_sanctity.html",
+    "http://scepter.uk/html/body_other_titles.html"
+   ],
+   "own": false
+  },
+  {
+   "id": "teenagers-and-their-problems",
+   "title": "Teenagers and Their Problems",
+   "subtitle": "",
+   "author": "Gerardo Castillo",
+   "shelf": "family",
+   "kind": "book",
+   "description": "The stages of adolescence and teenage behaviour, from rebelliousness and shyness to study, work, money and free time.",
+   "isbn": "1851820124",
+   "pages": 128,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Other titles we sell'.",
+   "sources": [
+    "http://scepter.uk/html/body_teenagers_and_their_problems.html",
+    "http://scepter.uk/html/body_other_titles.html"
+   ],
+   "own": false
+  },
+  {
+   "id": "a-short-history-of-the-catholic-church",
+   "title": "A Short History of the Catholic Church",
+   "subtitle": "",
+   "author": "Jose Orlandis",
+   "shelf": "more",
+   "kind": "book",
+   "description": "Two thousand years of Church history in one concise volume, from the Roman Empire to the age of totalitarianism.",
+   "isbn": "1851821252",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_a_short_history_of_the_catholic_church.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "dialogue-of-comfort-against-tribulation",
+   "title": "Dialogue of Comfort Against Tribulation",
+   "subtitle": "",
+   "author": "St Thomas More",
+   "shelf": "more",
+   "kind": "book",
+   "description": "Written in the Tower of London, a fictional dialogue in modern English on finding God's comfort in times of suffering.",
+   "isbn": "1889334138",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_dialogue_of_comfort.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "dialogue-concerning-heresies",
+   "title": "Dialogue Concerning Heresies",
+   "subtitle": "",
+   "author": "St Thomas More",
+   "shelf": "more",
+   "kind": "book",
+   "description": "More's 1529 dialogue with a young student drawn to the ideas of Luther and Tyndale, in a modernised edition.",
+   "isbn": "",
+   "pages": 491,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: Page says hardback.",
+   "sources": [
+    "http://scepter.uk/html/body_dialogue_concerning_heresies.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "for-all-seasons",
+   "title": "For All Seasons",
+   "subtitle": "Thomas More",
+   "author": "",
+   "shelf": "more",
+   "kind": "book",
+   "description": "",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: On the price list only, as \"FOR ALL SEASONS - THOMAS MORE\"; no book page, so author and whether \"Thomas More\" is subject or subtitle are unknown.",
+   "sources": [
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
   },
   {
    "id": "four-last-things",
    "title": "The Four Last Things",
-   "subtitle": "The Supplication of Souls; A Dialogue on Conscience",
-   "author": "St Thomas More",
+   "subtitle": "The Supplication of Souls – A Dialogue on Conscience",
+   "author": "Thomas More",
    "shelf": "more",
    "kind": "book",
    "description": "Thomas More recommends frequent meditation on Death, Judgment, Pain and Joy as a remedy against the seven deadly sins.",
@@ -595,11 +2969,144 @@
    "pages": 0,
    "featured": false,
    "status": "confirmed",
-   "evidence": "scepter.uk has its own product page (body_four_last_things.html) describing the book. The description is drawn from that page's summary. No price was seen, and I could not search further because the search budget was used up.",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
    "sources": [
-    "http://scepter.uk/html/body_four_last_things.html"
+    "http://scepter.uk/html/body_four_last_things.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
    ],
-   "prices_seen": []
+   "own": true
+  },
+  {
+   "id": "inside-the-mind-of-thomas-more",
+   "title": "Inside the Mind of Thomas More",
+   "subtitle": "The Witness of His Writings",
+   "author": "Louis W. Karlin & David R. Oakley",
+   "shelf": "more",
+   "kind": "book",
+   "description": "Why More accepted death rather than yield to Henry VIII, explained through the issues at his trial and his prison writings.",
+   "isbn": "9781594173134",
+   "pages": 136,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: Page gives 136 pages in the details but \"only 129 pages\" in the synopsis; 136 used.",
+   "sources": [
+    "http://scepter.uk/html/body_inside_the_mind_of_thomas_more.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "junia",
+   "title": "Junia",
+   "subtitle": "The Fictional Life and Death of an Early Christian",
+   "author": "Michael E. Giesler",
+   "shelf": "more",
+   "kind": "book",
+   "description": "A novel of life at the very beginning of Christianity, showing the new faith's attraction amid social and family struggle.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_junia.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "man-and-values",
+   "title": "Man and Values",
+   "subtitle": "",
+   "author": "",
+   "shelf": "more",
+   "kind": "book",
+   "description": "",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: On the price list only; no book page, so subject, author and shelf are uncertain.",
+   "sources": [
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "marcus",
+   "title": "Marcus",
+   "subtitle": "",
+   "author": "Michael Edward Giesler",
+   "shelf": "more",
+   "kind": "book",
+   "description": "A novel of second-century Rome in which the brother of the martyr Junia is drawn into the Christian community.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_marcus.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "christmas-crib-that-god-made",
+   "title": "The Christmas Crib That God Made",
+   "subtitle": "",
+   "author": "Henry Hernandez",
+   "shelf": "more",
+   "kind": "book",
+   "description": "A Christmas story, written chiefly for grown-ups, telling the Nativity as a divine play in which every creature has a part.",
+   "isbn": "0906138620",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: List line: \"THE CHRISTMAS CRIB GOD MADE\"; title follows the page.",
+   "sources": [
+    "http://scepter.uk/html/body_christmas_crib.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "sadness-of-christ",
+   "title": "The Sadness of Christ",
+   "subtitle": "",
+   "author": "St Thomas More",
+   "shelf": "more",
+   "kind": "book",
+   "description": "More's last book, written in the Tower, on Christ's agony in Gethsemane as a model of virtue under persecution.",
+   "isbn": "0933932669",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'.",
+   "sources": [
+    "http://scepter.uk/html/body_the_sadness_of_christ.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
+  },
+  {
+   "id": "virtuous-leadership",
+   "title": "Virtuous Leadership",
+   "subtitle": "",
+   "author": "Alexandre Havard",
+   "shelf": "more",
+   "kind": "book",
+   "description": "The classical virtues of magnanimity, humility, prudence, courage, self-control and justice as the substance of leadership.",
+   "isbn": "",
+   "pages": 0,
+   "featured": false,
+   "status": "confirmed",
+   "evidence": "On Scepter (U.K.)'s own website (scepter.uk, Wayback Machine snapshot of 26 September 2022), 'Titles we publish'. Note: List line specifies the first edition.",
+   "sources": [
+    "http://scepter.uk/html/body_virtuous_leadership.html",
+    "http://scepter.uk/html/body_scepter_titles.html"
+   ],
+   "own": true
   },
   {
    "id": "gospel-in-the-home",
@@ -616,24 +3123,6 @@
    "evidence": "The only evidence is an Amazon UK Kindle listing that does not name a publisher. No scepter.uk page or Scepter ISBN was seen. The search budget was used up, so I could not check further.",
    "sources": [
     "https://www.amazon.co.uk/Gospel-home-Georges-Chevrot-ebook/dp/B075S7WW1D"
-   ],
-   "prices_seen": []
-  },
-  {
-   "id": "junia",
-   "title": "Junia",
-   "subtitle": "",
-   "author": "Michael E. Giesler",
-   "shelf": "more",
-   "kind": "book",
-   "description": "A novel of life at the very beginning of Christianity, showing the new faith's attraction amid social and family struggle.",
-   "isbn": "",
-   "pages": 0,
-   "featured": false,
-   "status": "confirmed",
-   "evidence": "scepter.uk has its own product page (body_junia.html) with a blurb calling it a fictional exploration of life at the beginning of Christianity. No price was seen, and I could not search further because the search budget was used up.",
-   "sources": [
-    "http://scepter.uk/html/body_junia.html"
    ],
    "prices_seen": []
   }
@@ -666,6 +3155,10 @@
   {
    "title": "Havard Interview",
    "why": "A scepter.uk web page (an interview with Alexandre Havard about 'Leadership for Everyone'), not a product. The results named no Havard book title, so there is nothing to list without inventing one. The verify stage could look for Havard titles on scepter.uk."
+  },
+  {
+   "title": "The Navarre Bible (series entry)",
+   "why": "replaced by the individual volumes Scepter UK sells"
   }
  ]
 }
