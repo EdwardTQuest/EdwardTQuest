@@ -62,7 +62,10 @@
  },
  "collected-letters-3": {
   "title": "The Collected Letters, Volume 3",
-  "subtitle": "Letter 29: On the Work of St. Gabriel in Opus Dei"
+  "subtitle": "Letter 29: On the Work of St. Gabriel in Opus Dei",
+  "status": "confirmed",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research). Also in Scepter Publishers' own catalogue (scepterpublishers.org/products.json, read 26 September 2026) under the Scepter imprint, ISBN 9781910644317",
+  "isbn": "9781910644317"
  },
  "mary-of-nazareth": {
   "author": "Federico Suárez",
@@ -70,7 +73,10 @@
  },
  "joseph-of-nazareth": {
   "author": "Federico Suárez",
-  "description": "Federico Suárez's meditations on the life and vocation of Saint Joseph."
+  "description": "Federico Suárez's meditations on the life and vocation of Saint Joseph.",
+  "status": "confirmed",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research). Also in Scepter Publishers' own catalogue (scepterpublishers.org/products.json, read 26 September 2026) under the Scepter imprint, ISBN 9781594170201",
+  "isbn": "9781594170201"
  },
  "my-russian-way": {
   "description": "",
@@ -78,31 +84,252 @@
   "evidence": "Held back at review: a single Veritatis tag hit, no author and no description found."
  },
  "christ-is-passing-by": {
-  "subtitle": "Homilies"
+  "subtitle": "Homilies",
+  "status": "confirmed",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research). Also in Scepter Publishers' own catalogue (scepterpublishers.org/products.json, read 26 September 2026) under the Scepter imprint, ISBN 9780933932043",
+  "isbn": "9780933932043"
  },
  "forge": {
-  "subtitle": ""
+  "subtitle": "",
+  "status": "confirmed",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research). Also in Scepter Publishers' own catalogue (scepterpublishers.org/products.json, read 26 September 2026) under the Scepter imprint, ISBN 9781910644096",
+  "isbn": "9781910644096"
  },
  "friends-of-god": {
   "subtitle": "Homilies",
-  "description": "Homilies by St. Josemaría Escrivá on the virtues of ordinary Christian life."
+  "description": "Homilies by St. Josemaría Escrivá on the virtues of ordinary Christian life.",
+  "status": "confirmed",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research). Also in Scepter Publishers' own catalogue (scepterpublishers.org/products.json, read 26 September 2026) under the Scepter imprint, ISBN 9780933932838",
+  "isbn": "9780933932838"
  },
  "time-for-god": {
-  "subtitle": ""
+  "subtitle": "",
+  "status": "confirmed",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research). Also in Scepter Publishers' own catalogue (scepterpublishers.org/products.json, read 26 September 2026) under the Scepter imprint, ISBN 9781594174827",
+  "isbn": "9781594174827"
  },
  "opus-dei-a-history-1928-2016-volume-one": {
   "title": "Opus Dei: A History (1928-2016)",
   "subtitle": "Volume One",
-  "description": "The history of Opus Dei from its founding in 1928."
+  "description": "The history of Opus Dei from its founding in 1928.",
+  "status": "confirmed",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research). Also in Scepter Publishers' own catalogue under the Scepter imprint (read 26 September 2026).",
+  "author": "José Luis González Gullón and John F. Coverdale"
  },
  "putting-down-roots": {
   "description": "Biography of Fr. Joseph Muzquiz, one of Opus Dei's first three priests, who began its work in the United States.",
-  "subtitle": "Father Joseph Muzquiz and the Growth of Opus Dei"
+  "subtitle": "Father Joseph Muzquiz and the Growth of Opus Dei",
+  "status": "confirmed",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research). Also in Scepter Publishers' own catalogue (scepterpublishers.org/products.json, read 26 September 2026) under the Scepter imprint, ISBN 9781594170812",
+  "isbn": "9781594170812"
  },
  "holy-rosary": {
   "description": "St. Josemaría Escrivá's short commentaries on the fifteen mysteries of the Rosary, first published in 1934."
  },
  "fire-light": {
   "description": "Jacques Philippe on opening the heart to what God wants to give."
- }
+ },
+ "way": {
+  "status": "confirmed",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research). Also in Scepter Publishers' own catalogue under the Scepter imprint (read 26 September 2026)."
+ },
+ "footprints-in-the-snow": {
+  "status": "confirmed",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research). Also in Scepter Publishers' own catalogue (scepterpublishers.org/products.json, read 26 September 2026) under the Scepter imprint, ISBN 9781594171642",
+  "isbn": "9781594171642"
+ },
+ "interior-freedom": {
+  "status": "confirmed",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research). Also in Scepter Publishers' own catalogue (scepterpublishers.org/products.json, read 26 September 2026) under the Scepter imprint, ISBN 9781594170522",
+  "isbn": "9781594170522"
+ },
+ "in-the-school-of-the-holy-spirit": {
+  "status": "confirmed",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research). Also in Scepter Publishers' own catalogue (scepterpublishers.org/products.json, read 26 September 2026) under the Scepter imprint, ISBN 9781594170539",
+  "isbn": "9781594170539"
+ },
+ "called-to-life": {
+  "status": "confirmed",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research). Also in Scepter Publishers' own catalogue (scepterpublishers.org/products.json, read 26 September 2026) under the Scepter imprint, ISBN 9781594170690",
+  "isbn": "9781594170690"
+ },
+ "way-of-trust-and-love": {
+  "status": "confirmed",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research). Also in Scepter Publishers' own catalogue (scepterpublishers.org/products.json, read 26 September 2026) under the Scepter imprint, ISBN 9781594171659",
+  "isbn": "9781594171659"
+ },
+ "eight-doors-of-the-kingdom": {
+  "status": "confirmed",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research). Also in Scepter Publishers' own catalogue (scepterpublishers.org/products.json, read 26 September 2026) under the Scepter imprint, ISBN 9781594172755",
+  "isbn": "9781594172755"
+ },
+ "priestly-fatherhood": {
+  "status": "confirmed",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research). Also in Scepter Publishers' own catalogue (scepterpublishers.org/products.json, read 26 September 2026) under the Scepter imprint, ISBN 9781594174179",
+  "isbn": "9781594174179"
+ },
+ "thirsting-for-prayer": {
+  "status": "confirmed",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research). Also in Scepter Publishers' own catalogue (scepterpublishers.org/products.json, read 26 September 2026) under the Scepter imprint, ISBN 9781594172083",
+  "isbn": "9781594172083"
+ },
+ "real-mercy": {
+  "status": "confirmed",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research). Also in Scepter Publishers' own catalogue (scepterpublishers.org/products.json, read 26 September 2026) under the Scepter imprint, ISBN 9781594172472",
+  "isbn": "9781594172472"
+ },
+ "three-to-get-married": {
+  "status": "confirmed",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research). Also in Scepter Publishers' own catalogue (scepterpublishers.org/products.json, read 26 September 2026) under the Scepter imprint, ISBN 9780933932876",
+  "isbn": "9780933932876"
+ },
+ "father-the-family-protector": {
+  "status": "confirmed",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research). Also in Scepter Publishers' own catalogue (scepterpublishers.org/products.json, read 26 September 2026) under the Scepter imprint, ISBN 9781594170331",
+  "isbn": "9781594170331"
+ },
+ "covenanted-happiness": {
+  "status": "confirmed",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research). Also in Scepter Publishers' own catalogue (scepterpublishers.org/products.json, read 26 September 2026) under the Scepter imprint, ISBN 9789966751072",
+  "isbn": "9789966751072"
+ },
+ "meaning-of-marriage": {
+  "status": "confirmed",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research). Also in Scepter Publishers' own catalogue (scepterpublishers.org/products.json, read 26 September 2026) under the Scepter imprint, ISBN 9781594170898",
+  "isbn": "9781594170898"
+ },
+ "challenge-of-love": {
+  "status": "confirmed",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research). Also in Scepter Publishers' own catalogue (scepterpublishers.org/products.json, read 26 September 2026) under the Scepter imprint, ISBN 9781594174308",
+  "isbn": "9781594174308",
+  "author": "Enrique Rojas"
+ },
+ "home-again": {
+  "status": "confirmed",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research). Also in Scepter Publishers' own catalogue (scepterpublishers.org/products.json, read 26 September 2026) under the Scepter imprint, ISBN 9781594173714",
+  "isbn": "9781594173714"
+ },
+ "guidebook-for-confessors": {
+  "status": "confirmed",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research). Also in Scepter Publishers' own catalogue (scepterpublishers.org/products.json, read 26 September 2026) under the Scepter imprint, ISBN 9781594170911",
+  "isbn": "9781594170911",
+  "author": "Michael E. Giesler"
+ },
+ "guidebook-for-confession-for-children": {
+  "status": "confirmed",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research). Also in Scepter Publishers' own catalogue (scepterpublishers.org/products.json, read 26 September 2026) under the Scepter imprint, ISBN 9789715541077",
+  "isbn": "9789715541077",
+  "author": "Beatriz B. Brillantes (ed.)"
+ },
+ "meaning-of-vocation": {
+  "status": "confirmed",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research). Also in Scepter Publishers' own catalogue (scepterpublishers.org/products.json, read 26 September 2026) under the Scepter imprint, ISBN 9780933932999",
+  "isbn": "9780933932999",
+  "author": "St. John Paul II",
+  "description": "St. John Paul II on recognising God's call and answering it."
+ },
+ "you-can-pray": {
+  "status": "confirmed",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research). Also in Scepter Publishers' own catalogue (scepterpublishers.org/products.json, read 26 September 2026) under the Scepter imprint, ISBN 9781594171840",
+  "isbn": "9781594171840",
+  "author": "Nora Browne",
+  "description": "125 short points to help teenagers pray."
+ },
+ "he-calls-we-answer": {
+  "status": "likely",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research); in Scepter Publishers' own catalogue (read 26 September 2026) with ISBN 9781594174223.",
+  "author": "Borja de León",
+  "isbn": "9781594174223",
+  "description": "St. Josemaría's teaching on the Christian vocation: the call to love and be loved."
+ },
+ "overcoming-lukewarmness": {
+  "status": "likely",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research); in Scepter Publishers' own catalogue (read 26 September 2026) with ISBN 9781594171437.",
+  "author": "Francis Fernández-Carvajal",
+  "isbn": "9781594171437",
+  "description": "Francis Fernández-Carvajal on lukewarmness, the hidden enemy that slowly ages and destroys love."
+ },
+ "through-wind-and-waves": {
+  "status": "likely",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research); in Scepter Publishers' own catalogue (read 26 September 2026) with ISBN 9781594171666.",
+  "author": "Francis Fernández-Carvajal",
+  "isbn": "9781594171666",
+  "description": "Francis Fernández-Carvajal on spiritual direction and the work of guiding a soul to God."
+ },
+ "beyond-good-intentions": {
+  "status": "likely",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research); in Scepter Publishers' own catalogue (read 26 September 2026) with ISBN 9781594171833.",
+  "author": "Juan Luis Lorda",
+  "isbn": "9781594171833",
+  "description": "Juan Luis Lorda on Christian morality as the art of living, not a list of rules."
+ },
+ "nine-days-to-welcome-peace": {
+  "status": "likely",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research); in Scepter Publishers' own catalogue (read 26 September 2026) with ISBN 9781594173653.",
+  "isbn": "9781594173653",
+  "description": "Nine days of trusting prayer, humility and forgiveness to recover peace of heart."
+ },
+ "praying-from-the-depths-of-the-psalms": {
+  "status": "likely",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research); in Scepter Publishers' own catalogue (read 26 September 2026) with ISBN 9781594173431.",
+  "author": "John Henry Hanson",
+  "isbn": "9781594173431",
+  "description": "John Henry Hanson on turning life's hills and valleys into prayer with the Psalms."
+ },
+ "maiden-of-nazareth": {
+  "status": "likely",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research); in Scepter Publishers' own catalogue (read 26 September 2026) with ISBN 9781594172410.",
+  "author": "Javier Suárez",
+  "isbn": "9781594172410",
+  "description": "The life of the Blessed Virgin Mary, told so as to know her and become like her."
+ },
+ "to-be-a-man": {
+  "status": "likely",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research); in Scepter Publishers' own catalogue (read 26 September 2026) with ISBN 9781594171628.",
+  "author": "James B. Stenson",
+  "isbn": "9781594171628",
+  "description": "James B. Stenson on the late teens and twenties as the time to shape who a young man will be."
+ },
+ "risen-jesus": {
+  "status": "likely",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research); in Scepter Publishers' own catalogue (read 26 September 2026) with ISBN 9781594173813.",
+  "author": "Alban Goodier",
+  "isbn": "9781594173813",
+  "description": "Alban Goodier follows the witnesses of Christ's death, burial and resurrection into their hearts and minds."
+ },
+ "visions-of-purgatory": {
+  "status": "likely",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research); in Scepter Publishers' own catalogue (read 26 September 2026) with ISBN 9781594172182.",
+  "author": "Anonymous",
+  "isbn": "9781594172182",
+  "description": "A sober twentieth-century account of purgatory, translated from French, that consoles more than it frightens."
+ },
+ "marriage-a-path-to-sanctity": {
+  "status": "likely",
+  "evidence": "Carried by Veritatis Publishing in Australia (earlier research); in Scepter Publishers' own catalogue (read 26 September 2026) with ISBN 9789715541534; published by Sinag-Tala and distributed by Scepter.",
+  "author": "Javier Abad and Eugenio Fenoy",
+  "isbn": "9789715541534",
+  "description": "A guidebook for married couples on marriage as a path to holiness."
+ },
+ "_add": [
+  {
+   "id": "at-gods-pace",
+   "title": "At God's Pace",
+   "subtitle": "St. Josemaría Escrivá, Founder of Opus Dei",
+   "author": "François Gondrand",
+   "shelf": "opus-dei",
+   "kind": "book",
+   "description": "François Gondrand's life of St. Josemaría Escrivá, pioneer of the lay apostolate.",
+   "isbn": "9781594174407",
+   "pages": 0,
+   "featured": false,
+   "status": "likely",
+   "evidence": "Found on Veritatis (veritatis.com.au/product/at-gods-pace/) in the earlier research; in Scepter Publishers' own catalogue (read 26 September 2026), ISBN 9781594174407.",
+   "sources": [
+    "https://veritatis.com.au/product/at-gods-pace/",
+    "https://scepterpublishers.org/"
+   ],
+   "prices_seen": []
+  }
+ ]
 }

@@ -34,9 +34,9 @@ came from.
 | shop | listed | confirmed | likely | range | held back (doubtful) | dropped |
 |---|---|---|---|---|---|---|
 | Scepter UK | 23 | 17 | 6 | – | 10 | 7 |
-| Sinag-Tala | 35 | 29 | 6 | – | 1 | 3 |
+| Sinag-Tala | 57 | 56 | 1 | – | 1 | 3 |
 | Scepter Kenya | 22 | 4 | – | 18 | – | – |
-| Scepter Australia | 44 | 9 | 35 | – | 14 | 8 |
+| Scepter Australia | 56 | 37 | 19 | – | 3 | 8 |
 
 **Scepter UK.**
 - Scepter (U.K.)'s own ISBN prefix is 0-906138 / 978-0-906138, confirmed on Furrow, Friends of
@@ -95,3 +95,22 @@ whole, and every Amazon price filled in one pass:
 
 Or raise the web-search budget (`CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION`). Or paste the owners'
 stock lists and prices into `data/`.
+
+## Update, 26 September 2026 (network opened)
+
+- **Sinag-Tala:** its two WordPress catalogues were read whole through the WordPress API
+  (`tools/import_sinag.py` → `data/research/sinag-tala-site.json`). The shop now lists 57 titles, all
+  on Sinag-Tala's own pages except four earlier finds kept with their evidence. 46 carry Sinag-Tala's
+  own peso list price from those pages. Amazon has no Philippine store, so this is the price a
+  Filipino buyer pays.
+- **Scepter Australia:** Scepter Publishers' own catalogue (scepterpublishers.org, 632 products, read
+  as JSON) confirmed 37 titles as Scepter books. It also brought back 11 titles held as doubtful
+  (they are Scepter books that Veritatis lists) and *At God's Pace*. It filled missing authors and
+  ISBNs. The shop now lists 56.
+- **Scepter Kenya:** every `range` title is confirmed as a Scepter book in that catalogue. Its own
+  shop still does not connect (the gateway answers 502), so its stock list is still to confirm.
+- **Still closed:**
+  - scepter.uk: the proxy says the host is not in the allowlist.
+  - Amazon (all three stores) answers plain requests with a captcha, so prices need a real browser.
+    Chromium here does not trust the proxy certificate, and adding it was not permitted.
+  - Veritatis and Freedom Publishing are behind bot checks.

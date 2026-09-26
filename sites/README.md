@@ -6,9 +6,9 @@ audiobook at one price: the price Amazon lists.
 | shop | where | titles | look |
 |---|---|---|---|
 | [`scepter-uk/`](scepter-uk/) | London | 23 | Caslon on chalk paper; royal ink and gold; contour lines to a summit |
-| [`sinag-tala/`](sinag-tala/) | Makati, Philippines | 35 | Fraunces; night indigo and star gold; eight-ray starlight |
+| [`sinag-tala/`](sinag-tala/) | Makati, Philippines | 57 | Fraunces; night indigo and star gold; eight-ray starlight |
 | [`scepter-kenya/`](scepter-kenya/) | Nairobi | 22 | Bricolage Grotesque; highland green, ochre, red earth; twin peaks |
-| [`scepter-australia/`](scepter-australia/) | Australia | 44 | Instrument Serif italic; night sky, wattle gold; the Southern Cross |
+| [`scepter-australia/`](scepter-australia/) | Australia | 56 | Instrument Serif italic; night sky, wattle gold; the Southern Cross |
 
 `index.html` is the hub: the four houses on one screen.
 
@@ -61,5 +61,6 @@ python3 tools/build.py --all        # also show titles the research marked doubt
 
 Corrections to titles and descriptions go in `data/<shop>.edits.json` (keyed by each entry's
 original id), then `python3 tools/import_research.py <shop> data/research/<shop>.json` and a build.
-Scepter Kenya's catalogue was assembled by hand: edit `data/scepter-kenya.json` directly (the importer
-refuses to overwrite it).
+Scepter Kenya's and Sinag-Tala's catalogues are assembled files: edit `data/scepter-kenya.json` and
+`data/sinag-tala.json` directly (the importer refuses to overwrite them). Sinag-Tala's own pages are
+re-read with `python3 tools/import_sinag.py`.
