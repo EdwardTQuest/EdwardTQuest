@@ -461,8 +461,9 @@ def prepare_gutenberg(text, title='', author=''):
         h = heading_text(x)
         if seen >= 0.5 * total_words and h and re.fullmatch(r'(general )?index\.?', h.strip(), re.I):
             j = k + 1
+            # entries run until the first block of prose (endnotes may follow an index, as in James)
             while j < len(body) and (re.search(r'\d[.;,]?\s*$', body[j].strip()) or page_numbered(body[j]) or is_heading_block(body[j])
-                                     or (para_words(body[j]) < 40 and not is_prose(body[j]))):
+                                     or not is_prose(body[j])):
                 j += 1
             if j - k >= 10:
                 c['index dropped (words)'] = sum(para_words(x) for x in body[k:j])

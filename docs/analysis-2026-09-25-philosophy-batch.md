@@ -7,7 +7,7 @@ it compares with pipeline 1.
 
 The short version: **the mechanical stages hold at scale and cost nothing per book; the
 judgement layer works but only when a person or a model actually looks; and looking is what
-found every defect that mattered.** Eleven of the sixteen defects below were invisible to every
+found every defect that mattered.** Eleven of the seventeen defects below were invisible to every
 programmatic check and visible in the first page sample I opened.
 
 {{SUMMARY_TABLE}}
@@ -106,6 +106,7 @@ calling a stage done.
 | 14 | Paragraphs that begin "II. Man thinks." (Spinoza's axioms and definitions, Kant's numbered points) were read by pandoc as numbered lists: an `<ol>` in the EPUB, an indented enum in Typst, the numeral gone from the text. Now escaped by the importer and by an edit rule. | The EPUB check, honestly: 102 roman numerals missing. | importer, edit |
 | 15 | An unbound `[17]` in Nietzsche's text became, through pandoc's implicit header references, a link to section 17, and Typst refused the book. | The typeset stage failed. | pandoc options |
 | 16 | A note on a chapter title ("Read before the Aristotelian Society…", six in *The Meaning of Truth*) was dropped by pandoc's EPUB writer. It now becomes a source-note paragraph under the title. | The EPUB check: 88 words missing, all of them notes. | epub filter |
+| 17 | *Creative Evolution*'s index ran past the importer's forty-word cap on an entry and 750 index lines came through as text. The rule now runs to the first block of prose. | The structure battery: 749 "trailing number" findings on one book. | importer |
 
 Also found and fixed in the same pass: the dictionary sweep flagged "pp.", "Cf.", "5th", a bare
 "B", Latin in italics and roman numerals as likely errors; the structure battery called every
