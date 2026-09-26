@@ -39,14 +39,23 @@ local function header(h, division)
     local p = plates[anchor_count]
     if p then table.insert(out, plate_block(p)) end
   end
-  local s = pandoc.utils.stringify(h.content)
+  -- a note on a heading ("Read before the Aristotelian Society…") is dropped by the EPUB writer;
+  -- it becomes a source-note paragraph under the heading instead
+  local notes, inl = {}, pandoc.List()
+  for _, el in ipairs(h.content) do
+    if el.t == 'Note' then table.insert(notes, el) else inl:insert(el) end
+  end
+  local s = pandoc.utils.stringify(inl)
   local lab, rest = nil, s
   if not division then lab, rest = split_label(s) end
-  local content = h.content
+  local content = inl
   if lab and rest ~= s then
     content = pandoc.Inlines({ pandoc.Span(pandoc.Inlines(pandoc.Str(lab)), pandoc.Attr('', { 'label' })), pandoc.Str(rest) })
   end
   table.insert(out, pandoc.Header(2, content, h.attr))
+  for _, n in ipairs(notes) do
+    table.insert(out, pandoc.Div(n.content, pandoc.Attr('', { 'source-note' })))
+  end
   return out
 end
 
