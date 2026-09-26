@@ -8,8 +8,11 @@ pipeline's rules (preflight, gates, run-logs) do not apply here; these do.
 - Before and after a change: `cd scepter && npm install && npm test && npm run check:theme`.
   Then `npm run screenshots` and **look** at the results (`docs/screens-tmp/` or a path you pass).
   Screenshots caught five real bugs that no test did.
-- The engine promises in `ALGORITHM.md` are tested in `tests/engine.test.mjs`. Change both
-  together, never one.
+- The engine promises in `ALGORITHM.md` are tested in `tests/engine.test.mjs` (on the mock) and
+  `tests/live.test.mjs` (eight readers on `demo/live/`, a snapshot of scepterpublishers.org). Change
+  both together, never one. Refresh the snapshot with `node tools/snapshot-store.mjs`, then read a
+  few plans (`demo/quiz.html`), not only the test results: reading plans on the live catalogue
+  found seven faults the mock never showed.
 - The admin-facing labels (themes, audiences, seasons, "start when") live in the engine
   (`THEMES`, `AUDIENCES`, `SEASON_LABELS`, `START_WHEN`). The metaobject definition and the CSV
   importer read them from there. Renaming a label breaks every stored entry that uses it.

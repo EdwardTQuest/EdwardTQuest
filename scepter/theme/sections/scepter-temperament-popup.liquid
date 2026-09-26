@@ -20,7 +20,7 @@
       "enabled": {{ s.enabled | json }},
       "rootUrl": {{ root | json }},
       "currency": {{ cart.currency.iso_code | json }},
-      "triggers": { "launcher": {{ s.launcher | json }}, "launcherPosition": {{ s.launcher_position | json }}, "delay": {{ s.delay | json }}, "exitIntent": {{ s.exit_intent | json }}, "hash": "temperament-test" },
+      "triggers": { "launcher": {{ s.launcher | json }}, "launcherPosition": {{ s.launcher_position | json }}, "launcherBottom": {{ s.launcher_bottom | default: 69 | json }}, "delay": {{ s.delay | json }}, "exitIntent": {{ s.exit_intent | json }}, "hash": "temperament-test" },
       "suppressDays": {{ s.suppress_days | json }},
       "excludePaths": {{ s.exclude_paths | split: ',' | json }},
       "questionSet": {{ s.question_set | default: 'havard' | json }},
@@ -29,8 +29,8 @@
       "style": {% capture sp_style %}{% render 'scepter-colors', s: s %}{% endcapture %}{{ sp_style | strip | json }},
       "copy": {
         "kicker": {{ s.kicker | json }}, "title": {{ s.heading | json }}, "lead": {{ s.intro | json }}, "cta": {{ s.cta | json }},
-        "meta": {{ s.meta | json }}, "attribution": {{ s.attribution | json }}, "attributionUrl": {{ s.attribution_url | json }},
-        "booksTitle": {{ s.books_title | json }}, "booksLead": {{ s.books_lead | json }}, "forYou": {{ s.for_you_label | json }},
+        "meta": {{ s.meta | json }}, "attribution": {{ s.attribution | json }},
+        "booksTitle": {{ s.books_title | json }}, "booksLead": {{ s.books_lead | json }},
         "launcher": {{ s.launcher_label | json }}, "consent": {{ s.consent_text | json }}
       },
       "books": [
@@ -143,6 +143,17 @@
     },
     {
       "type": "range",
+      "id": "launcher_bottom",
+      "label": "Button height above the bottom on phones and tablets",
+      "min": 12,
+      "max": 120,
+      "step": 1,
+      "unit": "px",
+      "default": 69,
+      "info": "69 clears the store's 55px bottom toolbar. It also rises above the sticky add-to-cart bar on product pages."
+    },
+    {
+      "type": "range",
       "id": "delay",
       "label": "Also open by itself after",
       "min": 0,
@@ -217,11 +228,6 @@
       "info": "Leave blank for the standard credit, which links to virtuousleadership.com for Havard's test. Once HVLI agrees, e.g. “Alexandre Havard’s Temperament Test, used with permission of Virtuous Leadership.”"
     },
     {
-      "type": "url",
-      "id": "attribution_url",
-      "label": "Credit link"
-    },
-    {
       "type": "header",
       "content": "Havard books"
     },
@@ -279,12 +285,6 @@
       "default": "Temperament is where we start; character is what we build. These books show how."
     },
     {
-      "type": "text",
-      "id": "for_you_label",
-      "label": "Label on the reader's own book",
-      "default": "Written for you"
-    },
-    {
       "type": "header",
       "content": "Email"
     },
@@ -317,8 +317,15 @@
     {
       "type": "text",
       "id": "klaviyo_event",
-      "label": "Klaviyo event name",
+      "label": "Event name (Klaviyo, Omnisend)",
       "default": "Completed Temperament Test"
+    },
+    {
+      "type": "checkbox",
+      "id": "omnisend",
+      "label": "Send it to Omnisend",
+      "default": false,
+      "info": "Needs the Omnisend app embed. Records the event above on the contact, for an Omnisend automation. Tick it once that automation is live."
     },
     {
       "type": "url",
@@ -370,7 +377,7 @@
       "type": "color",
       "id": "color_burgundy",
       "label": "Burgundy",
-      "default": "#6f1d2c"
+      "default": "#84171d"
     },
     {
       "type": "color",

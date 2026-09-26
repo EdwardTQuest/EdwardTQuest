@@ -1,7 +1,9 @@
 {%- comment -%}
   Scepter kit: one product as compact JSON for the recommendation engine.
   Usage: {% render 'scepter-product-json', product: product %}
+  The price is the variant that "Add to cart" adds (the first available one, usually the
+  paperback), not product.price, which is the cheapest variant (usually the e-book).
 {%- endcomment -%}
 {%- if product != blank -%}
-{"id":{{ product.id | json }},"handle":{{ product.handle | json }},"title":{{ product.title | json }},"vendor":{{ product.vendor | json }},"type":{{ product.type | json }},"tags":{{ product.tags | json }},"available":{{ product.available | json }},"price_cents":{{ product.price | json }},"variant":{{ product.selected_or_first_available_variant.id | json }},"url":{{ product.url | json }},"image":{% if product.featured_image %}{{ product.featured_image | image_url: width: 360 | json }}{% else %}""{% endif %},"excerpt":{{ product.description | strip_html | truncatewords: 80 | json }}}
+{"id":{{ product.id | json }},"handle":{{ product.handle | json }},"title":{{ product.title | json }},"vendor":{{ product.vendor | json }},"type":{{ product.type | json }},"tags":{{ product.tags | json }},"available":{{ product.available | json }},"price_cents":{{ product.selected_or_first_available_variant.price | json }},"variant":{{ product.selected_or_first_available_variant.id | json }},"url":{{ product.url | json }},"image":{% if product.featured_image %}{{ product.featured_image | image_url: width: 360 | json }}{% else %}""{% endif %},"excerpt":{{ product.description | strip_html | truncatewords: 80 | json }}}
 {%- else -%}null{%- endif -%}

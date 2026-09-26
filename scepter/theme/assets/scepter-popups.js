@@ -57,7 +57,7 @@
   var designMode = function () { return !!(window.Shopify && window.Shopify.designMode); };
 
   // A drawn cover when there is no image (same look as the quiz).
-  var TONES = ['#1f3d2e', '#6f1d2c', '#2d5842', '#3b4a3f', '#57222e', '#264c3a'];
+  var TONES = ['#1f3d2e', '#84171d', '#2d5842', '#3b4a3f', '#57222e', '#264c3a'];
   function cover(item, cls) {
     if (item.image) return h('img', { class: 'sp-cover ' + (cls || ''), src: item.image, alt: '', loading: 'lazy' });
     var x = 0; String(item.title || '').split('').forEach(function (c) { x = (x * 31 + c.charCodeAt(0)) | 0; });
@@ -197,11 +197,12 @@
   // Only Klaviyo (with a key) or a webhook can send an email; a Shopify customer record cannot.
   function canEmail(cfg) {
     var lc = cfg.lead || {};
-    return !!((lc.klaviyo && lc.klaviyo.publicKey) || lc.webhook);
+    return !!((lc.klaviyo && lc.klaviyo.publicKey) || (lc.omnisend && lc.omnisend.enabled) || lc.webhook);
   }
+
   function leadConfig(cfg) {
     var lc = cfg.lead || {};
-    return { klaviyo: lc.klaviyo, webhook: lc.webhook, shopify: lc.shopify, rootUrl: cfg.rootUrl || '/', sensitive: !!lc.sensitive };
+    return { klaviyo: lc.klaviyo, omnisend: lc.omnisend, webhook: lc.webhook, shopify: lc.shopify, rootUrl: cfg.rootUrl || '/', sensitive: !!lc.sensitive };
   }
 
   // ---------------------------------------------------------------------------------------------
@@ -227,9 +228,16 @@
       kicker: 'A gift for you', title: 'Choose a free e-book', sub: 'Tell us what you’re hoping for, and we’ll send you a book to match.',
       legend: 'What are you hoping for most?', button: 'Send me my free e-book', doneTitle: 'It’s yours{name}.',
       doneText: 'Your e-book is ready to download. We’ve emailed you a copy too.', doneTextEmailOnly: 'Check your inbox: your e-book is on its way.',
-      doneTextNoEmail: 'Your e-book is ready to download.',
-      download: 'Download the e-book', consent: 'Also send me occasional emails from Scepter. Unsubscribe anytime.', fine: 'We’ll never share your email.'
+      doneTextNoEmail: 'Your e-book is ready to download.', doneTextProduct: 'Your free booklet is one click away.',
+      doneTextProductEmail: 'Your free booklet is one click away. We’ve emailed you the link too.',
+      doneTextNothing: 'Thank you. We’ll be in touch.', download: 'Download the e-book', getBooklet: 'Get the free booklet',
+      consent: 'Also send me occasional emails from Scepter. Unsubscribe anytime.', fine: 'We’ll never share your email.'
     }, cfg.copy);
+    // The e-book's file, else its free product page (made absolute for the email).
+    function linkOf(it) {
+      var l = it.url || it.productUrl || '';
+      return l && l.charAt(0) === '/' && typeof location !== 'undefined' ? location.origin + l : l;
+    }
     var given = (cfg.interests || []).filter(function (x) { return x && x.key; });
     var interests = (given.length ? given : DEFAULT_INTERESTS).map(function (it, i) {
       return merge(DEFAULT_INTERESTS.filter(function (d) { return d.key === it.key; })[0] || DEFAULT_INTERESTS[i] || {}, it);
@@ -295,25 +303,29 @@
       L.submit(leadConfig(cfg), {
         email: email, firstName: first, marketing: marketing, source: 'Scepter free e-book pop-up',
         tags: [lc.tag || 'free-ebook', 'interest-' + chosen],
-        properties: { ebook_interest: it.label, ebook_title: it.title || '', ebook_url: it.url || '' },
+        properties: { ebook_interest: it.label, ebook_title: it.title || '', ebook_url: linkOf(it) },
         eventName: lc.eventName || 'Requested Free E-book',
-        eventProperties: { interest: it.label, ebook_title: it.title || '', ebook_url: it.url || '', ebook_image: it.image || '' }
+        eventProperties: { interest: it.label, ebook_title: it.title || '', ebook_url: linkOf(it), ebook_image: it.image || '' }
       });
       emit('ebook:submit', { interest: chosen });
       renderDone(it, first);
     }
 
     function renderDone(it, first) {
-      // "By email only" needs something that can email; otherwise the download is still offered.
-      var emailOnly = (cfg.deliver === 'email' && canEmail(cfg)) || !it.url;
-      var text = emailOnly ? copy.doneTextEmailOnly : canEmail(cfg) ? copy.doneText : copy.doneTextNoEmail;
+      // A file link downloads; without one, the free booklet's product page opens. "By email only"
+      // needs something that can email; otherwise the link is still offered.
+      var link = linkOf(it), isFile = !!it.url;
+      var emailOnly = canEmail(cfg) && (cfg.deliver === 'email' || !link);
+      var text = emailOnly ? copy.doneTextEmailOnly : !link ? copy.doneTextNothing
+        : !isFile ? (canEmail(cfg) ? copy.doneTextProductEmail : copy.doneTextProduct)
+        : canEmail(cfg) ? copy.doneText : copy.doneTextNoEmail;
       modal.content.innerHTML = '';
       modal.content.appendChild(h('div', { class: 'sp-ebook__done' }, [
         cover({ title: it.title || it.label, author: it.author, image: it.image }),
         h('p', { class: 'sp-kicker', text: it.label }),
         h('h2', { class: 'sp-ebook__title', text: copy.doneTitle.replace('{name}', first ? ', ' + first : '') }),
         h('p', { class: 'sp-lead', text: text }),
-        emailOnly ? null : h('a', { class: 'sp-btn sp-btn--primary sp-btn--lg', href: it.url, target: '_blank', rel: 'noopener', download: '', onclick: function () { emit('ebook:download', { interest: it.key }); } }, copy.download),
+        emailOnly || !link ? null : h('a', { class: 'sp-btn sp-btn--primary sp-btn--lg', href: link, target: '_blank', rel: 'noopener', download: isFile ? '' : null, onclick: function () { emit('ebook:download', { interest: it.key }); } }, isFile ? copy.download : copy.getBooklet),
         h('button', { type: 'button', class: 'sp-btn sp-btn--quiet', onclick: function () { modal.hide('done'); } }, 'Back to the store')
       ]));
       var focusable = modal.content.querySelector('.sp-btn');
@@ -727,7 +739,10 @@
     var t = cfg.triggers || {};
     var launcher = null;
     if (t.launcher !== false && !designMode()) {
-      launcher = h('button', { type: 'button', class: 'sp-launcher sp-launcher--' + (t.launcherPosition || 'left'), onclick: function () { open('launcher'); } },
+      // Outside .sp, so it carries the section's colours (and its height above phone toolbars) itself.
+      var lift = Number(t.launcherBottom);
+      launcher = h('button', { type: 'button', class: 'sp-launcher sp-launcher--' + (t.launcherPosition || 'left'), onclick: function () { open('launcher'); },
+        style: (cfg.style || '') + (lift >= 0 && t.launcherBottom !== '' && t.launcherBottom !== null && t.launcherBottom !== undefined ? ' --sp-launcher-bottom: ' + lift + 'px;' : '') || null },
         [h('span', { class: 'sp-launcher__dot', 'aria-hidden': 'true' }), copy.launcher]);
       if (!excluded(cfg, window.location.pathname)) document.body.appendChild(launcher);
     }

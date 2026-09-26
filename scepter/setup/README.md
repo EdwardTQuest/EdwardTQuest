@@ -43,7 +43,33 @@ add these fields:
 The labels are matched without regard to case. A label the engine doesn't know is ignored, so keep
 the spellings. `create-formation-book.mjs --dry-run` prints the exact definition.
 
-## Klaviyo flows
+## Omnisend automations (the store's email platform)
+
+In each of the three sections, set the event name (the defaults are *Completed Formation Quiz*,
+*Requested Free E-book* and *Completed Temperament Test*) and tick *Send it to Omnisend*. The
+Omnisend app embed must be on in the theme (Customize → App embeds).
+
+1. Take the quiz yourself once, so the event exists in Omnisend. A custom event becomes a trigger
+   after it has fired once.
+2. Automations → Create workflow → Custom event → pick the event.
+3. Add an email and paste the matching file from `omnisend/`: `formation-plan-email.html`,
+   `free-ebook-email.html` or `temperament-email.html`. They print the event's fields with
+   Omnisend's `[[event.field]]` syntax.
+4. Send a test to yourself and check all twelve months print.
+
+What the page sends: `omnisend.identifyContact({ email })`, then a `track` event whose properties
+are plain text. The quiz sends:
+- `plan_1_month`, `plan_1_title`, `plan_1_author`, `plan_1_url`, `plan_1_image`, `plan_1_why` and
+  `plan_1_hidden_gem`, through `plan_12_…`;
+- `formation_plan_url`, `formation_archetype`, `archetype_text` and `practice`;
+- `first_name` and the quiz answers that are not sensitive.
+
+Subscribing is separate. Omnisend's browser API cannot subscribe anyone. Only a reader who ticks
+the marketing box is added through Shopify's newsletter form, and Omnisend syncs that contact as
+subscribed, with the tags. So send the plan, e-book and result emails to everyone who asked, and
+keep marketing emails to subscribers.
+
+## Klaviyo flows (if you use Klaviyo instead)
 
 In Klaviyo, the quiz and pop-ups create three metrics the first time someone completes them:
 *Completed Formation Quiz*, *Requested Free E-book*, *Completed Temperament Test*. For each one:

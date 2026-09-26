@@ -1,10 +1,12 @@
-/* Local preview harness. Stands in for Shopify: serves the mock catalogue at /products.json,
-   answers /cart/add.js and /products/<handle>.js, catches the lead calls (Klaviyo, webhook,
-   Shopify form) and shows them in a panel, and builds the same config the Liquid sections emit. */
+/* Local preview harness. Stands in for Shopify: serves a catalogue at /products.json (the snapshot
+   of the live store in live/, or the small mock with ?data=mock), answers /cart/add.js and
+   /products/<handle>.js, catches the lead calls (Klaviyo, Omnisend, webhook, Shopify form) and
+   shows them in a panel, and builds the same config the Liquid sections emit. */
 (function () {
   'use strict';
   var BASE = document.currentScript.src.replace(/demo\.js.*$/, '');
-  var MOCK = BASE + 'mock/';
+  var MOCK = BASE + (/[?&]data=mock\b/.test(location.search) ? 'mock/' : 'live/');
+  window.demoData = MOCK;
   var realFetch = window.fetch.bind(window);
   var cache = {};
   function json(url) { return cache[url] || (cache[url] = realFetch(url).then(function (r) { return r.json(); })); }
@@ -31,6 +33,12 @@
   }
   window.demoLog = log;
 
+  // A stand-in for Omnisend's launcher, so the inspector shows what Omnisend would receive.
+  window.omnisend = Object.assign([], {
+    identifyContact: function (c) { log('Omnisend identifyContact', c); },
+    push: function (x) { log('Omnisend ' + x[0] + ': ' + x[1], x[2]); }
+  });
+
   window.fetch = function (input, init) {
     var url = typeof input === 'string' ? input : input.url;
     var u = new URL(url, location.href);
@@ -46,8 +54,10 @@
       return json(MOCK + 'products.json').then(function (j) {
         var p = j.products.filter(function (x) { return x.handle === m[1]; })[0];
         if (!p) return respond({}, 404);
-        return respond({ id: p.id, handle: p.handle, title: p.title, vendor: p.vendor, tags: p.tags, url: '/products/' + p.handle, featured_image: null,
-          price: Math.round(Number(p.variants[0].price) * 100), variants: p.variants.map(function (v) { return { id: v.id, available: v.available, price: Math.round(Number(v.price) * 100) }; }) });
+        return respond({ id: p.id, handle: p.handle, title: p.title, vendor: p.vendor, tags: p.tags, url: '/products/' + p.handle,
+          featured_image: p.images && p.images[0] ? p.images[0].src : null,
+          price: Math.min.apply(null, p.variants.map(function (v) { return Math.round(Number(v.price) * 100); })), // Shopify: the cheapest variant
+          variants: p.variants.map(function (v) { return { id: v.id, available: v.available, price: Math.round(Number(v.price) * 100) }; }) });
       });
     }
     if (u.pathname === '/cart/add.js') { log('Add to cart', JSON.parse(init.body)); return respond({ items: [] }); }
@@ -62,15 +72,17 @@
         s.lists.bestsellers.concat(s.lists.trending, s.library.map(function (e) { return e.handle; })).forEach(function (h) { wanted[h] = 1; });
         // Liquid prints only the bestsellers, trending and curated products; the rest comes from /products.json.
         var products = pj.products.filter(function (p) { return wanted[p.handle]; }).map(function (p) {
+          // As the Liquid snippet prints it: the first available variant's price and id.
+          var v = p.variants.filter(function (x) { return x.available !== false; })[0] || p.variants[0];
           return { id: p.id, handle: p.handle, title: p.title, vendor: p.vendor, type: p.product_type, tags: p.tags, available: true,
-            price_cents: Math.round(Number(p.variants[0].price) * 100), variant: p.variants[0].id, image: '', url: '/products/' + p.handle,
-            excerpt: p.body_html.replace(/<[^>]+>/g, '') };
+            price_cents: Math.round(Number(v.price) * 100), variant: v.id, image: p.images && p.images[0] ? p.images[0].src + '&width=360' : '', url: '/products/' + p.handle,
+            excerpt: String(p.body_html || '').replace(/<[^>]+>/g, '') };
         });
         return Object.assign({
           variant: variant, rootUrl: '/', currency: 'USD', products: products, lists: s.lists, topicMap: s.topicMap,
-          library: s.library, rules: s.rules, featured: s.featured[variant] || [],
+          library: s.library, rules: Array.isArray(s.rules) ? s.rules : (s.rules[variant] || []), featured: s.featured[variant] || [],
           settings: { bestsellerShare: variant === 'treasures' ? 0.55 : 0.7, maxPerAuthor: 2 },
-          lead: { klaviyo: { publicKey: 'DEMO12', listId: 'AbC123' }, webhook: 'https://hooks.example.com/scepter', shopify: true, sensitive: false },
+          lead: { klaviyo: { publicKey: 'DEMO12', listId: 'AbC123' }, omnisend: { enabled: true, waitMs: 0 }, webhook: 'https://hooks.example.com/scepter', shopify: true, sensitive: false },
           planPageUrl: '/scepter/demo/plan.html', quizUrl: '/scepter/demo/quiz.html?v=' + variant, privacyUrl: '#privacy'
         }, overrides || {});
       });

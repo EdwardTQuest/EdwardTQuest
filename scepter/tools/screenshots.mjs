@@ -182,25 +182,28 @@ async function runPopups(browser, viewport, tag) {
 import { execFileSync } from 'node:child_process';
 const browser = await chromium.launch({ executablePath: process.env.CHROMIUM || undefined });
 // Behind an intercepting proxy the bundled Chromium may not trust its certificate; fetch web fonts
-// with curl (which does) and hand them to the page. Elsewhere the browser loads them itself.
-const fontCache = new Map();
-async function routeFonts(page) {
+// and the live store's cover images with curl (which does) and hand them to the page. Elsewhere
+// the browser loads them itself.
+const remoteCache = new Map();
+const TYPE_OF = (url) => (/googleapis/.test(url) ? 'text/css' : /gstatic/.test(url) ? 'font/woff2'
+  : /\.png(\?|$)/i.test(url) ? 'image/png' : /\.webp(\?|$)/i.test(url) ? 'image/webp' : /\.gif(\?|$)/i.test(url) ? 'image/gif' : 'image/jpeg');
+async function routeRemote(page) {
   if (!process.env.HTTPS_PROXY) return;
-  await page.route(/https:\/\/fonts\.(googleapis|gstatic)\.com\/.*/, async (route) => {
+  await page.route(/https:\/\/(fonts\.(googleapis|gstatic)\.com|cdn\.shopify\.com)\/.*/, async (route) => {
     const url = route.request().url();
-    if (!fontCache.has(url)) {
+    if (!remoteCache.has(url)) {
       try {
-        const body = execFileSync('curl', ['-sS', '--max-time', '20', '-A', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36', url], { maxBuffer: 20e6 });
-        fontCache.set(url, body);
-      } catch { fontCache.set(url, null); }
+        const body = execFileSync('curl', ['-sS', '--fail', '--max-time', '20', '-A', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36', url], { maxBuffer: 20e6 });
+        remoteCache.set(url, body);
+      } catch { remoteCache.set(url, null); }
     }
-    const body = fontCache.get(url);
+    const body = remoteCache.get(url);
     if (!body) return route.abort();
-    await route.fulfill({ body, headers: { 'Content-Type': url.includes('googleapis') ? 'text/css' : 'font/woff2', 'Access-Control-Allow-Origin': '*' } });
+    await route.fulfill({ body, headers: { 'Content-Type': TYPE_OF(url), 'Access-Control-Allow-Origin': '*' } });
   });
 }
 async function preparePage(page) {
-  await routeFonts(page);
+  await routeRemote(page);
   await page.addInitScript(() => {
     document.addEventListener('DOMContentLoaded', () => {
       const st = document.createElement('style');

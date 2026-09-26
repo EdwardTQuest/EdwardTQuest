@@ -159,7 +159,7 @@ test('leaders and people whose work feels empty get Havard and the sanctificatio
   const lead = handles(plan({ work: 'business', workService: 4 }).plan);
   assert.ok(lead.some((h) => author(h) === 'havard'), lead.join());
   const empty = handles(plan({ workService: 1 }).plan);
-  assert.ok(empty.includes('sanctifying-ordinary-work'), empty.join());
+  assert.ok(empty.includes('holiness-through-work') || empty.includes('the-sanctification-of-work'), empty.join());
 });
 
 test('newcomers start with bridges, not insider books', () => {
@@ -318,4 +318,109 @@ test('month 1 stays a proven favourite, and swapping it (repeatedly) keeps it on
     p = E.swapMonth(p, 0, profile, catalog, { exclude: gone, bestsellerShare: 0.55 });
     assert.equal(p.months[0].tier, 'bestseller', `swap ${k + 1}: ${p.months[0].item.title}`);
   }
+});
+
+// ---- Calibrated against the live store (26 September 2026) ----
+
+function item(p, extra = {}) {
+  return { id: 1, handle: 'x', title: 'Untitled', vendor: 'Scepter', product_type: 'Book', tags: [], body_html: '',
+    variants: [{ id: 11, title: 'Paperback', price: '17.95', available: true }, { id: 12, title: 'eBook', price: '9.99', available: true }], ...p, ...extra };
+}
+function one(p, input = {}) {
+  const c = E.prepareCatalog({ products: [item(p)], ...input });
+  return c.items[0] || c.rejected[0];
+}
+
+test('a shop season tag lifts a book in season; only the title or the library holds it there', () => {
+  const tagged = one({ handle: 'the-way', title: 'The Way', tags: ['Lent', 'English'] });
+  assert.deepEqual(tagged.seasons, []);
+  assert.deepEqual(tagged.softSeasons, ['lent']);
+  const slotLent = { index: 4, month: 1, seasons: ['lent'], seasonDays: { lent: 19 } };
+  const slotJuly = { index: 8, month: 6, seasons: ['summer'], seasonDays: { summer: 5 } };
+  const f = E._internal.seasonFactor;
+  const titled = one({ handle: 'lenten-reflections', title: 'Lenten Reflections' });
+  assert.deepEqual(titled.seasons, ['lent']);
+  if (f) {
+    assert.ok(f(tagged, slotJuly) >= 1, 'no penalty out of season');
+    assert.ok(f(tagged, slotLent) > f(tagged, slotJuly), 'a lift in Lent');
+    assert.ok(f(titled, slotJuly) < 0.3, 'a Lent book stays in Lent');
+  }
+});
+
+test('topic collections: seasons and audiences soften, author: fills a gap, season names resolve', () => {
+  const input = {
+    lists: { topics: { fathers: ['great-dads'], 'marian-collection': ['great-dads'], escriva: ['great-dads'] } },
+    topicMap: 'fathers: family, audience:parents, audience:men\nmarian-collection: season:marian\nescriva: author:St. Josemaría Escrivá'
+  };
+  const it = one({ handle: 'great-dads', title: 'Conversations' }, input);
+  assert.deepEqual(it.audience, [], 'a collection never gates');
+  assert.deepEqual(it.softAudience.sort(), ['men', 'parents']);
+  assert.deepEqual(it.softSeasons, ['mary'], 'season:marian is Our Lady’s months');
+  assert.equal(it.author, 'St. Josemaría Escrivá');
+  const woman = E.profileFromAnswers({ ...base, gender: 'f', kids: 0 });
+  assert.equal(E._internal.audienceFactor(it, woman), 1, 'open to everyone');
+});
+
+test('authors: publishers and organisations are never the author; editions share one; bylines only', () => {
+  assert.equal(one({ title: 'The Navarre Bible: Corinthians', vendor: 'Four Courts Press' }).author, '');
+  assert.equal(one({ title: 'Marriage Insurance', vendor: 'Relevant Radio', tags: ['Fr. Rocky Hoffman'] }).author, 'Fr. Rocky Hoffman');
+  assert.equal(one({ title: 'Little Stories', tags: ['Little Douglings', 'Pocket Size'] }).author, '');
+  assert.equal(one({ title: 'A Portrait of Courage', body_html: 'He was named patron of statesmen by John Paul II. He is…' }).author, '');
+  assert.equal(one({ title: 'Incarnate Spirits', body_html: 'An introduction to the questions raised by Aristotle and Aquinas.' }).author, '');
+  assert.equal(one({ title: 'The Sanctification of Work', body_html: 'The Sanctification of Work by Fr. José Luis Illanes delves into…' }).author, 'Fr. José Luis Illanes');
+  const c = E.prepareCatalog({ products: [
+    item({ id: 1, handle: 'the-way-mini-edition', title: 'The Way' }),
+    item({ id: 2, handle: 'the-way-furrow-the-forge', title: 'The Way, Furrow, The Forge (One Volume)', tags: ['St. Josemaría Escrivá'] }),
+    item({ id: 3, handle: 'the-forge-mini-edition', title: 'The Forge (Mini Edition)' })
+  ] });
+  assert.equal(c.byHandle['the-way-mini-edition'].author, 'St. Josemaría Escrivá', 'The Way takes its author from the one-volume edition');
+  assert.equal(c.byHandle['the-forge-mini-edition'].author, 'St. Josemaría Escrivá');
+});
+
+test('one work, not three: a subtitle keeps "Love, Marriage, Money" whole; "(One Volume)" is an edition', () => {
+  const k = E._internal.workKeysFor;
+  assert.deepEqual(k('Love, Marriage, Money: Your Guide to a Financially Healthy Family'), ['love, marriage, money']);
+  assert.ok(k('The Way, Furrow, The Forge (One Volume)').includes('the forge'));
+});
+
+test('books for fathers go to fathers, "Priestly Fatherhood" to priests, "Mother of God" to anyone', () => {
+  assert.deepEqual(one({ title: 'Father, The Family Protector' }).audience.sort(), ['men', 'parents']);
+  assert.deepEqual(one({ title: 'Priestly Fatherhood: Treasure in Earthen Vessels' }).audience, ['priests']);
+  assert.deepEqual(one({ title: 'Mother of God and Mother of the Church' }).audience, []);
+  assert.deepEqual(one({ title: 'Glimpses of the Church Fathers' }).audience, []);
+  assert.equal(one({ title: 'Mother of God and Mother of the Church' }).themes.family, undefined, 'not a family book');
+});
+
+test('kept out: Spanish editions by their titles, missals, "Collection" bundles, study guides', () => {
+  const why = (title, tags = []) => { const r = one({ title, tags }); return r.reason || 'kept'; };
+  assert.equal(why('Introducción a la Vida Devota (Introduction to Devout Life)'), 'spanish');
+  assert.equal(why('100% Chicos (Boys Should Be Boys)'), 'spanish');
+  assert.equal(why('A Lighted Lamp: Dora del Hoyo'), 'kept');
+  assert.equal(why('Daily Roman Missal, 7th Edition'), 'title');
+  assert.equal(why('St. Thomas More Collection'), 'bundle');
+  assert.equal(why('Interior Freedom Study Guide'), 'bundle');
+  assert.equal(why('The Collected Letters: Volume 1'), 'kept');
+});
+
+test('the price is what Add to cart adds: the first available variant, not the cheaper e-book', () => {
+  assert.equal(one({ title: 'From Temperament to Character' }).price, 17.95);
+  assert.equal(one({ title: 'X', variants: [{ id: 1, price: '17.95', available: false }, { id: 2, price: '9.99', available: true }] }).price, 9.99);
+  assert.equal(one({ title: 'X', price_cents: 1795, variant: 5 }).price, 17.95);
+});
+
+test('mostly bestsellers: favourites come back when strong backlist books took too many months', () => {
+  for (const kids of [0, 4]) {
+    const { plan: p } = plan({ kids, work: 'business', workService: 4 }, { bestsellerShare: 0.7 });
+    const best = p.months.filter((m) => m.tier === 'bestseller').length;
+    const pool = catalog.items.filter((i) => i.isBestseller).length;
+    assert.ok(best >= Math.min(8, pool) - 1, `${best} bestsellers of 12`);
+  }
+});
+
+test('the words: favourites say "Reader favorite", and no reason is given more than a few times', () => {
+  const { plan: p } = plan({ feel: { god: 2, religion: 3, world: 2 }, faith: 'dry', workService: 2 });
+  p.months.forEach((m) => assert.ok(m.tags[0] === 'Reader favorite' || m.tags[0] === 'Hidden gem', m.tags.join()));
+  const second = {};
+  p.months.forEach((m) => { if (m.reasons[1]) second[m.reasons[1]] = (second[m.reasons[1]] || 0) + 1; });
+  Object.entries(second).forEach(([r, n]) => assert.ok(n <= 2, `"${r}" given as a second reason ${n} times`));
 });

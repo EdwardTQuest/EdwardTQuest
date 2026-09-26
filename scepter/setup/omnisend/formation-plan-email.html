@@ -1,0 +1,128 @@
+<!--
+  Omnisend automation email: the twelve-month reading plan.
+  Trigger: the custom event "Completed Formation Quiz" (the quiz's event name), which the quiz
+  records when "Send it to Omnisend" is ticked. It appears as a trigger after the first quiz.
+  Omnisend templates use Liquid with [[ ]] and [% %] (support.omnisend.com/en/articles/11197418).
+  The quiz sends the plan as flat text fields: plan_1_month, plan_1_title, plan_1_author,
+  plan_1_url, plan_1_image, plan_1_why, plan_1_hidden_gem … plan_12_…, plus formation_plan_url
+  (the plan online), formation_archetype, archetype_text and practice.
+  Send it to every contact who takes the quiz (they asked for the plan). Test it on your own
+  address first.
+-->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f8f1;">
+  <tr><td align="center" style="padding:24px 12px;">
+    <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border-radius:14px;overflow:hidden;">
+      <tr><td style="background:#1f3d2e;padding:40px 32px;text-align:center;">
+        <p style="margin:0 0 12px;font:700 12px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#a9c5a6;">[% if event.first_name %][[event.first_name]], your[% else %]Your[% endif %] formation plan</p>
+        <h1 style="margin:0;font:600 34px/1.1 Georgia,'Times New Roman',serif;color:#fbf8f1;">[[event.formation_archetype]]</h1>
+        <p style="margin:16px 0 0;font:17px/1.55 Georgia,'Times New Roman',serif;color:#dfe8dc;">[[event.archetype_text]]</p>
+      </td></tr>
+      <tr><td style="padding:30px 32px 6px;">
+        <p style="margin:0 0 8px;font:700 12px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#84171d;">Start here · [[event.plan_1_month]]</p>
+        <p style="margin:0;font:600 24px/1.2 Georgia,'Times New Roman',serif;color:#16201b;"><a href="[[event.plan_1_url]]" style="color:#16201b;text-decoration:none;">[[event.plan_1_title]]</a></p>
+        <p style="margin:4px 0 10px;font:italic 16px/1.4 Georgia,serif;color:#56665c;">[[event.plan_1_author]]</p>
+        <p style="margin:0 0 18px;font:16px/1.55 Arial,Helvetica,sans-serif;color:#33443a;">[[event.plan_1_why]]</p>
+        <a href="[[event.plan_1_url]]" style="display:inline-block;background:#84171d;color:#ffffff;font:700 15px/1 Arial,Helvetica,sans-serif;padding:14px 22px;border-radius:999px;text-decoration:none;">Get your first book</a>
+      </td></tr>
+      <tr><td style="padding:24px 32px;">
+        <div style="border-left:4px solid #84171d;background:#eaf2e6;border-radius:10px;padding:16px 18px;">
+          <p style="margin:0 0 6px;font:700 12px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#84171d;">This week</p>
+          <p style="margin:0;font:italic 18px/1.45 Georgia,serif;color:#16201b;">[[event.practice]]</p>
+        </div>
+      </td></tr>
+      <tr><td style="padding:6px 32px 8px;">
+        <p style="margin:0 0 14px;font:600 22px/1.2 Georgia,serif;color:#16201b;">Your year, one book a month</p>
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+          [% if event.plan_1_title %]
+          <tr><td style="padding:12px 0;border-top:1px solid #e3ebe0;">
+            <p style="margin:0 0 3px;font:700 12px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#56665c;">[[event.plan_1_month]][% if event.plan_1_hidden_gem == 'true' %] · <span style="color:#84171d;">Hidden gem</span>[% endif %]</p>
+            <p style="margin:0;font:600 18px/1.25 Georgia,serif;"><a href="[[event.plan_1_url]]" style="color:#16201b;text-decoration:none;">[[event.plan_1_title]]</a></p>
+            [% if event.plan_1_author %]<p style="margin:2px 0 0;font:italic 15px/1.4 Georgia,serif;color:#56665c;">[[event.plan_1_author]]</p>[% endif %]
+          </td></tr>
+          [% endif %]
+          [% if event.plan_2_title %]
+          <tr><td style="padding:12px 0;border-top:1px solid #e3ebe0;">
+            <p style="margin:0 0 3px;font:700 12px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#56665c;">[[event.plan_2_month]][% if event.plan_2_hidden_gem == 'true' %] · <span style="color:#84171d;">Hidden gem</span>[% endif %]</p>
+            <p style="margin:0;font:600 18px/1.25 Georgia,serif;"><a href="[[event.plan_2_url]]" style="color:#16201b;text-decoration:none;">[[event.plan_2_title]]</a></p>
+            [% if event.plan_2_author %]<p style="margin:2px 0 0;font:italic 15px/1.4 Georgia,serif;color:#56665c;">[[event.plan_2_author]]</p>[% endif %]
+          </td></tr>
+          [% endif %]
+          [% if event.plan_3_title %]
+          <tr><td style="padding:12px 0;border-top:1px solid #e3ebe0;">
+            <p style="margin:0 0 3px;font:700 12px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#56665c;">[[event.plan_3_month]][% if event.plan_3_hidden_gem == 'true' %] · <span style="color:#84171d;">Hidden gem</span>[% endif %]</p>
+            <p style="margin:0;font:600 18px/1.25 Georgia,serif;"><a href="[[event.plan_3_url]]" style="color:#16201b;text-decoration:none;">[[event.plan_3_title]]</a></p>
+            [% if event.plan_3_author %]<p style="margin:2px 0 0;font:italic 15px/1.4 Georgia,serif;color:#56665c;">[[event.plan_3_author]]</p>[% endif %]
+          </td></tr>
+          [% endif %]
+          [% if event.plan_4_title %]
+          <tr><td style="padding:12px 0;border-top:1px solid #e3ebe0;">
+            <p style="margin:0 0 3px;font:700 12px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#56665c;">[[event.plan_4_month]][% if event.plan_4_hidden_gem == 'true' %] · <span style="color:#84171d;">Hidden gem</span>[% endif %]</p>
+            <p style="margin:0;font:600 18px/1.25 Georgia,serif;"><a href="[[event.plan_4_url]]" style="color:#16201b;text-decoration:none;">[[event.plan_4_title]]</a></p>
+            [% if event.plan_4_author %]<p style="margin:2px 0 0;font:italic 15px/1.4 Georgia,serif;color:#56665c;">[[event.plan_4_author]]</p>[% endif %]
+          </td></tr>
+          [% endif %]
+          [% if event.plan_5_title %]
+          <tr><td style="padding:12px 0;border-top:1px solid #e3ebe0;">
+            <p style="margin:0 0 3px;font:700 12px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#56665c;">[[event.plan_5_month]][% if event.plan_5_hidden_gem == 'true' %] · <span style="color:#84171d;">Hidden gem</span>[% endif %]</p>
+            <p style="margin:0;font:600 18px/1.25 Georgia,serif;"><a href="[[event.plan_5_url]]" style="color:#16201b;text-decoration:none;">[[event.plan_5_title]]</a></p>
+            [% if event.plan_5_author %]<p style="margin:2px 0 0;font:italic 15px/1.4 Georgia,serif;color:#56665c;">[[event.plan_5_author]]</p>[% endif %]
+          </td></tr>
+          [% endif %]
+          [% if event.plan_6_title %]
+          <tr><td style="padding:12px 0;border-top:1px solid #e3ebe0;">
+            <p style="margin:0 0 3px;font:700 12px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#56665c;">[[event.plan_6_month]][% if event.plan_6_hidden_gem == 'true' %] · <span style="color:#84171d;">Hidden gem</span>[% endif %]</p>
+            <p style="margin:0;font:600 18px/1.25 Georgia,serif;"><a href="[[event.plan_6_url]]" style="color:#16201b;text-decoration:none;">[[event.plan_6_title]]</a></p>
+            [% if event.plan_6_author %]<p style="margin:2px 0 0;font:italic 15px/1.4 Georgia,serif;color:#56665c;">[[event.plan_6_author]]</p>[% endif %]
+          </td></tr>
+          [% endif %]
+          [% if event.plan_7_title %]
+          <tr><td style="padding:12px 0;border-top:1px solid #e3ebe0;">
+            <p style="margin:0 0 3px;font:700 12px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#56665c;">[[event.plan_7_month]][% if event.plan_7_hidden_gem == 'true' %] · <span style="color:#84171d;">Hidden gem</span>[% endif %]</p>
+            <p style="margin:0;font:600 18px/1.25 Georgia,serif;"><a href="[[event.plan_7_url]]" style="color:#16201b;text-decoration:none;">[[event.plan_7_title]]</a></p>
+            [% if event.plan_7_author %]<p style="margin:2px 0 0;font:italic 15px/1.4 Georgia,serif;color:#56665c;">[[event.plan_7_author]]</p>[% endif %]
+          </td></tr>
+          [% endif %]
+          [% if event.plan_8_title %]
+          <tr><td style="padding:12px 0;border-top:1px solid #e3ebe0;">
+            <p style="margin:0 0 3px;font:700 12px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#56665c;">[[event.plan_8_month]][% if event.plan_8_hidden_gem == 'true' %] · <span style="color:#84171d;">Hidden gem</span>[% endif %]</p>
+            <p style="margin:0;font:600 18px/1.25 Georgia,serif;"><a href="[[event.plan_8_url]]" style="color:#16201b;text-decoration:none;">[[event.plan_8_title]]</a></p>
+            [% if event.plan_8_author %]<p style="margin:2px 0 0;font:italic 15px/1.4 Georgia,serif;color:#56665c;">[[event.plan_8_author]]</p>[% endif %]
+          </td></tr>
+          [% endif %]
+          [% if event.plan_9_title %]
+          <tr><td style="padding:12px 0;border-top:1px solid #e3ebe0;">
+            <p style="margin:0 0 3px;font:700 12px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#56665c;">[[event.plan_9_month]][% if event.plan_9_hidden_gem == 'true' %] · <span style="color:#84171d;">Hidden gem</span>[% endif %]</p>
+            <p style="margin:0;font:600 18px/1.25 Georgia,serif;"><a href="[[event.plan_9_url]]" style="color:#16201b;text-decoration:none;">[[event.plan_9_title]]</a></p>
+            [% if event.plan_9_author %]<p style="margin:2px 0 0;font:italic 15px/1.4 Georgia,serif;color:#56665c;">[[event.plan_9_author]]</p>[% endif %]
+          </td></tr>
+          [% endif %]
+          [% if event.plan_10_title %]
+          <tr><td style="padding:12px 0;border-top:1px solid #e3ebe0;">
+            <p style="margin:0 0 3px;font:700 12px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#56665c;">[[event.plan_10_month]][% if event.plan_10_hidden_gem == 'true' %] · <span style="color:#84171d;">Hidden gem</span>[% endif %]</p>
+            <p style="margin:0;font:600 18px/1.25 Georgia,serif;"><a href="[[event.plan_10_url]]" style="color:#16201b;text-decoration:none;">[[event.plan_10_title]]</a></p>
+            [% if event.plan_10_author %]<p style="margin:2px 0 0;font:italic 15px/1.4 Georgia,serif;color:#56665c;">[[event.plan_10_author]]</p>[% endif %]
+          </td></tr>
+          [% endif %]
+          [% if event.plan_11_title %]
+          <tr><td style="padding:12px 0;border-top:1px solid #e3ebe0;">
+            <p style="margin:0 0 3px;font:700 12px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#56665c;">[[event.plan_11_month]][% if event.plan_11_hidden_gem == 'true' %] · <span style="color:#84171d;">Hidden gem</span>[% endif %]</p>
+            <p style="margin:0;font:600 18px/1.25 Georgia,serif;"><a href="[[event.plan_11_url]]" style="color:#16201b;text-decoration:none;">[[event.plan_11_title]]</a></p>
+            [% if event.plan_11_author %]<p style="margin:2px 0 0;font:italic 15px/1.4 Georgia,serif;color:#56665c;">[[event.plan_11_author]]</p>[% endif %]
+          </td></tr>
+          [% endif %]
+          [% if event.plan_12_title %]
+          <tr><td style="padding:12px 0;border-top:1px solid #e3ebe0;">
+            <p style="margin:0 0 3px;font:700 12px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#56665c;">[[event.plan_12_month]][% if event.plan_12_hidden_gem == 'true' %] · <span style="color:#84171d;">Hidden gem</span>[% endif %]</p>
+            <p style="margin:0;font:600 18px/1.25 Georgia,serif;"><a href="[[event.plan_12_url]]" style="color:#16201b;text-decoration:none;">[[event.plan_12_title]]</a></p>
+            [% if event.plan_12_author %]<p style="margin:2px 0 0;font:italic 15px/1.4 Georgia,serif;color:#56665c;">[[event.plan_12_author]]</p>[% endif %]
+          </td></tr>
+          [% endif %]
+        </table>
+      </td></tr>
+      <tr><td align="center" style="padding:26px 32px 36px;">
+        <a href="[[event.formation_plan_url]]" style="display:inline-block;background:#1f3d2e;color:#fbf8f1;font:700 15px/1 Arial,Helvetica,sans-serif;padding:14px 22px;border-radius:999px;text-decoration:none;">See your plan online</a>
+        <p style="margin:18px 0 0;font:13px/1.5 Arial,Helvetica,sans-serif;color:#56665c;">Read a little every day: fifteen minutes is enough to change a year.</p>
+      </td></tr>
+    </table>
+  </td></tr>
+</table>

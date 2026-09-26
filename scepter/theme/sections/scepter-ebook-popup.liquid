@@ -27,7 +27,8 @@
       },
       "interests": [
         {%- for block in section.blocks -%}
-          {"key": {{ block.settings.interest | json }}, "label": {{ block.settings.label | json }}, "blurb": {{ block.settings.blurb | json }}, "title": {{ block.settings.title | json }}, "author": {{ block.settings.author | json }}, "url": {{ block.settings.url | json }}, "image": {% if block.settings.image != blank %}{{ block.settings.image | image_url: width: 360 | json }}{% else %}""{% endif %}},
+          {%- assign bp = block.settings.product -%}
+          {"key": {{ block.settings.interest | json }}, "label": {{ block.settings.label | json }}, "blurb": {{ block.settings.blurb | json }}, "title": {{ block.settings.title | default: bp.title | json }}, "author": {{ block.settings.author | json }}, "url": {{ block.settings.url | json }}, "productUrl": {{ bp.url | json }}, "image": {% if block.settings.image != blank %}{{ block.settings.image | image_url: width: 360 | json }}{% elsif bp.featured_image %}{{ bp.featured_image | image_url: width: 360 | json }}{% else %}""{% endif %}},
         {%- endfor -%}
         null
       ],
@@ -68,7 +69,8 @@
     { "type": "header", "content": "Email" },
     { "type": "text", "id": "klaviyo_public_key", "label": "Klaviyo public API key" },
     { "type": "text", "id": "klaviyo_list_id", "label": "Klaviyo list ID" },
-    { "type": "text", "id": "klaviyo_event", "label": "Klaviyo event name", "default": "Requested Free E-book", "info": "Trigger the e-book delivery flow on this event; it carries the e-book link." },
+    { "type": "text", "id": "klaviyo_event", "label": "Event name (Klaviyo, Omnisend)", "default": "Requested Free E-book", "info": "Trigger the e-book delivery flow on this event; it carries the e-book link." },
+    { "type": "checkbox", "id": "omnisend", "label": "Send it to Omnisend", "default": false, "info": "Needs the Omnisend app embed. Records the event above on the contact, for an Omnisend automation. Tick it once that automation is live." },
     { "type": "url", "id": "webhook_url", "label": "Webhook URL" },
     { "type": "checkbox", "id": "shopify_customer", "label": "Add subscribers as Shopify customers", "default": true },
     { "type": "text", "id": "customer_tag", "label": "Customer tag", "default": "free-ebook" },
@@ -77,7 +79,7 @@
     { "type": "header", "content": "Look" },
     { "type": "color", "id": "color_forest", "label": "Dark green", "default": "#1f3d2e" },
     { "type": "color", "id": "color_sage", "label": "Light green", "default": "#d7e5d2" },
-    { "type": "color", "id": "color_burgundy", "label": "Burgundy", "default": "#6f1d2c" },
+    { "type": "color", "id": "color_burgundy", "label": "Burgundy", "default": "#84171d" },
     { "type": "color", "id": "color_cream", "label": "Cream", "default": "#fbf8f1" },
     { "type": "checkbox", "id": "load_fonts", "label": "Load the fonts", "default": true }
   ],
@@ -92,8 +94,9 @@
         { "type": "text", "id": "blurb", "label": "One line under the label", "info": "Shown when no e-book title is set." },
         { "type": "text", "id": "title", "label": "E-book title" },
         { "type": "text", "id": "author", "label": "Author" },
-        { "type": "image_picker", "id": "image", "label": "Cover" },
-        { "type": "url", "id": "url", "label": "Download link", "info": "Upload the PDF or EPUB in Content → Files and paste its link." }
+        { "type": "product", "id": "product", "label": "Free booklet product", "info": "Optional. Gives the cover and title, and its page is the link when there is no download link below." },
+        { "type": "image_picker", "id": "image", "label": "Cover", "info": "Replaces the product's image." },
+        { "type": "url", "id": "url", "label": "Download link", "info": "Upload the PDF or EPUB in Content → Files and paste its link: the reader downloads it at once." }
       ]
     }
   ],
@@ -103,9 +106,9 @@
       "name": "Scepter e-book pop-up",
       "category": "Scepter",
       "blocks": [
-        { "type": "ebook", "settings": { "interest": "peace", "label": "Peace", "blurb": "Rest for a restless heart" } },
-        { "type": "ebook", "settings": { "interest": "prosperity", "label": "Prosperity", "blurb": "Work, family and a flourishing life" } },
-        { "type": "ebook", "settings": { "interest": "enlightenment", "label": "Enlightenment", "blurb": "Light for the mind and the soul" } }
+        { "type": "ebook", "settings": { "interest": "peace", "label": "Peace", "blurb": "Rest for a restless heart", "title": "Why Suffer?", "author": "Mary Ann Budnik" } },
+        { "type": "ebook", "settings": { "interest": "prosperity", "label": "Prosperity", "blurb": "Work, family and a flourishing life", "title": "5 Steps to a Financially Healthy Marriage", "author": "Joseph D. Salem" } },
+        { "type": "ebook", "settings": { "interest": "enlightenment", "label": "Enlightenment", "blurb": "Light for the mind and the soul", "title": "The Reasonableness of Christianity", "author": "Peter Kreeft" } }
       ]
     }
   ]

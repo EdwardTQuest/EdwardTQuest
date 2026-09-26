@@ -58,24 +58,50 @@ ways, most trusted first:
    For example, `fr-jacques-philippe: peace, prayer`, or `lenten-and-easter-collection: season:lent`.
 3. **Tags and words.** Keyword families per theme, weighted three times in the title, twice in
    tags, once in the description. Common words like "work", "home" or "priest" count only in
-   titles and tags, because author bios are full of them.
-4. **Its shape:** author (vendor, else a person-like tag, else "by …"), depth (a booklet is
-   gentle, a commentary deep), seasons ("Lent", "Advent", "Holy Spirit" …), and calendar windows.
-   *In Conversation with God, Weeks 13–23* belongs to June–September; *Feasts, January–June* to the
-   first half of the year.
+   titles and tags, because author bios are full of them. "Mother of God", "the Church Fathers"
+   and "God the Father" are not family words.
+4. **Its shape:**
+   - **Author:** a vendor that is not a publisher, else a person-like tag, else a byline ("*Title*
+     by X", "By X", "written by X"). Otherwise the author named for one of its topic collections
+     (`author:Name`), else the author of another edition of the same work. Scepter's store tags
+     *The Way* with no author, but *The Way, Furrow, The Forge* with St. Josemaría, so both get
+     him.
+   - **Never an author:** co-publishers (Four Courts Press, Relevant Radio …); series and format
+     tags (Pocket Size, Little Douglings); a saint named in the title, who is the subject (*Simon
+     Peter* is by Georges Chevrot). Of two spellings, the fuller wins (Alexandre over Alex Havard).
+   - **Depth:** a booklet is gentle, a commentary deep.
+   - **Seasons, in the title** ("Advent", "Lent", "Passion", "Risen", "Holy Spirit" …).
+   - **Calendar windows:** *In Conversation with God, Weeks 13–23* belongs to June–September;
+     *Feasts, January–June* to the first half of the year.
 
-**Kept out:** sold-out items, free booklets, gift cards, sets, packs and bundles (unless curated),
-Spanish editions, anything tagged `no-quiz`, and handles listed in the settings. **Editions are
+**Kept out:**
+- sold-out items and free booklets;
+- gift cards and missals, breviaries and lectionaries;
+- sets, packs, bundles, "… Collection" boxes, mystery books and study guides, unless curated;
+- Spanish editions, by tag or by title ("*La misa explicada (The Mass Explained)*");
+- anything tagged `no-quiz` or `Missal`, and handles listed in the settings.
+
+On the live store that keeps 332 of 632 products. **Editions are
 one work:** *The Way (Mini Edition)* and *Large Print — The Way, Furrow, The Forge* never both
 appear. Nor do *The Faith Explained* and *The Faith Explained Today*.
 
 **Who a book is for.** Named audiences are a gate: a book for "Married" goes only to married or
-engaged readers. A book for fathers must match both parenthood and sex. With "Everyone" added,
-the named audiences become an emphasis instead: "Everyone; Married; Parents" goes to anyone, and
-a little more often to couples with children.
+engaged readers. With "Everyone" added, the named audiences become an emphasis instead: "Everyone;
+Married; Parents" goes to anyone, and a little more often to couples with children.
+
+Audiences come from the curated library, or from a title that plainly names them. Priests,
+marriage, parents and religious life count. A book for fathers ("*Father, The Family
+Protector*") must match both parenthood and sex. *Priestly Fatherhood*, the Church Fathers and
+*Mother of God* name no family audience.
+
+An audience given to a topic collection (`audience:parents`) is only an emphasis, never a gate.
+Store collections are merchandising: Scepter's "Great Books for Fathers and Fr.'s" mixes dads and
+priests.
 
 **Bestseller or backlist.** A book is a bestseller if it is in the Bestsellers collection (whose
-order is its rank) or the recent-bestsellers collection. Everything else is backlist.
+order is its rank) or in the first 50 of the best-selling collection (an automated collection
+sorted by *Best selling*). Everything else is backlist. On the live store that makes 48
+bestsellers.
 
 ## 3. The calendar
 
@@ -86,8 +112,13 @@ Lady, June the Sacred Heart, November the saints and souls, July–August summer
 the new year, September back to work.
 
 A book tied to a liturgical season is kept for that season: an Advent book is never read in July.
-A book for Advent and Christmas belongs to Advent, not January. A book with a calendar window
-stays inside it.
+"Tied" means the season is in its title, or ticked in the library. A book for Advent and Christmas
+belongs to Advent, not January. A book with a calendar window stays inside it.
+
+A store's season **tags** and seasonal **collections** only lift a book in its season. They never
+hold it there. Scepter tags *The Way* "Lent" because it is good Lenten reading, not because it
+belongs to Lent alone. Such a book is labelled "For Lent" only in the month where Lent is the
+main season.
 
 ## 4. The score for one book in one month
 
@@ -96,10 +127,13 @@ relevance  = how closely the book's themes match the reader's needs (cosine),
              × how sure we are of those themes (√ of the evidence, capped at 1)
              + a small lift if it serves the reader's single strongest need
 score      = (0.15 + relevance)
-             × audience   (0.3 closed to them … 1.0 open … 1.3 made for them)
+             × audience   (0.3 closed to them … 1.0 open … 1.3 made for them; ×1.1 more if a
+                           topic collection names their audience)
              × faith fit  (newcomers: bridges ×1.35, insider books ×0.2 early)
              × depth fit  (0.55 + 0.45 × closeness to this month's target depth)
-             × season     (×1.45 in its season, ×0.25–0.3 out of it)
+             × season     (×1.45 in its season, ×0.25–0.3 out of it; a store tag or collection
+                           only lifts, ×1.15 in season)
+             × reference  (prayer books and bibles ×0.35 in month 1, ×0.5 later)
            + popularity   (0.11–0.22 for a bestseller by rank; a little for trending)
            + editorial    (boost × 0.06; "featured in this quiz" +0.12; "start with this
                            book when…" +0.35 in months 1–3; large print −0.05)
@@ -125,22 +159,27 @@ young. Month 1 is kept gentle; summer is a little lighter.
    covers the reader's needs rather than repeating the first one.
 4. **Hard rules:** no work twice, at most two books by one author (adjustable), never the same
    author two months running.
-5. **Then the backlist comes in** where it costs least. With a 70% bestseller share, four of twelve
+5. **Then the bestsellers come back in** if strong backlist books took more months than the share
+   allows. The engine swaps favourites in where it costs least, but only a favourite at least 60% as
+   good. A reader whose needs the favourites serve poorly still gets the best books for them.
+6. **Then the backlist comes in** where it costs least. With a 70% bestseller share, four of twelve
    months (the treasure quiz uses 55%, so five). Each time, the engine finds the month whose best
    *still-available* backlist book loses least against the bestseller there, adds a penalty for
    sitting next to another gem, and switches it. It never touches month 1 or a rule's month. It
    never takes a backlist book that is less than half as good as the book it replaces: quality
    beats the quota.
-6. **A seeded shuffle.** A tiny random nudge (at most 0.05), seeded by the reader's email and the
+7. **A seeded shuffle.** A tiny random nudge (at most 0.05), seeded by the reader's email and the
    quiz, means the same reader always gets the same plan. Two similar readers still discover
    slightly different backlist books, so the whole backlist gets seen over time.
 
 ## 6. The words
 
 Every month says why, in the reader's own terms: "Because you are raising three children, and
-you have been married more than five years." It uses the two themes that contributed most. An
-admin's "why" line, or a rule's note, is shown beside it. Each book is tagged **Reader favorite**,
-**Trending now** or **Hidden gem**, plus its season (**For Lent**, **For Advent**, **In season**,
+you have been married more than five years." The strongest reason always leads. A second reason
+is added only if it is at least 45% as strong and has not already been given twice. So twelve
+months don't all say the same two things, and none gives a weak reason. An
+admin's "why" line, or a rule's note, is shown beside it. Each book is tagged **Reader favorite**
+(any bestseller) or **Hidden gem** (the backlist), plus its season (**For Lent**, **For Advent**, **In season**,
 **Summer read** …). The result also names the reader's road (eleven archetypes, worded differently in
 each quiz, e.g. *The Peacemaker* / *The Road to Still Waters* / *The Peace That Passes
 Understanding*). It gives one practice for the first week, drawn from the strongest need.
@@ -154,27 +193,39 @@ book the reader has swapped out comes back, in any month.
 A Catholic mother of three, 35–44, married for more than five years, in an office job that feels
 stretched and does not feel like service (2 of 5). God and the world feel poor (2), religion so-so
 (3). Prayer is dry, home is a 5 of 10, and she wants to grow. Her needs: peace 1.0, prayer 0.69,
-work 0.65, hope 0.54, family 0.46. She is struggling, so she is *The Peacemaker*. From the demo
-catalogue, starting October 2026:
+work 0.65, hope 0.54, family 0.46. She is struggling, so she is *The Peacemaker*.
 
-| month | book | tags | why |
-|---|---|---|---|
-| Oct | Searching for and Maintaining Peace | Reader favorite | God, the Church or the world feel heavy right now, and prayer has felt dry lately |
-| Nov | Friends of God | Reader favorite | prayer has felt dry lately, and you would like your work to mean more |
-| Dec | Sanctifying Ordinary Work | Hidden gem | you would like your work to mean more |
-| Jan | Love, Marriage, Money | Trending now | you are raising three children |
-| Feb | Interior Freedom | Reader favorite, For Lent | … feel heavy right now, and prayer has felt dry |
-| Mar | The Sacred Passion | Hidden gem, For Lent | some stretches of the road are hard |
-| Apr | In Conversation with God 6: Feasts, January–June | Hidden gem, In season | prayer has felt dry lately |
-| May | Christ Is Passing By | Reader favorite | prayer … and your work |
-| Jun | The Faith Explained | Reader favorite | readers keep coming back to it |
-| Jul | Lifeline | Reader favorite | you are raising three children |
-| Aug | The Thoughtful Home | Trending now | you are raising three children |
-| Sep | In Conversation with God 5: Weeks 24–34 | Hidden gem, In season | prayer has felt dry lately |
+This plan comes from the snapshot of the live catalogue (`demo/live/`, 26 September 2026),
+starting October 2026, with the section's default settings:
 
-Eight favourites and four gems, nine authors, Lent reading in Lent and dated volumes in their
-weeks. Her first-week practice: *"Each morning this week, before you look at your phone, give God
-five quiet minutes and hand Him one worry by name."*
+| month | book | author | tags | why |
+|---|---|---|---|---|
+| Oct | Interior Freedom | Fr. Jacques Philippe | Reader favorite | God, the Church or the world feel heavy right now, and prayer has felt dry lately |
+| Nov | Praying from the Depths of the Psalms | Fr. John Henry Hanson | Reader favorite | (the same two reasons) |
+| Dec | Holiness Through Work | Fernando Ocáriz | Hidden gem | you would like your work to mean more, and you want to grow in virtue |
+| Jan | Nine Days to Rediscover the Joy of Prayer | Fr. Jacques Philippe | Reader favorite | God, the Church or the world feel heavy right now |
+| Feb | From Resentment to Forgiveness | Francisco Ugarte | Reader favorite, For Lent | … feel heavy right now, and some stretches of the road are hard |
+| Mar | The Way of the Cross | St. Josemaría Escrivá | Reader favorite, For Lent | some stretches of the road are hard |
+| Apr | Anchor: God's Promises of Hope to Parents | James Stenson | Hidden gem | you are raising three children |
+| May | A Man Who Knew How to Forgive | Francesc Faus | Hidden gem | God, the Church or the world feel heavy right now |
+| Jun | The Bishop of the Abandoned Tabernacle | Victoria Schneider | Reader favorite | prayer has felt dry lately |
+| Jul | Three to Get Married | Archbishop Fulton Sheen | Reader favorite, Summer read | you are raising three children, and you have been married more than five years |
+| Aug | Decisive Parenting | Michael Moynihan | Hidden gem | God, the Church or the world feel heavy right now |
+| Sep | How to Profit from Your Faults | Joseph Tissot | Reader favorite | prayer has felt dry lately, and you want to grow in virtue |
+
+- **Mix:** eight favourites and four gems, by eleven authors. Jacques Philippe comes first, as
+  his rule says, and he is limited to two books.
+- **The work rule:** *Holiness Through Work* arrives in month 3.
+- **Seasons:** Lent books fall in Lent.
+- **Prices:** each is the paperback's, as "Add to cart" charges.
+
+Her first-week practice: *"Each morning this week, before you look at your phone, give God five
+quiet minutes and hand Him one worry by name."*
+
+`tests/live.test.mjs` runs eight very different readers against the same snapshot. It checks the
+promises on this page: twelve English books a year at cart prices, the author and work rules,
+the bestseller share, the rules for struggling readers, priests and newcomers, fathers' books,
+seasons, and authors.
 
 ## What to tune, and where
 
@@ -185,10 +236,10 @@ five quiet minutes and hand Him one worry by name."*
 | make a book come up more, or never | Formation book → Editorial boost, or Never recommend |
 | say who a book is for | Formation book → Good for (with or without "Everyone") |
 | keep a book for its season | Formation book → Seasons |
-| teach the engine a whole shelf | quiz section → Topic collections (`collection-handle: themes`) |
+| teach the engine a whole shelf | quiz section → Topic collections (`collection-handle: themes`, `season:lent`, `audience:parents`, `author:Name`) |
 | nudge books in one quiz only | quiz section → Give these books a nudge |
 | stop a product ever appearing | tag it `no-quiz` |
 
 The engine is only as good as what it knows. The keyword reading gets a sensible plan from an
 untagged catalogue. Curating the fifty titles that matter most, in the Formation book library,
-makes it excellent. `setup/formation-books.csv` is a starting point for twenty-seven of them.
+makes it excellent. `setup/formation-books.csv` is a starting point for twenty-eight of them.

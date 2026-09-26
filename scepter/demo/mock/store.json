@@ -22,7 +22,7 @@
   "the-forge-mini-edition",
   "the-way-of-the-cross",
   "the-collected-letters-volume-1",
-  "sanctifying-ordinary-work",
+  "holiness-through-work",
   "in-conversation-with-god-7-volume-set",
   "in-conversation-with-god-volume-1-advent-and-christmastide",
   "in-conversation-with-god-volume-2-lent-and-eastertide",
@@ -44,7 +44,8 @@
   "seven-prophets-and-the-culture-war-undoing-the-philosophies-of-a-world-in-crisis",
   "la-iglesia-1",
   "pentateuco",
-  "order"
+  "order",
+  "the-sanctification-of-work"
  ],
  "lists": {
   "bestsellers": [
@@ -60,9 +61,9 @@
    "in-the-school-of-the-holy-spirit",
    "copy-of-virtuous-leadership-an-agenda-for-personal-excellence",
    "created-for-greatness-the-power-of-magnanimity",
-   "the-eight-doors-of-the-kingdom",
+   "the-eight-doors-of-the-kingdom-meditations-on-the-beatitudes",
    "thirsting-for-prayer",
-   "handbook-of-prayers",
+   "handbook-of-prayers-8th-edition",
    "the-way-of-the-cross",
    "pocket-new-testament",
    "in-conversation-with-god-volume-1-advent-and-christmastide",
@@ -100,7 +101,7 @@
     "in-the-school-of-the-holy-spirit",
     "thirsting-for-prayer",
     "fire-light",
-    "the-eight-doors-of-the-kingdom"
+    "the-eight-doors-of-the-kingdom-meditations-on-the-beatitudes"
    ],
    "in-conversation-with-god": [
     "in-conversation-with-god-volume-1-advent-and-christmastide",
@@ -305,7 +306,8 @@
   {
    "condition": "work_not_service",
    "products": [
-    "sanctifying-ordinary-work"
+    "holiness-through-work",
+    "the-sanctification-of-work"
    ],
    "match": "",
    "month": 3,

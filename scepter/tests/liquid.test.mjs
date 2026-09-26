@@ -19,7 +19,8 @@ const store = JSON.parse(readFileSync(new URL('../demo/mock/store.json', import.
 // Mock Shopify objects.
 const product = Object.fromEntries(products.map((p) => [p.handle, {
   id: p.id, handle: p.handle, title: p.title, vendor: p.vendor, type: p.product_type, tags: p.tags, available: true,
-  price: Math.round(Number(p.variants[0].price) * 100), selected_or_first_available_variant: { id: p.variants[0].id },
+  price: Math.round(Number(p.variants[0].price) * 100),
+  selected_or_first_available_variant: { id: p.variants[0].id, price: Math.round(Number(p.variants[0].price) * 100) },
   url: '/products/' + p.handle, featured_image: null, description: p.body_html
 }]));
 const collection = (handles) => ({ products: handles.filter((h) => product[h]).map((h) => product[h]), products_count: handles.length });

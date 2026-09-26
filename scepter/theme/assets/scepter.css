@@ -10,9 +10,9 @@
   --sp-sage-soft: #eaf2e6;
   --sp-sage-mist: #f4f8f1;
   --sp-sage-strong: #a9c5a6;
-  --sp-burgundy: #6f1d2c;
-  --sp-burgundy-hover: #8a2638;
-  --sp-burgundy-tint: #f5e6e8;
+  --sp-burgundy: #84171d;
+  --sp-burgundy-hover: #9e1c23;
+  --sp-burgundy-tint: #f0e3e4;
   --sp-cream: #fbf8f1;
   --sp-ink: #16201b;
   --sp-muted: #56665c;
@@ -37,7 +37,7 @@
   --sp-focus: 0 0 0 3px rgba(111, 29, 44, 0.35);
   --sp-radius: 14px;
   --sp-font-display: "Scepter Serif", "Cormorant Garamond", "EB Garamond", Georgia, "Times New Roman", serif;
-  --sp-font-body: "Scepter Sans", "Source Sans 3", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --sp-font-body: "Poppins", "Scepter Sans", "Source Sans 3", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
   font-family: var(--sp-font-body);
   color: var(--sp-text);
@@ -225,15 +225,19 @@
 .sp-triple__row { display: grid; grid-template-columns: 110px 1fr; gap: 14px; align-items: center; }
 .sp-triple__label { font-family: var(--sp-font-display); font-size: 1.35rem; font-weight: 600; }
 .sp-triple__dots { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
-@media (max-width: 560px) {
-  .sp-triple__row { grid-template-columns: 1fr; gap: 8px; }
-  .sp-triple__dots { gap: 6px; }
-  .sp .sp-chip { font-size: .74rem; padding: 6px 2px; letter-spacing: -0.01em; hyphens: auto; overflow-wrap: anywhere; }
-}
 .sp .sp-chip {
   min-height: 46px; padding: 8px 4px; border-radius: 12px; border: 1.5px solid var(--sp-opt-line); background: var(--sp-opt-bg);
   font-size: .82rem; font-weight: 600; line-height: 1.15; transition: background .18s, border-color .18s;
+  overflow-wrap: normal; word-break: keep-all; hyphens: manual;
 }
+/* After the base rule, so it wins: five words across a phone, never broken inside a word. */
+@media (max-width: 560px) {
+  .sp-triple__row { grid-template-columns: 1fr; gap: 8px; }
+  .sp-triple__dots { gap: 6px; }
+  .sp .sp-chip { font-size: .72rem; padding: 6px 1px; letter-spacing: 0; }
+}
+@media (max-width: 400px) { .sp-triple__dots { gap: 4px; } .sp .sp-chip { font-size: .68rem; padding: 6px 0; } }
+@media (max-width: 350px) { .sp .sp-chip { font-size: .62rem; } }
 .sp .sp-chip:hover { background: var(--sp-opt-hover); }
 .sp .sp-chip.is-selected { background: var(--sp-sel-bg); color: var(--sp-sel-ink); border-color: var(--sp-sel-bg); }
 
@@ -493,16 +497,24 @@
 .sp-book .sp-btn--small:hover { background: var(--sp-sage-soft); }
 
 /* Floating launcher for the temperament test. */
+/* The floating button lives outside .sp (it is appended to <body>), so the section copies its
+   colour tokens onto it. On phones and tablets it sits above the store's 55px bottom toolbar
+   (Kalles), and above the sticky add-to-cart bar when that shows. */
 .sp-launcher {
   position: fixed; z-index: 2147482000; bottom: 18px; display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px 12px 14px;
-  border-radius: 999px; border: 0; cursor: pointer; font: 600 .95rem/1.1 var(--sp-font-body, sans-serif);
-  background: #1f3d2e; color: #fbf8f1; box-shadow: 0 16px 34px -14px rgba(0,0,0,.6); transition: transform .2s, background .2s;
+  border-radius: 999px; border: 0; cursor: pointer; font: 600 .95rem/1.1 "Poppins", "Scepter Sans", "Source Sans 3", -apple-system, "Segoe UI", sans-serif;
+  background: var(--sp-forest, #1f3d2e); color: var(--sp-cream, #fbf8f1); box-shadow: 0 16px 34px -14px rgba(0,0,0,.6); transition: transform .2s, background .2s;
 }
-.sp-launcher:hover { transform: translateY(-2px); background: #6f1d2c; }
+.sp-launcher:hover { transform: translateY(-2px); background: var(--sp-burgundy, #84171d); }
 .sp-launcher--left { left: 18px; } .sp-launcher--right { right: 18px; }
-.sp-launcher__dot { width: 26px; height: 26px; border-radius: 50%; background: conic-gradient(#6f1d2c 0 25%, #a9c5a6 0 50%, #fbf8f1 0 75%, #2d5842 0); }
-.sp-launcher:focus-visible { outline: 3px solid #a9c5a6; outline-offset: 2px; }
-@media (max-width: 480px) { .sp-launcher { bottom: 12px; padding: 10px 14px 10px 10px; font-size: .88rem; } }
+.sp-launcher__dot { width: 26px; height: 26px; border-radius: 50%; background: conic-gradient(var(--sp-burgundy, #84171d) 0 25%, var(--sp-sage-strong, #a9c5a6) 0 50%, var(--sp-cream, #fbf8f1) 0 75%, var(--sp-forest-mid, #2d5842) 0); }
+.sp-launcher:focus-visible { outline: 3px solid var(--sp-sage-strong, #a9c5a6); outline-offset: 2px; }
+@media (max-width: 1024px) {
+  .sp-launcher { bottom: calc(var(--sp-launcher-bottom, 69px) + env(safe-area-inset-bottom, 0px)); }
+  .sticky-is--active .sp-launcher { bottom: calc(var(--sp-launcher-bottom, 69px) + var(--stickyATC-height, 0px) + env(safe-area-inset-bottom, 0px)); }
+}
+@media (min-width: 1025px) { .sticky-is--active .sp-launcher { bottom: calc(18px + var(--stickyATC-height, 0px)); } }
+@media (max-width: 480px) { .sp-launcher { padding: 10px 14px 10px 10px; font-size: .88rem; } }
 
 /* Pop-up details: transparent root, themed dialogs, a bottom sheet on phones. */
 .sp.sp-modal { background: transparent; }
@@ -598,7 +610,7 @@
 .sp-virtues { background: var(--sp-cream); color: var(--sp-ink); border-radius: var(--sp-radius); padding: 14px 18px 10px; margin: 24px auto 6px; max-width: 560px; text-align: left; }
 .sp .sp-virtues__title { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: var(--sp-muted); margin-bottom: 4px; }
 .sp-virtues__row { padding: 9px 12px; margin: 0 -12px; border-left: 3px solid transparent; border-radius: 0 8px 8px 0; }
-.sp-virtues__row.is-mine { background: #f3e6e8; border-left-color: var(--sp-burgundy); }
+.sp-virtues__row.is-mine { background: var(--sp-burgundy-tint); border-left-color: var(--sp-burgundy); }
 .sp .sp-virtues__name strong { font-family: var(--sp-font-display); font-size: 1.12rem; font-weight: 600; color: var(--sp-forest-deep); }
 .sp .sp-virtues__name span { font-size: .82rem; color: var(--sp-muted); }
 .sp-virtues__row.is-mine .sp-virtues__name strong { color: var(--sp-burgundy); }

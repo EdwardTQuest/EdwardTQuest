@@ -74,12 +74,22 @@
     'back-to-work': { label: 'back-to-work season',       tag: 'Back-to-work read',   themes: { work: 0.7, leadership: 0.3, virtue: 0.3 } }
   };
   var LITURGICAL = ['advent', 'christmas', 'lent', 'easter', 'pentecost'];
+  // season:x in the topic map: the keys above, or a common name for one.
+  var SEASON_ALIASES = { marian: 'mary', 'our-lady': 'mary', may: 'mary', october: 'mary', rosary: 'mary', lenten: 'lent',
+    'holy-week': 'lent', eastertide: 'easter', christmastide: 'christmas', november: 'last-things', souls: 'last-things',
+    'all-souls': 'last-things', june: 'sacred-heart', 'new-years': 'new-year', newyear: 'new-year', january: 'new-year',
+    september: 'back-to-work', 'back-to-school': 'back-to-work', july: 'summer', august: 'summer' };
+  function seasonKey(v) {
+    var k = String(v || '').trim().toLowerCase().replace(/[\s_]+/g, '-');
+    k = SEASON_ALIASES[k] || k;
+    return SEASONS[k] ? k : null;
+  }
   // Without an explicit season, a book earns a month's tag only through that month's key theme.
   var SEASON_TAG_IF = { mary: 'mary', summer: 'story', 'new-year': 'virtue', 'back-to-work': 'work' };
   var SEASON_WORDS = {
     advent: ['advent'], christmas: ['christmas', 'christmastide', 'nativity'],
     lent: ['lent', 'lenten', 'passion', 'way of the cross', 'stations of the cross', 'holy week'],
-    easter: ['easter', 'eastertide', 'resurrection'], pentecost: ['pentecost', 'holy spirit'],
+    easter: ['easter', 'eastertide', 'resurrection', 'risen'], pentecost: ['pentecost', 'holy spirit'],
     mary: ['rosary', 'our lady', 'marian']
   };
 
@@ -207,7 +217,9 @@
   }
 
   // Seasons a calendar month carries, most important first.
-  function seasonsFor(year, month) {
+  function seasonsFor(year, month) { return seasonSpans(year, month).map(function (f) { return f.key; }); }
+  // [{ key, days }] for a month, longest first. Devotional months count 5 days, Pentecost 6.
+  function seasonSpans(year, month) {
     var m0 = Date.UTC(year, month, 1), m1 = Date.UTC(year, month + 1, 0);
     var easter = easterSunday(year);
     var spans = {
@@ -226,7 +238,8 @@
     var fixed = { 0: 'new-year', 4: 'mary', 5: 'sacred-heart', 6: 'summer', 7: 'summer', 8: 'back-to-work', 9: 'mary', 10: 'last-things' }[month];
     if (fixed) found.push({ key: fixed, days: 5 });
     found.sort(function (a, b) { return b.days - a.days; });
-    return uniq(found.map(function (f) { return f.key; }));
+    var seen = {};
+    return found.filter(function (f) { if (seen[f.key]) return false; seen[f.key] = 1; return true; });
   }
 
   // ---------------------------------------------------------------------------------------------
@@ -402,13 +415,16 @@
   // ---------------------------------------------------------------------------------------------
 
   var DEFAULTS = {
-    publisherNames: ['scepter', 'scepter publishers', 'scepter publishers inc', 'scepter publishers, inc.'],
+    publisherNames: ['scepter', 'scepter publishers', 'scepter publishers inc', 'scepter publishers, inc.', 'scepter pubs',
+      'four courts press', 'mtf', 'navarre university', 'sinag-tala publishers', 'relevant radio', 'edizioni ares'],
     excludeFree: true,
     requireAvailable: true,
     excludeBundles: true,
     excludeSpanish: true,
     excludeHandles: ['order'],
-    excludeTags: ['no-quiz', 'quiz-exclude'],
+    excludeTags: ['no-quiz', 'quiz-exclude', 'missal'],
+    // Books for the liturgy rather than for reading through in a month.
+    excludeTitles: /\b(missal|breviary|lectionary|liturgy of the hours)\b/i,
     excludeTypes: /gift|card|apparel|merch|medal|jewel|accessor|shipping|donation|subscription/i,
     maxPerAuthor: 2,
     bestsellerShare: 0.7,
@@ -417,18 +433,30 @@
     imageWidth: 360
   };
 
-  var SPANISH = ['la', 'el', 'los', 'las', 'del', 'de', 'y', 'una', 'un', 'para', 'con', 'por', 'en', 'hoy', 'oracion', 'biblia', 'fe', 'camino', 'iglesia', 'amor', 'vida', 'santo', 'dios'];
-  var ENGLISH = ['the', 'of', 'and', 'for', 'to', 'in', 'a', 'an', 'with', 'on', 'my', 'your', 'god', 'life', 'way', 'love', 'faith'];
+  var GOD_FAMILY = /\b(church fathers|desert fathers|fathers of the church|early fathers|apostolic fathers|holy father|our father|god the father|fatherhood of god|call him father|heavenly father|mother of god|mother of the church|blessed mother|our mother|holy mother|mother teresa|mother mary|mother of mercy)\b/g;
+  var BUNDLE = /\b(set|sets|pack|bundle|box|boxed|series|kit|full set|collection|mystery book|study guide)\b/i;
+  var ORGANISATION = /\b(press|publishers?|publishing|pubs|books|university|radio|edizioni|editorial|ediciones|inc|llc|ltd|institute)\b/i;
+  var SPANISH = ['la', 'el', 'los', 'las', 'del', 'de', 'y', 'una', 'un', 'para', 'con', 'por', 'en', 'hoy', 'oracion', 'biblia', 'fe', 'camino', 'iglesia', 'amor', 'vida', 'santo', 'dios',
+    'te', 'mi', 'tu', 'su', 'sus', 'al', 'lo', 'que', 'es', 'como', 'anos', 'primera', 'primer', 'creciendo', 'felices', 'mundo',
+    'descubriendo', 'quiero', 'oir', 'voz', 'chicos', 'tarde', 'introduccion', 'devota', 'catequesis', 'confesion', 'comunion', 'nuestra', 'nuestro', 'senor'];
+  var ENGLISH = ['the', 'of', 'and', 'for', 'to', 'in', 'an', 'with', 'on', 'my', 'your', 'god', 'life', 'way', 'love', 'faith',
+    'from', 'how', 'is', 'are', 'you', 'i', 'have', 'want', 'hear', 'boys', 'girls', 'years', 'old', 'growing', 'up', 'be'];
+  // "La misa explicada (The Mass Explained)": Spanish words outside the brackets and none of
+  // English, or a Spanish word with an English translation in brackets.
   function looksSpanish(title, tags) {
     if (tags.some(function (t) { return /^(spanish|espanol|español|en espanol|en español)$/i.test(t); })) return true;
-    var main = norm(String(title).replace(/\([^)]*\)/g, ' ')).split(/[^a-z]+/).filter(Boolean);
+    var words = function (x) { return norm(x).split(/[^a-z]+/).filter(Boolean); };
+    var main = words(String(title).replace(/\([^)]*\)/g, ' '));
+    var inBrackets = words((String(title).match(/\([^)]*\)/g) || []).join(' '));
     var es = 0, en = 0;
-    main.forEach(function (w) { if (SPANISH.indexOf(w) >= 0) es++; if (ENGLISH.indexOf(w) >= 0) en++; });
-    return es >= 1 && en === 0 && main.length >= 2;
+    // English spellings Spanish rarely uses count as English too ("A Lighted Lamp: Dora del Hoyo").
+    main.forEach(function (w) { if (SPANISH.indexOf(w) >= 0) es++; if (ENGLISH.indexOf(w) >= 0 || /w|k|th|sh|ght|ing$|ed$/.test(w)) en++; });
+    var translated = inBrackets.filter(function (w) { return ENGLISH.indexOf(w) >= 0; }).length >= 2;
+    return es >= 1 && en === 0 && (main.length >= 2 || translated);
   }
 
   var TITLE_PREFIX = /^(large print\s*[-–:]\s*|copy of\s+|pre-?order\s*[:\-–]?\s*)/i;
-  var EDITION = /\((?:[^)]*\b(?:mini|large print|hardcover|paperback|pocket|edition|ebook|e-book|kindle|audiobook|leather|deluxe)\b[^)]*)\)/gi;
+  var EDITION = /\((?:[^)]*\b(?:mini|large print|hardcover|paperback|pocket|edition|ebook|e-book|kindle|audiobook|leather|deluxe|one volume|single volume)\b[^)]*)\)/gi;
 
   function mainTitle(title) {
     var t = String(title || '').replace(TITLE_PREFIX, '').replace(EDITION, ' ');
@@ -442,7 +470,7 @@
   function workKeysFor(title) {
     var mt = mainTitle(title);
     var keys = [mt.main + (mt.vol ? ' #' + mt.vol : '')];
-    if (!mt.vol && /,/.test(mt.main)) {
+    if (!mt.vol && /,/.test(mt.main) && String(title).indexOf(':') < 0) {
       mt.main.split(/\s*,\s*|\s+and\s+/).forEach(function (part) { if (part.length > 3) keys.push(part.trim()); });
     }
     return uniq(keys);
@@ -463,7 +491,8 @@
     'sale', 'featured', 'hidden', 'collection', 'books', 'book', 'catholic', 'christian', 'spiritual', 'reading',
     'edition', 'set', 'pack', 'bundle', 'ebook', 'ebooks', 'paperback', 'hardcover', 'audio', 'dvd', 'kids',
     'youth', 'men', 'women', 'opus', 'dei', 'holy', 'spirit', 'church', 'vatican', 'staff', 'pick', 'picks',
-    'top', 'popular', 'free', 'preorder', 'pre-order', 'coming', 'soon', 'large', 'print', 'ordinary', 'time', 'scepter'];
+    'top', 'popular', 'free', 'preorder', 'pre-order', 'coming', 'soon', 'large', 'print', 'ordinary', 'time', 'scepter',
+    'pocket', 'size', 'study', 'guide', 'douglings', 'clearance', 'audiobook', 'english', 'spanish'];
   function looksLikePerson(tag) {
     var t = String(tag).trim();
     if (!/^[A-Z]/.test(t) || t.length > 40) return false;
@@ -473,15 +502,20 @@
     if (!words.every(function (w) { return /^[A-ZÁÉÍÓÚÑ][\wáéíóúñ.'’-]*$/.test(w) || /^(de|del|la|van|von|da|y)$/.test(w); })) return false;
     var lower = norm(t);
     if (lower.split(' ').some(function (w) { return MERCH_WORDS.indexOf(w) >= 0; })) return false;
+    if (ORGANISATION.test(t)) return false;
     return !THEME_KEYS.some(function (k) { return THEMES[k].words.some(function (w) { return (' ' + lower + ' ').indexOf(' ' + w.replace('^', '') + ' ') >= 0; }); }) &&
       !/(testament|bible|edition|paperback|hardcover|lent|advent|easter|christmas|collection|series)/i.test(t);
   }
 
+  // The price of what "Add to cart" adds: the first available variant (the paperback, not the
+  // cheaper e-book that Shopify reports as the product's lowest price).
   function priceOf(p) {
     if (p.price_cents !== undefined && p.price_cents !== null) return Number(p.price_cents) / 100;
+    var vs = p.variants || [];
+    var v = vs.filter(function (x) { return x.available !== false; })[0] || vs[0];
+    if (v && v.price !== undefined && v.price !== null && v.price !== '') return Number(v.price);
     if (p.price !== undefined && p.price !== null && p.price !== '') return Number(p.price);
-    var v = (p.variants || [])[0];
-    return v ? Number(v.price) : 0;
+    return 0;
   }
 
   function imageOf(p, width) {
@@ -495,13 +529,17 @@
   // long blurb that mentions "prayer" nine times is not nine times more about prayer.
   function inferThemes(title, tags, body) {
     var tt = norm(title), tg = norm(tags.join(' · ')), bd = norm(body).slice(0, 2500);
+    // "Mother of God", "the Church Fathers", "God the Father" are not about family life.
+    var plain = function (x) { return x.replace(GOD_FAMILY, ' '); };
+    var fam = { tt: plain(tt), tg: plain(tg), bd: plain(bd) };
     var out = {};
     THEME_KEYS.forEach(function (k) {
       var hits = 0;
+      var t = k === 'family' ? fam : { tt: tt, tg: tg, bd: bd };
       THEMES[k].words.forEach(function (w) {
         var titleOnly = w.charAt(0) === '^';
         if (titleOnly) w = w.slice(1);
-        hits += 3 * countPhrase(tt, w) + 2 * countPhrase(tg, w) + (titleOnly ? 0 : Math.min(2, countPhrase(bd, w)));
+        hits += 3 * countPhrase(t.tt, w) + 2 * countPhrase(t.tg, w) + (titleOnly ? 0 : Math.min(2, countPhrase(t.bd, w)));
       });
       if (hits) out[k] = Math.round((1 - Math.exp(-0.35 * hits)) * 1000) / 1000;
     });
@@ -591,13 +629,22 @@
   }
 
   // Topic collections: "marriage-and-family: marriage, family" lines, or an object.
+  // "collection-handle: themes" lines. Tokens are themes, season:x, audience:x or author:Name
+  // (the name keeps its spelling; everything else is matched in lower case).
   function parseTopicMap(v) {
     if (!v) return {};
-    if (typeof v === 'object') return v;
     var out = {};
+    function token(t) {
+      t = String(t || '').trim();
+      return /^author:/i.test(t) ? 'author:' + t.slice(7).trim() : t.toLowerCase();
+    }
+    if (typeof v === 'object') {
+      Object.keys(v).forEach(function (k) { out[k.toLowerCase()] = toArray(v[k]).map(token).filter(Boolean); });
+      return out;
+    }
     String(v).split(/\r?\n/).forEach(function (line) {
       var m = line.match(/^\s*([a-z0-9][a-z0-9-]*)\s*:\s*(.+)$/i);
-      if (m) out[m[1].toLowerCase()] = m[2].split(',').map(function (s) { return s.trim().toLowerCase(); }).filter(Boolean);
+      if (m) out[m[1].toLowerCase()] = m[2].split(',').map(token).filter(Boolean);
     });
     return out;
   }
@@ -634,11 +681,12 @@
     var publishers = toArray(s.publisherNames).map(norm);
     var root = String(s.rootUrl || '/').replace(/\/?$/, '/');
 
-    var seen = {}, items = [], rejected = [];
+    // The same product can arrive twice (from the page and from /products.json): the first copy
+    // that passes is kept, so a thin copy that fails does not hide a full one.
+    var seen = {}, refused = {}, items = [], rejected = [];
     var products = (input.products || []).concat((input.library || []).map(function (e) { return e && e.product; }));
     products.forEach(function (p) {
       if (!p || !p.handle || seen[p.handle]) return;
-      seen[p.handle] = true;
       var tags = toArray(p.tags);
       var title = p.title || p.handle;
       var body = stripHtml(p.body_html || p.description || p.excerpt || '');
@@ -655,26 +703,48 @@
       else if (tags.some(function (t) { return excludeTags.indexOf(norm(t)) >= 0; })) why = 'tag';
       else if (excludeTypes && type && excludeTypes.test(type)) why = 'type';
       else if (/gift ?card/i.test(title)) why = 'type';
+      else if (s.excludeTitles && (s.excludeTitles instanceof RegExp ? s.excludeTitles : new RegExp(s.excludeTitles, 'i')).test(title)) why = 'title';
       else if (s.requireAvailable && !available) why = 'unavailable';
       else if (s.excludeFree && !(price > 0)) why = 'free';
       else if (s.excludeSpanish && looksSpanish(title, tags)) why = 'spanish';
-      else if (s.excludeBundles && !curated && /\b(set|sets|pack|bundle|box|boxed|series|kit|full set)\b/i.test(title.replace(/\bsets? (?:free|apart|out)\b/i, ''))) why = 'bundle';
-      if (why) { rejected.push({ handle: p.handle, title: title, reason: why }); return; }
+      else if (s.excludeBundles && !curated && BUNDLE.test(title.replace(/\bsets? (?:free|apart|out)\b/i, ''))) why = 'bundle';
+      if (why) {
+        if (!refused[p.handle]) rejected.push({ handle: p.handle, title: title, reason: why });
+        refused[p.handle] = true;
+        return;
+      }
+      seen[p.handle] = true;
+      if (refused[p.handle]) rejected = rejected.filter(function (r) { return r.handle !== p.handle; });
 
-      // Author: a vendor that is not the publisher, else a person-like tag, else "by X".
+      // Author: a vendor that is not a publisher, else a person-like tag, else "by X", else the
+      // author named for one of its topic collections (author:Name).
       var author = '';
-      if (p.vendor && publishers.indexOf(norm(p.vendor)) < 0) author = p.vendor;
+      if (p.vendor && publishers.indexOf(norm(p.vendor)) < 0 && !ORGANISATION.test(p.vendor)) author = p.vendor;
       var personTags = tags.filter(looksLikePerson);
-      if (!author && personTags.length) {
+      // A saint named in the title is the subject ("Simon Peter", tagged St. Peter), not the author.
+      var titleN = norm(title);
+      var writers = personTags.filter(function (t) {
+        var k = authorKey(t);
+        return !(k && titleN.indexOf(k) >= 0 && /^(st\.?|saint|pope|blessed|bl\.?)\s/i.test(t.trim()));
+      });
+      if (!author && writers.length) {
         var bodyN = norm(body);
-        author = personTags.slice().sort(function (x, y) {
-          function sc(t) { return (bodyN.indexOf(authorKey(t)) >= 0 ? 2 : 0) + (HONORIFIC.test(norm(t)) ? 1 : 0); }
+        author = writers.slice().sort(function (x, y) {
+          // Two spellings of one name ("Alex Havard", "Alexandre Havard"): the fuller one.
+          function sc(t) { return (bodyN.indexOf(authorKey(t)) >= 0 ? 2 : 0) + (HONORIFIC.test(norm(t)) ? 1 : 0) - (titleN.indexOf(authorKey(t)) >= 0 ? 2 : 0) + t.length / 1000; }
           return sc(y) - sc(x);
         })[0];
       }
       if (!author) {
-        var m = body.match(/\bby\s+((?:(?:Fr|St|Rev|Msgr|Dr)\.?\s+)?[A-Z][\wáéíóúñ.'’-]+(?:\s+(?:de|del|la|van|von)?\s*[A-Z][\wáéíóúñ.'’-]+){0,3})/);
-        if (m) author = m[1];
+        // A byline: "By X" opening the description, "written by X", or "<the title> by X".
+        var head = body.slice(0, 180);
+        var m = head.match(/\bby\s+((?:(?:Fr|St|Rev|Msgr|Dr|Cardinal|Bishop)\.?\s+)?[A-Z][\wáéíóúñ'’-]+(?:\.?\s+(?:de|del|la|van|von)?\s*[A-Z][\wáéíóúñ'’-]+){0,3})/);
+        var byline = m ? m[1].replace(/\.\s+[A-Z][a-z]+$/, '') : '';
+        var before = m ? norm(head.slice(0, m.index)).trim() : '';
+        var lastWord = norm(mainTitle(title).main).split(' ').pop();
+        var placed = !before || /(^|\s)(written|authored|edited)$/.test(before) || (lastWord && before.slice(-lastWord.length) === lastWord);
+        if (byline && placed && byline.split(/\s+/).length >= 2 && !ORGANISATION.test(byline) &&
+            norm(title).indexOf('by ' + norm(byline).split(' ')[0]) < 0) author = byline;
       }
       var nonAuthorTags = tags.filter(function (t) { return personTags.indexOf(t) < 0; });
 
@@ -682,29 +752,44 @@
       var themes = {};
       var inferred = inferThemes(title, nonAuthorTags, body);
       Object.keys(inferred).forEach(function (k) { themes[k] = Math.max(themes[k] || 0, 0.7 * inferred[k]); });
-      var seasons = inferSeasons(title, nonAuthorTags);
-      var audience = [];
+      // Seasons named in the title, or ticked in the library, hold a book to its season. A store's
+      // tags and collections only lift it in season: a shop tags The Way "Lent" because it is good
+      // Lenten reading, not because it belongs to Lent alone. Likewise a collection's audience is
+      // an emphasis, never a gate.
+      var seasons = inferSeasons(title, []);
+      var softSeasons = inferSeasons('', nonAuthorTags);
+      var audience = [], softAudience = [], topicAuthor = '';
       (topicsOf[p.handle] || []).forEach(function (col) {
         (topicMap[col] || []).forEach(function (t) {
-          if (t.indexOf('season:') === 0) seasons.push(t.slice(7));
-          else if (t.indexOf('audience:') === 0) audience.push(t.slice(9));
+          if (t.indexOf('season:') === 0) { var sk = seasonKey(t.slice(7)); if (sk) softSeasons.push(sk); }
+          else if (t.indexOf('audience:') === 0) softAudience.push(t.slice(9));
+          else if (t.indexOf('author:') === 0) topicAuthor = topicAuthor || t.slice(7);
           else if (THEMES[t]) themes[t] = Math.max(themes[t] || 0, 0.8);
         });
       });
+      if (!author && topicAuthor) author = topicAuthor;
       if (curated) {
         Object.keys(curated.themes).forEach(function (k) { themes[k] = 1; });
         audience = audience.concat(curated.audience);
         seasons = seasons.concat(curated.seasons);
       }
       // Inferred audiences for books that are plainly for one state of life.
+      // A book for fathers is for fathers (parents and men); "Priestly Fatherhood", "the Church
+      // Fathers" and "Mother of God" are not.
       if (!curated) {
-        if (/\b(priests?|priesthood|priestly|seminar\w*|clergy)\b/i.test(title)) audience.push('priests');
+        var clergy = /\b(priests?|priesthood|priestly|seminar\w*|clergy|confessors?)\b/i.test(title);
+        var family = title.toLowerCase().replace(GOD_FAMILY, ' ');
+        if (clergy) audience.push('priests');
         if (/\b(religious life|consecrated|nuns|monks|novices?)\b/i.test(title)) audience.push('religious');
         if (/\b(marriage|married|spouses?|husbands?|wives|wife|wedding|engaged)\b/i.test(title)) audience.push('married', 'engaged');
-        if (/\b(parents?|parenting|upbringing|raising|teenagers?|fathers|fatherhood|mothers|motherhood)\b/i.test(title)) audience.push('parents');
+        if (!clergy && /\b(fathers?|fatherhood|dads?)\b/.test(family)) audience.push('parents', 'men');
+        if (/\b(mothers?|motherhood|moms?)\b/.test(family)) audience.push('parents', 'women');
+        if (/\b(parents?|parenting|upbringing|raising|teenagers?|your child(?:ren)?|your kids)\b/.test(family)) audience.push('parents');
       }
       audience = uniq(audience);
       seasons = uniq(seasons);
+      softSeasons = uniq(softSeasons).filter(function (x) { return seasons.indexOf(x) < 0; });
+      softAudience = uniq(softAudience);
 
       var depth = curated && curated.depth ? curated.depth : inferDepth(title, body, themes, type);
       var rank = bestRank.hasOwnProperty(p.handle) ? bestRank[p.handle] : null;
@@ -724,7 +809,9 @@
         themes: themes,
         strength: Math.sqrt(Object.keys(themes).reduce(function (acc, k) { return acc + themes[k] * themes[k]; }, 0)),
         audience: audience,
+        softAudience: softAudience,
         seasons: seasons,
+        softSeasons: softSeasons,
         months: inferMonths(title),
         depth: depth,
         bestRank: rank,
@@ -732,13 +819,23 @@
         popularity: rank !== null ? 0.5 + 0.5 * (1 - rank / nBest) : (trending[p.handle] ? 0.45 : 0),
         trending: !!trending[p.handle],
         largePrint: /large print/i.test(title),
-        reference: /\b(handbook of prayers|prayer ?book|missal|breviary|lectionary|catechism of|new testament|bible)\b/i.test(title) && !/commentary|navarre/i.test(title + ' ' + body.slice(0, 300)),
+        reference: /\b(handbook of prayers|manual of prayers|book of prayers|prayer ?book|devotions and prayers|missal|breviary|lectionary|catechism of|new testament|bible)\b/i.test(title) && !/commentary|navarre/i.test(title + ' ' + body.slice(0, 300)),
         insider: /\bopus dei\b|\bprelature\b|\bnumerar/i.test(title + ' ' + body.slice(0, 600)),
         curated: !!curated,
         boost: curated ? curated.boost : 0,
         why: curated ? curated.why : '',
         startWhen: curated ? curated.startWhen : []
       });
+    });
+
+    // Editions of one work share its author: The Way takes St. Josemaría from The Way, Furrow,
+    // The Forge when only the one-volume edition is tagged.
+    var authorOfWork = {};
+    items.forEach(function (it) { if (it.author) it.workKeys.forEach(function (k) { if (!authorOfWork[k]) authorOfWork[k] = it.author; }); });
+    items.forEach(function (it) {
+      if (it.author) return;
+      var k = it.workKeys.filter(function (x) { return authorOfWork[x]; })[0];
+      if (k) { it.author = authorOfWork[k]; it.authorKey = authorKey(it.author); }
     });
 
     // Prefer the best-ranked, regular-print edition when two editions of the same work exist.
@@ -766,10 +863,11 @@
     // "Everyone; Married; Parents" means anyone, especially couples and parents: an emphasis,
     // not a gate. Without "Everyone" the named audiences are the audience.
     var open = it.audience.indexOf('everyone') >= 0;
-    if (missed) return open ? (named > missed ? 1.15 : 1) : 0.3;
-    if (named) return open ? 1.2 : 1.3;
+    var lift = (it.softAudience || []).some(function (x) { return p.audience.indexOf(x) >= 0; }) ? 1.1 : 1;
+    if (missed) return open ? (named > missed ? 1.15 : 1) * lift : 0.3;
+    if (named) return (open ? 1.2 : 1.3) * lift;
     var soft = it.audience.some(function (x) { return x !== 'everyone' && p.audience.indexOf(x) >= 0; });
-    return soft ? 1.12 : 1;
+    return (soft ? 1.12 : 1) * lift;
   }
 
   function faithFactor(it, p, slotIndex) {
@@ -804,7 +902,8 @@
       var st = SEASONS[sk] && SEASONS[sk].themes;
       if (st) aff = Math.max(aff, (i === 0 ? 1 : 0.6) * cosine(st, it.themes));
     });
-    return 1 + 0.25 * aff;
+    var soft = (it.softSeasons || []).some(function (x) { return slot.seasons.indexOf(x) >= 0; }) ? 1.15 : 1;
+    return soft * (1 + 0.25 * aff);
   }
 
   function gaussian(x, mu, sigma) { return Math.exp(-((x - mu) * (x - mu)) / (2 * sigma * sigma)); }
@@ -821,7 +920,7 @@
       (0.55 + 0.45 * depthFit) * seasonFactor(it, slot);
     var pop = 0.22 * it.popularity + (it.trending ? 0.04 : 0);
     var editorial = 0.06 * it.boost + (ctx.featured[it.handle] ? 0.12 : 0) - (it.largePrint ? 0.05 : 0);
-    if (it.reference) base *= slot.index === 0 ? 0.6 : 0.8;
+    if (it.reference) base *= slot.index === 0 ? 0.35 : 0.5;
     if (slot.index < 3 && it.startWhen.some(function (c) { return CONDITIONS[c] && CONDITIONS[c](p); })) editorial += 0.35;
     return { total: base + pop + editorial, rel: rel, base: base, pop: pop };
   }
@@ -856,12 +955,15 @@
     for (var i = 0; i < n; i++) {
       var m = start.month + i, y = start.year + Math.floor(m / 12);
       m = m % 12;
-      var seasons = seasonsFor(y, m);
+      var spans = seasonSpans(y, m);
+      var seasons = spans.map(function (f) { return f.key; });
+      var seasonDays = {};
+      spans.forEach(function (f) { seasonDays[f.key] = f.days; });
       var t = n > 1 ? i / (n - 1) : 0;
       var depth = p.depth.start + (p.depth.end - p.depth.start) * t;
       if (i === 0) depth = Math.min(depth, 1.6);
       if (seasons.indexOf('summer') >= 0) depth -= 0.3;
-      slots.push({ index: i, year: y, month: m, label: MONTH_NAMES[m] + ' ' + y, seasons: seasons,
+      slots.push({ index: i, year: y, month: m, label: MONTH_NAMES[m] + ' ' + y, seasons: seasons, seasonDays: seasonDays,
         targetDepth: depth, wantTier: back[i] ? 'backlist' : 'bestseller' });
     }
     return slots;
@@ -937,6 +1039,38 @@
         if (!alt || alt.t < FLOOR.backlist * cur) continue;
         var nearBack = (placed[i - 1] && !placed[i - 1].isBestseller ? 1 : 0) + (placed[i + 1] && !placed[i + 1].isBestseller ? 1 : 0);
         var val = (cur - alt.t) / Math.max(cur, 1e-6) + 0.18 * nearBack; // keep the gems spread through the year
+        if (!bestSwap || val < bestSwap.val) bestSwap = { i: i, it: alt.it, val: val };
+      }
+      if (!bestSwap) break;
+      placed[bestSwap.i] = bestSwap.it;
+      meta[bestSwap.i] = { source: 'engine' };
+      locked[bestSwap.i] = true;
+      have++;
+    }
+  }
+
+  // The mirror image: when strong backlist books took more months than the share allows, bring
+  // favourites back where it costs least, if one is at least 60% as good. "Mostly our
+  // bestsellers" holds whenever the bestsellers can serve the reader at all.
+  function bringInBestsellers(slots, items, p, ctx, placed, meta, target) {
+    var have = placed.filter(function (it) { return it && it.isBestseller; }).length;
+    var locked = {};
+    meta.forEach(function (m, i) { if (m && m.source === 'rule') locked[i] = true; });
+    while (have < target) {
+      var bestSwap = null;
+      for (var i = 0; i < slots.length; i++) {
+        if (locked[i] || !placed[i] || placed[i].isBestseller) continue;
+        var others = placed.slice(); others[i] = null;
+        var cur = scoreItem(placed[i], p, slots[i], ctx).total - diversityPenalty(placed[i], others);
+        var alt = null;
+        for (var j = 0; j < items.length; j++) {
+          var it = items[j];
+          if (!it.isBestseller || !eligible(it, i, others, ctx.maxPerAuthor)) continue;
+          var t = scoreItem(it, p, slots[i], ctx).total - diversityPenalty(it, others);
+          if (!alt || t > alt.t) alt = { it: it, t: t };
+        }
+        if (!alt || alt.t < 0.6 * cur) continue;
+        var val = (cur - alt.t) / Math.max(cur, 1e-6);
         if (!bestSwap || val < bestSwap.val) bestSwap = { i: i, it: alt.it, val: val };
       }
       if (!bestSwap) break;
@@ -1056,17 +1190,20 @@
       placed[i] = r.best.it;
       meta[i] = { source: 'engine' };
     }
-    bringInBacklist(slots, items, profile, ctx, placed, meta, Math.round(n * (1 - clamp(share, 0, 1))));
+    var backTarget = Math.round(n * (1 - clamp(share, 0, 1)));
+    bringInBestsellers(slots, items, profile, ctx, placed, meta, n - backTarget);
+    bringInBacklist(slots, items, profile, ctx, placed, meta, backTarget);
     slots.forEach(function (slot, k) { if (placed[k]) slot.wantTier = placed[k].isBestseller ? 'bestseller' : 'backlist'; });
 
     // 3. Alternates for the "already read it? swap" button.
+    var used = {};
     var months = slots.map(function (slot, i) {
       var it = placed[i];
       if (!it) return null;
       var others = placed.slice(); others[i] = null;
       var alts = pickFor(slot, items, profile, ctx, others, rng('alt' + i + (opts.seed || '')), (function () { var x = {}; x[it.handle] = 1; return x; })())
         .runners.slice(0, 4).map(function (rr) { return rr.it.handle; });
-      return describeMonth(slot, it, profile, meta[i], alts);
+      return describeMonth(slot, it, profile, meta[i], alts, used);
     });
 
     var picked = months.filter(Boolean);
@@ -1103,8 +1240,10 @@
     var r = pickFor(slots[index], openTo(catalog.items, profile), profile, ctx, placed, rng('swap' + index + Object.keys(exclude).join()), exclude);
     if (!r.best) return plan;
     var next = Object.assign({}, plan, { months: plan.months.slice() });
+    var used = {};
+    next.months.forEach(function (m, k) { if (k !== index && m && m.reasons) m.reasons.forEach(function (x) { used[x] = (used[x] || 0) + 1; }); });
     next.months[index] = describeMonth(slots[index], r.best.it, profile, { source: 'swap' },
-      r.runners.slice(1, 5).map(function (x) { return x.it.handle; }));
+      r.runners.slice(1, 5).map(function (x) { return x.it.handle; }), used);
     next.stats = Object.assign({}, plan.stats, {
       bestsellers: next.months.filter(function (m) { return m.tier === 'bestseller'; }).length,
       backlist: next.months.filter(function (m) { return m.tier === 'backlist'; }).length
@@ -1162,17 +1301,35 @@
     return 'it fits where you are';
   }
 
-  function describeMonth(slot, it, p, meta, alts) {
+  // used: how often each reason has been given in this plan, so twelve months don't repeat one.
+  function describeMonth(slot, it, p, meta, alts, used) {
+    used = used || {};
     var contrib = THEME_KEYS.map(function (k) { return { k: k, v: (p.needs[k] || 0) * (it.themes[k] || 0) }; })
       .filter(function (x) { return x.v > 0.05; })
       .sort(function (x, y) { return y.v - x.v; });
-    var reasons = uniq(contrib.slice(0, 2).map(function (x) { return reasonFor(x.k, p); }));
-    if (!reasons.length) reasons.push(it.isBestseller ? 'readers keep coming back to it' : 'it is one of the quiet treasures of our backlist');
+    var ranked = [];
+    contrib.forEach(function (x) { var r = reasonFor(x.k, p); if (!ranked.some(function (y) { return y.r === r; })) ranked.push({ r: r, v: x.v }); });
+    var reasons = [];
+    if (ranked.length) {
+      var lead = ranked[0];
+      // After three uses, a nearly-as-strong fresh reason may lead instead.
+      if ((used[lead.r] || 0) >= 3) {
+        var alt = ranked.filter(function (y) { return (used[y.r] || 0) < 2 && y.v >= 0.6 * lead.v; })[0];
+        if (alt) lead = alt;
+      }
+      reasons.push(lead.r);
+      var second = ranked.filter(function (y) { return y.r !== lead.r && (used[y.r] || 0) < 2 && y.v >= 0.45 * ranked[0].v; })[0];
+      if (second) reasons.push(second.r);
+    } else {
+      reasons.push(it.isBestseller ? 'readers keep coming back to it' : 'it is one of the quiet treasures of our backlist');
+    }
+    reasons.forEach(function (r) { used[r] = (used[r] || 0) + 1; });
+    // A season the book is held to always shows; a shop's season tag only in that season's own month.
     var seasonHit = it.seasons.filter(function (x) { return slot.seasons.indexOf(x) >= 0; })[0] ||
+      ((it.softSeasons || []).indexOf(slot.seasons[0]) >= 0 && (LITURGICAL.indexOf(slot.seasons[0]) < 0 || ((slot.seasonDays || {})[slot.seasons[0]] || 0) >= 15) ? slot.seasons[0] : null) ||
       slot.seasons.filter(function (x) { var t = SEASON_TAG_IF[x]; return t && (it.themes[t] || 0) >= 0.6; })[0] || null;
     var tags = [];
-    if (it.isBestseller) tags.push(it.trending && it.bestRank === null ? 'Trending now' : 'Reader favorite');
-    else tags.push('Hidden gem');
+    tags.push(it.isBestseller ? 'Reader favorite' : 'Hidden gem');
     if (seasonHit && SEASONS[seasonHit]) tags.push(SEASONS[seasonHit].tag);
     else if (it.months && it.months.indexOf(slot.month) >= 0) tags.push('In season');
     var because = 'Because ' + reasons[0] + (reasons[1] ? ', and ' + reasons[1] : '') + '.';
@@ -1307,7 +1464,8 @@
       backlistSlots: backlistSlots, inferThemes: inferThemes, looksSpanish: looksSpanish, inferMonths: inferMonths,
       workKeysFor: workKeysFor, authorKey: authorKey, looksLikePerson: looksLikePerson,
       scoreItem: scoreItem, audienceFactor: audienceFactor, hashString: hashString, rng: rng, parseTopicMap: parseTopicMap,
-      normaliseLibrary: normaliseLibrary, mainTitle: mainTitle, compactProduct: compactProduct
+      normaliseLibrary: normaliseLibrary, mainTitle: mainTitle, compactProduct: compactProduct,
+      seasonFactor: seasonFactor, seasonSpans: seasonSpans, seasonKey: seasonKey
     }
   };
 });

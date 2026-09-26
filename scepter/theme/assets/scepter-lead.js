@@ -1,6 +1,7 @@
 /*!
- * Scepter lead capture — one call, three optional channels:
+ * Scepter lead capture — one call, four optional channels:
  *   Klaviyo (client API: subscribe to a list + record an event that carries the reading plan),
+ *   Omnisend (the store's app embed: identify the contact + record the same event),
  *   a webhook (Zapier, Make, n8n, your own endpoint), and Shopify's own customer/newsletter form.
  * Each channel is independent; a failure in one never blocks the others or the visitor.
  */
@@ -86,13 +87,51 @@
     });
   }
 
+  // Omnisend's browser API (https://api-docs.omnisend.com/reference/javascript-snippet) can
+  // identify a contact and record a custom event; it cannot subscribe anyone. Subscribing is
+  // left to Shopify's newsletter form, which Omnisend syncs. Event properties go as flat strings
+  // (plan_1_title, plan_1_url …): Omnisend's docs disagree on nested values, and every template
+  // can print a flat one.
+  function flatten(obj, prefix, out) {
+    out = out || {};
+    Object.keys(obj || {}).forEach(function (k) {
+      var v = obj[k], key = (prefix ? prefix + '_' : '') + String(k).replace(/[^A-Za-z0-9_]+/g, '_');
+      if (v === null || v === undefined || v === '') return;
+      if (Array.isArray(v)) {
+        if (v.every(function (x) { return x === null || typeof x !== 'object'; })) out[key] = v.join(', ');
+        else v.forEach(function (x, i) { flatten(x, key + '_' + (i + 1), out); });
+      } else if (typeof v === 'object') flatten(v, key, out);
+      else out[key] = String(v);
+    });
+    return out;
+  }
+  function omnisend(lead, win, waitMs) {
+    return new Promise(function (resolve) {
+      var tries = 0, most = Math.ceil((waitMs === undefined ? 6000 : waitMs) / 250);
+      (function go() {
+        var o = win.omnisend;
+        var ready = !!(o && typeof o.identifyContact === 'function');
+        if (!ready && tries++ < most) { setTimeout(go, 250); return; } // the launcher can take a few seconds
+        try {
+          win.omnisend = win.omnisend || [];
+          if (ready) win.omnisend.identifyContact({ email: lead.email });
+          if (lead.eventName) {
+            win.omnisend.push(['track', lead.eventName, { origin: 'api', contact: { email: lead.email },
+              properties: flatten(Object.assign({ email: lead.email, first_name: lead.firstName }, lead.eventProperties)) }]);
+          }
+          resolve(ready); // queued, not confirmed, when the launcher never arrived
+        } catch (e) { resolve(false); }
+      })();
+    });
+  }
+
   function timeout(p, ms) {
     return Promise.race([p, new Promise(function (resolve) { setTimeout(function () { resolve('timeout'); }, ms); })]);
   }
 
   /**
    * submit(config, lead)
-   *   config: { klaviyo: {publicKey, listId}, webhook: url, shopify: bool, rootUrl, sensitive: bool, fetch }
+   *   config: { klaviyo: {publicKey, listId}, omnisend: {enabled}, webhook: url, shopify: bool, rootUrl, sensitive: bool, fetch, window }
    *   lead:   { email, firstName, source, tags: [], properties: {}, eventName, eventProperties: {} }
    * Resolves (never rejects) to { ok: any channel succeeded, channels: {name: true|false|'timeout'|'error'} }.
    */
@@ -107,6 +146,8 @@
     });
     var jobs = {};
     if (fetcher && config.klaviyo && config.klaviyo.publicKey) jobs.klaviyo = klaviyo(config.klaviyo, lead, fetcher);
+    var win = config.window || (typeof window !== 'undefined' ? window : null);
+    if (win && config.omnisend && config.omnisend.enabled) jobs.omnisend = omnisend(lead, win, config.omnisend.waitMs);
     if (fetcher && config.webhook) jobs.webhook = webhook(config.webhook, lead, fetcher);
     if (fetcher && config.shopify && lead.marketing !== false) jobs.shopify = shopify(config, lead, fetcher);
     var names = Object.keys(jobs);
@@ -127,5 +168,11 @@
 
   function validEmail(s) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(String(s || '').trim()); }
 
-  return { submit: submit, validEmail: validEmail, _internal: { clean: clean } };
+  // Can any channel send the reader an email (so the page may say "we've emailed you")?
+  function emails(config) {
+    config = config || {};
+    return !!((config.klaviyo && config.klaviyo.publicKey) || (config.omnisend && config.omnisend.enabled) || config.webhook);
+  }
+
+  return { submit: submit, validEmail: validEmail, emails: emails, _internal: { clean: clean, flatten: flatten } };
 });

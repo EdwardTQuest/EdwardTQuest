@@ -656,7 +656,7 @@
         eventProperties: Object.assign({}, props, { archetype_text: arche[1], practice: plan.practice.text, plan: months })
       };
       lead.marketing = a.marketing !== false;
-      L.submit({ klaviyo: lc.klaviyo, webhook: lc.webhook, shopify: lc.shopify, rootUrl: rootUrl, sensitive: !!lc.sensitive }, lead)
+      L.submit({ klaviyo: lc.klaviyo, omnisend: lc.omnisend, webhook: lc.webhook, shopify: lc.shopify, rootUrl: rootUrl, sensitive: !!lc.sensitive }, lead)
         .then(function (r) {
           if (!state.result) return;
           state.result.sent = r.ok; save();
@@ -667,7 +667,7 @@
 
     function sentNote() {
       var a = state.answers, lc = cfg.lead || {};
-      var emails = !!((lc.klaviyo && lc.klaviyo.publicKey) || lc.webhook || lc.sendsPlanEmail);
+      var emails = !!((lc.klaviyo && lc.klaviyo.publicKey) || (lc.omnisend && lc.omnisend.enabled) || lc.webhook || lc.sendsPlanEmail);
       var ok = state.result && state.result.sent;
       var pending = state.result && state.result.sent === null;
       var text = ok && emails ? 'Your plan is on its way to ' + a.email + '.'

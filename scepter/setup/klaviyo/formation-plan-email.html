@@ -12,15 +12,15 @@
         <p style="margin:16px 0 0;font:17px/1.55 Georgia,'Times New Roman',serif;color:#dfe8dc;">{{ event.archetype_text }}</p>
       </td></tr>
       <tr><td style="padding:30px 32px 6px;">
-        <p style="margin:0 0 8px;font:700 12px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#6f1d2c;">Start here · {{ event.plan.0.month }}</p>
+        <p style="margin:0 0 8px;font:700 12px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#84171d;">Start here · {{ event.plan.0.month }}</p>
         <p style="margin:0;font:600 24px/1.2 Georgia,'Times New Roman',serif;color:#16201b;"><a href="{{ event.plan.0.url }}" style="color:#16201b;text-decoration:none;">{{ event.plan.0.title }}</a></p>
         <p style="margin:4px 0 10px;font:italic 16px/1.4 Georgia,serif;color:#56665c;">{{ event.plan.0.author }}</p>
         <p style="margin:0 0 18px;font:16px/1.55 Arial,Helvetica,sans-serif;color:#33443a;">{{ event.plan.0.why }}</p>
-        <a href="{{ event.plan.0.url }}" style="display:inline-block;background:#6f1d2c;color:#ffffff;font:700 15px/1 Arial,Helvetica,sans-serif;padding:14px 22px;border-radius:999px;text-decoration:none;">Get your first book</a>
+        <a href="{{ event.plan.0.url }}" style="display:inline-block;background:#84171d;color:#ffffff;font:700 15px/1 Arial,Helvetica,sans-serif;padding:14px 22px;border-radius:999px;text-decoration:none;">Get your first book</a>
       </td></tr>
       <tr><td style="padding:24px 32px;">
-        <div style="border-left:4px solid #6f1d2c;background:#eaf2e6;border-radius:10px;padding:16px 18px;">
-          <p style="margin:0 0 6px;font:700 12px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#6f1d2c;">This week</p>
+        <div style="border-left:4px solid #84171d;background:#eaf2e6;border-radius:10px;padding:16px 18px;">
+          <p style="margin:0 0 6px;font:700 12px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#84171d;">This week</p>
           <p style="margin:0;font:italic 18px/1.45 Georgia,serif;color:#16201b;">{{ event.practice }}</p>
         </div>
       </td></tr>
@@ -29,7 +29,7 @@
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
           {% for item in event.plan %}
           <tr><td style="padding:12px 0;border-top:1px solid #e3ebe0;">
-            <p style="margin:0 0 3px;font:700 12px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#56665c;">{{ item.month }}{% if item.hidden_gem %} · <span style="color:#6f1d2c;">Hidden gem</span>{% endif %}</p>
+            <p style="margin:0 0 3px;font:700 12px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#56665c;">{{ item.month }}{% if item.hidden_gem %} · <span style="color:#84171d;">Hidden gem</span>{% endif %}</p>
             <p style="margin:0;font:600 18px/1.25 Georgia,serif;"><a href="{{ item.url }}" style="color:#16201b;text-decoration:none;">{{ item.title }}</a></p>
             {% if item.author %}<p style="margin:2px 0 0;font:italic 15px/1.4 Georgia,serif;color:#56665c;">{{ item.author }}</p>{% endif %}
           </td></tr>

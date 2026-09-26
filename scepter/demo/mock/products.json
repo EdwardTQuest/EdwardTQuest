@@ -147,7 +147,7 @@
   {
    "id": 7000000707,
    "title": "The Eight Doors of the Kingdom: Meditations on the Beatitudes",
-   "handle": "the-eight-doors-of-the-kingdom",
+   "handle": "the-eight-doors-of-the-kingdom-meditations-on-the-beatitudes",
    "body_html": "<p>Meditations on the Beatitudes as the doors into the Kingdom: poverty of spirit, meekness, mercy and peace.</p>",
    "vendor": "Scepter Publishers",
    "product_type": "Book",
@@ -513,19 +513,49 @@
   },
   {
    "id": 7000002525,
-   "title": "Sanctifying Ordinary Work",
-   "handle": "sanctifying-ordinary-work",
-   "body_html": "<p>Ordinary work, done with love and offered to God, is not a distraction from prayer: it is prayer. Texts for everyone who works.</p>",
-   "vendor": "Scepter Publishers",
+   "title": "Holiness Through Work",
+   "handle": "holiness-through-work",
+   "body_html": "<p>W ork is a fundamental element of human life that claims much of our time. Consider Jesus’ 30 years as a carpenter under the tutelage of St. Joseph! Our natural tendency can be to often curse or shirk its presence in life, instead of recognizing its true value as a source of personal development, im</p>",
+   "vendor": "Scepter",
    "product_type": "Book",
    "tags": [
-    "Work"
+    "English",
+    "Fernando Ocariz",
+    "Maria Ferrari"
    ],
    "variants": [
     {
      "id": 7000002526,
+     "title": "Paperback",
+     "price": "14.95",
+     "available": true
+    },
+    {
+     "id": 7000002527,
+     "title": "eBook",
+     "price": "9.99",
+     "available": true
+    }
+   ],
+   "images": []
+  },
+  {
+   "id": 7000002541,
+   "title": "The Sanctification of Work",
+   "handle": "the-sanctification-of-work",
+   "body_html": "<p>The Sanctification of Work by Fr. José Luis Illanes delves into the theological wellsprings of our faith, offering a broad and wide-ranging exploration of how to find God in your most ordinary daily pursuits. Fr. Illanes considers three major topics: work and holiness, evaluating work, and Opus Dei </p>",
+   "vendor": "Scepter",
+   "product_type": "Book",
+   "tags": [
+    "English",
+    "For Fathers",
+    "Jose Luis Illanes"
+   ],
+   "variants": [
+    {
+     "id": 7000002542,
      "title": "Default Title",
-     "price": "12.95",
+     "price": "17.95",
      "available": true
     }
    ],
@@ -1051,7 +1081,7 @@
   {
    "id": 7000005252,
    "title": "Handbook of Prayers",
-   "handle": "handbook-of-prayers",
+   "handle": "handbook-of-prayers-8th-edition",
    "body_html": "<p>The prayers of a Catholic life in one volume: morning and evening prayers, the Mass, confession, devotions.</p>",
    "vendor": "James Socias",
    "product_type": "Book",

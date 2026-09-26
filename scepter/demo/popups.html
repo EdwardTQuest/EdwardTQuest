@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pop-ups Preview</title>
+  <!-- The store's theme loads Poppins; so does the preview. -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="../theme/assets/scepter.css">
   <link rel="stylesheet" href="demo.css">
 </head>
@@ -33,20 +35,26 @@
   <script src="../private/scepter-temperament-havard.js"></script>
   <script src="../theme/assets/scepter-popups.js"></script>
   <script>
-    fetch('mock/products.json').then(function (r) { return r.json(); }).then(function (j) {
+    fetch(window.demoData + 'products.json').then(function (r) { return r.json(); }).then(function (j) {
       var byHandle = {};
       j.products.forEach(function (p) { byHandle[p.handle] = p; });
+      function img(p) { return p && p.images && p.images[0] ? p.images[0].src + (p.images[0].src.indexOf('?') >= 0 ? '&' : '?') + 'width=360' : ''; }
       function book(handle, forWho) {
         var p = byHandle[handle];
-        return { handle: p.handle, title: p.title, url: '/products/' + p.handle, image: '', price_cents: Math.round(Number(p.variants[0].price) * 100), variant: p.variants[0].id, for: forWho };
+        if (!p) return null;
+        var v = p.variants.filter(function (x) { return x.available !== false; })[0] || p.variants[0];
+        return { handle: p.handle, title: p.title, url: '/products/' + p.handle, image: img(p), price_cents: Math.round(Number(v.price) * 100), variant: v.id, for: forWho };
       }
-      var lead = { klaviyo: { publicKey: 'DEMO12', listId: 'AbC123' }, webhook: 'https://hooks.example.com/scepter', shopify: true };
+      function booklet(key, label, handle, title, author) {
+        return { key: key, label: label, title: title, author: author, productUrl: '/products/' + handle, image: img(byHandle[handle]) };
+      }
+      var lead = { klaviyo: { publicKey: 'DEMO12', listId: 'AbC123' }, omnisend: { enabled: true, waitMs: 0 }, webhook: 'https://hooks.example.com/scepter', shopify: true };
       ScepterPopups.mountEbook(document.getElementById('ebook'), {
         triggers: { delay: 0, scroll: 0, exitIntent: false }, lead: lead, deliver: 'both',
         interests: [
-          { key: 'peace', label: 'Peace', title: 'Rest for the Restless Heart', author: 'A Scepter e-booklet', url: '#download-peace' },
-          { key: 'prosperity', label: 'Prosperity', title: 'Work Well, Live Well', author: 'A Scepter e-booklet', url: '#download-prosperity' },
-          { key: 'enlightenment', label: 'Enlightenment', title: 'Light for the Mind', author: 'A Scepter e-booklet', url: '#download-enlightenment' }
+          booklet('peace', 'Peace', 'why-suffer', 'Why Suffer?', 'Mary Ann Budnik'),
+          booklet('prosperity', 'Prosperity', 'five-steps-to-a-financially-healthy-marriage', '5 Steps to a Financially Healthy Marriage', 'Joseph D. Salem'),
+          booklet('enlightenment', 'Enlightenment', 'the-reasonableness-of-christianity', 'The Reasonableness of Christianity', 'Peter Kreeft')
         ]
       });
       var standin = /[?&]set=standin/.test(location.search);
@@ -58,12 +66,14 @@
       ScepterPopups.mountTemperament(document.getElementById('temperament'), {
         triggers: { launcher: true, launcherPosition: 'right', delay: 0, exitIntent: false }, lead: lead, askEmail: 'optional',
         questionSet: standin ? 'standin' : 'havard',
+        // One Havard book per virtue-challenge: humility, boldness, persistence, magnanimity.
         books: [
           book('from-temperament-to-character', ['all']),
           book('copy-of-virtuous-leadership-an-agenda-for-personal-excellence', ['choleric']),
-          book('created-for-greatness-the-power-of-magnanimity', ['melancholic', 'phlegmatic']),
-          book('discovering-a-mission-alexandre-havard', ['sanguine'])
-        ]
+          book('coached-by-joan-of-arc', ['melancholic']),
+          book('discovering-a-mission-alexandre-havard', ['sanguine']),
+          book('created-for-greatness-the-power-of-magnanimity', ['phlegmatic'])
+        ].filter(Boolean)
       });
     });
   </script>
