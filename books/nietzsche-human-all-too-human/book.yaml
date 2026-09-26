@@ -39,7 +39,7 @@ typeset:
 status:
   edit:
     state: done
-    when: 2026-09-25 22:02
+    when: 2026-09-26 00:21
     words: 36486
     chapters: 3
     unknown: 284
@@ -108,3 +108,7 @@ forced:
   gates:
   - text
   when: 2026-09-25 22:04
+- command: typeset
+  gates:
+  - text
+  when: 2026-09-26 00:21
