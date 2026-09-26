@@ -4,7 +4,7 @@ What the page-layout lens found in each PDF (widows, orphans, runts, hyphen stac
 
 ## deluxe — 322 pages, measure 3.64 in, line box 13.7 pt
 
-counts: runt 22, loose line 6, widow 2
+counts: runt 21, loose line 6, widow 3, orphan 1
 
 - p.9 runt: form.
 - p.34 loose line: mean gap 0.58 em: Moral questions immediately present themselves as 
@@ -31,17 +31,17 @@ counts: runt 22, loose line 6, widow 2
 - p.281 runt: supersede.
 - p.282 runt: complete.
 - p.284 runt: deformity.
-- p.287 runt: revive.
 - p.287 runt: being.
+- p.290 orphan: Emphasis, EMphasis; there must be some emphasis in order
+- p.291 widow: for there to be a phasis.
 - p.292 runt: general.
 - p.300 runt: facts.
 - p.304 runt: Guthrie.
 
-## everyman — 334 pages, measure 3.0 in, line box 12.5 pt
+## everyman — 332 pages, measure 3.0 in, line box 12.5 pt
 
-counts: runt 35, widow 2, loose line 16
+counts: runt 33, widow 2, loose line 15
 
-- p.18 runt: done.
 - p.24 runt: creeds.
 - p.25 runt: work.
 - p.50 widow: I worse than lose the years which are my all:
@@ -87,8 +87,6 @@ counts: runt 35, widow 2, loose line 16
 - p.293 runt: deformity.
 - p.296 runt: etc.
 - p.297 runt: facts.
-- p.297 loose line: mean gap 0.57 em: 7. But the same quality appears in many times and
-- p.297 runt: reduced.
 - p.301 runt: order
 - p.301 runt: tity?
 - p.301 runt: that
@@ -97,10 +95,9 @@ counts: runt 35, widow 2, loose line 16
 
 ## scholar — 406 pages, measure 3.15 in, line box 13.7 pt
 
-counts: loose line 30, orphan 1, runt 33, widow 2
+counts: loose line 30, runt 34, widow 2
 
 - p.8 loose line: mean gap 0.56 em: itself as an hypothesis, and, unlike so much of th
-- p.19 orphan: me or hate me,” “Either call my theory true or call it
 - p.39 runt: hand.
 - p.42 runt: knows.
 - p.44 runt: lives!
@@ -154,6 +151,7 @@ counts: loose line 30, orphan 1, runt 33, widow 2
 - p.354 runt: peace.
 - p.359 runt: decide.
 - p.362 runt: facts.
+- p.362 runt: reduced.
 - p.366 runt: how
 - p.366 runt: same!
 - p.366 runt: other.

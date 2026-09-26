@@ -4,8 +4,8 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 
 | # | lens | scope | findings | status |
 |---|---|---|---|---|
-| 3 | structure and sequence | every heading and paragraph of manuscript.md (98,566 words, 10 chapters) | 58 | findings |
-| 4 | page layout | every page of every PDF: widows, orphans, runts, hyphen stacks, loose lines, stranded headings, thin chapter ends | 149 | findings |
+| 3 | structure and sequence | every heading and paragraph of manuscript.md (98,566 words, 10 chapters) | 57 | findings |
+| 4 | page layout | every page of every PDF: widows, orphans, runts, hyphen stacks, loose lines, stranded headings, thin chapter ends | 147 | findings |
 | 5 | dictionary sweep | every token of the body (97,807); wordlist + house list; names accepted when capitalised mid-sentence (157) | 1450 | read the list |
 | 7 | apparatus | contents vs headings, note calls vs notes, front and back matter present in every edition | 1 | findings |
 | 8 | cross-edition consistency | the words of manuscript.md against the text of each PDF and of the EPUB | 0 | clean |
@@ -20,7 +20,7 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 | 6 | fresh specialist readers | (not run) | — |
 | 7r | apparatus read by a reviewer | (not run) | — |
 
-## Lens 3 · structure and sequence — 58 (findings)
+## Lens 3 · structure and sequence — 57 (findings)
 *Scope:* every heading and paragraph of manuscript.md (98,566 words, 10 chapters)
 
 - level 3 "#" (run 2): 10 numbered, first 1, last 10
@@ -28,7 +28,6 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 - level 3 "#" (run 4): 1 numbered, first 1, last 1
 - level 3 "#" (run 7): 5 numbered, first 1, last 5
 - lowercase paragraph start: sings Clough, while Huxley exclaims: “My only consolation lies in the 
-- unbalanced double quotes: “To breathe the air, how delicious! To speak, to walk, to seize someth
 - lowercase paragraph start: says Thomson; adding, “I ponder these thoughts, and they comfort me.” 
 - lowercase paragraph start: for if experts are the hardest people to satisfy, they have at any rat
 - lowercase paragraph start: we may say in that philosophy, the moment we have done our stroke of c
@@ -65,12 +64,12 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 - stray mark: …treme, extreme! Within the _ex_tensity that | ‘extreme’ conta…
 - stray mark: …me’ contains is contained the’_extreme_’ of intensity. | Some…
 
-## Lens 4 · page layout — 149 (findings)
+## Lens 4 · page layout — 147 (findings)
 *Scope:* every page of every PDF: widows, orphans, runts, hyphen stacks, loose lines, stranded headings, thin chapter ends
 
-- deluxe: {'runt': 22, 'loose line': 6, 'widow': 2} — see 3-typeset/typeset-report.md for the pages
-- everyman: {'runt': 35, 'widow': 2, 'loose line': 16} — see 3-typeset/typeset-report.md for the pages
-- scholar: {'loose line': 30, 'orphan': 1, 'runt': 33, 'widow': 2} — see 3-typeset/typeset-report.md for the pages
+- deluxe: {'runt': 21, 'loose line': 6, 'widow': 3, 'orphan': 1} — see 3-typeset/typeset-report.md for the pages
+- everyman: {'runt': 33, 'widow': 2, 'loose line': 15} — see 3-typeset/typeset-report.md for the pages
+- scholar: {'loose line': 30, 'runt': 34, 'widow': 2} — see 3-typeset/typeset-report.md for the pages
 
 ## Lens 5 · dictionary sweep — 1450 (read the list)
 *Scope:* every token of the body (97,807); wordlist + house list; names accepted when capitalised mid-sentence (157)
@@ -150,8 +149,8 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 *Scope:* the words of manuscript.md against the text of each PDF and of the EPUB
 
 - deluxe: manuscript words absent from the PDF text: 148 (e.g. ['way', 'philosophy', 'hypothesis', 'half', 'differences', 'grenzbegriff', 'unmediated', 'philosophers', 'wild', 'common']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
-- everyman: manuscript words absent from the PDF text: 153 (e.g. ['philosophy', 'scientific', 'game', 'flavored', 'up', 'academic', 'called', 'washingtons', 'show', 'day']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
-- scholar: manuscript words absent from the PDF text: 522 (e.g. ['learning', 'definite', 'philosophic', 'question', 'philosophy', 'conclusions', 'future', 'experience', 'doctrine', 'hypothesis']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
+- everyman: manuscript words absent from the PDF text: 151 (e.g. ['philosophy', 'scientific', 'game', 'flavored', 'up', 'academic', 'called', 'washingtons', 'show', 'day']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
+- scholar: manuscript words absent from the PDF text: 516 (e.g. ['learning', 'definite', 'philosophic', 'question', 'philosophy', 'conclusions', 'future', 'experience', 'doctrine', 'hypothesis']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
 - epub: no cover image yet (run `ath cover` and rebuild)
 - epub: 13 spine items, 18 manifest items, 3.1 MB unpacked
 - epub: manuscript words 99,655; EPUB words 100,588; manuscript words not found in EPUB: 0
@@ -160,7 +159,7 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 *Scope:* PDF page size, page count, embedded fonts; EPUB structure (see lens 8)
 
 - deluxe: 322 pages (even), page size 360 x 504 pts = trim, fonts 2, unembedded none, within KDP 24–828
-- everyman: 334 pages (even), page size 306 x 459 pts = trim, fonts 2, unembedded none, within KDP 24–828
+- everyman: 332 pages (even), page size 306 x 459 pts = trim, fonts 2, unembedded none, within KDP 24–828
 - scholar: 406 pages (even), page size 360 x 504 pts = trim, fonts 2, unembedded none, within KDP 24–828
 
 ## Lens 10 · render and look — 3 (needs eyes)
@@ -182,7 +181,7 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 | cover | undecided |  |  |  |
 | final | undecided |  |  |  |
 
-FORCED past gates: [{'command': 'typeset', 'gates': ['text'], 'when': '2026-09-25 22:35'}, {'command': 'epub', 'gates': ['text'], 'when': '2026-09-25 22:37'}]
+FORCED past gates: [{'command': 'typeset', 'gates': ['text'], 'when': '2026-09-25 22:35'}, {'command': 'epub', 'gates': ['text'], 'when': '2026-09-25 22:37'}, {'command': 'typeset', 'gates': ['text'], 'when': '2026-09-26 00:55'}, {'command': 'epub', 'gates': ['text'], 'when': '2026-09-26 00:57'}]
 
 ## Definition of done
 
