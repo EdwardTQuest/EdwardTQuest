@@ -4,11 +4,9 @@ What the page-layout lens found in each PDF (widows, orphans, runts, hyphen stac
 
 ## deluxe — 196 pages, measure 3.69 in, line box 13.7 pt
 
-counts: orphan 1, runt 31, loose line 11
+counts: runt 29, loose line 10
 
-- p.10 orphan: experience. (Things of an unexperienceable nature may exist 
 - p.10 runt: follows.¹
-- p.12 loose line: mean gap 0.55 em: Thus while pragmatism and radical empiricism do no
 - p.22 runt: way?
 - p.28 runt: content.
 - p.51 runt: illusion.¹⁹
@@ -22,7 +20,6 @@ counts: orphan 1, runt 31, loose line 11
 - p.102 runt: support.
 - p.109 runt: objective.
 - p.111 runt: them.
-- p.115 runt: question:
 - p.119 loose line: mean gap 0.57 em: Whosoever describes an experience in such terms as
 - p.122 runt: plane.
 - p.124 runt: action.
@@ -30,7 +27,6 @@ counts: orphan 1, runt 31, loose line 11
 - p.132 runt: trails.
 - p.132 runt: ods.]
 - p.137 loose line: mean gap 0.62 em: Since this formula also expresses the main content
-- p.139 runt: woven.⁶³
 - p.140 runt: minous.
 - p.142 runt: form.[114]
 - p.143 runt: been.
@@ -52,10 +48,10 @@ counts: orphan 1, runt 31, loose line 11
 
 ## everyman — 190 pages, measure 3.11 in, line box 12.5 pt
 
-counts: runt 32, loose line 12, widow 1
+counts: runt 32, loose line 10, widow 1
 
 - p.6 runt: Hall.
-- p.12 loose line: mean gap 0.66 em: comprising pragmatism as a special chapter, but a
+- p.12 runt: volume.
 - p.19 runt: defined.
 - p.19 runt: exist.
 - p.31 runt: exist.
@@ -82,12 +78,10 @@ counts: runt 32, loose line 12, widow 1
 - p.92 runt: altogether.
 - p.93 runt: viz.:
 - p.97 runt: ness.’]
-- p.100 runt: and
 - p.107 widow: X. of his Philosophische Studien.⁴⁸
 - p.107 runt: mental.
 - p.129 runt: Methods.]
 - p.134 runt: either
-- p.134 loose line: mean gap 0.60 em: must, as Professor Woodbridge says,⁶² represent on
 - p.147 runt: general.
 - p.149 runt: premiere.
 - p.154 loose line: mean gap 0.58 em: toujours comme une partie integrante de notre hist
@@ -102,9 +96,9 @@ counts: runt 32, loose line 12, widow 1
 
 ## scholar — 240 pages, measure 3.15 in, line box 13.7 pt
 
-counts: orphan 1, runt 30, loose line 28, widow 1
+counts: runt 31, loose line 28, orphan 2, widow 1
 
-- p.11 orphan: form no part of the material for philosophic debate.)”
+- p.12 runt: relations.
 - p.33 runt: content.
 - p.36 loose line: mean gap 0.56 em: To this challenge the reply is easy. Although for
 - p.37 loose line: mean gap 0.64 em: treat thoughts as having them); and both may be
@@ -131,6 +125,7 @@ counts: orphan 1, runt 30, loose line 28, widow 1
 - p.143 runt: world.
 - p.152 runt: reply.
 - p.156 runt: dispute.
+- p.159 orphan: My colleague and master, Josiah Royce, in a page of
 - p.161 loose line: mean gap 0.62 em: [92] [Kritik der reinen Vernunft, Werke, (1905),
 - p.161 loose line: mean gap 0.57 em: [96] [Cf. F. H. Bradley, Appearance and Reality,
 - p.163 loose line: mean gap 0.59 em: [99] [Enquiry Concerning Human Understanding,
@@ -139,6 +134,7 @@ counts: orphan 1, runt 30, loose line 28, widow 1
 - p.166 runt: away.
 - p.167 runt: result.
 - p.168 loose line: mean gap 0.56 em: how many minds there are to whom it can appeal
+- p.169 orphan: (1) Know another part of experience—in other words,
 - p.172 runt: minous.
 - p.175 runt: believe.
 - p.176 loose line: mean gap 0.55 em: [109] [The author employs the term ‘humanism’

@@ -5,10 +5,10 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 | # | lens | scope | findings | status |
 |---|---|---|---|---|
 | 3 | structure and sequence | every heading and paragraph of manuscript.md (53,327 words, 12 chapters) | 306 | findings |
-| 4 | page layout | every page of every PDF: widows, orphans, runts, hyphen stacks, loose lines, stranded headings, thin chapter ends | 148 | findings |
+| 4 | page layout | every page of every PDF: widows, orphans, runts, hyphen stacks, loose lines, stranded headings, thin chapter ends | 144 | findings |
 | 5 | dictionary sweep | every token of the body (51,760); wordlist + house list; names accepted when capitalised mid-sentence (93) | 4185 | read the list |
 | 7 | apparatus | contents vs headings, note calls vs notes, front and back matter present in every edition | 1 | findings |
-| 8 | cross-edition consistency | the words of manuscript.md against the text of each PDF and of the EPUB | 1 | findings |
+| 8 | cross-edition consistency | the words of manuscript.md against the text of each PDF and of the EPUB | 0 | clean |
 | 9 | mechanical | PDF page size, page count, embedded fonts; EPUB structure (see lens 8) | 0 | clean |
 | 10 | render and look | sampled pages of every edition; the covers | 3 | needs eyes |
 
@@ -66,12 +66,12 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 - stray mark: …o invoke higher principles of _dis_union, also, to make our m…
 - stray mark: …voke higher principles of _dis_union, also, to make our merel…
 
-## Lens 4 · page layout — 148 (findings)
+## Lens 4 · page layout — 144 (findings)
 *Scope:* every page of every PDF: widows, orphans, runts, hyphen stacks, loose lines, stranded headings, thin chapter ends
 
-- deluxe: {'orphan': 1, 'runt': 31, 'loose line': 11} — see 3-typeset/typeset-report.md for the pages
-- everyman: {'runt': 32, 'loose line': 12, 'widow': 1} — see 3-typeset/typeset-report.md for the pages
-- scholar: {'orphan': 1, 'runt': 30, 'loose line': 28, 'widow': 1} — see 3-typeset/typeset-report.md for the pages
+- deluxe: {'runt': 29, 'loose line': 10} — see 3-typeset/typeset-report.md for the pages
+- everyman: {'runt': 32, 'loose line': 10, 'widow': 1} — see 3-typeset/typeset-report.md for the pages
+- scholar: {'runt': 31, 'loose line': 28, 'orphan': 2, 'widow': 1} — see 3-typeset/typeset-report.md for the pages
 
 ## Lens 5 · dictionary sweep — 4185 (read the list)
 *Scope:* every token of the body (51,760); wordlist + house list; names accepted when capitalised mid-sentence (93)
@@ -147,16 +147,15 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 - everyman.pdf front/back matter: title page, publication page, contents, colophon — missing: none
 - scholar.pdf front/back matter: title page, publication page, contents, colophon — missing: none
 
-## Lens 8 · cross-edition consistency — 1 (findings)
+## Lens 8 · cross-edition consistency — 0 (clean)
 *Scope:* the words of manuscript.md against the text of each PDF and of the EPUB
 
-- deluxe: manuscript words absent from the PDF text: 211 (e.g. ['present', 'have', 'also', 'meaning', 'pluralistic', 'universe', 'first', 'from', 'p', 'been']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
-- everyman: manuscript words absent from the PDF text: 381 (e.g. ['present', 'have', 'also', 'professor', 'meaning', 'pluralistic', 'universe', 'nevertheless', 'from', 'understanding']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
-- scholar: manuscript words absent from the PDF text: 480 (e.g. ['present', 'have', 'also', 'philosophical', 'professor', 'meaning', 'pluralistic', 'universe', 'articles', 'from']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
+- deluxe: manuscript words absent from the PDF text: 211 (e.g. ['present', 'have', 'also', 'pluralistic', 'universe', 'first', 'from', 'p', 'been', 'together']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
+- everyman: manuscript words absent from the PDF text: 380 (e.g. ['present', 'have', 'also', 'professor', 'meaning', 'pluralistic', 'universe', 'nevertheless', 'from', 'understanding']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
+- scholar: manuscript words absent from the PDF text: 481 (e.g. ['present', 'volume', 'have', 'also', 'philosophical', 'professor', 'meaning', 'pluralistic', 'universe', 'articles']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
 - epub: no cover image yet (run `ath cover` and rebuild)
 - epub: 15 spine items, 20 manifest items, 2.8 MB unpacked
-- epub: manuscript words 53,994; EPUB words 54,968; manuscript words not found in EPUB: 48
-- epub PROBLEM text loss: 48 manuscript words are absent from the EPUB, e.g. ['present', 'have', 'with', 'also', 'for', 'pluralistic', 'universe', 'from', 'p', 'been', 'as', 'author']
+- epub: manuscript words 53,994; EPUB words 55,033; manuscript words not found in EPUB: 0
 
 ## Lens 9 · mechanical — 0 (clean)
 *Scope:* PDF page size, page count, embedded fonts; EPUB structure (see lens 8)
@@ -184,7 +183,7 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 | cover | undecided |  |  |  |
 | final | undecided |  |  |  |
 
-FORCED past gates: [{'command': 'typeset', 'gates': ['text'], 'when': '2026-09-25 22:56'}, {'command': 'epub', 'gates': ['text'], 'when': '2026-09-25 22:57'}]
+FORCED past gates: [{'command': 'typeset', 'gates': ['text'], 'when': '2026-09-25 22:56'}, {'command': 'epub', 'gates': ['text'], 'when': '2026-09-25 22:57'}, {'command': 'typeset', 'gates': ['text'], 'when': '2026-09-26 01:15'}, {'command': 'epub', 'gates': ['text'], 'when': '2026-09-26 01:16'}]
 
 ## Definition of done
 

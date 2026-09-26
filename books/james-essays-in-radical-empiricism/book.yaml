@@ -39,7 +39,7 @@ typeset:
 status:
   edit:
     state: done
-    when: 2026-09-25 22:56
+    when: 2026-09-26 01:15
     words: 53327
     chapters: 12
     unknown: 1640
@@ -54,9 +54,8 @@ status:
       plates: 0
       plates_on_sections: false
       layout:
-        orphan: 1
-        runt: 31
-        loose line: 11
+        runt: 29
+        loose line: 10
       pdf: 3-typeset/deluxe.pdf
     everyman:
       pages: 190
@@ -66,7 +65,7 @@ status:
       plates_on_sections: false
       layout:
         runt: 32
-        loose line: 12
+        loose line: 10
         widow: 1
       pdf: 3-typeset/everyman.pdf
     scholar:
@@ -76,21 +75,21 @@ status:
       plates: 0
       plates_on_sections: false
       layout:
-        orphan: 1
-        runt: 30
+        runt: 31
         loose line: 28
+        orphan: 2
         widow: 1
       pdf: 3-typeset/scholar.pdf
   epub:
-    state: problems
-    when: 2026-09-25 22:57
-    problems: 1
+    state: done
+    when: 2026-09-26 01:16
+    problems: 0
     size_mb: 1.34
     cover: false
   proof:
     state: done
-    when: 2026-09-25 22:57
-    findings: 456
+    when: 2026-09-26 01:16
+    findings: 451
 checks:
   expected_sections: 12
 forced:
@@ -102,3 +101,11 @@ forced:
   gates:
   - text
   when: 2026-09-25 22:57
+- command: typeset
+  gates:
+  - text
+  when: 2026-09-26 01:15
+- command: epub
+  gates:
+  - text
+  when: 2026-09-26 01:16

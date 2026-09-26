@@ -4,9 +4,9 @@ File: `4-epub/james-essays-in-radical-empiricism.epub` (1.34 MB)
 
 - no cover image yet (run `ath cover` and rebuild)
 - 15 spine items, 20 manifest items, 2.8 MB unpacked
-- manuscript words 53,994; EPUB words 54,968; manuscript words not found in EPUB: 48
+- manuscript words 53,994; EPUB words 55,033; manuscript words not found in EPUB: 0
 
-- PROBLEM text loss: 48 manuscript words are absent from the EPUB, e.g. ['present', 'have', 'with', 'also', 'for', 'pluralistic', 'universe', 'from', 'p', 'been', 'as', 'author']
+- no problems found
 
 Not checked here (do on a reader): rendering of small caps, footnote pop-ups, plate scaling. Run `epubcheck` too if installed.
 
