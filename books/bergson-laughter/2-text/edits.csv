@@ -1,0 +1,8 @@
+rule,count,cap,category,example
+hyphen joins,0,428,O,
+curly quotes,345,8567,I," {.front}  ## Translators' Preface  This work, by Professor   →   {.front}  ## Translators’ Preface  This work, by Professor "
+ellipses,7,856,I,"d of your imagination:  ... Plus, il doit a maints particuli  →  d of your imagination:  . . . Plus, il doit a maints particu"
+dashes,153,2141,I,r I. The Comic in General--the Comic Element in Forms and Mo  →  r I. The Comic in General—the Comic Element in Forms and Mov
+caps openings,1,428,C,nt that it is amusing.  INVERSION and RECIPROCAL INTERFERENC  →  nt that it is amusing.  Inversion and RECIPROCAL INTERFERENC
+spacing and ligatures,3,2141,N,: “We are about to become ...we have now become solid wooden  →  : “We are about to become...we have now become solid wooden 
+list markers escaped,0,2141,N,

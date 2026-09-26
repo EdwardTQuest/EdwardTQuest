@@ -1,0 +1,63 @@
+slug: bergson-laughter
+title: Laughter
+subtitle: ''
+author: Henri Bergson
+author_sort: Henri Bergson
+translator: Cloudesley Brereton and Fred Rothwell
+language: en
+series: The Athanasius Library
+year_first: 1900
+edition_credit: 'the Brereton–Rothwell translation of 1911 (Project Gutenberg #4352)'
+pd_basis: published before 1 January 1931; public domain in the United States
+source:
+  kind: gutenberg
+  gutenberg: 4352
+  archive: []
+  files:
+  - 0-source/pg4352.txt
+  note: ''
+plan:
+  summary: ''
+  audience: ''
+  structure: ''
+  art_subjects: []
+  movement: landscape
+art:
+  cover: null
+  plates: []
+  plates_wanted: 10
+  plate_mode: grayscale
+blurb: ''
+editions:
+- deluxe
+- everyman
+- scholar
+typeset:
+  chapters_open_recto: true
+  opening_smallcaps: true
+  signature_font: La Belle Aurore
+status:
+  edit:
+    state: errors
+    when: 2026-09-26 01:34
+    words: 39668
+    chapters: 3
+    unknown: 306
+    suspicious: 8
+    errors: 1
+    battery: 0
+  proof:
+    state: done
+    when: 2026-09-26 01:34
+    findings: 6
+checks:
+  expected_sections: 3
+forced:
+- command: typeset
+  gates:
+  - text
+  when: 2026-09-26 01:34
+- command: epub
+  gates:
+  - text
+  when: 2026-09-26 01:34

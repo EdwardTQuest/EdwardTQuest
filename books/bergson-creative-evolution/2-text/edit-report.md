@@ -1,6 +1,6 @@
 # Edit report — Creative Evolution
 
-Source: `0-source/pg26163.txt` (142,888 words). Import: {'pg transcriber notes removed': 0, 'pg page markers removed': 15, 'pg paragraph markers removed': 0, 'pg emphasis markup removed': 0, 'pg footnote blocks': 110, 'pg footnote calls': 110, 'pg footnotes headings dropped': 5, 'pg front blocks dropped': 9, 'pg front prose kept': 0, 'pg contents runs removed': 1, 'pg contents and furniture dropped': 36, 'pg index dropped (words)': 310, 'pg chapter titles merged': 4, 'chapters': 6, 'paragraphs': 1485, 'breaks': 35, 'notes': 110, 'split titles merged': 0, 'front divisions': 1, 'levels': {'#plain': 2, 'Chapter': 2}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 2.
+Source: `0-source/pg26163.txt` (142,888 words). Import: {'pg transcriber notes removed': 0, 'pg page markers removed': 15, 'pg paragraph markers removed': 0, 'pg emphasis markup removed': 0, 'pg footnote blocks': 110, 'pg footnote calls': 110, 'pg footnotes headings dropped': 5, 'pg front blocks dropped': 9, 'pg front prose kept': 0, 'pg contents runs removed': 1, 'pg contents and furniture dropped': 36, 'pg index dropped (words)': 310, 'pg chapter titles merged': 4, 'chapters': 6, 'list markers escaped': 0, 'paragraphs': 1485, 'breaks': 35, 'notes': 110, 'split titles merged': 0, 'front divisions': 1, 'levels': {'#plain': 2, 'Chapter': 2}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 2.
 
 ## House-style rules (count / cap)
 
@@ -12,6 +12,7 @@ Source: `0-source/pg26163.txt` (142,888 words). Import: {'pg transcriber notes r
 | dashes | 293 | 7144 | l things among themselves--in short, to think matter. Such w  →  l things among themselves—in short, to think  |
 | caps openings | 0 | 1428 |  |
 | spacing and ligatures | 25 | 7144 | e of the numbers 9, 8, 7, ..., etc.—in short, of the whole i  →  e of the numbers 9, 8, 7,..., etc.—in short,  |
+| list markers escaped | 0 | 7144 |  |
 
 ## Validation: 0 errors, 1 warnings
 
@@ -293,5 +294,5 @@ Source: `0-source/pg26163.txt` (142,888 words). Import: {'pg transcriber notes r
 2. The rest of the dictionary list (907 entries): read to the end?
 3. Sequence proof: level 2 "chapter": 4 numbered, first 1, last 4; expected 4: OK — does it match what the source prints?
 4. Structure battery: 749 findings — each decided?
-5. Rules: hyphen joins 0, curly quotes 757, ellipses 13, dashes 293, caps openings 0, spacing and ligatures 25 — plausible for 142,888 words?
+5. Rules: hyphen joins 0, curly quotes 757, ellipses 13, dashes 293, caps openings 0, spacing and ligatures 25, list markers escaped 0 — plausible for 142,888 words?
 6. Would a reader who knows this book notice anything wrong in the first chapter you open at random?

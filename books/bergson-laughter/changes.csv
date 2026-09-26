@@ -1,0 +1,6 @@
+id,date,stage,category,location,as_was,now_reads,evidence,status,by
+1,2026-09-26,edit,I,throughout,curly quotes,345 instances,house style (STYLE.md),applied,ath edit
+2,2026-09-26,edit,I,throughout,ellipses,7 instances,house style (STYLE.md),applied,ath edit
+3,2026-09-26,edit,I,throughout,dashes,153 instances,house style (STYLE.md),applied,ath edit
+4,2026-09-26,edit,C,throughout,caps openings,1 instances,house style (STYLE.md),applied,ath edit
+5,2026-09-26,edit,N,throughout,spacing and ligatures,3 instances,house style (STYLE.md),applied,ath edit

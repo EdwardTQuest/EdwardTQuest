@@ -1,0 +1,261 @@
+# Typeset report — Creative Evolution
+
+What the page-layout lens found in each PDF (widows, orphans, runts, hyphen stacks, loose lines, stranded headings, thin chapter ends). A finding is a place to look; the typeset gate decides whether it is tolerable where it is. Look at 3-typeset/pages/ first, then read this.
+
+## deluxe — 462 pages, measure 3.64 in, line box 13.7 pt
+
+counts: runt 80, loose line 7, hyphen stack 1
+
+- p.35 runt: memory.
+- p.48 runt: company.
+- p.61 runt: below.
+- p.65 runt: obtained.
+- p.75 runt: generality.
+- p.75 loose line: mean gap 0.58 em: have always insisted: the structure of such an org
+- p.92 runt: cause.
+- p.97 runt: problem.
+- p.106 runt: result.
+- p.110 runt: ⁴
+- p.120 runt: serious.
+- p.137 runt: interested.
+- p.138 runt: explosion.
+- p.146 runt: result.
+- p.146 runt: vertebrates.
+- p.151 runt: grades.
+- p.162 runt: directed.
+- p.184 runt: analyzed.
+- p.194 runt: itself.
+- p.196 runt: rests.[76]
+- p.199 runt: free.[77]
+- p.205 runt: living.
+- p.212 runt: unloose.
+- p.213 runt: philosophy.
+- p.224 runt: problem?
+- p.230 runt: induction.
+- p.249 runt: ancients.
+- p.276 loose line: mean gap 0.57 em: But through the words, lines and verses runs the s
+- p.284 runt: evolution.
+- p.291 hyphen stack: tory of Systems—real Be-
+- p.298 runt: subsists.
+- p.299 runt: general.
+- p.311 runt: itself.
+- p.313 runt: itself.
+- p.313 runt: general.
+- p.319 runt: itself?
+- p.372 runt: duration.
+- p.380 runt: duration.
+- p.385 runt: itself.
+- p.390 runt: evolution
+- p.393 runt: Order
+- p.394 runt: Societies
+- p.395 runt: 349
+- p.396 runt: 72
+- p.396 runt: 93
+- p.397 runt: 255
+- p.397 runt: 44
+- p.399 runt: 108
+- p.403 runt: 341-2
+- p.403 runt: 194-5
+- p.404 runt: 206
+- p.405 loose line: mean gap 0.61 em: Deposit, instinct and intelligence as deposits, em
+- p.406 runt: 257
+- p.408 runt: 329
+- p.409 runt: 353
+- p.410 runt: 368
+- p.410 runt: 254
+- p.412 runt: 130
+- p.415 runt: 254-6
+- p.415 loose line: mean gap 0.57 em: physics, 20, 228 his influence on modern science, 
+- p.418 runt: 267
+- p.420 runt: 202
+- p.421 runt: evolution
+- p.423 runt: thy
+- p.427 loose line: mean gap 0.57 em: Intuitional cosmology as reversed psychology, 207-
+- p.427 runt: 195-8
+- p.427 runt: 345-6
+- p.427 runt: 319-20
+- p.428 runt: in-itself
+- p.429 runt: 229-30
+- p.431 runt: 276-7
+- p.432 runt: Utility
+- p.433 runt: 165
+- p.439 runt: 316-8
+- p.442 runt: 157
+- p.447 loose line: mean gap 0.56 em: forms, acts, 302-3, 314 and consciousness, 143-4 o
+- p.448 loose line: mean gap 0.69 em: Same, function of intellect connecting same with s
+- p.449 runt: 170
+- p.450 runt: 96
+- p.450 runt: 329-30
+- … 8 more
+
+## everyman — 476 pages, measure 3.0 in, line box 12.5 pt
+
+counts: runt 107, loose line 34
+
+- p.22 runt: general?
+- p.26 runt: itself.
+- p.38 runt: extremity.
+- p.38 runt: creation?
+- p.41 runt: science.
+- p.48 runt: company.
+- p.75 loose line: mean gap 0.56 em: on independent lines, favored by unlike circumstan
+- p.104 runt: division.
+- p.119 runt: bigger.
+- p.125 loose line: mean gap 0.63 em: characteristic distinguishes the plant from the an
+- p.151 runt: life.
+- p.152 runt: risks.
+- p.153 runt: account.
+- p.154 runt: plants.
+- p.161 runt: nature.
+- p.163 runt: problem.
+- p.164 runt: ness.
+- p.168 loose line: mean gap 0.55 em: Philosophers distinguish between the matter of our
+- p.171 runt: nature.
+- p.180 runt: thought.
+- p.185 runt: object.
+- p.191 runt: instincts?
+- p.191 runt: it.
+- p.199 runt: motion.
+- p.221 runt: nature.
+- p.233 runt: terms.
+- p.234 runt: direction.
+- p.244 runt: way.
+- p.248 runt: vanish.
+- p.253 runt: definition.
+- p.272 runt: was.[90]
+- p.287 loose line: mean gap 0.60 em: that is at the origin of life. Consciousness, or s
+- p.289 runt: surable.
+- p.292 runt: evolution.
+- p.297 runt: ⁷⁹
+- p.312 runt: possible.
+- p.313 runt: existent.”
+- p.313 runt: existent.”
+- p.323 runt: present.
+- p.333 loose line: mean gap 0.57 em: —qualitative, evolutionary, extensive—differ profo
+- p.340 runt: nature.
+- p.341 loose line: mean gap 0.56 em: argument to qualitative becoming and to evolutiona
+- p.358 runt: becoming.
+- p.362 runt: moments.
+- p.362 loose line: mean gap 0.58 em: at any moment of time, we are aiming at something
+- p.364 loose line: mean gap 0.61 em: The essential, original difference must therefore 
+- p.370 loose line: mean gap 0.58 em: he practices, the more and more quickly he succeed
+- p.374 runt: suggests.
+- p.388 runt: implied.
+- p.395 runt: evolution.
+- p.405 loose line: mean gap 0.61 em: and modern geometry, 333-4 and modern philosophy,
+- p.406 runt: 263
+- p.407 runt: 349
+- p.407 runt: 340-1
+- p.408 runt: order
+- p.408 runt: reality
+- p.408 runt: lution
+- p.409 loose line: mean gap 0.60 em: Biology, 12, 25, 26, 31-2, 43, 168-9, 174-5, 194-6
+- p.409 loose line: mean gap 0.64 em: Bow, strain of, illustrating indivisibility of mot
+- p.409 runt: 308-10
+- p.410 runt: 297
+- p.410 runt: 47
+- p.410 loose line: mean gap 0.57 em: Categorical propositions, characteristic of instin
+- p.410 loose line: mean gap 0.58 em: Categories, conceptual, x, xiii, 48, 147, 148-9, 1
+- p.412 loose line: mean gap 0.72 em: Cinematographical character of ancient philosophy,
+- p.413 runt: 196-9
+- p.413 runt: 251
+- p.413 loose line: mean gap 0.59 em: Concentration, intellect as, 191, 301 of personali
+- p.414 loose line: mean gap 0.58 em: Conditions, external, in evolution, 128-9, 133, 13
+- p.415 loose line: mean gap 0.57 em: Manufacture, Solid the characteristic work of inte
+- p.416 runt: 156
+- p.416 runt: anism
+- p.418 runt: 365
+- p.419 runt: 238
+- p.419 loose line: mean gap 0.57 em: Determinism, 217, 264, 345, 348. See Inert matter,
+- p.419 loose line: mean gap 0.57 em: Dionaea illustrating certain animal characteristic
+- p.419 loose line: mean gap 0.61 em: Disproportion between an invention and its conse-
+- p.421 runt: 269
+- p.421 runt: 251
+- p.421 runt: 297
+- … 61 more
+
+## scholar — 578 pages, measure 3.1 in, line box 13.7 pt
+
+counts: runt 71, loose line 40
+
+- p.26 runt: history.
+- p.28 runt: history.
+- p.40 runt: down.
+- p.46 runt: extremity.
+- p.48 loose line: mean gap 0.57 em: transformism a new confirmation. Thus, the proof
+- p.50 loose line: mean gap 0.56 em: transformism presents as relations of real affilia
+- p.59 loose line: mean gap 0.58 em: Imitation of the living by the unorganized may,
+- p.63 runt: actions.
+- p.80 runt: different.
+- p.83 runt: further.
+- p.128 runt: blage.
+- p.131 runt: found.
+- p.131 runt: result.
+- p.136 runt: obtained.
+- p.136 runt: intensity.
+- p.144 runt: itself.
+- p.145 loose line: mean gap 0.55 em: those which life bore within its bosom. For life i
+- p.148 runt: finality.
+- p.169 loose line: mean gap 0.58 em: are not like objects set beside each other in spac
+- p.188 loose line: mean gap 0.65 em: So, by different ways, we are led to the same
+- p.195 runt: ments.
+- p.197 runt: nature.
+- p.199 loose line: mean gap 0.58 em: reach independence, might be extended indefinitely
+- p.218 runt: mobile.
+- p.228 runt: zation.
+- p.230 runt: analyzed.
+- p.233 runt: instincts?
+- p.240 runt: sympathy.
+- p.246 loose line: mean gap 0.67 em: receives a clearer meaning, although it cannot be
+- p.248 loose line: mean gap 0.58 em: among conscious beings themselves, man comes to
+- p.250 loose line: mean gap 0.56 em: and drowned in the accomplishment of the act, is
+- p.261 loose line: mean gap 0.62 em: the powers of the individual mind. Whether it is
+- p.268 loose line: mean gap 0.60 em: The moment it does so, its fate is sealed. The
+- p.284 runt: direction.
+- p.301 loose line: mean gap 0.57 em: It is true that we must begin by distinguishing,
+- p.317 runt: another.
+- p.339 runt: oxygen.
+- p.341 runt: acts.
+- p.344 runt: evolving?
+- p.374 runt: subsists.
+- p.381 runt: existent.”
+- p.388 runt: judges.
+- p.409 runt: happen.
+- p.411 runt: ities.
+- p.415 runt: [99]
+- p.418 loose line: mean gap 0.57 em: the mind must seek that which defies change, the
+- p.429 loose line: mean gap 0.66 em: This conception, which more and more shows
+- p.446 loose line: mean gap 0.57 em: We have said before, and we cannot repeat too
+- p.473 runt: implied.
+- p.482 runt: genesis.
+- p.488 runt: totle.
+- p.494 runt: 357
+- p.495 runt: 263
+- p.496 runt: intellect
+- p.496 runt: 324
+- p.497 runt: evolution
+- p.500 loose line: mean gap 0.63 em: other, 20, 21 efficient, 238, 277, 323 efficient, 
+- p.500 runt: 164
+- p.502 runt: 193
+- p.502 loose line: mean gap 0.55 em: Comparison of ancient philosophy with modern,
+- p.503 runt: 251
+- p.506 runt: 156
+- p.506 loose line: mean gap 0.81 em: Correspondence between mind and matter in
+- p.507 runt: 108
+- p.507 runt: 265
+- p.507 loose line: mean gap 0.58 em: Culminating points of evolutionary progress, 50,
+- p.510 runt: 230
+- p.511 runt: 202
+- p.512 runt: 131
+- p.512 runt: 251
+- p.515 loose line: mean gap 0.82 em: Evolutionary, qualitative, and extensive motion
+- p.516 loose line: mean gap 0.83 em: Extensive, evolutionary and qualitative motion,
+- p.516 loose line: mean gap 0.60 em: External conditions in evolution, 128, 133, 137,
+- p.516 runt: etc.
+- p.517 runt: 270
+- p.517 runt: 79
+- p.520 runt: 152
+- p.524 loose line: mean gap 0.60 em: Habit and consciousness annulled, 143 form of
+- p.526 runt: 356
+- p.526 loose line: mean gap 0.61 em: 318, 329 30 in ancient philosophy, [Greek: eidos],
+- … 31 more

@@ -1,0 +1,4 @@
+#import "/templates/typst/house.typ": book
+#show: book.with((title: "Creative Evolution", author: "Henri Bergson", subtitle: "", translator: "Arthur Mitchell", series: "The Athanasius Library", year: "2026", has_parts: false, opening_smallcaps: true, publication: ([#smallcaps(all: true)[athanasius]], [The Athanasius Library], [], [This Athanasius edition follows the text of the Mitchell translation of 1911 (Project Gutenberg #26163).], [The text of this work is in the public domain in the United States: published before 1 January 1931; public domain in the United States.], [Set in EB Garamond. Printed in the United States of America.], [No claim is made to any pre-existing public-domain material reproduced here. Editorial arrangement © 2026 Athanasius.],), signature: "/books/bergson-creative-evolution/3-typeset/signature-scholar.png"), ed-name: "scholar")
+#set page(margin: (inside: 0.9in))
+#include "/books/bergson-creative-evolution/3-typeset/body.typ"
