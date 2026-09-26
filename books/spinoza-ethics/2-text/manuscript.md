@@ -12,41 +12,41 @@ date: '1677'
 
 ## Definitions
 
-I. By that which is self—caused, I mean that of which the essence involves existence, or that of which the nature is only conceivable as existent.
+I\. By that which is self—caused, I mean that of which the essence involves existence, or that of which the nature is only conceivable as existent.
 
-II. A thing is called finite after its kind, when it can be limited by another thing of the same nature; for instance, a body is called finite because we always conceive another greater body. So, also, a thought is limited by another thought, but a body is not limited by thought, nor a thought by body.
+II\. A thing is called finite after its kind, when it can be limited by another thing of the same nature; for instance, a body is called finite because we always conceive another greater body. So, also, a thought is limited by another thought, but a body is not limited by thought, nor a thought by body.
 
-III. By substance, I mean that which is in itself, and is conceived through itself: in other words, that of which a conception can be formed independently of any other conception.
+III\. By substance, I mean that which is in itself, and is conceived through itself: in other words, that of which a conception can be formed independently of any other conception.
 
-IV. By attribute, I mean that which the intellect perceives as constituting the essence of substance.
+IV\. By attribute, I mean that which the intellect perceives as constituting the essence of substance.
 
-V. By mode, I mean the modifications[^1] of substance, or that which exists in, and is conceived through, something other than itself.
+V\. By mode, I mean the modifications[^1] of substance, or that which exists in, and is conceived through, something other than itself.
 
-VI. By God, I mean a being absolutely infinite—that is, a substance consisting in infinite attributes, of which each expresses eternal and infinite essentiality.
+VI\. By God, I mean a being absolutely infinite—that is, a substance consisting in infinite attributes, of which each expresses eternal and infinite essentiality.
 
 Explanation—I say absolutely infinite, not infinite after its kind: for, of a thing infinite only after its kind, infinite attributes may be denied; but that which is absolutely infinite, contains in its essence whatever expresses reality, and involves no negation.
 
-VII. That thing is called free, which exists solely by the necessity of its own nature, and of which the action is determined by itself alone. On the other hand, that thing is necessary, or rather constrained, which is determined by something external to itself to a fixed and definite method of existence or action.
+VII\. That thing is called free, which exists solely by the necessity of its own nature, and of which the action is determined by itself alone. On the other hand, that thing is necessary, or rather constrained, which is determined by something external to itself to a fixed and definite method of existence or action.
 
-VIII. By eternity, I mean existence itself, in so far as it is conceived necessarily to follow solely from the definition of that which is eternal.
+VIII\. By eternity, I mean existence itself, in so far as it is conceived necessarily to follow solely from the definition of that which is eternal.
 
 Explanation—Existence of this kind is conceived as an eternal truth, like the essence of a thing, and, therefore, cannot be explained by means of continuance or time, though continuance may be conceived without a beginning or end.
 
 ## Axioms
 
-I. Everything which exists, exists either in itself or in something else.
+I\. Everything which exists, exists either in itself or in something else.
 
-II. That which cannot be conceived through anything else must be conceived through itself.
+II\. That which cannot be conceived through anything else must be conceived through itself.
 
-III. From a given definite cause an effect necessarily follows; and, on the other hand, if no definite cause be granted, it is impossible that an effect can follow.
+III\. From a given definite cause an effect necessarily follows; and, on the other hand, if no definite cause be granted, it is impossible that an effect can follow.
 
-IV. The knowledge of an effect depends on and involves the knowledge of a cause.
+IV\. The knowledge of an effect depends on and involves the knowledge of a cause.
 
-V. Things which have nothing in common cannot be understood, the one by means of the other; the conception of one does not involve the conception of the other.
+V\. Things which have nothing in common cannot be understood, the one by means of the other; the conception of one does not involve the conception of the other.
 
-VI. A true idea must correspond with its ideate or object.
+VI\. A true idea must correspond with its ideate or object.
 
-VII. If a thing can be conceived as non—existing, its essence does not involve existence.
+VII\. If a thing can be conceived as non—existing, its essence does not involve existence.
 
 ## Propositions
 
@@ -88,13 +88,13 @@ Note I.—As finite existence involves a partial negation, and infinite existenc
 
 Note II.—No doubt it will be difficult for those who think about things loosely, and have not been accustomed to know them by their primary causes, to comprehend the demonstration of Prop. vii.: for such persons make no distinction between the modifications of substances and the substances themselves, and are ignorant of the manner in which things are produced; hence they may attribute to substances the beginning which they observe in natural objects. Those who are ignorant of true causes, make complete confusion—think that trees might talk just as well as men—that men might be formed from stones as well as from seed; and imagine that any form might be changed into any other. So, also, those who confuse the two natures, divine and human, readily attribute human passions to the deity, especially so long as they do not know how passions originate in the mind. But, if people would consider the nature of substance, they would have no doubt about the truth of Prop. vii. In fact, this proposition would be a universal axiom, and accounted a truism. For, by substance, would be understood that which is in itself, and is conceived through itself—that is, something of which the conception requires not the conception of anything else; whereas modifications exist in something external to themselves, and a conception of them is formed by means of a conception of the thing in which they exist. Therefore, we may have true ideas of non—existent modifications; for, although they may have no actual existence apart from the conceiving intellect, yet their essence is so involved in something external to themselves that they may through it be conceived. Whereas the only truth substances can have, external to the intellect, must consist in their existence, because they are conceived through themselves. Therefore, for a person to say that he has a clear and distinct—that is, a true—idea of a substance, but that he is not sure whether such substance exists, would be the same as if he said that he had a true idea, but was not sure whether or no it was false (a little consideration will make this plain); or if anyone affirmed that substance is created, it would be the same as saying that a false idea was true—in short, the height of absurdity. It must, then, necessarily be admitted that the existence of substance as its essence is an eternal truth. And we can hence conclude by another process of reasoning—that there is but one such substance. I think that this may profitably be done at once; and, in order to proceed regularly with the demonstration, we must premise:—
 
-1. The true definition of a thing neither involves nor expresses anything beyond the nature of the thing defined. From this it follows that—
+1\. The true definition of a thing neither involves nor expresses anything beyond the nature of the thing defined. From this it follows that—
 
-2. No definition implies or expresses a certain number of individuals, inasmuch as it expresses nothing beyond the nature of the thing defined. For instance, the definition of a triangle expresses nothing beyond the actual nature of a triangle: it does not imply any fixed number of triangles.
+2\. No definition implies or expresses a certain number of individuals, inasmuch as it expresses nothing beyond the nature of the thing defined. For instance, the definition of a triangle expresses nothing beyond the actual nature of a triangle: it does not imply any fixed number of triangles.
 
-3. There is necessarily for each individual existent thing a cause why it should exist.
+3\. There is necessarily for each individual existent thing a cause why it should exist.
 
-4. This cause of existence must either be contained in the nature and definition of the thing defined, or must be postulated apart from such definition.
+4\. This cause of existence must either be contained in the nature and definition of the thing defined, or must be postulated apart from such definition.
 
 It therefore follows that, if a given number of individual things exist in nature, there must be some cause for the existence of exactly that number, neither more nor less. For example, if twenty men exist in the universe (for simplicity’s sake, I will suppose them existing simultaneously, and to have had no predecessors), and we want to account for the existence of these twenty men, it will not be enough to show the cause of human existence in general; we must also show why there are exactly twenty men, neither more nor less: for a cause must be assigned for the existence of each individual. Now this cause cannot be contained in the actual nature of man, for the true definition of man does not involve any consideration of the number twenty. Consequently, the cause for the existence of these twenty men, and, consequently, of each of them, must necessarily be sought externally to each individual. Hence we may lay down the absolute rule, that everything which may consist of several individuals must have an external cause. And, as it has been shown already that existence appertains to the nature of substance, existence must necessarily be included in its definition; and from its definition alone existence must be deducible. But from its definition (as we have shown, notes ii., iii.), we cannot infer the existence of several substances; therefore it follows that there is only one substance of the same nature. Q.E.D.
 
@@ -378,15 +378,15 @@ DEFINITION VII. By particular things, I mean things which are finite and have a 
 
 ## Axioms
 
-I. The essence of man does not involve necessary existence, that is, it may, in the order of nature, come to pass that this or that man does or does not exist.
+I\. The essence of man does not involve necessary existence, that is, it may, in the order of nature, come to pass that this or that man does or does not exist.
 
-II. Man thinks.
+II\. Man thinks.
 
-III. Modes of thinking, such as love, desire, or any other of the passions, do not take place, unless there be in the same individual an idea of the thing loved, desired, &c. But the idea can exist without the presence of any other mode of thinking.
+III\. Modes of thinking, such as love, desire, or any other of the passions, do not take place, unless there be in the same individual an idea of the thing loved, desired, &c. But the idea can exist without the presence of any other mode of thinking.
 
-IV. We perceive that a certain body is affected in many ways.
+IV\. We perceive that a certain body is affected in many ways.
 
-V. We feel and perceive no particular things, save bodies and modes of thought.
+V\. We feel and perceive no particular things, save bodies and modes of thought.
 
 N.B. The Postulates are given after the conclusion of Prop. xiii.
 
@@ -532,17 +532,17 @@ Note.—We thus see, how a composite individual may be affected in many differen
 
 ## Postulates
 
-I. The human body is composed of a number of individual parts, of diverse nature, each one of which is in itself extremely complex.
+I\. The human body is composed of a number of individual parts, of diverse nature, each one of which is in itself extremely complex.
 
-II. Of the individual parts composing the human body some are fluid, some soft, some hard.
+II\. Of the individual parts composing the human body some are fluid, some soft, some hard.
 
-III. The individual parts composing the human body, and consequently the human body itself, are affected in a variety of ways by external bodies.
+III\. The individual parts composing the human body, and consequently the human body itself, are affected in a variety of ways by external bodies.
 
-IV. The human body stands in need for its preservation of a number of other bodies, by which it is continually, so to speak, regenerated.
+IV\. The human body stands in need for its preservation of a number of other bodies, by which it is continually, so to speak, regenerated.
 
-V. When the fluid part of the human body is determined by an external body to impinge often on another soft part, it changes the surface of the latter, and, as it were, leaves the impression thereupon of the external body which impels it.
+V\. When the fluid part of the human body is determined by an external body to impinge often on another soft part, it changes the surface of the latter, and, as it were, leaves the impression thereupon of the external body which impels it.
 
-VI. The human body can move external bodies, and arrange them in a variety of ways.
+VI\. The human body can move external bodies, and arrange them in a variety of ways.
 
 ### Prop. XIV. The human mind is capable of perceiving a great number of things, and is so in proportion as its body is capable of receiving a great number of impressions
 
@@ -778,13 +778,13 @@ We must therefore conclude, that we are easily deceived, when we confuse univers
 
 It remains to point out the advantages of a knowledge of this doctrine as bearing on conduct, and this may be easily gathered from what has been said. The doctrine is good,
 
-1. Inasmuch as it teaches us to act solely according to the decree of God, and to be partakers in the Divine nature, and so much the more, as we perform more perfect actions and more and more understand God. Such a doctrine not only completely tranquilizes our spirit, but also shows us where our highest happiness or blessedness is, namely, solely in the knowledge of God, whereby we are led to act only as love and piety shall bid us. We may thus clearly understand, how far astray from a true estimate of virtue are those who expect to be decorated by God with high rewards for their virtue, and their best actions, as for having endured the direst slavery; as if virtue and the service of God were not in itself happiness and perfect freedom.
+1\. Inasmuch as it teaches us to act solely according to the decree of God, and to be partakers in the Divine nature, and so much the more, as we perform more perfect actions and more and more understand God. Such a doctrine not only completely tranquilizes our spirit, but also shows us where our highest happiness or blessedness is, namely, solely in the knowledge of God, whereby we are led to act only as love and piety shall bid us. We may thus clearly understand, how far astray from a true estimate of virtue are those who expect to be decorated by God with high rewards for their virtue, and their best actions, as for having endured the direst slavery; as if virtue and the service of God were not in itself happiness and perfect freedom.
 
-2. Inasmuch as it teaches us, how we ought to conduct ourselves with respect to the gifts of fortune, or matters which are not in our power, and do not follow from our nature. For it shows us, that we should await and endure fortune’s smiles or frowns with an equal mind, seeing that all things follow from the eternal decree of God by the same necessity, as it follows from the essence of a triangle, that the three angles are equal to two right angles.
+2\. Inasmuch as it teaches us, how we ought to conduct ourselves with respect to the gifts of fortune, or matters which are not in our power, and do not follow from our nature. For it shows us, that we should await and endure fortune’s smiles or frowns with an equal mind, seeing that all things follow from the eternal decree of God by the same necessity, as it follows from the essence of a triangle, that the three angles are equal to two right angles.
 
-3. This doctrine raises social life, inasmuch as it teaches us to hate no man, neither to despise, to deride, to envy, or to be angry with any. Further, as it tells us that each should be content with his own, and helpful to his neighbour, not from any womanish pity, favour, or superstition, but solely by the guidance of reason, according as the time and occasion demand, as I will show in Part III.
+3\. This doctrine raises social life, inasmuch as it teaches us to hate no man, neither to despise, to deride, to envy, or to be angry with any. Further, as it tells us that each should be content with his own, and helpful to his neighbour, not from any womanish pity, favour, or superstition, but solely by the guidance of reason, according as the time and occasion demand, as I will show in Part III.
 
-4. Lastly, this doctrine confers no small advantage on the commonwealth; for it teaches how citizens should be governed and led, not so as to become slaves, but so that they may freely do whatsoever things are best.
+4\. Lastly, this doctrine confers no small advantage on the commonwealth; for it teaches how citizens should be governed and led, not so as to become slaves, but so that they may freely do whatsoever things are best.
 
 I have thus fulfilled the promise made at the beginning of this note, and I thus bring the second part of my treatise to a close. I think I have therein explained the nature and properties of the human mind at sufficient length, and, considering the difficulty of the subject, with sufficient clearness. I have laid a foundation, whereon may be raised many excellent conclusions of the highest utility and most necessary to be known, as will, in what follows, be partly made plain.
 
@@ -796,21 +796,21 @@ I do not forget, that the illustrious Descartes, though he believed, that the mi
 
 ## Definitions
 
-I. By an adequate cause, I mean a cause through which its effect can be clearly and distinctly perceived. By an inadequate or partial cause, I mean a cause through which, by itself, its effect cannot be understood.
+I\. By an adequate cause, I mean a cause through which its effect can be clearly and distinctly perceived. By an inadequate or partial cause, I mean a cause through which, by itself, its effect cannot be understood.
 
-II. I say that we act when anything takes place, either within us or externally to us, whereof we are the adequate cause; that is (by the foregoing definition) when through our nature something takes place within us or externally to us, which can through our nature alone be clearly and distinctly understood. On the other hand, I say that we are passive as regards something when that something takes place within us, or follows from our nature externally, we being only the partial cause.
+II\. I say that we act when anything takes place, either within us or externally to us, whereof we are the adequate cause; that is (by the foregoing definition) when through our nature something takes place within us or externally to us, which can through our nature alone be clearly and distinctly understood. On the other hand, I say that we are passive as regards something when that something takes place within us, or follows from our nature externally, we being only the partial cause.
 
-III. By emotion I mean the modifications of the body, whereby the active power of the said body is increased or diminished, aided or constrained, and also the ideas of such modifications.
+III\. By emotion I mean the modifications of the body, whereby the active power of the said body is increased or diminished, aided or constrained, and also the ideas of such modifications.
 
 N.B. If we can be the adequate cause of any of these modifications, I then call the emotion an activity, otherwise I call it a passion, or state wherein the mind is passive.
 
 ## Postulates
 
-I. The human body can be affected in many ways, whereby its power of activity is increased or diminished, and also in other ways which do not render its power of activity either greater or less.
+I\. The human body can be affected in many ways, whereby its power of activity is increased or diminished, and also in other ways which do not render its power of activity either greater or less.
 
 N.B. This postulate or axiom rests on Postulate i. and Lemmas v. and vii., which see after II. xiii.
 
-II. The human body can undergo many changes, and, nevertheless, retain the impressions or traces of objects (cf. II. Post. v.), and, consequently, the same images of things (see note II. xvii.).
+II\. The human body can undergo many changes, and, nevertheless, retain the impressions or traces of objects (cf. II. Post. v.), and, consequently, the same images of things (see note II. xvii.).
 
 [Prop.]{.smallcaps} I. Our mind is in certain cases active, and in certain cases passive. In so far as it has adequate ideas it is necessarily active, and in so far as it has inadequate ideas, it is necessarily passive.
 
@@ -1200,17 +1200,17 @@ I think I have thus explained, and displayed through their primary causes the pr
 
 ## Definitions of the Emotions
 
-I. Desire is the actual essence of man, in so far as it is conceived, as determined to a particular activity by some given modification of itself.
+I\. Desire is the actual essence of man, in so far as it is conceived, as determined to a particular activity by some given modification of itself.
 
 Explanation.—We have said above, in the note to Prop. ix. of this part, that desire is appetite, with consciousness thereof; further, that appetite is the essence of man, in so far as it is determined to act in a way tending to promote its own persistence. But, in the same note, I also remarked that, strictly speaking, I recognize no distinction between appetite and desire. For whether a man be conscious of his appetite or not, it remains one and the same appetite. Thus, in order to avoid the appearance of tautology, I have refrained from explaining desire by appetite; but I have take care to define it in such a manner, as to comprehend, under one head, all those endeavours of human nature, which we distinguish by the terms appetite, will, desire, or impulse. I might, indeed, have said, that desire is the essence of man, in so far as it is conceived as determined to a particular activity; but from such a definition (cf. II. xxiii.) it would not follow that the mind can be conscious of its desire or appetite. Therefore, in order to imply the cause of such consciousness, it was necessary to add, in so far as it is determined by some given modification, &c. For, by a modification of man’s essence, we understand every disposition of the said essence, whether such disposition be innate, or whether it be conceived solely under the attribute of thought, or solely under the attribute of extension, or whether, lastly, it be referred simultaneously to both these attributes. By the term desire, then, I here mean all man’s endeavours, impulses, appetites, and volitions, which vary according to each man’s disposition, and are, therefore, not seldom opposed one to another, according as a man is drawn in different directions, and knows not where to turn.
 
-II. Pleasure is the transition of a man from a less to a greater perfection.
+II\. Pleasure is the transition of a man from a less to a greater perfection.
 
-III. Pain is the transition of a man from a greater to a less perfection.
+III\. Pain is the transition of a man from a greater to a less perfection.
 
 Explanation—I say transition: for pleasure is not perfection itself. For, if man were born with the perfection to which he passes, he would possess the same, without the emotion of pleasure. This appears more clearly from the consideration of the contrary emotion, pain. No one can deny, that pain consists in the transition to a less perfection, and not in the less perfection itself: for a man cannot be pained, in so far as he partakes of perfection of any degree. Neither can we say, that pain consists in the absence of a greater perfection. For absence is nothing, whereas the emotion of pain is an activity; wherefore this activity can only be the activity of transition from a greater to a less perfection—in other words, it is an activity whereby a man’s power of action is lessened or constrained (cf. III. xi. note). I pass over the definitions of merriment, stimulation, melancholy, and grief, because these terms are generally used in reference to the body, and are merely kinds of pleasure or pain.
 
-IV. Wonder is the conception (imaginatio) of anything, wherein the mind comes to a stand, because the particular concept in question has no connection with other concepts (cf. III. lii. and note).
+IV\. Wonder is the conception (imaginatio) of anything, wherein the mind comes to a stand, because the particular concept in question has no connection with other concepts (cf. III. lii. and note).
 
 Explanation—In the note to II. xviii. we showed the reason, why the mind, from the contemplation of one thing, straightway falls to the contemplation of another thing, namely, because the images of the two things are so associated and arranged, that one follows the other. This state of association is impossible, if the image of the thing be new; the mind will then be at a stand in the contemplation thereof, until it is determined by other causes to think of something else.
 
@@ -1218,141 +1218,141 @@ Thus the conception of a new object, considered in itself, is of the same nature
 
 I, therefore, recognize only three primitive or primary emotions (as I said in the note to III. xi.), namely, pleasure, pain, and desire. I have spoken of wonder simply because it is customary to speak of certain emotions springing from the three primitive ones by different names, when they are referred to the objects of our wonder. I am led by the same motive to add a definition of contempt.
 
-V. Contempt is the conception of anything which touches the mind so little, that its presence leads the mind to imagine those qualities which are not in it rather than such as are in it (cf. III. lii. note).
+V\. Contempt is the conception of anything which touches the mind so little, that its presence leads the mind to imagine those qualities which are not in it rather than such as are in it (cf. III. lii. note).
 
 The definitions of veneration and scorn I here pass over, for I am not aware that any emotions are named after them.
 
-VI. Love is pleasure, accompanied by the idea of an external cause.
+VI\. Love is pleasure, accompanied by the idea of an external cause.
 
 Explanation—This definition explains sufficiently clearly the essence of love; the definition given by those authors who say that love is the lover’s wish to unite himself to the loved object expresses a property, but not the essence of love; and, as such authors have not sufficiently discerned love’s essence, they have been unable to acquire a true conception of its properties, accordingly their definition is on all hands admitted to be very obscure. It must, however, be noted, that when I say that it is a property of love, that the lover should wish to unite himself to the beloved object, I do not here mean by wish consent, or conclusion, or a free decision of the mind (for I have shown such, in II. xlviii., to be fictitious); neither do I mean a desire of being united to the loved object when it is absent, or of continuing in its presence when it is at hand; for love can be conceived without either of these desires; but by wish I mean the contentment, which is in the lover, on account of the presence of the beloved object, whereby the pleasure of the lover is strengthened, or at least maintained.
 
-VII. Hatred is pain, accompanied by the idea of an external cause.
+VII\. Hatred is pain, accompanied by the idea of an external cause.
 
 Explanation—These observations are easily grasped after what has been said in the explanation of the preceding definition (cf. also III. xiii. note).
 
-VIII. Inclination is pleasure, accompanied by the idea of something which is accidentally a cause of pleasure.
+VIII\. Inclination is pleasure, accompanied by the idea of something which is accidentally a cause of pleasure.
 
-IX. Aversion is pain, accompanied by the idea of something which is accidentally the cause of pain (cf. III. xv. note).
+IX\. Aversion is pain, accompanied by the idea of something which is accidentally the cause of pain (cf. III. xv. note).
 
-X. Devotion is love towards one whom we admire.
+X\. Devotion is love towards one whom we admire.
 
 Explanation—Wonder (admiratio) arises (as we have shown, III. lii.) from the novelty of a thing. If, therefore, it happens that the object of our wonder is often conceived by us, we shall cease to wonder at it; thus we see, that the emotion of devotion readily degenerates into simple love.
 
-XI. Derision is pleasure arising from our conceiving the presence of a quality, which we despise, in an object which we hate.
+XI\. Derision is pleasure arising from our conceiving the presence of a quality, which we despise, in an object which we hate.
 
 Explanation—In so far as we despise a thing which we hate, we deny existence thereof (III. lii. note), and to that extent rejoice (III. xx.). But since we assume that man hates that which he derides, it follows that the pleasure in question is not without alloy (cf. III. xlvii. note).
 
-XII. Hope is an inconstant pleasure, arising from the idea of something past or future, whereof we to a certain extent doubt the issue.
+XII\. Hope is an inconstant pleasure, arising from the idea of something past or future, whereof we to a certain extent doubt the issue.
 
-XIII. Fear is an inconstant pain arising from the idea of something past or future, whereof we to a certain extent doubt the issue (cf. III. xviii. note).
+XIII\. Fear is an inconstant pain arising from the idea of something past or future, whereof we to a certain extent doubt the issue (cf. III. xviii. note).
 
 Explanation—From these definitions it follows, that there is no hope unmingled with fear, and no fear unmingled with hope. For he, who depends on hope and doubts concerning the issue of anything, is assumed to conceive something, which excludes the existence of the said thing in the future; therefore he, to this extent, feels pain (cf. III. xix.); consequently, while dependent on hope, he fears for the issue. Contrariwise he, who fears, in other words doubts, concerning the issue of something which he hates, also conceives something which excludes the existence of the thing in question; to this extent he feels pleasure, and consequently to this extent he hopes that it will turn out as he desires (III. xx.).
 
-XIV. Confidence is pleasure arising from the idea of something past or future, wherefrom all cause of doubt has been removed.
+XIV\. Confidence is pleasure arising from the idea of something past or future, wherefrom all cause of doubt has been removed.
 
-XV. Despair is pain arising from the idea of something past or future, wherefrom all cause of doubt has been removed.
+XV\. Despair is pain arising from the idea of something past or future, wherefrom all cause of doubt has been removed.
 
 Explanation—Thus confidence springs from hope, and despair from fear, when all cause for doubt as to the issue of an event has been removed: this comes to pass, because man conceives something past or future as present and regards it as such, or else because he conceives other things, which exclude the existence of the causes of his doubt. For, although we can never be absolutely certain of the issue of any particular event (II. xxxi. Coroll.), it may nevertheless happen that we feel no doubt concerning it. For we have shown, that to feel no doubt concerning a thing is not the same as to be quite certain of it (II. xlix. note). Thus it may happen that we are affected by the same emotion of pleasure or pain concerning a thing past or future, as concerning the conception of a thing present; this I have already shown in III. xviii., to which, with its note, I refer the reader.
 
-XVI. Joy is pleasure accompanied by the idea of something past, which has had an issue beyond our hope.
+XVI\. Joy is pleasure accompanied by the idea of something past, which has had an issue beyond our hope.
 
-XVII. Disappointment is pain accompanied by the idea of something past, which has had an issue contrary to our hope.
+XVII\. Disappointment is pain accompanied by the idea of something past, which has had an issue contrary to our hope.
 
-XVIII. Pity is pain accompanied by the idea of evil, which has befallen someone else whom we conceive to be like ourselves (cf. III. xxii. note, and III. xxvii. note).
+XVIII\. Pity is pain accompanied by the idea of evil, which has befallen someone else whom we conceive to be like ourselves (cf. III. xxii. note, and III. xxvii. note).
 
 Explanation—Between pity and sympathy (misericordia) there seems to be no difference, unless perhaps that the former term is used in reference to a particular action, and the latter in reference to a disposition.
 
-XIX. Approval is love towards one who has done good to another.
+XIX\. Approval is love towards one who has done good to another.
 
-XX. Indignation is hatred towards one who has done evil to another.
+XX\. Indignation is hatred towards one who has done evil to another.
 
 Explanation—I am aware that these terms are employed in senses somewhat different from those usually assigned. But my purpose is to explain, not the meaning of words, but the nature of things. I therefore make use of such terms, as may convey my meaning without any violent departure from their ordinary signification. One statement of my method will suffice. As for the cause of the above—named emotions see III. xxvii. Coroll. i., and III. xxii. note.
 
-XXI. Partiality is thinking too highly of anyone because of the love we bear him.
+XXI\. Partiality is thinking too highly of anyone because of the love we bear him.
 
-XXII. Disparagement is thinking too meanly of anyone because we hate him.
+XXII\. Disparagement is thinking too meanly of anyone because we hate him.
 
 Explanation—Thus partiality is an effect of love, and disparagement an effect of hatred: so that partiality may also be defined as love, in so far as it induces a man to think too highly of a beloved object. Contrariwise, disparagement may be defined as hatred, in so far as it induces a man to think too meanly of a hated object. Cf. III. xxvi. note.
 
-XXIII. Envy is hatred, in so far as it induces a man to be pained by another’s good fortune, and to rejoice in another’s evil fortune.
+XXIII\. Envy is hatred, in so far as it induces a man to be pained by another’s good fortune, and to rejoice in another’s evil fortune.
 
 Explanation—Envy is generally opposed to sympathy, which, by doing some violence to the meaning of the word, may therefore be thus defined:
 
-XXIV. Sympathy (misericordia) is love, in so far as it induces a man to feel pleasure at another’s good fortune, and pain at another’s evil fortune.
+XXIV\. Sympathy (misericordia) is love, in so far as it induces a man to feel pleasure at another’s good fortune, and pain at another’s evil fortune.
 
 Explanation—Concerning envy see the notes to III. xxiv. and xxxii. These emotions also arise from pleasure or pain accompanied by the idea of something external, as cause either in itself or accidentally. I now pass on to other emotions, which are accompanied by the idea of something within as a cause.
 
-XXV. Self—approval is pleasure arising from a man’s contemplation of himself and his own power of action.
+XXV\. Self—approval is pleasure arising from a man’s contemplation of himself and his own power of action.
 
-XXVI. Humility is pain arising from a man’s contemplation of his own weakness of body or mind.
+XXVI\. Humility is pain arising from a man’s contemplation of his own weakness of body or mind.
 
 Explanation—Self—complacency is opposed to humility, in so far as we thereby mean pleasure arising from a contemplation of our own power of action; but, in so far as we mean thereby pleasure accompanied by the idea of any action which we believe we have performed by the free decision of our mind, it is opposed to repentance, which we may thus define:
 
-XXVII. Repentance is pain accompanied by the idea of some action, which we believe we have performed by the free decision of our mind.
+XXVII\. Repentance is pain accompanied by the idea of some action, which we believe we have performed by the free decision of our mind.
 
 Explanation—The causes of these emotions we have set forth in III. li. note, and in III. liii., liv., lv. and note. Concerning the free decision of the mind see II. xxxv. note. This is perhaps the place to call attention to the fact, that it is nothing wonderful that all those actions, which are commonly called wrong, are followed by pain, and all those, which are called right, are followed by pleasure. We can easily gather from what has been said, that this depends in great measure on education. Parents, by reprobating the former class of actions, and by frequently chiding their children because of them, and also by persuading to and praising the latter class, have brought it about, that the former should be associated with pain and the latter with pleasure. This is confirmed by experience. For custom and religion are not the same among all men, but that which some consider sacred others consider profane, and what some consider honourable others consider disgraceful. According as each man has been educated, he feels repentance for a given action or glories therein.
 
-XXVIII. Pride is thinking too highly of one’s self from self—love.
+XXVIII\. Pride is thinking too highly of one’s self from self—love.
 
 Explanation—Thus pride is different from partiality, for the latter term is used in reference to an external object, but pride is used of a man thinking too highly of himself. However, as partiality is the effect of love, so is pride the effect or property of self—love, which may therefore be thus defined, love of self or self—approval, in so far as it leads a man to think too highly of himself. To this emotion there is no contrary. For no one thinks too meanly of himself because of self—hatred; I say that no one thinks too meanly of himself, in so far as he conceives that he is incapable of doing this or that. For whatsoever a man imagines that he is incapable of doing, he imagines this of necessity, and by that notion he is so disposed, that he really cannot do that which he conceives that he cannot do. For, so long as he conceives that he cannot do it, so long is he not determined to do it, and consequently so long is it impossible for him to do it. However, if we consider such matters as only depend on opinion, we shall find it conceivable that a man may think too meanly of himself; for it may happen, that a man, sorrowfully regarding his own weakness, should imagine that he is despised by all men, while the rest of the world are thinking of nothing less than of despising him. Again, a man may think too meanly of himself, if he deny of himself in the present something in relation to a future time of which he is uncertain. As, for instance, if he should say that he is unable to form any clear conceptions, or that he can desire and do nothing but what is wicked and base, &c. We may also say, that a man thinks too meanly of himself, when we see him from excessive fear of shame refusing to do things which others, his equals, venture. We can, therefore, set down as a contrary to pride an emotion which I will call self—abasement, for as from self—complacency springs pride, so from humility springs self—abasement, which I will accordingly thus define:
 
-XXIX. Self—abasement is thinking too meanly of one’s self by reason of pain.
+XXIX\. Self—abasement is thinking too meanly of one’s self by reason of pain.
 
 Explanation—We are nevertheless generally accustomed to oppose pride to humility, but in that case we pay more attention to the effect of either emotion than to its nature. We are wont to call proud the man who boasts too much (III. xxx. note), who talks of nothing but his own virtues and other people’s faults, who wishes to be first; and lastly who goes through life with a style and pomp suitable to those far above him in station. On the other hand, we call humble the man who too often blushes, who confesses his faults, who sets forth other men’s virtues, and who, lastly, walks with bent head and is negligent of his attire. However, these emotions, humility and self—abasement, are extremely rare. For human nature, considered in itself, strives against them as much as it can (see III. xiii., liv.); hence those, who are believed to be most self—abased and humble, are generally in reality the most ambitious and envious.
 
-XXX. Honour[^11] is pleasure accompanied by the idea of some action of our own, which we believe to be praised by others.
+XXX\. Honour[^11] is pleasure accompanied by the idea of some action of our own, which we believe to be praised by others.
 
-XXXI. Shame is pain accompanied by the idea of some action of our own, which we believe to be blamed by others.
+XXXI\. Shame is pain accompanied by the idea of some action of our own, which we believe to be blamed by others.
 
 Explanation—On this subject see the note to III. xxx. But we should here remark the difference which exists between shame and modesty. Shame is the pain following the deed whereof we are ashamed. Modesty is the fear or dread of shame, which restrains a man from committing a base action. Modesty is usually opposed to shamelessness, but the latter is not an emotion, as I will duly show; however, the names of the emotions (as I have remarked already) have regard rather to their exercise than to their nature.
 
 I have now fulfilled the task of explaining the emotions arising from pleasure and pain. I therefore proceed to treat of those which I refer to desire.
 
-XXXII. Regret is the desire or appetite to possess something, kept alive by the remembrance of the said thing, and at the same time constrained by the remembrance of other things which exclude the existence of it.
+XXXII\. Regret is the desire or appetite to possess something, kept alive by the remembrance of the said thing, and at the same time constrained by the remembrance of other things which exclude the existence of it.
 
 Explanation—When we remember a thing, we are by that very fact, as I have already said more than once, disposed to contemplate it with the same emotion as if it were something present; but this disposition or endeavour, while we are awake, is generally checked by the images of things which exclude the existence of that which we remember. Thus when we remember something which affected us with a certain pleasure, we by that very fact endeavour to regard it with the same emotion of pleasure as though it were present, but this endeavour is at once checked by the remembrance of things which exclude the existence of the thing in question. Wherefore regret is, strictly speaking, a pain opposed to that of pleasure, which arises from the absence of something we hate (cf. III. xlvii. note). But, as the name regret seems to refer to desire, I set this emotion down, among the emotions springing from desire.
 
-XXXIII. Emulation is the desire of something, engendered in us by our conception that others have the same desire.
+XXXIII\. Emulation is the desire of something, engendered in us by our conception that others have the same desire.
 
 Explanation—He who runs away, because he sees others running away, or he who fears, because he sees others in fear; or again, he who, on seeing that another man has burnt his hand, draws towards him his own hand, and moves his body as though his own were burnt; such an one can be said to imitate another’s emotion, but not to emulate him; not because the causes of emulation and imitation are different, but because it has become customary to speak of emulation only in him, who imitates that which we deem to be honourable, useful, or pleasant. As to the cause of emulation, cf. III. xxvii. and note. The reason why this emotion is generally coupled with envy may be seen from III. xxxii. and note.
 
-XXXIV. Thankfulness or Gratitude is the desire or zeal springing from love, whereby we endeavour to benefit him, who with similar feelings of love has conferred a benefit on us. Cf. III. xxxix. note and xl.
+XXXIV\. Thankfulness or Gratitude is the desire or zeal springing from love, whereby we endeavour to benefit him, who with similar feelings of love has conferred a benefit on us. Cf. III. xxxix. note and xl.
 
-XXXV. Benevolence is the desire of benefiting one whom we pity. Cf. III. xxvii. note.
+XXXV\. Benevolence is the desire of benefiting one whom we pity. Cf. III. xxvii. note.
 
-XXXVI. Anger is the desire, whereby through hatred we are induced to injure one whom we hate, III. xxxix.
+XXXVI\. Anger is the desire, whereby through hatred we are induced to injure one whom we hate, III. xxxix.
 
-XXXVII. Revenge is the desire whereby we are induced, through mutual hatred, to injure one who, with similar feelings, has injured us. (See III. xl. Coroll. ii and note.)
+XXXVII\. Revenge is the desire whereby we are induced, through mutual hatred, to injure one who, with similar feelings, has injured us. (See III. xl. Coroll. ii and note.)
 
-XXXVIII. Cruelty or savageness is the desire, whereby a man is impelled to injure one whom we love or pity.
+XXXVIII\. Cruelty or savageness is the desire, whereby a man is impelled to injure one whom we love or pity.
 
 Explanation—To cruelty is opposed clemency, which is not a passive state of the mind, but a power whereby man restrains his anger and revenge.
 
-XXXIX. Timidity is the desire to avoid a greater evil, which we dread, by undergoing a lesser evil. Cf. III. xxxix. note.
+XXXIX\. Timidity is the desire to avoid a greater evil, which we dread, by undergoing a lesser evil. Cf. III. xxxix. note.
 
-XL. Daring is the desire, whereby a man is set on to do something dangerous which his equals fear to attempt.
+XL\. Daring is the desire, whereby a man is set on to do something dangerous which his equals fear to attempt.
 
-XLI. Cowardice is attributed to one, whose desire is checked by the fear of some danger which his equals dare to encounter.
+XLI\. Cowardice is attributed to one, whose desire is checked by the fear of some danger which his equals dare to encounter.
 
 Explanation—Cowardice is, therefore, nothing else but the fear of some evil, which most men are wont not to fear; hence I do not reckon it among the emotions springing from desire. Nevertheless, I have chosen to explain it here, because, in so far as we look to the desire, it is truly opposed to the emotion of daring.
 
-XLII. Consternation is attributed to one, whose desire of avoiding evil is checked by amazement at the evil which he fears.
+XLII\. Consternation is attributed to one, whose desire of avoiding evil is checked by amazement at the evil which he fears.
 
 Explanation—Consternation is, therefore, a species of cowardice. But, inasmuch as consternation arises from a double fear, it may be more conveniently defined as a fear which keeps a man so bewildered and wavering, that he is not able to remove the evil. I say bewildered, in so far as we understand his desire of removing the evil to be constrained by his amazement. I say wavering, in so far as we understand the said desire to be constrained by the fear of another evil, which equally torments him: whence it comes to pass that he knows not, which he may avert of the two. On this subject, see III. xxxix. note, and III. lii. note. Concerning cowardice and daring, see III. li. note.
 
-XLIII. Courtesy, or deference (Humanitas seu modestia), is the desire of acting in a way that should please men, and refraining from that which should displease them.
+XLIII\. Courtesy, or deference (Humanitas seu modestia), is the desire of acting in a way that should please men, and refraining from that which should displease them.
 
-XLIV. Ambition is the immoderate desire of power.
+XLIV\. Ambition is the immoderate desire of power.
 
 Explanation—Ambition is the desire, whereby all the emotions (cf. III. xxvii. and xxxi.) are fostered and strengthened; therefore this emotion can with difficulty be overcome. For, so long as a man is bound by any desire, he is at the same time necessarily bound by this. “The best men,” says Cicero, “are especially led by honour. Even philosophers, when they write a book contemning honour, sign their names thereto,” and so on.
 
-XLV. Luxury is excessive desire, or even love of living sumptuously.
+XLV\. Luxury is excessive desire, or even love of living sumptuously.
 
-XLVI. Intemperance is the excessive desire and love of drinking.
+XLVI\. Intemperance is the excessive desire and love of drinking.
 
-XLVII. Avarice is the excessive desire and love of riches.
+XLVII\. Avarice is the excessive desire and love of riches.
 
-XLVIII. Lust is desire and love in the matter of sexual intercourse.
+XLVIII\. Lust is desire and love in the matter of sexual intercourse.
 
 Explanation—Whether this desire be excessive or not, it is still called lust. These last five emotions (as I have shown in III. lvi.) have on contraries. For deference is a species of ambition. Cf. III. xxix. note.
 
@@ -1392,27 +1392,27 @@ In what follows, then, I shall mean by, “good” that, which we certainly know
 
 ## Definitions
 
-I. By good I mean that which we certainly know to be useful to us.
+I\. By good I mean that which we certainly know to be useful to us.
 
-II. By evil I mean that which we certainly know to be a hindrance to us in the attainment of any good.
+II\. By evil I mean that which we certainly know to be a hindrance to us in the attainment of any good.
 
 (Concerning these terms see the foregoing preface towards the end.)
 
-III. Particular things I call contingent in so far as, while regarding their essence only, we find nothing therein, which necessarily asserts their existence or excludes it.
+III\. Particular things I call contingent in so far as, while regarding their essence only, we find nothing therein, which necessarily asserts their existence or excludes it.
 
-IV. Particular things I call possible in so far as, while regarding the causes whereby they must be produced, we know not, whether such causes be determined for producing them.
+IV\. Particular things I call possible in so far as, while regarding the causes whereby they must be produced, we know not, whether such causes be determined for producing them.
 
 (In I. xxxiii. note. i., I drew no distinction between possible and contingent, because there was in that place no need to distinguish them accurately.)
 
-V. By conflicting emotions I mean those which draw a man in different directions, though they are of the same kind, such as luxury and avarice, which are both species of love, and are contraries, not by nature, but by accident.
+V\. By conflicting emotions I mean those which draw a man in different directions, though they are of the same kind, such as luxury and avarice, which are both species of love, and are contraries, not by nature, but by accident.
 
-VI. What I mean by emotion felt towards a thing, future, present, and past, I explained in III. xviii., notes. i. and ii., which see.
+VI\. What I mean by emotion felt towards a thing, future, present, and past, I explained in III. xviii., notes. i. and ii., which see.
 
 (But I should here also remark, that we can only distinctly conceive distance of space or time up to a certain definite limit; that is, all objects distant from us more than two hundred feet, or whose distance from the place where we are exceeds that which we can distinctly conceive, seem to be an equal distance from us, and all in the same plane; so also objects, whose time of existing is conceived as removed from the present by a longer interval than we can distinctly conceive, seem to be all equally distant from the present, and are set down, as it were, to the same moment of time.)
 
-VII. By an end, for the sake of which we do something, I mean a desire.
+VII\. By an end, for the sake of which we do something, I mean a desire.
 
-VIII. By virtue (virtus) and power I mean the same thing; that is (III. vii), virtue, in so far as it is referred to man, is a man’s nature or essence, in so far as it has the power of effecting what can only be understood by the laws of that nature.
+VIII\. By virtue (virtus) and power I mean the same thing; that is (III. vii), virtue, in so far as it is referred to man, is a man’s nature or essence, in so far as it has the power of effecting what can only be understood by the laws of that nature.
 
 ### Axiom
 
@@ -1866,69 +1866,69 @@ Note.—These and similar observations, which we have made on man’s true freed
 
 What have said in this Part concerning the right way of life has not been arranged, so as to admit of being seen at one view, but has been set forth piece—meal, according as I thought each Proposition could most readily be deduced from what preceded it. I propose, therefore, to rearrange my remarks and to bring them under leading heads.
 
-I. All our endeavours or desires so follow from the necessity of our nature, that they can be understood either through it alone, as their proximate cause, or by virtue of our being a part of nature, which cannot be adequately conceived through itself without other individuals.
+I\. All our endeavours or desires so follow from the necessity of our nature, that they can be understood either through it alone, as their proximate cause, or by virtue of our being a part of nature, which cannot be adequately conceived through itself without other individuals.
 
-II. Desires, which follow from our nature in such a manner, that they can be understood through it alone, are those which are referred to the mind, in so far as the latter is conceived to consist of adequate ideas: the remaining desires are only referred to the mind, in so far as it conceives things inadequately, and their force and increase are generally defined not by the power of man, but by the power of things external to us: wherefore the former are rightly called actions, the latter passions, for the former always indicate our power, the latter, on the other hand, show our infirmity and fragmentary knowledge.
+II\. Desires, which follow from our nature in such a manner, that they can be understood through it alone, are those which are referred to the mind, in so far as the latter is conceived to consist of adequate ideas: the remaining desires are only referred to the mind, in so far as it conceives things inadequately, and their force and increase are generally defined not by the power of man, but by the power of things external to us: wherefore the former are rightly called actions, the latter passions, for the former always indicate our power, the latter, on the other hand, show our infirmity and fragmentary knowledge.
 
-III. Our actions, that is, those desires which are defined by man’s power or reason, are always good. The rest may be either good or bad.
+III\. Our actions, that is, those desires which are defined by man’s power or reason, are always good. The rest may be either good or bad.
 
-IV. Thus in life it is before all things useful to perfect the understanding, or reason, as far as we can, and in this alone man’s highest happiness or blessedness consists, indeed blessedness is nothing else but the contentment of spirit, which arises from the intuitive knowledge of God: now, to perfect the understanding is nothing else but to understand God, God’s attributes, and the actions which follow from the necessity of his nature. Wherefore of a man, who is led by reason, the ultimate aim or highest desire, whereby he seeks to govern all his fellows, is that whereby he is brought to the adequate conception of himself and of all things within the scope of his intelligence.
+IV\. Thus in life it is before all things useful to perfect the understanding, or reason, as far as we can, and in this alone man’s highest happiness or blessedness consists, indeed blessedness is nothing else but the contentment of spirit, which arises from the intuitive knowledge of God: now, to perfect the understanding is nothing else but to understand God, God’s attributes, and the actions which follow from the necessity of his nature. Wherefore of a man, who is led by reason, the ultimate aim or highest desire, whereby he seeks to govern all his fellows, is that whereby he is brought to the adequate conception of himself and of all things within the scope of his intelligence.
 
-V. Therefore, without intelligence there is not rational life: and things are only good, in so far as they aid man in his enjoyment of the intellectual life, which is defined by intelligence. Contrariwise, whatsoever things hinder man’s perfecting of his reason, and capability to enjoy the rational life, are alone called evil.
+V\. Therefore, without intelligence there is not rational life: and things are only good, in so far as they aid man in his enjoyment of the intellectual life, which is defined by intelligence. Contrariwise, whatsoever things hinder man’s perfecting of his reason, and capability to enjoy the rational life, are alone called evil.
 
-VI. As all things whereof man is the efficient cause are necessarily good, no evil can befall man except through external causes; namely, by virtue of man being a part of universal nature, whose laws human nature is compelled to obey, and to conform to in almost infinite ways.
+VI\. As all things whereof man is the efficient cause are necessarily good, no evil can befall man except through external causes; namely, by virtue of man being a part of universal nature, whose laws human nature is compelled to obey, and to conform to in almost infinite ways.
 
-VII. It is impossible, that man should not be a part of nature, or that he should not follow her general order; but if he be thrown among individuals whose nature is in harmony with his own, his power of action will thereby be aided and fostered, whereas, if he be thrown among such as are but very little in harmony with his nature, he will hardly be able to accommodate himself to them without undergoing a great change himself.
+VII\. It is impossible, that man should not be a part of nature, or that he should not follow her general order; but if he be thrown among individuals whose nature is in harmony with his own, his power of action will thereby be aided and fostered, whereas, if he be thrown among such as are but very little in harmony with his nature, he will hardly be able to accommodate himself to them without undergoing a great change himself.
 
-VIII. Whatsoever in nature we deem to be evil, or to be capable of injuring our faculty for existing and enjoying the rational life, we may endeavour to remove in whatever way seems safest to us; on the other hand, whatsoever we deem to be good or useful for preserving our being, and enabling us to enjoy the rational life, we may appropriate to our use and employ as we think best. Everyone without exception may, by sovereign right of nature, do whatsoever he thinks will advance his own interest.
+VIII\. Whatsoever in nature we deem to be evil, or to be capable of injuring our faculty for existing and enjoying the rational life, we may endeavour to remove in whatever way seems safest to us; on the other hand, whatsoever we deem to be good or useful for preserving our being, and enabling us to enjoy the rational life, we may appropriate to our use and employ as we think best. Everyone without exception may, by sovereign right of nature, do whatsoever he thinks will advance his own interest.
 
-IX. Nothing can be in more harmony with the nature of any given thing than other individuals of the same species; therefore (cf. vii.) for man in the preservation of his being and the enjoyment of the rational life there is nothing more useful than his fellow—man who is led by reason. Further, as we know not anything among individual things which is more excellent than a man led by reason, no man can better display the power of his skill and disposition, than in so training men, that they come at last to live under the dominion of their own reason.
+IX\. Nothing can be in more harmony with the nature of any given thing than other individuals of the same species; therefore (cf. vii.) for man in the preservation of his being and the enjoyment of the rational life there is nothing more useful than his fellow—man who is led by reason. Further, as we know not anything among individual things which is more excellent than a man led by reason, no man can better display the power of his skill and disposition, than in so training men, that they come at last to live under the dominion of their own reason.
 
-X. In so far as men are influenced by envy or any kind of hatred, one towards another, they are at variance, and are therefore to be feared in proportion, as they are more powerful than their fellows.
+X\. In so far as men are influenced by envy or any kind of hatred, one towards another, they are at variance, and are therefore to be feared in proportion, as they are more powerful than their fellows.
 
-XI. Yet minds are not conquered by force, but by love and high—mindedness.
+XI\. Yet minds are not conquered by force, but by love and high—mindedness.
 
-XII. It is before all things useful to men to associate their ways of life, to bind themselves together with such bonds as they think most fitted to gather them all into unity, and generally to do whatsoever serves to strengthen friendship.
+XII\. It is before all things useful to men to associate their ways of life, to bind themselves together with such bonds as they think most fitted to gather them all into unity, and generally to do whatsoever serves to strengthen friendship.
 
-XIII. But for this there is need of skill and watchfulness. For men are diverse (seeing that those who live under the guidance of reason are few), yet are they generally envious and more prone to revenge than to sympathy. No small force of character is therefore required to take everyone as he is, and to restrain one’s self from imitating the emotions of others. But those who carp at mankind, and are more skilled in railing at vice than in instilling virtue, and who break rather than strengthen men’s dispositions, are hurtful both to themselves and others. Thus many from too great impatience of spirit, or from misguided religious zeal, have preferred to live among brutes rather than among men; as boys or youths, who cannot peaceably endure the chidings of their parents, will enlist as soldiers and choose the hardships of war and the despotic discipline in preference to the comforts of home and the admonitions of their father: suffering any burden to be put upon them, so long as they may spite their parents.
+XIII\. But for this there is need of skill and watchfulness. For men are diverse (seeing that those who live under the guidance of reason are few), yet are they generally envious and more prone to revenge than to sympathy. No small force of character is therefore required to take everyone as he is, and to restrain one’s self from imitating the emotions of others. But those who carp at mankind, and are more skilled in railing at vice than in instilling virtue, and who break rather than strengthen men’s dispositions, are hurtful both to themselves and others. Thus many from too great impatience of spirit, or from misguided religious zeal, have preferred to live among brutes rather than among men; as boys or youths, who cannot peaceably endure the chidings of their parents, will enlist as soldiers and choose the hardships of war and the despotic discipline in preference to the comforts of home and the admonitions of their father: suffering any burden to be put upon them, so long as they may spite their parents.
 
-XIV. Therefore, although men are generally governed in everything by their own lusts, yet their association in common brings many more advantages than drawbacks. Wherefore it is better to bear patiently the wrongs they may do us, and to strive to promote whatsoever serves to bring about harmony and friendship.
+XIV\. Therefore, although men are generally governed in everything by their own lusts, yet their association in common brings many more advantages than drawbacks. Wherefore it is better to bear patiently the wrongs they may do us, and to strive to promote whatsoever serves to bring about harmony and friendship.
 
-XV. Those things, which beget harmony, are such as are attributable to justice, equity, and honourable living. For men brook ill not only what is unjust or iniquitous, but also what is reckoned disgraceful, or that a man should slight the received customs of their society. For winning love those qualities are especially necessary which have regard to religion and piety (cf. IV. xxxvii. notes. i. ii.; xlvi. note; and lxxiii. note).
+XV\. Those things, which beget harmony, are such as are attributable to justice, equity, and honourable living. For men brook ill not only what is unjust or iniquitous, but also what is reckoned disgraceful, or that a man should slight the received customs of their society. For winning love those qualities are especially necessary which have regard to religion and piety (cf. IV. xxxvii. notes. i. ii.; xlvi. note; and lxxiii. note).
 
-XVI. Further, harmony is often the result of fear: but such harmony is insecure. Further, fear arises from infirmity of spirit, and moreover belongs not to the exercise of reason: the same is true of compassion, though this latter seems to bear a certain resemblance to piety.
+XVI\. Further, harmony is often the result of fear: but such harmony is insecure. Further, fear arises from infirmity of spirit, and moreover belongs not to the exercise of reason: the same is true of compassion, though this latter seems to bear a certain resemblance to piety.
 
-XVII. Men are also gained over by liberality, especially such as have not the means to buy what is necessary to sustain life. However, to give aid to every poor man is far beyond the power and the advantage of any private person. For the riches of any private person are wholly inadequate to meet such a call. Again, an individual man’s resources of character are too limited for him to be able to make all men his friends. Hence providing for the poor is a duty, which falls on the State as a whole, and has regard only to the general advantage.
+XVII\. Men are also gained over by liberality, especially such as have not the means to buy what is necessary to sustain life. However, to give aid to every poor man is far beyond the power and the advantage of any private person. For the riches of any private person are wholly inadequate to meet such a call. Again, an individual man’s resources of character are too limited for him to be able to make all men his friends. Hence providing for the poor is a duty, which falls on the State as a whole, and has regard only to the general advantage.
 
-XVIII. In accepting favours, and in returning gratitude our duty must be wholly different (cf. IV. lxx. note; lxxi. note).
+XVIII\. In accepting favours, and in returning gratitude our duty must be wholly different (cf. IV. lxx. note; lxxi. note).
 
-XIX. Again, meretricious love, that is, the lust of generation arising from bodily beauty, and generally every sort of love, which owns anything save freedom of soul as its cause, readily passes into hate; unless indeed, what is worse, it is a species of madness; and then it promotes discord rather than harmony (cf. III. xxxi. Coroll.).
+XIX\. Again, meretricious love, that is, the lust of generation arising from bodily beauty, and generally every sort of love, which owns anything save freedom of soul as its cause, readily passes into hate; unless indeed, what is worse, it is a species of madness; and then it promotes discord rather than harmony (cf. III. xxxi. Coroll.).
 
-XX. As concerning marriage, it is certain that this is in harmony with reason, if the desire for physical union be not engendered solely by bodily beauty, but also by the desire to beget children and to train them up wisely; and moreover, if the love of both, to wit, of the man and of the woman, is not caused by bodily beauty only, but also by freedom of soul.
+XX\. As concerning marriage, it is certain that this is in harmony with reason, if the desire for physical union be not engendered solely by bodily beauty, but also by the desire to beget children and to train them up wisely; and moreover, if the love of both, to wit, of the man and of the woman, is not caused by bodily beauty only, but also by freedom of soul.
 
-XXI. Furthermore, flattery begets harmony; but only by means of the vile offence of slavishness or treachery. None are more readily taken with flattery than the proud, who wish to be first, but are not.
+XXI\. Furthermore, flattery begets harmony; but only by means of the vile offence of slavishness or treachery. None are more readily taken with flattery than the proud, who wish to be first, but are not.
 
-XXII. There is in abasement a spurious appearance of piety and religion. Although abasement is the opposite to pride, yet is he that abases himself most akin to the proud (IV. lvii. note).
+XXII\. There is in abasement a spurious appearance of piety and religion. Although abasement is the opposite to pride, yet is he that abases himself most akin to the proud (IV. lvii. note).
 
-XXIII. Shame also brings about harmony, but only in such matters as cannot be hid. Further, as shame is a species of pain, it does not concern the exercise of reason.
+XXIII\. Shame also brings about harmony, but only in such matters as cannot be hid. Further, as shame is a species of pain, it does not concern the exercise of reason.
 
-XXIV. The remaining emotions of pain towards men are directly opposed to justice, equity, honour, piety, and religion; and, although indignation seems to bear a certain resemblance to equity, yet is life but lawless, where every man may pass judgment on another’s deeds, and vindicate his own or other men’s rights.
+XXIV\. The remaining emotions of pain towards men are directly opposed to justice, equity, honour, piety, and religion; and, although indignation seems to bear a certain resemblance to equity, yet is life but lawless, where every man may pass judgment on another’s deeds, and vindicate his own or other men’s rights.
 
-XXV. Correctness of conduct (modestia), that is, the desire of pleasing men which is determined by reason, is attributable to piety (as we said in IV. xxxvii. note. i.). But, if it spring from emotion, it is ambition, or the desire whereby, men, under the false cloak of piety, generally stir up discords and seditions. For he who desires to aid his fellows either in word or in deed, so that they may together enjoy the highest good, he, I say, will before all things strive to win them over with love: not to draw them into admiration, so that a system may be called after his name, nor to give any cause for envy. Further, in his conversation he will shrink from talking of men’s faults, and will be careful to speak but sparingly of human infirmity: but he will dwell at length on human virtue or power, and the way whereby it may be perfected. Thus will men be stirred not by fear, nor by aversion, but only by the emotion of joy, to endeavour, so far as in them lies, to live in obedience to reason.
+XXV\. Correctness of conduct (modestia), that is, the desire of pleasing men which is determined by reason, is attributable to piety (as we said in IV. xxxvii. note. i.). But, if it spring from emotion, it is ambition, or the desire whereby, men, under the false cloak of piety, generally stir up discords and seditions. For he who desires to aid his fellows either in word or in deed, so that they may together enjoy the highest good, he, I say, will before all things strive to win them over with love: not to draw them into admiration, so that a system may be called after his name, nor to give any cause for envy. Further, in his conversation he will shrink from talking of men’s faults, and will be careful to speak but sparingly of human infirmity: but he will dwell at length on human virtue or power, and the way whereby it may be perfected. Thus will men be stirred not by fear, nor by aversion, but only by the emotion of joy, to endeavour, so far as in them lies, to live in obedience to reason.
 
-XXVI. Besides men, we know of no particular thing in nature in whose mind we may rejoice, and whom we can associate with ourselves in friendship or any sort of fellowship; therefore, whatsoever there be in nature besides man, a regard for our advantage does not call on us to preserve, but to preserve or destroy according to its various capabilities, and to adapt to our use as best we may.
+XXVI\. Besides men, we know of no particular thing in nature in whose mind we may rejoice, and whom we can associate with ourselves in friendship or any sort of fellowship; therefore, whatsoever there be in nature besides man, a regard for our advantage does not call on us to preserve, but to preserve or destroy according to its various capabilities, and to adapt to our use as best we may.
 
-XXVII. The advantage which we derive from things external to us, besides the experience and knowledge which we acquire from observing them, and from recombining their elements in different forms, is principally the preservation of the body; from this point of view, those things are most useful which can so feed and nourish the body, that all its parts may rightly fulfil their functions. For, in proportion as the body is capable of being affected in a greater variety of ways, and of affecting external bodies in a great number of ways, so much the more is the mind capable of thinking (IV. xxxviii., xxxix.). But there seem to be very few things of this kind in nature; wherefore for the due nourishment of the body we must use many foods of diverse nature. For the human body is composed of very many parts of different nature, which stand in continual need of varied nourishment, so that the whole body may be equally capable of doing everything that can follow from its own nature, and consequently that the mind also may be equally capable of forming many perceptions.
+XXVII\. The advantage which we derive from things external to us, besides the experience and knowledge which we acquire from observing them, and from recombining their elements in different forms, is principally the preservation of the body; from this point of view, those things are most useful which can so feed and nourish the body, that all its parts may rightly fulfil their functions. For, in proportion as the body is capable of being affected in a greater variety of ways, and of affecting external bodies in a great number of ways, so much the more is the mind capable of thinking (IV. xxxviii., xxxix.). But there seem to be very few things of this kind in nature; wherefore for the due nourishment of the body we must use many foods of diverse nature. For the human body is composed of very many parts of different nature, which stand in continual need of varied nourishment, so that the whole body may be equally capable of doing everything that can follow from its own nature, and consequently that the mind also may be equally capable of forming many perceptions.
 
-XXVIII. Now for providing these nourishments the strength of each individual would hardly suffice, if men did not lend one another mutual aid. But money has furnished us with a token for everything: hence it is with the notion of money, that the mind of the multitude is chiefly engrossed: nay, it can hardly conceive any kind of pleasure, which is not accompanied with the idea of money as cause.
+XXVIII\. Now for providing these nourishments the strength of each individual would hardly suffice, if men did not lend one another mutual aid. But money has furnished us with a token for everything: hence it is with the notion of money, that the mind of the multitude is chiefly engrossed: nay, it can hardly conceive any kind of pleasure, which is not accompanied with the idea of money as cause.
 
-XXIX. This result is the fault only of those, who seek money, not from poverty or to supply their necessary wants, but because they have learned the arts of gain, wherewith they bring themselves to great splendour. Certainly they nourish their bodies, according to custom, but scantily, believing that they lose as much of their wealth as they spend on the preservation of their body. But they who know the true use of money, and who fix the measure of wealth solely with regard to their actual needs, live content with little.
+XXIX\. This result is the fault only of those, who seek money, not from poverty or to supply their necessary wants, but because they have learned the arts of gain, wherewith they bring themselves to great splendour. Certainly they nourish their bodies, according to custom, but scantily, believing that they lose as much of their wealth as they spend on the preservation of their body. But they who know the true use of money, and who fix the measure of wealth solely with regard to their actual needs, live content with little.
 
-XXX. As, therefore, those things are good which assist the various parts of the body, and enable them to perform their functions; and as pleasure consists in an increase of, or aid to, man’s power, in so far as he is composed of mind and body; it follows that all those things which bring pleasure are good. But seeing that things do not work with the object of giving us pleasure, and that their power of action is not tempered to suit our advantage, and, lastly, that pleasure is generally referred to one part of the body more than to the other parts; therefore most emotions of pleasure (unless reason and watchfulness be at hand), and consequently the desires arising therefrom, may become excessive. Moreover we may add that emotion leads us to pay most regard to what is agreeable in the present, nor can we estimate what is future with emotions equally vivid. (IV. xliv. note, and lx. note.)
+XXX\. As, therefore, those things are good which assist the various parts of the body, and enable them to perform their functions; and as pleasure consists in an increase of, or aid to, man’s power, in so far as he is composed of mind and body; it follows that all those things which bring pleasure are good. But seeing that things do not work with the object of giving us pleasure, and that their power of action is not tempered to suit our advantage, and, lastly, that pleasure is generally referred to one part of the body more than to the other parts; therefore most emotions of pleasure (unless reason and watchfulness be at hand), and consequently the desires arising therefrom, may become excessive. Moreover we may add that emotion leads us to pay most regard to what is agreeable in the present, nor can we estimate what is future with emotions equally vivid. (IV. xliv. note, and lx. note.)
 
-XXXI. Superstition, on the other hand, seems to account as good all that brings pain, and as bad all that brings pleasure. However, as we said above (IV. xlv. note), none but the envious take delight in my infirmity and trouble. For the greater the pleasure whereby we are affected, the greater is the perfection whereto we pass, and consequently the more do we partake of the divine nature: no pleasure can ever be evil, which is regulated by a true regard for our advantage. But contrariwise he, who is led by fear and does good only to avoid evil, is not guided by reason.
+XXXI\. Superstition, on the other hand, seems to account as good all that brings pain, and as bad all that brings pleasure. However, as we said above (IV. xlv. note), none but the envious take delight in my infirmity and trouble. For the greater the pleasure whereby we are affected, the greater is the perfection whereto we pass, and consequently the more do we partake of the divine nature: no pleasure can ever be evil, which is regulated by a true regard for our advantage. But contrariwise he, who is led by fear and does good only to avoid evil, is not guided by reason.
 
-XXXII. But human power is extremely limited, and is infinitely surpassed by the power of external causes; we have not, therefore, an absolute power of shaping to our use those things which are without us. Nevertheless, we shall bear with an equal mind all that happens to us in contravention to the claims of our own advantage, so long as we are conscious, that we have done our duty, and that the power which we possess is not sufficient to enable us to protect ourselves completely; remembering that we are a part of universal nature, and that we follow her order. If we have a clear and distinct understanding of this, that part of our nature which is defined by intelligence, in other words the better part of ourselves, will assuredly acquiesce in what befalls us, and in such acquiescence will endeavour to persist. For, in so far as we are intelligent beings, we cannot desire anything save that which is necessary, nor yield absolute acquiescence to anything, save to that which is true: wherefore, in so far as we have a right understanding of these things, the endeavour of the better part of ourselves is in harmony with the order of nature as a whole.
+XXXII\. But human power is extremely limited, and is infinitely surpassed by the power of external causes; we have not, therefore, an absolute power of shaping to our use those things which are without us. Nevertheless, we shall bear with an equal mind all that happens to us in contravention to the claims of our own advantage, so long as we are conscious, that we have done our duty, and that the power which we possess is not sufficient to enable us to protect ourselves completely; remembering that we are a part of universal nature, and that we follow her order. If we have a clear and distinct understanding of this, that part of our nature which is defined by intelligence, in other words the better part of ourselves, will assuredly acquiesce in what befalls us, and in such acquiescence will endeavour to persist. For, in so far as we are intelligent beings, we cannot desire anything save that which is necessary, nor yield absolute acquiescence to anything, save to that which is true: wherefore, in so far as we have a right understanding of these things, the endeavour of the better part of ourselves is in harmony with the order of nature as a whole.
 
 # Part V
 
@@ -1940,9 +1940,9 @@ At length I pass to the remaining portion of my Ethics, which is concerned with 
 
 ## Axioms
 
-I. If two contrary actions be started in the same subject, a change must necessarily take place, either in both, or in one of the two, and continue until they cease to be contrary.
+I\. If two contrary actions be started in the same subject, a change must necessarily take place, either in both, or in one of the two, and continue until they cease to be contrary.
 
-II. The power of an effect is defined by the power of its cause, in so far as its essence is explained or defined by the essence of its cause.
+II\. The power of an effect is defined by the power of its cause, in so far as its essence is explained or defined by the essence of its cause.
 
 (This axiom is evident from III. vii.)
 
@@ -2050,15 +2050,15 @@ Note.—We can in the same way show, that there is no emotion directly contrary 
 
 I have now gone through all the remedies against the emotions, or all that the mind, considered in itself alone, can do against them. Whence it appears that the mind’s power over the emotions consists:—
 
-I. In the actual knowledge of the emotions (V. iv. note).
+I\. In the actual knowledge of the emotions (V. iv. note).
 
-II. In the fact that it separates the emotions from the thought of an external cause, which we conceive confusedly (V. ii. and V. iv. note).
+II\. In the fact that it separates the emotions from the thought of an external cause, which we conceive confusedly (V. ii. and V. iv. note).
 
-III. In the fact, that, in respect to time, the emotions referred to things, which we distinctly understand, surpass those referred to what we conceive in a confused and fragmentary manner (V. vii.).
+III\. In the fact, that, in respect to time, the emotions referred to things, which we distinctly understand, surpass those referred to what we conceive in a confused and fragmentary manner (V. vii.).
 
-IV. In the number of causes whereby those modifications[^17] are fostered, which have regard to the common properties of things or to God (V. ix. xi.).
+IV\. In the number of causes whereby those modifications[^17] are fostered, which have regard to the common properties of things or to God (V. ix. xi.).
 
-V. Lastly, in the order wherein the mind can arrange and associate, one with another, its own emotions (V. x. note and xii. xiii. xiv.).
+V\. Lastly, in the order wherein the mind can arrange and associate, one with another, its own emotions (V. x. note and xii. xiii. xiv.).
 
 But, in order that this power of the mind over the emotions may be better understood, it should be specially observed that the emotions are called by us strong, when we compare the emotion of one man with the emotion of another, and see that one man is more troubled than another by the same emotion; or when we are comparing the various emotions of the same man one with another, and find that he is more affected or stirred by one emotion than by another. For the strength of every emotion is defined by a comparison of our own power with the power of an external cause. Now the power of the mind is defined by knowledge only, and its infirmity or passion is defined by the privation of knowledge only: it therefore follows, that that mind is most passive, whose greatest part is made up of inadequate ideas, so that it may be characterized more readily by its passive states than by its activities: on the other hand, that mind is most active, whose greatest part is made up of adequate ideas, so that, although it may contain as many inadequate ideas as the former mind, it may yet be more easily characterized by ideas attributable to human virtue, than by ideas which tell of human infirmity. Again, it must be observed, that spiritual unhealthiness and misfortunes can generally be traced to excessive love for something which is subject to many variations, and which we can never become masters of. For no one is solicitous or anxious about anything, unless he loves it; neither do wrongs, suspicions, enmities, &c. arise, except in regard to things whereof no one can be really master.
 

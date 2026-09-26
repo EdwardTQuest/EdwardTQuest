@@ -1,6 +1,6 @@
 # Edit report — The Critique of Practical Reason
 
-Source: `0-source/pg5683.txt` (65,855 words). Import: {'pg transcriber notes removed': 0, 'pg page markers removed': 0, 'pg paragraph markers removed': 72, 'pg emphasis markup removed': 0, 'pg front blocks dropped': 4, 'pg front prose kept': 0, 'pg repeated heading dropped': 1, 'pg the end dropped': 1, 'pg contents and furniture dropped': 4, 'chapters': 41, 'paragraphs': 305, 'split titles merged': 0, 'front divisions': 1, 'levels': {'#plain': 2, 'Book': 1, 'Chapter': 2, '#numtitle': 3}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 2.
+Source: `0-source/pg5683.txt` (65,855 words). Import: {'pg transcriber notes removed': 0, 'pg page markers removed': 0, 'pg paragraph markers removed': 72, 'pg emphasis markup removed': 0, 'pg front blocks dropped': 4, 'pg front prose kept': 0, 'pg repeated heading dropped': 1, 'pg the end dropped': 1, 'pg contents and furniture dropped': 4, 'chapters': 41, 'list markers escaped': 29, 'paragraphs': 305, 'split titles merged': 0, 'front divisions': 1, 'levels': {'#plain': 2, 'Book': 1, 'Chapter': 2, '#numtitle': 3}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 2.
 
 ## House-style rules (count / cap)
 
@@ -12,6 +12,7 @@ Source: `0-source/pg5683.txt` (65,855 words). Import: {'pg transcriber notes rem
 | dashes | 0 | 3292 |  |
 | caps openings | 0 | 658 |  |
 | spacing and ligatures | 1 | 3292 |  whole science of nature( as philosophy). For on such princi  →   whole science of nature(as philosophy). For  |
+| list markers escaped | 0 | 3292 |  |
 
 ## Validation: 0 errors, 3 warnings
 
@@ -192,8 +193,8 @@ Source: `0-source/pg5683.txt` (65,855 words). Import: {'pg transcriber notes rem
 - conformable ×3 — even though the resulting action may be conformable to the law.
 - unchangeable ×3 — evil principles voluntarily adopted and unchangeable, which only make it so much the more cu
 - licet ×2 — the victors. Quid statis? Nolint. Atqui licet esse beatis. As they then do not in fac
-- mag ×1 — * [See Kant’s “Das mag in der Theoric ricktig seyn,” etc. Werk
-- der ×1 — * [See Kant’s “Das mag in der Theoric ricktig seyn,” etc. Werke, vol.
+- mag ×1 — \* [See Kant’s “Das mag in der Theoric ricktig seyn,” etc. Werk
+- der ×1 — \* [See Kant’s “Das mag in der Theoric ricktig seyn,” etc. Werke, vol.
 - seyn ×1 —  Kant’s “Das mag in der Theoric ricktig seyn,” etc. Werke, vol. vii, p. 182.]
 - rei ×1 — Incertaeque rei, Phalaris licet imperet ut sis
 - tauro ×1 — Falsus, et admoto dictet periuria tauro,
@@ -202,7 +203,7 @@ Source: `0-source/pg5683.txt` (65,855 words). Import: {'pg transcriber notes rem
 
 - paragraph ends mid-phrase (page-turn split?): Subjective, according to maxims (practical opinions of the
 - lowercase paragraph start: individual)
-- paragraph ends mid-phrase (page-turn split?): IV. The Immortality of the Soul as a Postulate of
+- paragraph ends mid-phrase (page-turn split?): IV\. The Immortality of the Soul as a Postulate of
 - lowercase paragraph start: the same time?
 - unbalanced double quotes: A want or requirement of pure reason in its speculative use leads only
 - lowercase paragraph start: to his Practical Destination.
@@ -221,5 +222,5 @@ Source: `0-source/pg5683.txt` (65,855 words). Import: {'pg transcriber notes rem
 2. The rest of the dictionary list (268 entries): read to the end?
 3. Sequence proof: level 1 "book": 2 numbered, first 1, last 2; level 2 "chapter" (run 1): 3 numbered, first 1, last 3; level 3 "#" (run 5): 8 numbered, first 1, last 8; level 3 "#" (run 10): 4 numbered, first 1, last 4; level 2 "chapter" (run 2): 2 numbered, first 1, last 2 — does it match what the source prints?
 4. Structure battery: 6 findings — each decided?
-5. Rules: hyphen joins 28, curly quotes 115, ellipses 0, dashes 0, caps openings 0, spacing and ligatures 1 — plausible for 65,855 words?
+5. Rules: hyphen joins 28, curly quotes 115, ellipses 0, dashes 0, caps openings 0, spacing and ligatures 1, list markers escaped 0 — plausible for 65,855 words?
 6. Would a reader who knows this book notice anything wrong in the first chapter you open at random?

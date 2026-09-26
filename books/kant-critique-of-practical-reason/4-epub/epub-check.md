@@ -4,7 +4,7 @@ File: `4-epub/kant-critique-of-practical-reason.epub` (1.33 MB)
 
 - no cover image yet (run `ath cover` and rebuild)
 - 20 spine items, 25 manifest items, 2.9 MB unpacked
-- manuscript words 62,759; EPUB words 64,278; manuscript words not found in EPUB: 5
+- manuscript words 62,759; EPUB words 64,286; manuscript words not found in EPUB: 0
 
 - no problems found
 

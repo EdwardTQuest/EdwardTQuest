@@ -62,9 +62,9 @@ empiricists	1	eedom is the stone of stumbling for all empiricists, but at the sa
 thorough-going	1	e ignorant what duty was or had been in thorough-going error? But whoever knows of what import
 truth-loving	1	sufficient answer to the objection of a truth-loving and acute critic * of the Fundamental P
 respect-the	1	ic of Morals- a critic always worthy of respect-the objection, namely, that the notion of g
-mag	1	* [See Kant’s “Das mag in der Theoric ricktig seyn,” etc. Werk
-der	1	* [See Kant’s “Das mag in der Theoric ricktig seyn,” etc. Werke, vol.
-ricktig	1	* [See Kant’s “Das mag in der Theoric ricktig seyn,” etc. Werke, vol. vii, p. 182.]
+mag	1	\* [See Kant’s “Das mag in der Theoric ricktig seyn,” etc. Werk
+der	1	\* [See Kant’s “Das mag in der Theoric ricktig seyn,” etc. Werke, vol.
+ricktig	1	\* [See Kant’s “Das mag in der Theoric ricktig seyn,” etc. Werke, vol. vii, p. 182.]
 seyn	1	 Kant’s “Das mag in der Theoric ricktig seyn,” etc. Werke, vol. vii, p. 182.]
 Werke	1	 mag in der Theoric ricktig seyn,” etc. Werke, vol. vii, p. 182.]
 architectonic	1	to which is of a more philosophical and architectonic character, namely, to grasp correctly t

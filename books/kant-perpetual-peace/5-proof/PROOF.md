@@ -5,7 +5,7 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 | # | lens | scope | findings | status |
 |---|---|---|---|---|
 | 3 | structure and sequence | every heading and paragraph of manuscript.md (52,271 words, 6 chapters) | 75 | findings |
-| 4 | page layout | every page of every PDF: widows, orphans, runts, hyphen stacks, loose lines, stranded headings, thin chapter ends | 77 | findings |
+| 4 | page layout | every page of every PDF: widows, orphans, runts, hyphen stacks, loose lines, stranded headings, thin chapter ends | 72 | findings |
 | 5 | dictionary sweep | every token of the body (51,287); wordlist + house list; names accepted when capitalised mid-sentence (164) | 836 | read the list |
 | 7 | apparatus | contents vs headings, note calls vs notes, front and back matter present in every edition | 1 | findings |
 | 8 | cross-edition consistency | the words of manuscript.md against the text of each PDF and of the EPUB | 0 | clean |
@@ -26,7 +26,7 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 - level 2 "appendix": 2 numbered, first 1, last 2
 - unbalanced double quotes: From the right of the strongest, right takes an ironical appearance, a
 - unbalanced double quotes: [4. “But flesh with the life thereof, which is the blood thereof, shal
-- unbalanced double quotes: 6. Whoso sheddeth man’s blood, by man shall his blood be shed: for in 
+- unbalanced double quotes: 6\. Whoso sheddeth man’s blood, by man shall his blood be shed: for in
 - lowercase paragraph start: is frequently quoted, and was afterwards—in another connection it is t
 - stray mark: …n universal law.”  —TENNYSON: _Locksley Hall  :::  ::: {.fron…
 - stray mark: …h’d him, and no murder fed.”  [, III., 147 ]  In these lines …
@@ -57,14 +57,14 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 - stray mark: …ple, with regard to the ideal [] of perpetual peace, that it …
 - stray mark: …to shed blood (I. , IX. 4-6)  [4. “But flesh with the life th…
 - stray mark: … on the Altai Mts., 200 miles [] off, between whom has presse…
-- stray mark: …by Kant. (Cf. above, p. 126.) [Tr.]  2. The idea of internati…
+- stray mark: …by Kant. (Cf. above, p. 126.) [Tr.]  2\. The idea of internat…
 
-## Lens 4 · page layout — 77 (findings)
+## Lens 4 · page layout — 72 (findings)
 *Scope:* every page of every PDF: widows, orphans, runts, hyphen stacks, loose lines, stranded headings, thin chapter ends
 
-- deluxe: {'runt': 8, 'widow': 2, 'loose line': 3, 'orphan': 1} — see 3-typeset/typeset-report.md for the pages
-- everyman: {'runt': 22, 'loose line': 7, 'orphan': 2} — see 3-typeset/typeset-report.md for the pages
-- scholar: {'loose line': 15, 'runt': 14, 'orphan': 2, 'widow': 1} — see 3-typeset/typeset-report.md for the pages
+- deluxe: {'runt': 9, 'widow': 2, 'loose line': 3} — see 3-typeset/typeset-report.md for the pages
+- everyman: {'runt': 20, 'loose line': 7, 'orphan': 1} — see 3-typeset/typeset-report.md for the pages
+- scholar: {'loose line': 15, 'runt': 14, 'widow': 1} — see 3-typeset/typeset-report.md for the pages
 
 ## Lens 5 · dictionary sweep — 836 (read the list)
 *Scope:* every token of the body (51,287); wordlist + house list; names accepted when capitalised mid-sentence (164)
@@ -143,9 +143,9 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 ## Lens 8 · cross-edition consistency — 0 (clean)
 *Scope:* the words of manuscript.md against the text of each PDF and of the EPUB
 
-- deluxe: manuscript words absent from the PDF text: 244 (e.g. ['far', 'world', 'grappling', 'universal', 'law', 'possibility', 'interest', '2', 'development', 'international']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
+- deluxe: manuscript words absent from the PDF text: 241 (e.g. ['far', 'grappling', 'universal', 'law', 'interest', '2', 'development', 'international', '100', 'democratic']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
 - everyman: manuscript words absent from the PDF text: 245 (e.g. ['argosies', 'peoples', 'law', 'english', 'so', '100', 'providence', 'called', 'principles', 'application']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
-- scholar: manuscript words absent from the PDF text: 464 (e.g. ['federation', 'suggestion', 'historical', 'political', '2', 'connection', 'development', 'international', '100', 'recognition']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
+- scholar: manuscript words absent from the PDF text: 468 (e.g. ['federation', 'suggestion', 'historical', 'political', '2', 'connection', 'development', 'international', '100', 'recognition']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
 - epub: no cover image yet (run `ath cover` and rebuild)
 - epub: 13 spine items, 18 manifest items, 2.8 MB unpacked
 - epub: manuscript words 52,418; EPUB words 53,408; manuscript words not found in EPUB: 0
@@ -155,7 +155,7 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 
 - deluxe: 174 pages (even), page size 360 x 504 pts = trim, fonts 2, unembedded none, within KDP 24–828
 - everyman: 174 pages (even), page size 306 x 459 pts = trim, fonts 2, unembedded none, within KDP 24–828
-- scholar: 216 pages (even), page size 360 x 504 pts = trim, fonts 2, unembedded none, within KDP 24–828
+- scholar: 214 pages (even), page size 360 x 504 pts = trim, fonts 2, unembedded none, within KDP 24–828
 
 ## Lens 10 · render and look — 3 (needs eyes)
 *Scope:* sampled pages of every edition; the covers
@@ -176,7 +176,7 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 | cover | undecided |  |  |  |
 | final | undecided |  |  |  |
 
-FORCED past gates: [{'command': 'typeset', 'gates': ['text'], 'when': '2026-09-25 21:55'}, {'command': 'epub', 'gates': ['text'], 'when': '2026-09-25 21:57'}]
+FORCED past gates: [{'command': 'typeset', 'gates': ['text'], 'when': '2026-09-25 21:55'}, {'command': 'epub', 'gates': ['text'], 'when': '2026-09-25 21:57'}, {'command': 'typeset', 'gates': ['text'], 'when': '2026-09-26 00:15'}, {'command': 'epub', 'gates': ['text'], 'when': '2026-09-26 00:16'}]
 
 ## Definition of done
 

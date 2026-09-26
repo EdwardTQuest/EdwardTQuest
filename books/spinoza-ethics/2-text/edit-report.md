@@ -1,6 +1,6 @@
 # Edit report — Ethics
 
-Source: `0-source/pg3800.txt` (90,985 words). Import: {'pg transcriber notes removed': 0, 'pg page markers removed': 0, 'pg paragraph markers removed': 0, 'pg emphasis markup removed': 2, 'pg footnote calls': 17, 'pg orphan note paragraphs': 17, 'pg front blocks dropped': 5, 'pg front prose kept': 0, 'pg contents and furniture dropped': 1, 'pg chapter titles merged': 1, 'chapters': 223, 'paragraphs': 892, 'speaker labels': 62, 'notes': 17, 'split titles merged': 1, 'front divisions': 0, 'levels': {'Part': 1, '#plain': 2, 'Prop.': 3}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 0.
+Source: `0-source/pg3800.txt` (90,985 words). Import: {'pg transcriber notes removed': 0, 'pg page markers removed': 0, 'pg paragraph markers removed': 0, 'pg emphasis markup removed': 2, 'pg footnote calls': 17, 'pg orphan note paragraphs': 17, 'pg front blocks dropped': 5, 'pg front prose kept': 0, 'pg contents and furniture dropped': 1, 'pg chapter titles merged': 1, 'chapters': 223, 'list markers escaped': 134, 'paragraphs': 892, 'speaker labels': 62, 'notes': 17, 'split titles merged': 1, 'front divisions': 0, 'levels': {'Part': 1, '#plain': 2, 'Prop.': 3}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 0.
 
 ## House-style rules (count / cap)
 
@@ -9,9 +9,10 @@ Source: `0-source/pg3800.txt` (90,985 words). Import: {'pg transcriber notes rem
 | hyphen joins | 0 | 909 |  |
 | curly quotes | 342 | 18197 |  universe (for simplicity's sake, I will suppose them existi  →   universe (for simplicity’s sake, I will supp |
 | ellipses | 0 | 1819 |  |
-| dashes | 733 | 4549 |  I. By that which is self--caused, I mean that of which the   →   I. By that which is self—caused, I mean that |
+| dashes | 733 | 4549 | I\. By that which is self--caused, I mean that of which the   →  I\. By that which is self—caused, I mean that |
 | caps openings | 6 | 909 | ssarily follow. Q.E.D.  APPENDIX:  In the foregoing I have e  →  ssarily follow. Q.E.D.  Appendix:  In the for |
 | spacing and ligatures | 6 | 4549 | ve that other in return.  (Cf. III. xv. Coroll., and III. xv  →  ve that other in return. (Cf. III. xv. Coroll |
+| list markers escaped | 0 | 4549 |  |
 
 ## Validation: 0 errors, 95 warnings
 
@@ -120,10 +121,10 @@ Source: `0-source/pg3800.txt` (90,985 words). Import: {'pg transcriber notes rem
 - fortitudo ×1 — g, I set down to strength of character (fortitudo), which I divide into courage (animosit
 - generositas ×1 — ourage (animositas) and highmindedness (generositas). By courage I mean the desire whereby 
 - shamelessness ×1 — e action. Modesty is usually opposed to shamelessness, but the latter is not an emotion, as I
-- seu ×1 — LIII. Courtesy, or deference (Humanitas seu modestia), is the desire of acting in a
+- seu ×1 — III\. Courtesy, or deference (Humanitas seu modestia), is the desire of acting in a
 - contemning ×1 — en philosophers, when they write a book contemning honour, sign their names thereto,” and 
 - debauchees ×1 — et; and if he lives among drunkards and debauchees, he will, from the mere fact of being a
-- virtus ×1 — VIII. By virtue (virtus) and power I mean the same thing; that 
+- virtus ×1 — VIII\. By virtue (virtus) and power I mean the same thing; that 
 - disjoined ×1 — ed with firm decisions, cannot be again disjoined therefrom by physical causes; in which 
 - def ×1 — he common properties of things (see the def. of reason in II. xl. note. ii.), which
 - versa ×8 — hould be extreme imperfection, and vice versa. What is such an assertion, but an open
@@ -155,7 +156,7 @@ Source: `0-source/pg3800.txt` (90,985 words). Import: {'pg transcriber notes rem
 - alicujus ×2 — m praesens minus, quod causa est faturi alicujus mali.” The last word of the latter is a
 - Continuo ×2 — [16] Continuo. Rendered “constantly” by Mr. Pollock o
 - essentiality ×1 — ich each expresses eternal and infinite essentiality.
-- ideate ×1 — I. A true idea must correspond with its ideate or object.
+- ideate ×1 — \. A true idea must correspond with its ideate or object.
 - Wherefrom ×1 —  nature, and say it was created by God. Wherefrom the divine nature can have been created
 - unchangeable ×1 — God, and all the attributes of God, are unchangeable. For if they could be changed in respec
 - essendi ×1 — y, God is cause of the being of things (essendi rerum). For whether things exist, or do
@@ -179,10 +180,10 @@ Source: `0-source/pg3800.txt` (90,985 words). Import: {'pg transcriber notes rem
 - appetere ×1 — we see that everyone by nature desires (appetere), that the rest of mankind should live 
 - ourself ×1 — ith pleasure accompanied by the idea of ourself as cause. Therefore, in proportion as t
 - venery ×1 —  immoderate love of feasting, drinking, venery, riches, and fame. Furthermore, these e
-- imaginatio ×1 — IV. Wonder is the conception (imaginatio) of anything, wherein the mind comes to
+- imaginatio ×1 — IV\. Wonder is the conception (imaginatio) of anything, wherein the mind comes to
 - admiratio ×1 — Explanation—Wonder (admiratio) arises (as we have shown, III. lii.) f
 - reprobating ×1 — great measure on education. Parents, by reprobating the former class of actions, and by fre
-- Humanitas ×1 — XLIII. Courtesy, or deference (Humanitas seu modestia), is the desire of acting 
+- Humanitas ×1 — XLIII\. Courtesy, or deference (Humanitas seu modestia), is the desire of acting 
 - existendi ×1 — ny part thereof, a force for existence (existendi vis) greater or less than before, and b
 - undiscussed ×1 — wever, I prefer to leave such questions undiscussed, lest I should give ground to the super
 - underestimation ×1 — that a man may be called proud from his underestimation of other people; and, therefore, pride 
@@ -221,10 +222,8 @@ Source: `0-source/pg3800.txt` (90,985 words). Import: {'pg transcriber notes rem
 - Baconian ×2 — [4] A Baconian phrase. Nov. Org. Aph. 100. [Pollock, p
 - Speremus ×2 — “Speremus pariter, pariter metuamus amantes;
 
-## Structure battery: 2 findings
+## Structure battery: 0 findings
 
-- unbalanced double quotes: “Speremus pariter, pariter metuamus amantes;
-- unbalanced double quotes: “Speremus pariter, pariter metuamus amantes;
 
 ## Flags: 0
 
@@ -238,6 +237,6 @@ Source: `0-source/pg3800.txt` (90,985 words). Import: {'pg transcriber notes rem
 1. Suspicious list: 2 entries — each fixed in the source or explained?
 2. The rest of the dictionary list (129 entries): read to the end?
 3. Sequence proof: level 1 "part": 5 numbered, first 1, last 5 — does it match what the source prints?
-4. Structure battery: 2 findings — each decided?
-5. Rules: hyphen joins 0, curly quotes 342, ellipses 0, dashes 733, caps openings 6, spacing and ligatures 6 — plausible for 90,985 words?
+4. Structure battery: 0 findings — each decided?
+5. Rules: hyphen joins 0, curly quotes 342, ellipses 0, dashes 733, caps openings 6, spacing and ligatures 6, list markers escaped 0 — plausible for 90,985 words?
 6. Would a reader who knows this book notice anything wrong in the first chapter you open at random?

@@ -1,6 +1,6 @@
 # Edit report — On Liberty
 
-Source: `0-source/pg34901.txt` (55,074 words). Import: {'pg transcriber notes removed': 0, 'pg page markers removed': 0, 'pg paragraph markers removed': 0, 'pg emphasis markup removed': 0, 'pg footnotes headings dropped': 4, 'pg footnote calls': 14, 'pg front blocks dropped': 5, 'pg front prose kept': 0, 'pg contents runs removed': 1, 'pg half-title dropped': 1, 'pg contents and furniture dropped': 12, 'pg epigraph kept': 1, 'pg dedication kept': 1, 'pg chapter titles merged': 5, 'paragraphs': 144, 'chapters': 9, 'signature lines': 1, 'notes': 14, 'split titles merged': 0, 'front divisions': 1, 'levels': {'#plain': 2, '#num': 3, 'Chapter': 2}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 2.
+Source: `0-source/pg34901.txt` (55,074 words). Import: {'pg transcriber notes removed': 0, 'pg page markers removed': 0, 'pg paragraph markers removed': 0, 'pg emphasis markup removed': 0, 'pg footnotes headings dropped': 4, 'pg footnote calls': 14, 'pg front blocks dropped': 5, 'pg front prose kept': 0, 'pg contents runs removed': 1, 'pg half-title dropped': 1, 'pg contents and furniture dropped': 12, 'pg epigraph kept': 1, 'pg dedication kept': 1, 'pg chapter titles merged': 5, 'list markers escaped': 0, 'paragraphs': 144, 'chapters': 9, 'signature lines': 1, 'notes': 14, 'split titles merged': 0, 'front divisions': 1, 'levels': {'#plain': 2, '#num': 3, 'Chapter': 2}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 2.
 
 ## House-style rules (count / cap)
 
@@ -12,6 +12,7 @@ Source: `0-source/pg34901.txt` (55,074 words). Import: {'pg transcriber notes re
 | dashes | 90 | 2753 | at is best in my writings--the friend and wife whose exalted  →  at is best in my writings—the friend and wife |
 | caps openings | 1 | 550 | Courtney.]{.smallcaps}  LONDON, *July 5th, 1901*.  :::  ## C  →  Courtney.]{.smallcaps}  London, *July 5th, 19 |
 | spacing and ligatures | 0 | 2753 |  |
+| list markers escaped | 0 | 2753 |  |
 
 ## Validation: 0 errors, 0 warnings
 
@@ -208,5 +209,5 @@ Source: `0-source/pg34901.txt` (55,074 words). Import: {'pg transcriber notes re
 2. The rest of the dictionary list (228 entries): read to the end?
 3. Sequence proof: level 3 "#" (run 2): 3 numbered, first 1, last 3; level 2 "chapter": 5 numbered, first 1, last 5; expected 5: OK — does it match what the source prints?
 4. Structure battery: 0 findings — each decided?
-5. Rules: hyphen joins 0, curly quotes 247, ellipses 2, dashes 90, caps openings 1, spacing and ligatures 0 — plausible for 55,074 words?
+5. Rules: hyphen joins 0, curly quotes 247, ellipses 2, dashes 90, caps openings 1, spacing and ligatures 0, list markers escaped 0 — plausible for 55,074 words?
 6. Would a reader who knows this book notice anything wrong in the first chapter you open at random?

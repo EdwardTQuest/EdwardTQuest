@@ -5,7 +5,7 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 | # | lens | scope | findings | status |
 |---|---|---|---|---|
 | 3 | structure and sequence | every heading and paragraph of manuscript.md (47,953 words, 9 chapters) | 23 | findings |
-| 4 | page layout | every page of every PDF: widows, orphans, runts, hyphen stacks, loose lines, stranded headings, thin chapter ends | 147 | findings |
+| 4 | page layout | every page of every PDF: widows, orphans, runts, hyphen stacks, loose lines, stranded headings, thin chapter ends | 144 | findings |
 | 5 | dictionary sweep | every token of the body (47,569); wordlist + house list; names accepted when capitalised mid-sentence (82) | 811 | read the list |
 | 7 | apparatus | contents vs headings, note calls vs notes, front and back matter present in every edition | 0 | clean |
 | 8 | cross-edition consistency | the words of manuscript.md against the text of each PDF and of the EPUB | 0 | clean |
@@ -54,12 +54,12 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 - stray mark: …is disapproved of by mankind, [Greek quotation inserted here]…
 - stray mark: …o mix a more generous regard) [Greek quotation inserted here]…
 
-## Lens 4 · page layout — 147 (findings)
+## Lens 4 · page layout — 144 (findings)
 *Scope:* every page of every PDF: widows, orphans, runts, hyphen stacks, loose lines, stranded headings, thin chapter ends
 
 - deluxe: {'runt': 26, 'orphan': 1, 'loose line': 10} — see 3-typeset/typeset-report.md for the pages
-- everyman: {'runt': 29, 'loose line': 21, 'orphan': 1} — see 3-typeset/typeset-report.md for the pages
-- scholar: {'runt': 32, 'loose line': 27} — see 3-typeset/typeset-report.md for the pages
+- everyman: {'runt': 29, 'loose line': 19, 'orphan': 1} — see 3-typeset/typeset-report.md for the pages
+- scholar: {'runt': 31, 'loose line': 27} — see 3-typeset/typeset-report.md for the pages
 
 ## Lens 5 · dictionary sweep — 811 (read the list)
 *Scope:* every token of the body (47,569); wordlist + house list; names accepted when capitalised mid-sentence (82)
@@ -140,10 +140,10 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 
 - deluxe: manuscript words absent from the PDF text: 78 (e.g. ['will', 'therefore', 'praise', '2', 'good', 'natured', 'corn', 'fields', 'supposed', '3']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
 - everyman: manuscript words absent from the PDF text: 86 (e.g. ['over', 'will', 'deformity', 'deductions', 'well', 'praise', '2', 'good', 'ill', 'satisfaction']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
-- scholar: manuscript words absent from the PDF text: 427 (e.g. ['nature', 'successful', 'reasoning', 'acknowledged', 'advantages', 'bigotted', 'philosophical', 'sentiments', 'entirely', 'affectation']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
+- scholar: manuscript words absent from the PDF text: 428 (e.g. ['nature', 'successful', 'reasoning', 'acknowledged', 'advantages', 'bigotted', 'philosophical', 'sentiments', 'entirely', 'affectation']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
 - epub: no cover image yet (run `ath cover` and rebuild)
 - epub: 16 spine items, 21 manifest items, 2.8 MB unpacked
-- epub: manuscript words 48,114; EPUB words 49,324; manuscript words not found in EPUB: 0
+- epub: manuscript words 48,114; EPUB words 49,327; manuscript words not found in EPUB: 0
 
 ## Lens 9 · mechanical — 0 (clean)
 *Scope:* PDF page size, page count, embedded fonts; EPUB structure (see lens 8)
@@ -171,7 +171,7 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 | cover | undecided |  |  |  |
 | final | undecided |  |  |  |
 
-FORCED past gates: [{'command': 'typeset', 'gates': ['text'], 'when': '2026-09-25 22:00'}, {'command': 'epub', 'gates': ['text'], 'when': '2026-09-25 22:01'}]
+FORCED past gates: [{'command': 'typeset', 'gates': ['text'], 'when': '2026-09-25 22:00'}, {'command': 'epub', 'gates': ['text'], 'when': '2026-09-25 22:01'}, {'command': 'typeset', 'gates': ['text'], 'when': '2026-09-26 00:20'}, {'command': 'epub', 'gates': ['text'], 'when': '2026-09-26 00:20'}]
 
 ## Definition of done
 

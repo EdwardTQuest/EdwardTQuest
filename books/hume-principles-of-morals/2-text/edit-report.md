@@ -1,6 +1,6 @@
 # Edit report — An Enquiry Concerning the Principles of Morals
 
-Source: `0-source/pg4320.txt` (51,259 words). Import: {'pg transcriber notes removed': 1, 'pg page markers removed': 0, 'pg paragraph markers removed': 0, 'pg emphasis markup removed': 0, 'pg footnote blocks': 63, 'pg footnote calls': 63, 'pg front blocks dropped': 8, 'pg front prose kept': 0, 'pg contents runs removed': 1, 'pg contents and furniture dropped': 6, 'pg chapter titles merged': 3, 'chapters': 24, 'paragraphs': 348, 'verse_blocks': 1, 'notes': 63, 'split titles merged': 0, 'front divisions': 1, 'levels': {'#plain': 2, 'Section': 2, 'Part': 3, 'Appendix': 2}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 4.
+Source: `0-source/pg4320.txt` (51,259 words). Import: {'pg transcriber notes removed': 1, 'pg page markers removed': 0, 'pg paragraph markers removed': 0, 'pg emphasis markup removed': 0, 'pg footnote blocks': 63, 'pg footnote calls': 63, 'pg front blocks dropped': 8, 'pg front prose kept': 0, 'pg contents runs removed': 1, 'pg contents and furniture dropped': 6, 'pg chapter titles merged': 3, 'chapters': 24, 'list markers escaped': 5, 'paragraphs': 348, 'verse_blocks': 1, 'notes': 63, 'split titles merged': 0, 'front divisions': 1, 'levels': {'#plain': 2, 'Section': 2, 'Part': 3, 'Appendix': 2}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 4.
 
 ## House-style rules (count / cap)
 
@@ -12,6 +12,7 @@ Source: `0-source/pg4320.txt` (51,259 words). Import: {'pg transcriber notes rem
 | dashes | 5 | 2562 | s adflent Humani vultus,’--Hor.], borrows smiles or tears fr  →  s adflent Humani vultus,’—Hor.], borrows smil |
 | caps openings | 11 | 512 | l Principles of Morals  DISPUTES with men, pertinaciously ob  →  l Principles of Morals  Disputes with men, pe |
 | spacing and ligatures | 5 | 2562 | sar gives of Cassius:  |  He loves no play, |  As thou do’st  →  sar gives of Cassius:  | He loves no play, |  |
+| list markers escaped | 0 | 2562 |  |
 
 ## Validation: 0 errors, 2 warnings
 
@@ -222,5 +223,5 @@ Source: `0-source/pg4320.txt` (51,259 words). Import: {'pg transcriber notes rem
 2. The rest of the dictionary list (570 entries): read to the end?
 3. Sequence proof: level 2 "section": 9 numbered, first 1, last 9; level 3 "part" (run 3): 2 numbered, first 1, last 2; level 3 "part" (run 4): 2 numbered, first 1, last 2; level 3 "part" (run 6): 2 numbered, first 1, last 2; level 3 "part" (run 7): 2 numbered, first 1, last 2; level 3 "part" (run 10): 2 numbered, first 1, last 2; level 2 "appendix": 4 numbered, first 1, last 4 — does it match what the source prints?
 4. Structure battery: 2 findings — each decided?
-5. Rules: hyphen joins 0, curly quotes 87, ellipses 0, dashes 5, caps openings 11, spacing and ligatures 5 — plausible for 51,259 words?
+5. Rules: hyphen joins 0, curly quotes 87, ellipses 0, dashes 5, caps openings 11, spacing and ligatures 5, list markers escaped 0 — plausible for 51,259 words?
 6. Would a reader who knows this book notice anything wrong in the first chapter you open at random?

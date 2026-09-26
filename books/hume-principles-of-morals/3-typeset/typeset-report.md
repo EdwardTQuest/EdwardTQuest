@@ -46,7 +46,7 @@ counts: runt 26, orphan 1, loose line 10
 
 ## everyman — 172 pages, measure 3.11 in, line box 12.5 pt
 
-counts: runt 29, loose line 21, orphan 1
+counts: runt 29, loose line 19, orphan 1
 
 - p.6 runt: volume,
 - p.7 runt: ciples.
@@ -91,9 +91,7 @@ counts: runt 29, loose line 21, orphan 1
 - p.124 loose line: mean gap 0.57 em: Having explained the moral APPROBATION attending
 - p.126 loose line: mean gap 0.57 em: That the virtues which are immediately USEFUL or
 - p.133 loose line: mean gap 0.58 em: the crime of INGRATITUDE, for instance; which has
-- p.137 loose line: mean gap 0.56 em: itself. The approbation or blame which then ensues
-- p.138 loose line: mean gap 0.55 em: III. This doctrine will become still more evident,
-- p.141 runt: other.
+- p.140 runt: other.
 - p.141 runt: existence.
 - p.143 loose line: mean gap 0.56 em: opinion, that those, who make profession of it, ca
 - p.153 runt: situations.
@@ -102,7 +100,7 @@ counts: runt 29, loose line 21, orphan 1
 
 ## scholar — 218 pages, measure 3.15 in, line box 13.7 pt
 
-counts: runt 32, loose line 27
+counts: runt 31, loose line 27
 
 - p.7 runt: volume,
 - p.19 loose line: mean gap 0.58 em: FRIENDLY, GENEROUS, BENEFICENT, or their
@@ -154,7 +152,6 @@ counts: runt 32, loose line 27
 - p.159 loose line: mean gap 0.68 em: It seems equally superfluous to prove, that the
 - p.160 runt: aversion.
 - p.167 runt: erations.
-- p.176 runt: inal.
 - p.183 loose line: mean gap 0.57 em: tions to be nothing but modifications of the latte
 - p.186 loose line: mean gap 0.58 em: These and a thousand other instances are marks
 - p.191 runt: virtues.

@@ -1,6 +1,6 @@
 # Edit report — The Subjection of Women
 
-Source: `0-source/pg27083.txt` (47,070 words). Import: {'pg transcriber notes removed': 0, 'pg page markers removed': 0, 'pg paragraph markers removed': 0, 'pg emphasis markup removed': 0, 'pg footnote blocks': 3, 'pg footnote calls': 3, 'pg front blocks dropped': 5, 'pg front prose kept': 0, 'pg the end dropped': 1, 'pg contents and furniture dropped': 2, 'chapters': 4, 'paragraphs': 91, 'notes': 3, 'split titles merged': 0, 'front divisions': 0, 'levels': {'Chapter': 2}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 0.
+Source: `0-source/pg27083.txt` (47,070 words). Import: {'pg transcriber notes removed': 0, 'pg page markers removed': 0, 'pg paragraph markers removed': 0, 'pg emphasis markup removed': 0, 'pg footnote blocks': 3, 'pg footnote calls': 3, 'pg front blocks dropped': 5, 'pg front prose kept': 0, 'pg the end dropped': 1, 'pg contents and furniture dropped': 2, 'chapters': 4, 'list markers escaped': 0, 'paragraphs': 91, 'notes': 3, 'split titles merged': 0, 'front divisions': 0, 'levels': {'Chapter': 2}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 0.
 
 ## House-style rules (count / cap)
 
@@ -12,6 +12,7 @@ Source: `0-source/pg27083.txt` (47,070 words). Import: {'pg transcriber notes re
 | dashes | 118 | 2353 | ons between the two sexes--the legal subordination of one se  →  ons between the two sexes—the legal subordina |
 | caps openings | 0 | 470 |  |
 | spacing and ligatures | 0 | 2353 |  |
+| list markers escaped | 0 | 2353 |  |
 
 ## Validation: 0 errors, 0 warnings
 
@@ -209,5 +210,5 @@ Source: `0-source/pg27083.txt` (47,070 words). Import: {'pg transcriber notes re
 2. The rest of the dictionary list (191 entries): read to the end?
 3. Sequence proof: level 2 "chapter": 4 numbered, first 1, last 4; expected 4: OK — does it match what the source prints?
 4. Structure battery: 0 findings — each decided?
-5. Rules: hyphen joins 0, curly quotes 117, ellipses 0, dashes 118, caps openings 0, spacing and ligatures 0 — plausible for 47,070 words?
+5. Rules: hyphen joins 0, curly quotes 117, ellipses 0, dashes 118, caps openings 0, spacing and ligatures 0, list markers escaped 0 — plausible for 47,070 words?
 6. Would a reader who knows this book notice anything wrong in the first chapter you open at random?

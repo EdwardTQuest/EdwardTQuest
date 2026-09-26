@@ -4,7 +4,7 @@ File: `4-epub/hume-principles-of-morals.epub` (1.33 MB)
 
 - no cover image yet (run `ath cover` and rebuild)
 - 16 spine items, 21 manifest items, 2.8 MB unpacked
-- manuscript words 48,114; EPUB words 49,324; manuscript words not found in EPUB: 0
+- manuscript words 48,114; EPUB words 49,327; manuscript words not found in EPUB: 0
 
 - no problems found
 

@@ -1,6 +1,6 @@
 # Edit report — Perpetual Peace
 
-Source: `0-source/pg50922.txt` (57,196 words). Import: {'pg transcriber notes removed': 0, 'pg page markers removed': 0, 'pg paragraph markers removed': 0, 'pg emphasis markup removed': 7, 'pg footnote calls': 154, 'pg orphan note paragraphs': 3, 'pg front blocks dropped': 11, 'pg front prose kept': 0, 'pg contents runs removed': 1, 'pg contents and furniture dropped': 13, 'pg index dropped (words)': 1438, 'pg epigraph kept': 1, 'pg orphan notes kept as back matter': 1, 'paragraphs': 248, 'chapters': 19, 'signature lines': 1, 'verse_blocks': 9, 'quotes': 5, 'breaks': 4, 'notes': 153, 'split titles merged': 6, 'front divisions': 2, 'levels': {'#plain': 2, 'Appendix': 2}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 4.
+Source: `0-source/pg50922.txt` (57,196 words). Import: {'pg transcriber notes removed': 0, 'pg page markers removed': 0, 'pg paragraph markers removed': 0, 'pg emphasis markup removed': 7, 'pg footnote calls': 154, 'pg orphan note paragraphs': 3, 'pg front blocks dropped': 11, 'pg front prose kept': 0, 'pg contents runs removed': 1, 'pg contents and furniture dropped': 13, 'pg index dropped (words)': 1438, 'pg epigraph kept': 1, 'pg orphan notes kept as back matter': 1, 'list markers escaped': 11, 'paragraphs': 248, 'chapters': 19, 'signature lines': 1, 'verse_blocks': 9, 'quotes': 5, 'breaks': 4, 'notes': 153, 'split titles merged': 6, 'front divisions': 2, 'levels': {'#plain': 2, 'Appendix': 2}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 4.
 
 ## House-style rules (count / cap)
 
@@ -12,6 +12,7 @@ Source: `0-source/pg50922.txt` (57,196 words). Import: {'pg transcriber notes re
 | dashes | 319 | 2859 | apt in universal law.”  — TENNYSON: _Locksley Hall  :::  :::  →  apt in universal law.”  —TENNYSON: _Locksley  |
 | caps openings | 0 | 571 |  |
 | spacing and ligatures | 115 | 2859 | t any desire to harm them . . . sufficing to himself.”[^2] (  →  t any desire to harm them. . . sufficing to h |
+| list markers escaped | 0 | 2859 |  |
 
 ## Validation: 0 errors, 1 warnings
 
@@ -69,9 +70,9 @@ Source: `0-source/pg50922.txt` (57,196 words). Import: {'pg transcriber notes re
 - doit ×1 — | And force the beggarly last doit, by means
 - unappropriated ×1 — nto touch with one another across these unappropriated regions and to take advantage of our co
 - propagandism ×1 — tation, they should not be suspected of propagandism.
-- Fac ×1 — 1. Fac et excusa. Seize the most favourable op
-- excusa ×1 — 1. Fac et excusa. Seize the most favourable opportunity 
-- nega ×1 — 2. Si fecisti, nega. As for any crime you have committed, s
+- Fac ×1 — 1\. Fac et excusa. Seize the most favourable op
+- excusa ×1 — 1\. Fac et excusa. Seize the most favourable opportunity 
+- nega ×1 — 2\. Si fecisti, nega. As for any crime you have committed, s
 - ferro ×1 — uotes the following statement: “flamma, ferro, caede, possessiones ecclesiarum praela
 - whereto ×1 — l their coats, and buy them swords; but whereto, if not to fight? Thus friars make a gr
 - clericos ×1 — d, because he was a man of blood. “Nolo clericos ullo sanguine contaminari. Gravis impie
@@ -173,12 +174,12 @@ Source: `0-source/pg50922.txt` (57,196 words). Import: {'pg transcriber notes re
 - fantastical ×1 —  the idea of a cosmopolitan right is no fantastical, high-flown notion of right, but a comp
 - high-flown ×1 — a cosmopolitan right is no fantastical, high-flown notion of right, but a complement of th
 - unutilised ×1 — t deserts which would otherwise be left unutilised have the camel, which seems as if creat
-- Whoso ×1 — 6. Whoso sheddeth man’s blood, by man shall his 
+- Whoso ×1 — 6\. Whoso sheddeth man’s blood, by man shall his 
 - heathendom ×1 —  which Christians, newly converted from heathendom, had to conform. Cf. *Acts* XV. 20; XXI
 - engrafted ×1 — no special stimulating cause, but seems engrafted in human nature, and is even regarded a
 - intermixing ×1 — separate nations, and prevent them from intermixing: namely, the differences of language an
 - co-exist ×1 — interests. The commercial spirit cannot co-exist with war, and sooner or later it takes 
-- fecisti ×1 — 2. Si fecisti, nega. As for any crime you have commit
+- fecisti ×1 — 2\. Si fecisti, nega. As for any crime you have commit
 - sophistically ×1 — ver, do not deserve a hearing, much and sophistically as they may reason about the existence,
 - theodicy ×1 — eases as well. But it seems that, by no theodicy or vindication of the justice of God, c
 - antinomy ×1 — ry or power. The following instances of antinomy occur between politics and morals, whic
@@ -200,7 +201,7 @@ Source: `0-source/pg50922.txt` (57,196 words). Import: {'pg transcriber notes re
 
 - unbalanced double quotes: From the right of the strongest, right takes an ironical appearance, a
 - unbalanced double quotes: [4. “But flesh with the life thereof, which is the blood thereof, shal
-- unbalanced double quotes: 6. Whoso sheddeth man’s blood, by man shall his blood be shed: for in 
+- unbalanced double quotes: 6\. Whoso sheddeth man’s blood, by man shall his blood be shed: for in
 - lowercase paragraph start: is frequently quoted, and was afterwards—in another connection it is t
 
 ## Flags: 0
@@ -216,5 +217,5 @@ Source: `0-source/pg50922.txt` (57,196 words). Import: {'pg transcriber notes re
 2. The rest of the dictionary list (598 entries): read to the end?
 3. Sequence proof: level 2 "appendix": 2 numbered, first 1, last 2 — does it match what the source prints?
 4. Structure battery: 4 findings — each decided?
-5. Rules: hyphen joins 1, curly quotes 0, ellipses 31, dashes 319, caps openings 0, spacing and ligatures 115 — plausible for 57,196 words?
+5. Rules: hyphen joins 1, curly quotes 0, ellipses 31, dashes 319, caps openings 0, spacing and ligatures 115, list markers escaped 0 — plausible for 57,196 words?
 6. Would a reader who knows this book notice anything wrong in the first chapter you open at random?

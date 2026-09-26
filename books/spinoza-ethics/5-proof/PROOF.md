@@ -4,11 +4,11 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 
 | # | lens | scope | findings | status |
 |---|---|---|---|---|
-| 3 | structure and sequence | every heading and paragraph of manuscript.md (83,635 words, 19 chapters) | 21 | findings |
-| 4 | page layout | every page of every PDF: widows, orphans, runts, hyphen stacks, loose lines, stranded headings, thin chapter ends | 594 | findings |
+| 3 | structure and sequence | every heading and paragraph of manuscript.md (83,635 words, 19 chapters) | 19 | findings |
+| 4 | page layout | every page of every PDF: widows, orphans, runts, hyphen stacks, loose lines, stranded headings, thin chapter ends | 587 | findings |
 | 5 | dictionary sweep | every token of the body (83,082); wordlist + house list; names accepted when capitalised mid-sentence (10) | 315 | read the list |
 | 7 | apparatus | contents vs headings, note calls vs notes, front and back matter present in every edition | 0 | clean |
-| 8 | cross-edition consistency | the words of manuscript.md against the text of each PDF and of the EPUB | 1 | findings |
+| 8 | cross-edition consistency | the words of manuscript.md against the text of each PDF and of the EPUB | 0 | clean |
 | 9 | mechanical | PDF page size, page count, embedded fonts; EPUB structure (see lens 8) | 0 | clean |
 | 10 | render and look | sampled pages of every edition; the covers | 3 | needs eyes |
 
@@ -20,12 +20,10 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 | 6 | fresh specialist readers | (not run) | — |
 | 7r | apparatus read by a reviewer | (not run) | — |
 
-## Lens 3 · structure and sequence — 21 (findings)
+## Lens 3 · structure and sequence — 19 (findings)
 *Scope:* every heading and paragraph of manuscript.md (83,635 words, 19 chapters)
 
 - level 1 "part": 5 numbered, first 1, last 5
-- unbalanced double quotes: “Speremus pariter, pariter metuamus amantes;
-- unbalanced double quotes: “Speremus pariter, pariter metuamus amantes;
 - stray mark: …thics by Benedict de Spinoza  [1] “Affectiones”  [2] “Forma” …
 - stray mark: …e Spinoza  [1] “Affectiones”  [2] “Forma”  [3] “Animata”  [4]…
 - stray mark: …] “Affectiones”  [2] “Forma”  [3] “Animata”  [4] A Baconian p…
@@ -46,12 +44,12 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 - stray mark: …ce to Spinoza’s scholarship.  [17] Affectiones. Camerer reads…
 - stray mark: …n phrase. Nov. Org. Aph. 100. [Pollock, p. 126, n.]   Conscie…
 
-## Lens 4 · page layout — 594 (findings)
+## Lens 4 · page layout — 587 (findings)
 *Scope:* every page of every PDF: widows, orphans, runts, hyphen stacks, loose lines, stranded headings, thin chapter ends
 
-- deluxe: {'runt': 60, 'loose line': 92, 'orphan': 4, 'widow': 1} — see 3-typeset/typeset-report.md for the pages
-- everyman: {'runt': 71, 'loose line': 142, 'orphan': 2} — see 3-typeset/typeset-report.md for the pages
-- scholar: {'widow': 2, 'runt': 65, 'loose line': 153, 'orphan': 2} — see 3-typeset/typeset-report.md for the pages
+- deluxe: {'runt': 61, 'loose line': 90, 'orphan': 1, 'widow': 1} — see 3-typeset/typeset-report.md for the pages
+- everyman: {'runt': 71, 'loose line': 136} — see 3-typeset/typeset-report.md for the pages
+- scholar: {'widow': 2, 'runt': 72, 'loose line': 153} — see 3-typeset/typeset-report.md for the pages
 
 ## Lens 5 · dictionary sweep — 315 (read the list)
 *Scope:* every token of the body (83,082); wordlist + house list; names accepted when capitalised mid-sentence (10)
@@ -127,23 +125,22 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 - everyman.pdf front/back matter: title page, publication page, contents, colophon — missing: none
 - scholar.pdf front/back matter: title page, publication page, contents, colophon — missing: none
 
-## Lens 8 · cross-edition consistency — 1 (findings)
+## Lens 8 · cross-edition consistency — 0 (clean)
 *Scope:* the words of manuscript.md against the text of each PDF and of the EPUB
 
-- deluxe: manuscript words absent from the PDF text: 78 (e.g. ['4', 'composed', 'smallcaps', '15', 'preservation', 'ratiocination', '7', '8', '9', '10']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
-- everyman: manuscript words absent from the PDF text: 274 (e.g. ['conceivable', 'because', 'constituting', 'something', 'determined', 'eternity', 'therefore', 'everything', 'either', 'understood']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
-- scholar: manuscript words absent from the PDF text: 294 (e.g. ['existence', 'conceivable', 'existent', 'because', 'conception', 'constituting', 'something', 'necessarily', 'definition', 'therefore']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
+- deluxe: manuscript words absent from the PDF text: 77 (e.g. ['4', 'composed', 'smallcaps', '15', 'ratiocination', '7', '8', '9', '10', '11']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
+- everyman: manuscript words absent from the PDF text: 257 (e.g. ['conceivable', 'because', 'constituting', 'something', 'determined', 'eternity', 'therefore', 'understood', 'understanding', 'absurdity']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
+- scholar: manuscript words absent from the PDF text: 288 (e.g. ['existence', 'conceivable', 'existent', 'because', 'conception', 'constituting', 'something', 'necessarily', 'definition', 'therefore']) — hyphenation and ligatures account for a handful; more than ~0.1% is a real loss
 - epub: no cover image yet (run `ath cover` and rebuild)
 - epub: 25 spine items, 30 manifest items, 3.1 MB unpacked
-- epub: manuscript words 89,312; EPUB words 90,989; manuscript words not found in EPUB: 102
-- epub PROBLEM text loss: 102 manuscript words are absent from the EPUB, e.g. ['ii', 'iii', 'iv', 'vi', 'vii', 'viii', 'ix', 'xi', 'xii', 'xiii', 'xiv', 'xv']
+- epub: manuscript words 89,312; EPUB words 91,094; manuscript words not found in EPUB: 0
 
 ## Lens 9 · mechanical — 0 (clean)
 *Scope:* PDF page size, page count, embedded fonts; EPUB structure (see lens 8)
 
 - deluxe: 328 pages (even), page size 360 x 504 pts = trim, fonts 2, unembedded none, within KDP 24–828
 - everyman: 332 pages (even), page size 306 x 459 pts = trim, fonts 2, unembedded none, within KDP 24–828
-- scholar: 404 pages (even), page size 360 x 504 pts = trim, fonts 2, unembedded none, within KDP 24–828
+- scholar: 402 pages (even), page size 360 x 504 pts = trim, fonts 2, unembedded none, within KDP 24–828
 
 ## Lens 10 · render and look — 3 (needs eyes)
 *Scope:* sampled pages of every edition; the covers
@@ -164,7 +161,7 @@ A pass is only clean for what it looked at, through the lens it used. Every lens
 | cover | undecided |  |  |  |
 | final | undecided |  |  |  |
 
-FORCED past gates: [{'command': 'typeset', 'gates': ['text'], 'when': '2026-09-25 21:48'}, {'command': 'epub', 'gates': ['text'], 'when': '2026-09-25 21:49'}]
+FORCED past gates: [{'command': 'typeset', 'gates': ['text'], 'when': '2026-09-25 21:48'}, {'command': 'epub', 'gates': ['text'], 'when': '2026-09-25 21:49'}, {'command': 'typeset', 'gates': ['text'], 'when': '2026-09-26 00:07'}, {'command': 'epub', 'gates': ['text'], 'when': '2026-09-26 00:09'}]
 
 ## Definition of done
 

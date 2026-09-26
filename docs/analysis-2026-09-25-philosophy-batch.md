@@ -20,6 +20,12 @@ programmatic check and visible in the first page sample I opened.
 - Command: `ath batch books/_batch-philosophy.yaml --through proof --force` — new → plan → edit
   → typeset ×3 → epub → proof for every book, one table at the end (`books/_batch-report.md`).
   `--force` because the batch does not stop for gates; gates are the overseer's, per book.
+- Three passes, honestly counted. A *discovery* pass (15 books before it stalled) in which I
+  read the reports and looked at the page sheets as an overseer would, and fixed what that
+  found — every defect in §3. A *clean* pass with the fixed code, interrupted at book 17 by the
+  container restarting when the session's usage limit was hit. And the *final* pass, the table
+  above: every book re-edited, re-typeset, re-checked and re-proofed with the code as
+  committed, in one run.
 - Machine time: {{MACHINE_TIME}} for all {{N_BOOKS}} books on a shared four-core container,
   {{PER_BOOK}} per book on average. No model tokens were spent by the commands.
 - Model time (mine): the whole of this session's credit went into *building and debugging*

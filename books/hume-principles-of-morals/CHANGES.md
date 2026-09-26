@@ -1,7 +1,7 @@
 # Change tracker — An Enquiry Concerning the Principles of Morals
 
 **Author:** David Hume. **Source setting:** the Project Gutenberg transcription of the 1777 edition. **Imprint:** Athanasius.
-**Status:** every row marked *applied* is in the delivered manuscript; *open* rows are decisions still to take. Rendered 2026-09-25 from `changes.csv` (4 rows).
+**Status:** every row marked *applied* is in the delivered manuscript; *open* rows are decisions still to take. Rendered 2026-09-26 from `changes.csv` (4 rows).
 
 What this document does not list: OCR repairs are in category O and are counted, not itemised, unless a reading needed a decision.
 

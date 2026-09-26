@@ -1,7 +1,7 @@
 # Change tracker — The Critique of Practical Reason
 
 **Author:** Immanuel Kant. **Source setting:** the Abbott translation of 1889 (Project Gutenberg #5683). **Imprint:** Athanasius.
-**Status:** every row marked *applied* is in the delivered manuscript; *open* rows are decisions still to take. Rendered 2026-09-25 from `changes.csv` (3 rows).
+**Status:** every row marked *applied* is in the delivered manuscript; *open* rows are decisions still to take. Rendered 2026-09-26 from `changes.csv` (3 rows).
 
 What this document does not list: OCR repairs are in category O and are counted, not itemised, unless a reading needed a decision.
 

@@ -1,6 +1,6 @@
 # Edit report — Utilitarianism
 
-Source: `0-source/pg11224.txt` (30,878 words). Import: {'pg transcriber notes removed': 0, 'pg page markers removed': 0, 'pg paragraph markers removed': 0, 'pg emphasis markup removed': 0, 'pg footnote blocks': 4, 'pg footnote calls': 4, 'pg footnotes headings dropped': 2, 'pg front blocks dropped': 16, 'pg front prose kept': 0, 'pg the end dropped': 1, 'pg contents and furniture dropped': 2, 'pg chapter titles merged': 5, 'chapters': 5, 'paragraphs': 92, 'breaks': 3, 'notes': 4, 'split titles merged': 0, 'front divisions': 0, 'levels': {'Chapter': 2}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 0.
+Source: `0-source/pg11224.txt` (30,878 words). Import: {'pg transcriber notes removed': 0, 'pg page markers removed': 0, 'pg paragraph markers removed': 0, 'pg emphasis markup removed': 0, 'pg footnote blocks': 4, 'pg footnote calls': 4, 'pg footnotes headings dropped': 2, 'pg front blocks dropped': 16, 'pg front prose kept': 0, 'pg the end dropped': 1, 'pg contents and furniture dropped': 2, 'pg chapter titles merged': 5, 'chapters': 5, 'list markers escaped': 0, 'paragraphs': 92, 'breaks': 3, 'notes': 4, 'split titles merged': 0, 'front divisions': 0, 'levels': {'Chapter': 2}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 0.
 
 ## House-style rules (count / cap)
 
@@ -12,6 +12,7 @@ Source: `0-source/pg11224.txt` (30,878 words). Import: {'pg transcriber notes re
 | dashes | 44 | 1543 | s of right and wrong. For--besides that the existence of suc  →  s of right and wrong. For—besides that the ex |
 | caps openings | 0 | 308 |  |
 | spacing and ligatures | 0 | 1543 |  |
+| list markers escaped | 0 | 1543 |  |
 
 ## Validation: 0 errors, 0 warnings
 
@@ -154,5 +155,5 @@ Source: `0-source/pg11224.txt` (30,878 words). Import: {'pg transcriber notes re
 2. The rest of the dictionary list (107 entries): read to the end?
 3. Sequence proof: level 2 "chapter": 5 numbered, first 1, last 5; expected 5: OK — does it match what the source prints?
 4. Structure battery: 0 findings — each decided?
-5. Rules: hyphen joins 0, curly quotes 69, ellipses 0, dashes 44, caps openings 0, spacing and ligatures 0 — plausible for 30,878 words?
+5. Rules: hyphen joins 0, curly quotes 69, ellipses 0, dashes 44, caps openings 0, spacing and ligatures 0, list markers escaped 0 — plausible for 30,878 words?
 6. Would a reader who knows this book notice anything wrong in the first chapter you open at random?

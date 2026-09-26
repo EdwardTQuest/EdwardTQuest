@@ -1,6 +1,6 @@
 # Edit report — Considerations on Representative Government
 
-Source: `0-source/pg5669.txt` (98,223 words). Import: {'pg transcriber notes removed': 0, 'pg page markers removed': 0, 'pg paragraph markers removed': 0, 'pg emphasis markup removed': 0, 'pg footnote blocks': 11, 'pg footnote calls': 11, 'pg footnotes headings dropped': 1, 'pg front blocks dropped': 5, 'pg front prose kept': 0, 'pg contents runs removed': 1, 'pg contents and furniture dropped': 2, 'chapters': 19, 'paragraphs': 314, 'speaker labels': 15, 'verse_blocks': 3, 'notes': 11, 'split titles merged': 0, 'front divisions': 1, 'levels': {'#plain': 2, 'Chapter': 2}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 1.
+Source: `0-source/pg5669.txt` (98,223 words). Import: {'pg transcriber notes removed': 0, 'pg page markers removed': 0, 'pg paragraph markers removed': 0, 'pg emphasis markup removed': 0, 'pg footnote blocks': 11, 'pg footnote calls': 11, 'pg footnotes headings dropped': 1, 'pg front blocks dropped': 5, 'pg front prose kept': 0, 'pg contents runs removed': 1, 'pg contents and furniture dropped': 2, 'chapters': 19, 'list markers escaped': 0, 'paragraphs': 314, 'speaker labels': 15, 'verse_blocks': 3, 'notes': 11, 'split titles merged': 0, 'front divisions': 1, 'levels': {'#plain': 2, 'Chapter': 2}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 1.
 
 ## House-style rules (count / cap)
 
@@ -12,6 +12,7 @@ Source: `0-source/pg5669.txt` (98,223 words). Import: {'pg transcriber notes rem
 | dashes | 141 | 4911 | ored) are the work of men--owe their origin and their whole   →  ored) are the work of men—owe their origin an |
 | caps openings | 0 | 982 |  |
 | spacing and ligatures | 9 | 4911 |  of Government.  | CHAP.  III. |   That the Ideally Best For  →   of Government.  | CHAP. III. | That the Idea |
+| list markers escaped | 0 | 4911 |  |
 
 ## Validation: 0 errors, 0 warnings
 
@@ -207,5 +208,5 @@ Source: `0-source/pg5669.txt` (98,223 words). Import: {'pg transcriber notes rem
 2. The rest of the dictionary list (321 entries): read to the end?
 3. Sequence proof: level 2 "chapter": 18 numbered, first 1, last 18 — does it match what the source prints?
 4. Structure battery: 0 findings — each decided?
-5. Rules: hyphen joins 0, curly quotes 183, ellipses 1, dashes 141, caps openings 0, spacing and ligatures 9 — plausible for 98,223 words?
+5. Rules: hyphen joins 0, curly quotes 183, ellipses 1, dashes 141, caps openings 0, spacing and ligatures 9, list markers escaped 0 — plausible for 98,223 words?
 6. Would a reader who knows this book notice anything wrong in the first chapter you open at random?

@@ -84,7 +84,7 @@ Om	2	 (called also, on p. 177, *Cencresi*). *Om*, however, which La Croze transl
 Horatius	2	g but beatified (p. 507). Now P. Franc. Horatius, when he asked the Lhamas of Tibet, as 
 dissever	2	particular, in agreement with morals—to dissever any of the links binding citizens toget
 sophistical	2	ic, amount pretty much to the following sophistical maxims.
-impera	2	3. Divide et impera. That is to say, if there are certain p
+impera	2	3\. Divide et impera. That is to say, if there are certain p
 problema	2	litan law are mere technical problems (*problema technicum*). The second or formal princ
 ne	2	virtue. According to the principle, *Tu ne cede malis, sed contra audentior ito*, 
 entre	2	 traité pour rendre la paix perpétuelle entre les souverains chrétiens.* The first tw
@@ -375,8 +375,8 @@ Pflichtbegriff	1	for example, with regard to the ideal [*Pflichtbegriff*] of per
 unutilised	1	t deserts which would otherwise be left unutilised have the camel, which seems as if creat
 fur-clad	1	 when we come to know that, besides the fur-clad animals of the shores of the Arctic Oce
 crab-apple	1	 Europe, probably only two species, the crab-apple and wild pear—could only originate unde
-Whoso	1	6. Whoso sheddeth man’s blood, by man shall his 
-sheddeth	1	6. Whoso sheddeth man’s blood, by man shall his blood be 
+Whoso	1	6\. Whoso sheddeth man’s blood, by man shall his 
+sheddeth	1	6\. Whoso sheddeth man’s blood, by man shall his blood be 
 heathendom	1	 which Christians, newly converted from heathendom, had to conform. Cf. *Acts* XV. 20; XXI
 Meilen	1	language on the Altai Mts., 200 miles [*Meilen*][^139] off, between whom has pressed i
 engrafted	1	no special stimulating cause, but seems engrafted in human nature, and is even regarded a
@@ -397,11 +397,11 @@ well-meant	1	e, bases his dreary verdict against our well-meant hopes really on 
 wished-for	1	is required in order to bring about the wished-for results leading to perpetual peace. It 
 self-legislation	1	 And they become accordingly capable of self-legislation, their faculty for which is founded on 
 would-be	1	tion becomes first of all possible. The would-be practical man, leaving out of account t
-Fac	1	1. Fac et excusa. Seize the most favourable op
-excusa	1	1. Fac et excusa. Seize the most favourable opportunity 
+Fac	1	1\. Fac et excusa. Seize the most favourable op
+excusa	1	1\. Fac et excusa. Seize the most favourable opportunity 
 eventus	1	s got so far the god of success (*bonus eventus*) is his best advocate.
-fecisti	1	2. Si fecisti, nega. As for any crime you have commit
-nega	1	2. Si fecisti, nega. As for any crime you have committed, s
+fecisti	1	2\. Si fecisti, nega. As for any crime you have commit
+nega	1	2\. Si fecisti, nega. As for any crime you have committed, s
 primus	1	rely chosen you for their sovereign as *primus inter pares*, bring about a quarrel amo
 technicum	1	 are mere technical problems (*problema technicum*). The second or formal principle, on t
 sophistically	1	ver, do not deserve a hearing, much and sophistically as they may reason about the existence,

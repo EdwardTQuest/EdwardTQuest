@@ -1,6 +1,6 @@
 # Edit report — Human, All Too Human
 
-Source: `0-source/pg38145.txt` (39,779 words). Import: {'pg transcriber notes removed': 0, 'pg page markers removed': 0, 'pg paragraph markers removed': 0, 'pg emphasis markup removed': 138, 'pg footnote calls': 22, 'pg front blocks dropped': 12, 'pg front prose kept': 0, 'pg contents and furniture dropped': 1, 'chapters': 156, 'paragraphs': 159, 'verse_blocks': 2, 'quotes': 2, 'notes': 22, 'split titles merged': 0, 'front divisions': 1, 'levels': {'#plain': 2, '#num': 3}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 1.
+Source: `0-source/pg38145.txt` (39,779 words). Import: {'pg transcriber notes removed': 0, 'pg page markers removed': 0, 'pg paragraph markers removed': 0, 'pg emphasis markup removed': 138, 'pg footnote calls': 22, 'pg front blocks dropped': 12, 'pg front prose kept': 0, 'pg contents and furniture dropped': 1, 'chapters': 156, 'list markers escaped': 0, 'paragraphs': 159, 'verse_blocks': 2, 'quotes': 2, 'notes': 22, 'split titles merged': 0, 'front divisions': 1, 'levels': {'#plain': 2, '#num': 3}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 1.
 
 ## House-style rules (count / cap)
 
@@ -12,6 +12,7 @@ Source: `0-source/pg38145.txt` (39,779 words). Import: {'pg transcriber notes re
 | dashes | 359 | 1988 | at!? Everything is merely--human--all too human? With this e  →  at!? Everything is merely—human—all too human |
 | caps openings | 0 | 397 |  |
 | spacing and ligatures | 10 | 1988 | rives (lebt) on deception . . . but am I not beginning to do  →  rives (lebt) on deception. . . but am I not b |
+| list markers escaped | 0 | 1988 |  |
 
 ## Validation: 0 errors, 0 warnings
 
@@ -210,5 +211,5 @@ Source: `0-source/pg38145.txt` (39,779 words). Import: {'pg transcriber notes re
 2. The rest of the dictionary list (283 entries): read to the end?
 3. Sequence proof: level 3 "#" (run 1): 8 numbered, first 1, last 8; level 3 "#" (run 2): 34 numbered, first 1, last 34; level 3 "#" (run 3): 73 numbered, first 35, last 107; level 3 "#" (run 4): 37 numbered, first 108, last 144 — does it match what the source prints?
 4. Structure battery: 0 findings — each decided?
-5. Rules: hyphen joins 0, curly quotes 324, ellipses 1, dashes 359, caps openings 0, spacing and ligatures 10 — plausible for 39,779 words?
+5. Rules: hyphen joins 0, curly quotes 324, ellipses 1, dashes 359, caps openings 0, spacing and ligatures 10, list markers escaped 0 — plausible for 39,779 words?
 6. Would a reader who knows this book notice anything wrong in the first chapter you open at random?

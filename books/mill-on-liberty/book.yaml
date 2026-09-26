@@ -39,7 +39,7 @@ typeset:
 status:
   edit:
     state: done
-    when: 2026-09-25 21:34
+    when: 2026-09-25 23:54
     words: 51925
     chapters: 5
     unknown: 228
@@ -79,14 +79,14 @@ status:
       pdf: 3-typeset/scholar.pdf
   epub:
     state: done
-    when: 2026-09-25 21:35
+    when: 2026-09-25 23:55
     problems: 0
     size_mb: 1.31
     cover: false
   proof:
     state: done
-    when: 2026-09-25 21:35
-    findings: 42
+    when: 2026-09-25 23:55
+    findings: 41
 checks:
   expected_sections: 5
 forced:
@@ -118,3 +118,11 @@ forced:
   gates:
   - text
   when: 2026-09-25 21:41
+- command: typeset
+  gates:
+  - text
+  when: 2026-09-25 23:54
+- command: epub
+  gates:
+  - text
+  when: 2026-09-25 23:55

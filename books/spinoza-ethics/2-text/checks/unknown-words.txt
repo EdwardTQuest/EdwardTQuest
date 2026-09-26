@@ -67,7 +67,7 @@ majoris	2	corrected by the Dutch translator into “majoris boni.” (Pollock, p
 boni	2	d by the Dutch translator into “majoris boni.” (Pollock, p. 268, note.)
 Continuo	2	[16] Continuo. Rendered “constantly” by Mr. Pollock o
 essentiality	1	ich each expresses eternal and infinite essentiality.
-ideate	1	I. A true idea must correspond with its ideate or object.
+ideate	1	\. A true idea must correspond with its ideate or object.
 posteriori	1	 have purposely shown God’s existence a posteriori, so that the proof might be more easily
 priori	1	ises, God’s existence does not follow a priori. For, as the potentiality of existence 
 Wherefrom	1	 nature, and say it was created by God. Wherefrom the divine nature can have been created
@@ -109,16 +109,16 @@ thereat	1	said cause of honour: wherefore he will thereat feel pain (III. xix.).
 venery	1	 immoderate love of feasting, drinking, venery, riches, and fame. Furthermore, these e
 fortitudo	1	g, I set down to strength of character (fortitudo), which I divide into courage (animosit
 generositas	1	ourage (animositas) and highmindedness (generositas). By courage I mean the desire whereby 
-imaginatio	1	IV. Wonder is the conception (imaginatio) of anything, wherein the mind comes to
+imaginatio	1	IV\. Wonder is the conception (imaginatio) of anything, wherein the mind comes to
 admiratio	1	Explanation—Wonder (admiratio) arises (as we have shown, III. lii.) f
 reprobating	1	great measure on education. Parents, by reprobating the former class of actions, and by fre
 shamelessness	1	e action. Modesty is usually opposed to shamelessness, but the latter is not an emotion, as I
-Humanitas	1	XLIII. Courtesy, or deference (Humanitas seu modestia), is the desire of acting 
-seu	1	LIII. Courtesy, or deference (Humanitas seu modestia), is the desire of acting in a
+Humanitas	1	XLIII\. Courtesy, or deference (Humanitas seu modestia), is the desire of acting 
+seu	1	III\. Courtesy, or deference (Humanitas seu modestia), is the desire of acting in a
 contemning	1	en philosophers, when they write a book contemning honour, sign their names thereto,” and 
 debauchees	1	et; and if he lives among drunkards and debauchees, he will, from the mere fact of being a
 existendi	1	ny part thereof, a force for existence (existendi vis) greater or less than before, and b
-virtus	1	VIII. By virtue (virtus) and power I mean the same thing; that 
+virtus	1	VIII\. By virtue (virtus) and power I mean the same thing; that 
 undiscussed	1	wever, I prefer to leave such questions undiscussed, lest I should give ground to the super
 underestimation	1	that a man may be called proud from his underestimation of other people; and, therefore, pride 
 slavishness	1	ut only by means of the vile offence of slavishness or treachery. None are more readily tak

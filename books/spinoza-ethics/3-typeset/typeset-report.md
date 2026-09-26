@@ -4,8 +4,10 @@ What the page-layout lens found in each PDF (widows, orphans, runts, hyphen stac
 
 ## deluxe — 328 pages, measure 3.64 in, line box 13.7 pt
 
-counts: runt 60, loose line 92, orphan 4, widow 1
+counts: runt 61, loose line 90, orphan 1, widow 1
 
+- p.9 runt: itself.
+- p.10 runt: eternal.
 - p.11 runt: else.
 - p.14 loose line: mean gap 0.58 em: prop. iv. two or more distinct things are dis-
 - p.14 loose line: mean gap 0.57 em: tinguished one from the other, either by the
@@ -49,8 +51,6 @@ counts: runt 60, loose line 92, orphan 4, widow 1
 - p.113 loose line: mean gap 0.67 em: prop. xlvii. the human mind has an adequate
 - p.116 runt: Q.E.D.
 - p.120 runt: individuals.
-- p.122 orphan: clearly understand, how far astray from a true estimate of v
-- p.123 runt: angles.
 - p.140 loose line: mean gap 0.58 em: prop. viii. the endeavour, whereby a thing en-
 - p.141 loose line: mean gap 0.74 em: prop. xi. whatsoever increases or diminishes,
 - p.144 runt: Q.E.D.
@@ -79,22 +79,21 @@ counts: runt 60, loose line 92, orphan 4, widow 1
 - p.184 loose line: mean gap 0.63 em: to the mind as active, there are none which
 - p.187 runt: itself.
 - p.188 runt: perfection.
-- p.188 runt: tion.
+- p.188 runt: perfection.
 - p.189 runt: else.
 - p.189 runt: another.
-- p.190 loose line: mean gap 0.64 em: Explanation—This definition explains sufficiently 
-- p.192 runt: removed.
+- p.190 runt: cause.
+- p.190 runt: cause.
+- p.191 runt: issue.
 - p.193 runt: another.
-- p.194 runt: fortune.
-- … 77 more
+- … 73 more
 
 ## everyman — 332 pages, measure 3.0 in, line box 12.5 pt
 
-counts: runt 71, loose line 142, orphan 2
+counts: runt 71, loose line 136
 
 - p.11 runt: other.
 - p.12 loose line: mean gap 0.58 em: two or more substances having the same
-- p.15 orphan: triangle: it does not imply any fixed number of triangles.
 - p.18 runt: exists.
 - p.19 runt: existence.
 - p.21 loose line: mean gap 0.67 em: prop. xii. no attribute of substance can
@@ -127,6 +126,8 @@ counts: runt 71, loose line 142, orphan 2
 - p.46 runt: conceived.
 - p.61 runt: conceived.
 - p.62 runt: existing.
+- p.63 runt: thinking.
+- p.63 runt: ways.
 - p.64 runt: showing.
 - p.65 loose line: mean gap 0.63 em: prop. iii. in god there is necessarily the
 - p.65 loose line: mean gap 0.55 em: idea not only of his essence, but also of
@@ -166,23 +167,23 @@ counts: runt 71, loose line 142, orphan 2
 - p.116 runt: Q.E.D.
 - p.116 runt: same.
 - p.119 runt: possible.
-- p.123 runt: freedom.
-- p.123 runt: angles.
 - p.129 runt: passive.
 - p.130 loose line: mean gap 0.69 em: prop. ii. body cannot determine mind to
 - p.136 loose line: mean gap 0.57 em: prop. iii. the activities of the mind arise
 - p.136 loose line: mean gap 0.76 em: solely from adequate ideas; the passive
-- … 135 more
+- p.137 loose line: mean gap 0.79 em: prop. v. things are naturally contrary,
+- … 127 more
 
-## scholar — 404 pages, measure 3.15 in, line box 13.7 pt
+## scholar — 402 pages, measure 3.15 in, line box 13.7 pt
 
-counts: widow 2, runt 65, loose line 153, orphan 2
+counts: widow 2, runt 72, loose line 153
 
 - p.6 widow: p ar t v
 - p.11 runt: object.
 - p.13 loose line: mean gap 0.60 em: prop. iii. things which have nothing in
 - p.15 loose line: mean gap 0.72 em: prop. vi. one substance cannot be pro
 - p.16 runt: Q.E.D.
+- p.18 runt: triangles.
 - p.20 runt: Q.E.D.
 - p.21 loose line: mean gap 0.70 em: prop. xi. god, or substance, consisting
 - p.21 runt: exists.
@@ -254,8 +255,7 @@ counts: widow 2, runt 65, loose line 153, orphan 2
 - p.136 runt: Q.E.D.
 - p.139 loose line: mean gap 0.56 em: or affirmation and negation, save that
 - p.140 runt: same.
+- p.148 runt: freedom.
 - p.165 loose line: mean gap 0.56 em: solely from adequate ideas; the passive
 - p.167 loose line: mean gap 0.60 em: prop. v. things are naturally contrary,
-- p.168 loose line: mean gap 1.10 em: prop. vii. the endeavour, wherewith
-- p.168 loose line: mean gap 0.55 em: everything endeavours to persist in its
-- … 142 more
+- … 147 more

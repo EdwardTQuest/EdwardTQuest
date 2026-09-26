@@ -1,6 +1,6 @@
 # Edit report — Autobiography
 
-Source: `0-source/pg10378.txt` (78,446 words). Import: {'pg transcriber notes removed': 1, 'pg page markers removed': 0, 'pg paragraph markers removed': 0, 'pg emphasis markup removed': 0, 'pg footnotes headings dropped': 1, 'pg footnote calls': 10, 'pg front blocks dropped': 18, 'pg front prose kept': 0, 'pg contents and furniture dropped': 1, 'pg chapter titles merged': 7, 'chapters': 7, 'paragraphs': 176, 'verse_blocks': 1, 'quotes': 1, 'notes': 10, 'split titles merged': 0, 'front divisions': 0, 'levels': {'Chapter': 2}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 0.
+Source: `0-source/pg10378.txt` (78,446 words). Import: {'pg transcriber notes removed': 1, 'pg page markers removed': 0, 'pg paragraph markers removed': 0, 'pg emphasis markup removed': 0, 'pg footnotes headings dropped': 1, 'pg footnote calls': 10, 'pg front blocks dropped': 18, 'pg front prose kept': 0, 'pg contents and furniture dropped': 1, 'pg chapter titles merged': 7, 'chapters': 7, 'list markers escaped': 1, 'paragraphs': 176, 'verse_blocks': 1, 'quotes': 1, 'notes': 10, 'split titles merged': 0, 'front divisions': 0, 'levels': {'Chapter': 2}}. Title block dropped: 0. Numbered points demoted to sections: 0. Front/back divisions wrapped: 0.
 
 ## House-style rules (count / cap)
 
@@ -12,6 +12,7 @@ Source: `0-source/pg10378.txt` (78,446 words). Import: {'pg transcriber notes re
 | dashes | 65 | 3922 | d; not trying experiments--a kind of discipline which I have  →  d; not trying experiments—a kind of disciplin |
 | caps openings | 0 | 784 |  |
 | spacing and ligatures | 5 | 3922 | on of Wealth, and of an “ Appeal” in behalf of women against  →  on of Wealth, and of an “Appeal” in behalf of |
+| list markers escaped | 0 | 3922 |  |
 
 ## Validation: 0 errors, 1 warnings
 
@@ -214,5 +215,5 @@ Source: `0-source/pg10378.txt` (78,446 words). Import: {'pg transcriber notes re
 2. The rest of the dictionary list (310 entries): read to the end?
 3. Sequence proof: level 2 "chapter": 7 numbered, first 1, last 7; expected 7: OK — does it match what the source prints?
 4. Structure battery: 0 findings — each decided?
-5. Rules: hyphen joins 1, curly quotes 437, ellipses 0, dashes 65, caps openings 0, spacing and ligatures 5 — plausible for 78,446 words?
+5. Rules: hyphen joins 1, curly quotes 437, ellipses 0, dashes 65, caps openings 0, spacing and ligatures 5, list markers escaped 0 — plausible for 78,446 words?
 6. Would a reader who knows this book notice anything wrong in the first chapter you open at random?
