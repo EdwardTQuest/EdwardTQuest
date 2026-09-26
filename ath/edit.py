@@ -453,6 +453,9 @@ def main(argv):
     rows = []
     flags = []
     style = a.ellipsis or b.get('typeset.ellipsis', 'chicago')
+    def keep_note_defs(t):
+        # a rule may eat the space after a note definition's colon ("[^3]: . . ." became "[^3]:. . ."); the dialect needs it
+        return re.sub(r'^(\[\^[^\]]+\]:)(?=\S)', r'\1 ', t, flags=re.M)
     for name, fn, cap, cat in RULES:
         before = body
         if fn is ellipses:
@@ -461,6 +464,7 @@ def main(argv):
             body, n, fl = fn(body); flags += [('hyphen unresolved', f) for f in fl]
         else:
             body, n = fn(body)
+        body = keep_note_defs(body)
         limit = max(20, int(cap * words0))
         ex = ''
         if n and before != body:
