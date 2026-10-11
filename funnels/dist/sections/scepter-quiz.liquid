@@ -1,0 +1,179 @@
+{%- comment -%}
+  Scepter quiz section. Built by funnels/build.mjs; edit funnels/build.mjs, not this file.
+  Install: upload scepter-quiz.js and scepter-quiz.css to the theme's assets/, this file to sections/,
+  then add the "Scepter quiz" section to a page in the theme editor.
+{%- endcomment -%}
+{%- if section.settings.house_fonts -%}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+{%- endif -%}
+{{ 'scepter-quiz.css' | asset_url | stylesheet_tag }}
+<style>
+  #sq-{{ section.id }} { padding-block: {{ section.settings.padding }}px; }
+  {%- if section.settings.accent != blank %}
+  #sq-{{ section.id }} .sq { --sq-accent: {{ section.settings.accent }}; --sq-panel: {{ section.settings.accent }}; }
+  {%- endif %}
+  {%- unless section.settings.house_fonts %}
+  #sq-{{ section.id }} .sq { --sq-font-body: inherit; --sq-font-ui: inherit; --sq-font-caps: inherit; }
+  {%- endunless %}
+</style>
+<div id="sq-{{ section.id }}" class="page-width">
+  <div data-scepter-quiz="{{ section.settings.quiz }}"></div>
+</div>
+<script>
+  window.SCEPTER_QUIZ_SETTINGS = window.SCEPTER_QUIZ_SETTINGS || {
+    capture: {
+      provider: {{ section.settings.provider | json }},
+      klaviyo: { companyId: {{ section.settings.klaviyo_public_key | json }}, listId: {{ section.settings.klaviyo_list_id | json }} },
+      webhook: { url: {{ section.settings.webhook_url | json }} },
+      consent: { mode: {{ section.settings.consent_mode | json }}, privacyUrl: {{ section.settings.privacy_url | default: shop.privacy_policy.url | json }} }
+    },
+    shop: {
+      productCards: {{ section.settings.product_cards | json }},
+      addToCart: {{ section.settings.add_to_cart | json }},
+      currency: {{ cart.currency.iso_code | json }},
+      root: {{ routes.root_url | remove_last: '/' | json }}
+    }
+  };
+</script>
+<script src="{{ 'scepter-quiz.js' | asset_url }}" defer></script>
+{% schema %}
+{
+  "name": "Scepter quiz",
+  "tag": "section",
+  "class": "section-scepter-quiz",
+  "settings": [
+    {
+      "type": "select",
+      "id": "quiz",
+      "label": "Quiz",
+      "options": [
+        {
+          "value": "gift-finder",
+          "label": "Find a Book for Someone You Love"
+        },
+        {
+          "value": "next-step",
+          "label": "Find Your Next Step"
+        }
+      ],
+      "default": "gift-finder"
+    },
+    {
+      "type": "header",
+      "content": "Email sign-up"
+    },
+    {
+      "type": "select",
+      "id": "provider",
+      "label": "Send sign-ups to",
+      "default": "shopify",
+      "options": [
+        {
+          "value": "shopify",
+          "label": "Shopify customers (tags)"
+        },
+        {
+          "value": "klaviyo",
+          "label": "Klaviyo"
+        },
+        {
+          "value": "webhook",
+          "label": "Webhook (Zapier, Make, other)"
+        },
+        {
+          "value": "demo",
+          "label": "Nowhere (test mode)"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "klaviyo_public_key",
+      "label": "Klaviyo public API key (site ID)",
+      "info": "Six characters, from Klaviyo > Settings > API keys. Only for Klaviyo."
+    },
+    {
+      "type": "text",
+      "id": "klaviyo_list_id",
+      "label": "Klaviyo list ID",
+      "info": "The list quiz sign-ups join. Only for Klaviyo."
+    },
+    {
+      "type": "text",
+      "id": "webhook_url",
+      "label": "Webhook URL",
+      "info": "Only for Webhook."
+    },
+    {
+      "type": "select",
+      "id": "consent_mode",
+      "label": "Email consent",
+      "default": "notice",
+      "options": [
+        {
+          "value": "notice",
+          "label": "Notice under the button (US)"
+        },
+        {
+          "value": "checkbox",
+          "label": "Unticked checkbox (EU/UK, Canada)"
+        }
+      ]
+    },
+    {
+      "type": "url",
+      "id": "privacy_url",
+      "label": "Privacy policy link",
+      "info": "Defaults to the shop privacy policy."
+    },
+    {
+      "type": "header",
+      "content": "Books"
+    },
+    {
+      "type": "checkbox",
+      "id": "product_cards",
+      "label": "Show covers and prices from the store",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "add_to_cart",
+      "label": "Show Add to cart buttons",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Look"
+    },
+    {
+      "type": "checkbox",
+      "id": "house_fonts",
+      "label": "Use the quiz fonts (EB Garamond, Cinzel)",
+      "default": true,
+      "info": "Untick to use the theme fonts."
+    },
+    {
+      "type": "color",
+      "id": "accent",
+      "label": "Accent colour",
+      "info": "Buttons and the free-ebook panel. Leave empty for house green."
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "label": "Space above and below",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Scepter quiz"
+    }
+  ]
+}
+{% endschema %}

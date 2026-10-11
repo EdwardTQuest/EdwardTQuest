@@ -1,0 +1,2538 @@
+<title>Scepter Reader Quizzes</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+:root { color-scheme: light; }
+html, body { background: #efeae1; }
+body { margin: 0; padding-inline: 16px; padding-block: 1.5rem 3rem; color: #17201a; font-family: "EB Garamond", Georgia, serif; }
+.pv { max-width: 44rem; margin-inline: auto; display: grid; gap: 1rem; }
+.pv-head { display: grid; gap: 0.35rem; }
+.pv-kicker { font-family: "Cinzel", Georgia, serif; font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase; color: #8c7648; margin: 0; }
+.pv-head h1 { margin: 0; font-weight: 500; font-size: 1.6rem; line-height: 1.15; }
+.pv-head p { margin: 0; color: #57604f; font-size: 1.02rem; max-width: 40rem; }
+.pv-tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5rem; }
+.pv-tab { display: grid; gap: 0.1rem; text-align: left; padding: 0.6rem 0.8rem; border: 1px solid #ddd5c3; border-radius: 6px; background: #f8f5ee; color: #17201a; font: inherit; cursor: pointer; }
+.pv-tab-name { font-size: 1.05rem; line-height: 1.2; }
+.pv-tab-sub { font-size: 0.88rem; color: #57604f; }
+.pv-tab[aria-selected="true"] { background: #0a2416; border-color: #0a2416; color: #f4f1ed; }
+.pv-tab[aria-selected="true"] .pv-tab-sub { color: #c9ae7c; }
+.pv-tab:focus-visible { outline: 3px solid #b8862b; outline-offset: 2px; }
+@media (max-width: 30rem) { .pv-tabs { grid-template-columns: 1fr; } }
+/* Scepter quiz: styles. Everything is scoped under .sq and driven by the tokens below, so the
+ * quiz can sit inside any Shopify theme. Override a token on .sq (or a parent) to re-brand:
+ *   .sq { --sq-accent: #7a1f2b; --sq-font-body: inherit; }
+ * Defaults are the Athanasius house palette (house green, sand, paper) and faces
+ * (EB Garamond, Cinzel for small capitals), the same ones the book covers use.
+ */
+.sq {
+  --sq-page: #f4f1ed;
+  --sq-surface: #fffdf8;
+  --sq-ink: #17201a;
+  --sq-muted: #57604f;
+  --sq-line: #ddd5c3;
+  --sq-line-strong: #b9ad93;
+  --sq-accent: #0a2416;
+  --sq-accent-hover: #163b26;
+  --sq-accent-ink: #f4f1ed;
+  --sq-sand: #8c7648;
+  --sq-sand-light: #e8d3a0;
+  --sq-panel: #0a2416;
+  --sq-panel-ink: #ede3ce;
+  --sq-panel-muted: #c9ae7c;
+  --sq-error: #9b2c1f;
+  --sq-focus: #b8862b;
+  --sq-radius: 6px;
+  --sq-font-body: "EB Garamond", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --sq-font-caps: "Cinzel", "Trajan Pro", "EB Garamond", Georgia, serif;
+  --sq-font-ui: "EB Garamond", "Iowan Old Style", Georgia, serif;
+  --sq-size: 1.125rem;
+  --sq-max: 44rem;
+
+  box-sizing: border-box;
+  max-width: var(--sq-max);
+  margin-inline: auto;
+  color: var(--sq-ink);
+  font-family: var(--sq-font-body);
+  font-size: var(--sq-size);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+.sq *, .sq *::before, .sq *::after { box-sizing: inherit; }
+.sq p, .sq h2, .sq h3, .sq h4, .sq ul, .sq ol, .sq fieldset, .sq legend { margin: 0; padding: 0; }
+.sq ul, .sq ol { list-style: none; }
+.sq [hidden] { display: none !important; }
+
+.sq-shell {
+  background: var(--sq-surface);
+  border: 1px solid var(--sq-line);
+  border-radius: var(--sq-radius);
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+}
+.sq-screen { display: grid; gap: 1.25rem; }
+.sq-live { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---- type ------------------------------------------------------------------------------------ */
+.sq-eyebrow {
+  font-family: var(--sq-font-caps);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sq-sand);
+}
+.sq-title {
+  font-family: var(--sq-font-body);
+  font-weight: 500;
+  font-size: clamp(1.9rem, 5vw, 2.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.005em;
+  text-wrap: balance;
+}
+.sq-tagline { font-style: italic; font-size: 1.2rem; color: var(--sq-muted); margin-top: -0.5rem !important; }
+.sq-lede, .sq-portrait { display: grid; gap: 0.75rem; max-width: 36rem; }
+.sq-lede p:first-child { font-size: 1.2rem; }
+.sq-h3 { font-weight: 500; font-size: 1.45rem; line-height: 1.2; text-wrap: balance; }
+.sq-help { color: var(--sq-muted); font-size: 1rem; }
+.sq-fine { color: var(--sq-muted); font-size: 0.9rem; line-height: 1.45; }
+.sq-fine a, .sq-consent a { color: inherit; }
+.sq-error { color: var(--sq-error); font-size: 0.98rem; }
+
+.sq-facts { display: flex; flex-wrap: wrap; gap: 0.4rem 1.25rem; color: var(--sq-muted); font-size: 1rem; }
+.sq-facts li { display: flex; align-items: baseline; gap: 0.5rem; }
+.sq-facts li::before { content: ""; width: 0.4rem; height: 0.4rem; transform: rotate(45deg) translateY(-0.1rem); background: var(--sq-sand); flex: none; }
+
+/* ---- buttons --------------------------------------------------------------------------------- */
+.sq-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; }
+.sq-spacer { flex: 1 1 auto; }
+.sq-btn {
+  -webkit-appearance: none; appearance: none;
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem;
+  min-height: 2.9rem;
+  padding: 0.55rem 1.3rem;
+  border: 1px solid var(--sq-line-strong);
+  border-radius: var(--sq-radius);
+  background: transparent;
+  color: var(--sq-ink);
+  font-family: var(--sq-font-ui);
+  font-size: 1.05rem;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s, transform 0.15s;
+}
+.sq-btn:hover { border-color: var(--sq-ink); }
+.sq-btn:disabled { opacity: 0.6; cursor: progress; }
+.sq-btn-primary { background: var(--sq-accent); border-color: var(--sq-accent); color: var(--sq-accent-ink); }
+.sq-btn-primary:hover { background: var(--sq-accent-hover); border-color: var(--sq-accent-hover); }
+.sq-question .sq-btn-primary:not(.sq-ready) { background: transparent; color: var(--sq-ink); border-color: var(--sq-line-strong); }
+.sq-btn-quiet { border-color: transparent; color: var(--sq-muted); padding-inline: 0.6rem; }
+.sq-btn-quiet:hover { color: var(--sq-ink); border-color: var(--sq-line); }
+.sq-btn-link { border: 0; min-height: 2.2rem; padding: 0.2rem 0.3rem; color: var(--sq-muted); text-decoration: underline; text-underline-offset: 0.18em; }
+.sq-btn-link:hover { color: var(--sq-ink); }
+.sq-btn-small { min-height: 2.4rem; padding: 0.35rem 0.95rem; font-size: 0.98rem; }
+.sq-btn-wide { width: 100%; }
+
+.sq :focus-visible { outline: 3px solid var(--sq-focus); outline-offset: 2px; }
+.sq [tabindex="-1"]:focus { outline: none; }
+
+/* ---- progress -------------------------------------------------------------------------------- */
+.sq-progress { display: grid; gap: 0.45rem; }
+.sq-progress-text { font-family: var(--sq-font-caps); font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sq-sand); font-variant-numeric: tabular-nums; }
+.sq-bar { display: block; height: 3px; background: var(--sq-line); border-radius: 3px; overflow: hidden; }
+.sq-bar-fill { display: block; height: 100%; background: var(--sq-accent); transition: width 0.3s ease; }
+
+/* ---- a question ------------------------------------------------------------------------------ */
+.sq-fieldset { border: 0; min-width: 0; display: grid; gap: 0.9rem; }
+.sq-prompt { font-weight: 500; font-size: clamp(1.45rem, 4vw, 1.85rem); line-height: 1.2; text-wrap: balance; float: left; width: 100%; }
+.sq-prompt + * { clear: both; }
+.sq-options { display: grid; gap: 0.6rem; }
+@media (min-width: 34rem) {
+  .sq-options.sq-cols-2 { grid-template-columns: 1fr 1fr; }
+  .sq-options.sq-cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+}
+.sq-option { position: relative; }
+.sq-input { position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; }
+.sq-option-label {
+  display: grid;
+  grid-template-columns: 1.35rem 1fr;
+  column-gap: 0.85rem;
+  align-items: start;
+  min-height: 3.25rem;
+  height: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--sq-line);
+  border-radius: var(--sq-radius);
+  background: var(--sq-surface);
+  cursor: pointer;
+  transition: border-color 0.15s, background-color 0.15s, box-shadow 0.15s;
+}
+.sq-option-label::before {
+  content: "";
+  grid-row: 1 / span 2;
+  width: 1.35rem; height: 1.35rem;
+  margin-top: 0.1rem;
+  border: 1.5px solid var(--sq-line-strong);
+  border-radius: 50%;
+  background: var(--sq-surface);
+  transition: border-color 0.15s, box-shadow 0.15s, background-color 0.15s;
+}
+.sq-input[type="checkbox"] + .sq-option-label::before { border-radius: 4px; }
+.sq-option-text { font-size: 1.12rem; line-height: 1.3; }
+.sq-option-sub { grid-column: 2; color: var(--sq-muted); font-size: 0.97rem; line-height: 1.35; margin-top: 0.15rem; }
+.sq-option-label:hover { border-color: var(--sq-line-strong); background: #fffaf0; }
+.sq-input:checked + .sq-option-label { border-color: var(--sq-accent); box-shadow: inset 0 0 0 1px var(--sq-accent); background: #f7f4ea; }
+.sq-input:checked + .sq-option-label::before { border-color: var(--sq-accent); background: var(--sq-accent); box-shadow: inset 0 0 0 3.5px var(--sq-surface); }
+.sq-input[type="checkbox"]:checked + .sq-option-label::before {
+  box-shadow: none;
+  background: var(--sq-accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-7' fill='none' stroke='%23f4f1ed' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 80% no-repeat;
+}
+.sq-input:focus-visible + .sq-option-label { outline: 3px solid var(--sq-focus); outline-offset: 2px; }
+.sq-nav { padding-top: 0.25rem; border-top: 1px solid var(--sq-line); padding-top: 1rem; }
+
+/* ---- result ---------------------------------------------------------------------------------- */
+.sq-result { gap: 2rem; }
+.sq-result-head { display: grid; gap: 0.9rem; }
+.sq-portrait p { font-size: 1.12rem; }
+.sq-notes { display: grid; gap: 0.5rem; max-width: 36rem; }
+.sq-note { padding: 0.65rem 0.9rem; border-radius: var(--sq-radius); background: var(--sq-page); color: var(--sq-muted); font-size: 1rem; line-height: 1.45; }
+.sq-basis { display: flex; flex-wrap: wrap; align-items: center; gap: 0.45rem 0.6rem; padding-top: 0.25rem; font-size: 0.95rem; color: var(--sq-muted); }
+.sq-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.sq-chips li { padding: 0.12rem 0.6rem; border: 1px solid var(--sq-line); border-radius: 999px; background: var(--sq-page); color: var(--sq-ink); font-size: 0.92rem; }
+
+.sq-plan { display: grid; gap: 0.75rem; }
+.sq-steps { display: grid; gap: 0.85rem; }
+.sq-steps li { display: grid; grid-template-columns: 1.1rem 1fr; column-gap: 0.7rem; align-items: baseline; }
+.sq-steps li::before {
+  content: "";
+  grid-row: 1 / span 2;
+  width: 0.45rem; height: 0.45rem;
+  margin-left: 0.3rem;
+  transform: rotate(45deg) translateY(-0.12rem);
+  background: var(--sq-sand);
+}
+.sq-steps strong { font-weight: 600; }
+
+/* the free ebook: the one panel on the house green, like the back of a house cover */
+.sq-capture {
+  display: grid;
+  gap: 1.25rem;
+  background: var(--sq-panel);
+  color: var(--sq-panel-ink);
+  border-radius: var(--sq-radius);
+  padding: clamp(1.25rem, 4vw, 2rem);
+}
+@media (min-width: 40rem) { .sq-capture { grid-template-columns: 1fr 1fr; column-gap: 2rem; align-items: start; } }
+.sq-capture .sq-eyebrow { color: var(--sq-panel-muted); }
+.sq-capture-head { display: grid; gap: 0.55rem; }
+.sq-capture-title { font-weight: 500; font-size: 1.6rem; line-height: 1.15; text-wrap: balance; color: #fffaf0; }
+.sq-capture .sq-book-author { color: var(--sq-panel-muted); }
+.sq-capture-blurb { display: grid; gap: 0.5rem; font-size: 1.05rem; }
+.sq-promise { font-size: 0.98rem; color: var(--sq-panel-muted); font-style: italic; }
+.sq-capture-form { display: grid; gap: 0.85rem; }
+.sq-fields { display: grid; gap: 0.75rem; }
+.sq-field-row { display: grid; gap: 0.3rem; }
+.sq-field-row label { font-size: 0.98rem; }
+.sq-optional { color: var(--sq-panel-muted); font-size: 0.9rem; }
+.sq-field {
+  width: 100%;
+  min-height: 2.9rem;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid #3c5a47;
+  border-radius: var(--sq-radius);
+  background: #fffdf8;
+  color: var(--sq-ink);
+  font-family: var(--sq-font-ui);
+  font-size: 1.08rem;
+}
+.sq-field[aria-invalid="true"] { border-color: #f0a58f; box-shadow: 0 0 0 2px #f0a58f; }
+.sq-capture .sq-error { color: #ffc2b0; }
+.sq-capture .sq-fine, .sq-capture .sq-consent { color: var(--sq-panel-muted); }
+.sq-consent-box { display: grid; grid-template-columns: 1.2rem 1fr; gap: 0.6rem; align-items: start; font-size: 0.95rem; }
+.sq-check { width: 1.2rem; height: 1.2rem; margin: 0.15rem 0 0; accent-color: var(--sq-sand-light); }
+.sq-capture .sq-btn-primary { background: var(--sq-sand-light); border-color: var(--sq-sand-light); color: var(--sq-panel); font-weight: 600; }
+.sq-capture .sq-btn-primary:hover { background: #f3e2b8; border-color: #f3e2b8; }
+.sq-capture .sq-btn-quiet { color: var(--sq-panel-ink); border-color: #3c5a47; }
+.sq-guardian { font-size: 0.98rem; padding: 0.6rem 0.8rem; border: 1px solid #3c5a47; border-radius: var(--sq-radius); }
+.sq-frame-host iframe { width: 100%; min-height: 26rem; border: 0; border-radius: var(--sq-radius); background: #fff; }
+.sq-done { display: grid; gap: 0.75rem; align-content: start; }
+.sq-done-title { font-weight: 500; font-size: 1.35rem; line-height: 1.2; color: #fffaf0; }
+.sq-done .sq-btn { justify-self: start; }
+.sq-demo { font-size: 0.85rem; color: var(--sq-panel-muted); }
+.sq-demo summary { cursor: pointer; }
+.sq-demo pre { max-height: 18rem; overflow: auto; margin: 0.5rem 0 0; padding: 0.75rem; background: #05130c; color: #e8d3a0; border-radius: 4px; font-size: 0.78rem; line-height: 1.4; white-space: pre-wrap; word-break: break-word; }
+
+.sq-books { display: grid; gap: 0.9rem; }
+.sq-book-list { display: grid; gap: 1rem; }
+.sq-book {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--sq-line);
+}
+.sq-book-cover {
+  aspect-ratio: 2 / 3;
+  max-width: 100%;
+  display: grid;
+  place-items: center;
+  padding: 0.5rem;
+  border-radius: 3px;
+  background: var(--sq-panel);
+  color: var(--sq-panel-muted);
+  box-shadow: inset 0 0 0 3px var(--sq-panel), inset 0 0 0 4px #3c5a47;
+  font-family: var(--sq-font-caps);
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+  line-height: 1.3;
+  text-align: center;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+.sq-book-cover span { display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; }
+.sq-book-cover.sq-has-image { padding: 0; background: var(--sq-page); box-shadow: 0 1px 3px rgba(0,0,0,.18); }
+.sq-book-cover img { width: 100%; height: 100%; object-fit: cover; }
+.sq-book-body { display: grid; gap: 0.35rem; align-content: start; min-width: 0; }
+.sq-book-title { font-weight: 600; font-size: 1.18rem; line-height: 1.2; }
+.sq-book-author { color: var(--sq-muted); font-style: italic; font-size: 1rem; }
+.sq-why { display: flex; flex-wrap: wrap; gap: 0.3rem; margin: 0.15rem 0 !important; }
+.sq-why li { font-size: 0.86rem; padding: 0.05rem 0.5rem; border-radius: 999px; background: #efe7d3; color: #4d4228; }
+.sq-book-blurb { font-size: 1rem; }
+.sq-price { font-variant-numeric: tabular-nums; color: var(--sq-muted); }
+.sq-book-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; padding-top: 0.25rem; }
+
+.sq-result-foot { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; padding-top: 1rem; border-top: 1px solid var(--sq-line); }
+
+@media (max-width: 30rem) {
+  .sq { --sq-size: 1.0625rem; }
+  .sq-book { grid-template-columns: 4.25rem 1fr; gap: 0.8rem; }
+  .sq-nav .sq-btn-primary { flex: 1 1 auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sq *, .sq *::before, .sq *::after { transition: none !important; animation: none !important; }
+}
+
+</style>
+<div class="pv">
+  <header class="pv-head">
+    <p class="pv-kicker">Scepter Publishers · preview</p>
+    <h1>Reader quizzes with a free ebook</h1>
+    <p>Take either quiz as a reader would. Results appear without signing up; the email form is in preview mode, so nothing is sent and you can see exactly what your email system would receive.</p>
+  </header>
+  <div class="pv-tabs" role="tablist" aria-label="Quizzes">
+    <button type="button" class="pv-tab" role="tab" id="pv-tab-gift-finder" aria-controls="pv-panel-gift-finder" aria-selected="true" data-quiz="gift-finder"><span class="pv-tab-name">Find a Book for Someone You Love</span><span class="pv-tab-sub">As a gift · about 1 minute</span></button>
+    <button type="button" class="pv-tab" role="tab" id="pv-tab-next-step" aria-controls="pv-panel-next-step" aria-selected="false" data-quiz="next-step"><span class="pv-tab-name">Find Your Next Step</span><span class="pv-tab-sub">For yourself · about 3 minutes</span></button>
+  </div>
+  <div class="pv-panel" role="tabpanel" id="pv-panel-gift-finder" aria-labelledby="pv-tab-gift-finder"><div data-scepter-quiz="gift-finder"></div></div>
+  <div class="pv-panel" role="tabpanel" id="pv-panel-next-step" aria-labelledby="pv-tab-next-step" hidden><div data-scepter-quiz="next-step"></div></div>
+</div>
+<script>
+window.SCEPTER_QUIZ_SETTINGS = window.SCEPTER_QUIZ_SETTINGS || { capture: { provider: 'demo' } };
+</script>
+<script>
+/* quiz/src/core.js */
+/* Scepter quiz engine: the pure part. No DOM, no network.
+ *
+ * A quiz is a config object (quizzes/*.js). Each answer option can:
+ *   score: { stage: { growing: 2 }, need: { prayer: 3 } }   add points to a dimension
+ *   value: { level: 3 }                                      push a number (averaged by derive())
+ *   set:   { age: '25-34' }                                  set a profile field outright
+ * computeProfile() turns answers into one profile: age band, stage, top needs, and the rest.
+ * recommend() ranks catalog items (books, free booklets) against that profile and says why.
+ * Runs in the browser (window.ScepterQuiz) and in Node for the tests (globalThis.ScepterQuiz).
+ */
+(function (root) {
+  'use strict';
+  var SQ = root.ScepterQuiz = root.ScepterQuiz || {};
+  SQ.data = SQ.data || {};
+  SQ.quizzes = SQ.quizzes || {};
+
+  function asList(v) { return v == null ? [] : Array.isArray(v) ? v : [v]; }
+  function ids(list) { return (list || []).map(function (x) { return x.id; }); }
+
+  // ---- definition and validation -------------------------------------------------------------
+
+  SQ.define = function (quiz) {
+    var problems = SQ.validate(quiz);
+    if (problems.length) throw new Error('ScepterQuiz "' + quiz.id + '": ' + problems.join('; '));
+    SQ.quizzes[quiz.id] = quiz;
+    return quiz;
+  };
+
+  // Catch config mistakes at load time, not in front of a reader.
+  SQ.validate = function (quiz) {
+    var out = [], seg = SQ.data.segments || {};
+    var stages = ids(seg.stages), needs = ids(seg.needs), ages = ids(seg.ages);
+    if (!quiz || !quiz.id) return ['missing id'];
+    if (!Array.isArray(quiz.questions) || !quiz.questions.length) out.push('no questions');
+    var qids = {};
+    (quiz.questions || []).forEach(function (q) {
+      if (!q.id) { out.push('a question has no id'); return; }
+      if (qids[q.id]) out.push('duplicate question id ' + q.id);
+      qids[q.id] = true;
+      if (!q.options || !q.options.length) out.push(q.id + ' has no options');
+      var oids = {};
+      (q.options || []).forEach(function (o) {
+        if (oids[o.id]) out.push(q.id + ' duplicate option ' + o.id);
+        oids[o.id] = true;
+        var sc = o.score || {};
+        Object.keys(sc.stage || {}).forEach(function (k) { if (stages.length && stages.indexOf(k) < 0) out.push(q.id + '.' + o.id + ' unknown stage ' + k); });
+        Object.keys(sc.need || {}).forEach(function (k) { if (needs.length && needs.indexOf(k) < 0) out.push(q.id + '.' + o.id + ' unknown need ' + k); });
+        var st = o.set || {};
+        if (st.age && ages.length && ages.indexOf(st.age) < 0) out.push(q.id + '.' + o.id + ' unknown age ' + st.age);
+        if (st.stage && stages.length && stages.indexOf(st.stage) < 0) out.push(q.id + '.' + o.id + ' unknown stage ' + st.stage);
+      });
+      if (q.showIf) Object.keys(q.showIf).forEach(function (dep) {
+        if (!qids[dep]) out.push(q.id + ' showIf refers to ' + dep + ', which is not an earlier question');
+      });
+    });
+    return out;
+  };
+
+  // ---- answers -> profile ----------------------------------------------------------------------
+
+  // showIf: { questionId: ['optionId', ...] } — shown when any listed option was chosen.
+  function shown(q, answers) {
+    if (!q.showIf) return true;
+    return Object.keys(q.showIf).every(function (dep) {
+      var picked = asList(answers[dep]);
+      return asList(q.showIf[dep]).some(function (o) { return picked.indexOf(o) >= 0; });
+    });
+  }
+
+  function visibleQuestions(quiz, answers) {
+    return quiz.questions.filter(function (q) { return shown(q, answers || {}); });
+  }
+
+  // How many screens a reader may still see, assuming a question whose trigger has not been
+  // answered yet could appear. The number only ever goes down as answers narrow the path, and
+  // questions marked with the same `group` (alternatives of one another) count once.
+  function estimateTotal(quiz, answers) {
+    var groups = {}, n = 0;
+    quiz.questions.forEach(function (q) {
+      var possible = !q.showIf || Object.keys(q.showIf).every(function (dep) {
+        var picked = asList(answers[dep]);
+        if (!picked.length) return true;
+        return asList(q.showIf[dep]).some(function (o) { return picked.indexOf(o) >= 0; });
+      });
+      if (!possible) return;
+      if (q.group) { if (groups[q.group]) return; groups[q.group] = true; }
+      n++;
+    });
+    return n;
+  }
+
+  function tally(quiz, answers) {
+    var scores = {}, values = {}, sets = {};
+    visibleQuestions(quiz, answers).forEach(function (q) {
+      var w = q.weight == null ? 1 : q.weight;
+      asList(answers[q.id]).forEach(function (oid) {
+        var o = q.options.filter(function (x) { return x.id === oid; })[0];
+        if (!o) return;
+        Object.keys(o.score || {}).forEach(function (dim) {
+          scores[dim] = scores[dim] || {};
+          Object.keys(o.score[dim]).forEach(function (k) {
+            scores[dim][k] = (scores[dim][k] || 0) + o.score[dim][k] * w;
+          });
+        });
+        Object.keys(o.value || {}).forEach(function (dim) {
+          (values[dim] = values[dim] || []).push(o.value[dim]);
+        });
+        Object.keys(o.set || {}).forEach(function (k) {
+          if (q.type === 'multi') sets[k] = asList(sets[k]).concat(asList(o.set[k]));
+          else sets[k] = o.set[k];
+        });
+      });
+    });
+    return { scores: scores, values: values, sets: sets };
+  }
+
+  // Keys by score, highest first; ties go to the earlier key in `order`.
+  function rank(scores, order) {
+    order = order || [];
+    return Object.keys(scores || {}).sort(function (a, b) {
+      var d = scores[b] - scores[a];
+      if (d) return d;
+      var ia = order.indexOf(a), ib = order.indexOf(b);
+      return (ia < 0 ? 999 : ia) - (ib < 0 ? 999 : ib);
+    });
+  }
+
+  function mean(xs) {
+    if (!xs || !xs.length) return null;
+    return xs.reduce(function (s, x) { return s + x; }, 0) / xs.length;
+  }
+
+  function computeProfile(quiz, answers) {
+    var seg = SQ.data.segments || {};
+    var stageOrder = ids(seg.stages), needOrder = ids(seg.needs);
+    var t = tally(quiz, answers || {});
+    var stageScores = t.scores.stage || {};
+    var needScores = t.scores.need || {};
+    var p = {
+      quiz: quiz.id,
+      recipient: t.sets.recipient || 'self',
+      age: t.sets.age || 'unknown',
+      life: t.sets.life || null,
+      stage: t.sets.stage || rank(stageScores, stageOrder)[0] || quiz.defaultStage || stageOrder[0] || null,
+      needs: rank(needScores, needOrder).filter(function (k) { return needScores[k] > 0; }),
+      format: t.sets.format || null,
+      lang: t.sets.lang || 'en',
+      extras: {},
+      scores: t.scores,
+      values: t.values,
+      sets: t.sets
+    };
+    if (typeof quiz.derive === 'function') p = quiz.derive(p, answers || {}, t, SQ.core) || p;
+    // Every profile leaves with at least one need, so every result has something to offer.
+    if (!p.needs.length) {
+      var st = (seg.stages || []).filter(function (s) { return s.id === p.stage; })[0];
+      if (st && st.defaultNeed) p.needs = [st.defaultNeed];
+    }
+    p.needs = p.needs.slice(0, quiz.maxNeeds || 3);
+    return p;
+  }
+
+  // ---- ranking catalog items -------------------------------------------------------------------
+
+  var W = {
+    stage: 6,        // written for exactly this stage
+    stageNear: 2,    // written for the stage either side
+    need: [8, 5, 3], // first, second, third need
+    age: 3,
+    ageMiss: -6,     // written for a different age group (e.g. a children's book for a retiree)
+    format: 2,
+    lang: 12,
+    langMiss: -30,
+    life: 3,
+    audience: 8,     // a children's or teens' book for exactly that age group
+    priority: 1      // item.priority 0..3: flagship titles win ties
+  };
+
+  function stageIndex(id) { return ids((SQ.data.segments || {}).stages).indexOf(id); }
+
+  function isMinor(age) {
+    var a = ((SQ.data.segments || {}).ages || []).filter(function (x) { return x.id === age; })[0];
+    return !!(a && a.minor);
+  }
+
+  // Children's and teen books go to the right hands only: a parent of that age group, a reader of
+  // that age, or someone buying a gift for one. Everything else is an adult book.
+  function eligible(item, p) {
+    var aud = item.audience;
+    if (!aud) return true;
+    var who = SQ.data.segments && SQ.data.segments.audiences && SQ.data.segments.audiences[aud];
+    if (!who) return true;
+    var gift = p.recipient && p.recipient !== 'self';
+    if (asList(who.ages).indexOf(p.age) >= 0) return true;
+    if (!gift && asList(who.life).indexOf(p.life) >= 0) return true;
+    return false;
+  }
+
+  // Score one item and collect the reasons a reader would recognise.
+  function scoreItem(item, p, weights) {
+    var w = weights || W, s = 0, why = [];
+    if (item.audience) {
+      var who = (SQ.data.segments && SQ.data.segments.audiences || {})[item.audience];
+      if (who && asList(who.ages).indexOf(p.age) >= 0) { s += w.audience; why.push({ kind: 'audience', id: item.audience }); }
+    }
+    var st = asList(item.stages), nd = asList(item.needs), ag = asList(item.ages);
+    if (p.stage && st.indexOf(p.stage) >= 0) { s += w.stage; why.push({ kind: 'stage', id: p.stage }); }
+    else if (p.stage && st.some(function (x) { return Math.abs(stageIndex(x) - stageIndex(p.stage)) === 1; })) s += w.stageNear;
+    (p.needs || []).forEach(function (n, i) {
+      if (nd.indexOf(n) >= 0) { s += w.need[Math.min(i, w.need.length - 1)]; why.push({ kind: 'need', id: n }); }
+    });
+    if (ag.length && ag.indexOf('all') < 0 && p.age && p.age !== 'unknown') {
+      if (ag.indexOf(p.age) >= 0) { s += w.age; why.push({ kind: 'age', id: p.age }); }
+      else s += w.ageMiss;
+    }
+    if (p.life && asList(item.life).indexOf(p.life) >= 0) { s += w.life; why.push({ kind: 'life', id: p.life }); }
+    if (p.format && item.format === p.format) { s += w.format; why.push({ kind: 'format', id: p.format }); }
+    var lang = item.lang || 'en';
+    if (p.lang && p.lang !== 'en') s += lang === p.lang ? w.lang : 0;
+    else if (lang !== 'en') s += w.langMiss;
+    s += (item.priority || 0) * w.priority;
+    return { item: item, score: s, reasons: why };
+  }
+
+  // Top `count` items, spread across authors and needs so three picks are not one book thrice.
+  function recommend(items, p, opts) {
+    opts = opts || {};
+    var count = opts.count || 3, exclude = opts.exclude || [];
+    var pool = (items || []).filter(function (it) {
+      return exclude.indexOf(it.id) < 0 && eligible(it, p) && (!opts.filter || opts.filter(it, p));
+    }).map(function (it, i) { var r = scoreItem(it, p, opts.weights); r.order = i; return r; });
+    var picked = [];
+    while (picked.length < count && pool.length) {
+      pool.forEach(function (r) {
+        var pen = 0;
+        picked.forEach(function (q) {
+          if (q.item.author && q.item.author === r.item.author) pen += 5;
+          if (q.item.series && q.item.series === r.item.series) pen += 8;
+          var qn = q.reasons.filter(function (x) { return x.kind === 'need'; }).map(function (x) { return x.id; });
+          var rn = r.reasons.filter(function (x) { return x.kind === 'need'; }).map(function (x) { return x.id; });
+          if (rn.length && rn.every(function (n) { return qn.indexOf(n) >= 0; })) pen += 2;
+        });
+        r.adj = r.score - pen;
+      });
+      pool.sort(function (a, b) { return (b.adj - a.adj) || (a.order - b.order); });
+      picked.push(pool.shift());
+    }
+    return picked;
+  }
+
+  // ---- what leaves the page --------------------------------------------------------------------
+
+  function slug(s) { return String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
+
+  // Tags for systems that only take tags (Shopify customers, Mailchimp). Short and stable.
+  function tagsFor(p, extra) {
+    var gift = p.recipient && p.recipient !== 'self';
+    var pre = gift ? 'gift-' : '';
+    var t = ['quiz-' + slug(p.quiz)];
+    if (gift) t.push('gift-buyer');
+    if (p.age && p.age !== 'unknown') t.push(pre + 'age-' + slug(p.age));
+    if (p.stage && !(gift && p.age === 'child')) t.push(pre + 'stage-' + slug(p.stage));
+    (p.needs || []).forEach(function (n) { t.push(pre + 'need-' + slug(n)); });
+    if (p.life) t.push(pre + 'life-' + slug(p.life));
+    if (p.lang && p.lang !== 'en') t.push('lang-' + slug(p.lang));
+    if (!gift && isMinor(p.age)) t.push('guardian-signup');
+    return t.concat(asList(extra));
+  }
+
+  // Profile properties for systems that take key/value data (Klaviyo, a webhook).
+  function propertiesFor(p, ctx) {
+    ctx = ctx || {};
+    var gift = p.recipient && p.recipient !== 'self';
+    var props = {
+      scepter_quiz: p.quiz,
+      scepter_quiz_completed_at: ctx.now || null,
+      scepter_reader: gift ? 'someone-else' : 'self',
+      scepter_age_band: gift ? null : p.age,
+      scepter_stage: gift ? null : p.stage,
+      scepter_needs: gift ? null : (p.needs || []),
+      scepter_life_season: gift ? null : p.life,
+      scepter_language: p.lang || 'en',
+      scepter_reading_format: p.format || null,
+      scepter_free_ebook: ctx.magnet ? ctx.magnet.id : null,
+      scepter_recommended: (ctx.recs || []).map(function (r) { return r.item.id; })
+    };
+    if (gift) {
+      props.scepter_gift_age_band = p.age;
+      if (p.age !== 'child') props.scepter_gift_stage = p.stage;
+      props.scepter_gift_needs = p.needs || [];
+    }
+    if (!gift && isMinor(p.age)) props.scepter_guardian_signup = true;
+    Object.keys(p.extras || {}).forEach(function (k) { props['scepter_' + k] = p.extras[k]; });
+    Object.keys(props).forEach(function (k) { if (props[k] == null) delete props[k]; });
+    return props;
+  }
+
+  SQ.core = {
+    asList: asList,
+    visibleQuestions: visibleQuestions,
+    estimateTotal: estimateTotal,
+    shown: shown,
+    tally: tally,
+    rank: rank,
+    mean: mean,
+    computeProfile: computeProfile,
+    scoreItem: scoreItem,
+    eligible: eligible,
+    isMinor: isMinor,
+    recommend: recommend,
+    tagsFor: tagsFor,
+    propertiesFor: propertiesFor,
+    weights: W,
+    slug: slug
+  };
+})(typeof window !== 'undefined' ? window : globalThis);
+
+/* quiz/src/capture.js */
+/* Scepter quiz engine: where an email goes after a reader asks for the free ebook.
+ *
+ * One canonical payload (buildPayload) and one adapter per destination:
+ *   demo     nothing leaves the page; the payload is logged and kept in ScepterQuiz.lastCapture
+ *   klaviyo  Klaviyo client API: profile + properties, list subscription, "Completed Scepter Quiz" event
+ *   shopify  Shopify's own customer form (/contact, form_type=customer) with customer tags
+ *   webhook  JSON to any URL (Zapier, Make, n8n, Google Apps Script, your own server)
+ *   custom   window.ScepterQuizCapture(payload) — your own function, returns a promise
+ * Site settings live in window.SCEPTER_QUIZ_SETTINGS (see funnels/README.md).
+ */
+(function (root) {
+  'use strict';
+  var SQ = root.ScepterQuiz = root.ScepterQuiz || {};
+  var core = SQ.core;
+
+  function settings() {
+    var s = root.SCEPTER_QUIZ_SETTINGS || {};
+    s.capture = s.capture || {};
+    return s;
+  }
+
+  function utm() {
+    var out = {};
+    try {
+      var q = new URLSearchParams(root.location.search);
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(function (k) {
+        if (q.get(k)) out[k] = q.get(k);
+      });
+    } catch (e) { /* no location in tests */ }
+    return out;
+  }
+
+  // Human-readable answers: what the reader actually clicked, for a person reading the record.
+  function readableAnswers(quiz, answers) {
+    var out = {};
+    core.visibleQuestions(quiz, answers).forEach(function (q) {
+      var picked = core.asList(answers[q.id]);
+      if (!picked.length) return;
+      out[q.id] = picked.map(function (oid) {
+        var o = q.options.filter(function (x) { return x.id === oid; })[0];
+        return o ? o.label : oid;
+      });
+    });
+    return out;
+  }
+
+  function buildPayload(quiz, answers, profile, form, ctx) {
+    ctx = ctx || {};
+    var now = ctx.now || new Date().toISOString();
+    var magnet = ctx.magnet ? { id: ctx.magnet.id, title: ctx.magnet.title, url: ctx.magnet.url || null } : null;
+    var recs = ctx.recs || [];
+    return {
+      email: String(form.email || '').trim(),
+      first_name: String(form.firstName || '').trim() || null,
+      consent: !!form.consent,
+      consent_text: form.consentText || null,
+      guardian: !!form.guardian,
+      quiz: { id: quiz.id, title: quiz.meta && quiz.meta.title, version: quiz.version || 1 },
+      profile: {
+        recipient: profile.recipient, age: profile.age, stage: profile.stage, needs: profile.needs,
+        life: profile.life, format: profile.format, lang: profile.lang, extras: profile.extras
+      },
+      tags: core.tagsFor(profile, settings().capture.extraTags),
+      properties: core.propertiesFor(profile, { now: now, magnet: ctx.magnet, recs: recs }),
+      magnet: magnet,
+      recommendations: recs.map(function (r) { return { id: r.item.id, title: r.item.title, url: r.item.url || null }; }),
+      // Raw answers (Mass, Confession, prayer habits) are religious-practice data. They stay out of
+      // the record unless the site turns on capture.includeAnswers.
+      answers: settings().capture.includeAnswers ? readableAnswers(quiz, answers) : undefined,
+      page: root.location ? root.location.href : null,
+      referrer: root.document ? root.document.referrer || null : null,
+      utm: utm(),
+      submitted_at: now
+    };
+  }
+
+  // ---- adapters ------------------------------------------------------------------------------
+
+  function wait(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
+
+  var adapters = {};
+
+  adapters.demo = function (payload) {
+    SQ.lastCapture = payload;
+    try { root.console && root.console.info('[ScepterQuiz demo] would send:', payload); } catch (e) {}
+    return wait(500).then(function () { return { ok: true, provider: 'demo' }; });
+  };
+
+  adapters.custom = function (payload) {
+    if (typeof root.ScepterQuizCapture !== 'function') return Promise.reject(new Error('window.ScepterQuizCapture is not defined'));
+    return Promise.resolve(root.ScepterQuizCapture(payload)).then(function (r) { return r || { ok: true, provider: 'custom' }; });
+  };
+
+  // Klaviyo client API (public key only; safe in the browser).
+  adapters.klaviyo = function (payload, cfg) {
+    if (!cfg.companyId) return Promise.reject(new Error('Klaviyo companyId (public API key) is not set'));
+    var base = cfg.baseUrl || 'https://a.klaviyo.com/client/';
+    var q = '?company_id=' + encodeURIComponent(cfg.companyId);
+    var headers = {
+      Accept: 'application/vnd.api+json',
+      'Content-Type': 'application/vnd.api+json',
+      revision: cfg.revision || '2025-01-15'
+    };
+    function post(path, body) {
+      return fetch(base + path + q, { method: 'POST', headers: headers, body: JSON.stringify(body) }).then(function (res) {
+        if (!res.ok) return res.text().then(function (t) { throw new Error('Klaviyo ' + path + ' ' + res.status + ' ' + t.slice(0, 200)); });
+        return res;
+      });
+    }
+    var props = Object.assign({}, payload.properties, {
+      scepter_marketing_consent: payload.consent,
+      scepter_tags: payload.tags
+    });
+    var profileAttrs = { email: payload.email, properties: props };
+    if (payload.first_name) profileAttrs.first_name = payload.first_name;
+
+    var steps = [post('profiles', { data: { type: 'profile', attributes: profileAttrs } })];
+    if (payload.consent && cfg.listId) {
+      steps.push(post('subscriptions', {
+        data: {
+          type: 'subscription',
+          attributes: {
+            custom_source: 'Scepter quiz: ' + (payload.quiz.title || payload.quiz.id),
+            profile: { data: { type: 'profile', attributes: { email: payload.email } } }
+          },
+          relationships: { list: { data: { type: 'list', id: cfg.listId } } }
+        }
+      }));
+    }
+    // The event carries everything a flow needs to branch on: stage, age, needs, the ebook.
+    steps.push(post('events', {
+      data: {
+        type: 'event',
+        attributes: {
+          properties: Object.assign({}, props, {
+            quiz_title: payload.quiz.title,
+            free_ebook_title: payload.magnet && payload.magnet.title,
+            free_ebook_url: payload.magnet && payload.magnet.url,
+            recommended_titles: payload.recommendations.map(function (r) { return r.title; }),
+            recommended_urls: payload.recommendations.map(function (r) { return r.url; }),
+            answers: payload.answers,
+            page: payload.page
+          }),
+          metric: { data: { type: 'metric', attributes: { name: cfg.metricName || 'Completed Scepter Quiz' } } },
+          profile: { data: { type: 'profile', attributes: { email: payload.email } } }
+        }
+      }
+    }));
+    return Promise.all(steps).then(function () { return { ok: true, provider: 'klaviyo' }; });
+  };
+
+  // Shopify's own newsletter form, posted into a hidden same-origin iframe. Works only when the
+  // quiz is on the shop's own domain. If Shopify asks for a captcha, the iframe is shown so the
+  // reader can answer it; the ebook is already on screen either way.
+  adapters.shopify = function (payload, cfg, ui) {
+    if (!payload.consent) return Promise.resolve({ ok: true, provider: 'shopify', skipped: 'no marketing consent' });
+    var doc = root.document;
+    var name = 'sq-shopify-' + Math.random().toString(36).slice(2);
+    var frame = doc.createElement('iframe');
+    frame.name = name;
+    frame.title = 'Confirm your sign-up';
+    frame.className = 'sq-shopify-frame';
+    frame.hidden = true;
+    var form = doc.createElement('form');
+    form.method = 'post';
+    form.action = cfg.endpoint || '/contact#contact_form';
+    form.target = name;
+    form.hidden = true;
+    var fields = {
+      form_type: 'customer',
+      utf8: '✓',
+      'contact[email]': payload.email,
+      'contact[tags]': ['newsletter'].concat(payload.tags).join(','),
+      'contact[accepts_marketing]': 'true'
+    };
+    if (payload.first_name) fields['contact[first_name]'] = payload.first_name;
+    Object.keys(fields).forEach(function (k) {
+      var i = doc.createElement('input');
+      i.type = 'hidden'; i.name = k; i.value = fields[k];
+      form.appendChild(i);
+    });
+    var host = (ui && ui.frameHost) || doc.body;
+    host.appendChild(frame);
+    doc.body.appendChild(form);
+    return new Promise(function (resolve) {
+      var done = false;
+      function finish(r) { if (!done) { done = true; form.remove(); resolve(r); } }
+      frame.addEventListener('load', function () {
+        var href = '';
+        try { href = frame.contentWindow.location.href; } catch (e) { href = ''; }
+        if (/challenge/.test(href)) {
+          frame.hidden = false;
+          if (ui && ui.onChallenge) ui.onChallenge(frame);
+          finish({ ok: true, provider: 'shopify', challenge: true });
+        } else {
+          frame.remove();
+          finish({ ok: true, provider: 'shopify', url: href });
+        }
+      });
+      setTimeout(function () { finish({ ok: true, provider: 'shopify', timeout: true }); }, cfg.timeoutMs || 15000);
+      form.submit();
+    });
+  };
+
+  // Any URL. Sent as text/plain so the browser needs no CORS preflight (Zapier, Make and Apps
+  // Script all read the body as JSON regardless).
+  adapters.webhook = function (payload, cfg) {
+    if (!cfg.url) return Promise.reject(new Error('webhook url is not set'));
+    var body = JSON.stringify(payload);
+    var type = cfg.contentType || 'text/plain;charset=UTF-8';
+    return fetch(cfg.url, { method: 'POST', headers: { 'Content-Type': type }, body: body })
+      .then(function (res) {
+        if (!res.ok) throw new Error('webhook ' + res.status);
+        return { ok: true, provider: 'webhook' };
+      }, function () {
+        // The endpoint may not answer CORS; send it blind rather than lose the sign-up.
+        return fetch(cfg.url, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=UTF-8' }, body: body })
+          .then(function () { return { ok: true, provider: 'webhook', opaque: true }; });
+      });
+  };
+
+  function send(payload, ui) {
+    var cap = settings().capture;
+    var provider = cap.provider || 'demo';
+    var adapter = adapters[provider];
+    if (!adapter) return Promise.reject(new Error('Unknown capture provider "' + provider + '"'));
+    return adapter(payload, cap[provider] || {}, ui);
+  }
+
+  // ---- analytics -----------------------------------------------------------------------------
+
+  function track(name, detail, el) {
+    detail = detail || {};
+    try {
+      var ev = new CustomEvent('scepterquiz:' + name, { detail: detail, bubbles: true });
+      (el || root.document).dispatchEvent(ev);
+    } catch (e) {}
+    try {
+      if (root.dataLayer && root.dataLayer.push) root.dataLayer.push(Object.assign({ event: 'scepter_quiz_' + name }, detail));
+    } catch (e) {}
+    try {
+      if (root.Shopify && root.Shopify.analytics && root.Shopify.analytics.publish) root.Shopify.analytics.publish('scepter_quiz_' + name, detail);
+    } catch (e) {}
+  }
+
+  SQ.capture = { buildPayload: buildPayload, send: send, adapters: adapters, settings: settings, readableAnswers: readableAnswers };
+  SQ.track = track;
+})(typeof window !== 'undefined' ? window : globalThis);
+
+/* quiz/data/segments.js */
+/* The shared segmentation model: every quiz sorts readers into these same categories, so the
+ * email system, the reports and the book tags all speak one language.
+ *
+ *   age band      teen (under 18) · 18-24 · 25-34 · 35-49 · 50-64 · 65-plus   (child: gift recipients only)
+ *   life season   student · single · married · parent-young · parent-teen · grown-children · clergy
+ *   stage         exploring → returning → beginning → growing → deepening   (reader-facing names below)
+ *   needs         up to three, from the fourteen below
+ *
+ * Changing an id breaks email segments built on it; change names and copy freely.
+ * The stage names are a journey, not a grade: every result is written to encourage.
+ */
+(function (root) {
+  'use strict';
+  var SQ = root.ScepterQuiz = root.ScepterQuiz || {};
+  SQ.data = SQ.data || {};
+
+  SQ.data.segments = {
+    ages: [
+      { id: 'child', label: 'A child (under 13)', chip: 'Child', minor: true, giftOnly: true },
+      { id: 'teen', label: 'Under 18', chip: 'Under 18', minor: true },
+      { id: '18-24', label: '18–24', chip: 'Age 18–24' },
+      { id: '25-34', label: '25–34', chip: 'Age 25–34' },
+      { id: '35-49', label: '35–49', chip: 'Age 35–49' },
+      { id: '50-64', label: '50–64', chip: 'Age 50–64' },
+      { id: '65-plus', label: '65 or older', chip: 'Age 65+' }
+    ],
+
+    lifeSeasons: [
+      { id: 'student', label: 'Student', chip: 'Student' },
+      { id: 'single', label: 'Single, working or between things', chip: 'Single' },
+      { id: 'married', label: 'Married or engaged', chip: 'Married or engaged', reason: 'For couples' },
+      { id: 'parent-young', label: 'Parent of young children', chip: 'Parent of young children', reason: 'For parents of young children' },
+      { id: 'parent-teen', label: 'Parent of teens', chip: 'Parent of teens', reason: 'For parents of teens' },
+      { id: 'grown-children', label: 'Children grown, or a grandparent', chip: 'Children grown' },
+      { id: 'clergy', label: 'Priest, deacon, religious or seminarian', chip: 'Priest or religious', reason: 'Loved by priests and religious' }
+    ],
+
+    // Children's and teen books are offered only to readers these fit (core.eligible).
+    audiences: {
+      children: { ages: ['child'], life: ['parent-young'], label: 'Written for children' },
+      teens: { ages: ['teen'], life: ['parent-teen'], label: 'Written for teens' }
+    },
+
+    languages: [
+      { id: 'en', label: 'English' },
+      { id: 'es', label: 'Español' }
+    ],
+
+    stages: [
+      {
+        id: 'exploring',
+        name: 'Seeking',
+        tagline: 'You have honest questions, and that is a good place to begin.',
+        portrait: [
+          'You are curious about God, about the Catholic faith, or about whether any of it could make a difference in an ordinary life like yours. You don’t need to have anything figured out.',
+          'Every journey toward God starts with a question. There are clear, patient answers waiting for you, and you can take them at your own pace.'
+        ],
+        giftPortrait: [
+          'They are curious about faith, or keeping it at arm’s length for now. The right book meets them where they are: clear, warm, and never preachy.'
+        ],
+        defaultNeed: 'basics',
+        steps: [
+          { title: 'Read one Gospel, slowly.', text: 'Start with Mark, the shortest. A chapter a day takes about ten minutes.' },
+          { title: 'Say one honest prayer.', text: 'In your own words. Telling God exactly where you stand is already a prayer.' },
+          { title: 'Sit in a church when it’s quiet.', text: 'Five minutes, no agenda. Many churches are open during the day.' }
+        ]
+      },
+      {
+        id: 'returning',
+        name: 'Coming Home',
+        tagline: 'The door is open, and you are wanted back.',
+        portrait: [
+          'You have known the faith before, and something is drawing you back. Whatever kept you away, you are not starting from nothing, and you are far from alone: many people find their way home at exactly this point.',
+          'The first steps are simpler than they look, and every one of them is met with mercy.'
+        ],
+        giftPortrait: [
+          'They knew the faith once and may be finding their way back. A gentle book, with no pressure and no lecture, can be the open door they need.'
+        ],
+        defaultNeed: 'sacraments',
+        steps: [
+          { title: 'Go to Mass this Sunday.', text: 'Sit wherever you like. Being there is enough for a first step.' },
+          { title: 'Look up Confession times at a nearby parish.', text: 'You can simply tell the priest it has been a while; he will gladly help you with the rest.' },
+          { title: 'Give God five minutes a day.', text: 'Morning or night, in your own words. Tell Him you’re coming back.' }
+        ]
+      },
+      {
+        id: 'beginning',
+        name: 'Taking Root',
+        tagline: 'You want a real, daily friendship with God.',
+        portrait: [
+          'Your faith matters to you and you practise it, but prayer still tends to be something you fit in when you can. You are ready for a simple rhythm that holds up on busy days.',
+          'This is where St. Josemaría’s advice shines: small, faithful habits, woven into the day you already have.'
+        ],
+        giftPortrait: [
+          'They practise their faith and want to make it part of every day. A book that turns good intentions into a daily habit is a gift they will use.'
+        ],
+        defaultNeed: 'prayer',
+        steps: [
+          { title: 'Offer the day when you wake.', text: 'One sentence, before your feet touch the floor, giving God the day ahead.' },
+          { title: 'Pray ten minutes a day, same time, same place.', text: 'Talk to God about your day as you would to a friend. A short point from a good book gives you somewhere to start.' },
+          { title: 'Look back on the day before sleep.', text: 'Two minutes: what went well, where you fell short, one thing to do better tomorrow.' }
+        ]
+      },
+      {
+        id: 'growing',
+        name: 'Growing Deeper',
+        tagline: 'The habits are in place. Now you want more of Him.',
+        portrait: [
+          'You pray most days, go to Mass faithfully and try to live your faith at work and at home. Now you are looking for depth: prayer that is more than routine, a clearer sense of where God is leading, help with the faults that keep coming back.',
+          'This is the season when good spiritual reading and wise guidance make the biggest difference.'
+        ],
+        giftPortrait: [
+          'Their faith is already part of daily life, and they are hungry for more depth. A substantial book for prayer or spiritual reading will be read, and reread.'
+        ],
+        defaultNeed: 'prayer',
+        steps: [
+          { title: 'Give your prayer a book.', text: 'Fifteen minutes with a daily meditation turns routine into conversation.' },
+          { title: 'Make Confession a monthly habit.', text: 'Pick a date, put it in your calendar, and keep it like any other appointment.' },
+          { title: 'Look for spiritual direction.', text: 'Ask a priest you trust, or go to a day of recollection or a retreat.' }
+        ]
+      },
+      {
+        id: 'deepening',
+        name: 'Bearing Fruit',
+        tagline: 'Your roots are deep, and your life is turning outward.',
+        portrait: [
+          'Prayer, the sacraments and spiritual reading are a steady part of your life, and you have kept going through dry seasons. More and more, you think about the people around you who need what you have been given.',
+          'Your next steps are about contemplation in the middle of ordinary life, and friendships that bring others closer to God.'
+        ],
+        giftPortrait: [
+          'Their faith is the centre of their life. They will treasure a classic they can pray with for years, or a book they can share with others.'
+        ],
+        defaultNeed: 'sharing',
+        steps: [
+          { title: 'Read a saint’s life at length.', text: 'A little each day, all the way through. Let their example stretch you.' },
+          { title: 'Make a retreat this year.', text: 'Put the dates in your calendar now; a few days of silence bear fruit all year.' },
+          { title: 'Invite one friend closer to God.', text: 'Lend a book, bring someone to a talk, or start a small reading group.' }
+        ]
+      }
+    ],
+
+    // Needs: `label` reads in the quiz (first person), `name` is the chip, `reason` explains a
+    // book pick. Order is the tie-break when two needs score the same.
+    needs: [
+      { id: 'prayer', label: 'Learning to pray, or praying better', gift: 'Learning to pray, or praying better', name: 'Prayer', reason: 'Helps with prayer' },
+      { id: 'peace', label: 'Finding peace when I worry', gift: 'Finding peace when they worry', name: 'Peace and trust', reason: 'For peace of heart' },
+      { id: 'suffering', label: 'Getting through a hard time', gift: 'Getting through a hard time', name: 'A hard time', reason: 'For hard times' },
+      { id: 'everyday', label: 'Living my faith at work and at home', gift: 'Living their faith at work and at home', name: 'Faith in daily life', reason: 'For ordinary life' },
+      { id: 'marriage', label: 'My marriage, or preparing for one', gift: 'Their marriage, or preparing for one', name: 'Marriage', reason: 'For couples' },
+      { id: 'parenting', label: 'Raising my children in the faith', gift: 'Raising their children in the faith', name: 'Raising children', reason: 'For parents' },
+      { id: 'basics', label: 'Understanding what Catholics believe', gift: 'Understanding what Catholics believe', name: 'Understanding the faith', reason: 'Answers real questions' },
+      { id: 'sacraments', label: 'Going back to Confession, or understanding the Mass', gift: 'Confession and the Mass', name: 'Confession and the Mass', reason: 'For Confession and the Mass' },
+      { id: 'virtue', label: 'Overcoming the same faults again and again', gift: 'Growing in character and virtue', name: 'Growing in virtue', reason: 'Builds virtue' },
+      { id: 'scripture', label: 'Knowing the Bible better', gift: 'Knowing the Bible better', name: 'The Bible', reason: 'Opens up Scripture' },
+      { id: 'saints', label: 'Getting to know Mary and the saints', gift: 'Mary and the saints', name: 'Mary and the saints', reason: 'Mary and the saints' },
+      { id: 'purpose', label: 'Figuring out what God wants for my life', gift: 'Figuring out what God wants for their life', name: 'Purpose and calling', reason: 'For discerning your path' },
+      { id: 'sharing', label: 'Helping others come closer to God', gift: 'Helping others come closer to God', name: 'Sharing the faith', reason: 'For sharing the faith' },
+      { id: 'seasons', label: 'Living Advent, Lent and the feasts well', gift: 'Living Advent, Lent and the feasts', name: 'The Church’s seasons', reason: 'For Advent, Lent and the feasts' }
+    ],
+
+    reasons: {
+      stage: { self: 'Fits \u201c{stage}\u201d', gift: 'Suits where they are today' },
+      age: { self: 'Suits your age group', gift: 'Suits their age group' },
+      format: { minutes: 'A few minutes a day', chapters: 'A chapter at a time', deep: 'For deep reading' }
+    },
+
+    consent: {
+      mode: 'notice',
+      text: 'We’ll email you the ebook, plus occasional reading suggestions picked for you. Unsubscribe anytime.',
+      checkboxText: 'Yes, also send me occasional reading suggestions picked for me. I can unsubscribe anytime.',
+      guardianText: 'We’ll email the ebook to you, the parent or guardian, plus occasional reading suggestions. Unsubscribe anytime.',
+      guardianCheckboxText: 'Yes, also send me, the parent or guardian, occasional reading suggestions. I can unsubscribe anytime.',
+      privacyUrl: 'https://scepterpublishers.org/policies/privacy-policy',
+      privacyLabel: 'Privacy policy'
+    }
+  };
+})(typeof window !== 'undefined' ? window : globalThis);
+
+/* quiz/data/catalog.js */
+/* The books a quiz can recommend. Every title here was seen on a scepterpublishers.org product
+ * page in a web search on 2026-09-27 (the site itself could not be opened from the build
+ * machine); `source` says so. Before launch, open each link once: a handle can change.
+ *
+ * Fields
+ *   id        stable key (used in email data: scepter_recommended)
+ *   title, author, url, blurb (one plain sentence a reader would find useful)
+ *   stages    exploring | returning | beginning | growing | deepening   (data/segments.js)
+ *   needs     prayer peace suffering everyday marriage parenting basics scripture sacraments
+ *             virtue purpose saints sharing seasons
+ *   format    minutes (a few minutes a day) | chapters (a book over some weeks) | deep (study)
+ *   ages      only when a book suits some ages better (e.g. large print); empty = any adult
+ *   life      life seasons it speaks to directly (bonus, never a requirement)
+ *   audience  children | teens  -> offered only to that age, their parents, or gift buyers
+ *   lang      'es' for Scepter Español titles (offered only to readers who choose Spanish)
+ *   series    books in one series are not recommended together
+ *   priority  0-3: flagship titles win a tie
+ * To add a book: copy an entry, give it a new id, run `node funnels/build.mjs` (it checks tags).
+ */
+(function (root) {
+  'use strict';
+  var SQ = root.ScepterQuiz = root.ScepterQuiz || {};
+  SQ.data = SQ.data || {};
+  var P = 'https://scepterpublishers.org/products/';
+  var SRC = 'web search, scepterpublishers.org product page, 2026-09-27';
+
+  function b(o) { o.url = o.url || P + o.handle; delete o.handle; o.source = o.source || SRC; return o; }
+
+  SQ.data.catalog = [
+    // ---- St. Josemaría Escrivá -------------------------------------------------------------
+    b({ id: 'the-way', title: 'The Way', author: 'St. Josemaría Escrivá', handle: 'the-way-mini-edition',
+      blurb: '999 short points for prayer about work, friendship and holiness in ordinary life. Read one a day; the mini edition fits in a pocket.',
+      stages: ['returning', 'beginning', 'growing'], needs: ['prayer', 'everyday', 'virtue'], format: 'minutes', priority: 3, series: 'escriva-points' }),
+    b({ id: 'furrow', title: 'Furrow', author: 'St. Josemaría Escrivá', handle: 'furrow-josemaria-escriva',
+      blurb: 'A thousand more points for personal prayer, addressed to the whole person. The natural next step after The Way.',
+      stages: ['growing', 'deepening'], needs: ['prayer', 'virtue', 'everyday'], format: 'minutes', priority: 1, series: 'escriva-points' }),
+    b({ id: 'the-forge', title: 'The Forge', author: 'St. Josemaría Escrivá', handle: 'the-forge-pocket-edition',
+      blurb: 'Short points written to kindle a desire for holiness and for bringing others to God.',
+      stages: ['growing', 'deepening'], needs: ['virtue', 'sharing', 'prayer'], format: 'minutes', priority: 1, series: 'escriva-points' }),
+    b({ id: 'way-furrow-forge', title: 'The Way, Furrow, The Forge', author: 'St. Josemaría Escrivá', handle: 'the-way-furrow-the-forge',
+      blurb: 'All three books of points in one volume with a combined index, for a lifetime of daily prayer.',
+      stages: ['growing', 'deepening'], needs: ['prayer', 'virtue', 'everyday'], format: 'minutes', priority: 1, series: 'escriva-points' }),
+    b({ id: 'way-furrow-forge-large-print', title: 'The Way, Furrow, The Forge (Large Print)', author: 'St. Josemaría Escrivá', handle: 'large-print-the-way-furrow-the-forge',
+      blurb: 'The three books of points in one large-print volume, easy on the eyes.',
+      stages: ['beginning', 'growing', 'deepening'], needs: ['prayer', 'virtue', 'everyday'], format: 'minutes', ages: ['65-plus'], life: ['grown-children'], series: 'escriva-points' }),
+    b({ id: 'christ-is-passing-by', title: 'Christ Is Passing By', author: 'St. Josemaría Escrivá', handle: 'christ-is-passing-by',
+      blurb: 'Homilies arranged around the Church’s year, for personal spiritual reading.',
+      stages: ['growing', 'deepening'], needs: ['seasons', 'prayer', 'everyday'], format: 'chapters', priority: 2, life: ['clergy'] }),
+    b({ id: 'friends-of-god', title: 'Friends of God', author: 'St. Josemaría Escrivá', handle: 'friends-of-god',
+      blurb: 'Homilies on building a strong, lasting friendship with the God who is close to us, through prayer and the virtues.',
+      stages: ['growing', 'deepening'], needs: ['prayer', 'virtue'], format: 'chapters', priority: 2, life: ['clergy'] }),
+    b({ id: 'in-dialogue-with-the-lord', title: 'In Dialogue with the Lord', author: 'St. Josemaría Escrivá', handle: 'in-dialogue-with-the-lord',
+      blurb: 'Preaching St. Josemaría revised himself, meant to help you pray personally, face to face with Jesus.',
+      stages: ['growing', 'deepening'], needs: ['prayer'], format: 'chapters' }),
+    b({ id: 'holy-rosary', title: 'Holy Rosary', author: 'St. Josemaría Escrivá', handle: 'holy-rosary-with-luminous-mysteries',
+      blurb: 'A short commentary on each mystery, including the Luminous mysteries, to help you step into each scene.',
+      stages: ['returning', 'beginning', 'growing'], needs: ['saints', 'prayer'], format: 'minutes', priority: 1 }),
+    b({ id: 'way-of-the-cross', title: 'The Way of the Cross', author: 'St. Josemaría Escrivá', handle: 'the-way-of-the-cross',
+      blurb: 'Meditations on the fourteen Stations with full-colour paintings. For Lent, Fridays, or a heavy season.',
+      stages: ['beginning', 'growing'], needs: ['seasons', 'suffering', 'prayer'], format: 'minutes' }),
+    b({ id: 'in-love-with-the-church', title: 'In Love with the Church', author: 'St. Josemaría Escrivá', handle: 'in-love-with-the-church',
+      blurb: 'Four homilies on the Church and on the part lay people play in her life.',
+      stages: ['growing', 'deepening'], needs: ['sharing', 'basics'], format: 'chapters' }),
+    b({ id: 'conversations', title: 'Conversations with Saint Josemaría Escrivá', author: 'St. Josemaría Escrivá', handle: 'conversations-josemaria-escriva',
+      blurb: 'Interviews with journalists about work, marriage, young people, freedom and vocation. A friendly first look at his message.',
+      stages: ['exploring', 'beginning'], needs: ['everyday', 'purpose', 'marriage'], format: 'chapters' }),
+    b({ id: 'passionately-loving-the-world', title: 'Passionately Loving the World', author: 'St. Josemaría Escrivá', handle: 'passionately-loving-the-world-3-pack',
+      blurb: 'His best-known homily, in a short booklet: how work, family, friends and even leisure can become ways to find God.',
+      stages: ['exploring', 'returning', 'beginning'], needs: ['everyday', 'purpose'], format: 'minutes', priority: 1 }),
+
+    // ---- living St. Josemaría's teaching ----------------------------------------------------
+    b({ id: 'children-of-god', title: 'Children of God', author: 'Francis Fernández-Carvajal and Peter Beteta', handle: 'children-of-god-the-life-of-spiritual-childhood-preached-by-saint-josemaria-escriva',
+      blurb: 'A simple guide to living as a child of God, the root of dealing with Him in joy and peace.',
+      stages: ['growing'], needs: ['prayer', 'peace'], format: 'chapters' }),
+    b({ id: 'coached-by-escriva', title: 'Coached by Josemaría Escrivá', author: 'Fr. John Henry Hanson', handle: 'coached-by-josemaria-escriva',
+      blurb: 'Practical advice on balancing prayer and work, rest, struggle and starting again.',
+      stages: ['beginning', 'growing'], needs: ['everyday', 'virtue'], format: 'chapters' }),
+    b({ id: 'footprints-in-the-snow', title: 'Footprints in the Snow', author: 'Dennis M. Helming', handle: 'footprints-in-the-snow-a-pictorial-biography-of-st-josemaria-escriva',
+      blurb: 'A photo biography of St. Josemaría, simple and enjoyable reading for all ages.',
+      stages: ['exploring', 'beginning'], needs: ['saints'], format: 'chapters' }),
+    b({ id: 'founder-of-opus-dei', title: 'The Founder of Opus Dei (3 volumes)', author: 'Andrés Vázquez de Prada', handle: 'the-founder-of-opus-dei-full-set',
+      blurb: 'The full life of St. Josemaría in three volumes, by a historian who knew him.',
+      stages: ['growing', 'deepening'], needs: ['saints'], format: 'deep' }),
+    b({ id: 'saxum', title: 'Saxum: The Life of Álvaro del Portillo', author: 'John F. Coverdale', handle: 'saxum-the-life-of-alvaro-del-portillo',
+      blurb: 'The life of Bl. Álvaro del Portillo, St. Josemaría’s closest collaborator and successor.',
+      stages: ['growing', 'deepening'], needs: ['saints', 'sharing'], format: 'deep' }),
+    b({ id: 'journey-with-jesus', title: 'Journey with Jesus through the Liturgical Year', author: 'Bl. Álvaro del Portillo', handle: 'journey-with-jesus',
+      blurb: 'Selections from Bl. Álvaro’s letters to help you live each season of the Church’s year with Jesus.',
+      stages: ['beginning', 'growing'], needs: ['seasons', 'prayer'], format: 'chapters' }),
+    b({ id: 'guadalupe', title: 'Guadalupe Ortiz de Landázuri: Work, Friendship and Good Humor', author: 'Mercedes Eguíbar Galarza', handle: 'guadalupe-ortiz-of-landazuri-work-friendship-and-good-humor',
+      source: 'web search, scepterpublishers.org product page, 2026-09-27; the result spelled the author “Equíbar”, check the page',
+      blurb: 'The life of Bl. Guadalupe, a chemist and one of the first women of Opus Dei: holiness at work, with friends, with good humor.',
+      stages: ['beginning', 'growing'], needs: ['saints', 'everyday'], format: 'chapters' }),
+
+    // ---- In Conversation with God ------------------------------------------------------------
+    b({ id: 'icwg-set', title: 'In Conversation with God (7 volumes)', author: 'Francis Fernández-Carvajal', handle: 'in-conversation-with-god-7-volume-set',
+      blurb: 'A meditation for every day of the year, following the Mass readings and the seasons. Spiritual reading for a lifetime.',
+      stages: ['growing', 'deepening'], needs: ['prayer', 'scripture', 'seasons'], format: 'deep', priority: 3, series: 'icwg' }),
+    b({ id: 'icwg-advent', title: 'In Conversation with God, Vol. 1: Advent and Christmastide', author: 'Francis Fernández-Carvajal', handle: 'in-conversation-with-god-volume-1-advent-and-christmastide',
+      blurb: 'A daily meditation for Advent and Christmas. A good way to try the series.',
+      stages: ['beginning', 'growing'], needs: ['seasons', 'prayer'], format: 'minutes', priority: 2, series: 'icwg' }),
+    b({ id: 'icwg-lent', title: 'In Conversation with God, Vol. 2: Lent and Eastertide', author: 'Francis Fernández-Carvajal', handle: 'in-conversation-with-god-volume-2-lent-and-eastertide',
+      blurb: 'A daily meditation from Ash Wednesday through the Easter season.',
+      stages: ['beginning', 'growing'], needs: ['seasons', 'prayer'], format: 'minutes', series: 'icwg' }),
+    b({ id: 'overcoming-lukewarmness', title: 'Overcoming Lukewarmness', author: 'Francis Fernández-Carvajal', handle: 'overcoming-lukewarmness-healing-your-souls-sadness',
+      blurb: 'For when faith has gone flat: how to recover the joy of following Christ.',
+      stages: ['returning', 'growing'], needs: ['virtue', 'peace', 'prayer'], format: 'chapters', priority: 1 }),
+    b({ id: 'life-of-jesus', title: 'Life of Jesus', author: 'Francis Fernández-Carvajal', handle: 'life-of-jesus',
+      blurb: 'Walks you through the Gospel events and places as if you were there. A clear first meeting with Jesus.',
+      stages: ['exploring', 'beginning'], needs: ['scripture', 'basics'], format: 'chapters', priority: 2 }),
+    b({ id: 'through-wind-and-waves', title: 'Through Wind and Waves: On Being a Spiritual Guide', author: 'Francis Fernández-Carvajal', handle: 'through-wind-and-waves-on-being-a-spiritual-guide',
+      blurb: 'For people who accompany others in the spiritual life: priests, directors, mentors.',
+      stages: ['deepening'], needs: ['sharing'], format: 'chapters', life: ['clergy'] }),
+
+    // ---- Fr. Jacques Philippe -----------------------------------------------------------------
+    b({ id: 'time-for-god', title: 'Time for God', author: 'Fr. Jacques Philippe', handle: 'copy-of-time-for-god',
+      blurb: 'The basics of personal prayer, the usual mistakes and how to get past them. The best first book on praying.',
+      stages: ['beginning', 'growing'], needs: ['prayer'], format: 'chapters', priority: 3 }),
+    b({ id: 'searching-for-peace', title: 'Searching for and Maintaining Peace', author: 'Fr. Jacques Philippe', handle: 'searching-for-and-maintaining-peace',
+      blurb: 'Everyday examples of how to meet worry and upset with the Gospel, and keep peace of heart.',
+      stages: ['returning', 'beginning', 'growing'], needs: ['peace', 'prayer'], format: 'chapters', priority: 3 }),
+    b({ id: 'interior-freedom', title: 'Interior Freedom', author: 'Fr. Jacques Philippe', handle: 'interior-freedom',
+      blurb: 'There is a freedom inside you no circumstance can take away, because God is its source.',
+      stages: ['growing', 'deepening'], needs: ['peace', 'suffering', 'virtue'], format: 'chapters', priority: 2 }),
+    b({ id: 'nine-days-peace', title: 'Nine Days to Welcome Peace', author: 'Fr. Jacques Philippe', handle: 'nine-days-to-welcome-peace-fr-jacques-philippe',
+      blurb: 'Nine short days of guided reflection on trusting God and receiving His peace.',
+      stages: ['returning', 'beginning', 'growing'], needs: ['peace', 'prayer'], format: 'minutes', priority: 1 }),
+    b({ id: 'philippe-starter-pack', title: 'Jacques Philippe’s Spiritual Reading Starter Pack', author: 'Fr. Jacques Philippe', handle: 'jacques-philippe-starter-pack',
+      blurb: 'Time for God, Searching for and Maintaining Peace and Interior Freedom together: prayer, peace and freedom.',
+      stages: ['returning', 'beginning', 'growing'], needs: ['peace', 'prayer', 'suffering'], format: 'chapters' }),
+
+    b({ id: 'way-of-trust-and-love', title: 'The Way of Trust and Love', author: 'Fr. Jacques Philippe', handle: 'the-way-of-trust-and-love',
+      blurb: 'A retreat through St. Thérèse’s “little way”: bring God your weakness and let Him work in it. For anyone who feels too ordinary for holiness.',
+      stages: ['beginning', 'growing'], needs: ['peace', 'saints', 'prayer'], format: 'chapters', priority: 1 }),
+    b({ id: 'called-to-life', title: 'Called to Life', author: 'Fr. Jacques Philippe', handle: 'called-to-life',
+      blurb: 'How God calls each of us through events, Scripture and the Holy Spirit, and how answering leads to a full life. Includes praying with Scripture.',
+      stages: ['beginning', 'growing'], needs: ['purpose', 'scripture', 'everyday'], format: 'chapters', priority: 2 }),
+    b({ id: 'thirsting-for-prayer', title: 'Thirsting for Prayer', author: 'Fr. Jacques Philippe', handle: 'thirsting-for-prayer',
+      blurb: 'Builds on Time for God: what to do with discouragement, distraction and dryness in prayer.',
+      stages: ['beginning', 'growing'], needs: ['prayer'], format: 'chapters' }),
+    b({ id: 'eight-doors', title: 'The Eight Doors of the Kingdom', author: 'Fr. Jacques Philippe', handle: 'the-eight-doors-of-the-kingdom-meditations-on-the-beatitudes',
+      blurb: 'Meditations on the Beatitudes and the happiness Jesus promises.',
+      stages: ['growing', 'deepening'], needs: ['scripture', 'virtue'], format: 'chapters' }),
+
+    // ---- more on prayer, the sacraments and hard times ---------------------------------------
+    b({ id: 'fire-and-the-silence', title: 'The Fire and the Silence', author: 'Fr. John Henry Hanson, O.Praem.', handle: 'preorder-the-fire-and-the-silence-prayer-thought-and-the-battle-for-inner-stillness',
+      blurb: 'On distractions in prayer, from Scripture, the saints and psychology: a wandering mind does not mean your prayer has failed.',
+      stages: ['beginning', 'growing'], needs: ['prayer', 'peace'], format: 'chapters' }),
+    b({ id: 'home-again', title: 'Home Again', author: 'Fr. John Henry Hanson, O.Praem.', handle: 'home-again',
+      blurb: 'For Catholics coming back: renewing trust in God’s plan through prayer and the sacraments.',
+      stages: ['returning', 'beginning'], needs: ['sacraments', 'prayer'], format: 'chapters', priority: 3 }),
+    b({ id: 'scatter-my-darkness', title: 'Scatter My Darkness', author: 'Fr. John Henry Hanson, O.Praem.', handle: 'scatter-my-darkness',
+      blurb: 'How Christ meets the dark corners of the heart, especially through the liturgy and the sacraments. For anyone carrying guilt.',
+      stages: ['returning', 'beginning', 'growing'], needs: ['sacraments', 'suffering'], format: 'chapters' }),
+    b({ id: 'progress-through-mental-prayer', title: 'Progress Through Mental Prayer', author: 'Fr. Edward Leen', handle: 'progress-through-mental-prayer',
+      blurb: 'A classic roadmap of personal prayer, from method and preparation toward contemplation.',
+      stages: ['growing', 'deepening'], needs: ['prayer'], format: 'deep', priority: 1 }),
+    b({ id: 'understanding-the-mass', title: 'Understanding the Mass', author: 'Charles Belmonte', handle: 'understanding-the-mass',
+      blurb: 'A clear walk through each part of the Mass and its roots in Scripture and history. Good for newcomers and returners alike.',
+      stages: ['exploring', 'returning', 'beginning'], needs: ['sacraments', 'basics'], format: 'chapters', priority: 2 }),
+    b({ id: 'eucharistic-meditations', title: 'Eucharistic Meditations', author: 'St. John Vianney', handle: 'eucharistic-meditations',
+      blurb: 'Twenty-seven meditations from the Curé of Ars on the Blessed Sacrament, for adoration and holy hours.',
+      stages: ['growing', 'deepening'], needs: ['sacraments', 'prayer', 'saints'], format: 'minutes' }),
+    b({ id: 'mary-of-nazareth', title: 'Mary of Nazareth', author: 'Federico Suárez', handle: 'mary-of-nazareth',
+      blurb: 'Mary from the Annunciation to the Cross, as someone to imitate, not only admire.',
+      stages: ['beginning', 'growing'], needs: ['saints', 'scripture'], format: 'chapters', priority: 1 }),
+    b({ id: 'meaning-of-vocation', title: 'The Meaning of Vocation', author: 'St. John Paul II', handle: 'the-meaning-of-vocation',
+      blurb: 'St. John Paul II on God’s call and how to answer it. For young people working out their path.',
+      stages: ['exploring', 'beginning', 'growing'], needs: ['purpose'], format: 'minutes', ages: ['teen', '18-24', '25-34'], life: ['student', 'single'] }),
+    b({ id: 'school-of-prayer', title: 'A School of Prayer', author: 'Pope Benedict XVI', handle: 'a-school-of-prayer',
+      blurb: 'Pope Benedict’s teaching on the foundations of prayer, drawn from Scripture and the saints.',
+      stages: ['beginning', 'growing'], needs: ['prayer', 'scripture'], format: 'chapters' }),
+    b({ id: 'my-years-with-jpii', title: 'My Years with John Paul II', author: 'Joaquín Navarro-Valls', handle: 'my-years-with-john-paul-ii',
+      blurb: 'An intimate portrait of St. John Paul II by the spokesman who was at his side for 22 years.',
+      stages: ['exploring', 'beginning', 'growing'], needs: ['saints'], format: 'chapters' }),
+    b({ id: 'crucibles', title: 'Crucibles', author: 'Ben Baran, PhD', handle: 'crucibles-how-faith-and-science-help-us-navigate-suffering',
+      blurb: 'A candid, compassionate guide to hardship that joins psychology with Catholic teaching.',
+      stages: ['exploring', 'returning', 'beginning', 'growing'], needs: ['suffering', 'peace'], format: 'chapters', priority: 1 }),
+    b({ id: 'dialogue-of-comfort', title: 'A Dialogue of Comfort Against Tribulation', author: 'St. Thomas More', handle: 'a-dialogue-of-comfort-against-tribulation',
+      blurb: 'More’s reflection on God’s comfort in hard times, in modern English.',
+      stages: ['growing', 'deepening'], needs: ['suffering', 'saints'], format: 'deep' }),
+    b({ id: 'self-esteem-without-selfishness', title: 'Self-Esteem Without Selfishness', author: 'Fr. Michel Esparza', handle: 'self-esteem-without-selfishness-increasing-our-capacity-for-love',
+      blurb: 'A physician turned priest on a humble, truthful self-esteem that frees you to love instead of discouraging you.',
+      stages: ['exploring', 'returning', 'beginning', 'growing'], needs: ['peace', 'virtue'], format: 'chapters' }),
+    b({ id: 'saints-in-the-world', title: 'Saints in the World', author: 'Fr. Jesús Urteaga', handle: 'saints-in-the-world',
+      blurb: 'A challenge to lay people to live courage, sincerity and generosity right in the middle of the world.',
+      stages: ['beginning', 'growing'], needs: ['virtue', 'everyday'], format: 'chapters' }),
+    b({ id: 'from-temperament-to-character', title: 'From Temperament to Character', author: 'Alexandre Havard', handle: 'from-temperament-to-character',
+      blurb: 'How your temperament shapes the work of building virtue, and how to grow from where you start.',
+      stages: ['beginning', 'growing'], needs: ['virtue'], format: 'chapters' }),
+
+    // ---- the Church's classics and other authors ---------------------------------------------
+    b({ id: 'frequent-confession', title: 'Frequent Confession', author: 'Dom Benedict Baur, OSB', handle: 'frequent-confession',
+      blurb: 'Why frequent confession matters and how it frees you from self-love and lukewarmness while deepening prayer.',
+      stages: ['growing', 'deepening'], needs: ['sacraments', 'virtue'], format: 'chapters', priority: 1 }),
+    b({ id: 'sacred-passion', title: 'The Sacred Passion', author: 'Luis de la Palma', handle: 'the-sacred-passion',
+      blurb: 'A 400-year-old classic of meditations on the Passion, from Holy Thursday to the tomb.',
+      stages: ['growing', 'deepening'], needs: ['prayer', 'seasons'], format: 'chapters' }),
+    b({ id: 'sadness-of-christ', title: 'The Sadness of Christ', author: 'St. Thomas More', handle: 'the-sadness-of-christ',
+      blurb: 'More’s last book, written in the Tower of London, on Christ in Gethsemane: courage and prayer under trial.',
+      stages: ['growing', 'deepening'], needs: ['suffering', 'virtue', 'saints'], format: 'chapters' }),
+    b({ id: 'simon-peter', title: 'Simon Peter', author: 'Georges Chevrot', handle: 'simon-peter',
+      blurb: 'St. Peter’s love and loyalty, rashness and denials. Encouraging for anyone who has fallen and wants to begin again.',
+      stages: ['returning', 'growing'], needs: ['saints', 'scripture', 'virtue'], format: 'chapters' }),
+    b({ id: 'prodigal-son', title: 'The Prodigal Son', author: 'Georges Chevrot', handle: 'the-prodigal-son',
+      blurb: 'A plain-spoken reading of the parable of the son who came home, and the Father who ran to meet him.',
+      stages: ['returning', 'exploring'], needs: ['sacraments', 'scripture'], format: 'chapters', priority: 2 }),
+    b({ id: 'risen-jesus', title: 'The Risen Jesus', author: 'Archbishop Alban Goodier, SJ', handle: 'the-risen-jesus',
+      blurb: 'The witnesses of the Resurrection and what they saw and felt. Good reading for the Easter season.',
+      stages: ['growing'], needs: ['scripture', 'seasons'], format: 'chapters' }),
+    b({ id: 'passion-and-death', title: 'The Passion and Death of Our Lord Jesus Christ', author: 'Archbishop Alban Goodier, SJ', handle: 'the-passion-and-death-of-our-lord-jesus-christ',
+      blurb: 'The Passion told with history and spiritual insight, for Lent or any time you want to stay near the Cross.',
+      stages: ['growing', 'deepening'], needs: ['seasons', 'scripture'], format: 'chapters' }),
+    b({ id: 'prince-of-peace', title: 'The Prince of Peace', author: 'Archbishop Alban Goodier, SJ', handle: 'the-prince-of-peace',
+      blurb: 'Short meditations for Advent and Christmas.',
+      stages: ['beginning', 'growing'], needs: ['seasons', 'prayer'], format: 'minutes' }),
+    b({ id: 'faith-explained', title: 'The Faith Explained', author: 'Leo J. Trese', handle: 'the-faith-explained',
+      blurb: 'The whole Catholic faith in short, clear chapters: to understand it, explain it and answer questions about it.',
+      stages: ['exploring', 'returning', 'beginning'], needs: ['basics', 'sacraments'], format: 'chapters', priority: 3 }),
+    b({ id: 'guidebook-for-confession', title: 'A Guidebook for Confession', author: 'Fr. Donal O’Cuilleanain', handle: 'guidebook-for-confession',
+      blurb: 'The steps and prayers of Confession and a thorough examination of conscience. Ideal after a long time away.',
+      stages: ['returning', 'beginning'], needs: ['sacraments'], format: 'minutes', priority: 2 }),
+    b({ id: 'handbook-of-prayers', title: 'Handbook of Prayers', author: 'ed. Rev. James Socias', handle: 'handbook-of-prayers-8th-edition',
+      blurb: 'A compact prayer book: the basic prayers, the Order of Mass in English and Latin, and devotions to Christ, Mary and St. Joseph.',
+      stages: ['beginning', 'growing', 'deepening'], needs: ['prayer', 'sacraments', 'saints'], format: 'minutes', priority: 1 }),
+    b({ id: 'manual-of-prayers', title: 'Manual of Prayers', author: 'ed. Rev. Randy Soto', handle: 'manual-of-prayers-3rd-edition',
+      blurb: 'A classic collection of prayers, litanies, novenas and prayers before and after Mass.',
+      stages: ['growing', 'deepening'], needs: ['prayer', 'sacraments'], format: 'minutes', life: ['clergy'] }),
+    b({ id: 'daily-roman-missal', title: 'Daily Roman Missal', author: 'ed. Rev. James Socias', handle: 'daily-roman-missal-7th-edition-black',
+      blurb: 'Every Sunday and weekday Mass in one volume, with devotions: for following and praying the Mass each day.',
+      stages: ['growing', 'deepening'], needs: ['sacraments', 'prayer', 'scripture'], format: 'minutes' }),
+    b({ id: 'daily-travel-bible', title: 'Scepter Daily Bible (RSV-CE)', author: 'Revised Standard Version, Catholic Edition', handle: 'daily-travel-bible',
+      blurb: 'A compact, easy-to-read Catholic Bible with colour maps, sized for daily use and travel.',
+      stages: ['beginning', 'growing', 'deepening'], needs: ['scripture'], format: 'minutes' }),
+    b({ id: 'navarre-gospels-acts', title: 'The Navarre Bible: Gospels and Acts', author: 'University of Navarre', handle: 'the-navarre-bible-gospels-and-acts',
+      blurb: 'The Gospels and Acts with a commentary drawn from the Fathers, the saints and Church teaching. The place to start with Navarre.',
+      stages: ['beginning', 'growing'], needs: ['scripture'], format: 'deep', priority: 2, series: 'navarre' }),
+    b({ id: 'navarre-nt-expanded', title: 'The Navarre Bible: New Testament (Expanded Edition)', author: 'University of Navarre', handle: 'the-navarre-bible-nt-expanded-edition',
+      blurb: 'The whole New Testament with the full Navarre commentary in one large volume.',
+      stages: ['growing', 'deepening'], needs: ['scripture', 'basics'], format: 'deep', priority: 1, series: 'navarre' }),
+    b({ id: 'navarre-psalms', title: 'The Navarre Bible: Psalms and Song of Solomon', author: 'University of Navarre', handle: 'the-navarre-bible-psalms-song-of-solomon',
+      blurb: 'The Bible’s own prayer book with commentary, for learning to pray with Scripture.',
+      stages: ['growing', 'deepening'], needs: ['scripture', 'prayer'], format: 'deep', series: 'navarre' }),
+    b({ id: 'virtuous-leadership', title: 'Virtuous Leadership', author: 'Alexandre Havard', handle: 'copy-of-virtuous-leadership-an-agenda-for-personal-excellence',
+      blurb: 'Leadership built on magnanimity, service and the four cardinal virtues, whatever your station in life.',
+      stages: ['beginning', 'growing'], needs: ['virtue', 'everyday', 'sharing'], format: 'chapters', priority: 1, life: ['single', 'student'] }),
+
+    // ---- marriage and family -----------------------------------------------------------------
+    b({ id: 'three-to-get-married', title: 'Three to Get Married', author: 'Fulton J. Sheen', handle: 'three-to-get-married',
+      blurb: 'Sheen’s classic on marriage as a bond of husband, wife and God, with remedies for its common crises.',
+      stages: ['exploring', 'beginning', 'growing'], needs: ['marriage'], format: 'chapters', priority: 2, life: ['married', 'single'] }),
+    b({ id: 'marriage-path-to-sanctity', title: 'Marriage: A Path to Sanctity', author: 'Javier Abad and Eugenio Fenoy', handle: 'marriage-a-path-to-sanctity',
+      blurb: 'A compact guide to Christian marriage as a vocation: spousal love, children, chastity and growing holy together.',
+      stages: ['beginning', 'growing', 'deepening'], needs: ['marriage', 'purpose'], format: 'chapters', priority: 1, life: ['married', 'parent-young', 'parent-teen'] }),
+    b({ id: 'love-marriage-money', title: 'Love, Marriage, Money', author: 'Joe Salem', handle: 'love-marriage-money',
+      blurb: 'Practical help for couples to ease money tensions and build a plan together.',
+      stages: ['returning', 'beginning', 'growing'], needs: ['marriage', 'everyday'], format: 'chapters', life: ['married', 'parent-young'] }),
+    b({ id: 'sixteen-marriages', title: '16 Marriages That Made History', author: 'Gerard Castillo', handle: '16-marriages-that-made-history',
+      blurb: 'The hidden love stories of famous people, and how marriage changed them. Easy, story-led reading for couples.',
+      stages: ['exploring', 'returning', 'beginning'], needs: ['marriage'], format: 'chapters', life: ['married'] }),
+    b({ id: 'parenting-for-faith', title: 'Parenting for Faith', author: 'Andrew Mullins', handle: 'parenting-for-faith',
+      blurb: 'How to pass a real love for the sacraments on to your children, with everyday family examples.',
+      stages: ['beginning', 'growing'], needs: ['parenting', 'sacraments'], format: 'chapters', priority: 2, life: ['parent-young', 'parent-teen'] }),
+    b({ id: 'busy-parents-guide', title: 'The Busy Parent’s Guide to the Catholic Faith', author: 'Steven R. Hemler', handle: 'preorder-the-busy-parents-guide-to-the-catholic-faith-short-answers-to-the-big-questions',
+      blurb: 'Short, sound answers to the big questions your children (and you) ask about the faith.',
+      stages: ['exploring', 'returning', 'beginning'], needs: ['basics', 'parenting'], format: 'minutes', priority: 2, life: ['parent-young', 'parent-teen'] }),
+    b({ id: 'lifeline', title: 'Lifeline: The Religious Upbringing of Your Children', author: 'James B. Stenson', handle: 'lifeline-the-religious-upbringing-of-your-children',
+      blurb: 'What effective Christian parents actually do, with ideas you can use this week.',
+      stages: ['beginning', 'growing'], needs: ['parenting'], format: 'chapters', priority: 1, life: ['parent-young', 'parent-teen'] }),
+    b({ id: 'compass', title: 'Compass: A Handbook on Parent Leadership', author: 'James B. Stenson', handle: 'compass-a-handbook-on-parent-leadership',
+      blurb: 'Drawn from hundreds of families: raising competent, generous children who live by integrity.',
+      stages: ['beginning', 'growing'], needs: ['parenting', 'virtue'], format: 'chapters', life: ['parent-teen', 'parent-young'] }),
+    b({ id: 'upbringing', title: 'Upbringing', author: 'James B. Stenson', handle: 'upbringing',
+      blurb: 'A discussion handbook for couples and parent groups raising young children.',
+      stages: ['beginning', 'growing'], needs: ['parenting', 'marriage'], format: 'chapters', life: ['parent-young'] }),
+    b({ id: 'the-talk-and-beyond', title: 'The Talk and Beyond', author: 'Michael Moynihan', handle: 'the-talk-and-beyond-raising-children-in-a-confused-culture',
+      blurb: 'A father of eleven helps parents raise children with confidence in a confused culture, including "the talk".',
+      stages: ['returning', 'beginning', 'growing'], needs: ['parenting'], format: 'chapters', priority: 1, life: ['parent-teen', 'parent-young'] }),
+
+    b({ id: 'rekindled-hearts', title: 'Rekindled Hearts', author: 'Doug Hinderer, MA, LMFT', handle: 'preorder-rekindled-hearts-a-spiritual-journey-to-marital-healing',
+      blurb: 'A workbook for couples going through a hard stretch, by a marriage therapist: prayer together with practical help.',
+      stages: ['returning', 'beginning', 'growing'], needs: ['marriage', 'suffering'], format: 'chapters', life: ['married'] }),
+    b({ id: 'marriage-insurance', title: 'Marriage Insurance: 12 Rules to Live By', author: 'Fr. Francis J. Hoffman (Fr. Rocky)', handle: 'marriage-insurance-2nd-edition',
+      blurb: 'Twelve simple, good-humoured rules for marriage, for the newly engaged and the long married.',
+      stages: ['exploring', 'returning', 'beginning', 'growing'], needs: ['marriage'], format: 'minutes', priority: 1, life: ['married', 'single'] }),
+    b({ id: 'father-family-protector', title: 'Father, the Family Protector', author: 'James B. Stenson', handle: 'father-the-family-protector',
+      blurb: 'On the particular strength a father brings to family life.',
+      stages: ['beginning', 'growing'], needs: ['parenting'], format: 'chapters', life: ['parent-young', 'parent-teen'] }),
+    b({ id: 'anchor', title: 'Anchor: God’s Promises of Hope to Parents', author: 'James B. Stenson', handle: 'anchor',
+      blurb: 'Encouragement for parents in the great work of bringing their children to Christ.',
+      stages: ['returning', 'beginning', 'growing'], needs: ['parenting', 'peace'], format: 'chapters', life: ['parent-young', 'parent-teen'] }),
+    b({ id: 'character-building', title: 'Character Building', author: 'David Isaacs', handle: 'character-building',
+      blurb: 'More than twenty virtues, each with self-assessment questions and tips for teaching them to children.',
+      stages: ['beginning', 'growing'], needs: ['virtue', 'parenting'], format: 'deep', life: ['parent-young', 'parent-teen'] }),
+
+    // ---- for children and teens (offered to parents, gift buyers, and teens themselves) -------
+    b({ id: 'little-douglings', title: 'The Little Douglings Series', author: 'Carissa Douglas', handle: 'little-douglings-series',
+      blurb: 'Illustrated rhyming books for ages 5–8 on prayer, the Eucharist, self-giving and Confession.',
+      stages: ['exploring', 'returning', 'beginning', 'growing', 'deepening'], needs: ['parenting', 'sacraments', 'prayer'], format: 'minutes', audience: 'children', priority: 2 }),
+    b({ id: 'douglings-adventures', title: 'Douglings Adventures Series', author: 'Carissa Douglas', handle: 'copy-of-little-douglings-series',
+      blurb: 'Adventure stories for ages 9–12 in which a family of children meets the saints.',
+      stages: ['exploring', 'returning', 'beginning', 'growing', 'deepening'], needs: ['parenting', 'saints', 'virtue'], format: 'chapters', audience: 'children', priority: 1 }),
+    b({ id: 'brave-leader-big-heart', title: 'Brave Leader, Big Heart', author: 'Fr. Juan R. Vélez', handle: 'brave-leader-big-heart',
+      blurb: 'An illustrated children’s life of St. John Henry Newman: boy, friend, thinker, brave priest.',
+      stages: ['exploring', 'returning', 'beginning', 'growing', 'deepening'], needs: ['parenting', 'saints', 'virtue'], format: 'minutes', audience: 'children' }),
+    b({ id: 'childrens-guidebook-confession', title: 'Children’s Guidebook for Confession', author: '', handle: 'guidebook-for-confession-for-children',
+      blurb: 'An illustrated introduction to Confession with an examination of conscience for young people.',
+      stages: ['exploring', 'returning', 'beginning', 'growing', 'deepening'], needs: ['parenting', 'sacraments'], format: 'minutes', audience: 'children' }),
+    b({ id: 'you-can-pray', title: 'You Can Pray! Meditations for Teens', author: 'Nora Browne', handle: 'you-can-pray-meditations-for-teens',
+      blurb: '125 short meditations to help teens talk to God honestly about friends, family, struggles and purpose.',
+      stages: ['exploring', 'returning', 'beginning', 'growing'], needs: ['prayer', 'peace', 'purpose', 'parenting'], format: 'minutes', audience: 'teens', priority: 3 }),
+    b({ id: 'to-be-a-man', title: 'To Be a Man: Life Lessons for Young Men', author: '', handle: 'to-be-a-man-life-lessons-for-young-men',
+      source: 'web search, scepterpublishers.org product page, 2026-09-27; subtitle taken from the product handle',
+      blurb: 'Life lessons for young men in high school and college.',
+      stages: ['exploring', 'returning', 'beginning', 'growing'], needs: ['virtue', 'purpose', 'parenting'], format: 'chapters', audience: 'teens', gendered: true, priority: 1 }),
+
+    // ---- Scepter Español ---------------------------------------------------------------------
+    b({ id: 'camino', title: 'Camino', author: 'San Josemaría Escrivá', handle: 'camino-mediano-the-way-medium-size', lang: 'es',
+      blurb: 'The Way en español: 999 puntos breves para la oración en la vida diaria.',
+      stages: ['returning', 'beginning', 'growing'], needs: ['prayer', 'everyday', 'virtue'], format: 'minutes', priority: 3 }),
+    b({ id: 'hablar-con-dios', title: 'Hablar con Dios (colección)', author: 'Francisco Fernández-Carvajal', handle: 'hablar-con-dios-coleccion', lang: 'es',
+      blurb: 'In Conversation with God en español: una meditación para cada día del año.',
+      stages: ['growing', 'deepening'], needs: ['prayer', 'scripture', 'seasons'], format: 'deep', priority: 2 }),
+    b({ id: 'introduccion-vida-devota', title: 'Introducción a la vida devota', author: 'San Francisco de Sales', handle: 'introduccion-a-la-vida-devota', lang: 'es',
+      blurb: 'El clásico que enseña que la santidad es posible en medio de las ocupaciones del mundo.',
+      stages: ['exploring', 'beginning', 'growing'], needs: ['prayer', 'everyday', 'basics'], format: 'chapters', priority: 1 }),
+    b({ id: 'la-paz-interior', title: 'La paz interior', author: 'Jacques Philippe', handle: 'la-paz-interior', lang: 'es',
+      blurb: 'Searching for and Maintaining Peace en español: cómo encontrar y conservar la paz del corazón.',
+      stages: ['returning', 'beginning', 'growing'], needs: ['peace', 'prayer'], format: 'chapters', priority: 2 }),
+    b({ id: 'la-confianza-en-dios', title: 'La confianza en Dios', author: 'Jacques Philippe', handle: 'la-confianza-en-dios', lang: 'es',
+      blurb: 'The Way of Trust and Love en español: el “caminito” de confianza de santa Teresita.',
+      stages: ['beginning', 'growing'], needs: ['peace', 'saints'], format: 'chapters' }),
+    b({ id: 'la-oracion-camino-de-amor', title: 'La oración, camino de amor', author: 'Jacques Philippe', handle: 'la-oracion-camino-de-amor', lang: 'es',
+      blurb: 'Thirsting for Prayer en español: para perseverar en la oración.',
+      stages: ['beginning', 'growing'], needs: ['prayer'], format: 'chapters' }),
+    b({ id: 'la-cena-del-cordero', title: 'La cena del Cordero', author: 'Scott Hahn', handle: 'la-cena-del-cordero', lang: 'es',
+      blurb: 'The Lamb’s Supper en español: la Misa a la luz del Apocalipsis.',
+      stages: ['exploring', 'returning', 'beginning'], needs: ['sacraments', 'scripture', 'basics'], format: 'chapters', priority: 1 }),
+    b({ id: 'dios-te-salve', title: 'Dios te salve, Reina y Madre', author: 'Scott Hahn', handle: 'dios-te-salve-reina-y-madre', lang: 'es',
+      blurb: 'Hail, Holy Queen en español: la Virgen María en la Escritura.',
+      stages: ['exploring', 'beginning', 'growing'], needs: ['saints', 'scripture'], format: 'chapters' }),
+    b({ id: 'comprender-las-escrituras', title: 'Comprender las Escrituras', author: 'Scott Hahn', handle: 'comprender-las-escrituras-curso-completo', lang: 'es',
+      blurb: 'Understanding the Scriptures en español: un curso bíblico completo.',
+      stages: ['beginning', 'growing'], needs: ['scripture', 'basics'], format: 'deep' }),
+    b({ id: 'la-fuerza-del-silencio', title: 'La fuerza del silencio', author: 'Cardenal Robert Sarah', handle: 'la-fuerza-del-silencio-frente-a-la-dictadura-del-ruido', lang: 'es',
+      blurb: 'The Power of Silence en español: el silencio como camino hacia Dios.',
+      stages: ['growing', 'deepening'], needs: ['prayer'], format: 'chapters' })
+  ];
+})(typeof window !== 'undefined' ? window : globalThis);
+
+/* quiz/data/magnets.js */
+/* The free ebooks a reader can ask for at the end of a quiz: Scepter's own out-of-print booklets,
+ * which it already gives away (today in the Scepter app; before that as a free PDF by email).
+ * Each quiz result offers exactly one, chosen by the same tag match as the books.
+ *
+ * BEFORE LAUNCH fill in `download` for each booklet: a direct link to the PDF or EPUB (for example
+ * uploaded to Shopify > Content > Files, or the R2 bucket). With a link, the reader gets a
+ * "Download now" button the moment they sign up. Without one, they are pointed to the Scepter app
+ * and the email your email system sends (see funnels/PLAYBOOK.md, "Delivery email").
+ *
+ * Titles and product pages below were seen in web searches of scepterpublishers.org on
+ * 2026-09-27. The full free library (50+ booklets) could not be listed from the build machine;
+ * add more with the same fields. Tags use the ids in data/segments.js.
+ */
+(function (root) {
+  'use strict';
+  var SQ = root.ScepterQuiz = root.ScepterQuiz || {};
+  SQ.data = SQ.data || {};
+  var P = 'https://scepterpublishers.org/products/';
+  var APP = { label: 'Read it free in the Scepter app', url: 'https://scepterpublishers.org/pages/free-spiritual-reading' };
+  var SRC = 'web search, scepterpublishers.org product page, 2026-09-27';
+
+  function m(o) {
+    o.product = P + o.handle; delete o.handle;
+    o.url = o.download || ''; delete o.download;
+    o.alt = APP;
+    o.source = SRC;
+    return o;
+  }
+
+  SQ.data.magnets = [
+    m({ id: 'how-to-pray', title: 'How to Pray', author: 'Rev. Francis Luna', handle: 'how-to-pray', download: '',
+      blurb: 'A short, practical guide to making ten or fifteen minutes of personal prayer each day fruitful.',
+      stages: ['returning', 'beginning', 'growing'], needs: ['prayer', 'peace'], priority: 3 }),
+    m({ id: 'treasury-of-prayers', title: 'A Treasury of Prayers', author: '', handle: 'a-treasury-of-prayers', download: '',
+      blurb: 'The prayers every Catholic knows by heart, and some worth learning: the Our Father, Hail Mary, Memorare, Salve Regina, and short prayers for any moment of the day.',
+      stages: ['exploring', 'returning', 'beginning'], needs: ['prayer', 'saints', 'basics'], priority: 2 }),
+    m({ id: 'norms-of-piety', title: 'Norms of Piety: A Plan for Everyday Living', author: '', handle: 'norms-of-piety', download: '',
+      blurb: 'How to build a personal, realistic plan of prayer into everyday life.',
+      stages: ['beginning', 'growing'], needs: ['everyday', 'prayer', 'virtue'], priority: 2 }),
+    m({ id: 'sanctifying-ordinary-work', title: 'Sanctifying Ordinary Work', author: '', handle: 'sanctifying-ordinary-work', download: '',
+      blurb: 'On the heart of St. Josemaría’s message: ordinary work, done well and offered to God, becomes a path to holiness.',
+      stages: ['exploring', 'beginning', 'growing', 'deepening'], needs: ['everyday', 'purpose', 'sharing', 'parenting', 'marriage'], priority: 2 }),
+    m({ id: 'why-suffer', title: 'Why Suffer?', author: '', handle: 'why-suffer', download: '',
+      blurb: 'For anyone carrying something heavy: illness, a death, a lost job, a strained marriage, money troubles. What faith says about suffering, and where to find strength.',
+      stages: ['exploring', 'returning', 'beginning', 'growing', 'deepening'], needs: ['suffering', 'peace'], priority: 1 }),
+    m({ id: 'making-the-most-of-confession', title: 'Making the Most of Confession', author: '', handle: 'making-the-most-of-confession', download: '',
+      blurb: 'A short guide to getting more out of Confession.',
+      stages: ['returning', 'beginning'], needs: ['sacraments', 'basics', 'scripture'], priority: 2 }),
+    m({ id: 'frequent-confession-booklet', title: 'Frequent Confession', author: '', handle: 'frequent-confession-1', download: '',
+      blurb: 'On the practice of frequent Confession and what it does for the spiritual life.',
+      stages: ['growing', 'deepening'], needs: ['sacraments', 'virtue'], priority: 1 }),
+    m({ id: 'to-make-a-good-retreat', title: 'To Make a Good Retreat', author: '', handle: 'to-make-a-good-retreat', download: '',
+      blurb: 'A short guide for anyone who has decided to make a retreat, or is thinking about it.',
+      stages: ['growing', 'deepening'], needs: ['prayer', 'purpose', 'seasons'], priority: 1 }),
+    m({ id: 'donkey-at-the-waterwheel', title: 'The Donkey at the Waterwheel', author: 'Malcolm Kennedy', handle: 'the-donkey-at-the-waterwheel', download: '',
+      blurb: 'On perseverance in the spiritual life, built around St. Josemaría’s image of the donkey patiently turning the waterwheel.',
+      stages: ['growing', 'deepening'], needs: ['virtue', 'everyday', 'sharing', 'scripture'], priority: 1 }),
+    m({ id: 'devotion-to-st-joseph', title: 'Devotion to St. Joseph', author: '', handle: 'devotion-to-st-joseph', download: '',
+      blurb: 'The Seven Sundays devotion, the Litany of St. Joseph and Pope Leo XIII’s letter on him: a companion for fathers, families and workers.',
+      stages: ['beginning', 'growing', 'deepening'], needs: ['saints', 'parenting', 'marriage'], priority: 1 }),
+    m({ id: 'thomas-more-making-of-a-saint', title: 'Sir Thomas More: The Making of a Saint', author: '', handle: 'sir-thomas-more-the-making-of-a-saint', download: '',
+      blurb: 'How a lawyer, father and statesman became a saint: a short life of St. Thomas More.',
+      stages: ['exploring', 'beginning', 'growing'], needs: ['saints', 'everyday', 'purpose', 'basics'], priority: 1 }),
+    m({ id: 'advent-christmas-carols', title: 'Advent & Christmas Carols', author: '', handle: 'advent-christmas-carols', download: '',
+      blurb: 'The best-loved Advent and Christmas carols and hymns in one free collection, for singing at home.',
+      stages: ['exploring', 'returning', 'beginning', 'growing', 'deepening'], needs: ['seasons'], priority: 1 })
+  ];
+})(typeof window !== 'undefined' ? window : globalThis);
+
+/* quiz/quizzes/gift-finder.js */
+/* Quiz 2: "Find a Book for Someone You Love". For a parent, grandparent, godparent, spouse or
+ * friend choosing for someone else.
+ *
+ * Who it is for: warm traffic, and gift seasons (Advent, First Communion and Confirmation in
+ * spring, Mother's and Father's Day). About a minute: 5 or 6 screens.
+ *
+ * What it keeps: the giver's email only. The person they are choosing for is never named, never
+ * emailed, and never gets a profile of their own. Everything the giver says about them is stored
+ * under gift_* tags and properties, so a grandmother buying for a drifting grandson is never
+ * emailed as if she were the one drifting.
+ *
+ * Children are not placed on a stage; their picks come only from the children's titles.
+ * Teens and adults are placed from the giver's best guess about where they are.
+ */
+(function (root) {
+  'use strict';
+  var SQ = root.ScepterQuiz;
+  var seg = SQ.data.segments;
+
+  function giftNeed(id) {
+    var n = seg.needs.filter(function (x) { return x.id === id; })[0];
+    var score = {}; score[id] = 3;
+    return { id: id, label: n.gift, score: { need: score } };
+  }
+  function giftNeeds(ids) { return ids.map(giftNeed); }
+
+  var NOT_CHILD = ['teen', '18-24', '25-34', '35-49', '50-64', '65-plus'];
+
+  var titleBits = {
+    exploring: 'who is looking around',
+    returning: 'who is finding their way back',
+    beginning: 'who is building a daily habit',
+    growing: 'who is ready to go deeper',
+    deepening: 'whose faith runs deep'
+  };
+
+  SQ.define({
+    id: 'gift-finder',
+    version: 1,
+    maxNeeds: 2,
+    defaultStage: 'beginning',
+    meta: {
+      eyebrow: 'Scepter Publishers',
+      title: 'Find a Book for Someone You Love',
+      tabNote: 'As a gift · about 1 minute',
+      description: 'A one-minute quiz that suggests books for a child, a teen or an adult, with a free ebook for you.',
+      lede: [
+        'Tell us a little about the person you have in mind and we’ll suggest three books they’re likely to enjoy.',
+        'You don’t need to know their whole story. Your best guess is plenty.'
+      ],
+      facts: ['About 1 minute', 'We never ask for their name or email', 'Free ebook for you'],
+      startLabel: 'Find a gift',
+      reassurance: 'We only ask about them in general terms, and we never contact them. The only email we’ll ever ask for is yours.'
+    },
+
+    questions: [
+      {
+        id: 'age', type: 'single', prompt: 'How old is the person you’re choosing for?',
+        columns: 2,
+        options: [
+          { id: 'child', label: 'A child (under 13)', set: { age: 'child' } },
+          { id: 'teen', label: 'A teenager', set: { age: 'teen' } },
+          { id: '18-24', label: '18–24', set: { age: '18-24' } },
+          { id: '25-34', label: '25–34', set: { age: '25-34' } },
+          { id: '35-49', label: '35–49', set: { age: '35-49' } },
+          { id: '50-64', label: '50–64', set: { age: '50-64' } },
+          { id: '65-plus', label: '65 or older', set: { age: '65-plus' } }
+        ]
+      },
+      {
+        id: 'occasion', type: 'single', required: false,
+        prompt: 'Is there an occasion?',
+        help: 'Optional.',
+        options: [
+          { id: 'none', label: 'Birthday, Christmas or just because' },
+          { id: 'sacrament', label: 'First Communion, Confirmation or Baptism', score: { need: { sacraments: 3 } } },
+          { id: 'wedding', label: 'An engagement or wedding', score: { need: { marriage: 3 } } },
+          { id: 'ocia', label: 'They’re becoming Catholic', score: { need: { basics: 3 }, stage: { exploring: 2 } } },
+          { id: 'hard', label: 'They’re going through a hard time', score: { need: { suffering: 3, peace: 1 } } },
+          { id: 'newparent', label: 'A new baby, or they’re raising young children', score: { need: { parenting: 3 } } }
+        ]
+      },
+      {
+        id: 'faith', type: 'single',
+        showIf: { age: NOT_CHILD },
+        prompt: 'As far as you can tell, where are they with faith right now?',
+        help: 'Go by what you’ve seen. A best guess is fine, and there are no wrong answers.',
+        options: [
+          { id: 'away', label: 'Not interested yet, or not sure about faith', score: { stage: { exploring: 3 } } },
+          { id: 'lapsed', label: 'Raised Catholic but away from the Church', score: { stage: { returning: 3 } } },
+          { id: 'casual', label: 'Goes to Mass, but faith is mostly casual', score: { stage: { beginning: 3 } } },
+          { id: 'faithful', label: 'Faithful, and wants to grow', score: { stage: { growing: 3 } } },
+          { id: 'devout', label: 'Deeply devout, and loves to read', score: { stage: { deepening: 3 } } },
+          { id: 'unsure', label: 'I honestly don’t know', score: { stage: { beginning: 3 } } }
+        ]
+      },
+      {
+        id: 'needs-child', group: 'needs', type: 'multi', max: 2,
+        showIf: { age: ['child'] },
+        prompt: 'What would you love the book to do?',
+        help: 'Choose up to two.',
+        columns: 2,
+        options: [
+          { id: 'prayer', label: 'Help them learn to pray', score: { need: { prayer: 3 } } },
+          { id: 'sacraments', label: 'Get ready for Confession or First Communion', score: { need: { sacraments: 3 } } },
+          { id: 'saints', label: 'Introduce them to saints and heroes', score: { need: { saints: 3 } } },
+          { id: 'story', label: 'Just be a good story we’ll enjoy together', score: { need: { parenting: 2 } } }
+        ]
+      },
+      {
+        id: 'needs', group: 'needs', type: 'multi', max: 2, columns: 2,
+        showIf: { age: NOT_CHILD },
+        prompt: 'What might they welcome most right now?',
+        help: 'Choose up to two.',
+        options: giftNeeds(['prayer', 'peace', 'suffering', 'everyday', 'basics', 'sacraments', 'scripture', 'saints', 'virtue', 'purpose', 'marriage', 'parenting'])
+      },
+      {
+        id: 'format', type: 'single', required: false,
+        prompt: 'What kind of reader are they?',
+        help: 'Optional.',
+        options: [
+          { id: 'minutes', label: 'Short and frequent', sub: 'A few minutes at a time', set: { format: 'minutes' } },
+          { id: 'chapters', label: 'Likes a good book', sub: 'A chapter at a time', set: { format: 'chapters' } },
+          { id: 'deep', label: 'Loves to dig in', sub: 'Longer or more demanding books', set: { format: 'deep' } }
+        ]
+      },
+      {
+        id: 'lang', type: 'single', required: false,
+        prompt: '¿Leen en inglés o en español? / Do they read in English or Spanish?',
+        help: 'Optional. / Opcional.',
+        columns: 2,
+        options: [
+          { id: 'en', label: 'English', set: { lang: 'en' } },
+          { id: 'es', label: 'Español', set: { lang: 'es' } }
+        ]
+      }
+    ],
+
+    derive: function (p) {
+      p.recipient = 'gift';
+      if (p.age === 'child') p.stage = 'beginning';
+      p.life = null;
+      return p;
+    },
+
+    plan: function (p) {
+      var steps = [];
+      if (p.age === 'child') {
+        steps.push({ title: 'Read it together.', text: 'Bedtime works well. Let them ask questions, and enjoy the pictures.' });
+        steps.push({ title: 'Write their name inside the cover.', text: 'Add the date and one sentence about why you chose it.' });
+        steps.push({ title: 'Pray one short prayer afterwards.', text: 'A Hail Mary or just “thank you, God” is plenty.' });
+      } else {
+        steps.push({ title: 'Add a short handwritten note.', text: 'One or two sentences on why you thought of them. The note matters as much as the book.' });
+        if (p.stage === 'exploring' || p.stage === 'returning') {
+          steps.push({ title: 'Give it with no strings attached.', text: 'Let it be an invitation, not a message. Resist asking later whether they’ve read it; trust the book and pray for them.' });
+        } else {
+          steps.push({ title: 'Offer to talk about it, if they’d like.', text: 'A shared book can become a good conversation, or a small reading plan you follow together.' });
+        }
+        steps.push({ title: 'Keep the free ebook for yourself, or pass it on.', text: 'It’s a short read you can pair with the gift.' });
+      }
+      return { title: 'Giving it well', intro: 'Three small things that make a book land.', steps: steps };
+    },
+
+    result: {
+      eyebrow: 'Your gift picks',
+      count: 3,
+      filter: function (it, p) {
+        if (it.gendered) return false;
+        return p.age !== 'child' || it.audience === 'children';
+      },
+      title: function (p) {
+        return p.age === 'child' ? 'Three books for a young reader' : 'Books for someone ' + titleBits[p.stage];
+      },
+      tagline: null,
+      portrait: function (p, st) {
+        if (p.age === 'child') {
+          return ['Children learn the faith first at home, from the people who love them. These books are made to be read aloud together, so they work as a gift for the child and for you.'];
+        }
+        return st.giftPortrait;
+      },
+      notes: function (p) {
+        var out = [];
+        if (p.age !== 'child' && (p.stage === 'exploring' || p.stage === 'returning')) {
+          out.push('When someone is away from the Church, the kindest gift is usually a good book and a lot of patience. We’ve chosen titles that are warm and never pushy.');
+        }
+        if ((p.needs || []).indexOf('suffering') >= 0) {
+          out.push('If they are going through something heavy, your company will mean more than any book. A short note and an offer to listen go a long way.');
+        }
+        return out;
+      },
+      booksTitle: 'Three books to consider',
+      booksIntro: 'Chosen from what you told us. The notes under each title say why.',
+      crossLinks: [{ label: 'Want a book for yourself? Try Find Your Next Step', quiz: 'next-step' }],
+      order: ['head', 'books', 'capture', 'plan'],
+      magnet: {
+        eyebrow: 'A free ebook for you',
+        button: 'Send me the free ebook',
+        promise: 'Free. It’s yours to read or to pass along.',
+        doneTitle: 'Your ebook is ready.',
+        doneTextLink: 'Download it below. We’ve also emailed you a copy to keep.',
+        doneText: 'It’s on its way to your inbox. You can also read it free in the Scepter app.'
+      }
+    }
+  });
+})(typeof window !== 'undefined' ? window : globalThis);
+
+/* quiz/quizzes/next-step.js */
+/* Quiz 1: "Find Your Next Step". For a reader choosing for themselves.
+ *
+ * Who it is for: cold traffic (social, search, a homepage banner) and newsletter readers.
+ * Length: 8 to 11 screens, about three minutes. Questions that do not apply are hidden, so a
+ * newcomer sees 8 and a practising Catholic sees 10.
+ *
+ * How it places a reader (see derive below):
+ *   - what they say about their faith sets the starting point;
+ *   - what they do (prayer, Mass, reading) decides between Taking Root, Growing Deeper and Bearing
+ *     Fruit for practising Catholics, so enthusiasm and modesty both even out;
+ *   - Seeking and Coming Home are never changed by habits, except that a returning reader with a
+ *     steady practice is Taking Root. Someone who prays daily in another tradition is still
+ *     Seeking in relation to the Catholic faith, and the result says so kindly.
+ *   - needs come from what they choose, plus their life season (a couple gets "marriage", a parent
+ *     gets "raising children") and Confession answers.
+ * Nothing here is shown as a grade: no numbers, no levels, no ladder.
+ */
+(function (root) {
+  'use strict';
+  var SQ = root.ScepterQuiz;
+  var seg = SQ.data.segments;
+
+  function need(id, label) {
+    var n = seg.needs.filter(function (x) { return x.id === id; })[0];
+    return { id: id, label: label || n.label, score: { need: (function (o) { o[id] = 3; return o; })({}) } };
+  }
+  function needs(ids) { return ids.map(function (id) { return need(id); }); }
+
+  var HABIT = function (n) { return { value: { habit: n } }; };
+
+  var stageNames = {};
+  seg.stages.forEach(function (s) { stageNames[s.id] = s.name; });
+
+  var lifeStep = {
+    'student': { title: 'Keep it short and keep it steady.', text: 'Five minutes before the day starts beats an hour you never get to. Tie it to something you already do, like the first coffee.' },
+    'single': { title: 'Treat this as a full life, because it is one.', text: 'Your work, your friendships and your free evenings are exactly where God wants to meet you.' },
+    'married': { title: 'Pray one short prayer together.', text: 'Grace before a meal or a minute before bed is enough. Few things strengthen a marriage more than praying side by side.' },
+    'parent-young': { title: 'Pick one family moment and keep it.', text: 'A blessing at bedtime or a short prayer at dinner. Little ones remember rhythm long before they understand words.' },
+    'parent-teen': { title: 'Let them see you pray.', text: 'Teens notice what parents do far more than what they say. A short prayer you keep up, without comment, speaks loudly.' },
+    'grown-children': { title: 'Use the time you now have.', text: 'Add a weekday Mass, a longer stretch of reading, or a prayer for each of your children and grandchildren by name.' },
+    'clergy': { title: 'Protect your own prayer first.', text: 'Fifteen minutes with a book that is for you, not for a homily. Your people are helped by what overflows.' }
+  };
+
+  SQ.define({
+    id: 'next-step',
+    version: 1,
+    maxNeeds: 3,
+    meta: {
+      eyebrow: 'Scepter Publishers',
+      title: 'Find Your Next Step',
+      tabNote: 'For yourself · about 3 minutes',
+      description: 'A short quiz that suggests books, a simple next step and a free ebook for where you are in your faith.',
+      lede: [
+        'Answer a few short questions and we’ll suggest a simple next step, three books and a free ebook chosen for where you are right now.',
+        'Whether you’re curious, coming back, or years into a faithful life, there’s a good place to start.'
+      ],
+      facts: ['About 3 minutes', 'See your results first', 'Free ebook at the end'],
+      startLabel: 'Start the quiz',
+      reassurance: 'There are no right answers and nothing is graded. Your answers are used only to choose what to suggest to you.'
+    },
+
+    questions: [
+      {
+        id: 'age', type: 'single', prompt: 'First, how old are you?',
+        help: 'So we can suggest books written for your stage of life.',
+        columns: 2,
+        options: [
+          { id: 'teen', label: 'Under 18', set: { age: 'teen', life: 'student' } },
+          { id: '18-24', label: '18–24', set: { age: '18-24' } },
+          { id: '25-34', label: '25–34', set: { age: '25-34' } },
+          { id: '35-49', label: '35–49', set: { age: '35-49' } },
+          { id: '50-64', label: '50–64', set: { age: '50-64' } },
+          { id: '65-plus', label: '65 or older', set: { age: '65-plus' } }
+        ]
+      },
+      {
+        id: 'life', type: 'single', required: false,
+        showIf: { age: ['18-24', '25-34', '35-49', '50-64', '65-plus'] },
+        prompt: 'Which of these sounds most like your life right now?',
+        help: 'Pick the closest one, or skip.',
+        options: [
+          { id: 'student', label: 'I’m a student', set: { life: 'student' }, score: { need: { purpose: 1 } } },
+          { id: 'single', label: 'I’m single and working, or between things', set: { life: 'single' }, score: { need: { purpose: 1 } } },
+          { id: 'married', label: 'I’m married or engaged', set: { life: 'married' }, score: { need: { marriage: 2 } } },
+          { id: 'parent-young', label: 'I’m raising young children', set: { life: 'parent-young' }, score: { need: { parenting: 2 } } },
+          { id: 'parent-teen', label: 'I’m raising teenagers', set: { life: 'parent-teen' }, score: { need: { parenting: 2 } } },
+          { id: 'grown-children', label: 'My children are grown, or I’m a grandparent', set: { life: 'grown-children' } },
+          { id: 'clergy', label: 'I’m a priest, deacon, religious or seminarian', set: { life: 'clergy' } }
+        ]
+      },
+      {
+        id: 'faith', type: 'single',
+        prompt: 'Which of these sounds most like you right now?',
+        help: 'Wherever you are is a fine place to start.',
+        options: [
+          { id: 'curious', label: 'I’m curious about the Catholic faith, or not sure what I believe', score: { stage: { exploring: 4 } } },
+          { id: 'ocia', label: 'I’m preparing to become Catholic, or thinking about it', score: { stage: { exploring: 4 }, need: { basics: 2 } } },
+          { id: 'away', label: 'I grew up Catholic, drifted away, and feel drawn back', score: { stage: { returning: 4 } } },
+          { id: 'unsteady', label: 'I’m Catholic and my faith matters, but it isn’t as steady as I’d like', score: { stage: { beginning: 4 } } },
+          { id: 'practising', label: 'I’m Catholic and practise regularly. I want to go deeper', score: { stage: { growing: 4 } } },
+          { id: 'central', label: 'My faith is the centre of my life. I want to grow and to help others', score: { stage: { deepening: 4 } } }
+        ]
+      },
+      {
+        id: 'prayer', type: 'single',
+        prompt: 'How often do you pray, apart from Mass or services?',
+        help: 'Any kind counts: talking to God, a rosary, a quiet minute. No judgment here.',
+        options: [
+          { id: 'never', label: 'Rarely or never', ...HABIT(0) },
+          { id: 'sometimes', label: 'A few times a month', ...HABIT(1) },
+          { id: 'weekly', label: 'Most weeks', ...HABIT(2) },
+          { id: 'mostdays', label: 'Most days', ...HABIT(3) },
+          { id: 'daily', label: 'Every day, at a set time', ...HABIT(4) }
+        ]
+      },
+      {
+        id: 'mass', type: 'single', required: false,
+        showIf: { faith: ['away', 'unsteady', 'practising', 'central'] },
+        prompt: 'In a typical month, how often do you get to Mass?',
+        help: 'Many people can’t always get there. Skip this one if you’d rather.',
+        options: [
+          { id: 'rare', label: 'Rarely, or only on big occasions', ...HABIT(0) },
+          { id: 'monthly', label: 'About once a month', ...HABIT(1) },
+          { id: 'most', label: 'Most Sundays', ...HABIT(2) },
+          { id: 'every', label: 'Every Sunday', ...HABIT(3) },
+          { id: 'more', label: 'Every Sunday, and some weekdays', ...HABIT(4) },
+          { id: 'cant', label: 'I can’t get to Mass right now (health, distance, work)' }
+        ]
+      },
+      {
+        id: 'confession', type: 'single', required: false,
+        showIf: { faith: ['away', 'unsteady'] },
+        prompt: 'When did you last go to Confession?',
+        help: 'Skip this if you’d rather. Plenty of people haven’t been in years, and there’s a way back.',
+        options: [
+          { id: 'recent', label: 'Within the last few months' },
+          { id: 'year', label: 'Within the last year or two' },
+          { id: 'long', label: 'It’s been a long time', score: { need: { sacraments: 3 } } },
+          { id: 'unsure', label: 'Many years, or I’m not sure how to start', score: { need: { sacraments: 3, basics: 1 } } }
+        ]
+      },
+      {
+        id: 'reading', type: 'single',
+        prompt: 'How often do you read something that feeds your faith?',
+        help: 'The Bible, a spiritual book, a daily reflection, even an article.',
+        options: [
+          { id: 'never', label: 'Rarely or never', ...HABIT(0) },
+          { id: 'sometimes', label: 'Now and then', ...HABIT(1) },
+          { id: 'weekly', label: 'About once a week', ...HABIT(2) },
+          { id: 'often', label: 'A few times a week', ...HABIT(3) },
+          { id: 'daily', label: 'Almost every day', ...HABIT(4) }
+        ]
+      },
+      {
+        id: 'reach', type: 'single',
+        showIf: { faith: ['practising', 'central'] },
+        prompt: 'How does your faith show up with the people around you?',
+        help: 'Pick the closest one. Each is a good place to be.',
+        options: [
+          { id: 'private', label: 'It’s mostly private, between me and God', value: { reach: 0 } },
+          { id: 'asked', label: 'I talk about it when someone asks', value: { reach: 1 } },
+          { id: 'invite', label: 'I look for ways to encourage and invite others', value: { reach: 2 }, score: { need: { sharing: 1 } } }
+        ]
+      },
+      {
+        id: 'needs-seeking', group: 'needs', type: 'multi', max: 3, columns: 2,
+        showIf: { faith: ['curious', 'ocia'] },
+        prompt: 'What are you most curious about?',
+        help: 'Choose up to three.',
+        options: needs(['basics', 'scripture', 'prayer', 'peace', 'suffering', 'purpose', 'saints', 'everyday'])
+      },
+      {
+        id: 'needs-returning', group: 'needs', type: 'multi', max: 3, columns: 2,
+        showIf: { faith: ['away'] },
+        prompt: 'We’re glad you’re here. What would help most as you come back?',
+        help: 'Choose up to three.',
+        options: needs(['sacraments', 'prayer', 'basics', 'peace', 'suffering', 'everyday', 'saints', 'purpose'])
+      },
+      {
+        id: 'needs-practising', group: 'needs', type: 'multi', max: 3, columns: 2,
+        showIf: { faith: ['unsteady', 'practising', 'central'] },
+        prompt: 'What would help you most right now?',
+        help: 'Choose up to three.',
+        options: needs(['prayer', 'peace', 'suffering', 'everyday', 'virtue', 'scripture', 'sacraments', 'saints', 'seasons', 'purpose', 'sharing'])
+      },
+      {
+        id: 'format', type: 'single', required: false,
+        prompt: 'What kind of reading fits your life right now?',
+        help: 'Optional. It helps us pick books you’ll actually finish.',
+        options: [
+          { id: 'minutes', label: 'A few minutes a day', sub: 'Short daily readings', set: { format: 'minutes' } },
+          { id: 'chapters', label: 'A book, a chapter at a time', set: { format: 'chapters' } },
+          { id: 'deep', label: 'I like to dig in', sub: 'Longer or more demanding books', set: { format: 'deep' } }
+        ]
+      },
+      {
+        id: 'lang', type: 'single', required: false,
+        prompt: 'Do you prefer to read in English or Spanish? / ¿Prefiere leer en inglés o en español?',
+        help: 'Optional. / Opcional.',
+        columns: 2,
+        options: [
+          { id: 'en', label: 'English', set: { lang: 'en' } },
+          { id: 'es', label: 'Español', set: { lang: 'es' } }
+        ]
+      }
+    ],
+
+    // Stage = what they said, then what they do. See the header comment.
+    derive: function (p, answers, t, core) {
+      var said = p.stage;
+      var H = core.mean(p.values.habit);
+      var reach = core.mean(p.values.reach);
+      var stage = said;
+      if (H != null) {
+        if (said === 'returning' && H >= 3) stage = 'beginning';
+        if (said === 'beginning' || said === 'growing' || said === 'deepening') {
+          var nudge = { beginning: -0.25, growing: 0, deepening: 0.25 }[said];
+          var s = H + nudge;
+          if (s < 2.5) stage = 'beginning';
+          else if (s >= 3.4 && reach != null && reach >= 2) stage = 'deepening';
+          else stage = 'growing';
+        }
+      }
+      p.stage = stage;
+      p.said = said;
+      p.praysRegularly = answers.prayer === 'mostdays' || answers.prayer === 'daily';
+      return p;
+    },
+
+    plan: function (p, data) {
+      var st = data.segments.stages.filter(function (s) { return s.id === p.stage; })[0];
+      var steps = st.steps.slice();
+      var extra = lifeStep[p.life];
+      if (extra && p.age !== 'teen') steps.push(extra);
+      return { title: 'Small steps for this week', intro: 'Pick one to start. They all work, and none is a test.', steps: steps };
+    },
+
+    result: {
+      eyebrow: 'Your result',
+      count: 3,
+      filter: function (it) { return !it.gendered; },
+      booksTitle: 'Three books picked for you',
+      booksIntro: 'Each one is chosen from your answers. The notes under each title say why.',
+      notes: function (p) {
+        var out = ['This isn’t a grade. It’s a snapshot of where you are today, and it will change.'];
+        if (p.stage === 'exploring' && p.praysRegularly) {
+          out.push('You already pray regularly, which is a real gift. “Seeking” here refers only to the Catholic faith, and we’ve chosen books accordingly.');
+        }
+        if ((p.needs || []).indexOf('suffering') >= 0) {
+          out.push('If things feel heavy, please talk with a priest or someone you trust. In the US you can also call or text 988 at any hour.');
+        }
+        return out;
+      },
+      crossLinks: [{ label: 'Buying for someone else? Try the gift finder', quiz: 'gift-finder' }],
+      order: ['head', 'capture', 'plan', 'books'],
+      magnet: {
+        eyebrow: 'Your free ebook',
+        button: 'Send me the free ebook',
+        promise: 'Free. No payment details needed.',
+        guardianNote: 'Because you’re under 18, we’ll send the ebook to a parent or guardian’s email. Please ask one to enter theirs below.',
+        doneTitle: 'Your ebook is ready.',
+        doneTextLink: 'Download it below. We’ve also emailed you a copy to keep.',
+        doneText: 'It’s on its way to your inbox. You can also read it free in the Scepter app.'
+      }
+    }
+  });
+})(typeof window !== 'undefined' ? window : globalThis);
+
+/* quiz/src/ui.js */
+/* Scepter quiz engine: the page. Renders a quiz config into an element, one question per screen,
+ * then the result: who we think you are (and why), next steps, three books, the free ebook.
+ *
+ *   ScepterQuiz.mount(document.getElementById('scepter-quiz'), 'next-read')
+ *
+ * Results are shown before any sign-up; the email is only for the free ebook. Every string a
+ * reader sees comes from the quiz config or data/segments.js, never from here, except the
+ * handful of interface words in UI_TEXT below.
+ */
+(function (root) {
+  'use strict';
+  var SQ = root.ScepterQuiz = root.ScepterQuiz || {};
+  var core = SQ.core, doc = root.document;
+
+  var UI_TEXT = {
+    start: 'Start',
+    next: 'Next',
+    back: 'Back',
+    skip: 'Skip this one',
+    seeResults: 'See my results',
+    of: 'of',
+    question: 'Question',
+    chooseUpTo: function (n) { return 'Choose up to ' + n; },
+    tooMany: function (n) { return 'You can pick up to ' + n + '. Unselect one to choose another.'; },
+    pickOne: 'Choose an answer to continue, or skip this one.',
+    basedOn: 'Based on what you told us',
+    changeAnswers: 'Change my answers',
+    retake: 'Start over',
+    seeBook: 'See the book',
+    addToCart: 'Add to cart',
+    added: 'Added to your cart',
+    viewCart: 'View cart',
+    firstName: 'First name',
+    optional: '(optional)',
+    email: 'Email address',
+    guardianEmail: 'Parent or guardian’s email',
+    emailInvalid: 'Please enter an email address like name@example.com.',
+    consentRequired: 'Please tick the box so we can email you.',
+    sending: 'Sending…',
+    sendError: 'That didn’t go through. Please check your connection and try again.',
+    download: 'Download now',
+    copyLink: 'Copy link to this quiz',
+    copied: 'Link copied',
+    demoNote: 'Preview mode: nothing was sent. This is what the email system would receive:',
+    challenge: 'One last step: please confirm you’re not a robot below.'
+  };
+
+  // ---- tiny DOM helper: text is always set as text, never parsed as HTML ------------------------
+
+  function h(tag, attrs, kids) {
+    var el = doc.createElement(tag);
+    Object.keys(attrs || {}).forEach(function (k) {
+      var v = attrs[k];
+      if (v == null || v === false) return;
+      if (k === 'class') el.className = v;
+      else if (k === 'text') el.textContent = v;
+      else if (k.slice(0, 2) === 'on') el.addEventListener(k.slice(2), v);
+      else if (v === true) el.setAttribute(k, '');
+      else el.setAttribute(k, v);
+    });
+    (function add(list) {
+      core.asList(list).forEach(function (c) {
+        if (c == null || c === false) return;
+        if (Array.isArray(c)) return add(c);
+        el.appendChild(typeof c === 'string' ? doc.createTextNode(c) : c);
+      });
+    })(kids);
+    return el;
+  }
+
+  function paras(text, cls) {
+    return core.asList(text).map(function (t) { return h('p', { class: cls, text: t }); });
+  }
+
+  // A string may be written per reader: { self: 'your', gift: 'their' }.
+  function pick(v, p) {
+    if (v && typeof v === 'object' && !Array.isArray(v)) {
+      var who = p && p.recipient === 'gift' ? 'gift' : 'self';
+      return v[who] != null ? v[who] : v.self;
+    }
+    return v;
+  }
+
+  function byId(list, id) { return (list || []).filter(function (x) { return x.id === id; })[0] || null; }
+
+  function store(key, val) {
+    try {
+      if (val === undefined) return JSON.parse(root.sessionStorage.getItem(key) || 'null');
+      if (val === null) root.sessionStorage.removeItem(key);
+      else root.sessionStorage.setItem(key, JSON.stringify(val));
+    } catch (e) { return null; }
+  }
+
+  function prefersReducedMotion() {
+    try { return root.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { return false; }
+  }
+
+  // ---- mount ---------------------------------------------------------------------------------
+
+  SQ.mount = function (el, quizId, opts) {
+    opts = opts || {};
+    var quiz = typeof quizId === 'string' ? SQ.quizzes[quizId] : quizId;
+    if (!el) throw new Error('ScepterQuiz.mount: no element');
+    if (!quiz) throw new Error('ScepterQuiz.mount: unknown quiz ' + quizId);
+    var seg = SQ.data.segments;
+    var key = 'sq:' + quiz.id + ':v' + (quiz.version || 1);
+    var saved = opts.fresh ? null : store(key);
+    var state = saved && saved.answers ? saved : { step: 'intro', index: 0, answers: {} };
+    var live = h('div', { class: 'sq-live', 'aria-live': 'polite', role: 'status' });
+    var shell = h('div', { class: 'sq-shell' });
+    var box = h('section', { class: 'sq', 'data-quiz': quiz.id, 'aria-label': quiz.meta.title }, [shell, live]);
+    el.innerHTML = '';
+    el.appendChild(box);
+
+    function save() { store(key, { step: state.step, index: state.index, answers: state.answers }); }
+    function questions() { return core.visibleQuestions(quiz, state.answers); }
+    function profileNow() { return core.computeProfile(quiz, state.answers); }
+    function announce(t) { live.textContent = ''; setTimeout(function () { live.textContent = t; }, 30); }
+
+    function show(node, focusSel) {
+      shell.innerHTML = '';
+      shell.appendChild(node);
+      var f = shell.querySelector(focusSel || '[data-focus]');
+      if (f && opts.autofocus !== false && state.touched) {
+        f.setAttribute('tabindex', '-1');
+        f.focus({ preventScroll: true });
+        var top = box.getBoundingClientRect().top;
+        if (top < 0 || top > root.innerHeight * 0.6) box.scrollIntoView({ block: 'start', behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
+      }
+    }
+
+    // ---- intro -------------------------------------------------------------------------------
+
+    function renderIntro() {
+      var m = quiz.meta;
+      show(h('div', { class: 'sq-screen sq-intro' }, [
+        m.eyebrow ? h('p', { class: 'sq-eyebrow', text: m.eyebrow }) : null,
+        h('h2', { class: 'sq-title', 'data-focus': true, text: m.title }),
+        h('div', { class: 'sq-lede' }, paras(m.lede)),
+        m.facts ? h('ul', { class: 'sq-facts' }, m.facts.map(function (f) { return h('li', { text: f }); })) : null,
+        h('div', { class: 'sq-actions' }, [
+          h('button', { type: 'button', class: 'sq-btn sq-btn-primary', text: m.startLabel || UI_TEXT.start, onclick: function () {
+            state.touched = true; state.step = 'q'; state.index = 0; save();
+            SQ.track('start', { quiz: quiz.id }, box);
+            render();
+          } })
+        ]),
+        m.reassurance ? h('p', { class: 'sq-fine', text: m.reassurance }) : null
+      ]));
+    }
+
+    // ---- one question ------------------------------------------------------------------------
+
+    function renderQuestion() {
+      var qs = questions();
+      if (state.index >= qs.length) { state.step = 'result'; save(); return render(); }
+      var q = qs[state.index], p = profileNow();
+      var multi = q.type === 'multi', max = q.max || (multi ? q.options.length : 1);
+      var chosen = core.asList(state.answers[q.id]).slice();
+      var n = state.index + 1, isLast = n === qs.length;
+      var total = isLast ? qs.length : Math.max(core.estimateTotal(quiz, state.answers), qs.length);
+      var err = h('p', { class: 'sq-error', id: 'sq-err-' + q.id, hidden: true });
+      var nextBtn, viaPointer = false, leaving = false, gone = false;
+
+      function commit() {
+        if (chosen.length) state.answers[q.id] = multi ? chosen.slice() : chosen[0];
+        else delete state.answers[q.id];
+        save();
+      }
+      function go(delta) {
+        if (gone) return;
+        gone = true;
+        commit();
+        state.index = Math.max(0, state.index + delta);
+        var len = questions().length;
+        if (state.index >= len) {
+          state.step = 'result';
+          SQ.track('complete', { quiz: quiz.id }, box);
+        }
+        save();
+        render();
+      }
+      function next() {
+        if (!chosen.length && q.required !== false) {
+          err.textContent = UI_TEXT.pickOne; err.hidden = false; return;
+        }
+        go(1);
+      }
+
+      var inputs = q.options.map(function (o, i) {
+        var id = 'sq-' + quiz.id + '-' + q.id + '-' + o.id;
+        var input = h('input', {
+          type: multi ? 'checkbox' : 'radio', name: 'sq-' + quiz.id + '-' + q.id, id: id, value: o.id,
+          class: 'sq-input', 'aria-describedby': o.sub ? id + '-sub' : null
+        });
+        input.checked = chosen.indexOf(o.id) >= 0;
+        input.addEventListener('change', function () {
+          err.hidden = true;
+          if (multi) {
+            if (input.checked && chosen.length >= max) {
+              input.checked = false;
+              err.textContent = UI_TEXT.tooMany(max); err.hidden = false;
+              return;
+            }
+            if (input.checked) chosen.push(o.id);
+            else chosen = chosen.filter(function (x) { return x !== o.id; });
+          } else {
+            chosen = [o.id];
+          }
+          commit();
+          if (nextBtn) nextBtn.classList.toggle('sq-ready', chosen.length > 0);
+          // A mouse or touch pick on a single-choice question moves on; arrow keys do not, so a
+          // keyboard reader can look through the choices and press Next.
+          if (!multi && viaPointer && !leaving) {
+            leaving = true;
+            setTimeout(function () { go(1); }, prefersReducedMotion() ? 0 : 220);
+          }
+        });
+        return h('li', { class: 'sq-option' }, [
+          input,
+          h('label', { for: id, class: 'sq-option-label' }, [
+            h('span', { class: 'sq-option-text', text: pick(o.label, p) }),
+            o.sub ? h('span', { class: 'sq-option-sub', id: id + '-sub', text: pick(o.sub, p) }) : null
+          ])
+        ]);
+      });
+
+      nextBtn = h('button', {
+        type: 'submit', class: 'sq-btn sq-btn-primary' + (chosen.length ? ' sq-ready' : ''),
+        text: isLast ? UI_TEXT.seeResults : UI_TEXT.next
+      });
+      var form = h('form', { class: 'sq-screen sq-question', novalidate: true, onsubmit: function (e) { e.preventDefault(); next(); } }, [
+        h('div', { class: 'sq-progress' }, [
+          h('span', { class: 'sq-progress-text', text: UI_TEXT.question + ' ' + n + ' ' + UI_TEXT.of + ' ' + total }),
+          h('span', { class: 'sq-bar', role: 'progressbar', 'aria-label': 'Progress', 'aria-valuemin': '0', 'aria-valuemax': String(total), 'aria-valuenow': String(n - 1) }, [
+            h('span', { class: 'sq-bar-fill', style: 'width:' + Math.round((n - 1) / total * 100) + '%' })
+          ])
+        ]),
+        h('fieldset', { class: 'sq-fieldset', 'aria-describedby': 'sq-err-' + q.id }, [
+          h('legend', { class: 'sq-prompt', 'data-focus': true, text: pick(q.prompt, p) }),
+          q.help ? h('p', { class: 'sq-help', text: pick(q.help, p) }) : null,
+          multi && max < q.options.length ? h('p', { class: 'sq-help sq-limit', text: UI_TEXT.chooseUpTo(max) }) : null,
+          h('ul', { class: 'sq-options' + (q.columns ? ' sq-cols-' + q.columns : ''), role: 'list' }, inputs)
+        ]),
+        err,
+        h('div', { class: 'sq-actions sq-nav' }, [
+          state.index > 0 ? h('button', { type: 'button', class: 'sq-btn sq-btn-quiet', text: UI_TEXT.back, onclick: function () { go(-1); } }) : null,
+          h('span', { class: 'sq-spacer' }),
+          q.required === false ? h('button', { type: 'button', class: 'sq-btn sq-btn-link', text: UI_TEXT.skip, onclick: function () { chosen = []; go(1); } }) : null,
+          nextBtn
+        ])
+      ]);
+      form.addEventListener('pointerdown', function () { viaPointer = true; });
+      form.addEventListener('keydown', function () { viaPointer = false; });
+      show(form);
+      announce(UI_TEXT.question + ' ' + n + ' ' + UI_TEXT.of + ' ' + total);
+    }
+
+    // ---- result ------------------------------------------------------------------------------
+
+    function reasonText(r, p) {
+      var R = seg.reasons || {};
+      if (r.kind === 'need') { var nd = byId(seg.needs, r.id); return nd ? (nd.reason || nd.name) : null; }
+      if (r.kind === 'stage') { var st = byId(seg.stages, r.id); return st ? pick(R.stage, p).replace('{stage}', st.name) : null; }
+      if (r.kind === 'age') { var ag = byId(seg.ages, r.id); return ag && R.age ? pick(R.age, p).replace('{age}', ag.label) : null; }
+      if (r.kind === 'format') { return (R.format || {})[r.id] || null; }
+      if (r.kind === 'life') { var lf = byId(seg.lifeSeasons, r.id); return lf && lf.reason ? lf.reason : null; }
+      if (r.kind === 'audience') { var au = (seg.audiences || {})[r.id]; return au ? au.label : null; }
+      return null;
+    }
+
+    function bookCard(r, p) {
+      var it = r.item;
+      var reasons = r.reasons.map(function (x) { return reasonText(x, p); }).filter(Boolean).slice(0, 2);
+      var card = h('li', { class: 'sq-book' }, [
+        h('div', { class: 'sq-book-cover', 'aria-hidden': 'true' }, [h('span', { text: it.title.split(/[:(]/)[0].trim() })]),
+        h('div', { class: 'sq-book-body' }, [
+          h('h4', { class: 'sq-book-title', text: it.title }),
+          it.author ? h('p', { class: 'sq-book-author', text: it.author }) : null,
+          reasons.length ? h('ul', { class: 'sq-why', 'aria-label': 'Why this book' }, reasons.map(function (t) { return h('li', { text: t }); })) : null,
+          it.blurb ? h('p', { class: 'sq-book-blurb', text: it.blurb }) : null,
+          h('div', { class: 'sq-book-actions' }, [
+            it.url ? h('a', { class: 'sq-btn sq-btn-small', href: it.url, target: opts.linkTarget || '_top', text: UI_TEXT.seeBook,
+              onclick: function () { SQ.track('book_click', { quiz: quiz.id, book: it.id }, box); } }) : null
+          ])
+        ])
+      ]);
+      enrichFromShop(card, it);
+      return card;
+    }
+
+    // On the Shopify store itself, fill in the cover, price and an add-to-cart button.
+    function enrichFromShop(card, it) {
+      var shop = (root.SCEPTER_QUIZ_SETTINGS || {}).shop || {};
+      if (!shop.productCards || !it.url) return;
+      var m = /\/products\/([^/?#]+)/.exec(it.url);
+      if (!m) return;
+      fetch((shop.root || '') + '/products/' + m[1] + '.js', { headers: { Accept: 'application/json' } })
+        .then(function (res) { if (!res.ok) throw new Error(res.status); return res.json(); })
+        .then(function (prod) {
+          var img = prod.featured_image;
+          if (img) {
+            var cov = card.querySelector('.sq-book-cover');
+            cov.innerHTML = '';
+            cov.classList.add('sq-has-image');
+            cov.appendChild(h('img', { src: img.replace(/^\/\//, 'https://') + (img.indexOf('?') < 0 ? '?' : '&') + 'width=240', alt: '', loading: 'lazy' }));
+          }
+          var v = (prod.variants || []).filter(function (x) { return x.available; })[0];
+          var actions = card.querySelector('.sq-book-actions');
+          if (typeof prod.price === 'number') {
+            var money = (prod.price / 100).toLocaleString(undefined, { style: 'currency', currency: shop.currency || 'USD' });
+            card.querySelector('.sq-book-body').insertBefore(h('p', { class: 'sq-price', text: money }), actions);
+          }
+          if (v && shop.addToCart) {
+            var btn = h('button', { type: 'button', class: 'sq-btn sq-btn-small sq-btn-primary', text: UI_TEXT.addToCart });
+            btn.addEventListener('click', function () {
+              btn.disabled = true;
+              fetch((shop.root || '') + '/cart/add.js', {
+                method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+                body: JSON.stringify({ items: [{ id: v.id, quantity: 1 }] })
+              }).then(function (res) {
+                if (!res.ok) throw new Error(res.status);
+                btn.replaceWith(h('a', { class: 'sq-btn sq-btn-small', href: (shop.root || '') + '/cart', target: '_top', text: UI_TEXT.added + ' · ' + UI_TEXT.viewCart }));
+                SQ.track('add_to_cart', { quiz: quiz.id, book: it.id }, box);
+                try { doc.dispatchEvent(new CustomEvent('cart:refresh', { bubbles: true })); } catch (e) {}
+              }).catch(function () { btn.disabled = false; });
+            });
+            actions.insertBefore(btn, actions.firstChild);
+          }
+        })
+        .catch(function () { /* not on the shop, or the handle moved: the plain card stands */ });
+    }
+
+    function captureCard(p, magnet, recs) {
+      var cap = SQ.capture.settings().capture;
+      var consentCfg = Object.assign({ mode: 'notice' }, seg.consent || {}, cap.consent || {});
+      var guardian = p.recipient !== 'gift' && core.isMinor(p.age);
+      var M = quiz.result.magnet || {};
+      var fid = 'sq-' + quiz.id;
+      var firstName = h('input', { id: fid + '-first', name: 'first_name', type: 'text', autocomplete: 'given-name', class: 'sq-field' });
+      var email = h('input', { id: fid + '-email', name: 'email', type: 'email', autocomplete: 'email', inputmode: 'email', required: true, class: 'sq-field', 'aria-describedby': fid + '-email-err' });
+      var emailErr = h('p', { class: 'sq-error', id: fid + '-email-err', hidden: true });
+      var consentBox = consentCfg.mode === 'checkbox' ? h('input', { id: fid + '-consent', type: 'checkbox', class: 'sq-check' }) : null;
+      var boxMode = consentCfg.mode === 'checkbox';
+      var consentText = guardian
+        ? ((boxMode && consentCfg.guardianCheckboxText) || consentCfg.guardianText || consentCfg.text)
+        : ((boxMode && consentCfg.checkboxText) || consentCfg.text);
+      var sendErr = h('p', { class: 'sq-error', role: 'alert', hidden: true });
+      var submit = h('button', { type: 'submit', class: 'sq-btn sq-btn-primary sq-btn-wide', text: pick(M.button, p) || 'Send me the free ebook' });
+      var frameHost = h('div', { class: 'sq-frame-host' });
+      var privacy = consentCfg.privacyUrl ? h('a', { href: consentCfg.privacyUrl, target: '_blank', rel: 'noopener', text: consentCfg.privacyLabel || 'Privacy policy' }) : null;
+
+      var form = h('form', { class: 'sq-capture-form', novalidate: true }, [
+        guardian && M.guardianNote ? h('p', { class: 'sq-guardian', text: M.guardianNote }) : null,
+        h('div', { class: 'sq-fields' }, [
+          h('div', { class: 'sq-field-row' }, [
+            h('label', { for: fid + '-first' }, [guardian ? 'Your first name' : UI_TEXT.firstName, ' ', h('span', { class: 'sq-optional', text: UI_TEXT.optional })]),
+            firstName
+          ]),
+          h('div', { class: 'sq-field-row' }, [
+            h('label', { for: fid + '-email', text: guardian ? UI_TEXT.guardianEmail : UI_TEXT.email }),
+            email,
+            emailErr
+          ])
+        ]),
+        consentBox ? h('div', { class: 'sq-consent sq-consent-box' }, [consentBox, h('label', { for: fid + '-consent', text: consentText })]) : null,
+        submit,
+        !consentBox ? h('p', { class: 'sq-consent sq-fine' }, [consentText + ' ', privacy]) : (privacy ? h('p', { class: 'sq-fine' }, [privacy]) : null),
+        sendErr,
+        frameHost
+      ]);
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var v = email.value.trim();
+        emailErr.hidden = true; sendErr.hidden = true;
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) {
+          emailErr.textContent = UI_TEXT.emailInvalid; emailErr.hidden = false;
+          email.setAttribute('aria-invalid', 'true'); email.focus(); return;
+        }
+        email.removeAttribute('aria-invalid');
+        var consent = consentBox ? consentBox.checked : true;
+        var payload = SQ.capture.buildPayload(quiz, state.answers, p, {
+          email: v, firstName: firstName.value, consent: consent, consentText: consentText, guardian: guardian
+        }, { magnet: magnet, recs: recs });
+        submit.disabled = true; submit.textContent = UI_TEXT.sending;
+        SQ.capture.send(payload, {
+          frameHost: frameHost,
+          onChallenge: function () { frameHost.insertBefore(h('p', { class: 'sq-help', text: UI_TEXT.challenge }), frameHost.firstChild); }
+        }).then(function (res) {
+          state.captured = { first: firstName.value.trim(), email: v };
+          SQ.track('lead', { quiz: quiz.id, stage: p.stage, age: p.age, needs: p.needs, magnet: magnet && magnet.id }, box);
+          form.replaceWith(captureDone(p, magnet, payload, res));
+        }).catch(function (err) {
+          try { root.console && root.console.error('[ScepterQuiz]', err); } catch (x) {}
+          submit.disabled = false; submit.textContent = pick(M.button, p) || 'Send me the free ebook';
+          sendErr.textContent = UI_TEXT.sendError; sendErr.hidden = false;
+        });
+      });
+
+      return h('section', { class: 'sq-capture', 'aria-labelledby': fid + '-magnet-title' }, [
+        h('div', { class: 'sq-capture-head' }, [
+          h('p', { class: 'sq-eyebrow', text: pick(M.eyebrow, p) || 'Free ebook' }),
+          h('h3', { class: 'sq-capture-title', id: fid + '-magnet-title', text: magnet.title }),
+          magnet.author ? h('p', { class: 'sq-book-author', text: magnet.author }) : null,
+          h('div', { class: 'sq-capture-blurb' }, paras(magnet.blurb)),
+          M.promise ? h('p', { class: 'sq-promise', text: pick(M.promise, p) }) : null
+        ]),
+        form
+      ]);
+    }
+
+    function captureDone(p, magnet, payload, res) {
+      var M = quiz.result.magnet || {};
+      var name = state.captured && state.captured.first;
+      var provider = SQ.capture.settings().capture.provider || 'demo';
+      var kids = [
+        h('h4', { class: 'sq-done-title', 'data-focus': true, text: (name ? 'Thank you, ' + name + '.' : 'Thank you.') + ' ' + (pick(M.doneTitle, p) || 'Your ebook is ready.') }),
+        h('p', { text: (magnet.url ? pick(M.doneTextLink, p) : pick(M.doneText, p)) || 'Your free ebook is on its way to your inbox.' })
+      ];
+      if (magnet.url) kids.push(h('a', { class: 'sq-btn sq-btn-primary', href: magnet.url, target: '_blank', rel: 'noopener', text: UI_TEXT.download,
+        onclick: function () { SQ.track('download', { quiz: quiz.id, magnet: magnet.id }, box); } }));
+      if (magnet.alt && magnet.alt.url) kids.push(h('a', { class: 'sq-btn sq-btn-quiet', href: magnet.alt.url, target: '_blank', rel: 'noopener', text: magnet.alt.label }));
+      if (provider === 'demo' && payload) {
+        kids.push(h('details', { class: 'sq-demo' }, [
+          h('summary', { text: UI_TEXT.demoNote }),
+          h('pre', { text: JSON.stringify(payload, null, 2) })
+        ]));
+      }
+      var el = h('div', { class: 'sq-done', role: 'status' }, kids);
+      setTimeout(function () { var f = el.querySelector('[data-focus]'); if (f) { f.setAttribute('tabindex', '-1'); f.focus({ preventScroll: true }); } }, 20);
+      return el;
+    }
+
+    function chips(p) {
+      var out = [];
+      var ag = byId(seg.ages, p.age); if (ag && p.age !== 'unknown') out.push(ag.chip || ag.label);
+      var lf = byId(seg.lifeSeasons, p.life); if (lf) out.push(lf.chip || lf.label);
+      (p.needs || []).forEach(function (n) { var nd = byId(seg.needs, n); if (nd) out.push(nd.name); });
+      if (p.lang && p.lang !== 'en') { var lg = byId(seg.languages, p.lang); if (lg) out.push(lg.label); }
+      return out;
+    }
+
+    function renderResult() {
+      var p = profileNow();
+      var st = byId(seg.stages, p.stage) || seg.stages[0];
+      var R = quiz.result || {};
+      var catalog = SQ.data.catalog || [];
+      var recs = core.recommend(catalog, p, { count: R.count || 3, filter: R.filter });
+      var magnets = SQ.data.magnets || [];
+      var magnet = magnets.length ? core.recommend(magnets, p, { count: 1, filter: R.magnetFilter })[0].item : null;
+      var plan = typeof quiz.plan === 'function' ? quiz.plan(p, SQ.data, core) : null;
+      var gift = p.recipient === 'gift';
+      var portrait = pick(R.portrait ? R.portrait(p, st) : (gift ? st.giftPortrait || st.portrait : st.portrait), p);
+
+      if (!state.resultTracked) {
+        state.resultTracked = true;
+        SQ.track('result', { quiz: quiz.id, stage: p.stage, age: p.age, needs: p.needs, recipient: p.recipient }, box);
+      }
+
+      var tagline = R.tagline === undefined ? pick(st.tagline, p) : (typeof R.tagline === 'function' ? R.tagline(p, st) : R.tagline);
+      var notes = typeof R.notes === 'function' ? R.notes(p, st) : (R.notes || []);
+      var head = h('header', { class: 'sq-result-head' }, [
+        h('p', { class: 'sq-eyebrow', text: pick(R.eyebrow, p) || 'Your result' }),
+        h('h2', { class: 'sq-title', 'data-focus': true, text: pick(R.title ? R.title(p, st) : st.name, p) }),
+        tagline ? h('p', { class: 'sq-tagline', text: tagline }) : null,
+        h('div', { class: 'sq-portrait' }, paras(portrait)),
+        notes.length ? h('div', { class: 'sq-notes' }, notes.map(function (n) { return h('p', { class: 'sq-note', text: n }); })) : null,
+        h('div', { class: 'sq-basis' }, [
+          h('span', { class: 'sq-basis-label', text: UI_TEXT.basedOn + ':' }),
+          h('ul', { class: 'sq-chips' }, chips(p).map(function (c) { return h('li', { text: c }); })),
+          h('button', { type: 'button', class: 'sq-btn sq-btn-link', text: UI_TEXT.changeAnswers, onclick: function () {
+            state.touched = true; state.step = 'q'; state.index = 0; state.resultTracked = false; save(); render();
+          } })
+        ])
+      ]);
+
+      var steps = plan && plan.steps && plan.steps.length ? h('section', { class: 'sq-plan' }, [
+        h('h3', { class: 'sq-h3', text: plan.title }),
+        plan.intro ? h('p', { class: 'sq-help', text: plan.intro }) : null,
+        h('ol', { class: 'sq-steps' }, plan.steps.map(function (s) {
+          return h('li', null, [h('strong', { text: s.title }), s.text ? h('span', { text: ' ' + s.text }) : null]);
+        }))
+      ]) : null;
+
+      var books = recs.length ? h('section', { class: 'sq-books' }, [
+        h('h3', { class: 'sq-h3', text: pick(R.booksTitle, p) || 'Books picked for you' }),
+        R.booksIntro ? h('p', { class: 'sq-help', text: pick(R.booksIntro, p) }) : null,
+        h('ul', { class: 'sq-book-list', role: 'list' }, recs.map(function (r) { return bookCard(r, p); }))
+      ]) : null;
+
+      var capture = magnet ? (state.captured ? captureDone(p, magnet, null, null) : captureCard(p, magnet, recs)) : null;
+
+      var urls = (root.SCEPTER_QUIZ_SETTINGS || {}).quizUrls || {};
+      var others = (R.crossLinks || []).map(function (c) { return { label: c.label, url: c.url || urls[c.quiz] }; }).filter(function (c) { return c.url; });
+      var foot = h('footer', { class: 'sq-result-foot' }, [
+        h('button', { type: 'button', class: 'sq-btn sq-btn-quiet', text: UI_TEXT.retake, onclick: function () {
+          state = { step: 'intro', index: 0, answers: {}, touched: true }; store(key, null); render();
+        } }),
+        others.map(function (c) { return h('a', { class: 'sq-btn sq-btn-quiet', href: c.url, target: '_top', text: c.label }); }),
+        h('button', { type: 'button', class: 'sq-btn sq-btn-link', text: UI_TEXT.copyLink, onclick: function (e) {
+          var b = e.currentTarget, url = (root.location.href || '').split('#')[0];
+          var ok = function () { b.textContent = UI_TEXT.copied; };
+          try { root.navigator.clipboard.writeText(url).then(ok, function () { b.textContent = url; }); } catch (x) { b.textContent = url; }
+        } })
+      ]);
+
+      // Order: who you are, then the free ebook (the offer is strongest right after the portrait
+      // lands), then the plan and the books. Quiz config may reorder with result.order.
+      var parts = { head: head, capture: capture, plan: steps, books: books };
+      var order = R.order || ['head', 'capture', 'plan', 'books'];
+      show(h('div', { class: 'sq-screen sq-result' + (gift ? ' sq-gift' : '') }, order.map(function (k) { return parts[k]; }).concat([foot])));
+      announce('Your results are ready: ' + (st ? st.name : ''));
+    }
+
+    function render() {
+      box.setAttribute('data-step', state.step);
+      if (state.step === 'intro') renderIntro();
+      else if (state.step === 'q') renderQuestion();
+      else renderResult();
+    }
+
+    render();
+    return {
+      get state() { return state; },
+      profile: profileNow,
+      reset: function () { state = { step: 'intro', index: 0, answers: {} }; store(key, null); render(); }
+    };
+  };
+
+  // Auto-mount: <div data-scepter-quiz="next-read"></div>
+  SQ.autoMount = function () {
+    var els = doc.querySelectorAll('[data-scepter-quiz]');
+    Array.prototype.forEach.call(els, function (el) {
+      if (el.__sqMounted) return;
+      el.__sqMounted = true;
+      try { SQ.mount(el, el.getAttribute('data-scepter-quiz')); }
+      catch (e) { try { root.console.error('[ScepterQuiz]', e); } catch (x) {} }
+    });
+  };
+  if (doc) {
+    if (doc.readyState === 'loading') doc.addEventListener('DOMContentLoaded', SQ.autoMount);
+    else setTimeout(SQ.autoMount, 0);
+  }
+  SQ.UI_TEXT = UI_TEXT;
+})(typeof window !== 'undefined' ? window : globalThis);
+
+</script>
+<script>
+(function () {
+  var tabs = document.querySelectorAll('.pv-tab');
+  Array.prototype.forEach.call(tabs, function (t) {
+    t.addEventListener('click', function () {
+      Array.prototype.forEach.call(tabs, function (x) {
+        var on = x === t;
+        x.setAttribute('aria-selected', on ? 'true' : 'false');
+        document.getElementById(x.getAttribute('aria-controls')).hidden = !on;
+      });
+    });
+  });
+})();
+</script>
