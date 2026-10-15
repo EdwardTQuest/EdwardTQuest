@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scepter Reader Quizzes</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="assets/scepter-quiz.css">
+<style>
+:root { color-scheme: light; }
+html, body { background: #efeae1; }
+body { margin: 0; padding-inline: 16px; padding-block: 1.5rem 3rem; color: #17201a; font-family: "EB Garamond", Georgia, serif; }
+.pv { max-width: 44rem; margin-inline: auto; display: grid; gap: 1rem; }
+.pv-head { display: grid; gap: 0.35rem; }
+.pv-kicker { font-family: "Cinzel", Georgia, serif; font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase; color: #76633a; margin: 0; }
+.pv-head h1 { margin: 0; font-weight: 500; font-size: 1.6rem; line-height: 1.15; }
+.pv-head p { margin: 0; color: #4d5646; font-size: 1.02rem; max-width: 40rem; }
+.pv-tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5rem; }
+.pv-tab { display: grid; gap: 0.1rem; text-align: left; padding: 0.6rem 0.8rem; border: 1px solid #8a7f66; border-radius: 6px; background: #f8f5ee; color: #17201a; font: inherit; cursor: pointer; }
+.pv-tab-name { font-size: 1.05rem; line-height: 1.2; }
+.pv-tab-sub { font-size: 0.88rem; color: #4d5646; }
+.pv-tab[aria-selected="true"] { background: #0a2416; border-color: #0a2416; color: #f4f1ed; }
+.pv-tab[aria-selected="true"] .pv-tab-sub { color: #d8bf8c; }
+.pv-tab:focus-visible { outline: 3px solid #b8862b; outline-offset: 2px; }
+@media (max-width: 30rem) { .pv-tabs { grid-template-columns: 1fr; } }
+
+.w-test { max-width: 44rem; margin: 0 auto 1rem; padding: 0.5rem 0.8rem; border-radius: 6px; background: #f1e6c9; color: #3f3418; font-size: 0.95rem; }
+.w-back { max-width: 44rem; margin: 0 auto 0.75rem; font-size: 1rem; }
+.w-back a { color: #4d5646; }
+main { max-width: 44rem; margin-inline: auto; }
+</style>
+</head>
+<body>
+<p class="w-test" role="note">Test version. Nothing you enter here is sent or saved.</p>
+<div class="pv">
+  <header class="pv-head">
+    <p class="pv-kicker">Scepter Publishers · test world</p>
+    <h1>Reader quizzes with a free ebook</h1>
+    <p>Take either quiz as a reader would. Results appear without signing up. The email form is in test mode: nothing is sent, and you can see exactly what your email system would receive.</p>
+  </header>
+  <div class="pv-tabs" role="tablist" aria-label="Quizzes">
+    <button type="button" class="pv-tab" role="tab" id="pv-tab-gift-finder" aria-controls="pv-panel-gift-finder" aria-selected="true" data-quiz="gift-finder"><span class="pv-tab-name">Find a Book for Someone You Love</span><span class="pv-tab-sub">As a gift · about 1 minute</span></button>
+    <button type="button" class="pv-tab" role="tab" id="pv-tab-next-step" aria-controls="pv-panel-next-step" aria-selected="false" data-quiz="next-step"><span class="pv-tab-name">Find Your Next Step</span><span class="pv-tab-sub">For yourself · about 3 minutes</span></button>
+  </div>
+  <div class="pv-panel" role="tabpanel" id="pv-panel-gift-finder" aria-labelledby="pv-tab-gift-finder"><div data-scepter-quiz="gift-finder"></div></div>
+  <div class="pv-panel" role="tabpanel" id="pv-panel-next-step" aria-labelledby="pv-tab-next-step" hidden><div data-scepter-quiz="next-step"></div></div>
+</div>
+<script>(function () {
+  var tabs = document.querySelectorAll('.pv-tab');
+  Array.prototype.forEach.call(tabs, function (t) {
+    t.addEventListener('click', function () {
+      Array.prototype.forEach.call(tabs, function (x) {
+        var on = x === t;
+        x.setAttribute('aria-selected', on ? 'true' : 'false');
+        document.getElementById(x.getAttribute('aria-controls')).hidden = !on;
+      });
+    });
+  });
+})();</script>
+<script src="assets/settings.js"></script>
+
+<script src="assets/scepter-quiz.js"></script>
+</body>
+</html>

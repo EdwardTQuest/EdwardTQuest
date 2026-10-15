@@ -30,27 +30,36 @@
   SQ.validate = function (quiz) {
     var out = [], seg = SQ.data.segments || {};
     var stages = ids(seg.stages), needs = ids(seg.needs), ages = ids(seg.ages);
+    var lifes = ids(seg.lifeSeasons), langs = ids(seg.languages);
+    var formats = Object.keys((seg.reasons || {}).format || {});
     if (!quiz || !quiz.id) return ['missing id'];
     if (!Array.isArray(quiz.questions) || !quiz.questions.length) out.push('no questions');
-    var qids = {};
+    var optionsOf = {};
     (quiz.questions || []).forEach(function (q) {
       if (!q.id) { out.push('a question has no id'); return; }
-      if (qids[q.id]) out.push('duplicate question id ' + q.id);
-      qids[q.id] = true;
+      if (optionsOf[q.id]) out.push('duplicate question id ' + q.id);
+      optionsOf[q.id] = ids(q.options);
+      if (q.type !== 'single' && q.type !== 'multi') out.push(q.id + ' type must be single or multi, not ' + q.type);
+      if (q.max != null && !(q.max >= 1 && q.max === Math.floor(q.max))) out.push(q.id + ' max must be a whole number');
       if (!q.options || !q.options.length) out.push(q.id + ' has no options');
       var oids = {};
       (q.options || []).forEach(function (o) {
         if (oids[o.id]) out.push(q.id + ' duplicate option ' + o.id);
         oids[o.id] = true;
         var sc = o.score || {};
-        Object.keys(sc.stage || {}).forEach(function (k) { if (stages.length && stages.indexOf(k) < 0) out.push(q.id + '.' + o.id + ' unknown stage ' + k); });
-        Object.keys(sc.need || {}).forEach(function (k) { if (needs.length && needs.indexOf(k) < 0) out.push(q.id + '.' + o.id + ' unknown need ' + k); });
+        Object.keys(sc.stage || {}).forEach(function (k) { if (stages.indexOf(k) < 0) out.push(q.id + '.' + o.id + ' unknown stage ' + k); });
+        Object.keys(sc.need || {}).forEach(function (k) { if (needs.indexOf(k) < 0) out.push(q.id + '.' + o.id + ' unknown need ' + k); });
         var st = o.set || {};
-        if (st.age && ages.length && ages.indexOf(st.age) < 0) out.push(q.id + '.' + o.id + ' unknown age ' + st.age);
-        if (st.stage && stages.length && stages.indexOf(st.stage) < 0) out.push(q.id + '.' + o.id + ' unknown stage ' + st.stage);
+        if (st.age && ages.indexOf(st.age) < 0) out.push(q.id + '.' + o.id + ' unknown age ' + st.age);
+        if (st.stage && stages.indexOf(st.stage) < 0) out.push(q.id + '.' + o.id + ' unknown stage ' + st.stage);
+        if (st.life && lifes.indexOf(st.life) < 0) out.push(q.id + '.' + o.id + ' unknown life season ' + st.life);
+        if (st.lang && langs.indexOf(st.lang) < 0) out.push(q.id + '.' + o.id + ' unknown language ' + st.lang);
+        if (st.format && formats.indexOf(st.format) < 0) out.push(q.id + '.' + o.id + ' unknown format ' + st.format);
+        if (st.recipient && st.recipient !== 'self' && st.recipient !== 'gift') out.push(q.id + '.' + o.id + ' unknown recipient ' + st.recipient);
       });
-      if (q.showIf) Object.keys(q.showIf).forEach(function (dep) {
-        if (!qids[dep]) out.push(q.id + ' showIf refers to ' + dep + ', which is not an earlier question');
+      Object.keys(q.showIf || {}).forEach(function (dep) {
+        if (!optionsOf[dep]) { out.push(q.id + ' showIf refers to ' + dep + ', which is not an earlier question'); return; }
+        asList(q.showIf[dep]).forEach(function (o) { if (optionsOf[dep].indexOf(o) < 0) out.push(q.id + ' showIf lists ' + dep + '.' + o + ', which is not an option'); });
       });
     });
     return out;
@@ -67,8 +76,16 @@
     });
   }
 
+  // Only answers to questions that are themselves visible count, so an answer left behind when
+  // an earlier change hid its question can never show, score or send anything.
   function visibleQuestions(quiz, answers) {
-    return quiz.questions.filter(function (q) { return shown(q, answers || {}); });
+    var eff = {}, out = [];
+    quiz.questions.forEach(function (q) {
+      if (!shown(q, eff)) return;
+      out.push(q);
+      if (answers && answers[q.id] !== undefined) eff[q.id] = answers[q.id];
+    });
+    return out;
   }
 
   // How many screens a reader may still see, assuming a question whose trigger has not been
@@ -173,6 +190,7 @@
     langMiss: -30,
     life: 3,
     audience: 8,     // a children's or teens' book for exactly that age group
+    audienceLife: 4, // ...or for the parent of that age group
     priority: 1      // item.priority 0..3: flagship titles win ties
   };
 
@@ -183,17 +201,31 @@
     return !!(a && a.minor);
   }
 
-  // Children's and teen books go to the right hands only: a parent of that age group, a reader of
-  // that age, or someone buying a gift for one. Everything else is an adult book.
+  // Who may be offered an item. Everything here fails closed: an unknown audience is refused.
+  //   audience   children / teens: only that age, their parents (reader quiz), or a gift buyer
+  //   catholic   presumes Catholic practice: never offered to a Seeking reader (or a gift for one)
+  //   pointed    reads as "you need this": never given as a gift to someone away from the Church
+  //   lifeOnly   written for couples or parents: not offered to minors, nor to a reader who has
+  //              said they are in a different life season
   function eligible(item, p) {
-    var aud = item.audience;
-    if (!aud) return true;
-    var who = SQ.data.segments && SQ.data.segments.audiences && SQ.data.segments.audiences[aud];
-    if (!who) return true;
-    var gift = p.recipient && p.recipient !== 'self';
-    if (asList(who.ages).indexOf(p.age) >= 0) return true;
-    if (!gift && asList(who.life).indexOf(p.life) >= 0) return true;
-    return false;
+    var gift = !!(p.recipient && p.recipient !== 'self');
+    if (item.audience) {
+      var who = (SQ.data.segments && SQ.data.segments.audiences || {})[item.audience];
+      if (!who) return false;
+      var byAge = asList(who.ages).indexOf(p.age) >= 0;
+      var byParent = !gift && asList(who.life).indexOf(p.life) >= 0;
+      if (!byAge && !byParent) return false;
+    }
+    // Spanish editions go only to readers who chose Spanish. A Spanish reader may still be offered
+    // an English title where no Spanish one exists.
+    if ((item.lang || 'en') !== 'en' && item.lang !== p.lang) return false;
+    if (item.catholic && p.stage === 'exploring') return false;
+    if (item.pointed && gift && (p.stage === 'exploring' || p.stage === 'returning')) return false;
+    if (item.lifeOnly) {
+      if (isMinor(p.age)) return false;
+      if (!gift && p.life && asList(item.lifeOnly).indexOf(p.life) < 0) return false;
+    }
+    return true;
   }
 
   // Score one item and collect the reasons a reader would recognise.
@@ -201,7 +233,9 @@
     var w = weights || W, s = 0, why = [];
     if (item.audience) {
       var who = (SQ.data.segments && SQ.data.segments.audiences || {})[item.audience];
+      var isGift = p.recipient && p.recipient !== 'self';
       if (who && asList(who.ages).indexOf(p.age) >= 0) { s += w.audience; why.push({ kind: 'audience', id: item.audience }); }
+      else if (who && !isGift && asList(who.life).indexOf(p.life) >= 0) { s += w.audienceLife; why.push({ kind: 'audience', id: item.audience }); }
     }
     var st = asList(item.stages), nd = asList(item.needs), ag = asList(item.ages);
     if (p.stage && st.indexOf(p.stage) >= 0) { s += w.stage; why.push({ kind: 'stage', id: p.stage }); }
@@ -253,44 +287,52 @@
   function slug(s) { return String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
 
   // Tags for systems that only take tags (Shopify customers, Mailchimp). Short and stable.
-  function tagsFor(p, extra) {
-    var gift = p.recipient && p.recipient !== 'self';
+  // ctx.limited: the reader did not agree to marketing, or the address belongs to a parent or
+  // guardian. Then nothing about faith, age or needs leaves the page: only which quiz it was.
+  function tagsFor(p, extra, ctx) {
+    ctx = ctx || {};
+    var gift = !!(p.recipient && p.recipient !== 'self');
+    var minorReader = !gift && isMinor(p.age);
     var pre = gift ? 'gift-' : '';
     var t = ['quiz-' + slug(p.quiz)];
     if (gift) t.push('gift-buyer');
+    if (minorReader) t.push('guardian-signup');
+    if (p.lang && p.lang !== 'en') t.push(pre + 'lang-' + slug(p.lang));
+    if (ctx.limited || minorReader) return t.concat(asList(extra));
     if (p.age && p.age !== 'unknown') t.push(pre + 'age-' + slug(p.age));
     if (p.stage && !(gift && p.age === 'child')) t.push(pre + 'stage-' + slug(p.stage));
     (p.needs || []).forEach(function (n) { t.push(pre + 'need-' + slug(n)); });
     if (p.life) t.push(pre + 'life-' + slug(p.life));
-    if (p.lang && p.lang !== 'en') t.push('lang-' + slug(p.lang));
-    if (!gift && isMinor(p.age)) t.push('guardian-signup');
     return t.concat(asList(extra));
   }
 
   // Profile properties for systems that take key/value data (Klaviyo, a webhook).
+  // A gift buyer's record never shares a key with a reader's own, so buying for someone else
+  // cannot overwrite what that person said about themselves.
   function propertiesFor(p, ctx) {
     ctx = ctx || {};
-    var gift = p.recipient && p.recipient !== 'self';
-    var props = {
-      scepter_quiz: p.quiz,
-      scepter_quiz_completed_at: ctx.now || null,
-      scepter_reader: gift ? 'someone-else' : 'self',
-      scepter_age_band: gift ? null : p.age,
-      scepter_stage: gift ? null : p.stage,
-      scepter_needs: gift ? null : (p.needs || []),
-      scepter_life_season: gift ? null : p.life,
-      scepter_language: p.lang || 'en',
-      scepter_reading_format: p.format || null,
-      scepter_free_ebook: ctx.magnet ? ctx.magnet.id : null,
-      scepter_recommended: (ctx.recs || []).map(function (r) { return r.item.id; })
-    };
-    if (gift) {
-      props.scepter_gift_age_band = p.age;
-      if (p.age !== 'child') props.scepter_gift_stage = p.stage;
-      props.scepter_gift_needs = p.needs || [];
+    var gift = !!(p.recipient && p.recipient !== 'self');
+    var minorReader = !gift && isMinor(p.age);
+    var limited = !!ctx.limited || minorReader;
+    var pre = gift ? 'scepter_gift_' : 'scepter_';
+    var props = {};
+    props[pre + 'quiz'] = p.quiz;
+    props[pre + 'quiz_completed_at'] = ctx.now || null;
+    props[pre + 'free_ebook'] = ctx.magnet ? ctx.magnet.id : null;
+    if (gift) props.scepter_gift_buyer = true;
+    if (minorReader) props.scepter_guardian_signup = true;
+    if (!limited) {
+      props[pre + 'age_band'] = p.age;
+      if (!(gift && p.age === 'child')) props[pre + 'stage'] = p.stage;
+      props[pre + 'needs'] = p.needs || [];
+      props[pre + 'life_season'] = p.life;
+      props[pre + 'language'] = p.lang || 'en';
+      props[pre + 'reading_format'] = p.format || null;
+      props[pre + 'recommended'] = (ctx.recs || []).map(function (r) { return r.item.id; });
+      if (!gift) Object.keys(p.extras || {}).forEach(function (k) { props['scepter_' + k] = p.extras[k]; });
+    } else if (p.lang && p.lang !== 'en') {
+      props[pre + 'language'] = p.lang;
     }
-    if (!gift && isMinor(p.age)) props.scepter_guardian_signup = true;
-    Object.keys(p.extras || {}).forEach(function (k) { props['scepter_' + k] = p.extras[k]; });
     Object.keys(props).forEach(function (k) { if (props[k] == null) delete props[k]; });
     return props;
   }

@@ -20,6 +20,7 @@
   var SRC = 'web search, scepterpublishers.org product page, 2026-09-27';
 
   function m(o) {
+    if (!o.handle) throw new Error('magnets: ' + o.id + ' needs a handle');
     o.product = P + o.handle; delete o.handle;
     o.url = o.download || ''; delete o.download;
     o.alt = APP;
@@ -32,27 +33,27 @@
       blurb: 'A short, practical guide to making ten or fifteen minutes of personal prayer each day fruitful.',
       stages: ['returning', 'beginning', 'growing'], needs: ['prayer', 'peace'], priority: 3 }),
     m({ id: 'treasury-of-prayers', title: 'A Treasury of Prayers', author: '', handle: 'a-treasury-of-prayers', download: '',
-      blurb: 'The prayers every Catholic knows by heart, and some worth learning: the Our Father, Hail Mary, Memorare, Salve Regina, and short prayers for any moment of the day.',
+      blurb: 'The prayers many Catholics learn by heart, and some worth learning: the Our Father, Hail Mary, Memorare, Salve Regina, and short prayers for any moment of the day.',
       stages: ['exploring', 'returning', 'beginning'], needs: ['prayer', 'saints', 'basics'], priority: 2 }),
-    m({ id: 'norms-of-piety', title: 'Norms of Piety: A Plan for Everyday Living', author: '', handle: 'norms-of-piety', download: '',
+    m({ id: 'norms-of-piety', title: 'Norms of Piety: A Plan for Everyday Living', author: 'J.M. Muntadas', handle: 'norms-of-piety', download: '',
       blurb: 'How to build a personal, realistic plan of prayer into everyday life.',
       stages: ['beginning', 'growing'], needs: ['everyday', 'prayer', 'virtue'], priority: 2 }),
-    m({ id: 'sanctifying-ordinary-work', title: 'Sanctifying Ordinary Work', author: '', handle: 'sanctifying-ordinary-work', download: '',
-      blurb: 'On the heart of St. Josemaría’s message: ordinary work, done well and offered to God, becomes a path to holiness.',
+    m({ id: 'sanctifying-ordinary-work', title: 'Sanctifying Ordinary Work', author: 'Andrew Byrne', handle: 'sanctifying-ordinary-work', download: '',
+      blurb: 'On St. Josemaría Escrivá’s teaching that ordinary work, done well and offered to God, can be a path to holiness, and how Opus Dei helps its members live it.',
       stages: ['exploring', 'beginning', 'growing', 'deepening'], needs: ['everyday', 'purpose', 'sharing', 'parenting', 'marriage'], priority: 2 }),
-    m({ id: 'why-suffer', title: 'Why Suffer?', author: '', handle: 'why-suffer', download: '',
+    m({ id: 'why-suffer', title: 'Why Suffer?', author: 'Mary Ann Budnik', handle: 'why-suffer', download: '',
       blurb: 'For anyone carrying something heavy: illness, a death, a lost job, a strained marriage, money troubles. What faith says about suffering, and where to find strength.',
       stages: ['exploring', 'returning', 'beginning', 'growing', 'deepening'], needs: ['suffering', 'peace'], priority: 1 }),
-    m({ id: 'making-the-most-of-confession', title: 'Making the Most of Confession', author: '', handle: 'making-the-most-of-confession', download: '',
+    m({ id: 'making-the-most-of-confession', title: 'Making the Most of Confession', author: 'Rev. Francis Luna', handle: 'making-the-most-of-confession', download: '',
       blurb: 'A short guide to getting more out of Confession.',
-      stages: ['returning', 'beginning'], needs: ['sacraments', 'basics', 'scripture'], priority: 2 }),
+      stages: ['returning', 'beginning'], needs: ['sacraments'], priority: 2, catholic: true }),
     m({ id: 'frequent-confession-booklet', title: 'Frequent Confession', author: '', handle: 'frequent-confession-1', download: '',
       blurb: 'On the practice of frequent Confession and what it does for the spiritual life.',
-      stages: ['growing', 'deepening'], needs: ['sacraments', 'virtue'], priority: 1 }),
+      stages: ['growing', 'deepening'], needs: ['sacraments', 'virtue'], priority: 1, catholic: true }),
     m({ id: 'to-make-a-good-retreat', title: 'To Make a Good Retreat', author: '', handle: 'to-make-a-good-retreat', download: '',
       blurb: 'A short guide for anyone who has decided to make a retreat, or is thinking about it.',
       stages: ['growing', 'deepening'], needs: ['prayer', 'purpose', 'seasons'], priority: 1 }),
-    m({ id: 'donkey-at-the-waterwheel', title: 'The Donkey at the Waterwheel', author: 'Malcolm Kennedy', handle: 'the-donkey-at-the-waterwheel', download: '',
+    m({ id: 'donkey-at-the-waterwheel', title: 'The Donkey at the Waterwheel', author: 'Malcolm M. Kennedy', handle: 'the-donkey-at-the-waterwheel', download: '',
       blurb: 'On perseverance in the spiritual life, built around St. Josemaría’s image of the donkey patiently turning the waterwheel.',
       stages: ['growing', 'deepening'], needs: ['virtue', 'everyday', 'sharing', 'scripture'], priority: 1 }),
     m({ id: 'devotion-to-st-joseph', title: 'Devotion to St. Joseph', author: '', handle: 'devotion-to-st-joseph', download: '',

@@ -22,11 +22,12 @@
     question: 'Question',
     chooseUpTo: function (n) { return 'Choose up to ' + n; },
     tooMany: function (n) { return 'You can pick up to ' + n + '. Unselect one to choose another.'; },
-    pickOne: 'Choose an answer to continue, or skip this one.',
+    pickOne: 'Choose an answer to continue.',
     basedOn: 'Based on what you told us',
     changeAnswers: 'Change my answers',
     retake: 'Start over',
-    seeBook: 'See the book',
+    retakeSure: 'Erase my result and start over?',
+    seeBook: 'See this book',
     addToCart: 'Add to cart',
     added: 'Added to your cart',
     viewCart: 'View cart',
@@ -34,6 +35,7 @@
     optional: '(optional)',
     email: 'Email address',
     guardianEmail: 'Parent or guardian’s email',
+    guardianFirst: 'Parent or guardian’s first name',
     emailInvalid: 'Please enter an email address like name@example.com.',
     consentRequired: 'Please tick the box so we can email you.',
     sending: 'Sending…',
@@ -42,7 +44,9 @@
     copyLink: 'Copy link to this quiz',
     copied: 'Link copied',
     demoNote: 'Preview mode: nothing was sent. This is what the email system would receive:',
-    challenge: 'One last step: please confirm you’re not a robot below.'
+    challenge: 'One last step: please complete the check below so we can add you.',
+    notAdded: 'We haven’t added you to our email list, as you asked.',
+    englishOnly: 'Our free booklets are in English for now.'
   };
 
   // ---- tiny DOM helper: text is always set as text, never parsed as HTML ------------------------
@@ -105,12 +109,18 @@
     var seg = SQ.data.segments;
     var key = 'sq:' + quiz.id + ':v' + (quiz.version || 1);
     var saved = opts.fresh ? null : store(key);
-    var state = saved && saved.answers ? saved : { step: 'intro', index: 0, answers: {} };
+    var okSaved = saved && typeof saved === 'object' && saved.answers && typeof saved.answers === 'object' && !Array.isArray(saved.answers) &&
+      (saved.step === 'intro' || saved.step === 'q' || saved.step === 'result') &&
+      typeof saved.index === 'number' && saved.index >= 0 && saved.index === Math.floor(saved.index) && saved.index < quiz.questions.length + 1;
+    var state = okSaved ? { step: saved.step, index: saved.index, answers: saved.answers } : { step: 'intro', index: 0, answers: {} };
     var live = h('div', { class: 'sq-live', 'aria-live': 'polite', role: 'status' });
     var shell = h('div', { class: 'sq-shell' });
     var box = h('section', { class: 'sq', 'data-quiz': quiz.id, 'aria-label': quiz.meta.title }, [shell, live]);
     el.innerHTML = '';
     el.appendChild(box);
+    // Any interaction counts: after a reload the first press still moves focus to the new screen.
+    box.addEventListener('pointerdown', function () { state.touched = true; });
+    box.addEventListener('keydown', function () { state.touched = true; });
 
     function save() { store(key, { step: state.step, index: state.index, answers: state.answers }); }
     function questions() { return core.visibleQuestions(quiz, state.answers); }
@@ -149,6 +159,20 @@
       ]));
     }
 
+    // An answer can end the quiz without saving or sending anything: the under-13 screen.
+    function renderStop(stop) {
+      store(key, null);
+      state.answers = {};
+      show(h('div', { class: 'sq-screen sq-stop' }, [
+        h('h2', { class: 'sq-title', 'data-focus': true, text: stop.title }),
+        h('div', { class: 'sq-lede' }, paras(stop.text)),
+        h('div', { class: 'sq-actions' }, [
+          h('button', { type: 'button', class: 'sq-btn', text: stop.back || 'Go back', onclick: function () { state = { step: 'q', index: 0, answers: {}, touched: true }; render(); } })
+        ])
+      ]));
+      announce(stop.title);
+    }
+
     // ---- one question ------------------------------------------------------------------------
 
     function renderQuestion() {
@@ -159,7 +183,8 @@
       var chosen = core.asList(state.answers[q.id]).slice();
       var n = state.index + 1, isLast = n === qs.length;
       var total = isLast ? qs.length : Math.max(core.estimateTotal(quiz, state.answers), qs.length);
-      var err = h('p', { class: 'sq-error', id: 'sq-err-' + q.id, hidden: true });
+      var errId = 'sq-' + quiz.id + '-err-' + q.id;
+      var err = h('p', { class: 'sq-error', id: errId, role: 'alert', hidden: true });
       var nextBtn, viaPointer = false, leaving = false, gone = false;
 
       function commit() {
@@ -170,6 +195,8 @@
       function go(delta) {
         if (gone) return;
         gone = true;
+        var stopper = delta > 0 && chosen.length ? q.options.filter(function (o) { return o.id === chosen[0] && o.stop; })[0] : null;
+        if (stopper) { delete state.answers[q.id]; save(); return renderStop(stopper.stop); }
         commit();
         state.index = Math.max(0, state.index + delta);
         var len = questions().length;
@@ -182,7 +209,9 @@
       }
       function next() {
         if (!chosen.length && q.required !== false) {
-          err.textContent = UI_TEXT.pickOne; err.hidden = false; return;
+          err.textContent = UI_TEXT.pickOne; err.hidden = false;
+          var first = form.querySelector('.sq-input'); if (first) first.focus();
+          return;
         }
         go(1);
       }
@@ -218,7 +247,7 @@
         });
         return h('li', { class: 'sq-option' }, [
           input,
-          h('label', { for: id, class: 'sq-option-label' }, [
+          h('label', { for: id, class: 'sq-option-label', lang: o.lang }, [
             h('span', { class: 'sq-option-text', text: pick(o.label, p) }),
             o.sub ? h('span', { class: 'sq-option-sub', id: id + '-sub', text: pick(o.sub, p) }) : null
           ])
@@ -236,8 +265,8 @@
             h('span', { class: 'sq-bar-fill', style: 'width:' + Math.round((n - 1) / total * 100) + '%' })
           ])
         ]),
-        h('fieldset', { class: 'sq-fieldset', 'aria-describedby': 'sq-err-' + q.id }, [
-          h('legend', { class: 'sq-prompt', 'data-focus': true, text: pick(q.prompt, p) }),
+        h('fieldset', { class: 'sq-fieldset', 'aria-describedby': errId }, [
+          h('legend', { class: 'sq-prompt', 'data-focus': true, lang: q.lang, text: pick(q.prompt, p) }),
           q.help ? h('p', { class: 'sq-help', text: pick(q.help, p) }) : null,
           multi && max < q.options.length ? h('p', { class: 'sq-help sq-limit', text: UI_TEXT.chooseUpTo(max) }) : null,
           h('ul', { class: 'sq-options' + (q.columns ? ' sq-cols-' + q.columns : ''), role: 'list' }, inputs)
@@ -275,10 +304,10 @@
       var card = h('li', { class: 'sq-book' }, [
         h('div', { class: 'sq-book-cover', 'aria-hidden': 'true' }, [h('span', { text: it.title.split(/[:(]/)[0].trim() })]),
         h('div', { class: 'sq-book-body' }, [
-          h('h4', { class: 'sq-book-title', text: it.title }),
+          h('h4', { class: 'sq-book-title', lang: it.lang, text: it.title }),
           it.author ? h('p', { class: 'sq-book-author', text: it.author }) : null,
           reasons.length ? h('ul', { class: 'sq-why', 'aria-label': 'Why this book' }, reasons.map(function (t) { return h('li', { text: t }); })) : null,
-          it.blurb ? h('p', { class: 'sq-book-blurb', text: it.blurb }) : null,
+          it.blurb ? h('p', { class: 'sq-book-blurb', lang: it.lang, text: it.blurb }) : null,
           h('div', { class: 'sq-book-actions' }, [
             it.url ? h('a', { class: 'sq-btn sq-btn-small', href: it.url, target: opts.linkTarget || '_top', text: UI_TEXT.seeBook,
               onclick: function () { SQ.track('book_click', { quiz: quiz.id, book: it.id }, box); } }) : null
@@ -307,8 +336,9 @@
           }
           var v = (prod.variants || []).filter(function (x) { return x.available; })[0];
           var actions = card.querySelector('.sq-book-actions');
-          if (typeof prod.price === 'number') {
-            var money = (prod.price / 100).toLocaleString(undefined, { style: 'currency', currency: shop.currency || 'USD' });
+          var cents = v && typeof v.price === 'number' ? v.price : prod.price;
+          if (typeof cents === 'number') {
+            var money = (cents / 100).toLocaleString(undefined, { style: 'currency', currency: shop.currency || 'USD' });
             card.querySelector('.sq-book-body').insertBefore(h('p', { class: 'sq-price', text: money }), actions);
           }
           if (v && shop.addToCart) {
@@ -333,28 +363,30 @@
 
     function captureCard(p, magnet, recs) {
       var cap = SQ.capture.settings().capture;
-      var consentCfg = Object.assign({ mode: 'notice' }, seg.consent || {}, cap.consent || {});
+      var consentCfg = Object.assign({}, seg.consent || {}, cap.consent || {});
       var guardian = p.recipient !== 'gift' && core.isMinor(p.age);
+      // Only an explicit 'notice' skips the box. Anything else, including a typo, asks for a ticked
+      // box, and so does a parent or guardian's address.
+      var boxMode = guardian || consentCfg.mode !== 'notice';
       var M = quiz.result.magnet || {};
       var fid = 'sq-' + quiz.id;
       var firstName = h('input', { id: fid + '-first', name: 'first_name', type: 'text', autocomplete: 'given-name', class: 'sq-field' });
       var email = h('input', { id: fid + '-email', name: 'email', type: 'email', autocomplete: 'email', inputmode: 'email', required: true, class: 'sq-field', 'aria-describedby': fid + '-email-err' });
       var emailErr = h('p', { class: 'sq-error', id: fid + '-email-err', hidden: true });
-      var consentBox = consentCfg.mode === 'checkbox' ? h('input', { id: fid + '-consent', type: 'checkbox', class: 'sq-check' }) : null;
-      var boxMode = consentCfg.mode === 'checkbox';
+      var consentBox = boxMode ? h('input', { id: fid + '-consent', type: 'checkbox', class: 'sq-check' }) : null;
       var consentText = guardian
         ? ((boxMode && consentCfg.guardianCheckboxText) || consentCfg.guardianText || consentCfg.text)
         : ((boxMode && consentCfg.checkboxText) || consentCfg.text);
       var sendErr = h('p', { class: 'sq-error', role: 'alert', hidden: true });
       var submit = h('button', { type: 'submit', class: 'sq-btn sq-btn-primary sq-btn-wide', text: pick(M.button, p) || 'Send me the free ebook' });
-      var frameHost = h('div', { class: 'sq-frame-host' });
+      var frameHost = h('div', { class: 'sq-frame-host' });   // lives outside the form so a captcha survives
       var privacy = consentCfg.privacyUrl ? h('a', { href: consentCfg.privacyUrl, target: '_blank', rel: 'noopener', text: consentCfg.privacyLabel || 'Privacy policy' }) : null;
 
       var form = h('form', { class: 'sq-capture-form', novalidate: true }, [
         guardian && M.guardianNote ? h('p', { class: 'sq-guardian', text: M.guardianNote }) : null,
         h('div', { class: 'sq-fields' }, [
           h('div', { class: 'sq-field-row' }, [
-            h('label', { for: fid + '-first' }, [guardian ? 'Your first name' : UI_TEXT.firstName, ' ', h('span', { class: 'sq-optional', text: UI_TEXT.optional })]),
+            h('label', { for: fid + '-first' }, [guardian ? UI_TEXT.guardianFirst : UI_TEXT.firstName, ' ', h('span', { class: 'sq-optional', text: UI_TEXT.optional })]),
             firstName
           ]),
           h('div', { class: 'sq-field-row' }, [
@@ -366,8 +398,7 @@
         consentBox ? h('div', { class: 'sq-consent sq-consent-box' }, [consentBox, h('label', { for: fid + '-consent', text: consentText })]) : null,
         submit,
         !consentBox ? h('p', { class: 'sq-consent sq-fine' }, [consentText + ' ', privacy]) : (privacy ? h('p', { class: 'sq-fine' }, [privacy]) : null),
-        sendErr,
-        frameHost
+        sendErr
       ]);
 
       form.addEventListener('submit', function (e) {
@@ -380,17 +411,18 @@
         }
         email.removeAttribute('aria-invalid');
         var consent = consentBox ? consentBox.checked : true;
+        var guardianFirst = guardian ? '' : firstName.value;
         var payload = SQ.capture.buildPayload(quiz, state.answers, p, {
-          email: v, firstName: firstName.value, consent: consent, consentText: consentText, guardian: guardian
+          email: v, firstName: guardianFirst, consent: consent, consentText: consentText, guardian: guardian
         }, { magnet: magnet, recs: recs });
         submit.disabled = true; submit.textContent = UI_TEXT.sending;
         SQ.capture.send(payload, {
           frameHost: frameHost,
-          onChallenge: function () { frameHost.insertBefore(h('p', { class: 'sq-help', text: UI_TEXT.challenge }), frameHost.firstChild); }
+          onChallenge: function () { if (!frameHost.querySelector('.sq-challenge-note')) frameHost.insertBefore(h('p', { class: 'sq-help sq-challenge-note', role: 'status', text: UI_TEXT.challenge }), frameHost.firstChild); }
         }).then(function (res) {
-          state.captured = { first: firstName.value.trim(), email: v };
-          SQ.track('lead', { quiz: quiz.id, stage: p.stage, age: p.age, needs: p.needs, magnet: magnet && magnet.id }, box);
-          form.replaceWith(captureDone(p, magnet, payload, res));
+          state.captured = { first: guardian ? '' : firstName.value.trim(), skipped: !!(res && res.skipped), challenge: !!(res && res.challenge) };
+          SQ.track('lead', { quiz: quiz.id, magnet: magnet && magnet.id }, box);
+          form.replaceWith(captureDone(p, magnet, payload, state.captured));
         }).catch(function (err) {
           try { root.console && root.console.error('[ScepterQuiz]', err); } catch (x) {}
           submit.disabled = false; submit.textContent = pick(M.button, p) || 'Send me the free ebook';
@@ -404,19 +436,26 @@
           h('h3', { class: 'sq-capture-title', id: fid + '-magnet-title', text: magnet.title }),
           magnet.author ? h('p', { class: 'sq-book-author', text: magnet.author }) : null,
           h('div', { class: 'sq-capture-blurb' }, paras(magnet.blurb)),
-          M.promise ? h('p', { class: 'sq-promise', text: pick(M.promise, p) }) : null
+          M.promise ? h('p', { class: 'sq-promise', text: pick(M.promise, p) }) : null,
+          p.lang === 'es' && magnet.lang !== 'es' ? h('p', { class: 'sq-promise', text: UI_TEXT.englishOnly }) : null
         ]),
-        form
+        h('div', { class: 'sq-capture-body' }, [form, frameHost])
       ]);
     }
 
     function captureDone(p, magnet, payload, res) {
       var M = quiz.result.magnet || {};
-      var name = state.captured && state.captured.first;
+      res = res || state.captured || {};
+      var name = res.first;
       var provider = SQ.capture.settings().capture.provider || 'demo';
+      var byEmail = !magnet.url && !res.skipped;
+      var title = (byEmail ? (pick(M.doneTitleEmail, p) || pick(M.doneTitle, p)) : pick(M.doneTitle, p)) || 'Your ebook is ready.';
+      var text = res.skipped
+        ? UI_TEXT.notAdded + ' ' + (magnet.url ? 'Your ebook is below.' : 'You can read it free in the Scepter app.')
+        : ((magnet.url ? pick(M.doneTextLink, p) : pick(M.doneText, p)) || 'Your free ebook is on its way to your inbox.');
       var kids = [
-        h('h4', { class: 'sq-done-title', 'data-focus': true, text: (name ? 'Thank you, ' + name + '.' : 'Thank you.') + ' ' + (pick(M.doneTitle, p) || 'Your ebook is ready.') }),
-        h('p', { text: (magnet.url ? pick(M.doneTextLink, p) : pick(M.doneText, p)) || 'Your free ebook is on its way to your inbox.' })
+        h('h4', { class: 'sq-done-title', 'data-focus': true, text: (name ? 'Thank you, ' + name + '. ' : 'Thank you. ') + title }),
+        h('p', { text: text })
       ];
       if (magnet.url) kids.push(h('a', { class: 'sq-btn sq-btn-primary', href: magnet.url, target: '_blank', rel: 'noopener', text: UI_TEXT.download,
         onclick: function () { SQ.track('download', { quiz: quiz.id, magnet: magnet.id }, box); } }));
@@ -455,7 +494,7 @@
 
       if (!state.resultTracked) {
         state.resultTracked = true;
-        SQ.track('result', { quiz: quiz.id, stage: p.stage, age: p.age, needs: p.needs, recipient: p.recipient }, box);
+        SQ.track('result', { quiz: quiz.id }, box);
       }
 
       var tagline = R.tagline === undefined ? pick(st.tagline, p) : (typeof R.tagline === 'function' ? R.tagline(p, st) : R.tagline);
@@ -470,7 +509,7 @@
           h('span', { class: 'sq-basis-label', text: UI_TEXT.basedOn + ':' }),
           h('ul', { class: 'sq-chips' }, chips(p).map(function (c) { return h('li', { text: c }); })),
           h('button', { type: 'button', class: 'sq-btn sq-btn-link', text: UI_TEXT.changeAnswers, onclick: function () {
-            state.touched = true; state.step = 'q'; state.index = 0; state.resultTracked = false; save(); render();
+            state.touched = true; state.step = 'q'; state.index = 0; state.resultTracked = false; state.captured = null; save(); render();
           } })
         ])
       ]);
@@ -478,7 +517,7 @@
       var steps = plan && plan.steps && plan.steps.length ? h('section', { class: 'sq-plan' }, [
         h('h3', { class: 'sq-h3', text: plan.title }),
         plan.intro ? h('p', { class: 'sq-help', text: plan.intro }) : null,
-        h('ol', { class: 'sq-steps' }, plan.steps.map(function (s) {
+        h('ul', { class: 'sq-steps', role: 'list' }, plan.steps.map(function (s) {
           return h('li', null, [h('strong', { text: s.title }), s.text ? h('span', { text: ' ' + s.text }) : null]);
         }))
       ]) : null;
@@ -494,21 +533,23 @@
       var urls = (root.SCEPTER_QUIZ_SETTINGS || {}).quizUrls || {};
       var others = (R.crossLinks || []).map(function (c) { return { label: c.label, url: c.url || urls[c.quiz] }; }).filter(function (c) { return c.url; });
       var foot = h('footer', { class: 'sq-result-foot' }, [
-        h('button', { type: 'button', class: 'sq-btn sq-btn-quiet', text: UI_TEXT.retake, onclick: function () {
+        h('button', { type: 'button', class: 'sq-btn sq-btn-quiet', text: UI_TEXT.retake, onclick: function (e) {
+          if (!e.currentTarget.getAttribute('data-sure')) { e.currentTarget.setAttribute('data-sure', '1'); e.currentTarget.textContent = UI_TEXT.retakeSure; return; }
           state = { step: 'intro', index: 0, answers: {}, touched: true }; store(key, null); render();
         } }),
         others.map(function (c) { return h('a', { class: 'sq-btn sq-btn-quiet', href: c.url, target: '_top', text: c.label }); }),
         h('button', { type: 'button', class: 'sq-btn sq-btn-link', text: UI_TEXT.copyLink, onclick: function (e) {
-          var b = e.currentTarget, url = (root.location.href || '').split('#')[0];
+          var b = e.currentTarget, loc = root.location || {};
+          var url = loc.origin && loc.origin !== 'null' ? loc.origin + loc.pathname : (loc.href || '').split(/[?#]/)[0];
           var ok = function () { b.textContent = UI_TEXT.copied; };
           try { root.navigator.clipboard.writeText(url).then(ok, function () { b.textContent = url; }); } catch (x) { b.textContent = url; }
         } })
       ]);
 
-      // Order: who you are, then the free ebook (the offer is strongest right after the portrait
-      // lands), then the plan and the books. Quiz config may reorder with result.order.
+      // Order: who you are, the books (the result), then the free ebook, then the steps. A quiz may
+      // reorder with result.order.
       var parts = { head: head, capture: capture, plan: steps, books: books };
-      var order = R.order || ['head', 'capture', 'plan', 'books'];
+      var order = R.order || ['head', 'books', 'capture', 'plan'];
       show(h('div', { class: 'sq-screen sq-result' + (gift ? ' sq-gift' : '') }, order.map(function (k) { return parts[k]; }).concat([foot])));
       announce('Your results are ready: ' + (st ? st.name : ''));
     }

@@ -13,17 +13,20 @@ For whoever writes the emails and runs the store. `README.md` covers installatio
    are averaged. "I can't get to Mass right now" is left out of the average, never counted as zero.
    - average under 2.5: **Taking Root**, whatever they said
    - 2.5 or more: **Growing Deeper**
-   - 3.4 or more *and* they invite or encourage others: **Bearing Fruit**
-   - someone who says "I'm central" but rarely prays lands in Taking Root, and someone modest who prays
-     daily and reads daily is not held back by it. Habits decide; self-description nudges by a quarter point.
+   - 3.4 or more: **Bearing Fruit**, whether or not they talk about their faith (a hidden life of prayer
+     counts as much as a visible one)
+   - someone who says "my faith is the center of my life" but rarely prays lands in Taking Root, and
+     someone modest who prays daily and reads daily is not held back by it. Habits decide;
+     self-description nudges by a quarter point.
 3. **Seeking** and **Coming Home** are never changed by habits, with one exception: a returning reader
    who already prays, goes to Mass and reads steadily is **Taking Root**. A seeker who prays daily is still
    Seeking (toward the Catholic faith), and the result tells them their prayer is a gift.
-4. **Needs** (up to three) come from what they tick, plus their life season (married gets *marriage*,
-   a parent gets *raising children*, a student or single reader gets a nudge toward *purpose*) and the
-   optional Confession question (*it's been a long time* adds *Confession and the Mass*).
-5. **Age** and **life season** come straight from their answers. Under-18 readers are not asked their life
-   season and are treated as students.
+4. **Needs** (up to three) come from what they tick (worth 3 points each), plus their life season (married
+   gets *marriage*, a parent gets *raising children*, a caregiver gets *peace*, a student or single reader a
+   nudge toward *purpose*) and the optional Confession question. Those inferred needs are worth 2, so what a
+   reader ticks always wins a tie.
+5. **Age** and **life season** come straight from their answers. Readers 13 to 17 are not asked their life
+   season and are treated as students. "Under 13" ends the quiz: nothing is saved or sent.
 
 ### Find a Book for Someone You Love
 
@@ -33,13 +36,24 @@ and the recipient is never named or contacted.
 
 ### How books are chosen
 
-Each book is scored on stage (+6, or +2 for a neighbouring stage), each chosen need (+8, +5, +3 in order
+Each book is scored on stage (+6, or +2 for a neighboring stage), each chosen need (+8, +5, +3 in order
 of importance), age (+3 if written for that age, −6 if for another), life season (+3), reading format (+2),
 language, and a small push for flagship titles. The top three are picked with a penalty for repeating an
-author or a series, so three picks are never one author three times. Children's and teens' books are offered
-only to that age group, their parents, or a gift buyer. English readers never see Spanish editions and
-Spanish readers see Spanish first. *To Be a Man* is excluded from automatic picks (the quiz does not ask
-sex, and a girl should not be sent it); show it from a link or a "for young men" page.
+author or a series, so three picks are never one author three times.
+
+Some books are never offered at all, however well they score. These are flags on each book in `catalog.js`:
+
+| flag | meaning |
+|---|---|
+| `audience` | children's and teens' books go only to that age, their parents (reader quiz), or a gift buyer. An unknown audience is refused |
+| `catholic` | presumes Catholic practice (Confession guides, a missal): never offered to a Seeking reader, or as a gift for one |
+| `pointed` | reads as "you need this" (for example *Home Again*): never given as a gift to someone away from the Church |
+| `lifeOnly` | written for couples, parents or clergy: not offered to anyone under 18, nor to a reader who said they are in a different life season |
+| `lang` | Spanish editions go only to readers who chose Español; a Spanish reader may still get an English title where none exists in Spanish |
+| `gendered` | *To Be a Man* is excluded from automatic picks (the quiz does not ask sex); show it from a link or a "for young men" page |
+
+The build refuses to finish unless every combination of language, stage, need and age a reader can reach
+gets three distinct books, an English reader never gets a Spanish one, and every reader gets a free ebook.
 
 ## What to send afterwards
 
@@ -90,8 +104,11 @@ Each free ebook in `quiz/data/magnets.js` is one of Scepter's own free booklets.
    app. **Then you must have an email flow that sends the booklet**, triggered by the tag or the event, or the
    page makes a promise nothing keeps.
 
-The delivery email is a service message: send it even to someone who did not tick the marketing box in
-`checkbox` mode. Only the later emails need consent.
+A reader who did not tick the marketing box is not added to any list. With a direct link they still get
+the ebook on screen. Without one, the page tells them they have not been added and points them to the free
+Scepter app, so a Klaviyo delivery flow should key on the **Completed Scepter Quiz** event (which is sent
+either way, with only the ebook details) and mail the booklet as a service message; later emails should
+check `scepter_marketing_consent`.
 
 ## Privacy and consent
 
@@ -99,14 +116,21 @@ The delivery email is a service message: send it even to someone who did not tic
   several US state privacy laws. The record sent to your email system holds only derived categories (age band,
   stage, needs, life season, language), never the raw answers about Mass, Confession or prayer. Switching on
   `capture.includeAnswers` changes that; do so only after legal review.
-- **Consent.** Use `mode: 'notice'` for the US (clear notice under the button) and `mode: 'checkbox'`
-  (unticked) for the EU, UK and Canada. The Shopify and Klaviyo adapters subscribe someone to marketing only
-  if they agreed.
-- **Minors.** Under-13s are not offered the reader quiz as such: the youngest age choice is "Under 18" and it
-  asks for a **parent or guardian's email**; the gift finder reaches children only through an adult. Have
-  counsel confirm this against COPPA and your state's rules before launch.
-- **Retakes.** Someone who retakes a quiz replaces their old tags. Remove `quiz-*`, `age-*`, `stage-*`,
-  `need-*` and `life-*` before adding the new ones, and never let `gift-*` tags overwrite reader tags.
+- **Consent.** `mode: 'checkbox'` (an unticked box) is the default and the safe choice for the EU, UK and
+  Canada; `mode: 'notice'` (a clear notice under the button) is for the US. Any other value is treated as
+  `checkbox`. The Shopify and Klaviyo adapters subscribe someone to marketing only if they agreed, and a
+  reader who did not agree sends only the quiz name and the ebook.
+- **Minors.** "Under 13" ends the reader quiz and keeps nothing. Readers 13 to 17 are asked for a **parent
+  or guardian's email**, always with an unticked box, and nothing about their faith, age or needs is sent
+  or tagged; the parent's first name is not asked either. The gift finder reaches children only through an
+  adult. Have counsel confirm this against COPPA and your state's rules before launch, and turn on double
+  opt-in on the Klaviyo list for these sign-ups.
+- **Analytics.** The page events carry only a quiz id and a book or ebook id. Do not add stage, age or
+  needs to them in a tag manager.
+- **Retakes.** A retake can be sent again (the page offers the form again after "Change my answers"), but
+  Shopify tags are add-only: a retaker ends up with both the old and new `stage-*` tags unless a Shopify Flow
+  removes the stale ones. Klaviyo and webhooks overwrite the properties instead, so prefer them where
+  retakes matter. Never let `gift-*` tags overwrite reader tags; they already share no keys.
 - **Deletion.** Anyone can ask to have their record removed; the quiz stores nothing else about them. The
   page itself keeps answers only in the browser's session storage, cleared when the tab closes or on
   **Start over**.
@@ -119,8 +143,14 @@ The delivery email is a service message: send it even to someone who did not tic
    (12 lines say *author not confirmed*). Fix or remove anything that does not open.
 2. **Check what was flagged while researching.** *Writing "The Way"* was left out of the catalog
    because its author could not be confirmed. Three titles are `preorder` links (*The Busy Parent's Guide*,
-   *The Fire and the Silence*, *Rekindled Hearts*; confirm they are available) and *Crucibles* was
-   scheduled for release in September 2026. The *Handbook of Prayers* and *Daily Roman Missal* are sold by Scepter, but
+   *The Fire and the Silence*, *Rekindled Hearts*; confirm they are available), *Crucibles* was scheduled
+   for release in September 2026 and is the first pick for readers who choose "a hard time", and three
+   handles begin `copy-of-` (*Time for God*, *Virtuous Leadership*, the Douglings Adventures), which can
+   mean a duplicate page: use the canonical one. *The Introduction to the Devout Life* in Spanish showed as
+   out of stock. Titles that a reviewer named but whose product pages were not confirmed (*In the School of
+   the Holy Spirit*, *Joseph the Silent*, *The Four First Things*, the First Communion and Confirmation
+   titles, the Spanish marriage and family titles) are not in the catalog yet; add them with their real
+   handles, because the child and Spanish lists are thin. The *Handbook of Prayers* and *Daily Roman Missal* are sold by Scepter, but
    confirm they are Scepter's own editions before calling them that in copy.
 3. **Add the ebook files.** Only the booklet titles are known. The 50 or so free booklets that exist can be
    added to `magnets.js`; each needs stage and need tags.
@@ -131,8 +161,12 @@ The delivery email is a service message: send it even to someone who did not tic
 5. **Check the look.** Scepter's brand colours and fonts could not be read, so the quizzes use the house
    palette (deep green, sand and cream; EB Garamond and Cinzel). Override the `--sq-*` tokens at the top of
    `quiz/src/quiz.css` to match the store, or tick "use theme fonts" in the section.
-6. **Spanish.** The Spanish books appear for readers who choose Español, but the questions and results are
-   in English. A full Spanish version is a copy job, not an engineering one.
+6. **Spanish.** The language question comes first. Spanish books and blurbs appear for readers who choose
+   Español, but the questions and results are in English, and the free booklets are in English (the page
+   says so). Spanish has no titles yet for suffering, marriage, parenting, purpose or sharing. A full Spanish
+   version is a copy job, not an engineering one.
+   Also still open: the child gift has only four children's titles, so every under-13 recipient sees nearly
+   the same three books; it needs age splits (under 5, 5 to 8, 9 to 12) and more titles.
 7. **Run the pilot.** Send the quiz to 150 to 200 newsletter readers first. Watch completion by question
    (`scepter_quiz_*` events), and adjust the habit thresholds in `next-step.js` if too many readers land in
    one stage. A result is a good fit when it feels recognisable to the reader; ask them.

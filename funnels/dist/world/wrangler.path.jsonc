@@ -1,0 +1,12 @@
+{
+  // The same pages mounted at edwardthomas.quest/scepter/ on a zone you already serve from Cloudflare.
+  // From this folder: npx wrangler deploy --config wrangler.path.jsonc
+  // The assets directory is this folder (it contains scepter/), so requests to /scepter/... find scepter/...
+  // Only /scepter/* is answered by this worker; the rest of the site is untouched.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "scepter-quizzes-path",
+  "compatibility_date": "2025-09-01",
+  "workers_dev": false,
+  "routes": [{ "pattern": "edwardthomas.quest/scepter/*", "zone_name": "edwardthomas.quest" }],
+  "assets": { "directory": "./", "html_handling": "auto-trailing-slash", "not_found_handling": "404-page" }
+}

@@ -21,3 +21,7 @@ books/*/4-epub/*.png
 books/*/4-epub/*.xhtml
 books/*/4-epub/meta.json
 books/*/5-proof/pages-*.jpg
+
+# wrangler's local cache, if a deploy is run from inside the repo
+funnels/dist/world/.wrangler/
+funnels/dist/world/node_modules/

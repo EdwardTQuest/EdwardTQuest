@@ -1,0 +1,8 @@
+{
+  // Standalone test site (a *.workers.dev address). From this folder: npx wrangler deploy
+  // Rename "name" for a different address.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "scepter-quizzes",
+  "compatibility_date": "2025-09-01",
+  "assets": { "directory": "./scepter", "html_handling": "auto-trailing-slash", "not_found_handling": "404-page" }
+}

@@ -167,8 +167,9 @@ test('Klaviyo adapter: profile, subscription and event, with the public key only
 
 test('gift payload: the giver is not given the recipient\u2019s stage, and the recipient is not named', () => {
   const pl = payloadFor(true, 'gift-finder');
-  assert.equal(pl.properties.scepter_reader, 'someone-else');
+  assert.equal(pl.properties.scepter_gift_buyer, true);
   assert.equal(pl.properties.scepter_stage, undefined);
+  for (const k of ['scepter_language', 'scepter_quiz', 'scepter_free_ebook', 'scepter_recommended', 'scepter_reading_format']) assert.equal(pl.properties[k], undefined, `${k} must not be shared with a reader\u2019s own record`);
   assert.ok(pl.properties.scepter_gift_stage || pl.profile.age === 'child');
   assert.ok(pl.tags.includes('gift-buyer'));
   assert.ok(!JSON.stringify(pl).match(/\bname\b.*recipient/i));
@@ -248,15 +249,16 @@ test('placement: habits decide for practising Catholics, a returning reader with
   const base = { age: '35-49', life: 'married', reading: 'sometimes', format: 'minutes', lang: 'en' };
   const run = (a) => SQ.core.computeProfile(quiz, { ...base, ...a }).stage;
   // says "deepening", but rarely prays, goes to Mass monthly, reads rarely: Taking Root
-  assert.equal(run({ faith: 'central', prayer: 'sometimes', mass: 'monthly', reading: 'never', reach: 'invite' }), 'beginning');
+  assert.equal(run({ faith: 'central', prayer: 'sometimes', mass: 'monthly', reading: 'never' }), 'beginning');
   // says "unsteady", but prays daily, every Sunday, reads daily: Growing Deeper (or beyond), not Taking Root
   assert.notEqual(run({ faith: 'unsteady', prayer: 'daily', mass: 'every', reading: 'daily' }), 'beginning');
   // fully practising and reaching out: Bearing Fruit
-  assert.equal(run({ faith: 'central', prayer: 'daily', mass: 'more', reading: 'daily', reach: 'invite' }), 'deepening');
-  // same habits, but keeps it private: capped at Growing Deeper
-  assert.equal(run({ faith: 'central', prayer: 'daily', mass: 'more', reading: 'daily', reach: 'private' }), 'growing');
-  // can't get to Mass: left out of the average, not counted as zero
-  assert.equal(run({ faith: 'practising', prayer: 'daily', mass: 'cant', reading: 'daily' }), 'growing');
+  assert.equal(run({ faith: 'central', prayer: 'daily', mass: 'more', reading: 'daily' }), 'deepening');
+  // a quiet, homebound reader with the same depth is not placed lower for saying little
+  assert.equal(run({ faith: 'central', prayer: 'daily', mass: 'home', reading: 'daily' }), 'deepening');
+  // can't get to Mass: left out of the average, not counted as zero (a zero would pull this reader down to Growing Deeper)
+  assert.equal(run({ faith: 'practising', prayer: 'daily', mass: 'cant', reading: 'daily' }), 'deepening');
+  assert.equal(run({ faith: 'practising', prayer: 'daily', mass: 'rare', reading: 'daily' }), 'growing');
   // returning with a steady practice
   assert.equal(run({ faith: 'away', prayer: 'daily', mass: 'every', reading: 'daily' }), 'beginning');
   assert.equal(run({ faith: 'away', prayer: 'never', mass: 'rare', reading: 'never' }), 'returning');
@@ -278,7 +280,7 @@ test('a married reader gets the marriage need, a parent of teens gets parenting;
 test('questions that do not apply are hidden, so the quiz stays short for newcomers', () => {
   const quiz = SQ.quizzes['next-step'];
   const seeker = SQ.core.visibleQuestions(quiz, { age: '25-34', faith: 'curious' }).map((q) => q.id);
-  assert.ok(!seeker.includes('mass') && !seeker.includes('confession') && !seeker.includes('reach'), seeker.join());
+  assert.ok(!seeker.includes('mass') && !seeker.includes('confession'), seeker.join());
   const teen = SQ.core.visibleQuestions(quiz, { age: 'teen', faith: 'practising' }).map((q) => q.id);
   assert.ok(!teen.includes('life'), 'a teen is not asked their life season');
   const dev = SQ.core.visibleQuestions(quiz, { age: '50-64', faith: 'central' }).map((q) => q.id);
@@ -304,4 +306,144 @@ test('catalog entries point at scepterpublishers.org and carry evidence', () => 
     assert.match(b.url, /^https:\/\/scepterpublishers\.org\//, b.id);
     assert.ok(b.source, `${b.id} has no source note`);
   }
+});
+
+
+// ---- fixes from the independent reviews: each of these was a real defect --------------------------------
+
+const sampleProfile = (over) => ({ quiz: 'next-step', recipient: 'self', age: '35-49', stage: 'growing', needs: ['prayer', 'peace'], life: 'married', lang: 'en', extras: {}, ...over });
+
+test('a reader who did not agree, or a minor’s parent address, sends nothing about faith, age or needs', () => {
+  const quiz = SQ.quizzes['next-step'];
+  const a = { faith: 'practising', age: '35-49', prayer: 'daily', reading: 'daily', 'needs-practising': ['prayer'] };
+  const p = SQ.core.computeProfile(quiz, a);
+  const recs = SQ.core.recommend(SQ.data.catalog, p, { count: 3 });
+  const magnet = SQ.core.recommend(SQ.data.magnets, p, { count: 1 })[0].item;
+  for (const form of [{ email: 'a@b.org', consent: false }, { email: 'a@b.org', consent: true, guardian: true }]) {
+    const pl = SQ.capture.buildPayload(quiz, a, p, form, { magnet, recs });
+    assert.equal(pl.limited, true);
+    assert.ok(pl.tags.every((t) => !/^(age|stage|need|life|gift-)/.test(t)), pl.tags.join());
+    for (const k of ['scepter_stage', 'scepter_needs', 'scepter_age_band', 'scepter_life_season', 'scepter_recommended']) assert.equal(pl.properties[k], undefined, k);
+    assert.equal(pl.profile.stage, undefined);
+    assert.equal(pl.recommendations.length, 0);
+    assert.equal(pl.properties.scepter_free_ebook, magnet.id, 'the ebook is still delivered');
+  }
+  const ok = SQ.capture.buildPayload(quiz, a, p, { email: 'a@b.org', consent: true }, { magnet, recs });
+  assert.equal(ok.limited, false);
+  assert.ok(ok.properties.scepter_stage);
+});
+
+test('a reader under 18 is never tagged with a stage, age or needs, even if the box is ticked', () => {
+  const quiz = SQ.quizzes['next-step'];
+  const a = { faith: 'curious', age: 'teen', prayer: 'weekly', reading: 'sometimes', 'needs-seeking': ['basics'] };
+  const p = SQ.core.computeProfile(quiz, a);
+  const pl = SQ.capture.buildPayload(quiz, a, p, { email: 'parent@b.org', consent: true, guardian: true }, {});
+  assert.equal([...pl.tags].sort().join(), 'guardian-signup,quiz-next-step');
+  assert.equal(pl.properties.scepter_guardian_signup, true);
+  assert.equal(pl.first_name, null);
+});
+
+test('a gift buyer with no consent keeps a separate, minimal record', () => {
+  const quiz = SQ.quizzes['gift-finder'];
+  const a = { age: '35-49', faith: 'lapsed', needs: ['prayer'], lang: 'es' };
+  const p = SQ.core.computeProfile(quiz, a);
+  const pl = SQ.capture.buildPayload(quiz, a, p, { email: 'a@b.org', consent: false }, {});
+  assert.equal([...pl.tags].sort().join(), 'gift-buyer,gift-lang-es,quiz-gift-finder');
+});
+
+test('analytics events carry no stage, age or needs', () => {
+  const seen = [];
+  const c = load({ CustomEvent: class { constructor(n, i) { this.type = n; this.detail = i.detail; } }, document: { dispatchEvent: (e) => seen.push(e.detail) }, dataLayer: { push: (o) => seen.push(o) } });
+  c.ScepterQuiz.track('result', { quiz: 'next-step', stage: 'returning', age: 'teen', needs: ['sacraments'], book: 'x' });
+  assert.ok(seen.length >= 2);
+  for (const o of seen) { assert.equal(o.stage, undefined); assert.equal(o.age, undefined); assert.equal(o.needs, undefined); assert.equal(o.quiz, 'next-step'); }
+});
+
+test('Catholic-practice books never go to a Seeking reader; pointed books are never a gift to someone away; gift ebooks are neutral', () => {
+  const quiz = SQ.quizzes['next-step'];
+  for (const n of ids(seg.needs)) for (const age of ['18-24', '50-64']) {
+    const seeker = sampleProfile({ stage: 'exploring', needs: [n], age });
+    for (const r of SQ.core.recommend(SQ.data.catalog, seeker, { count: 3, filter: quiz.result.filter })) assert.ok(!r.item.catholic, `${n}: ${r.item.id}`);
+    const mags = SQ.core.recommend(SQ.data.magnets, seeker, { count: 1 });
+    assert.ok(!mags[0].item.catholic, `${n}: ebook ${mags[0].item.id}`);
+    const gift = sampleProfile({ recipient: 'gift', quiz: 'gift-finder', stage: 'returning', needs: [n], age, life: null });
+    for (const r of SQ.core.recommend(SQ.data.catalog, gift, { count: 3 })) assert.ok(!r.item.pointed, `gift ${n}: ${r.item.id}`);
+  }
+  const giftQuiz = SQ.quizzes['gift-finder'];
+  for (const st of ids(seg.stages)) for (const n of ids(seg.needs)) {
+    const p = sampleProfile({ recipient: 'gift', quiz: 'gift-finder', stage: st, needs: [n], life: null });
+    const m = SQ.core.recommend(SQ.data.magnets, p, { count: 1, filter: giftQuiz.result.magnetFilter })[0].item;
+    assert.ok(['how-to-pray', 'treasury-of-prayers', 'norms-of-piety', 'sanctifying-ordinary-work', 'advent-christmas-carols'].includes(m.id), `${st}/${n}: ${m.id}`);
+  }
+});
+
+test('books for couples and parents are not offered to minors, nor to readers in another life season', () => {
+  for (const n of ids(seg.needs)) for (const st of ids(seg.stages)) {
+    const teen = sampleProfile({ age: 'teen', life: 'student', stage: st, needs: [n] });
+    for (const r of SQ.core.recommend(SQ.data.catalog, teen, { count: 3 })) assert.ok(!r.item.lifeOnly, `teen ${st}/${n}: ${r.item.id}`);
+    const single = sampleProfile({ life: 'single', stage: st, needs: [n] });
+    for (const r of SQ.core.recommend(SQ.data.catalog, single, { count: 3 })) assert.ok(!r.item.lifeOnly || r.item.lifeOnly.includes('single'), `single ${st}/${n}: ${r.item.id}`);
+  }
+});
+
+test('an unknown audience or language is refused, never offered to everyone', () => {
+  const p = sampleProfile({ age: '65-plus' });
+  assert.equal(SQ.core.eligible({ id: 'x', audience: 'child' }, p), false, 'a typo in audience fails closed');
+  assert.equal(SQ.core.eligible({ id: 'x', audience: 'children' }, p), false);
+  assert.equal(SQ.core.eligible({ id: 'x', lang: 'es' }, p), false, 'a Spanish edition is not offered to an English reader');
+  assert.equal(SQ.core.eligible({ id: 'x', lang: 'es' }, { ...p, lang: 'es' }), true);
+  assert.equal(SQ.core.eligible({ id: 'x' }, { ...p, lang: 'es' }), true, 'a Spanish reader may fall back to English');
+});
+
+test('an answer left behind by a hidden question is never scored, shown or sent', () => {
+  const quiz = { id: 't', questions: [
+    { id: 'a', type: 'single', options: [{ id: 'adult' }, { id: 'child' }] },
+    { id: 'b', type: 'single', showIf: { a: ['adult'] }, options: [{ id: 'x' }, { id: 'y' }] },
+    { id: 'c', type: 'single', showIf: { b: ['x'] }, options: [{ id: 'z', score: { need: { peace: 9 } } }] }
+  ] };
+  const stale = { a: 'child', b: 'x', c: 'z' };
+  assert.equal(SQ.core.visibleQuestions(quiz, stale).map((q) => q.id).join(), 'a');
+  assert.equal((SQ.core.tally(quiz, stale).scores.need || {}).peace, undefined);
+});
+
+test('validate catches the mistakes that used to build clean', () => {
+  const base = (over, opt) => ({ id: 'v', meta: { title: 'v' }, questions: [
+    { id: 'faith', type: 'single', options: [{ id: 'practising' }, { id: 'curious' }] },
+    { id: 'q', type: 'single', ...over, options: [{ id: 'o', ...opt }] }
+  ] });
+  assert.match(SQ.validate(base({ showIf: { faith: ['practicing'] } })).join(), /not an option/);
+  assert.match(SQ.validate(base({}, { set: { life: 'marired' } })).join(), /unknown life season/);
+  assert.match(SQ.validate(base({}, { set: { lang: 'ES' } })).join(), /unknown language/);
+  assert.match(SQ.validate(base({ type: 'multiple' })).join(), /type must be/);
+});
+
+test('Klaviyo: the event goes last, carries a unique id, and a private key is refused', async () => {
+  const calls = [];
+  const c = load({ fetch: async (url, init) => { calls.push({ path: new URL(url).pathname, body: JSON.parse(init.body) }); return { ok: true, status: 202, text: async () => '' }; } });
+  c.SCEPTER_QUIZ_SETTINGS = { capture: { provider: 'klaviyo', klaviyo: { companyId: 'AbC123', listId: 'L1' } } };
+  const pl = payloadFor(true);
+  await c.ScepterQuiz.capture.send(pl);
+  assert.equal(calls.map((x) => x.path).join(), '/client/profiles,/client/subscriptions,/client/events');
+  assert.equal(calls[2].body.data.attributes.unique_id, pl.submission_id);
+  c.SCEPTER_QUIZ_SETTINGS = { capture: { provider: 'klaviyo', klaviyo: { companyId: 'pk_1234567890abcdef', listId: 'L1' } } };
+  await assert.rejects(() => c.ScepterQuiz.capture.send(pl), /public API key/);
+});
+
+test('an unticked Klaviyo sign-up has no subscription and no faith data on the profile or event', async () => {
+  const calls = [];
+  const c = load({ fetch: async (url, init) => { calls.push({ path: new URL(url).pathname, body: JSON.parse(init.body) }); return { ok: true, status: 202, text: async () => '' }; } });
+  c.SCEPTER_QUIZ_SETTINGS = { capture: { provider: 'klaviyo', klaviyo: { companyId: 'AbC123', listId: 'L1' } } };
+  await c.ScepterQuiz.capture.send(payloadFor(false));
+  assert.ok(!calls.some((x) => x.path.endsWith('subscriptions')));
+  for (const x of calls) {
+    const props = x.body.data.attributes.properties || {};
+    assert.equal(props.scepter_stage, undefined, x.path);
+    assert.equal(props.scepter_needs, undefined, x.path);
+    assert.ok((props.scepter_tags || []).every((t) => /^quiz-/.test(t)), x.path + ' carries only the quiz tag');
+  }
+});
+
+test('every payload carries a submission id so a receiver can drop a duplicate', () => {
+  const a = payloadFor(true), b = payloadFor(true);
+  assert.ok(a.submission_id && a.submission_id !== b.submission_id);
 });

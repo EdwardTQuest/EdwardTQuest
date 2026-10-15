@@ -6,11 +6,14 @@
  *
  * What it keeps: the giver's email only. The person they are choosing for is never named, never
  * emailed, and never gets a profile of their own. Everything the giver says about them is stored
- * under gift_* tags and properties, so a grandmother buying for a drifting grandson is never
- * emailed as if she were the one drifting.
+ * under gift_* tags and properties that share no key with a reader's own, so a grandmother buying
+ * for a drifting grandson is never emailed as if she were the one drifting, and buying for a
+ * Spanish-reading mother does not switch her own language.
  *
  * Children are not placed on a stage; their picks come only from the children's titles.
- * Teens and adults are placed from the giver's best guess about where they are.
+ * Teens and adults are placed from the giver's best guess about where they are. When the giver
+ * says they do not know, the result says so and offers easy, widely loved books.
+ * Books that read as "you need this" are never offered as a gift to someone away from the Church.
  */
 (function (root) {
   'use strict';
@@ -24,19 +27,24 @@
   }
   function giftNeeds(ids) { return ids.map(giftNeed); }
 
-  var NOT_CHILD = ['teen', '18-24', '25-34', '35-49', '50-64', '65-plus'];
+  var ADULT = ['18-24', '25-34', '35-49', '50-64', '65-plus'];
+  var NOT_CHILD = ['teen'].concat(ADULT);
 
   var titleBits = {
-    exploring: 'who is looking around',
-    returning: 'who is finding their way back',
-    beginning: 'who is building a daily habit',
-    growing: 'who is ready to go deeper',
+    exploring: 'who may not be looking yet',
+    returning: 'who has been away from the Church',
+    beginning: 'whose faith is quiet',
+    growing: 'who wants to go deeper',
     deepening: 'whose faith runs deep'
   };
 
+  // Free ebooks that suit any giver, whoever the gift is for.
+  var GIVER_EBOOKS = ['how-to-pray', 'treasury-of-prayers', 'norms-of-piety', 'sanctifying-ordinary-work', 'advent-christmas-carols'];
+
   SQ.define({
     id: 'gift-finder',
-    version: 1,
+    recipient: 'gift',
+    version: 2,
     maxNeeds: 2,
     defaultStage: 'beginning',
     meta: {
@@ -68,50 +76,79 @@
         ]
       },
       {
-        id: 'occasion', type: 'single', required: false,
+        id: 'occasion-child', group: 'occasion', type: 'single', required: false,
+        showIf: { age: ['child'] },
         prompt: 'Is there an occasion?',
         help: 'Optional.',
         options: [
           { id: 'none', label: 'Birthday, Christmas or just because' },
-          { id: 'sacrament', label: 'First Communion, Confirmation or Baptism', score: { need: { sacraments: 3 } } },
-          { id: 'wedding', label: 'An engagement or wedding', score: { need: { marriage: 3 } } },
-          { id: 'ocia', label: 'They’re becoming Catholic', score: { need: { basics: 3 }, stage: { exploring: 2 } } },
-          { id: 'hard', label: 'They’re going through a hard time', score: { need: { suffering: 3, peace: 1 } } },
-          { id: 'newparent', label: 'A new baby, or they’re raising young children', score: { need: { parenting: 3 } } }
+          { id: 'sacrament', label: 'First Communion, First Confession or Baptism', score: { need: { sacraments: 2 } } }
+        ]
+      },
+      {
+        id: 'occasion-teen', group: 'occasion', type: 'single', required: false,
+        showIf: { age: ['teen'] },
+        prompt: 'Is there an occasion?',
+        help: 'Optional.',
+        options: [
+          { id: 'none', label: 'Birthday, Christmas or just because' },
+          { id: 'sacrament', label: 'Confirmation', score: { need: { sacraments: 2 } } },
+          { id: 'ocia', label: 'They’re becoming Catholic', score: { need: { basics: 2 } }, set: { stage: 'exploring' } },
+          { id: 'hard', label: 'They’re going through a hard time', score: { need: { suffering: 2, peace: 1 } } }
+        ]
+      },
+      {
+        id: 'occasion', group: 'occasion', type: 'single', required: false,
+        showIf: { age: ADULT },
+        prompt: 'Is there an occasion?',
+        help: 'Optional.',
+        options: [
+          { id: 'none', label: 'Birthday, Christmas or just because' },
+          { id: 'sacrament', label: 'First Communion, Confirmation or Baptism', score: { need: { sacraments: 2 } } },
+          { id: 'wedding', label: 'An engagement or wedding', score: { need: { marriage: 2 } } },
+          { id: 'ocia', label: 'They’re becoming Catholic', score: { need: { basics: 2 } }, set: { stage: 'exploring' } },
+          { id: 'hard', label: 'They’re going through a hard time', score: { need: { suffering: 2, peace: 1 } } },
+          { id: 'newparent', label: 'A new baby, or they’re raising young children', score: { need: { parenting: 2 } } },
+          { id: 'ordination', label: 'Ordination, vows or an anniversary of one', score: { need: { prayer: 2, sharing: 1 } }, set: { life: 'clergy' } }
         ]
       },
       {
         id: 'faith', type: 'single',
         showIf: { age: NOT_CHILD },
         prompt: 'As far as you can tell, where are they with faith right now?',
-        help: 'Go by what you’ve seen. A best guess is fine, and there are no wrong answers.',
+        help: 'Go by what you’ve seen. A best guess is fine.',
         options: [
           { id: 'away', label: 'Not interested yet, or not sure about faith', score: { stage: { exploring: 3 } } },
+          { id: 'other', label: 'A Christian, but not Catholic', score: { stage: { exploring: 3 } } },
           { id: 'lapsed', label: 'Raised Catholic but away from the Church', score: { stage: { returning: 3 } } },
-          { id: 'casual', label: 'Goes to Mass, but faith is mostly casual', score: { stage: { beginning: 3 } } },
+          { id: 'casual', label: 'Goes to Mass, but faith is not a big part of daily life', score: { stage: { beginning: 3 } } },
           { id: 'faithful', label: 'Faithful, and wants to grow', score: { stage: { growing: 3 } } },
-          { id: 'devout', label: 'Deeply devout, and loves to read', score: { stage: { deepening: 3 } } },
-          { id: 'unsure', label: 'I honestly don’t know', score: { stage: { beginning: 3 } } }
+          { id: 'devout', label: 'Deeply devout', score: { stage: { deepening: 3 } } },
+          { id: 'unsure', label: 'I honestly don’t know', score: { stage: { beginning: 3 } }, set: { unsure: true } }
         ]
       },
       {
         id: 'needs-child', group: 'needs', type: 'multi', max: 2,
         showIf: { age: ['child'] },
         prompt: 'What would you love the book to do?',
-        help: 'Choose up to two.',
         columns: 2,
         options: [
           { id: 'prayer', label: 'Help them learn to pray', score: { need: { prayer: 3 } } },
           { id: 'sacraments', label: 'Get ready for Confession or First Communion', score: { need: { sacraments: 3 } } },
           { id: 'saints', label: 'Introduce them to saints and heroes', score: { need: { saints: 3 } } },
-          { id: 'story', label: 'Just be a good story we’ll enjoy together', score: { need: { parenting: 2 } } }
+          { id: 'story', label: 'Just be a good story we’ll enjoy together', score: { need: { virtue: 3 } } }
         ]
       },
       {
-        id: 'needs', group: 'needs', type: 'multi', max: 2, columns: 2,
-        showIf: { age: NOT_CHILD },
+        id: 'needs-teen', group: 'needs', type: 'multi', max: 2, columns: 2,
+        showIf: { age: ['teen'] },
         prompt: 'What might they welcome most right now?',
-        help: 'Choose up to two.',
+        options: giftNeeds(['prayer', 'peace', 'suffering', 'everyday', 'basics', 'sacraments', 'scripture', 'saints', 'virtue', 'purpose'])
+      },
+      {
+        id: 'needs', group: 'needs', type: 'multi', max: 2, columns: 2,
+        showIf: { age: ADULT },
+        prompt: 'What might they welcome most right now?',
         options: giftNeeds(['prayer', 'peace', 'suffering', 'everyday', 'basics', 'sacraments', 'scripture', 'saints', 'virtue', 'purpose', 'marriage', 'parenting'])
       },
       {
@@ -125,21 +162,20 @@
         ]
       },
       {
-        id: 'lang', type: 'single', required: false,
-        prompt: '¿Leen en inglés o en español? / Do they read in English or Spanish?',
-        help: 'Optional. / Opcional.',
-        columns: 2,
+        id: 'lang', type: 'single', required: false, columns: 2,
+        prompt: 'Do they read in English or Spanish?',
+        help: 'Optional. ¿Leen en inglés o en español?',
         options: [
           { id: 'en', label: 'English', set: { lang: 'en' } },
-          { id: 'es', label: 'Español', set: { lang: 'es' } }
+          { id: 'es', label: 'Español', lang: 'es', set: { lang: 'es' } }
         ]
       }
     ],
 
-    derive: function (p) {
+    derive: function (p, answers, t) {
       p.recipient = 'gift';
       if (p.age === 'child') p.stage = 'beginning';
-      p.life = null;
+      p.unsure = !!t.sets.unsure && p.stage === 'beginning' && p.age !== 'child';
       return p;
     },
 
@@ -152,13 +188,13 @@
       } else {
         steps.push({ title: 'Add a short handwritten note.', text: 'One or two sentences on why you thought of them. The note matters as much as the book.' });
         if (p.stage === 'exploring' || p.stage === 'returning') {
-          steps.push({ title: 'Give it with no strings attached.', text: 'Let it be an invitation, not a message. Resist asking later whether they’ve read it; trust the book and pray for them.' });
+          steps.push({ title: 'Give it as an invitation.', text: 'Resist asking later whether they’ve read it. Trust the book, and pray for them.' });
         } else {
           steps.push({ title: 'Offer to talk about it, if they’d like.', text: 'A shared book can become a good conversation, or a small reading plan you follow together.' });
         }
         steps.push({ title: 'Keep the free ebook for yourself, or pass it on.', text: 'It’s a short read you can pair with the gift.' });
       }
-      return { title: 'Giving it well', intro: 'Three small things that make a book land.', steps: steps };
+      return { title: 'Giving it well', intro: 'Three small things that help a book land.', steps: steps };
     },
 
     result: {
@@ -168,20 +204,26 @@
         if (it.gendered) return false;
         return p.age !== 'child' || it.audience === 'children';
       },
+      magnetFilter: function (it) { return GIVER_EBOOKS.indexOf(it.id) >= 0; },
       title: function (p) {
-        return p.age === 'child' ? 'Three books for a young reader' : 'Books for someone ' + titleBits[p.stage];
+        if (p.age === 'child') return 'Three books for a young reader';
+        if (p.unsure) return 'Books that are easy to give';
+        return 'Books for someone ' + titleBits[p.stage];
       },
       tagline: null,
       portrait: function (p, st) {
         if (p.age === 'child') {
           return ['Children learn the faith first at home, from the people who love them. These books are made to be read aloud together, so they work as a gift for the child and for you.'];
         }
+        if (p.unsure) {
+          return ['You said you’re not sure where they are with faith. These picks are warm and easy to start, so they suit a wide range of readers.'];
+        }
         return st.giftPortrait;
       },
       notes: function (p) {
         var out = [];
         if (p.age !== 'child' && (p.stage === 'exploring' || p.stage === 'returning')) {
-          out.push('When someone is away from the Church, the kindest gift is usually a good book and a lot of patience. We’ve chosen titles that are warm and never pushy.');
+          out.push('When someone is away from the Church, a good book and a lot of patience are usually the kindest gift. We chose titles that are easy to start and easy to put down.');
         }
         if ((p.needs || []).indexOf('suffering') >= 0) {
           out.push('If they are going through something heavy, your company will mean more than any book. A short note and an offer to listen go a long way.');
@@ -189,7 +231,7 @@
         return out;
       },
       booksTitle: 'Three books to consider',
-      booksIntro: 'Chosen from what you told us. The notes under each title say why.',
+      booksIntro: 'Chosen from what you told us. The note under each title says why.',
       crossLinks: [{ label: 'Want a book for yourself? Try Find Your Next Step', quiz: 'next-step' }],
       order: ['head', 'books', 'capture', 'plan'],
       magnet: {
@@ -197,8 +239,9 @@
         button: 'Send me the free ebook',
         promise: 'Free. It’s yours to read or to pass along.',
         doneTitle: 'Your ebook is ready.',
+        doneTitleEmail: 'Your ebook is on its way.',
         doneTextLink: 'Download it below. We’ve also emailed you a copy to keep.',
-        doneText: 'It’s on its way to your inbox. You can also read it free in the Scepter app.'
+        doneText: 'Check your inbox in a few minutes. You can also read it free in the Scepter app.'
       }
     }
   });

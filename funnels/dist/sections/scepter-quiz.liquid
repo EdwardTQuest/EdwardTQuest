@@ -10,30 +10,46 @@
 <style>
   #sq-{{ section.id }} { padding-block: {{ section.settings.padding }}px; }
   {%- if section.settings.accent != blank %}
-  #sq-{{ section.id }} .sq { --sq-accent: {{ section.settings.accent }}; --sq-panel: {{ section.settings.accent }}; }
+  #sq-{{ section.id }} .sq {
+    --sq-accent: {{ section.settings.accent }};
+    --sq-accent-hover: color-mix(in srgb, {{ section.settings.accent }} 82%, black);
+    --sq-accent-ink: {{ section.settings.accent_text }};
+    --sq-panel: {{ section.settings.accent }};
+    --sq-panel-ink: {{ section.settings.accent_text }};
+  }
   {%- endif %}
   {%- unless section.settings.house_fonts %}
   #sq-{{ section.id }} .sq { --sq-font-body: inherit; --sq-font-ui: inherit; --sq-font-caps: inherit; }
   {%- endunless %}
 </style>
+{%- assign sq_privacy = section.settings.privacy_url | default: shop.privacy_policy.url -%}
 <div id="sq-{{ section.id }}" class="page-width">
   <div data-scepter-quiz="{{ section.settings.quiz }}"></div>
 </div>
 <script>
-  window.SCEPTER_QUIZ_SETTINGS = window.SCEPTER_QUIZ_SETTINGS || {
-    capture: {
-      provider: {{ section.settings.provider | json }},
-      klaviyo: { companyId: {{ section.settings.klaviyo_public_key | json }}, listId: {{ section.settings.klaviyo_list_id | json }} },
-      webhook: { url: {{ section.settings.webhook_url | json }} },
-      consent: { mode: {{ section.settings.consent_mode | json }}, privacyUrl: {{ section.settings.privacy_url | default: shop.privacy_policy.url | json }} }
-    },
-    shop: {
-      productCards: {{ section.settings.product_cards | json }},
-      addToCart: {{ section.settings.add_to_cart | json }},
-      currency: {{ cart.currency.iso_code | json }},
-      root: {{ routes.root_url | remove_last: '/' | json }}
-    }
-  };
+  (function () {
+    var d = {
+      capture: {
+        provider: {{ section.settings.provider | json }},
+        klaviyo: { companyId: {{ section.settings.klaviyo_public_key | json }}, listId: {{ section.settings.klaviyo_list_id | json }} },
+        webhook: { url: {{ section.settings.webhook_url | json }} },
+        consent: { mode: {{ section.settings.consent_mode | json }}{% if sq_privacy != blank %}, privacyUrl: {{ sq_privacy | json }}{% endif %} }
+      },
+      shop: {
+        productCards: {{ section.settings.product_cards | json }},
+        addToCart: {{ section.settings.add_to_cart | json }},
+        currency: {{ cart.currency.iso_code | json }},
+        root: {{ routes.root_url | remove_last: '/' | json }}
+      },
+      quizUrls: { 'next-step': {{ section.settings.url_next_step | json }}, 'gift-finder': {{ section.settings.url_gift_finder | json }} }
+    };
+    // Settings a theme or another script already defined win over these; capture merges one level deep.
+    var u = window.SCEPTER_QUIZ_SETTINGS || {};
+    window.SCEPTER_QUIZ_SETTINGS = Object.assign({}, d, u, {
+      capture: Object.assign({}, d.capture, u.capture || {}),
+      quizUrls: Object.assign({}, d.quizUrls, u.quizUrls || {})
+    });
+  })();
 </script>
 <script src="{{ 'scepter-quiz.js' | asset_url }}" defer></script>
 {% schema %}
@@ -66,8 +82,12 @@
       "type": "select",
       "id": "provider",
       "label": "Send sign-ups to",
-      "default": "shopify",
+      "default": "demo",
       "options": [
+        {
+          "value": "demo",
+          "label": "Nowhere (test mode)"
+        },
         {
           "value": "shopify",
           "label": "Shopify customers (tags)"
@@ -79,10 +99,6 @@
         {
           "value": "webhook",
           "label": "Webhook (Zapier, Make, other)"
-        },
-        {
-          "value": "demo",
-          "label": "Nowhere (test mode)"
         }
       ]
     },
@@ -90,7 +106,7 @@
       "type": "text",
       "id": "klaviyo_public_key",
       "label": "Klaviyo public API key (site ID)",
-      "info": "Six characters, from Klaviyo > Settings > API keys. Only for Klaviyo."
+      "info": "Exactly six letters and numbers, from Klaviyo > Settings > API keys. Never a private key (those start with pk_). Only for Klaviyo."
     },
     {
       "type": "text",
@@ -108,15 +124,15 @@
       "type": "select",
       "id": "consent_mode",
       "label": "Email consent",
-      "default": "notice",
+      "default": "checkbox",
       "options": [
+        {
+          "value": "checkbox",
+          "label": "Unticked checkbox (EU, UK, Canada; the safe choice)"
+        },
         {
           "value": "notice",
           "label": "Notice under the button (US)"
-        },
-        {
-          "value": "checkbox",
-          "label": "Unticked checkbox (EU/UK, Canada)"
         }
       ]
     },
@@ -125,6 +141,20 @@
       "id": "privacy_url",
       "label": "Privacy policy link",
       "info": "Defaults to the shop privacy policy."
+    },
+    {
+      "type": "header",
+      "content": "Links between the quizzes"
+    },
+    {
+      "type": "url",
+      "id": "url_next_step",
+      "label": "Page with \"Find Your Next Step\""
+    },
+    {
+      "type": "url",
+      "id": "url_gift_finder",
+      "label": "Page with \"Find a Book for Someone You Love\""
     },
     {
       "type": "header",
@@ -150,14 +180,21 @@
       "type": "checkbox",
       "id": "house_fonts",
       "label": "Use the quiz fonts (EB Garamond, Cinzel)",
-      "default": true,
-      "info": "Untick to use the theme fonts."
+      "default": false,
+      "info": "Loads fonts from Google. Leave unticked to use the theme fonts."
     },
     {
       "type": "color",
       "id": "accent",
-      "label": "Accent colour",
+      "label": "Accent color",
       "info": "Buttons and the free-ebook panel. Leave empty for house green."
+    },
+    {
+      "type": "color",
+      "id": "accent_text",
+      "label": "Text on the accent color",
+      "default": "#f4f1ed",
+      "info": "Pick a color that reads clearly on the accent."
     },
     {
       "type": "range",
