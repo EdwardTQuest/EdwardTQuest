@@ -170,6 +170,7 @@
 .sp .sp-btn:hover .sp-btn__arrow { transform: translateX(3px); }
 .sp .sp-link { background: none; border: 0; padding: .3rem 0; font-size: .88rem; color: var(--sp-text-2); text-decoration: underline; text-underline-offset: 3px; }
 .sp .sp-link:hover { color: var(--sp-accent); }
+.sp .sp-test-note { font-size: .82rem; font-style: italic; color: var(--sp-text-2); }
 .sp-actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-top: 26px; }
 
 /* ---------- options ---------- */

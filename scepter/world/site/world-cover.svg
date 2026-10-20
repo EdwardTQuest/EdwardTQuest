@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+  <!-- Cover for the Scepter quizzes world's window on the edwardthomas.quest entrance: an open book on a
+       night-green field, its light reaching a compass star and a scatter of hidden gems. Original art.
+       The one public file under /quizzes/; it shows no text and nothing from the quizzes. -->
+  <defs>
+    <radialGradient id="field" cx="50%" cy="58%" r="80%">
+      <stop offset="0" stop-color="#2d5842"/>
+      <stop offset=".42" stop-color="#1f3d2e"/>
+      <stop offset="1" stop-color="#08140e"/>
+    </radialGradient>
+    <radialGradient id="ember" cx="88%" cy="96%" r="55%">
+      <stop offset="0" stop-color="#84171d" stop-opacity=".75"/>
+      <stop offset="1" stop-color="#84171d" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="62%" r="38%">
+      <stop offset="0" stop-color="#fff4d6" stop-opacity=".85"/>
+      <stop offset=".35" stop-color="#f3dfae" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#f3dfae" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rays" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#fff4d6" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#fff4d6" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pageL" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#e9dcc0"/>
+      <stop offset=".25" stop-color="#fbf6ea"/>
+      <stop offset="1" stop-color="#efe4cc"/>
+    </linearGradient>
+    <linearGradient id="pageR" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e9dcc0"/>
+      <stop offset=".25" stop-color="#fbf6ea"/>
+      <stop offset="1" stop-color="#efe4cc"/>
+    </linearGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#field)"/>
+  <rect width="1600" height="1000" fill="url(#ember)"/>
+
+  <!-- a faint map: contour lines and a dotted trail -->
+  <g fill="none" stroke="#a9c5a6" stroke-opacity=".13" stroke-width="2">
+    <path d="M-40 250 C 220 180, 420 300, 640 230 S 1080 120, 1660 210"/>
+    <path d="M-40 330 C 260 250, 470 380, 700 300 S 1120 200, 1660 300"/>
+    <path d="M-40 840 C 240 760, 520 900, 820 820 S 1280 740, 1660 830"/>
+    <path d="M-40 920 C 300 850, 560 980, 860 900 S 1320 830, 1660 920"/>
+  </g>
+  <path d="M190 760 C 300 640, 420 700, 520 610 S 640 470, 700 520" fill="none" stroke="#fbf8f1" stroke-opacity=".35" stroke-width="4" stroke-dasharray="2 16" stroke-linecap="round"/>
+  <path d="M1410 300 C 1320 380, 1200 330, 1120 420 S 980 520, 930 500" fill="none" stroke="#fbf8f1" stroke-opacity=".35" stroke-width="4" stroke-dasharray="2 16" stroke-linecap="round"/>
+
+  <!-- light from the book -->
+  <rect width="1600" height="1000" fill="url(#glow)"/>
+  <g opacity=".7">
+    <path d="M800 610 L 560 120 L 640 110 Z" fill="url(#rays)"/>
+    <path d="M800 610 L 740 80 L 860 80 Z" fill="url(#rays)"/>
+    <path d="M800 610 L 960 110 L 1040 120 Z" fill="url(#rays)"/>
+    <path d="M800 610 L 420 240 L 470 205 Z" fill="url(#rays)" opacity=".6"/>
+    <path d="M800 610 L 1130 205 L 1180 240 Z" fill="url(#rays)" opacity=".6"/>
+  </g>
+
+  <!-- the compass star -->
+  <g transform="translate(800 250)">
+    <circle r="70" fill="#fff4d6" opacity=".18" filter="url(#soft)"/>
+    <path d="M0 -62 L 11 -11 L 62 0 L 11 11 L 0 62 L -11 11 L -62 0 L -11 -11 Z" fill="#fbf8f1"/>
+    <path d="M0 -30 L 6 -6 L 30 0 L 6 6 L 0 30 L -6 6 L -30 0 L -6 -6 Z" fill="#84171d" transform="rotate(45)"/>
+    <circle r="5" fill="#1f3d2e"/>
+  </g>
+
+  <!-- hidden gems -->
+  <g>
+    <g transform="translate(330 470) rotate(-12)"><path d="M0 -20 L 17 -7 L 11 16 L -11 16 L -17 -7 Z" fill="#84171d"/><path d="M0 -20 L 5 -7 L 0 16 L -5 -7 Z" fill="#c0454c" opacity=".8"/></g>
+    <g transform="translate(1270 560) rotate(14) scale(1.2)"><path d="M0 -20 L 17 -7 L 11 16 L -11 16 L -17 -7 Z" fill="#a9c5a6"/><path d="M0 -20 L 5 -7 L 0 16 L -5 -7 Z" fill="#eaf2e6" opacity=".8"/></g>
+    <g transform="translate(1180 220) scale(.8)"><path d="M0 -20 L 17 -7 L 11 16 L -11 16 L -17 -7 Z" fill="#f3dfae"/></g>
+    <g transform="translate(450 260) scale(.7) rotate(20)"><path d="M0 -20 L 17 -7 L 11 16 L -11 16 L -17 -7 Z" fill="#a9c5a6"/></g>
+  </g>
+  <g fill="#fbf8f1">
+    <circle cx="240" cy="160" r="2.4" opacity=".7"/><circle cx="560" cy="80" r="1.8" opacity=".6"/><circle cx="1030" cy="60" r="2.2" opacity=".7"/>
+    <circle cx="1380" cy="140" r="2.6" opacity=".7"/><circle cx="1500" cy="420" r="1.8" opacity=".5"/><circle cx="120" cy="560" r="2" opacity=".5"/>
+    <circle cx="660" cy="190" r="1.6" opacity=".6"/><circle cx="940" cy="170" r="1.6" opacity=".6"/>
+  </g>
+
+  <!-- the open book -->
+  <g transform="translate(800 640)">
+    <ellipse cx="0" cy="118" rx="360" ry="30" fill="#000" opacity=".35" filter="url(#soft)"/>
+    <path d="M0 -10 C -90 -48, -220 -60, -330 -36 L -330 104 C -220 80, -90 92, 0 124 Z" fill="#6b1318"/>
+    <path d="M0 -10 C 90 -48, 220 -60, 330 -36 L 330 104 C 220 80, 90 92, 0 124 Z" fill="#6b1318"/>
+    <path d="M0 -24 C -86 -62, -210 -72, -312 -50 L -312 92 C -210 70, -86 80, 0 112 Z" fill="url(#pageL)"/>
+    <path d="M0 -24 C 86 -62, 210 -72, 312 -50 L 312 92 C 210 70, 86 80, 0 112 Z" fill="url(#pageR)"/>
+    <g fill="none" stroke="#1f3d2e" stroke-opacity=".28" stroke-width="3" stroke-linecap="round">
+      <path d="M-270 -26 C -200 -40, -120 -36, -50 -12"/><path d="M-270 2 C -200 -12, -120 -8, -50 16"/>
+      <path d="M-270 30 C -200 16, -120 20, -50 44"/><path d="M-270 58 C -210 46, -150 48, -110 60"/>
+      <path d="M50 -12 C 120 -36, 200 -40, 270 -26"/><path d="M50 16 C 120 -8, 200 -12, 270 2"/>
+      <path d="M50 44 C 120 20, 200 16, 270 30"/><path d="M110 60 C 150 48, 210 46, 270 58"/>
+    </g>
+    <path d="M0 -24 L 0 112" stroke="#c9b78f" stroke-width="2.5"/>
+    <path d="M-6 112 L -6 168 L 0 156 L 6 168 L 6 112 Z" fill="#84171d"/>
+  </g>
+</svg>

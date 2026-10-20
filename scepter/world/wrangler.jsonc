@@ -1,0 +1,22 @@
+{
+  // The Scepter quizzes world: edwardthomas.quest/quizzes/, a private preview behind a password.
+  // From this folder: npx wrangler secret put PREVIEW_PASSWORD, then npx wrangler deploy.
+  // It answers only /quizzes and /quizzes/*; the rest of the site is untouched. No workers.dev address.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "scepter-quizzes-preview",
+  "main": "worker.js",
+  "compatibility_date": "2025-09-01",
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    { "pattern": "edwardthomas.quest/quizzes", "zone_name": "edwardthomas.quest" },
+    { "pattern": "edwardthomas.quest/quizzes/*", "zone_name": "edwardthomas.quest" }
+  ],
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  }
+}

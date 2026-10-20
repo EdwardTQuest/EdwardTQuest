@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "title": "Scepter quizzes",
+  "sets": [
+    {
+      "key": "formation",
+      "owner": "claude",
+      "tab": "Formation quizzes",
+      "by": "Claude",
+      "count": "3 quizzes · 2 pop-ups",
+      "about": "Three quizzes that end in a twelve-month reading plan chosen from Scepter's books, mostly best-sellers with a share of the backlist, sent by email. Then two pop-ups: a free booklet for an email address, and a temperament test with Alexandre Havard's books. They are built as Shopify theme sections for scepterpublishers.org; here they run on a snapshot of the store taken {{SNAPSHOT}}.",
+      "notes": [
+        "{{HAVARD_NOTE}}",
+        "Book links open the real store, and covers and prices come from the snapshot. Nothing can reach a real cart from here."
+      ],
+      "items": [
+        { "href": "claude/mission/", "kind": "Quiz", "title": "Discover your mission!", "sub": "Dark green, a mission briefing. Ends in a twelve-month reading plan.", "meta": "About 2 minutes · 70% best-sellers", "tone": "dark" },
+        { "href": "claude/adventure/", "kind": "Quiz", "title": "What adventure is God calling you on?", "sub": "Light green, a trail map. The same plan, a different journey.", "meta": "About 2 minutes · 70% best-sellers", "tone": "light" },
+        { "href": "claude/treasures/", "kind": "Quiz", "title": "What hidden treasures has God laid in store for you this week?", "sub": "Deep green and burgundy, a treasure map, with more hidden gems from the backlist.", "meta": "About 2 minutes · 55% best-sellers", "tone": "warm" },
+        { "href": "claude/plan/?plan={{PLAN}}", "kind": "Page", "title": "The reading plan page", "sub": "Where the email's link lands. This is the plan for a married mother of three who finds prayer dry.", "meta": "What the reader keeps" },
+        { "href": "claude/popups/#temperament-test", "kind": "Pop-up", "title": "{{TEMP_TITLE}}", "sub": "{{TEMP_SUB}}", "meta": "{{TEMP_META}}" },
+        { "href": "claude/popups/#free-ebook", "kind": "Pop-up", "title": "A free e-book", "sub": "Name, email and an interest: peace, prosperity or enlightenment, with a Scepter booklet for each.", "meta": "Under a minute" }
+      ]
+    },
+    {
+      "key": "reader",
+      "owner": "claude",
+      "tab": "Reader & gift quizzes",
+      "by": "Claude",
+      "count": "2 quizzes",
+      "about": "Two shorter quizzes from a second Claude session, built to embed in any page: one for the reader, one for someone choosing a gift. Each ends in three books with a reason for each, and offers a free e-book after the result.",
+      "notes": [
+        "These choose from their own list of 99 books and 12 booklets, found by web search rather than read from the store, so some links and authors are not yet checked."
+      ],
+      "items": [
+        { "href": "reader/next-step/", "kind": "Quiz", "title": "Find Your Next Step", "sub": "For yourself: your age, where you are in faith, and up to three needs.", "meta": "About 3 minutes" },
+        { "href": "reader/gift-finder/", "kind": "Quiz", "title": "Find a Book for Someone You Love", "sub": "As a gift, for a child, a teen or an adult.", "meta": "About 1 minute" }
+      ]
+    },
+    {
+      "key": "codex",
+      "owner": "codex",
+      "tab": "Codex quizzes",
+      "by": "Codex",
+      "count": "coming soon",
+      "about": "Codex's quizzes go here, in the same world, so that all of them can be taken and compared in one place.",
+      "items": [],
+      "empty": "Coming soon",
+      "emptySub": "Codex is adding its quizzes to this tab."
+    }
+  ]
+}

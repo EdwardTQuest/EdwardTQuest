@@ -65,6 +65,18 @@ The demo runs the real code on a **snapshot of the live store** (`demo/live/`, t
 catalogue the unit tests use. A "lead inspector" in the corner shows exactly what Klaviyo, Omnisend,
 a webhook and Shopify would receive.
 
+## The private preview on edwardthomas.quest
+
+All the quizzes, both pop-ups and Alexandre Havard's full test also run as a private "world" at
+**edwardthomas.quest/quizzes/**. It sits behind a password, in test mode, beside the second Claude set
+and (soon) Codex's quizzes, for trying them out before anything goes on the store. The sources are in
+`world/` and `npm run build:world` builds it. The deployable bundle, with Havard's file, lives in the
+private Heron repository (`scepter-world/`). `world/HANDOFF.md` covers deploying it, and
+`world/NOTE-FOR-CODEX.md` covers adding Codex's quizzes and aligning the colours with the new brand guide.
+
+In test mode (`"testMode": true` in a section's config, which the world sets), the quiz and pop-ups say
+"Test mode: nothing was sent" instead of promising an email, and show no "View cart" link.
+
 ## Install on Shopify (about 30 minutes, once)
 
 A developer or anyone comfortable with *Online Store → Themes → Edit code* can do this.

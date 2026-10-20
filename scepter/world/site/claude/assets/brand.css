@@ -1,0 +1,31 @@
+/* Brand colours for the Claude quiz kit in this world.
+
+   To align the kit with Scepter's new brand guide, put the guide's colours here. These are the kit's
+   palette tokens: every background, button, accent and line in the three quizzes, the plan page and
+   both pop-ups is derived from them, so this file alone re-colours all of it. Nothing else needs to
+   change. Keep the roles (a dark green, light greens, an accent, a cream, text colours); if the guide
+   has no green, map its darkest colour to the forest tokens and its lightest tint to the sage ones.
+
+   On the store the same values go into theme/assets/scepter.css (the .sp block) and the colour
+   defaults of the four sections, once a palette is agreed. The admin can also set four of them per
+   section in the theme editor (forest, sage, burgundy, cream).
+
+   Fonts: the brand guide's fonts can be set here too (--sp-font-display, --sp-font-body), but this
+   world's CSP allows only self-hosted fonts: add the woff2 files to this folder with an @font-face.
+
+   Today's values: Scepter's site burgundy (#84171d) with the kit's greens. */
+.sp, .sp-launcher {
+  --sp-forest: #1f3d2e;        /* dark green: the dark quizzes, selected answers, the launcher */
+  --sp-forest-deep: #132a1f;   /* darkest green: dark backgrounds */
+  --sp-forest-mid: #2d5842;
+  --sp-sage: #d7e5d2;          /* light green: emblems on dark, cards on light */
+  --sp-sage-soft: #eaf2e6;     /* light green surface: the adventure quiz, hovers */
+  --sp-sage-mist: #f4f8f1;     /* palest green: light backgrounds */
+  --sp-sage-strong: #a9c5a6;   /* kickers and focus rings on dark */
+  --sp-burgundy: #84171d;      /* the accent: buttons, kickers on light */
+  --sp-burgundy-hover: #9e1c23;
+  --sp-burgundy-tint: #f0e3e4;
+  --sp-cream: #fbf8f1;         /* text on dark, paper */
+  --sp-ink: #16201b;           /* text on light */
+  --sp-muted: #56665c;         /* secondary text on light */
+}

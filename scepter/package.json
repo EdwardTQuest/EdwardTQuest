@@ -8,7 +8,8 @@
     "screenshots": "node tools/screenshots.mjs",
     "build:temperament": "node tools/build-temperament-section.mjs",
     "import:havard": "node tools/import-havard-test.mjs",
-    "crosscheck:havard": "node tools/crosscheck-havard.mjs"
+    "crosscheck:havard": "node tools/crosscheck-havard.mjs",
+    "build:world": "node tools/build-world.mjs"
   },
   "devDependencies": {
     "@shopify/theme-check-node": "^3.29.1",

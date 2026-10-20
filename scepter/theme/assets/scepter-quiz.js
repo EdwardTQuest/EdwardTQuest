@@ -670,7 +670,9 @@
       var emails = !!((lc.klaviyo && lc.klaviyo.publicKey) || (lc.omnisend && lc.omnisend.enabled) || lc.webhook || lc.sendsPlanEmail);
       var ok = state.result && state.result.sent;
       var pending = state.result && state.result.sent === null;
-      var text = ok && emails ? 'Your plan is on its way to ' + a.email + '.'
+      // Test mode (a preview outside the store): the lead calls are caught, so say what would happen.
+      var text = ok && cfg.testMode ? 'Test mode: nothing was sent. Live, ' + (emails ? 'your plan would go to ' + a.email : a.email + ' would join the list') + '.'
+        : ok && emails ? 'Your plan is on its way to ' + a.email + '.'
         : ok ? 'You’re on the list, ' + (a.firstName || 'friend') + '. Save the link below to keep your plan.'
         : state.result && state.result.sent === false ? 'We couldn’t send the email just now, so copy the link below to keep your plan.'
         : pending && runtime.restored ? 'Here is your plan. Copy the link below to keep it.'
@@ -822,7 +824,8 @@
             btn.classList.add('is-done');
             emit('cart:add', { variant: variant, count: ids.length });
             try { document.dispatchEvent(new CustomEvent('cart:refresh', { bubbles: true })); } catch (e) { /* theme-specific */ }
-            var link = h('a', { class: 'sp-link sp-link--cart', href: rootUrl + 'cart', text: 'View cart' });
+            var link = cfg.testMode ? h('span', { class: 'sp-test-note sp-link--cart', text: 'Test mode: no real cart' })
+              : h('a', { class: 'sp-link sp-link--cart', href: rootUrl + 'cart', text: 'View cart' });
             if (!btn.nextElementSibling || !btn.nextElementSibling.classList.contains('sp-link--cart')) btn.after(link);
           })
           .catch(function () {

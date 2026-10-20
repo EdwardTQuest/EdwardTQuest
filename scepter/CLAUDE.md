@@ -31,3 +31,7 @@ pipeline's rules (preflight, gates, run-logs) do not apply here; these do.
 - Never invent Scepter product handles in `theme/templates/`. The ones there were seen on
   scepterpublishers.org. The demo catalogue may use illustrative ones (`demo/mock/store.json`
   lists which are verified).
+- The private preview world (`world/`, `tools/build-world.mjs`) must keep the site's CSP: no inline
+  scripts or handlers, no outside scripts, styles or fonts, `fetch` only to itself. The builder checks
+  this and fails. Its bundle with Havard's file goes only to Heron (`scepter-world/`); after a kit change,
+  rebuild it there and run a browser walk through `wrangler dev` (the Worker enforces the real CSP).

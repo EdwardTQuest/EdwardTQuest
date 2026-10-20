@@ -326,6 +326,7 @@
         h('h2', { class: 'sp-ebook__title', text: copy.doneTitle.replace('{name}', first ? ', ' + first : '') }),
         h('p', { class: 'sp-lead', text: text }),
         emailOnly || !link ? null : h('a', { class: 'sp-btn sp-btn--primary sp-btn--lg', href: link, target: '_blank', rel: 'noopener', download: isFile ? '' : null, onclick: function () { emit('ebook:download', { interest: it.key }); } }, isFile ? copy.download : copy.getBooklet),
+        cfg.testMode ? h('p', { class: 'sp-test-note', text: 'Test mode: nothing was sent.' }) : null,
         h('button', { type: 'button', class: 'sp-btn sp-btn--quiet', onclick: function () { modal.hide('done'); } }, 'Back to the store')
       ]));
       var focusable = modal.content.querySelector('.sp-btn');
@@ -664,7 +665,10 @@
           btn.textContent = 'Added ✓'; btn.classList.add('is-done');
           emit('cart:add', { source: 'temperament', temperament: resultKey() });
           try { document.dispatchEvent(new CustomEvent('cart:refresh', { bubbles: true })); } catch (e) { /* theme-specific */ }
-          if (!btn.parentNode.querySelector('.sp-link--cart')) btn.after(h('a', { class: 'sp-link sp-link--cart', href: root + 'cart', text: 'View cart' }));
+          if (!btn.parentNode.querySelector('.sp-link--cart')) {
+            btn.after(cfg.testMode ? h('span', { class: 'sp-test-note sp-link--cart', text: 'Test mode: no real cart' })
+              : h('a', { class: 'sp-link sp-link--cart', href: root + 'cart', text: 'View cart' }));
+          }
         })
         .catch(function () {
           btn.disabled = false; btn.textContent = 'Add to cart';
@@ -712,7 +716,7 @@
           eventName: (cfg.lead || {}).eventName || 'Completed Temperament Test',
           eventProperties: facts.event
         }).then(function (r) {
-          if (r.ok) form.replaceWith(h('p', { class: 'sp-sent', role: 'status', text: 'Sent. Look for your result in your inbox.' }));
+          if (r.ok) form.replaceWith(h('p', { class: 'sp-sent', role: 'status', text: cfg.testMode ? 'Test mode: nothing was sent. Live, your result would go to your inbox.' : 'Sent. Look for your result in your inbox.' }));
           else { send.disabled = false; err.textContent = 'We couldn’t send it just now. Please try again in a moment.'; }
         });
       } }, [
