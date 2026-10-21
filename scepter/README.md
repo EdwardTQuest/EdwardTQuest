@@ -68,7 +68,7 @@ a webhook and Shopify would receive.
 ## The private preview on edwardthomas.quest
 
 All the quizzes, both pop-ups and Alexandre Havard's full test also run as a private "world" at
-**edwardthomas.quest/quizzes/**. It sits behind a password, in test mode, beside the second Claude set
+**edwardthomas.quest/scepter/quizzes/**. It sits behind a password, in test mode, beside the second Claude set
 and (soon) Codex's quizzes, for trying them out before anything goes on the store. The sources are in
 `world/` and `npm run build:world` builds it. The deployable bundle, with Havard's file, lives in the
 private Heron repository (`scepter-world/`). `world/HANDOFF.md` covers deploying it, and

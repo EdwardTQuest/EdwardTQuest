@@ -1,4 +1,4 @@
-// The Scepter quizzes world at edwardthomas.quest/quizzes/: a private preview behind a password, in the
+// The Scepter quizzes world at edwardthomas.quest/<BASE>/ (the builder sets BASE; /scepter/quizzes by default): a private preview behind a password, in the
 // same pattern as the Review room (sjm-review) and My family (family-videos): a sign-in page at
 // /quizzes/login, then a cookie. Every page and file under /quizzes/ comes from public/quizzes/ only
 // after sign-in, except two that show nothing from the quizzes: world-cover.svg (the portal's window

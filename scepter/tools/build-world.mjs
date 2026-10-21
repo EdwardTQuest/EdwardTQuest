@@ -1,6 +1,6 @@
-// Build the Scepter quizzes world for edwardthomas.quest/quizzes/: a folder that deploys as it is, with
+// Build the Scepter quizzes world for edwardthomas.quest/scepter/quizzes/ (--base sets another path): a folder that deploys as it is, with
 // the password Worker (worker.js), its wrangler config, and the site in public/quizzes/.
-//   node tools/build-world.mjs [--out DIR] [--havard FILE] [--reader-ref REF|none]
+//   node tools/build-world.mjs [--base /scepter/quizzes] [--out DIR] [--havard FILE] [--reader-ref REF|none]
 // --out         the bundle (default dist/world, which git ignores).
 // --havard      Alexandre Havard's test: the real scepter-temperament-havard.js (Heron, or private/
 //               after `npm run import:havard`). Without it the world runs the kit's stand-in questions.
@@ -27,7 +27,10 @@ const opt = (name, dflt) => { const i = args.indexOf(`--${name}`); return i >= 0
 const OUT = path.resolve(opt('out', path.join(KIT, 'dist', 'world')));
 const HAVARD = opt('havard', null);
 const READER_REF = opt('reader-ref', 'origin/claude/scepter-quiz-ebook-capture-vqmppd');
-const Q = path.join(OUT, 'public', 'quizzes');
+// Where the world answers on edwardthomas.quest: /scepter/quizzes (inside the Scepter world) by default.
+const BASE = '/' + String(opt('base', '/scepter/quizzes')).replace(/^\/+|\/+$/g, '');
+if (!/^\/[a-z0-9-]+(\/[a-z0-9-]+)*$/.test(BASE)) fail(`--base ${BASE} is not a plain path`);
+const Q = path.join(OUT, 'public', ...BASE.slice(1).split('/'));
 const fail = (msg) => { console.error('build-world: ' + msg); process.exit(1); };
 const git = (...a) => execFileSync('git', ['-C', KIT, ...a], { maxBuffer: 64 << 20 });
 
@@ -53,13 +56,24 @@ if (existsSync(OUT) && readdirSync(OUT).length && !existsSync(path.join(OUT, 'wr
   fail(`${OUT} is not empty and is not a world bundle (no wrangler.jsonc); refusing to write into it.`);
 }
 
+// A bundle built for another path: move its world (with codex/ and anything else) to BASE.
+for (const old of ['quizzes', 'scepter/quizzes'].map((b) => path.join(OUT, 'public', ...b.split('/')))) {
+  if (old !== Q && existsSync(old) && !existsSync(Q)) { mkdirSync(path.dirname(Q), { recursive: true }); cpSync(old, Q, { recursive: true }); }
+  if (old !== Q && existsSync(old)) rmSync(old, { recursive: true, force: true });
+}
+
 // ---- clear what this builder owns, keep the rest ----
 // brand.css is the one file of claude/ that is yours once the bundle has it (the brand guide's colours).
 const brandFile = path.join(Q, 'claude', 'assets', 'brand.css');
 const brand = existsSync(brandFile) ? readFileSync(brandFile) : null;
 for (const p of ['index.html', 'world.css', 'world.js', 'world-cover.svg', 'og.jpg', 'fonts', 'claude', 'reader']) rmSync(path.join(Q, p), { recursive: true, force: true });
 mkdirSync(Q, { recursive: true });
-for (const f of ['worker.js', 'wrangler.jsonc', 'WORLD.md', 'HANDOFF.md', 'NOTE-FOR-CODEX.md']) cpSync(path.join(WORLD, f), path.join(OUT, f));
+for (const f of ['WORLD.md', 'HANDOFF.md', 'NOTE-FOR-CODEX.md']) cpSync(path.join(WORLD, f), path.join(OUT, f));
+// The Worker and its routes, at BASE.
+const worker = readFileSync(path.join(WORLD, 'worker.js'), 'utf8');
+if (!worker.includes("const BASE = '/quizzes';")) fail('worker.js no longer declares BASE');
+writeFileSync(path.join(OUT, 'worker.js'), worker.replace("const BASE = '/quizzes';", `const BASE = '${BASE}';`));
+writeFileSync(path.join(OUT, 'wrangler.jsonc'), readFileSync(path.join(WORLD, 'wrangler.jsonc'), 'utf8').replaceAll('edwardthomas.quest/quizzes', 'edwardthomas.quest' + BASE).replaceAll('/quizzes and /quizzes/*', `${BASE} and ${BASE}/*`));
 cpSync(path.join(WORLD, 'gitignore.txt'), path.join(OUT, '.gitignore'));
 cpSync(path.join(WORLD, 'site'), Q, { recursive: true, filter: (src) => path.basename(src) !== 'world.json' });
 

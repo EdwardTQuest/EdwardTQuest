@@ -1,6 +1,6 @@
 # The quizzes world: sources
 
-The sources of the private preview world at edwardthomas.quest/quizzes/, which shows Claude's formation
+The sources of the private preview world at edwardthomas.quest/scepter/quizzes/, which shows Claude's formation
 quizzes and pop-ups, the second Claude set and Codex's quizzes side by side, in test mode, behind a
 password.
 

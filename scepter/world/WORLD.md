@@ -1,14 +1,14 @@
-# The Scepter quizzes world (edwardthomas.quest/quizzes/)
+# The Scepter quizzes world (edwardthomas.quest/scepter/quizzes/)
 
 A private preview of every quiz made for scepterpublishers.org, side by side, in test mode. It runs
 as its own Worker behind a password, in the same pattern as the Review room and My family worlds.
 
 ```
-wrangler.jsonc        Worker "scepter-quizzes-preview": routes edwardthomas.quest/quizzes and /quizzes/*
+wrangler.jsonc        Worker "scepter-quizzes-preview": routes edwardthomas.quest/scepter/quizzes and /quizzes/*
 worker.js             sign-in page (/quizzes/login), a 30-day cookie, the site's CSP and noindex headers
 HANDOFF.md            how to deploy it from the Mac, step by step
 NOTE-FOR-CODEX.md     how Codex adds its quizzes as a tab here, and aligns the brand colours
-public/quizzes/
+public/scepter/quizzes/
   index.html          the hub: one tab per quiz set, from world.json
   world.json          the sets and their cards (each set has an "owner")
   world.css, world.js, fonts/, world-cover.svg, og.jpg
@@ -45,5 +45,5 @@ the public repository would commit it, and fails if any page breaks the CSP rule
 ## Local try-out
 
 ```sh
-npx wrangler dev --var PREVIEW_PASSWORD:local-test     # then open http://localhost:8787/quizzes/
+npx wrangler dev --var PREVIEW_PASSWORD:local-test     # then open http://localhost:8787/scepter/quizzes/
 ```
