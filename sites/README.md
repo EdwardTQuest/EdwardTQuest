@@ -20,6 +20,8 @@ each house's own list price where one was found (Scepter UK, Sinag-Tala).
 - **As a site:** serve this folder (`npx http-server sites` or any static host) and open `/`.
   Every page also works straight from `file://`. `vercel.json` deploys the folder as it stands
   (`vercel --cwd sites`), with `noindex` so the previews stay out of search engines.
+- **Private, on Cloudflare:** `deploy/` puts the hub and shops at
+  edwardthomas.quest/projects/bookshops/ behind a password (a Worker; see `deploy/HANDOFF.md`).
 
 ## What's where
 

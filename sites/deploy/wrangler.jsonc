@@ -1,0 +1,22 @@
+{
+  // The four concept bookshops: edwardthomas.quest/projects/bookshops/, a private preview behind a password.
+  // From this folder: python3 build.py, npx wrangler secret put PREVIEW_PASSWORD, then npx wrangler deploy.
+  // It answers only /projects/bookshops and /projects/bookshops/*; the rest of the site is untouched. No workers.dev address.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "bookshops-preview",
+  "main": "worker.js",
+  "compatibility_date": "2025-09-01",
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    { "pattern": "edwardthomas.quest/projects/bookshops", "zone_name": "edwardthomas.quest" },
+    { "pattern": "edwardthomas.quest/projects/bookshops/*", "zone_name": "edwardthomas.quest" }
+  ],
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  }
+}
