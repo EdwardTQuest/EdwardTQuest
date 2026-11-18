@@ -117,8 +117,9 @@ Also in Pat's reading room: the **enchiridion Pat made**. Edward says he put it 
 athanasius.online. Treat it as an object in the room, such as a handbook on a lectern or a desk, that
 opens to the real thing. It is not to be explained on screen.
 
-Not found: a check of the athanasius.online front page on 2026-11-18 showed no "Other resources" section
-and no mention of an enchiridion. The closest thing was "Other Stuff I Like" under "Marginalia", which
-is only an on-page anchor (`#other`), and nothing says it holds the enchiridion. Ask Edward for the
-exact link or page before wiring it. Do not guess one. Whoever made it is Pat's work, so credit
-and permission are Edward's to settle with Pat.
+**Edward says the Lenovo already knows where it is.** Find the handbook enchiridion Pat made on
+athanasius.online (Edward put it under "other resources") and use that. Claude could not locate it from
+the cloud session: the athanasius.online front page showed no "Other resources" section as of
+2026-11-18, only "Other Stuff I Like" under "Marginalia" (an on-page anchor, `#other`), which may or may
+not be it. If the Lenovo cannot find it either, ask Edward rather than guessing a link. It is Pat's
+work, so credit and permission are Edward's to settle with Pat.
