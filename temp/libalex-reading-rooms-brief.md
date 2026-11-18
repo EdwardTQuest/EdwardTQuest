@@ -93,3 +93,20 @@ a real piece of work, not a toggle:
 - The door map beyond the two links he gave.
 - Multiplayer: which option, if any, and when.
 - The choice of the stocks chat, the influencer feed and the trackers (links to verify first).
+
+## Pat's reading room (added 2026-11-18)
+
+Edward attached a one-page "Catholic Digital Library & Text Repositories" cheat sheet and said it is
+"for Pat's reading room". It is saved next to this brief as
+`pats-reading-room-catholic-digital-library-cheat-sheet.docx`. It lists about 70 sources for Catholic
+primary texts in six groups (markdown-native EPUBs, patristics, single-author corpora, scholasticism,
+curated scans, magisterium and canon law). It includes Athanasius Online's own EPUB shelf.
+
+Not yet decided, ask Edward:
+- Is Pat's room a **ninth room**, or one of the eight dressed for Pat?
+- What does the sheet do in the room? Likely its sources become the books on Pat's shelves, but the
+  room cannot show the sheet as text (no-words rule).
+- Who Pat is, and whether the room is private to Pat.
+
+The sheet says "all links verified". Nobody on this side has checked that. Check the links before
+anything is wired to them.
