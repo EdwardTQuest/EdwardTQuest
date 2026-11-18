@@ -110,3 +110,15 @@ Not yet decided, ask Edward:
 
 The sheet says "all links verified". Nobody on this side has checked that. Check the links before
 anything is wired to them.
+
+### Pat's enchiridion (added 2026-11-18)
+
+Also in Pat's reading room: the **enchiridion Pat made**. Edward says he put it in "other resources" on
+athanasius.online. Treat it as an object in the room, such as a handbook on a lectern or a desk, that
+opens to the real thing. It is not to be explained on screen.
+
+Not found: a check of the athanasius.online front page on 2026-11-18 showed no "Other resources" section
+and no mention of an enchiridion. The closest thing was "Other Stuff I Like" under "Marginalia", which
+is only an on-page anchor (`#other`), and nothing says it holds the enchiridion. Ask Edward for the
+exact link or page before wiring it. Do not guess one. Whoever made it is Pat's work, so credit
+and permission are Edward's to settle with Pat.
